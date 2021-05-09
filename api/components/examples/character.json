@@ -1,0 +1,43 @@
+{
+    "character_list": [
+        {
+            "character_id": "5428072203494645969",
+            "name": {
+                "first": "Auroram",
+                "first_lower": "auroram"
+            },
+            "faction_id": "1",
+            "head_id": "5",
+            "title_id": "410",
+            "times": {
+                "creation": "1368291970",
+                "creation_date": "2013-05-11 17:06:10.0",
+                "last_save": "1620515992",
+                "last_save_date": "2021-05-08 23:19:52.0",
+                "last_login": "1620509294",
+                "last_login_date": "2021-05-08 21:28:14.0",
+                "login_count": "4258",
+                "minutes_played": "204989"
+            },
+            "certs": {
+                "earned_points": "434366",
+                "gifted_points": "17568",
+                "spent_points": "447546",
+                "available_points": "4388",
+                "percent_to_next": "0.9475277778311"
+            },
+            "battle_rank": {
+                "percent_to_next": "0",
+                "value": "100"
+            },
+            "profile_id": "20",
+            "daily_ribbon": {
+                "count": "0",
+                "time": "1620432000",
+                "date": "2021-05-08 00:00:00.0"
+            },
+            "prestige_level": "1"
+        }
+    ],
+    "returned": 1
+}
