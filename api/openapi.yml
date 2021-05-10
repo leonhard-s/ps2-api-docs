@@ -1,40 +1,27 @@
 openapi: 3.0.2
 info:
   title: PlanetSide 2 API Reference
-  description: >
-    These are community-maintained, inofficial docs for the
-    [PlanetSide 2](https://www.planetside2.com/) API.
+  description: |
+    These are community-maintained, inofficial docs for the [PlanetSide 2](https://www.planetside2.com/) API.
 
+    This documentation is not endorsed by or affiliated with the PlanetSide 2 developer team or publisher.
 
-    This documentation is not endorsed by or affiliated with the
-    PlanetSide 2 developer team or publisher.
+    For more information, visit the project repository at <https://github.com/leonhard-s/ps2-api-docs>.
 
     ***
 
-    For more informaiton, visit the project repository at
-    <https://github.com/leonhard-s/ps2-api-docs>.
+    ### A note regarding types
+
+    According to the OpenAPI standard, a quoted integer (e.g. `"12"`) should be typed as a `string`.
+    However, due to the PS2 API quoting nearly every value it returns, following this convention would make the type hints meaningless.
   version: "0.1"
   termsOfService: https://census.daybreakgames.com#services-api-policy
 servers:
   - url: https://census.daybreakgames.com/get/
+components:
+  schemas:
+    character:
+      $ref: ./components/schemas/character.yml#/character
 paths:
   "/ps2:v2/character":
-    get:
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  character_list:
-                    type: array
-                    items:
-                      $ref: "#/components/schemas/character"
-                  results:
-                    type: integer
-                    minimum: 0
-              example:
-                value:
-                  $ref: "./components/examples/character.json"
+    $ref: ./paths/character.yml

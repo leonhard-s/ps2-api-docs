@@ -1,50 +1,73 @@
 character:
+  description: A player-controlled character running around the game.
   properties:
     character_id:
       type: integer
       format: int64
+      required: true
       exclusiveMinimum: 0
-      description: Unique ID of the player. Note that these IDs are too large for 32 bit integer representations. Use 64 bit integers (`long`/`BIGINT`) or parse as string to avoid errors.
+      description: |
+        Unique ID of the player.
+
+        **Note:**
+        These IDs are too large for 32 bit integer representations. Use 64 bit integers (`long`/`BIGINT`) or parse as string to avoid errors.
+
+        **Note:**
+        Character IDs are only unique per platform. The same character ID could be reused between PC and PS4.
     faction_id:
       type: integer
+      required: true
       minimum: 0
       description: ID of the character's faction.
       x-reference-to: components/schemas/character
     head_id:
       type: integer
-      description:
-        The head model selected by the player. This includes the two genders as well as the four head types, giving a total of eight variants.
+      required: true
+      description: |
+        The head model selected by the player.
 
-        For human player models, head IDs 1 through 4 are male variants, 5 through 8 are female.
+        This includes the two genders as well as the four head types, giving a total of eight variants. For human player models, head IDs 1 through 4 are male variants, 5 through 8 are female.
 
         Characters with a head ID of 0 exist (bad data?), and NSO characters seem to be limited to head IDs 1 through 4.
       minimum: 0
       maximum: 8
     title_id:
       type: integer
-      description: ID of the currently selected title for this character. An ID of zero is used if the character has not selected any title.
+      required: true
+      description: |
+        ID of the currently selected title for this character.
+
+        An ID of zero is used if the character has not selected any title.
       minimum: 0
       x-reference-to: components/schemas/title
     times:
       types: object
+      required: true
       description: Login times and minutes played for the character.
       properties:
         creation:
           type: integer
+          required: true
           minimum: 0
           description: UTC timestamp of the character's creation time.
         creation_date:
           type: string
+          required: true
           description: String version of `creation`.
         last_save:
           type: integer
+          required: true
           minimum: 0
-          description: UTC timestamp of the last time the character was updated. This roughly matches the last time the character logged out.
+          description: |
+            UTC timestamp of the last time the character was updated.
+
+            This roughly matches the last time the character logged out.
         last_save_date:
           type: string
           description: String version of `last_save`.
         last_login:
           type: integer
+          required: true
           minimum: 0
           description: UTC timestamp of the last time the character logged in.
         last_login_date:
@@ -52,84 +75,125 @@ character:
           description: String version of `last_login`.
         login_count:
           type: integer
+          required: true
           minimum: 0
           description: The number of times the character has logged in.
         minutes_played:
           type: integer
+          required: true
           minimum: 0
-          description: The total number of minutes this character was logged in. Used to calculate playtime.
+          description: Playtime of the character in minutes.
     certs:
       type: object
+      required: true
       description: Current, past, and total certification points for the character.
       properties:
         earned_points:
           type: integer
+          required: true
           minimum: 0
-          description: Certification points the character has earned. Earned points are ones directly linked to an experience event.
+          description: |
+            Certification points the character has earned.
+
+            Earned points are ones directly linked to an experience event.
         gifted_points:
           type: integer
+          required: true
           minimum: 0
-          description: Certification points the character been gifted. This includes login rewards, certification refunds, alert rewards and other granted points.
+          description: |
+            Certification points the character been gifted.
+
+            This includes login rewards, certification refunds, alert rewards and other granted points.
         spent_points:
           type: integer
+          required: true
           minimum: 0
           description: Certification points the character has spent.
         available_points:
           type: integer
+          required: true
           minimum: 0
           description: The current certification point balance of the character.
         percent_to_next:
           type: number
+          required: true
           minimum: 0
           maximum: 1
           description: Progress to the next certification point.
     battle_rank:
       type: object
-      description: The current battle rank of the character, and their progress towards the next rankup.
+      required: true
+      description: Current battle rank and progress towards the next.
       properties:
         value:
           type: integer
+          required: true
           minimum: 1
           maximum: 120
           description: The current battle rank of the character.
         percent_to_next:
           type: number
+          required: true
           minimum: 0
           maximum: 1
           description: Relative progress towards the next battle rank.
     daily_ribbon:
       type: object
-      description: Information related to daily service ribbon bonuses. Note that as of May 2021, ribbon boni have been removed from the game and are no longer used.
+      required: true
+      description: |
+        Information related to daily service ribbon boni.
+
+        Note that as of May 2021, ribbon boni have been removed from the game and are no longer used.
       properties:
         count:
           type: integer
+          required: true
           minimum: 0
           maximum: 5
-          description: The number of ribbon bonuses the character can earn.
+          description: The number of ribbon boni the character can earn.
         time:
           type: integer
+          required: true
           minimum: 0
           description: UTC timestamp at which the next daily ribbon bonus will be granted to the character.
         date:
           type: string
+          required: true
           description: String version of `time`.
     name:
       type: object
-      description: Player name information. Note that player names can be changed by customer support and via character renaming tokens.
+      required: true
+      description: |
+        Player name information.
+
+        Note that player names can be changed by customer support and via character renaming tokens.
       properties:
         first:
           type: string
-          description: Unique name of the player. Generally limited to 3-32 alphanumeric characters, though exceptions exist. Assume unicode.
+          required: true
+          description: |
+            Unique name of the player.
+
+            Generally limited to 3-32 alphanumeric characters, though exceptions exist. Assume unicode.
         first_lower:
           type: string
-          description: Lowercase version of the `first` property. Use for character-insensitive name lookups.
+          required: true
+          description: |
+            Lowercase version of the `first` property.
+
+            Use for character-insensitive name lookups.
     profile_id:
       type: integer
+      required: true
       minimum: 0
-      description: ID of the last profile the character palyed as. This value is only updated on logout, polling it is not a reliable way of determining a player's current class.
+      description: |
+        ID of the last profile the character played as.
+
+        This value is only updated on logout, polling it is not a reliable way of determining a player's current class.
       x-reference-to: components/schemas/profile_2
     prestige_level:
       type: integer
+      required: true
       minimum: 0
       maximum: 1
       description: The prestige (or A.S.P.) rank for the character.
