@@ -1,0 +1,24 @@
+get:
+  summary: Summary of ${{ datatype }}
+  description: Description for `${{ datatype }}`
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ${{ datatype }}_list:
+                type: array
+                items:
+                  $ref: "../components/schemas/${{ datatype }}.yml#/${{ datatype }}"
+                required: true
+              results:
+                type: integer
+                required: true
+                minimum: 0
+                description: The number of results returned.
+          example:
+            value:
+              $ref: "../components/examples/${{ datatype }}.json"
