@@ -1,0 +1,28 @@
+{
+    "skill_line_list": [
+        {
+            "skill_line_id": "2",
+            "skill_points": "0",
+            "name": {
+                "de": "Peripherieaufs\u00e4tze",
+                "en": "Utility Attachments",
+                "es": "Herramientas",
+                "fr": "Accessoires utilitaires",
+                "it": "Accessori di utilit\u00e0",
+                "tr": "Alet Aparatlar\u0131"
+            },
+            "description": {
+                "de": "Peripherieaufs\u00e4tze zur Ver\u00e4nderung deiner Waffe freischalten",
+                "en": "Unlock utility attachments to alter your weapon with",
+                "es": "Desbloquea herramientas para tu arma.",
+                "fr": "D\u00e9verrouille des accessoires utilitaires pour changer ton arme en",
+                "it": "Sblocca accessori di utilit\u00e0 con cui modificare la tua arma",
+                "tr": "Silah\u0131nda de\u011fi\u015fiklik yapmak i\u00e7in alet aparatlar\u0131n\u0131 a\u00e7"
+            },
+            "image_set_id": "12",
+            "image_id": "103",
+            "image_path": "/files/ps2/images/static/103.png"
+        }
+    ],
+    "returned": 1
+}

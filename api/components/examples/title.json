@@ -1,0 +1,16 @@
+{
+    "title_list": [
+        {
+            "title_id": "1",
+            "name": {
+                "de": "Private",
+                "en": "Private",
+                "es": "Soldado raso",
+                "fr": "Soldat",
+                "it": "Soldato",
+                "tr": "Er"
+            }
+        }
+    ],
+    "returned": 1
+}

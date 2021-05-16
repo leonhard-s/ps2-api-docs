@@ -1,0 +1,22 @@
+{
+    "skill_category_list": [
+        {
+            "skill_category_id": "1",
+            "skill_set_id": "10",
+            "skill_set_index": "0",
+            "skill_points": "0",
+            "name": {
+                "de": "Passive Systeme",
+                "en": "Passive Systems",
+                "es": "Sistemas pasivos",
+                "fr": "Syst\u00e8mes passifs",
+                "it": "Sistemi passivi",
+                "tr": "Pasif Sistemler"
+            },
+            "image_set_id": "1",
+            "image_id": "35",
+            "image_path": "/files/ps2/images/static/35.png"
+        }
+    ],
+    "returned": 1
+}

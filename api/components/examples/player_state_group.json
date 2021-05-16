@@ -1,0 +1,10 @@
+{
+    "player_state_group_list": [
+        {
+            "player_state_group_id": "1",
+            "player_state": "Standing",
+            "min_cone_of_fire": "2"
+        }
+    ],
+    "returned": 1
+}

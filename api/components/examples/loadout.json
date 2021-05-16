@@ -1,0 +1,11 @@
+{
+    "loadout_list": [
+        {
+            "loadout_id": "1",
+            "profile_id": "2",
+            "faction_id": "2",
+            "code_name": "NC Infiltrator"
+        }
+    ],
+    "returned": 1
+}

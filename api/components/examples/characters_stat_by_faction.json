@@ -1,0 +1,27 @@
+{
+    "characters_stat_by_faction_list": [
+        {
+            "character_id": "5428072203494645969",
+            "stat_name": "domination_count",
+            "profile_id": "0",
+            "value_forever_vs": "0",
+            "value_forever_nc": "2480",
+            "value_forever_tr": "2231",
+            "value_monthly_vs": "0",
+            "value_monthly_nc": "33",
+            "value_monthly_tr": "31",
+            "value_weekly_vs": "0",
+            "value_weekly_nc": "26",
+            "value_weekly_tr": "21",
+            "value_daily_vs": "0",
+            "value_daily_nc": "6",
+            "value_daily_tr": "5",
+            "value_one_life_max_vs": "0",
+            "value_one_life_max_nc": "9",
+            "value_one_life_max_tr": "7",
+            "last_save": "1621086401",
+            "last_save_date": "2021-05-15 13:46:41.058543"
+        }
+    ],
+    "returned": 1
+}

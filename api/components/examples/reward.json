@@ -1,0 +1,12 @@
+{
+    "reward_list": [
+        {
+            "reward_id": "100",
+            "reward_type_id": "1",
+            "count_min": "1",
+            "count_max": "1",
+            "param1": "70361"
+        }
+    ],
+    "returned": 1
+}

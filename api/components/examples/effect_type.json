@@ -1,0 +1,11 @@
+{
+    "effect_type_list": [
+        {
+            "effect_type_id": "8",
+            "description": "Modify Character Status",
+            "param1": "State ID",
+            "param3": "Animation ID for Knock Back or Pull"
+        }
+    ],
+    "returned": 1
+}

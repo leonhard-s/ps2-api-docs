@@ -1,0 +1,21 @@
+{
+    "directive_tier_list": [
+        {
+            "directive_tree_id": "4",
+            "directive_tier_id": "1",
+            "directive_points": "5",
+            "completion_count": "2",
+            "name": {
+                "de": "Anf\u00e4nger",
+                "en": "Novice",
+                "es": "Novato",
+                "fr": "Novice",
+                "it": "Novizi"
+            },
+            "image_set_id": "13730",
+            "image_id": "78515",
+            "image_path": "/files/ps2/images/static/78515.png"
+        }
+    ],
+    "returned": 1
+}

@@ -1,0 +1,14 @@
+{
+    "objective_list": [
+        {
+            "objective_id": "1",
+            "objective_type_id": "12",
+            "objective_group_id": "1",
+            "param1": "10",
+            "param4": "-1",
+            "param5": "30",
+            "param8": "-1"
+        }
+    ],
+    "returned": 1
+}

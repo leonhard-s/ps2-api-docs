@@ -1,0 +1,13 @@
+{
+    "image_set_list": [
+        {
+            "image_set_id": "1",
+            "image_id": "34",
+            "description": "black_heavyAssault",
+            "type_id": "6",
+            "type_description": "Medium (64 pixel height)",
+            "image_path": "/files/ps2/images/static/34.png"
+        }
+    ],
+    "returned": 1
+}

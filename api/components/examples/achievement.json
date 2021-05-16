@@ -1,0 +1,31 @@
+{
+    "achievement_list": [
+        {
+            "achievement_id": "1",
+            "item_id": "30",
+            "objective_group_id": "1",
+            "reward_id": "100",
+            "repeatable": "0",
+            "name": {
+                "de": "AS16 NightHawk",
+                "en": "AS16 NightHawk",
+                "es": "AS16 NightHawk",
+                "fr": "AS16 NightHawk",
+                "it": "AS16 NightHawk",
+                "tr": "AS16 Gece Atmacas\u0131"
+            },
+            "description": {
+                "de": "10 Feinde get\u00f6tet",
+                "en": "10 Enemies Killed",
+                "es": "10 enemigos muertos",
+                "fr": "10 ennemis tu\u00e9s",
+                "it": "10 nemici uccisi",
+                "tr": "10 D\u00fc\u015fman \u00d6ld\u00fcr\u00fcld\u00fc"
+            },
+            "image_set_id": "1564",
+            "image_id": "3072",
+            "image_path": "/files/ps2/images/static/3072.png"
+        }
+    ],
+    "returned": 1
+}

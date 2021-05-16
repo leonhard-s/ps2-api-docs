@@ -1,0 +1,16 @@
+{
+    "zone_effect_list": [
+        {
+            "zone_effect_id": "20",
+            "zone_effect_type_id": "20",
+            "ability_id": "25",
+            "param1": "7",
+            "param2": "60",
+            "param3": "60",
+            "param4": "75",
+            "param5": "1",
+            "param6": "250"
+        }
+    ],
+    "returned": 1
+}

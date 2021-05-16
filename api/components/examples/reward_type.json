@@ -1,0 +1,14 @@
+{
+    "reward_type_list": [
+        {
+            "reward_type_id": "1",
+            "description": "Item",
+            "count_min": "# of items to give",
+            "param1": "Item ID",
+            "param2": "currency_type (-1 for coin)",
+            "param3": "Flag Goto Claim",
+            "param4": "Required Scalar Percent"
+        }
+    ],
+    "returned": 1
+}

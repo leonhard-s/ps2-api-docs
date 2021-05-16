@@ -1,0 +1,15 @@
+{
+    "zone_effect_type_list": [
+        {
+            "zone_effect_type_id": "2",
+            "description": "Jet Effect",
+            "param1": "ResourceType",
+            "param2": "InitialCost",
+            "param3": "CostPerSec",
+            "param4": "ResourceValueMin",
+            "param5": "DisableResourceRegen",
+            "param6": "MsecPerTick"
+        }
+    ],
+    "returned": 1
+}

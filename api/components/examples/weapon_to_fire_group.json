@@ -1,0 +1,10 @@
+{
+    "weapon_to_fire_group_list": [
+        {
+            "weapon_id": "1",
+            "fire_group_id": "1",
+            "fire_group_index": "0"
+        }
+    ],
+    "returned": 1
+}

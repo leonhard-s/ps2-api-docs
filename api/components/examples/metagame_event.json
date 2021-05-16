@@ -1,0 +1,26 @@
+{
+    "metagame_event_list": [
+        {
+            "metagame_event_id": "1",
+            "name": {
+                "de": "Sp\u00fcre die Hitze",
+                "en": "Feeling the Heat",
+                "es": "Siente el calor",
+                "fr": "Sentir la pression",
+                "it": "Sotto pressione",
+                "tr": "S\u0131ca\u011f\u0131 Hissetmek"
+            },
+            "description": {
+                "de": "Erobere Indar innerhalb des Zeitlimits.",
+                "en": "Capture Indar within the time limit",
+                "es": "Captura Indar sin pasarte del l\u00edmite de tiempo",
+                "fr": "Capturer Indar dans la limite de temps",
+                "it": "Conquista Indar nei limiti di tempo",
+                "tr": "Zaman s\u0131n\u0131r\u0131 i\u00e7inde Indar'\u0131 Ele Ge\u00e7ir"
+            },
+            "type": "1",
+            "experience_bonus": "30"
+        }
+    ],
+    "returned": 1
+}

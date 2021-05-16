@@ -1,0 +1,9 @@
+{
+    "resource_type_list": [
+        {
+            "resource_type_id": "7",
+            "description": "Fuel"
+        }
+    ],
+    "returned": 1
+}

@@ -1,0 +1,9 @@
+{
+    "projectile_flight_type_list": [
+        {
+            "projectile_flight_type_id": "1",
+            "description": "Ballistic"
+        }
+    ],
+    "returned": 1
+}

@@ -1,0 +1,13 @@
+{
+    "projectile_list": [
+        {
+            "projectile_id": "1",
+            "projectile_flight_type_id": "1",
+            "speed": "1000",
+            "lifespan": "5",
+            "drag": "0",
+            "gravity": "1"
+        }
+    ],
+    "returned": 1
+}

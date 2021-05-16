@@ -1,0 +1,21 @@
+{
+    "outfit_member_extended_list": [
+        {
+            "character_id": "5428072203494645969",
+            "member_since": "1617838333",
+            "member_since_date": "2021-04-07 23:32:13.0",
+            "member_rank": "YACOzy",
+            "member_rank_ordinal": "2",
+            "outfit_id": "37578635483296804",
+            "name": "Yet Another Cobalt Outfit",
+            "name_lower": "yet another cobalt outfit",
+            "alias": "YACO",
+            "alias_lower": "yaco",
+            "time_created": "1617740583",
+            "time_created_date": "2021-04-06 20:23:03.0",
+            "leader_character_id": "5428016813476957697",
+            "member_count": "4"
+        }
+    ],
+    "returned": 1
+}

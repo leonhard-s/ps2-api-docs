@@ -1,0 +1,9 @@
+{
+    "fire_mode_type_list": [
+        {
+            "fire_mode_type_id": "0",
+            "description": "Projectile"
+        }
+    ],
+    "returned": 1
+}

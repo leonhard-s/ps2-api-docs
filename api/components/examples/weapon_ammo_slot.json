@@ -1,0 +1,11 @@
+{
+    "weapon_ammo_slot_list": [
+        {
+            "weapon_id": "1",
+            "weapon_slot_index": "0",
+            "clip_size": "1",
+            "capacity": "1"
+        }
+    ],
+    "returned": 1
+}

@@ -1,0 +1,19 @@
+{
+    "effect_list": [
+        {
+            "effect_id": "8",
+            "effect_type_id": "39",
+            "ability_id": "8",
+            "target_type_id": "2",
+            "resist_type_id": "0",
+            "param1": "7",
+            "param2": "40",
+            "param5": "0",
+            "param6": "0",
+            "param7": "0",
+            "param8": "0",
+            "param9": "0"
+        }
+    ],
+    "returned": 1
+}

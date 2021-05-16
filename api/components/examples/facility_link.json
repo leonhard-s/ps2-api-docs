@@ -1,0 +1,10 @@
+{
+    "facility_link_list": [
+        {
+            "zone_id": "2",
+            "facility_id_a": "201",
+            "facility_id_b": "209"
+        }
+    ],
+    "returned": 1
+}
