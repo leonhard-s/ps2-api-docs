@@ -1,4 +1,5 @@
 openapi: 3.0.2
+
 info:
   title: PlanetSide 2 API Reference
   description: |
@@ -16,12 +17,12 @@ info:
     However, due to the PS2 API quoting nearly every value it returns, following this convention would make the type hints meaningless.
   version: "0.1"
   termsOfService: https://census.daybreakgames.com#services-api-policy
+
 servers:
-  - url: https://census.daybreakgames.com/get/
-components:
-  schemas:
-    character:
-      $ref: ./components/schemas/character.yml#/character
+  - url: https://census.daybreakgames.com/
+
 paths:
-  "/ps2:v2/character":
-    $ref: ./paths/character.yml
+  /get/ps2:v2:
+    $ref: paths/get_datatype.yml
+  /get/ps2:v2/character:
+    $ref: paths/get_character.yml
