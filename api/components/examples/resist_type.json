@@ -1,9 +1,11 @@
-{
-    "resist_type_list": [
-        {
-            "resist_type_id": "0",
-            "description": "None"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "resist_type_list": [
+            {
+                "resist_type_id": "0",
+                "description": "None"
+            }
+        ],
+        "returned": 1
+    }
+]

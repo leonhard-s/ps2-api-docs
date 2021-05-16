@@ -1,11 +1,26 @@
-{
-    "weapon_ammo_slot_list": [
-        {
-            "weapon_id": "1",
-            "weapon_slot_index": "0",
-            "clip_size": "1",
-            "capacity": "1"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "weapon_ammo_slot_list": [
+            {
+                "weapon_id": "1",
+                "weapon_slot_index": "0",
+                "clip_size": "1",
+                "capacity": "1"
+            }
+        ],
+        "returned": 1
+    },
+    {
+        "weapon_ammo_slot_list": [
+            {
+                "weapon_id": "1",
+                "weapon_slot_index": "0",
+                "clip_size": "1",
+                "capacity": "1",
+                "refill_ammo_rate": "NULL",
+                "refill_ammo_delay_ms": "NULL"
+            }
+        ],
+        "returned": 1
+    }
+]

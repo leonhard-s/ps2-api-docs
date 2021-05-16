@@ -1,18 +1,41 @@
-{
-    "faction_list": [
-        {
-            "faction_id": "0",
-            "name": {
-                "de": "Kein",
-                "en": "None",
-                "es": "Ninguno",
-                "fr": "Aucun",
-                "it": "Nessuno",
-                "tr": "None"
-            },
-            "code_tag": "None",
-            "user_selectable": "0"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "faction_list": [
+            {
+                "faction_id": "0",
+                "name": {
+                    "de": "Kein",
+                    "en": "None",
+                    "es": "Ninguno",
+                    "fr": "Aucun",
+                    "it": "Nessuno",
+                    "tr": "None"
+                },
+                "code_tag": "None",
+                "user_selectable": "0"
+            }
+        ],
+        "returned": 1
+    },
+    {
+        "faction_list": [
+            {
+                "faction_id": "0",
+                "name": {
+                    "de": "Kein",
+                    "en": "None",
+                    "es": "Ninguno",
+                    "fr": "Aucun",
+                    "it": "Nessuno",
+                    "tr": "None"
+                },
+                "image_set_id": "NULL",
+                "image_id": "NULL",
+                "image_path": "NULL",
+                "code_tag": "None",
+                "user_selectable": "0"
+            }
+        ],
+        "returned": 1
+    }
+]

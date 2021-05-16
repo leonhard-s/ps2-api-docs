@@ -1,34 +1,36 @@
-{
-    "profile_list": [
-        {
-            "profile_id": "190",
-            "profile_type_id": "1",
-            "profile_type_description": "Infiltrator",
-            "faction_id": "4",
-            "name": {
-                "de": "Spion",
-                "en": "Infiltrator",
-                "es": "Infiltrado",
-                "fr": "Infiltr\u00e9",
-                "it": "Infiltrato",
-                "tr": "Casus"
-            },
-            "description": {
-                "de": "Spion",
-                "en": "Infiltrator",
-                "es": "Infiltrado",
-                "fr": "Infiltr\u00e9",
-                "it": "Infiltrato",
-                "tr": "Casus"
-            },
-            "image_set_id": "67",
-            "image_id": "204",
-            "image_path": "/files/ps2/images/static/204.png",
-            "movement_speed": "4",
-            "backpedal_speed_modifier": "0.75",
-            "sprint_speed_modifier": "1.625",
-            "strafe_speed_modifier": "0.75"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "profile_list": [
+            {
+                "profile_id": "190",
+                "profile_type_id": "1",
+                "profile_type_description": "Infiltrator",
+                "faction_id": "4",
+                "name": {
+                    "de": "Spion",
+                    "en": "Infiltrator",
+                    "es": "Infiltrado",
+                    "fr": "Infiltr\u00e9",
+                    "it": "Infiltrato",
+                    "tr": "Casus"
+                },
+                "description": {
+                    "de": "Spion",
+                    "en": "Infiltrator",
+                    "es": "Infiltrado",
+                    "fr": "Infiltr\u00e9",
+                    "it": "Infiltrato",
+                    "tr": "Casus"
+                },
+                "image_set_id": "67",
+                "image_id": "204",
+                "image_path": "/files/ps2/images/static/204.png",
+                "movement_speed": "4",
+                "backpedal_speed_modifier": "0.75",
+                "sprint_speed_modifier": "1.625",
+                "strafe_speed_modifier": "0.75"
+            }
+        ],
+        "returned": 1
+    }
+]

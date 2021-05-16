@@ -1,11 +1,25 @@
-{
-    "armor_info_list": [
-        {
-            "armor_info_id": "20",
-            "armor_facing_id": "0",
-            "armor_percent": "0",
-            "description": "Sunderer - Front"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "armor_info_list": [
+            {
+                "armor_info_id": "20",
+                "armor_facing_id": "0",
+                "armor_percent": "0",
+                "description": "Sunderer - Front"
+            }
+        ],
+        "returned": 1
+    },
+    {
+        "armor_info_list": [
+            {
+                "armor_info_id": "20",
+                "armor_facing_id": "0",
+                "armor_percent": "0",
+                "armor_amount": "NULL",
+                "description": "Sunderer - Front"
+            }
+        ],
+        "returned": 1
+    }
+]

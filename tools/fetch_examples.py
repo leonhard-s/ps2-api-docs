@@ -64,9 +64,10 @@ async def main(game: str) -> None:
         collections = await get_collections(game, client)
         print(f'Found {len(collections)} tables in namespace {game}\n'
               'Generating requests...')
-        tasks: List[Coroutine[Any, Any, CensusData]] = []
+        tasks: List[Coroutine[Any, Any, List[CensusData]]] = []
         for table in collections:
             query = census.Query(table, game, client.service_id)
+            print(query)
             # The following elif chain handles non-standard tables that require
             # a parameter to return real data.
             if table in _REQUIRE_CHARID:
@@ -82,19 +83,29 @@ async def main(game: str) -> None:
                 query.add_term('period', 'OneLife')
             elif table == 'event':
                 query.add_term('type', 'VEHICLE_DESTROY')
-            tasks.append(client.request(query))
+            # Create a copy of the query with NULL fields included
+            query_null = census.Query.copy(query).include_null(True)
+
+            async def worker(*queries: census.Query) -> List[CensusData]:
+                return [await client.request(q) for q in queries]
+
+            tasks.append(worker(query, query_null))
+        print(tasks)
         print('Fetching examples...')
         results = await asyncio.gather(*tasks)
         print('Writing examples...')
         for result in results:
             # Retrieve name of collection
-            for field in result:
+            for field in result[0]:
                 if field.endswith('_list'):
                     table = field.rsplit('_', maxsplit=1)[0]
                     break
             else:
                 raise RuntimeError(
                     f'Unable to determine collection of payload: {result}')
+            # Discard the second example if the two are identical
+            if result[0] == result[1]:
+                result = [result[0]]
             # Write pretty-print JSON to disk
             with open(f'api/components/examples/{table}.json', 'w') as file_:
                 json.dump(result, file_, indent=4)

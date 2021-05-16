@@ -1,10 +1,12 @@
-{
-    "item_type_list": [
-        {
-            "item_type_id": "1",
-            "name": "Generic",
-            "code": "Generic"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "item_type_list": [
+            {
+                "item_type_id": "1",
+                "name": "Generic",
+                "code": "Generic"
+            }
+        ],
+        "returned": 1
+    }
+]

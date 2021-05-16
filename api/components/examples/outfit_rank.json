@@ -1,11 +1,13 @@
-{
-    "outfit_rank_list": [
-        {
-            "outfit_id": "37515580154314765",
-            "ordinal": "1",
-            "name": "Leader",
-            "description": "Outfit Leader"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "outfit_rank_list": [
+            {
+                "outfit_id": "37515580154314765",
+                "ordinal": "1",
+                "name": "Leader",
+                "description": "Outfit Leader"
+            }
+        ],
+        "returned": 1
+    }
+]

@@ -1,10 +1,12 @@
-{
-    "profile_armor_map_list": [
-        {
-            "profile_id": "1",
-            "armor_info_id": "1131",
-            "rank": "1"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "profile_armor_map_list": [
+            {
+                "profile_id": "1",
+                "armor_info_id": "1131",
+                "rank": "1"
+            }
+        ],
+        "returned": 1
+    }
+]

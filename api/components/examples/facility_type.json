@@ -1,9 +1,11 @@
-{
-    "facility_type_list": [
-        {
-            "facility_type_id": "1",
-            "description": "Default"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "facility_type_list": [
+            {
+                "facility_type_id": "1",
+                "description": "Default"
+            }
+        ],
+        "returned": 1
+    }
+]

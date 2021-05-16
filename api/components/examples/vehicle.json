@@ -1,30 +1,63 @@
-{
-    "vehicle_list": [
-        {
-            "vehicle_id": "1",
-            "name": {
-                "de": "Flash",
-                "en": "Flash",
-                "es": "Flash",
-                "fr": "Flash",
-                "it": "Flash",
-                "tr": "\u015e\u0130M\u015eEK"
-            },
-            "description": {
-                "de": "Der Flash ist ein Quad, das den Fahrer und einen Passagier schnell an die Front zu bringt. Der Passagier ist in der Lage, das meiste seiner Ausr\u00fcstung zu benutzen, w\u00e4hrend er auf dem R\u00fccksitz mitf\u00e4hrt.",
-                "en": "The Flash is an ATV capable of getting the driver and one passenger quickly to the front lines.  The passenger is able to use most of their personal equipment while riding on the back.",
-                "es": "El Flash es un ATV capaz de llevar al conductor y aun soldado m\u00e1s a las l\u00edneas del frente r\u00e1pidamente. El pasajero puede usar la mayor\u00eda de su equipo personal desde la parte trasera del veh\u00edculo en la que se sienta.",
-                "fr": "Le Flash est un Quad pouvant transporter son conducteur et un passager au front rapidement. Le passager peut utiliser la plupart de son \u00e9quipement personnel lorsqu'il est install\u00e9 \u00e0 l'arri\u00e8re.",
-                "it": "Il Flash \u00e8 un Atv che consente al conducente e al passeggero di arrivare velocemente al fronte. Il passeggero pu\u00f2 utilizzare la maggior parte dell'equipaggiamento personale mentre viaggia nel retro del veicolo.",
-                "tr": "\u015eim\u015fek, s\u00fcr\u00fcc\u00fcy\u00fc ve bir yolcuyu cephe hatt\u0131na \u00e7abuk ula\u015ft\u0131rabilen bir ATV arac\u0131d\u0131r. Yolcu arkada otururken ki\u015fisel ekipmanlar\u0131ndan \u00e7o\u011funu kullanabilir."
-            },
-            "type_id": "5",
-            "type_name": "Four Wheeled Ground Vehicle",
-            "cost_resource_id": "4",
-            "image_set_id": "98",
-            "image_id": "3975",
-            "image_path": "/files/ps2/images/static/3975.png"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "vehicle_list": [
+            {
+                "vehicle_id": "1",
+                "name": {
+                    "de": "Flash",
+                    "en": "Flash",
+                    "es": "Flash",
+                    "fr": "Flash",
+                    "it": "Flash",
+                    "tr": "\u015e\u0130M\u015eEK"
+                },
+                "description": {
+                    "de": "Der Flash ist ein Quad, das den Fahrer und einen Passagier schnell an die Front zu bringt. Der Passagier ist in der Lage, das meiste seiner Ausr\u00fcstung zu benutzen, w\u00e4hrend er auf dem R\u00fccksitz mitf\u00e4hrt.",
+                    "en": "The Flash is an ATV capable of getting the driver and one passenger quickly to the front lines.  The passenger is able to use most of their personal equipment while riding on the back.",
+                    "es": "El Flash es un ATV capaz de llevar al conductor y aun soldado m\u00e1s a las l\u00edneas del frente r\u00e1pidamente. El pasajero puede usar la mayor\u00eda de su equipo personal desde la parte trasera del veh\u00edculo en la que se sienta.",
+                    "fr": "Le Flash est un Quad pouvant transporter son conducteur et un passager au front rapidement. Le passager peut utiliser la plupart de son \u00e9quipement personnel lorsqu'il est install\u00e9 \u00e0 l'arri\u00e8re.",
+                    "it": "Il Flash \u00e8 un Atv che consente al conducente e al passeggero di arrivare velocemente al fronte. Il passeggero pu\u00f2 utilizzare la maggior parte dell'equipaggiamento personale mentre viaggia nel retro del veicolo.",
+                    "tr": "\u015eim\u015fek, s\u00fcr\u00fcc\u00fcy\u00fc ve bir yolcuyu cephe hatt\u0131na \u00e7abuk ula\u015ft\u0131rabilen bir ATV arac\u0131d\u0131r. Yolcu arkada otururken ki\u015fisel ekipmanlar\u0131ndan \u00e7o\u011funu kullanabilir."
+                },
+                "type_id": "5",
+                "type_name": "Four Wheeled Ground Vehicle",
+                "cost_resource_id": "4",
+                "image_set_id": "98",
+                "image_id": "3975",
+                "image_path": "/files/ps2/images/static/3975.png"
+            }
+        ],
+        "returned": 1
+    },
+    {
+        "vehicle_list": [
+            {
+                "vehicle_id": "1",
+                "name": {
+                    "de": "Flash",
+                    "en": "Flash",
+                    "es": "Flash",
+                    "fr": "Flash",
+                    "it": "Flash",
+                    "tr": "\u015e\u0130M\u015eEK"
+                },
+                "description": {
+                    "de": "Der Flash ist ein Quad, das den Fahrer und einen Passagier schnell an die Front zu bringt. Der Passagier ist in der Lage, das meiste seiner Ausr\u00fcstung zu benutzen, w\u00e4hrend er auf dem R\u00fccksitz mitf\u00e4hrt.",
+                    "en": "The Flash is an ATV capable of getting the driver and one passenger quickly to the front lines.  The passenger is able to use most of their personal equipment while riding on the back.",
+                    "es": "El Flash es un ATV capaz de llevar al conductor y aun soldado m\u00e1s a las l\u00edneas del frente r\u00e1pidamente. El pasajero puede usar la mayor\u00eda de su equipo personal desde la parte trasera del veh\u00edculo en la que se sienta.",
+                    "fr": "Le Flash est un Quad pouvant transporter son conducteur et un passager au front rapidement. Le passager peut utiliser la plupart de son \u00e9quipement personnel lorsqu'il est install\u00e9 \u00e0 l'arri\u00e8re.",
+                    "it": "Il Flash \u00e8 un Atv che consente al conducente e al passeggero di arrivare velocemente al fronte. Il passeggero pu\u00f2 utilizzare la maggior parte dell'equipaggiamento personale mentre viaggia nel retro del veicolo.",
+                    "tr": "\u015eim\u015fek, s\u00fcr\u00fcc\u00fcy\u00fc ve bir yolcuyu cephe hatt\u0131na \u00e7abuk ula\u015ft\u0131rabilen bir ATV arac\u0131d\u0131r. Yolcu arkada otururken ki\u015fisel ekipmanlar\u0131ndan \u00e7o\u011funu kullanabilir."
+                },
+                "type_id": "5",
+                "type_name": "Four Wheeled Ground Vehicle",
+                "cost": "NULL",
+                "cost_resource_id": "4",
+                "image_set_id": "98",
+                "image_id": "3975",
+                "image_path": "/files/ps2/images/static/3975.png"
+            }
+        ],
+        "returned": 1
+    }
+]

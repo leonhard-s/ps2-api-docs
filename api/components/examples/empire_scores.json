@@ -1,21 +1,52 @@
-{
-    "empire_scores_list": [
-        {
-            "tracker_name": "TestEvent",
-            "tracker_description": "Test Event",
-            "start_date": "2013-09-02 00:00:00.0",
-            "start_time": "1378080000",
-            "end_date": "2013-09-05 00:00:00.0",
-            "end_time": "1378339200",
-            "name": {
-                "de": "Planetside 2",
-                "en": "Planetside 2",
-                "es": "PlanetSide 2",
-                "fr": "Planetside 2",
-                "it": "PlanetSide 2",
-                "tr": "Planetside 2 "
+[
+    {
+        "empire_scores_list": [
+            {
+                "tracker_name": "TestEvent",
+                "tracker_description": "Test Event",
+                "start_date": "2013-09-02 00:00:00.0",
+                "start_time": "1378080000",
+                "end_date": "2013-09-05 00:00:00.0",
+                "end_time": "1378339200",
+                "name": {
+                    "de": "Planetside 2",
+                    "en": "Planetside 2",
+                    "es": "PlanetSide 2",
+                    "fr": "Planetside 2",
+                    "it": "PlanetSide 2",
+                    "tr": "Planetside 2 "
+                }
             }
-        }
-    ],
-    "returned": 1
-}
+        ],
+        "returned": 1
+    },
+    {
+        "empire_scores_list": [
+            {
+                "tracker_name": "TestEvent",
+                "tracker_description": "Test Event",
+                "start_date": "2013-09-02 00:00:00.0",
+                "start_time": "1378080000",
+                "end_date": "2013-09-05 00:00:00.0",
+                "end_time": "1378339200",
+                "name": {
+                    "de": "Planetside 2",
+                    "en": "Planetside 2",
+                    "es": "PlanetSide 2",
+                    "fr": "Planetside 2",
+                    "it": "PlanetSide 2",
+                    "tr": "Planetside 2 "
+                },
+                "description": {
+                    "de": "NULL",
+                    "en": "NULL",
+                    "es": "NULL",
+                    "fr": "NULL",
+                    "it": "NULL",
+                    "tr": "NULL"
+                }
+            }
+        ],
+        "returned": 1
+    }
+]

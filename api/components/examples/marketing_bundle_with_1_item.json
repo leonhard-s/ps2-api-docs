@@ -1,12 +1,27 @@
-{
-    "marketing_bundle_with_1_item_list": [
-        {
-            "marketing_bundle_id": "40",
-            "item_id": "7800",
-            "item_quantity": "1",
-            "station_cash_price": "700",
-            "release_time": "1334016000"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "marketing_bundle_with_1_item_list": [
+            {
+                "marketing_bundle_id": "40",
+                "item_id": "7800",
+                "item_quantity": "1",
+                "station_cash_price": "700",
+                "release_time": "1334016000"
+            }
+        ],
+        "returned": 1
+    },
+    {
+        "marketing_bundle_with_1_item_list": [
+            {
+                "marketing_bundle_id": "40",
+                "item_id": "7800",
+                "item_quantity": "1",
+                "station_cash_price": "700",
+                "cert_price": "NULL",
+                "release_time": "1334016000"
+            }
+        ],
+        "returned": 1
+    }
+]

@@ -1,9 +1,11 @@
-{
-    "player_state_list": [
-        {
-            "player_state_id": "0",
-            "description": "Standing"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "player_state_list": [
+            {
+                "player_state_id": "0",
+                "description": "Standing"
+            }
+        ],
+        "returned": 1
+    }
+]

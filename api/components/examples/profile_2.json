@@ -1,9 +1,11 @@
-{
-    "profile_2_list": [
-        {
-            "profile_id": "1",
-            "description": "Basic Combatant"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "profile_2_list": [
+            {
+                "profile_id": "1",
+                "description": "Basic Combatant"
+            }
+        ],
+        "returned": 1
+    }
+]

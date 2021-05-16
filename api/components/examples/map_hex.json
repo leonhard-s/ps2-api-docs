@@ -1,13 +1,15 @@
-{
-    "map_hex_list": [
-        {
-            "zone_id": "2",
-            "map_region_id": "2101",
-            "x": "-14",
-            "y": "-4",
-            "hex_type": "0",
-            "type_name": "Unrestricted access"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "map_hex_list": [
+            {
+                "zone_id": "2",
+                "map_region_id": "2101",
+                "x": "-14",
+                "y": "-4",
+                "hex_type": "0",
+                "type_name": "Unrestricted access"
+            }
+        ],
+        "returned": 1
+    }
+]

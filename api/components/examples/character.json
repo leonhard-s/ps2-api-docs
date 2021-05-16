@@ -1,43 +1,45 @@
-{
-    "character_list": [
-        {
-            "character_id": "5428072203494645969",
-            "name": {
-                "first": "Auroram",
-                "first_lower": "auroram"
-            },
-            "faction_id": "1",
-            "head_id": "5",
-            "title_id": "410",
-            "times": {
-                "creation": "1368291970",
-                "creation_date": "2013-05-11 17:06:10.0",
-                "last_save": "1621112306",
-                "last_save_date": "2021-05-15 20:58:26.0",
-                "last_login": "1621098530",
-                "last_login_date": "2021-05-15 17:08:50.0",
-                "login_count": "4274",
-                "minutes_played": "206156"
-            },
-            "certs": {
-                "earned_points": "440235",
-                "gifted_points": "17782",
-                "spent_points": "457576",
-                "available_points": "441",
-                "percent_to_next": "0.86441666672"
-            },
-            "battle_rank": {
-                "percent_to_next": "0",
-                "value": "100"
-            },
-            "profile_id": "20",
-            "daily_ribbon": {
-                "count": "0",
-                "time": "1621036800",
-                "date": "2021-05-15 00:00:00.0"
-            },
-            "prestige_level": "1"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "character_list": [
+            {
+                "character_id": "5428072203494645969",
+                "name": {
+                    "first": "Auroram",
+                    "first_lower": "auroram"
+                },
+                "faction_id": "1",
+                "head_id": "5",
+                "title_id": "410",
+                "times": {
+                    "creation": "1368291970",
+                    "creation_date": "2013-05-11 17:06:10.0",
+                    "last_save": "1621112306",
+                    "last_save_date": "2021-05-15 20:58:26.0",
+                    "last_login": "1621098530",
+                    "last_login_date": "2021-05-15 17:08:50.0",
+                    "login_count": "4274",
+                    "minutes_played": "206156"
+                },
+                "certs": {
+                    "earned_points": "440235",
+                    "gifted_points": "17782",
+                    "spent_points": "457576",
+                    "available_points": "441",
+                    "percent_to_next": "0.86441666672"
+                },
+                "battle_rank": {
+                    "percent_to_next": "0",
+                    "value": "100"
+                },
+                "profile_id": "20",
+                "daily_ribbon": {
+                    "count": "0",
+                    "time": "1621036800",
+                    "date": "2021-05-15 00:00:00.0"
+                },
+                "prestige_level": "1"
+            }
+        ],
+        "returned": 1
+    }
+]

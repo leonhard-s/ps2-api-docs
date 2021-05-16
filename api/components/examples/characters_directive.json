@@ -1,12 +1,14 @@
-{
-    "characters_directive_list": [
-        {
-            "character_id": "5428072203494645969",
-            "directive_tree_id": "28",
-            "directive_id": "112",
-            "completion_time": "0",
-            "completion_time_date": "1970-01-01 00:00:00.0"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "characters_directive_list": [
+            {
+                "character_id": "5428072203494645969",
+                "directive_tree_id": "28",
+                "directive_id": "112",
+                "completion_time": "0",
+                "completion_time_date": "1970-01-01 00:00:00.0"
+            }
+        ],
+        "returned": 1
+    }
+]

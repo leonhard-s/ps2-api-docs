@@ -1,13 +1,33 @@
-{
-    "objective_type_list": [
-        {
-            "objective_type_id": "3",
-            "description": "Kill NPC",
-            "param1": "Count",
-            "param2": "NPC definition ID (optional)",
-            "param3": "NPC classification ID (optional)",
-            "param4": "Ignore Killer"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "objective_type_list": [
+            {
+                "objective_type_id": "3",
+                "description": "Kill NPC",
+                "param1": "Count",
+                "param2": "NPC definition ID (optional)",
+                "param3": "NPC classification ID (optional)",
+                "param4": "Ignore Killer"
+            }
+        ],
+        "returned": 1
+    },
+    {
+        "objective_type_list": [
+            {
+                "objective_type_id": "3",
+                "description": "Kill NPC",
+                "param1": "Count",
+                "param2": "NPC definition ID (optional)",
+                "param3": "NPC classification ID (optional)",
+                "param4": "Ignore Killer",
+                "param5": "NULL",
+                "param6": "NULL",
+                "param7": "NULL",
+                "param8": "NULL",
+                "param9": "NULL"
+            }
+        ],
+        "returned": 1
+    }
+]

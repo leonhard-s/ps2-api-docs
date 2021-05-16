@@ -1,8 +1,23 @@
-{
-    "fire_group_list": [
-        {
-            "fire_group_id": "1"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "fire_group_list": [
+            {
+                "fire_group_id": "1"
+            }
+        ],
+        "returned": 1
+    },
+    {
+        "fire_group_list": [
+            {
+                "fire_group_id": "1",
+                "chamber_duration_ms": "NULL",
+                "transition_duration_ms": "NULL",
+                "spool_up_ms": "NULL",
+                "spool_up_initial_refire_ms": "NULL",
+                "can_chamber_ironsights": "NULL"
+            }
+        ],
+        "returned": 1
+    }
+]

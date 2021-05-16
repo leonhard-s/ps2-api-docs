@@ -1,11 +1,13 @@
-{
-    "characters_skill_list": [
-        {
-            "character_id": "5428072203494645969",
-            "skill_id": "113",
-            "last_save": "1541069682",
-            "last_save_date": "2018-11-01 10:54:42.048"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "characters_skill_list": [
+            {
+                "character_id": "5428072203494645969",
+                "skill_id": "113",
+                "last_save": "1541069682",
+                "last_save_date": "2018-11-01 10:54:42.048"
+            }
+        ],
+        "returned": 1
+    }
+]

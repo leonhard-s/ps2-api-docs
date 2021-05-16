@@ -1,9 +1,11 @@
-{
-    "item_profile_list": [
-        {
-            "item_id": "1",
-            "profile_id": "2"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "item_profile_list": [
+            {
+                "item_id": "1",
+                "profile_id": "2"
+            }
+        ],
+        "returned": 1
+    }
+]

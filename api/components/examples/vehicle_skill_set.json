@@ -1,11 +1,13 @@
-{
-    "vehicle_skill_set_list": [
-        {
-            "vehicle_id": "1",
-            "skill_set_id": "37",
-            "faction_id": "1",
-            "display_index": "4"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "vehicle_skill_set_list": [
+            {
+                "vehicle_id": "1",
+                "skill_set_id": "37",
+                "faction_id": "1",
+                "display_index": "4"
+            }
+        ],
+        "returned": 1
+    }
+]

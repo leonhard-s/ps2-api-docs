@@ -1,18 +1,20 @@
-{
-    "region_list": [
-        {
-            "region_id": "2101",
-            "zone_id": "2",
-            "initial_faction_id": "2",
-            "name": {
-                "de": "Hvar",
-                "en": "Hvar",
-                "es": "Hvar",
-                "fr": "Hvar",
-                "it": "Hvar",
-                "tr": "Hvar"
+[
+    {
+        "region_list": [
+            {
+                "region_id": "2101",
+                "zone_id": "2",
+                "initial_faction_id": "2",
+                "name": {
+                    "de": "Hvar",
+                    "en": "Hvar",
+                    "es": "Hvar",
+                    "fr": "Hvar",
+                    "it": "Hvar",
+                    "tr": "Hvar"
+                }
             }
-        }
-    ],
-    "returned": 1
-}
+        ],
+        "returned": 1
+    }
+]

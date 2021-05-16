@@ -1,19 +1,49 @@
-{
-    "directive_tree_list": [
-        {
-            "directive_tree_id": "4",
-            "directive_tree_category_id": "7",
-            "name": {
-                "de": "Karabiner",
-                "en": "Carbines",
-                "es": "Carabinas",
-                "fr": "Carabines",
-                "it": "Carabine"
-            },
-            "image_set_id": "14164",
-            "image_id": "79587",
-            "image_path": "/files/ps2/images/static/79587.png"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "directive_tree_list": [
+            {
+                "directive_tree_id": "4",
+                "directive_tree_category_id": "7",
+                "name": {
+                    "de": "Karabiner",
+                    "en": "Carbines",
+                    "es": "Carabinas",
+                    "fr": "Carabines",
+                    "it": "Carabine"
+                },
+                "image_set_id": "14164",
+                "image_id": "79587",
+                "image_path": "/files/ps2/images/static/79587.png"
+            }
+        ],
+        "returned": 1
+    },
+    {
+        "directive_tree_list": [
+            {
+                "directive_tree_id": "4",
+                "directive_tree_category_id": "7",
+                "name": {
+                    "de": "Karabiner",
+                    "en": "Carbines",
+                    "es": "Carabinas",
+                    "fr": "Carabines",
+                    "it": "Carabine",
+                    "tr": "NULL"
+                },
+                "description": {
+                    "de": "NULL",
+                    "en": "NULL",
+                    "es": "NULL",
+                    "fr": "NULL",
+                    "it": "NULL",
+                    "tr": "NULL"
+                },
+                "image_set_id": "14164",
+                "image_id": "79587",
+                "image_path": "/files/ps2/images/static/79587.png"
+            }
+        ],
+        "returned": 1
+    }
+]

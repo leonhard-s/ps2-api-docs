@@ -1,9 +1,11 @@
-{
-    "reward_group_to_reward_list": [
-        {
-            "reward_group_id": "843",
-            "reward_id": "4911"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "reward_group_to_reward_list": [
+            {
+                "reward_group_id": "843",
+                "reward_id": "4911"
+            }
+        ],
+        "returned": 1
+    }
+]

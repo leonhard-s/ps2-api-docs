@@ -1,9 +1,11 @@
-{
-    "item_attachment_list": [
-        {
-            "item_id": "2",
-            "attachment_item_id": "63"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "item_attachment_list": [
+            {
+                "item_id": "2",
+                "attachment_item_id": "63"
+            }
+        ],
+        "returned": 1
+    }
+]

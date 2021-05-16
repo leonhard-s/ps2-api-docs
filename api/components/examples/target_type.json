@@ -1,9 +1,11 @@
-{
-    "target_type_list": [
-        {
-            "target_type_id": "1",
-            "description": "Self"
-        }
-    ],
-    "returned": 1
-}
+[
+    {
+        "target_type_list": [
+            {
+                "target_type_id": "1",
+                "description": "Self"
+            }
+        ],
+        "returned": 1
+    }
+]
