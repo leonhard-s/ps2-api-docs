@@ -1,0 +1,37 @@
+datatype:
+  description: A collection in the API. Collections can be appended to the root API endpoint to query the associated API table.
+  properties:
+    count:
+      type:
+        oneOf:
+          - type: integer
+          - type: string
+      required: true
+      summary: Lorem ipsum example
+      description: |
+        The number of entries in this collection.
+
+        This field will report either an integer specifying the number of rows in the associated table, or it can be set to the strings `"?"` or `"dynamic"` to show that the underlying table has no set size. This is the case for dynamic tables and views, such as the `characters_item` mapping.
+    hidden:
+      type:
+        oneOf:
+          - type: boolean
+          - type: string
+      required: true
+      description: |
+        Whether the table is hidden from the API. Always `false` for public API tables.
+
+        Note that this value might be the string `"false"`, or a literal JSON `false` in the response.
+    name:
+      type: string
+      required: true
+      description: Unique name of the collection.
+    resolve_list:
+      type: array
+      items:
+        type: string
+      required: true
+      description: |
+        A list of resolvable names for this collection.
+
+        The given names can be passed to the `c:resolve` query command to join additional fields to the response object.
