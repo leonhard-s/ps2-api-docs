@@ -1,6 +1,6 @@
 get:
-  summary: Summary of character
-  description: Description for `character`
+  summary: Summary of reward_group_to_reward
+  description: Description for `reward_group_to_reward`
   responses:
     "200":
       description: OK
@@ -9,10 +9,10 @@ get:
           schema:
             type: object
             properties:
-              character_list:
+              reward_group_to_reward_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/character.yml#/character"
+                  $ref: "../components/schemas/reward_group_to_reward.yml#/reward_group_to_reward"
                 required: true
               results:
                 type: integer
@@ -21,4 +21,4 @@ get:
                 description: The number of results returned.
           example:
             value:
-              $ref: "../components/examples/character.json"
+              $ref: "../components/examples/reward_group_to_reward.json"

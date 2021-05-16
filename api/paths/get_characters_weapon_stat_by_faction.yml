@@ -1,6 +1,6 @@
 get:
-  summary: Summary of character
-  description: Description for `character`
+  summary: Summary of characters_weapon_stat_by_faction
+  description: Description for `characters_weapon_stat_by_faction`
   responses:
     "200":
       description: OK
@@ -9,10 +9,10 @@ get:
           schema:
             type: object
             properties:
-              character_list:
+              characters_weapon_stat_by_faction_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/character.yml#/character"
+                  $ref: "../components/schemas/characters_weapon_stat_by_faction.yml#/characters_weapon_stat_by_faction"
                 required: true
               results:
                 type: integer
@@ -21,4 +21,4 @@ get:
                 description: The number of results returned.
           example:
             value:
-              $ref: "../components/examples/character.json"
+              $ref: "../components/examples/characters_weapon_stat_by_faction.json"

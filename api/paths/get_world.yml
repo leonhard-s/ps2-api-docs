@@ -1,6 +1,6 @@
 get:
-  summary: Summary of character
-  description: Description for `character`
+  summary: Summary of world
+  description: Description for `world`
   responses:
     "200":
       description: OK
@@ -9,10 +9,10 @@ get:
           schema:
             type: object
             properties:
-              character_list:
+              world_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/character.yml#/character"
+                  $ref: "../components/schemas/world.yml#/world"
                 required: true
               results:
                 type: integer
@@ -21,4 +21,4 @@ get:
                 description: The number of results returned.
           example:
             value:
-              $ref: "../components/examples/character.json"
+              $ref: "../components/examples/world.json"

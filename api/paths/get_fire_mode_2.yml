@@ -1,6 +1,6 @@
 get:
-  summary: Summary of character
-  description: Description for `character`
+  summary: Summary of fire_mode_2
+  description: Description for `fire_mode_2`
   responses:
     "200":
       description: OK
@@ -9,10 +9,10 @@ get:
           schema:
             type: object
             properties:
-              character_list:
+              fire_mode_2_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/character.yml#/character"
+                  $ref: "../components/schemas/fire_mode_2.yml#/fire_mode_2"
                 required: true
               results:
                 type: integer
@@ -21,4 +21,4 @@ get:
                 description: The number of results returned.
           example:
             value:
-              $ref: "../components/examples/character.json"
+              $ref: "../components/examples/fire_mode_2.json"
