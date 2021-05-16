@@ -24,5 +24,225 @@ servers:
 paths:
   /get/ps2:v2:
     $ref: paths/get_datatype.yml
+  /get/ps2:v2/ability:
+    $ref: paths/get_ability.yml
+  /get/ps2:v2/ability_type:
+    $ref: paths/get_ability_type.yml
+  /get/ps2:v2/achievement:
+    $ref: paths/get_achievement.yml
+  /get/ps2:v2/armor_facing:
+    $ref: paths/get_armor_facing.yml
+  /get/ps2:v2/armor_info:
+    $ref: paths/get_armor_info.yml
   /get/ps2:v2/character:
     $ref: paths/get_character.yml
+  /get/ps2:v2/character_name:
+    $ref: paths/get_character_name.yml
+  /get/ps2:v2/characters_achievement:
+    $ref: paths/get_characters_achievement.yml
+  /get/ps2:v2/characters_currency:
+    $ref: paths/get_characters_currency.yml
+  /get/ps2:v2/characters_directive:
+    $ref: paths/get_characters_directive.yml
+  /get/ps2:v2/characters_directive_objective:
+    $ref: paths/get_characters_directive_objective.yml
+  /get/ps2:v2/characters_directive_tier:
+    $ref: paths/get_characters_directive_tier.yml
+  /get/ps2:v2/characters_directive_tree:
+    $ref: paths/get_characters_directive_tree.yml
+  /get/ps2:v2/characters_event:
+    $ref: paths/get_characters_event.yml
+  /get/ps2:v2/characters_event_grouped:
+    $ref: paths/get_characters_event_grouped.yml
+  /get/ps2:v2/characters_friend:
+    $ref: paths/get_characters_friend.yml
+  /get/ps2:v2/characters_item:
+    $ref: paths/get_characters_item.yml
+  /get/ps2:v2/characters_leaderboard:
+    $ref: paths/get_characters_leaderboard.yml
+  /get/ps2:v2/characters_online_status:
+    $ref: paths/get_characters_online_status.yml
+  /get/ps2:v2/characters_skill:
+    $ref: paths/get_characters_skill.yml
+  /get/ps2:v2/characters_stat:
+    $ref: paths/get_characters_stat.yml
+  /get/ps2:v2/characters_stat_by_faction:
+    $ref: paths/get_characters_stat_by_faction.yml
+  /get/ps2:v2/characters_stat_history:
+    $ref: paths/get_characters_stat_history.yml
+  /get/ps2:v2/characters_weapon_stat:
+    $ref: paths/get_characters_weapon_stat.yml
+  /get/ps2:v2/characters_weapon_stat_by_faction:
+    $ref: paths/get_characters_weapon_stat_by_faction.yml
+  /get/ps2:v2/characters_world:
+    $ref: paths/get_characters_world.yml
+  /get/ps2:v2/currency:
+    $ref: paths/get_currency.yml
+  /get/ps2:v2/directive:
+    $ref: paths/get_directive.yml
+  /get/ps2:v2/directive_tier:
+    $ref: paths/get_directive_tier.yml
+  /get/ps2:v2/directive_tree:
+    $ref: paths/get_directive_tree.yml
+  /get/ps2:v2/directive_tree_category:
+    $ref: paths/get_directive_tree_category.yml
+  /get/ps2:v2/effect:
+    $ref: paths/get_effect.yml
+  /get/ps2:v2/effect_type:
+    $ref: paths/get_effect_type.yml
+  /get/ps2:v2/empire_scores:
+    $ref: paths/get_empire_scores.yml
+  /get/ps2:v2/event:
+    $ref: paths/get_event.yml
+  /get/ps2:v2/experience:
+    $ref: paths/get_experience.yml
+  /get/ps2:v2/experience_rank:
+    $ref: paths/get_experience_rank.yml
+  /get/ps2:v2/facility_link:
+    $ref: paths/get_facility_link.yml
+  /get/ps2:v2/facility_type:
+    $ref: paths/get_facility_type.yml
+  /get/ps2:v2/faction:
+    $ref: paths/get_faction.yml
+  /get/ps2:v2/fire_group:
+    $ref: paths/get_fire_group.yml
+  /get/ps2:v2/fire_group_to_fire_mode:
+    $ref: paths/get_fire_group_to_fire_mode.yml
+  /get/ps2:v2/fire_mode:
+    $ref: paths/get_fire_mode.yml
+  /get/ps2:v2/fire_mode_2:
+    $ref: paths/get_fire_mode_2.yml
+  /get/ps2:v2/fire_mode_to_projectile:
+    $ref: paths/get_fire_mode_to_projectile.yml
+  /get/ps2:v2/fire_mode_type:
+    $ref: paths/get_fire_mode_type.yml
+  /get/ps2:v2/image:
+    $ref: paths/get_image.yml
+  /get/ps2:v2/image_set:
+    $ref: paths/get_image_set.yml
+  /get/ps2:v2/image_set_default:
+    $ref: paths/get_image_set_default.yml
+  /get/ps2:v2/item:
+    $ref: paths/get_item.yml
+  /get/ps2:v2/item_attachment:
+    $ref: paths/get_item_attachment.yml
+  /get/ps2:v2/item_category:
+    $ref: paths/get_item_category.yml
+  /get/ps2:v2/item_profile:
+    $ref: paths/get_item_profile.yml
+  /get/ps2:v2/item_to_weapon:
+    $ref: paths/get_item_to_weapon.yml
+  /get/ps2:v2/item_type:
+    $ref: paths/get_item_type.yml
+  /get/ps2:v2/leaderboard:
+    $ref: paths/get_leaderboard.yml
+  /get/ps2:v2/loadout:
+    $ref: paths/get_loadout.yml
+  /get/ps2:v2/map:
+    $ref: paths/get_map.yml
+  /get/ps2:v2/map_hex:
+    $ref: paths/get_map_hex.yml
+  /get/ps2:v2/map_region:
+    $ref: paths/get_map_region.yml
+  /get/ps2:v2/marketing_bundle:
+    $ref: paths/get_marketing_bundle.yml
+  /get/ps2:v2/marketing_bundle_item:
+    $ref: paths/get_marketing_bundle_item.yml
+  /get/ps2:v2/marketing_bundle_with_1_item:
+    $ref: paths/get_marketing_bundle_with_1_item.yml
+  /get/ps2:v2/metagame_event:
+    $ref: paths/get_metagame_event.yml
+  /get/ps2:v2/metagame_event_state:
+    $ref: paths/get_metagame_event_state.yml
+  /get/ps2:v2/objective:
+    $ref: paths/get_objective.yml
+  /get/ps2:v2/objective_set_to_objective:
+    $ref: paths/get_objective_set_to_objective.yml
+  /get/ps2:v2/objective_type:
+    $ref: paths/get_objective_type.yml
+  /get/ps2:v2/outfit:
+    $ref: paths/get_outfit.yml
+  /get/ps2:v2/outfit_member:
+    $ref: paths/get_outfit_member.yml
+  /get/ps2:v2/outfit_member_extended:
+    $ref: paths/get_outfit_member_extended.yml
+  /get/ps2:v2/outfit_rank:
+    $ref: paths/get_outfit_rank.yml
+  /get/ps2:v2/player_state:
+    $ref: paths/get_player_state.yml
+  /get/ps2:v2/player_state_group:
+    $ref: paths/get_player_state_group.yml
+  /get/ps2:v2/player_state_group_2:
+    $ref: paths/get_player_state_group_2.yml
+  /get/ps2:v2/profile:
+    $ref: paths/get_profile.yml
+  /get/ps2:v2/profile_2:
+    $ref: paths/get_profile_2.yml
+  /get/ps2:v2/profile_armor_map:
+    $ref: paths/get_profile_armor_map.yml
+  /get/ps2:v2/profile_resist_map:
+    $ref: paths/get_profile_resist_map.yml
+  /get/ps2:v2/projectile:
+    $ref: paths/get_projectile.yml
+  /get/ps2:v2/projectile_flight_type:
+    $ref: paths/get_projectile_flight_type.yml
+  /get/ps2:v2/region:
+    $ref: paths/get_region.yml
+  /get/ps2:v2/resist_info:
+    $ref: paths/get_resist_info.yml
+  /get/ps2:v2/resist_type:
+    $ref: paths/get_resist_type.yml
+  /get/ps2:v2/resource_type:
+    $ref: paths/get_resource_type.yml
+  /get/ps2:v2/reward:
+    $ref: paths/get_reward.yml
+  /get/ps2:v2/reward_group_to_reward:
+    $ref: paths/get_reward_group_to_reward.yml
+  /get/ps2:v2/reward_set_to_reward_group:
+    $ref: paths/get_reward_set_to_reward_group.yml
+  /get/ps2:v2/reward_type:
+    $ref: paths/get_reward_type.yml
+  /get/ps2:v2/single_character_by_id:
+    $ref: paths/get_single_character_by_id.yml
+  /get/ps2:v2/skill:
+    $ref: paths/get_skill.yml
+  /get/ps2:v2/skill_category:
+    $ref: paths/get_skill_category.yml
+  /get/ps2:v2/skill_line:
+    $ref: paths/get_skill_line.yml
+  /get/ps2:v2/skill_set:
+    $ref: paths/get_skill_set.yml
+  /get/ps2:v2/target_type:
+    $ref: paths/get_target_type.yml
+  /get/ps2:v2/title:
+    $ref: paths/get_title.yml
+  /get/ps2:v2/vehicle:
+    $ref: paths/get_vehicle.yml
+  /get/ps2:v2/vehicle_attachment:
+    $ref: paths/get_vehicle_attachment.yml
+  /get/ps2:v2/vehicle_faction:
+    $ref: paths/get_vehicle_faction.yml
+  /get/ps2:v2/vehicle_skill_set:
+    $ref: paths/get_vehicle_skill_set.yml
+  /get/ps2:v2/weapon:
+    $ref: paths/get_weapon.yml
+  /get/ps2:v2/weapon_ammo_slot:
+    $ref: paths/get_weapon_ammo_slot.yml
+  /get/ps2:v2/weapon_datasheet:
+    $ref: paths/get_weapon_datasheet.yml
+  /get/ps2:v2/weapon_to_attachment:
+    $ref: paths/get_weapon_to_attachment.yml
+  /get/ps2:v2/weapon_to_fire_group:
+    $ref: paths/get_weapon_to_fire_group.yml
+  /get/ps2:v2/world:
+    $ref: paths/get_world.yml
+  /get/ps2:v2/world_event:
+    $ref: paths/get_world_event.yml
+  /get/ps2:v2/world_stat_history:
+    $ref: paths/get_world_stat_history.yml
+  /get/ps2:v2/zone:
+    $ref: paths/get_zone.yml
+  /get/ps2:v2/zone_effect:
+    $ref: paths/get_zone_effect.yml
+  /get/ps2:v2/zone_effect_type:
+    $ref: paths/get_zone_effect_type.yml
