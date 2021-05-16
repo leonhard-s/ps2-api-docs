@@ -19,6 +19,15 @@ _PATTERN = re.compile('(\\${{ ?(\\w+?) ?}})')
 
 def process_placeholders(template: List[str],
                          expressions: Dict[str, Any]) -> io.StringIO:
+    """Replace YAML placeholders with the given expressions.
+
+    This uses the same expression syntax as GitHub actions. The
+    following substrings will be repaced by the corresponding entry in
+    the `expressions` mapping:
+
+        ${{expression}}
+        ${{ expression }}
+    """
     buffer = io.StringIO()
     for line in template:
         expression: Tuple[str, str]

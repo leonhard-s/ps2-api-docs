@@ -23,7 +23,7 @@ async def main(game: str) -> None:
     # Load templates
     with open('templates/path.yml') as template_file:
         template = template_file.readlines()
-    # Generate schemata
+    # Generate path items
     for variables in expressions:
         datatype = variables['datatype']
         # "get" query verb
