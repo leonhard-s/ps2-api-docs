@@ -1,0 +1,13 @@
+profile_2:
+  description: Description for `profile_2`.
+  properties:
+    profile_id:
+      type: integer
+      required: true
+      x-summary: Summary for profile_id
+      description: Description for `profile_id`
+    description:
+      type: string
+      required: true
+      x-summary: Summary for description
+      description: Description for `description`

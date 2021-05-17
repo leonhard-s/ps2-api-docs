@@ -1,0 +1,18 @@
+characters_friend:
+  description: Description for `characters_friend`.
+  properties:
+    character_id:
+      type: unknown
+      required: true
+      x-summary: Summary for character_id
+      description: Description for `character_id`
+    name:
+      type: unknown
+      required: true
+      x-summary: Summary for name
+      description: Description for `name`
+    friend_list:
+      type: unknown
+      required: true
+      x-summary: Summary for friend_list
+      description: Description for `friend_list`

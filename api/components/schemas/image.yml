@@ -1,0 +1,18 @@
+image:
+  description: Description for `image`.
+  properties:
+    image_id:
+      type: integer
+      required: true
+      x-summary: Summary for image_id
+      description: Description for `image_id`
+    description:
+      type: string
+      required: false
+      x-summary: Summary for description
+      description: Description for `description`
+    path:
+      type: string
+      required: true
+      x-summary: Summary for path
+      description: Description for `path`

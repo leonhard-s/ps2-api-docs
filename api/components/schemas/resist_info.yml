@@ -1,0 +1,33 @@
+resist_info:
+  description: Description for `resist_info`.
+  properties:
+    resist_info_id:
+      type: integer
+      required: true
+      x-summary: Summary for resist_info_id
+      description: Description for `resist_info_id`
+    resist_type_id:
+      type: integer
+      required: true
+      x-summary: Summary for resist_type_id
+      description: Description for `resist_type_id`
+    resist_percent:
+      type: number
+      required: false
+      x-summary: Summary for resist_percent
+      description: Description for `resist_percent`
+    resist_amount:
+      type: integer
+      required: false
+      x-summary: Summary for resist_amount
+      description: Description for `resist_amount`
+    multiplier_when_headshot:
+      type: number
+      required: false
+      x-summary: Summary for multiplier_when_headshot
+      description: Description for `multiplier_when_headshot`
+    description:
+      type: string
+      required: true
+      x-summary: Summary for description
+      description: Description for `description`

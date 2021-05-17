@@ -1,0 +1,73 @@
+experience_rank:
+  description: Description for `experience_rank`.
+  properties:
+    rank:
+      type: integer
+      required: true
+      x-summary: Summary for rank
+      description: Description for `rank`
+    xp_max:
+      type: number
+      required: true
+      x-summary: Summary for xp_max
+      description: Description for `xp_max`
+    vs.title:
+      type: object
+      required: true
+      x-summary: Summary for vs.title
+      description: Description for `vs.title`
+    vs.image_set_id:
+      type: object
+      required: false
+      x-summary: Summary for vs.image_set_id
+      description: Description for `vs.image_set_id`
+    vs.image_id:
+      type: object
+      required: false
+      x-summary: Summary for vs.image_id
+      description: Description for `vs.image_id`
+    vs_image_path:
+      type: string
+      required: false
+      x-summary: Summary for vs_image_path
+      description: Description for `vs_image_path`
+    nc.title:
+      type: object
+      required: true
+      x-summary: Summary for nc.title
+      description: Description for `nc.title`
+    nc.image_set_id:
+      type: object
+      required: false
+      x-summary: Summary for nc.image_set_id
+      description: Description for `nc.image_set_id`
+    nc.image_id:
+      type: object
+      required: false
+      x-summary: Summary for nc.image_id
+      description: Description for `nc.image_id`
+    nc_image_path:
+      type: string
+      required: false
+      x-summary: Summary for nc_image_path
+      description: Description for `nc_image_path`
+    tr.title:
+      type: object
+      required: true
+      x-summary: Summary for tr.title
+      description: Description for `tr.title`
+    tr.image_set_id:
+      type: object
+      required: false
+      x-summary: Summary for tr.image_set_id
+      description: Description for `tr.image_set_id`
+    tr.image_id:
+      type: object
+      required: false
+      x-summary: Summary for tr.image_id
+      description: Description for `tr.image_id`
+    tr_image_path:
+      type: string
+      required: false
+      x-summary: Summary for tr_image_path
+      description: Description for `tr_image_path`

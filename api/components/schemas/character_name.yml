@@ -1,0 +1,18 @@
+character_name:
+  description: Description for `character_name`.
+  properties:
+    character_id:
+      type: integer
+      required: true
+      x-summary: Summary for character_id
+      description: Description for `character_id`
+    name.first:
+      type: object
+      required: true
+      x-summary: Summary for name.first
+      description: Description for `name.first`
+    name.first_lower:
+      type: object
+      required: true
+      x-summary: Summary for name.first_lower
+      description: Description for `name.first_lower`

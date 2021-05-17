@@ -1,0 +1,13 @@
+fire_mode_to_projectile:
+  description: Description for `fire_mode_to_projectile`.
+  properties:
+    fire_mode_id:
+      type: integer
+      required: true
+      x-summary: Summary for fire_mode_id
+      description: Description for `fire_mode_id`
+    projectile_id:
+      type: integer
+      required: true
+      x-summary: Summary for projectile_id
+      description: Description for `projectile_id`

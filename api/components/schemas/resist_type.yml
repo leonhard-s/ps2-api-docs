@@ -1,0 +1,13 @@
+resist_type:
+  description: Description for `resist_type`.
+  properties:
+    resist_type_id:
+      type: integer
+      required: true
+      x-summary: Summary for resist_type_id
+      description: Description for `resist_type_id`
+    description:
+      type: string
+      required: true
+      x-summary: Summary for description
+      description: Description for `description`

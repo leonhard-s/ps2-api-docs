@@ -1,0 +1,18 @@
+characters_event_grouped:
+  description: Description for `characters_event_grouped`.
+  properties:
+    table_type:
+      type: string
+      required: true
+      x-summary: Summary for table_type
+      description: Description for `table_type`
+    count:
+      type: integer
+      required: true
+      x-summary: Summary for count
+      description: Description for `count`
+    character_id:
+      type: integer
+      required: true
+      x-summary: Summary for character_id
+      description: Description for `character_id`

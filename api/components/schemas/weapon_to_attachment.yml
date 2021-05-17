@@ -1,0 +1,18 @@
+weapon_to_attachment:
+  description: Description for `weapon_to_attachment`.
+  properties:
+    weapon_group_id:
+      type: integer
+      required: true
+      x-summary: Summary for weapon_group_id
+      description: Description for `weapon_group_id`
+    attachment_id:
+      type: integer
+      required: true
+      x-summary: Summary for attachment_id
+      description: Description for `attachment_id`
+    item_id:
+      type: integer
+      required: true
+      x-summary: Summary for item_id
+      description: Description for `item_id`

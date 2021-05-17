@@ -1,0 +1,43 @@
+world:
+  description: Description for `world`.
+  properties:
+    world_id:
+      type: integer
+      required: true
+      x-summary: Summary for world_id
+      description: Description for `world_id`
+    state:
+      type: string
+      required: true
+      x-summary: Summary for state
+      description: Description for `state`
+    name.en:
+      type: object
+      required: true
+      x-summary: Summary for name.en
+      description: Description for `name.en`
+    name.de:
+      type: object
+      required: true
+      x-summary: Summary for name.de
+      description: Description for `name.de`
+    name.es:
+      type: object
+      required: true
+      x-summary: Summary for name.es
+      description: Description for `name.es`
+    name.fr:
+      type: object
+      required: true
+      x-summary: Summary for name.fr
+      description: Description for `name.fr`
+    name.it:
+      type: object
+      required: true
+      x-summary: Summary for name.it
+      description: Description for `name.it`
+    name.tr:
+      type: object
+      required: true
+      x-summary: Summary for name.tr
+      description: Description for `name.tr`

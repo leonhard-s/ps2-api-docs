@@ -1,0 +1,33 @@
+map_hex:
+  description: Description for `map_hex`.
+  properties:
+    zone_id:
+      type: integer
+      required: true
+      x-summary: Summary for zone_id
+      description: Description for `zone_id`
+    map_region_id:
+      type: integer
+      required: true
+      x-summary: Summary for map_region_id
+      description: Description for `map_region_id`
+    x:
+      type: integer
+      required: true
+      x-summary: Summary for x
+      description: Description for `x`
+    y:
+      type: integer
+      required: true
+      x-summary: Summary for y
+      description: Description for `y`
+    hex_type:
+      type: integer
+      required: true
+      x-summary: Summary for hex_type
+      description: Description for `hex_type`
+    type_name:
+      type: string
+      required: true
+      x-summary: Summary for type_name
+      description: Description for `type_name`

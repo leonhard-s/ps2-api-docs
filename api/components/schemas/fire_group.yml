@@ -1,0 +1,33 @@
+fire_group:
+  description: Description for `fire_group`.
+  properties:
+    fire_group_id:
+      type: integer
+      required: true
+      x-summary: Summary for fire_group_id
+      description: Description for `fire_group_id`
+    chamber_duration_ms:
+      type: integer
+      required: false
+      x-summary: Summary for chamber_duration_ms
+      description: Description for `chamber_duration_ms`
+    transition_duration_ms:
+      type: integer
+      required: false
+      x-summary: Summary for transition_duration_ms
+      description: Description for `transition_duration_ms`
+    spool_up_ms:
+      type: integer
+      required: false
+      x-summary: Summary for spool_up_ms
+      description: Description for `spool_up_ms`
+    spool_up_initial_refire_ms:
+      type: integer
+      required: false
+      x-summary: Summary for spool_up_initial_refire_ms
+      description: Description for `spool_up_initial_refire_ms`
+    can_chamber_ironsights:
+      type: integer
+      required: false
+      x-summary: Summary for can_chamber_ironsights
+      description: Description for `can_chamber_ironsights`

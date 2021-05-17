@@ -1,0 +1,23 @@
+characters_skill:
+  description: Description for `characters_skill`.
+  properties:
+    character_id:
+      type: integer
+      required: true
+      x-summary: Summary for character_id
+      description: Description for `character_id`
+    skill_id:
+      type: integer
+      required: true
+      x-summary: Summary for skill_id
+      description: Description for `skill_id`
+    last_save:
+      type: integer
+      required: true
+      x-summary: Summary for last_save
+      description: Description for `last_save`
+    last_save_date:
+      type: string
+      required: true
+      x-summary: Summary for last_save_date
+      description: Description for `last_save_date`

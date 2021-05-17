@@ -1,5 +1,5 @@
-character:
-  description: Description for `character`.
+single_character_by_id:
+  description: Description for `single_character_by_id`.
   properties:
     character_id:
       type: integer
@@ -131,3 +131,53 @@ character:
       required: true
       x-summary: Summary for prestige_level
       description: Description for `prestige_level`
+    currency.currency_id:
+      type: object
+      required: true
+      x-summary: Summary for currency.currency_id
+      description: Description for `currency.currency_id`
+    currency.currency_name:
+      type: object
+      required: true
+      x-summary: Summary for currency.currency_name
+      description: Description for `currency.currency_name`
+    currency.quantity:
+      type: object
+      required: true
+      x-summary: Summary for currency.quantity
+      description: Description for `currency.quantity`
+    currency.prestige_currency:
+      type: object
+      required: true
+      x-summary: Summary for currency.prestige_currency
+      description: Description for `currency.prestige_currency`
+    stats.stat_history:
+      type: object
+      required: true
+      x-summary: Summary for stats.stat_history
+      description: Description for `stats.stat_history`
+    stats.stat:
+      type: object
+      required: true
+      x-summary: Summary for stats.stat
+      description: Description for `stats.stat`
+    stats.stat_by_faction:
+      type: object
+      required: true
+      x-summary: Summary for stats.stat_by_faction
+      description: Description for `stats.stat_by_faction`
+    stats.weapon_stat:
+      type: object
+      required: true
+      x-summary: Summary for stats.weapon_stat
+      description: Description for `stats.weapon_stat`
+    stats.weapon_stat_by_faction:
+      type: object
+      required: true
+      x-summary: Summary for stats.weapon_stat_by_faction
+      description: Description for `stats.weapon_stat_by_faction`
+    items:
+      type: string
+      required: true
+      x-summary: Summary for items
+      description: Description for `items`

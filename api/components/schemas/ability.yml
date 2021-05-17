@@ -1,0 +1,153 @@
+ability:
+  description: Description for `ability`.
+  properties:
+    ability_id:
+      type: integer
+      required: true
+      x-summary: Summary for ability_id
+      description: Description for `ability_id`
+    ability_type_id:
+      type: integer
+      required: true
+      x-summary: Summary for ability_type_id
+      description: Description for `ability_type_id`
+    expire_msec:
+      type: integer
+      required: false
+      x-summary: Summary for expire_msec
+      description: Description for `expire_msec`
+    first_use_delay_msec:
+      type: integer
+      required: false
+      x-summary: Summary for first_use_delay_msec
+      description: Description for `first_use_delay_msec`
+    next_use_delay_msec:
+      type: integer
+      required: false
+      x-summary: Summary for next_use_delay_msec
+      description: Description for `next_use_delay_msec`
+    reuse_delay_msec:
+      type: integer
+      required: false
+      x-summary: Summary for reuse_delay_msec
+      description: Description for `reuse_delay_msec`
+    resource_type_id:
+      type: integer
+      required: false
+      x-summary: Summary for resource_type_id
+      description: Description for `resource_type_id`
+    resource_first_cost:
+      type: number
+      required: false
+      x-summary: Summary for resource_first_cost
+      description: Description for `resource_first_cost`
+    resource_cost_per_msec:
+      type: number
+      required: false
+      x-summary: Summary for resource_cost_per_msec
+      description: Description for `resource_cost_per_msec`
+    distance_max:
+      type: integer
+      required: false
+      x-summary: Summary for distance_max
+      description: Description for `distance_max`
+    radius_max:
+      type: integer
+      required: false
+      x-summary: Summary for radius_max
+      description: Description for `radius_max`
+    flag_toggle:
+      type: integer
+      required: false
+      x-summary: Summary for flag_toggle
+      description: Description for `flag_toggle`
+    param1:
+      type: integer
+      required: false
+      x-summary: Summary for param1
+      description: Description for `param1`
+    param2:
+      type: integer
+      required: false
+      x-summary: Summary for param2
+      description: Description for `param2`
+    param3:
+      type: integer
+      required: false
+      x-summary: Summary for param3
+      description: Description for `param3`
+    param4:
+      type: integer
+      required: false
+      x-summary: Summary for param4
+      description: Description for `param4`
+    param5:
+      type: integer
+      required: false
+      x-summary: Summary for param5
+      description: Description for `param5`
+    param6:
+      type: integer
+      required: false
+      x-summary: Summary for param6
+      description: Description for `param6`
+    param7:
+      type: integer
+      required: false
+      x-summary: Summary for param7
+      description: Description for `param7`
+    param8:
+      type: integer
+      required: false
+      x-summary: Summary for param8
+      description: Description for `param8`
+    param9:
+      type: integer
+      required: false
+      x-summary: Summary for param9
+      description: Description for `param9`
+    param10:
+      type: integer
+      required: false
+      x-summary: Summary for param10
+      description: Description for `param10`
+    param11:
+      type: integer
+      required: false
+      x-summary: Summary for param11
+      description: Description for `param11`
+    param12:
+      type: integer
+      required: false
+      x-summary: Summary for param12
+      description: Description for `param12`
+    param13:
+      type: integer
+      required: false
+      x-summary: Summary for param13
+      description: Description for `param13`
+    param14:
+      type: integer
+      required: false
+      x-summary: Summary for param14
+      description: Description for `param14`
+    string1:
+      type: integer
+      required: false
+      x-summary: Summary for string1
+      description: Description for `string1`
+    string2:
+      type: integer
+      required: false
+      x-summary: Summary for string2
+      description: Description for `string2`
+    string3:
+      type: integer
+      required: false
+      x-summary: Summary for string3
+      description: Description for `string3`
+    string4:
+      type: integer
+      required: false
+      x-summary: Summary for string4
+      description: Description for `string4`

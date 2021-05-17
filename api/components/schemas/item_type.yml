@@ -1,0 +1,18 @@
+item_type:
+  description: Description for `item_type`.
+  properties:
+    item_type_id:
+      type: integer
+      required: true
+      x-summary: Summary for item_type_id
+      description: Description for `item_type_id`
+    name:
+      type: string
+      required: true
+      x-summary: Summary for name
+      description: Description for `name`
+    code:
+      type: string
+      required: true
+      x-summary: Summary for code
+      description: Description for `code`

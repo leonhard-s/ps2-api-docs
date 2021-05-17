@@ -1,0 +1,13 @@
+reward_set_to_reward_group:
+  description: Description for `reward_set_to_reward_group`.
+  properties:
+    reward_set_id:
+      type: integer
+      required: true
+      x-summary: Summary for reward_set_id
+      description: Description for `reward_set_id`
+    reward_group_id:
+      type: integer
+      required: true
+      x-summary: Summary for reward_group_id
+      description: Description for `reward_group_id`

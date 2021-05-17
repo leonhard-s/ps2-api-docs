@@ -1,0 +1,13 @@
+characters_item:
+  description: Description for `characters_item`.
+  properties:
+    character_id:
+      type: integer
+      required: true
+      x-summary: Summary for character_id
+      description: Description for `character_id`
+    item_id:
+      type: integer
+      required: true
+      x-summary: Summary for item_id
+      description: Description for `item_id`

@@ -1,0 +1,13 @@
+item_to_weapon:
+  description: Description for `item_to_weapon`.
+  properties:
+    item_id:
+      type: integer
+      required: true
+      x-summary: Summary for item_id
+      description: Description for `item_id`
+    weapon_id:
+      type: integer
+      required: false
+      x-summary: Summary for weapon_id
+      description: Description for `weapon_id`

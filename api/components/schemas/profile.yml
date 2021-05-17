@@ -1,0 +1,118 @@
+profile:
+  description: Description for `profile`.
+  properties:
+    profile_id:
+      type: integer
+      required: true
+      x-summary: Summary for profile_id
+      description: Description for `profile_id`
+    profile_type_id:
+      type: integer
+      required: true
+      x-summary: Summary for profile_type_id
+      description: Description for `profile_type_id`
+    profile_type_description:
+      type: string
+      required: true
+      x-summary: Summary for profile_type_description
+      description: Description for `profile_type_description`
+    faction_id:
+      type: integer
+      required: true
+      x-summary: Summary for faction_id
+      description: Description for `faction_id`
+    name.de:
+      type: object
+      required: true
+      x-summary: Summary for name.de
+      description: Description for `name.de`
+    name.en:
+      type: object
+      required: true
+      x-summary: Summary for name.en
+      description: Description for `name.en`
+    name.es:
+      type: object
+      required: true
+      x-summary: Summary for name.es
+      description: Description for `name.es`
+    name.fr:
+      type: object
+      required: true
+      x-summary: Summary for name.fr
+      description: Description for `name.fr`
+    name.it:
+      type: object
+      required: true
+      x-summary: Summary for name.it
+      description: Description for `name.it`
+    name.tr:
+      type: object
+      required: false
+      x-summary: Summary for name.tr
+      description: Description for `name.tr`
+    description.de:
+      type: object
+      required: true
+      x-summary: Summary for description.de
+      description: Description for `description.de`
+    description.en:
+      type: object
+      required: true
+      x-summary: Summary for description.en
+      description: Description for `description.en`
+    description.es:
+      type: object
+      required: true
+      x-summary: Summary for description.es
+      description: Description for `description.es`
+    description.fr:
+      type: object
+      required: true
+      x-summary: Summary for description.fr
+      description: Description for `description.fr`
+    description.it:
+      type: object
+      required: true
+      x-summary: Summary for description.it
+      description: Description for `description.it`
+    description.tr:
+      type: object
+      required: false
+      x-summary: Summary for description.tr
+      description: Description for `description.tr`
+    image_set_id:
+      type: integer
+      required: true
+      x-summary: Summary for image_set_id
+      description: Description for `image_set_id`
+    image_id:
+      type: integer
+      required: true
+      x-summary: Summary for image_id
+      description: Description for `image_id`
+    image_path:
+      type: string
+      required: true
+      x-summary: Summary for image_path
+      description: Description for `image_path`
+    movement_speed:
+      type: integer
+      required: true
+      x-summary: Summary for movement_speed
+      description: Description for `movement_speed`
+    backpedal_speed_modifier:
+      type: number
+      required: true
+      x-summary: Summary for backpedal_speed_modifier
+      description: Description for `backpedal_speed_modifier`
+    sprint_speed_modifier:
+      type: number
+      required: true
+      x-summary: Summary for sprint_speed_modifier
+      description: Description for `sprint_speed_modifier`
+    strafe_speed_modifier:
+      type: number
+      required: true
+      x-summary: Summary for strafe_speed_modifier
+      description: Description for `strafe_speed_modifier`

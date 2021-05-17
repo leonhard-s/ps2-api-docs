@@ -1,0 +1,38 @@
+characters_event:
+  description: Description for `characters_event`.
+  properties:
+    character_id:
+      type: integer
+      required: true
+      x-summary: Summary for character_id
+      description: Description for `character_id`
+    achievement_id:
+      type: integer
+      required: true
+      x-summary: Summary for achievement_id
+      description: Description for `achievement_id`
+    timestamp:
+      type: integer
+      required: true
+      x-summary: Summary for timestamp
+      description: Description for `timestamp`
+    zone_id:
+      type: integer
+      required: true
+      x-summary: Summary for zone_id
+      description: Description for `zone_id`
+    world_id:
+      type: integer
+      required: true
+      x-summary: Summary for world_id
+      description: Description for `world_id`
+    event_type:
+      type: string
+      required: true
+      x-summary: Summary for event_type
+      description: Description for `event_type`
+    table_type:
+      type: string
+      required: true
+      x-summary: Summary for table_type
+      description: Description for `table_type`

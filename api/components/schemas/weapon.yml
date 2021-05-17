@@ -1,0 +1,73 @@
+weapon:
+  description: Description for `weapon`.
+  properties:
+    weapon_id:
+      type: integer
+      required: true
+      x-summary: Summary for weapon_id
+      description: Description for `weapon_id`
+    weapon_group_id:
+      type: integer
+      required: false
+      x-summary: Summary for weapon_group_id
+      description: Description for `weapon_group_id`
+    turn_modifier:
+      type: number
+      required: false
+      x-summary: Summary for turn_modifier
+      description: Description for `turn_modifier`
+    move_modifier:
+      type: integer
+      required: false
+      x-summary: Summary for move_modifier
+      description: Description for `move_modifier`
+    sprint_recovery_ms:
+      type: integer
+      required: false
+      x-summary: Summary for sprint_recovery_ms
+      description: Description for `sprint_recovery_ms`
+    equip_ms:
+      type: integer
+      required: false
+      x-summary: Summary for equip_ms
+      description: Description for `equip_ms`
+    unequip_ms:
+      type: integer
+      required: false
+      x-summary: Summary for unequip_ms
+      description: Description for `unequip_ms`
+    to_iron_sights_ms:
+      type: integer
+      required: false
+      x-summary: Summary for to_iron_sights_ms
+      description: Description for `to_iron_sights_ms`
+    from_iron_sights_ms:
+      type: integer
+      required: false
+      x-summary: Summary for from_iron_sights_ms
+      description: Description for `from_iron_sights_ms`
+    heat_capacity:
+      type: integer
+      required: false
+      x-summary: Summary for heat_capacity
+      description: Description for `heat_capacity`
+    heat_bleed_off_rate:
+      type: number
+      required: false
+      x-summary: Summary for heat_bleed_off_rate
+      description: Description for `heat_bleed_off_rate`
+    heat_overheat_penalty_ms:
+      type: integer
+      required: false
+      x-summary: Summary for heat_overheat_penalty_ms
+      description: Description for `heat_overheat_penalty_ms`
+    melee_detect_width:
+      type: number
+      required: false
+      x-summary: Summary for melee_detect_width
+      description: Description for `melee_detect_width`
+    melee_detect_height:
+      type: number
+      required: false
+      x-summary: Summary for melee_detect_height
+      description: Description for `melee_detect_height`

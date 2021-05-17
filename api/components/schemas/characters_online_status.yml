@@ -1,0 +1,13 @@
+characters_online_status:
+  description: Description for `characters_online_status`.
+  properties:
+    character_id:
+      type: integer
+      required: true
+      x-summary: Summary for character_id
+      description: Description for `character_id`
+    online_status:
+      type: integer
+      required: true
+      x-summary: Summary for online_status
+      description: Description for `online_status`

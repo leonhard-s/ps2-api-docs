@@ -1,0 +1,13 @@
+resource_type:
+  description: Description for `resource_type`.
+  properties:
+    resource_type_id:
+      type: integer
+      required: true
+      x-summary: Summary for resource_type_id
+      description: Description for `resource_type_id`
+    description:
+      type: string
+      required: true
+      x-summary: Summary for description
+      description: Description for `description`
