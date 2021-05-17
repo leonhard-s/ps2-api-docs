@@ -6,13 +6,8 @@ map:
       required: true
       x-summary: Summary for ZoneId
       description: Description for `ZoneId`
-    Regions.IsList:
-      type: object
+    Regions:
+      type: string
       required: true
-      x-summary: Summary for Regions.IsList
-      description: Description for `Regions.IsList`
-    Regions.Row:
-      type: object
-      required: true
-      x-summary: Summary for Regions.Row
-      description: Description for `Regions.Row`
+      x-summary: Summary for Regions
+      description: Description for `Regions`

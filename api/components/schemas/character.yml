@@ -6,16 +6,11 @@ character:
       required: true
       x-summary: Summary for character_id
       description: Description for `character_id`
-    name.first:
-      type: object
+    name:
+      type: unknown
       required: true
-      x-summary: Summary for name.first
-      description: Description for `name.first`
-    name.first_lower:
-      type: object
-      required: true
-      x-summary: Summary for name.first_lower
-      description: Description for `name.first_lower`
+      x-summary: Summary for name
+      description: Description for `name`
     faction_id:
       type: integer
       required: true
@@ -31,101 +26,31 @@ character:
       required: true
       x-summary: Summary for title_id
       description: Description for `title_id`
-    times.creation:
-      type: object
+    times:
+      type: unknown
       required: true
-      x-summary: Summary for times.creation
-      description: Description for `times.creation`
-    times.creation_date:
-      type: object
+      x-summary: Summary for times
+      description: Description for `times`
+    certs:
+      type: unknown
       required: true
-      x-summary: Summary for times.creation_date
-      description: Description for `times.creation_date`
-    times.last_save:
-      type: object
+      x-summary: Summary for certs
+      description: Description for `certs`
+    battle_rank:
+      type: unknown
       required: true
-      x-summary: Summary for times.last_save
-      description: Description for `times.last_save`
-    times.last_save_date:
-      type: object
-      required: true
-      x-summary: Summary for times.last_save_date
-      description: Description for `times.last_save_date`
-    times.last_login:
-      type: object
-      required: true
-      x-summary: Summary for times.last_login
-      description: Description for `times.last_login`
-    times.last_login_date:
-      type: object
-      required: true
-      x-summary: Summary for times.last_login_date
-      description: Description for `times.last_login_date`
-    times.login_count:
-      type: object
-      required: true
-      x-summary: Summary for times.login_count
-      description: Description for `times.login_count`
-    times.minutes_played:
-      type: object
-      required: true
-      x-summary: Summary for times.minutes_played
-      description: Description for `times.minutes_played`
-    certs.earned_points:
-      type: object
-      required: true
-      x-summary: Summary for certs.earned_points
-      description: Description for `certs.earned_points`
-    certs.gifted_points:
-      type: object
-      required: true
-      x-summary: Summary for certs.gifted_points
-      description: Description for `certs.gifted_points`
-    certs.spent_points:
-      type: object
-      required: true
-      x-summary: Summary for certs.spent_points
-      description: Description for `certs.spent_points`
-    certs.available_points:
-      type: object
-      required: true
-      x-summary: Summary for certs.available_points
-      description: Description for `certs.available_points`
-    certs.percent_to_next:
-      type: object
-      required: true
-      x-summary: Summary for certs.percent_to_next
-      description: Description for `certs.percent_to_next`
-    battle_rank.percent_to_next:
-      type: object
-      required: true
-      x-summary: Summary for battle_rank.percent_to_next
-      description: Description for `battle_rank.percent_to_next`
-    battle_rank.value:
-      type: object
-      required: true
-      x-summary: Summary for battle_rank.value
-      description: Description for `battle_rank.value`
+      x-summary: Summary for battle_rank
+      description: Description for `battle_rank`
     profile_id:
       type: integer
       required: true
       x-summary: Summary for profile_id
       description: Description for `profile_id`
-    daily_ribbon.count:
-      type: object
+    daily_ribbon:
+      type: unknown
       required: true
-      x-summary: Summary for daily_ribbon.count
-      description: Description for `daily_ribbon.count`
-    daily_ribbon.time:
-      type: object
-      required: true
-      x-summary: Summary for daily_ribbon.time
-      description: Description for `daily_ribbon.time`
-    daily_ribbon.date:
-      type: object
-      required: true
-      x-summary: Summary for daily_ribbon.date
-      description: Description for `daily_ribbon.date`
+      x-summary: Summary for daily_ribbon
+      description: Description for `daily_ribbon`
     prestige_level:
       type: integer
       required: true

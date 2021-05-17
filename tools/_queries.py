@@ -61,7 +61,8 @@ def amend_query(query: census.Query, table: str) -> None:
 
 
 async def get_fields(table: str, game: str, client: auraxium.Client,
-                     include_null: bool = False, **kwargs: Any) -> List[str]:
+                     include_null: bool = False, include_nested: bool = True,
+                     **kwargs: Any) -> List[str]:
     """Return the list of fields for a given collection.
 
     Nested objects will be resolved via dot notation, i.e. `name.first`
@@ -89,11 +90,10 @@ async def get_fields(table: str, game: str, client: auraxium.Client,
     first: Dict[str, Any] = results[0]
     fields: List[str] = []
     for key, value in first.items():
-        if hasattr(value, 'keys'):
+        if hasattr(value, 'keys') and include_nested:
             for inner in value.keys():
                 fields.append(f'{key}.{inner}')
-        else:
-            fields.append(key)
+        fields.append(key)
     return fields
 
 
@@ -124,7 +124,8 @@ async def guess_fields_required(table: str, game: str,
         return {}
     total = int(str(payload['count']))
     field_mapping: Dict[str, bool] = {}
-    for field in await get_fields(table, game, client, include_null=True):
+    for field in await get_fields(table, game, client, include_null=True,
+                                  include_nested=False):
         field_query = census.Query.copy(base_query).has(field)
         try:
             payload = await client.request(field_query, verb='count')
@@ -146,7 +147,8 @@ async def guess_fields_type(table: str, game: str,
     checking for the broadest applicable type.
     """
     types: Dict[str, str] = {}
-    for field in await get_fields(table, game, client, include_null=True):
+    for field in await get_fields(table, game, client, include_null=True,
+                                  include_nested=True):
         types[field] = 'unknown'
         if '.' in field:
             types[field] = 'object'

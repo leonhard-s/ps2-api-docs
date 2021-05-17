@@ -38,7 +38,8 @@ async def main(game: str) -> None:
             fields_types = await guess_fields_type(collection, game, client)
             # Get list of fields
             for field in await get_fields(
-                    collection, game, client, include_null=True):
+                    collection, game, client,
+                    include_null=True, include_nested=False):
                 collection_info[field] = {
                     'required': 'true' if fields_required[field] else 'false',
                     'type': fields_types[field]}
@@ -63,8 +64,9 @@ async def main(game: str) -> None:
             schema.writelines(process_placeholders(
                 template, {'datatype': collection}))
             for field, info in fields.items():
-                schema.writelines(process_placeholders(
-                    template_fields, {'field': field, **info}))
+                if '.' not in field:
+                    schema.writelines(process_placeholders(
+                        template_fields, {'field': field, **info}))
 
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()

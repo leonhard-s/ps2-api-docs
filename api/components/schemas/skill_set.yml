@@ -16,66 +16,16 @@ skill_set:
       required: false
       x-summary: Summary for required_item_id
       description: Description for `required_item_id`
-    name.de:
-      type: object
-      required: false
-      x-summary: Summary for name.de
-      description: Description for `name.de`
-    name.en:
-      type: object
-      required: false
-      x-summary: Summary for name.en
-      description: Description for `name.en`
-    name.es:
-      type: object
-      required: false
-      x-summary: Summary for name.es
-      description: Description for `name.es`
-    name.fr:
-      type: object
-      required: false
-      x-summary: Summary for name.fr
-      description: Description for `name.fr`
-    name.it:
-      type: object
-      required: false
-      x-summary: Summary for name.it
-      description: Description for `name.it`
-    name.tr:
-      type: object
-      required: false
-      x-summary: Summary for name.tr
-      description: Description for `name.tr`
-    description.de:
-      type: object
-      required: false
-      x-summary: Summary for description.de
-      description: Description for `description.de`
-    description.en:
-      type: object
-      required: false
-      x-summary: Summary for description.en
-      description: Description for `description.en`
-    description.es:
-      type: object
-      required: false
-      x-summary: Summary for description.es
-      description: Description for `description.es`
-    description.fr:
-      type: object
-      required: false
-      x-summary: Summary for description.fr
-      description: Description for `description.fr`
-    description.it:
-      type: object
-      required: false
-      x-summary: Summary for description.it
-      description: Description for `description.it`
-    description.tr:
-      type: object
-      required: false
-      x-summary: Summary for description.tr
-      description: Description for `description.tr`
+    name:
+      type: unknown
+      required: true
+      x-summary: Summary for name
+      description: Description for `name`
+    description:
+      type: unknown
+      required: true
+      x-summary: Summary for description
+      description: Description for `description`
     image_set_id:
       type: integer
       required: false

@@ -436,33 +436,8 @@ fire_mode_2:
       required: false
       x-summary: Summary for shield_bypass_pct
       description: Description for `shield_bypass_pct`
-    description.de:
-      type: object
-      required: false
-      x-summary: Summary for description.de
-      description: Description for `description.de`
-    description.en:
-      type: object
-      required: false
-      x-summary: Summary for description.en
-      description: Description for `description.en`
-    description.es:
-      type: object
-      required: false
-      x-summary: Summary for description.es
-      description: Description for `description.es`
-    description.fr:
-      type: object
-      required: false
-      x-summary: Summary for description.fr
-      description: Description for `description.fr`
-    description.it:
-      type: object
-      required: false
-      x-summary: Summary for description.it
-      description: Description for `description.it`
-    description.tr:
-      type: object
-      required: false
-      x-summary: Summary for description.tr
-      description: Description for `description.tr`
+    description:
+      type: unknown
+      required: true
+      x-summary: Summary for description
+      description: Description for `description`

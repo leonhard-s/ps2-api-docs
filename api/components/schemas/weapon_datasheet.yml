@@ -86,36 +86,11 @@ weapon_datasheet:
       required: false
       x-summary: Summary for capacity
       description: Description for `capacity`
-    range.de:
-      type: object
-      required: false
-      x-summary: Summary for range.de
-      description: Description for `range.de`
-    range.en:
-      type: object
-      required: false
-      x-summary: Summary for range.en
-      description: Description for `range.en`
-    range.es:
-      type: object
-      required: false
-      x-summary: Summary for range.es
-      description: Description for `range.es`
-    range.fr:
-      type: object
-      required: false
-      x-summary: Summary for range.fr
-      description: Description for `range.fr`
-    range.it:
-      type: object
-      required: false
-      x-summary: Summary for range.it
-      description: Description for `range.it`
-    range.tr:
-      type: object
-      required: false
-      x-summary: Summary for range.tr
-      description: Description for `range.tr`
+    range:
+      type: unknown
+      required: true
+      x-summary: Summary for range
+      description: Description for `range`
     show_clip_size:
       type: integer
       required: false
