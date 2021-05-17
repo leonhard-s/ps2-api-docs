@@ -1,0 +1,8 @@
+${{ datatype }}:
+  description: Description for `${{ datatype }}`.
+  properties:
+    ${{ field }}:
+      type: ${{ type }}
+      required: ${{ required }}
+      x-summary: Summary for ${{ field }}
+      description: Description for `${{ field }}`
