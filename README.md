@@ -11,11 +11,9 @@ Currently, only the REST endpoint is documented. A WebSocket API reference may b
 
 This repository defines the API endpoints according to the [OpenAPI 3.0](https://swagger.io/specification/) speficiation, which manifests itself as a JSON document defining available server endpoints, paths/routes, schemata and exmaple payloads.
 
-The latest version of the API specification can be downloaded from the repository's [Releases](https://github.com/leonhard-s/ps2-api-docs/releases) page.
+An HTML version of this specification is automatically built using [ReDoc](https://github.com/Redocly/redoc) and hosted [here](https://ps2-api-docs.readthedocs.io/en/latest/openapi.html).
 
 Alternatively, you can build the latest version of the specification by cloning this repository and running the `tools/build_spec.py` script. This option is recommended for CI/CD setups as it will always use the latest version of the specification.
-
-<!-- The latest version of this repository is automatically built in the [ReDoc](#) framework and hosted here: <https://pages.github.io/> -->
 
 ## Details
 
