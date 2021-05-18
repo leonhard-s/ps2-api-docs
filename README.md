@@ -1,4 +1,5 @@
-# ps2-api-docs
+# PS2 API Docs
+
 Unofficial OpenAPI specification and documentation provider for the PlanetSide 2 API.
 
 ***
