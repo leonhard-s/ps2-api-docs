@@ -1,1 +1,4 @@
-auraxium >= 0.2
+auraxium >= 0.2b0
+PyYAML >= 5.4.1
+prance >= 0.21.1
+openapi-spec-validator == 0.3.1
