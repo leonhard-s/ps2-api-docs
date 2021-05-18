@@ -19,6 +19,6 @@ get:
                 required: true
                 minimum: 0
                 description: The number of results returned.
-          example:
+          examples:
             value:
               $ref: "../components/examples/achievement.json"

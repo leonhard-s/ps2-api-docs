@@ -21,6 +21,6 @@ get:
                 type: integer
                 required: true
                 minimum: 0
-          example:
+          examples:
             value:
               $ref: ../components/examples/datatype.json
