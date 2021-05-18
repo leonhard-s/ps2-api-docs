@@ -31,6 +31,7 @@ outfit:
       description: Description for `time_created_date`
     leader_character_id:
       type: integer
+      format: int64
       x-summary: Summary for leader_character_id
       description: Description for `leader_character_id`
     member_count:

@@ -11,5 +11,6 @@ characters_event_grouped:
       description: Description for `count`
     character_id:
       type: integer
+      format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`

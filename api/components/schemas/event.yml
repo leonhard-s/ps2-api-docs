@@ -3,6 +3,7 @@ event:
   properties:
     character_id:
       type: integer
+      format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
     vehicle_definition_id:
@@ -19,6 +20,7 @@ event:
       description: Description for `attacker_player_guid`
     attacker_character_id:
       type: integer
+      format: int64
       x-summary: Summary for attacker_character_id
       description: Description for `attacker_character_id`
     attacker_loadout_id:

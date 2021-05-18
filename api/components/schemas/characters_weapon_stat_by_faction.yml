@@ -3,6 +3,7 @@ characters_weapon_stat_by_faction:
   properties:
     character_id:
       type: integer
+      format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
     stat_name:
