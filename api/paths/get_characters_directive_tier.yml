@@ -12,7 +12,7 @@ get:
               characters_directive_tier_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/characters_directive_tier.yml#/characters_directive_tier"
+                  $ref: ../components/schemas/characters_directive_tier.yml#/characters_directive_tier
               results:
                 type: integer
                 minimum: 0

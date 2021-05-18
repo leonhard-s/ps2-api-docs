@@ -12,7 +12,7 @@ get:
               objective_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/objective.yml#/objective"
+                  $ref: ../components/schemas/objective.yml#/objective
               results:
                 type: integer
                 minimum: 0

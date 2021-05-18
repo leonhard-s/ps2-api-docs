@@ -12,7 +12,7 @@ get:
               experience_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/experience.yml#/experience"
+                  $ref: ../components/schemas/experience.yml#/experience
               results:
                 type: integer
                 minimum: 0

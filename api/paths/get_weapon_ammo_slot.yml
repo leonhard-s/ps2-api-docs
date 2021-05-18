@@ -12,7 +12,7 @@ get:
               weapon_ammo_slot_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/weapon_ammo_slot.yml#/weapon_ammo_slot"
+                  $ref: ../components/schemas/weapon_ammo_slot.yml#/weapon_ammo_slot
               results:
                 type: integer
                 minimum: 0

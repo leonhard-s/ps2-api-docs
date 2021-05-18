@@ -12,7 +12,7 @@ get:
               metagame_event_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/metagame_event.yml#/metagame_event"
+                  $ref: ../components/schemas/metagame_event.yml#/metagame_event
               results:
                 type: integer
                 minimum: 0

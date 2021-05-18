@@ -12,7 +12,7 @@ get:
               experience_rank_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/experience_rank.yml#/experience_rank"
+                  $ref: ../components/schemas/experience_rank.yml#/experience_rank
               results:
                 type: integer
                 minimum: 0

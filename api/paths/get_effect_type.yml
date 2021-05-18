@@ -12,7 +12,7 @@ get:
               effect_type_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/effect_type.yml#/effect_type"
+                  $ref: ../components/schemas/effect_type.yml#/effect_type
               results:
                 type: integer
                 minimum: 0

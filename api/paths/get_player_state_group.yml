@@ -12,7 +12,7 @@ get:
               player_state_group_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/player_state_group.yml#/player_state_group"
+                  $ref: ../components/schemas/player_state_group.yml#/player_state_group
               results:
                 type: integer
                 minimum: 0

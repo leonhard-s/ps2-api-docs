@@ -12,7 +12,7 @@ get:
               characters_directive_objective_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/characters_directive_objective.yml#/characters_directive_objective"
+                  $ref: ../components/schemas/characters_directive_objective.yml#/characters_directive_objective
               results:
                 type: integer
                 minimum: 0

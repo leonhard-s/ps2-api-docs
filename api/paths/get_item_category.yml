@@ -12,7 +12,7 @@ get:
               item_category_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/item_category.yml#/item_category"
+                  $ref: ../components/schemas/item_category.yml#/item_category
               results:
                 type: integer
                 minimum: 0

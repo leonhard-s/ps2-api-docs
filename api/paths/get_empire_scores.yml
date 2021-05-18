@@ -12,7 +12,7 @@ get:
               empire_scores_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/empire_scores.yml#/empire_scores"
+                  $ref: ../components/schemas/empire_scores.yml#/empire_scores
               results:
                 type: integer
                 minimum: 0

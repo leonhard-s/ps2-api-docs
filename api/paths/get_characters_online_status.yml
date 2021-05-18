@@ -12,7 +12,7 @@ get:
               characters_online_status_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/characters_online_status.yml#/characters_online_status"
+                  $ref: ../components/schemas/characters_online_status.yml#/characters_online_status
               results:
                 type: integer
                 minimum: 0

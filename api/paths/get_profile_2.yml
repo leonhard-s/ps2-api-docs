@@ -12,7 +12,7 @@ get:
               profile_2_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/profile_2.yml#/profile_2"
+                  $ref: ../components/schemas/profile_2.yml#/profile_2
               results:
                 type: integer
                 minimum: 0

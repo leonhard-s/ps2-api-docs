@@ -12,7 +12,7 @@ get:
               reward_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/reward.yml#/reward"
+                  $ref: ../components/schemas/reward.yml#/reward
               results:
                 type: integer
                 minimum: 0

@@ -12,7 +12,7 @@ get:
               skill_line_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/skill_line.yml#/skill_line"
+                  $ref: ../components/schemas/skill_line.yml#/skill_line
               results:
                 type: integer
                 minimum: 0

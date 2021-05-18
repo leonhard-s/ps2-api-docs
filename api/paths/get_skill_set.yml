@@ -12,7 +12,7 @@ get:
               skill_set_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/skill_set.yml#/skill_set"
+                  $ref: ../components/schemas/skill_set.yml#/skill_set
               results:
                 type: integer
                 minimum: 0

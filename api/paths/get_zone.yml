@@ -12,7 +12,7 @@ get:
               zone_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/zone.yml#/zone"
+                  $ref: ../components/schemas/zone.yml#/zone
               results:
                 type: integer
                 minimum: 0

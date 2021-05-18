@@ -12,7 +12,7 @@ get:
               directive_tier_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/directive_tier.yml#/directive_tier"
+                  $ref: ../components/schemas/directive_tier.yml#/directive_tier
               results:
                 type: integer
                 minimum: 0

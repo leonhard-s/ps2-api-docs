@@ -12,7 +12,7 @@ get:
               world_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/world.yml#/world"
+                  $ref: ../components/schemas/world.yml#/world
               results:
                 type: integer
                 minimum: 0

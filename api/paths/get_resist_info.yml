@@ -12,7 +12,7 @@ get:
               resist_info_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/resist_info.yml#/resist_info"
+                  $ref: ../components/schemas/resist_info.yml#/resist_info
               results:
                 type: integer
                 minimum: 0

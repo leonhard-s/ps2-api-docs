@@ -12,7 +12,7 @@ get:
               vehicle_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/vehicle.yml#/vehicle"
+                  $ref: ../components/schemas/vehicle.yml#/vehicle
               results:
                 type: integer
                 minimum: 0

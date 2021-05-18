@@ -12,7 +12,7 @@ get:
               characters_friend_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/characters_friend.yml#/characters_friend"
+                  $ref: ../components/schemas/characters_friend.yml#/characters_friend
               results:
                 type: integer
                 minimum: 0

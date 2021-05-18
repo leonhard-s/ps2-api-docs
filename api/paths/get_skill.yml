@@ -12,7 +12,7 @@ get:
               skill_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/skill.yml#/skill"
+                  $ref: ../components/schemas/skill.yml#/skill
               results:
                 type: integer
                 minimum: 0

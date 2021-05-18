@@ -12,7 +12,7 @@ get:
               reward_type_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/reward_type.yml#/reward_type"
+                  $ref: ../components/schemas/reward_type.yml#/reward_type
               results:
                 type: integer
                 minimum: 0

@@ -12,7 +12,7 @@ get:
               map_region_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/map_region.yml#/map_region"
+                  $ref: ../components/schemas/map_region.yml#/map_region
               results:
                 type: integer
                 minimum: 0

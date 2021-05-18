@@ -12,7 +12,7 @@ get:
               profile_armor_map_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/profile_armor_map.yml#/profile_armor_map"
+                  $ref: ../components/schemas/profile_armor_map.yml#/profile_armor_map
               results:
                 type: integer
                 minimum: 0

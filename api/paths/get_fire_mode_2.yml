@@ -12,7 +12,7 @@ get:
               fire_mode_2_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/fire_mode_2.yml#/fire_mode_2"
+                  $ref: ../components/schemas/fire_mode_2.yml#/fire_mode_2
               results:
                 type: integer
                 minimum: 0

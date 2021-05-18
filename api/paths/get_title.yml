@@ -12,7 +12,7 @@ get:
               title_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/title.yml#/title"
+                  $ref: ../components/schemas/title.yml#/title
               results:
                 type: integer
                 minimum: 0

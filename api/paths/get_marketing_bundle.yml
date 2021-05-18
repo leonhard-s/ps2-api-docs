@@ -12,7 +12,7 @@ get:
               marketing_bundle_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/marketing_bundle.yml#/marketing_bundle"
+                  $ref: ../components/schemas/marketing_bundle.yml#/marketing_bundle
               results:
                 type: integer
                 minimum: 0

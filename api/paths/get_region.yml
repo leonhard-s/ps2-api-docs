@@ -12,7 +12,7 @@ get:
               region_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/region.yml#/region"
+                  $ref: ../components/schemas/region.yml#/region
               results:
                 type: integer
                 minimum: 0

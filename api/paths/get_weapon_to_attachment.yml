@@ -12,7 +12,7 @@ get:
               weapon_to_attachment_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/weapon_to_attachment.yml#/weapon_to_attachment"
+                  $ref: ../components/schemas/weapon_to_attachment.yml#/weapon_to_attachment
               results:
                 type: integer
                 minimum: 0

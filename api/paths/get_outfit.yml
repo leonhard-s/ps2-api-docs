@@ -12,7 +12,7 @@ get:
               outfit_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/outfit.yml#/outfit"
+                  $ref: ../components/schemas/outfit.yml#/outfit
               results:
                 type: integer
                 minimum: 0

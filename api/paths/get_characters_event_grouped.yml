@@ -12,7 +12,7 @@ get:
               characters_event_grouped_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/characters_event_grouped.yml#/characters_event_grouped"
+                  $ref: ../components/schemas/characters_event_grouped.yml#/characters_event_grouped
               results:
                 type: integer
                 minimum: 0

@@ -12,7 +12,7 @@ get:
               item_attachment_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/item_attachment.yml#/item_attachment"
+                  $ref: ../components/schemas/item_attachment.yml#/item_attachment
               results:
                 type: integer
                 minimum: 0

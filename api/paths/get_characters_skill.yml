@@ -12,7 +12,7 @@ get:
               characters_skill_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/characters_skill.yml#/characters_skill"
+                  $ref: ../components/schemas/characters_skill.yml#/characters_skill
               results:
                 type: integer
                 minimum: 0

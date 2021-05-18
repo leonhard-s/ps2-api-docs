@@ -12,7 +12,7 @@ get:
               fire_mode_to_projectile_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/fire_mode_to_projectile.yml#/fire_mode_to_projectile"
+                  $ref: ../components/schemas/fire_mode_to_projectile.yml#/fire_mode_to_projectile
               results:
                 type: integer
                 minimum: 0

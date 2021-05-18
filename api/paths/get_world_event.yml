@@ -12,7 +12,7 @@ get:
               world_event_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/world_event.yml#/world_event"
+                  $ref: ../components/schemas/world_event.yml#/world_event
               results:
                 type: integer
                 minimum: 0

@@ -12,7 +12,7 @@ get:
               character_name_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/character_name.yml#/character_name"
+                  $ref: ../components/schemas/character_name.yml#/character_name
               results:
                 type: integer
                 minimum: 0

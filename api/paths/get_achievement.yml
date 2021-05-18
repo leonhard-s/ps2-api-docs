@@ -12,7 +12,7 @@ get:
               achievement_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/achievement.yml#/achievement"
+                  $ref: ../components/schemas/achievement.yml#/achievement
               results:
                 type: integer
                 minimum: 0

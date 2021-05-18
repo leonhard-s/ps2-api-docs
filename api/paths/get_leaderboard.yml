@@ -12,7 +12,7 @@ get:
               leaderboard_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/leaderboard.yml#/leaderboard"
+                  $ref: ../components/schemas/leaderboard.yml#/leaderboard
               results:
                 type: integer
                 minimum: 0

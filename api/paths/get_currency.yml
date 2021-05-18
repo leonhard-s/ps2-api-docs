@@ -12,7 +12,7 @@ get:
               currency_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/currency.yml#/currency"
+                  $ref: ../components/schemas/currency.yml#/currency
               results:
                 type: integer
                 minimum: 0

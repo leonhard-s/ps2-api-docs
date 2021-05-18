@@ -12,7 +12,7 @@ get:
               outfit_rank_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/outfit_rank.yml#/outfit_rank"
+                  $ref: ../components/schemas/outfit_rank.yml#/outfit_rank
               results:
                 type: integer
                 minimum: 0

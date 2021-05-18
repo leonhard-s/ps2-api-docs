@@ -12,7 +12,7 @@ get:
               weapon_datasheet_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/weapon_datasheet.yml#/weapon_datasheet"
+                  $ref: ../components/schemas/weapon_datasheet.yml#/weapon_datasheet
               results:
                 type: integer
                 minimum: 0

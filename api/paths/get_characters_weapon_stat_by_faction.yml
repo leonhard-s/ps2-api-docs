@@ -12,7 +12,7 @@ get:
               characters_weapon_stat_by_faction_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/characters_weapon_stat_by_faction.yml#/characters_weapon_stat_by_faction"
+                  $ref: ../components/schemas/characters_weapon_stat_by_faction.yml#/characters_weapon_stat_by_faction
               results:
                 type: integer
                 minimum: 0

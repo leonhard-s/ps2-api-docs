@@ -12,7 +12,7 @@ get:
               map_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/map.yml#/map"
+                  $ref: ../components/schemas/map.yml#/map
               results:
                 type: integer
                 minimum: 0

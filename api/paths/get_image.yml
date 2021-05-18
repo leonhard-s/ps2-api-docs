@@ -12,7 +12,7 @@ get:
               image_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/image.yml#/image"
+                  $ref: ../components/schemas/image.yml#/image
               results:
                 type: integer
                 minimum: 0

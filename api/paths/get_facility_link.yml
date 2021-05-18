@@ -12,7 +12,7 @@ get:
               facility_link_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/facility_link.yml#/facility_link"
+                  $ref: ../components/schemas/facility_link.yml#/facility_link
               results:
                 type: integer
                 minimum: 0

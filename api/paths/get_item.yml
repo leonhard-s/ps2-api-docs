@@ -12,7 +12,7 @@ get:
               item_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/item.yml#/item"
+                  $ref: ../components/schemas/item.yml#/item
               results:
                 type: integer
                 minimum: 0

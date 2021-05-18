@@ -12,7 +12,7 @@ get:
               single_character_by_id_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/single_character_by_id.yml#/single_character_by_id"
+                  $ref: ../components/schemas/single_character_by_id.yml#/single_character_by_id
               results:
                 type: integer
                 minimum: 0

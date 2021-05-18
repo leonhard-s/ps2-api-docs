@@ -12,7 +12,7 @@ get:
               projectile_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/projectile.yml#/projectile"
+                  $ref: ../components/schemas/projectile.yml#/projectile
               results:
                 type: integer
                 minimum: 0

@@ -12,7 +12,7 @@ get:
               zone_effect_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/zone_effect.yml#/zone_effect"
+                  $ref: ../components/schemas/zone_effect.yml#/zone_effect
               results:
                 type: integer
                 minimum: 0

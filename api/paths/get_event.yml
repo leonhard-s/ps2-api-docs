@@ -12,7 +12,7 @@ get:
               event_list:
                 type: array
                 items:
-                  $ref: "../components/schemas/event.yml#/event"
+                  $ref: ../components/schemas/event.yml#/event
               results:
                 type: integer
                 minimum: 0
