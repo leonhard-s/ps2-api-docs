@@ -14,3 +14,5 @@ experience:
       nullable: true
       x-summary: Summary for xp
       description: Description for `xp`
+  example:
+    $ref: ../examples/experience.json

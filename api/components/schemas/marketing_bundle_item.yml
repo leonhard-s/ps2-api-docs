@@ -17,3 +17,5 @@ marketing_bundle_item:
       type: integer
       x-summary: Summary for release_time
       description: Description for `release_time`
+  example:
+    $ref: ../examples/marketing_bundle_item.json

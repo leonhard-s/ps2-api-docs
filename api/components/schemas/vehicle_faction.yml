@@ -9,3 +9,5 @@ vehicle_faction:
       type: integer
       x-summary: Summary for faction_id
       description: Description for `faction_id`
+  example:
+    $ref: ../examples/vehicle_faction.json

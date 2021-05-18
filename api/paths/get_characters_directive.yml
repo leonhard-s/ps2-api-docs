@@ -17,6 +17,3 @@ get:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
-          examples:
-            value:
-              $ref: "../components/examples/characters_directive.json"

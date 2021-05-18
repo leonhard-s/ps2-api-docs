@@ -24,3 +24,5 @@ world:
           type: string
         it:
           type: string
+  example:
+    $ref: ../examples/world.json

@@ -17,3 +17,5 @@ vehicle_skill_set:
       type: integer
       x-summary: Summary for display_index
       description: Description for `display_index`
+  example:
+    $ref: ../examples/vehicle_skill_set.json

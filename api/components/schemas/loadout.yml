@@ -17,3 +17,5 @@ loadout:
       type: string
       x-summary: Summary for code_name
       description: Description for `code_name`
+  example:
+    $ref: ../examples/loadout.json

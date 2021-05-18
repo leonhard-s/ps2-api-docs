@@ -25,3 +25,5 @@ image_set:
       type: string
       x-summary: Summary for image_path
       description: Description for `image_path`
+  example:
+    $ref: ../examples/image_set.json

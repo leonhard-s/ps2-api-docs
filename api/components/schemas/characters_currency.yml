@@ -22,3 +22,5 @@ characters_currency:
       type: integer
       x-summary: Summary for prestige_currency
       description: Description for `prestige_currency`
+  example:
+    $ref: ../examples/characters_currency.json

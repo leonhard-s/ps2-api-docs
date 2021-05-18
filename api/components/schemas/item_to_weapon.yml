@@ -10,3 +10,5 @@ item_to_weapon:
       nullable: true
       x-summary: Summary for weapon_id
       description: Description for `weapon_id`
+  example:
+    $ref: ../examples/item_to_weapon.json

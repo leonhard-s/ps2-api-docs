@@ -10,3 +10,5 @@ characters_online_status:
       type: integer
       x-summary: Summary for online_status
       description: Description for `online_status`
+  example:
+    $ref: ../examples/characters_online_status.json

@@ -62,3 +62,5 @@ single_character_by_id:
       type: boolean
       x-summary: Summary for sub_timing
       description: Description for `sub_timing`
+  example:
+    $ref: ../examples/single_character_by_id.json

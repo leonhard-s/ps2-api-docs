@@ -42,3 +42,5 @@ characters_stat:
       type: string
       x-summary: Summary for last_save_date
       description: Description for `last_save_date`
+  example:
+    $ref: ../examples/characters_stat.json

@@ -13,3 +13,5 @@ profile_resist_map:
       type: integer
       x-summary: Summary for rank
       description: Description for `rank`
+  example:
+    $ref: ../examples/profile_resist_map.json

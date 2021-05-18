@@ -10,3 +10,5 @@ characters_item:
       type: integer
       x-summary: Summary for item_id
       description: Description for `item_id`
+  example:
+    $ref: ../examples/characters_item.json

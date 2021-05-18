@@ -53,3 +53,5 @@ player_state_group_2:
       nullable: true
       x-summary: Summary for cof_turn_penalty
       description: Description for `cof_turn_penalty`
+  example:
+    $ref: ../examples/player_state_group_2.json

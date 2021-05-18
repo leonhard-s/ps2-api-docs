@@ -28,3 +28,5 @@ region:
           type: string
         it:
           type: string
+  example:
+    $ref: ../examples/region.json

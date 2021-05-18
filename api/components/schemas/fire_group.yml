@@ -30,3 +30,5 @@ fire_group:
       nullable: true
       x-summary: Summary for can_chamber_ironsights
       description: Description for `can_chamber_ironsights`
+  example:
+    $ref: ../examples/fire_group.json

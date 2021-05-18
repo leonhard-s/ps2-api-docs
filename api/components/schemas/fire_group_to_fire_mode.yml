@@ -13,3 +13,5 @@ fire_group_to_fire_mode:
       type: integer
       x-summary: Summary for fire_mode_index
       description: Description for `fire_mode_index`
+  example:
+    $ref: ../examples/fire_group_to_fire_mode.json

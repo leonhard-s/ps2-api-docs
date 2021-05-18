@@ -9,3 +9,5 @@ reward_group_to_reward:
       type: integer
       x-summary: Summary for reward_id
       description: Description for `reward_id`
+  example:
+    $ref: ../examples/reward_group_to_reward.json

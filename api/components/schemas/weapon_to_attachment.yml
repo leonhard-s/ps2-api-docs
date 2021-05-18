@@ -13,3 +13,5 @@ weapon_to_attachment:
       type: integer
       x-summary: Summary for item_id
       description: Description for `item_id`
+  example:
+    $ref: ../examples/weapon_to_attachment.json

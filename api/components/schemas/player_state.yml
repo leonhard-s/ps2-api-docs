@@ -9,3 +9,5 @@ player_state:
       type: string
       x-summary: Summary for description
       description: Description for `description`
+  example:
+    $ref: ../examples/player_state.json

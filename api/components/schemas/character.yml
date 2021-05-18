@@ -91,3 +91,5 @@ character:
       type: integer
       x-summary: Summary for prestige_level
       description: Description for `prestige_level`
+  example:
+    $ref: ../examples/character.json

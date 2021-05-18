@@ -15,3 +15,5 @@ character_name:
           type: string
         first_lower:
           type: string
+  example:
+    $ref: ../examples/character_name.json

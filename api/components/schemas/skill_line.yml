@@ -64,3 +64,5 @@ skill_line:
       nullable: true
       x-summary: Summary for image_path
       description: Description for `image_path`
+  example:
+    $ref: ../examples/skill_line.json

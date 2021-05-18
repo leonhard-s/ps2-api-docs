@@ -103,3 +103,5 @@ zone_effect:
       nullable: true
       x-summary: Summary for string4
       description: Description for `string4`
+  example:
+    $ref: ../examples/zone_effect.json

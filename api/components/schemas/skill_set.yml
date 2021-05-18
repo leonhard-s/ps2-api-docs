@@ -60,3 +60,5 @@ skill_set:
       nullable: true
       x-summary: Summary for image_path
       description: Description for `image_path`
+  example:
+    $ref: ../examples/skill_set.json

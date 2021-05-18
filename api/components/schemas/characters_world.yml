@@ -10,3 +10,5 @@ characters_world:
       type: integer
       x-summary: Summary for world_id
       description: Description for `world_id`
+  example:
+    $ref: ../examples/characters_world.json

@@ -9,3 +9,5 @@ metagame_event_state:
       type: string
       x-summary: Summary for name
       description: Description for `name`
+  example:
+    $ref: ../examples/metagame_event_state.json

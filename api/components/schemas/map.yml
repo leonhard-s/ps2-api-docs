@@ -9,3 +9,5 @@ map:
       type: string
       x-summary: Summary for Regions
       description: Description for `Regions`
+  example:
+    $ref: ../examples/map.json

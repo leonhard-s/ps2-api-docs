@@ -18,3 +18,5 @@ facility_link:
       nullable: true
       x-summary: Summary for description
       description: Description for `description`
+  example:
+    $ref: ../examples/facility_link.json

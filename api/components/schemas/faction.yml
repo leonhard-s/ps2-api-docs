@@ -43,3 +43,5 @@ faction:
       type: integer
       x-summary: Summary for user_selectable
       description: Description for `user_selectable`
+  example:
+    $ref: ../examples/faction.json

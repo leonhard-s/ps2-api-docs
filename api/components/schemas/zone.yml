@@ -43,3 +43,5 @@ zone:
           type: string
         it:
           type: string
+  example:
+    $ref: ../examples/zone.json

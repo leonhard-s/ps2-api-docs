@@ -9,3 +9,5 @@ fire_mode_type:
       type: string
       x-summary: Summary for description
       description: Description for `description`
+  example:
+    $ref: ../examples/fire_mode_type.json

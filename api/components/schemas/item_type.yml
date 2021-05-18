@@ -13,3 +13,5 @@ item_type:
       type: string
       x-summary: Summary for code
       description: Description for `code`
+  example:
+    $ref: ../examples/item_type.json

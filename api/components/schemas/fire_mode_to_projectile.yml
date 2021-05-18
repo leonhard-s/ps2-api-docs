@@ -9,3 +9,5 @@ fire_mode_to_projectile:
       type: integer
       x-summary: Summary for projectile_id
       description: Description for `projectile_id`
+  example:
+    $ref: ../examples/fire_mode_to_projectile.json

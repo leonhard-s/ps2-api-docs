@@ -41,3 +41,5 @@ reward_type:
       nullable: true
       x-summary: Summary for param5
       description: Description for `param5`
+  example:
+    $ref: ../examples/reward_type.json

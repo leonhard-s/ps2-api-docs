@@ -50,3 +50,5 @@ directive_tier:
       type: string
       x-summary: Summary for image_path
       description: Description for `image_path`
+  example:
+    $ref: ../examples/directive_tier.json

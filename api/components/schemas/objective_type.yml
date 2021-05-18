@@ -54,3 +54,5 @@ objective_type:
       nullable: true
       x-summary: Summary for param9
       description: Description for `param9`
+  example:
+    $ref: ../examples/objective_type.json

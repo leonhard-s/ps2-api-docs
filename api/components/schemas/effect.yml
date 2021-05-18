@@ -99,3 +99,5 @@ effect:
       nullable: true
       x-summary: Summary for param13
       description: Description for `param13`
+  example:
+    $ref: ../examples/effect.json

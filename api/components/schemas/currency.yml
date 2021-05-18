@@ -17,3 +17,5 @@ currency:
       type: integer
       x-summary: Summary for inventory_cap
       description: Description for `inventory_cap`
+  example:
+    $ref: ../examples/currency.json

@@ -9,3 +9,5 @@ item_profile:
       type: integer
       x-summary: Summary for profile_id
       description: Description for `profile_id`
+  example:
+    $ref: ../examples/item_profile.json

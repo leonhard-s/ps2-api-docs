@@ -9,3 +9,5 @@ objective_set_to_objective:
       type: integer
       x-summary: Summary for objective_group_id
       description: Description for `objective_group_id`
+  example:
+    $ref: ../examples/objective_set_to_objective.json

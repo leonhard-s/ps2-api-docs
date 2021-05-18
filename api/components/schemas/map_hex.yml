@@ -25,3 +25,5 @@ map_hex:
       type: string
       x-summary: Summary for type_name
       description: Description for `type_name`
+  example:
+    $ref: ../examples/map_hex.json

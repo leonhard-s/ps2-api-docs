@@ -45,3 +45,5 @@ world_event:
       type: integer
       x-summary: Summary for outfit_id
       description: Description for `outfit_id`
+  example:
+    $ref: ../examples/world_event.json

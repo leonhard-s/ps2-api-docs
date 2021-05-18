@@ -69,3 +69,5 @@ experience_rank:
       nullable: true
       x-summary: Summary for tr_image_path
       description: Description for `tr_image_path`
+  example:
+    $ref: ../examples/experience_rank.json

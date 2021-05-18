@@ -9,3 +9,5 @@ item_attachment:
       type: integer
       x-summary: Summary for attachment_item_id
       description: Description for `attachment_item_id`
+  example:
+    $ref: ../examples/item_attachment.json

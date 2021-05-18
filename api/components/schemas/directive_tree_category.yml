@@ -20,3 +20,5 @@ directive_tree_category:
           type: string
         it:
           type: string
+  example:
+    $ref: ../examples/directive_tree_category.json

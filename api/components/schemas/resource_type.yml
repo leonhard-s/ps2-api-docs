@@ -9,3 +9,5 @@ resource_type:
       type: string
       x-summary: Summary for description
       description: Description for `description`
+  example:
+    $ref: ../examples/resource_type.json
