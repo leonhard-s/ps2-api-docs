@@ -25,5 +25,5 @@ def main(output: str = '.') -> None:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--output', '-o', help='Output directory')
+    parser.add_argument('--output', '-o', default='.', help='Output directory')
     main(parser.parse_args().output)
