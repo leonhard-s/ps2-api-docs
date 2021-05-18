@@ -13,10 +13,8 @@ get:
                 type: array
                 items:
                   $ref: "../components/schemas/directive_tree_category.yml#/directive_tree_category"
-                required: true
               results:
                 type: integer
-                required: true
                 minimum: 0
                 description: The number of results returned.
           examples:

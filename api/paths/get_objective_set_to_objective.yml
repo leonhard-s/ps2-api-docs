@@ -13,10 +13,8 @@ get:
                 type: array
                 items:
                   $ref: "../components/schemas/objective_set_to_objective.yml#/objective_set_to_objective"
-                required: true
               results:
                 type: integer
-                required: true
                 minimum: 0
                 description: The number of results returned.
           examples:

@@ -13,10 +13,8 @@ get:
                 type: array
                 items:
                   $ref: "../components/schemas/image_set_default.yml#/image_set_default"
-                required: true
               results:
                 type: integer
-                required: true
                 minimum: 0
                 description: The number of results returned.
           examples:

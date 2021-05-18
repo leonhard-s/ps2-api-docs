@@ -13,10 +13,8 @@ get:
                 type: array
                 items:
                   $ref: "../components/schemas/weapon_to_fire_group.yml#/weapon_to_fire_group"
-                required: true
               results:
                 type: integer
-                required: true
                 minimum: 0
                 description: The number of results returned.
           examples:

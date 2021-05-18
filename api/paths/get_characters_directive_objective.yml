@@ -13,10 +13,8 @@ get:
                 type: array
                 items:
                   $ref: "../components/schemas/characters_directive_objective.yml#/characters_directive_objective"
-                required: true
               results:
                 type: integer
-                required: true
                 minimum: 0
                 description: The number of results returned.
           examples:
