@@ -10,27 +10,60 @@ experience_rank:
       x-summary: Summary for xp_max
       description: Description for `xp_max`
     vs:
-      type: unknown
+      type: object
       x-summary: Summary for vs
       description: Description for `vs`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     vs_image_path:
       type: string
       nullable: true
       x-summary: Summary for vs_image_path
       description: Description for `vs_image_path`
     nc:
-      type: unknown
+      type: object
       x-summary: Summary for nc
       description: Description for `nc`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     nc_image_path:
       type: string
       nullable: true
       x-summary: Summary for nc_image_path
       description: Description for `nc_image_path`
     tr:
-      type: unknown
+      type: object
       x-summary: Summary for tr
       description: Description for `tr`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     tr_image_path:
       type: string
       nullable: true

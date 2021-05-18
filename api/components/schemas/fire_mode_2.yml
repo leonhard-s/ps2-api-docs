@@ -208,7 +208,7 @@ fire_mode_2:
       x-summary: Summary for lockon_maintain
       description: Description for `lockon_maintain`
     lockon_radius:
-      type: unknown
+      type: number
       nullable: true
       x-summary: Summary for lockon_radius
       description: Description for `lockon_radius`
@@ -428,6 +428,17 @@ fire_mode_2:
       x-summary: Summary for shield_bypass_pct
       description: Description for `shield_bypass_pct`
     description:
-      type: unknown
+      type: object
       x-summary: Summary for description
       description: Description for `description`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string

@@ -11,13 +11,35 @@ directive_tree:
       x-summary: Summary for directive_tree_category_id
       description: Description for `directive_tree_category_id`
     name:
-      type: unknown
+      type: object
       x-summary: Summary for name
       description: Description for `name`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     description:
-      type: unknown
+      type: object
       x-summary: Summary for description
       description: Description for `description`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     image_set_id:
       type: integer
       nullable: true

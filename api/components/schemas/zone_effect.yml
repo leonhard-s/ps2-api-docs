@@ -89,17 +89,17 @@ zone_effect:
       x-summary: Summary for string1
       description: Description for `string1`
     string2:
-      type: unknown
+      type: string
       nullable: true
       x-summary: Summary for string2
       description: Description for `string2`
     string3:
-      type: unknown
+      type: string
       nullable: true
       x-summary: Summary for string3
       description: Description for `string3`
     string4:
-      type: unknown
+      type: string
       nullable: true
       x-summary: Summary for string4
       description: Description for `string4`

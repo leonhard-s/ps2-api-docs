@@ -6,7 +6,7 @@ currency:
       x-summary: Summary for currency_id
       description: Description for `currency_id`
     name:
-      type: unknown
+      type: string
       x-summary: Summary for name
       description: Description for `name`
     icon_id:

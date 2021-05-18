@@ -10,6 +10,17 @@ world:
       x-summary: Summary for state
       description: Description for `state`
     name:
-      type: unknown
+      type: object
       x-summary: Summary for name
       description: Description for `name`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string

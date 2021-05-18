@@ -24,9 +24,20 @@ directive_tier:
       x-summary: Summary for completion_count
       description: Description for `completion_count`
     name:
-      type: unknown
+      type: object
       x-summary: Summary for name
       description: Description for `name`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     image_set_id:
       type: integer
       x-summary: Summary for image_set_id

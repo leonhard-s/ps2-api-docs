@@ -18,13 +18,35 @@ profile:
       x-summary: Summary for faction_id
       description: Description for `faction_id`
     name:
-      type: unknown
+      type: object
       x-summary: Summary for name
       description: Description for `name`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     description:
-      type: unknown
+      type: object
       x-summary: Summary for description
       description: Description for `description`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     image_set_id:
       type: integer
       x-summary: Summary for image_set_id

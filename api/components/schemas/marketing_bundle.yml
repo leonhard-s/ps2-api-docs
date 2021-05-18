@@ -6,13 +6,35 @@ marketing_bundle:
       x-summary: Summary for marketing_bundle_id
       description: Description for `marketing_bundle_id`
     name:
-      type: unknown
+      type: object
       x-summary: Summary for name
       description: Description for `name`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     description:
-      type: unknown
+      type: object
       x-summary: Summary for description
       description: Description for `description`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     image_id:
       type: integer
       x-summary: Summary for image_id

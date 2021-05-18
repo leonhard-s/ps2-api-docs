@@ -18,13 +18,35 @@ skill_category:
       x-summary: Summary for skill_points
       description: Description for `skill_points`
     name:
-      type: unknown
+      type: object
       x-summary: Summary for name
       description: Description for `name`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     description:
-      type: unknown
+      type: object
       x-summary: Summary for description
       description: Description for `description`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     image_set_id:
       type: integer
       nullable: true

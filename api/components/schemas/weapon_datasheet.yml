@@ -84,9 +84,20 @@ weapon_datasheet:
       x-summary: Summary for capacity
       description: Description for `capacity`
     range:
-      type: unknown
+      type: object
       x-summary: Summary for range
       description: Description for `range`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     show_clip_size:
       type: integer
       nullable: true

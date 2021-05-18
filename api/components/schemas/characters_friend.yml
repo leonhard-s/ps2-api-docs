@@ -2,14 +2,25 @@ characters_friend:
   description: Description for `characters_friend`.
   properties:
     character_id:
-      type: unknown
+      type: integer
       x-summary: Summary for character_id
       description: Description for `character_id`
     name:
-      type: unknown
+      type: string
+      nullable: true
       x-summary: Summary for name
       description: Description for `name`
     friend_list:
-      type: unknown
+      type: array
       x-summary: Summary for friend_list
       description: Description for `friend_list`
+      items:
+        type: object
+        properties:
+          character_id:
+            type: integer
+            format: int6464
+          last_login_time:
+            type: string
+          online:
+            type: boolean

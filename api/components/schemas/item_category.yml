@@ -6,6 +6,17 @@ item_category:
       x-summary: Summary for item_category_id
       description: Description for `item_category_id`
     name:
-      type: unknown
+      type: object
       x-summary: Summary for name
       description: Description for `name`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string

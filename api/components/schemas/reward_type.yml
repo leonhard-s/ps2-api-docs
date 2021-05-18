@@ -15,7 +15,7 @@ reward_type:
       x-summary: Summary for count_min
       description: Description for `count_min`
     count_max:
-      type: unknown
+      type: integer
       nullable: true
       x-summary: Summary for count_max
       description: Description for `count_max`
@@ -37,7 +37,7 @@ reward_type:
       x-summary: Summary for param4
       description: Description for `param4`
     param5:
-      type: unknown
+      type: string
       nullable: true
       x-summary: Summary for param5
       description: Description for `param5`

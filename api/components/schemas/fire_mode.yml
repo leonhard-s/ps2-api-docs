@@ -14,9 +14,20 @@ fire_mode:
       x-summary: Summary for type
       description: Description for `type`
     description:
-      type: unknown
+      type: object
       x-summary: Summary for description
       description: Description for `description`
+      properties:
+        de:
+          type: string
+        en:
+          type: string
+        es:
+          type: string
+        fr:
+          type: string
+        it:
+          type: string
     player_state_group_id:
       type: integer
       nullable: true

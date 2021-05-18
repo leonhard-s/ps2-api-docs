@@ -37,7 +37,7 @@ reward:
       x-summary: Summary for param4
       description: Description for `param4`
     param5:
-      type: unknown
+      type: string
       nullable: true
       x-summary: Summary for param5
       description: Description for `param5`

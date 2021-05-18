@@ -6,9 +6,14 @@ character:
       x-summary: Summary for character_id
       description: Description for `character_id`
     name:
-      type: unknown
+      type: object
       x-summary: Summary for name
       description: Description for `name`
+      properties:
+        first:
+          type: string
+        first_lower:
+          type: string
     faction_id:
       type: integer
       x-summary: Summary for faction_id
@@ -22,25 +27,65 @@ character:
       x-summary: Summary for title_id
       description: Description for `title_id`
     times:
-      type: unknown
+      type: object
       x-summary: Summary for times
       description: Description for `times`
+      properties:
+        creation:
+          type: integer
+        creation_date:
+          type: string
+        last_save:
+          type: integer
+        last_save_date:
+          type: string
+        last_login:
+          type: integer
+        last_login_date:
+          type: string
+        login_count:
+          type: integer
+        minutes_played:
+          type: integer
     certs:
-      type: unknown
+      type: object
       x-summary: Summary for certs
       description: Description for `certs`
+      properties:
+        earned_points:
+          type: integer
+        gifted_points:
+          type: integer
+        spent_points:
+          type: integer
+        available_points:
+          type: integer
+        percent_to_next:
+          type: number
     battle_rank:
-      type: unknown
+      type: object
       x-summary: Summary for battle_rank
       description: Description for `battle_rank`
+      properties:
+        percent_to_next:
+          type: number
+        value:
+          type: integer
     profile_id:
       type: integer
       x-summary: Summary for profile_id
       description: Description for `profile_id`
     daily_ribbon:
-      type: unknown
+      type: object
       x-summary: Summary for daily_ribbon
       description: Description for `daily_ribbon`
+      properties:
+        count:
+          type: integer
+        time:
+          type: integer
+        date:
+          type: string
     prestige_level:
       type: integer
       x-summary: Summary for prestige_level
