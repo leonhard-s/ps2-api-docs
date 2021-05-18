@@ -4,13 +4,11 @@ Unofficial OpenAPI specification and documentation provider for the PlanetSide 2
 
 ***
 
-This repository maintains a full list of all collections in the [PlanetSide 2 API](https://census.daybreakgames.com/), which are documented according to the [OpenAPI](https://swagger.io/specification/) specification.
-
-Currently, only the REST endpoint is documented. A WebSocket API reference may be added in a later version.
+This repository maintains a full list of all collections in the [PlanetSide 2 API](https://census.daybreakgames.com/). Currently, only the REST endpoint is documented. A WebSocket API reference may be added in a later version.
 
 ## Usage
 
-This repository defines the API endpoints according to the [OpenAPI 3.0](https://swagger.io/specification/) speficiation, which manifests itself as a JSON document defining available server endpoints, paths/routes, schemata and exmaple payloads.
+This repository defines the API endpoints according to the [OpenAPI 3.0](https://swagger.io/specification/) speficiation, which manifests itself as a JSON document defining available server endpoints, paths/routes, schemata and example payloads.
 
 An HTML version of this specification is automatically built using [ReDoc](https://github.com/Redocly/redoc) and hosted [here](https://ps2-api-docs.readthedocs.io/en/latest/openapi.html).
 
