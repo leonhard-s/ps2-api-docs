@@ -40,9 +40,9 @@ async def main(game: str) -> None:
             for field in await get_fields(
                     collection, game, client,
                     include_null=True, include_nested=False):
-                collection_info[field] = {
-                    'required': 'true' if fields_required[field] else 'false',
-                    'type': fields_types[field]}
+                collection_info[field] = {'type': fields_types[field]}
+                if not fields_required[field]:
+                    collection_info[field]['nullable'] = 'true'
             field_info[collection] = collection_info
     # Load templates
     with open('templates/schema.yml') as template_file:
