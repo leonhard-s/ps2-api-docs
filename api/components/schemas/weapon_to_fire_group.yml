@@ -3,16 +3,14 @@ weapon_to_fire_group:
   properties:
     weapon_id:
       type: integer
-      required: true
       x-summary: Summary for weapon_id
       description: Description for `weapon_id`
     fire_group_id:
       type: integer
-      required: true
       x-summary: Summary for fire_group_id
       description: Description for `fire_group_id`
     fire_group_index:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for fire_group_index
       description: Description for `fire_group_index`

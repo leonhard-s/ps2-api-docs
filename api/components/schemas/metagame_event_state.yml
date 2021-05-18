@@ -3,11 +3,9 @@ metagame_event_state:
   properties:
     metagame_event_state_id:
       type: integer
-      required: true
       x-summary: Summary for metagame_event_state_id
       description: Description for `metagame_event_state_id`
     name:
       type: string
-      required: true
       x-summary: Summary for name
       description: Description for `name`

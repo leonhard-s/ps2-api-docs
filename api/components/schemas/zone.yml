@@ -3,26 +3,21 @@ zone:
   properties:
     zone_id:
       type: integer
-      required: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
     code:
       type: string
-      required: true
       x-summary: Summary for code
       description: Description for `code`
     hex_size:
       type: integer
-      required: true
       x-summary: Summary for hex_size
       description: Description for `hex_size`
     name:
       type: unknown
-      required: true
       x-summary: Summary for name
       description: Description for `name`
     description:
       type: unknown
-      required: true
       x-summary: Summary for description
       description: Description for `description`

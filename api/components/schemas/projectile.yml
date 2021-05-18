@@ -3,96 +3,92 @@ projectile:
   properties:
     projectile_id:
       type: integer
-      required: true
       x-summary: Summary for projectile_id
       description: Description for `projectile_id`
     projectile_flight_type_id:
       type: integer
-      required: true
       x-summary: Summary for projectile_flight_type_id
       description: Description for `projectile_flight_type_id`
     speed:
       type: integer
-      required: true
       x-summary: Summary for speed
       description: Description for `speed`
     speed_max:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for speed_max
       description: Description for `speed_max`
     acceleration:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for acceleration
       description: Description for `acceleration`
     turn_rate:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for turn_rate
       description: Description for `turn_rate`
     lifespan:
       type: number
-      required: true
       x-summary: Summary for lifespan
       description: Description for `lifespan`
     drag:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for drag
       description: Description for `drag`
     gravity:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for gravity
       description: Description for `gravity`
     lockon_acceleration:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for lockon_acceleration
       description: Description for `lockon_acceleration`
     lockon_lifespan:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for lockon_lifespan
       description: Description for `lockon_lifespan`
     arm_distance:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for arm_distance
       description: Description for `arm_distance`
     tether_distance:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for tether_distance
       description: Description for `tether_distance`
     detonate_distance:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for detonate_distance
       description: Description for `detonate_distance`
     detonate_on_contact:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for detonate_on_contact
       description: Description for `detonate_on_contact`
     sticky:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for sticky
       description: Description for `sticky`
     sticks_to_players:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for sticks_to_players
       description: Description for `sticks_to_players`
     lockon_lose_angle:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for lockon_lose_angle
       description: Description for `lockon_lose_angle`
     lockon_seek_in_flight:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for lockon_seek_in_flight
       description: Description for `lockon_seek_in_flight`

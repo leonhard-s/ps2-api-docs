@@ -3,36 +3,30 @@ marketing_bundle:
   properties:
     marketing_bundle_id:
       type: integer
-      required: true
       x-summary: Summary for marketing_bundle_id
       description: Description for `marketing_bundle_id`
     name:
       type: unknown
-      required: true
       x-summary: Summary for name
       description: Description for `name`
     description:
       type: unknown
-      required: true
       x-summary: Summary for description
       description: Description for `description`
     image_id:
       type: integer
-      required: true
       x-summary: Summary for image_id
       description: Description for `image_id`
     station_cash_price:
       type: integer
-      required: true
       x-summary: Summary for station_cash_price
       description: Description for `station_cash_price`
     cert_price:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for cert_price
       description: Description for `cert_price`
     release_time:
       type: integer
-      required: true
       x-summary: Summary for release_time
       description: Description for `release_time`

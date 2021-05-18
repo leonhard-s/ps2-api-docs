@@ -3,31 +3,25 @@ characters_directive_objective:
   properties:
     character_id:
       type: integer
-      required: true
       x-summary: Summary for character_id
       description: Description for `character_id`
     directive_id:
       type: integer
-      required: true
       x-summary: Summary for directive_id
       description: Description for `directive_id`
     objective_id:
       type: integer
-      required: true
       x-summary: Summary for objective_id
       description: Description for `objective_id`
     objective_group_id:
       type: integer
-      required: true
       x-summary: Summary for objective_group_id
       description: Description for `objective_group_id`
     status:
       type: integer
-      required: true
       x-summary: Summary for status
       description: Description for `status`
     state_data:
       type: integer
-      required: true
       x-summary: Summary for state_data
       description: Description for `state_data`

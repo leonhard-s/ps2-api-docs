@@ -3,16 +3,14 @@ player_state_group:
   properties:
     player_state_group_id:
       type: integer
-      required: true
       x-summary: Summary for player_state_group_id
       description: Description for `player_state_group_id`
     player_state:
       type: string
-      required: true
       x-summary: Summary for player_state
       description: Description for `player_state`
     min_cone_of_fire:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for min_cone_of_fire
       description: Description for `min_cone_of_fire`

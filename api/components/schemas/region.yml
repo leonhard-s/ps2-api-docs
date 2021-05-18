@@ -3,21 +3,17 @@ region:
   properties:
     region_id:
       type: integer
-      required: true
       x-summary: Summary for region_id
       description: Description for `region_id`
     zone_id:
       type: integer
-      required: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
     initial_faction_id:
       type: integer
-      required: true
       x-summary: Summary for initial_faction_id
       description: Description for `initial_faction_id`
     name:
       type: unknown
-      required: true
       x-summary: Summary for name
       description: Description for `name`

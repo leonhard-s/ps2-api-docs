@@ -3,26 +3,22 @@ metagame_event:
   properties:
     metagame_event_id:
       type: integer
-      required: true
       x-summary: Summary for metagame_event_id
       description: Description for `metagame_event_id`
     name:
       type: unknown
-      required: true
       x-summary: Summary for name
       description: Description for `name`
     description:
       type: unknown
-      required: true
       x-summary: Summary for description
       description: Description for `description`
     type:
       type: integer
-      required: true
       x-summary: Summary for type
       description: Description for `type`
     experience_bonus:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for experience_bonus
       description: Description for `experience_bonus`

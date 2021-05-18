@@ -3,16 +3,14 @@ experience:
   properties:
     experience_id:
       type: integer
-      required: true
       x-summary: Summary for experience_id
       description: Description for `experience_id`
     description:
       type: string
-      required: true
       x-summary: Summary for description
       description: Description for `description`
     xp:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for xp
       description: Description for `xp`

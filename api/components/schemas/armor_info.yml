@@ -3,26 +3,23 @@ armor_info:
   properties:
     armor_info_id:
       type: integer
-      required: true
       x-summary: Summary for armor_info_id
       description: Description for `armor_info_id`
     armor_facing_id:
       type: integer
-      required: true
       x-summary: Summary for armor_facing_id
       description: Description for `armor_facing_id`
     armor_percent:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for armor_percent
       description: Description for `armor_percent`
     armor_amount:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for armor_amount
       description: Description for `armor_amount`
     description:
       type: string
-      required: true
       x-summary: Summary for description
       description: Description for `description`

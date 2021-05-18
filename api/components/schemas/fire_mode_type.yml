@@ -3,11 +3,9 @@ fire_mode_type:
   properties:
     fire_mode_type_id:
       type: integer
-      required: true
       x-summary: Summary for fire_mode_type_id
       description: Description for `fire_mode_type_id`
     description:
       type: string
-      required: true
       x-summary: Summary for description
       description: Description for `description`

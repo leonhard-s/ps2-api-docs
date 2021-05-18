@@ -3,151 +3,142 @@ fire_mode:
   properties:
     fire_mode_id:
       type: integer
-      required: true
       x-summary: Summary for fire_mode_id
       description: Description for `fire_mode_id`
     item_id:
       type: integer
-      required: true
       x-summary: Summary for item_id
       description: Description for `item_id`
     type:
       type: string
-      required: true
       x-summary: Summary for type
       description: Description for `type`
     description:
       type: unknown
-      required: true
       x-summary: Summary for description
       description: Description for `description`
     player_state_group_id:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for player_state_group_id
       description: Description for `player_state_group_id`
     cof_recoil:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for cof_recoil
       description: Description for `cof_recoil`
     reload_time_ms:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for reload_time_ms
       description: Description for `reload_time_ms`
     reload_chamber_time_ms:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for reload_chamber_time_ms
       description: Description for `reload_chamber_time_ms`
     pellets_per_shot:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for pellets_per_shot
       description: Description for `pellets_per_shot`
     pellet_spread:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for pellet_spread
       description: Description for `pellet_spread`
     default_zoom:
       type: number
-      required: true
       x-summary: Summary for default_zoom
       description: Description for `default_zoom`
     muzzle_velocity:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for muzzle_velocity
       description: Description for `muzzle_velocity`
     speed:
       type: integer
-      required: true
       x-summary: Summary for speed
       description: Description for `speed`
     max_speed:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for max_speed
       description: Description for `max_speed`
     damage_radius:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for damage_radius
       description: Description for `damage_radius`
     projectile_description:
       type: string
-      required: true
       x-summary: Summary for projectile_description
       description: Description for `projectile_description`
     damage_type:
       type: string
-      required: true
       x-summary: Summary for damage_type
       description: Description for `damage_type`
     damage:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for damage
       description: Description for `damage`
     damage_min:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for damage_min
       description: Description for `damage_min`
     damage_max:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for damage_max
       description: Description for `damage_max`
     damage_min_range:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for damage_min_range
       description: Description for `damage_min_range`
     damage_max_range:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for damage_max_range
       description: Description for `damage_max_range`
     damage_target_type:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for damage_target_type
       description: Description for `damage_target_type`
     damage_resist_type:
       type: integer
-      required: true
       x-summary: Summary for damage_resist_type
       description: Description for `damage_resist_type`
     indirect_damage_max:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for indirect_damage_max
       description: Description for `indirect_damage_max`
     indirect_damage_max_range:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for indirect_damage_max_range
       description: Description for `indirect_damage_max_range`
     indirect_damage_min:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for indirect_damage_min
       description: Description for `indirect_damage_min`
     indirect_damage_min_range:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for indirect_damage_min_range
       description: Description for `indirect_damage_min_range`
     indirect_damage_target_type:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for indirect_damage_target_type
       description: Description for `indirect_damage_target_type`
     indirect_damage_resist_type:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for indirect_damage_resist_type
       description: Description for `indirect_damage_resist_type`

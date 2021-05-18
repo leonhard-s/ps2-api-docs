@@ -3,101 +3,102 @@ ability_type:
   properties:
     ability_type_id:
       type: integer
-      required: true
       x-summary: Summary for ability_type_id
       description: Description for `ability_type_id`
     description:
       type: string
-      required: false
+      nullable: true
       x-summary: Summary for description
       description: Description for `description`
     param1:
       type: string
-      required: false
+      nullable: true
       x-summary: Summary for param1
       description: Description for `param1`
     param2:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param2
       description: Description for `param2`
     param3:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param3
       description: Description for `param3`
     param4:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param4
       description: Description for `param4`
     param5:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param5
       description: Description for `param5`
     param6:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param6
       description: Description for `param6`
     param7:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param7
       description: Description for `param7`
     param8:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param8
       description: Description for `param8`
     param9:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param9
       description: Description for `param9`
     param10:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param10
       description: Description for `param10`
     param11:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param11
       description: Description for `param11`
     param12:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param12
       description: Description for `param12`
     param13:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param13
       description: Description for `param13`
     param14:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for param14
       description: Description for `param14`
     string1:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for string1
       description: Description for `string1`
     string2:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for string2
       description: Description for `string2`
     string3:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for string3
       description: Description for `string3`
     string4:
       type: unknown
-      required: false
+      nullable: true
       x-summary: Summary for string4
       description: Description for `string4`
+  examples:
+    $ref: ../examples/ability_type.json

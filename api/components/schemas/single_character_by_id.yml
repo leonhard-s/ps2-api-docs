@@ -3,76 +3,61 @@ single_character_by_id:
   properties:
     character_id:
       type: integer
-      required: true
       x-summary: Summary for character_id
       description: Description for `character_id`
     name:
       type: string
-      required: true
       x-summary: Summary for name
       description: Description for `name`
     faction_id:
       type: integer
-      required: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
     head_id:
       type: integer
-      required: true
       x-summary: Summary for head_id
       description: Description for `head_id`
     title_id:
       type: integer
-      required: true
       x-summary: Summary for title_id
       description: Description for `title_id`
     times:
       type: string
-      required: true
       x-summary: Summary for times
       description: Description for `times`
     certs:
       type: string
-      required: true
       x-summary: Summary for certs
       description: Description for `certs`
     battle_rank:
       type: string
-      required: true
       x-summary: Summary for battle_rank
       description: Description for `battle_rank`
     profile_id:
       type: integer
-      required: true
       x-summary: Summary for profile_id
       description: Description for `profile_id`
     daily_ribbon:
       type: string
-      required: true
       x-summary: Summary for daily_ribbon
       description: Description for `daily_ribbon`
     prestige_level:
       type: integer
-      required: true
       x-summary: Summary for prestige_level
       description: Description for `prestige_level`
     currency:
       type: string
-      required: true
       x-summary: Summary for currency
       description: Description for `currency`
     stats:
       type: string
-      required: true
       x-summary: Summary for stats
       description: Description for `stats`
     items:
       type: string
-      required: true
       x-summary: Summary for items
       description: Description for `items`
     sub_timing:
       type: boolean
-      required: true
       x-summary: Summary for sub_timing
       description: Description for `sub_timing`

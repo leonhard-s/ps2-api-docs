@@ -3,41 +3,36 @@ experience_rank:
   properties:
     rank:
       type: integer
-      required: true
       x-summary: Summary for rank
       description: Description for `rank`
     xp_max:
       type: number
-      required: true
       x-summary: Summary for xp_max
       description: Description for `xp_max`
     vs:
       type: unknown
-      required: true
       x-summary: Summary for vs
       description: Description for `vs`
     vs_image_path:
       type: string
-      required: false
+      nullable: true
       x-summary: Summary for vs_image_path
       description: Description for `vs_image_path`
     nc:
       type: unknown
-      required: true
       x-summary: Summary for nc
       description: Description for `nc`
     nc_image_path:
       type: string
-      required: false
+      nullable: true
       x-summary: Summary for nc_image_path
       description: Description for `nc_image_path`
     tr:
       type: unknown
-      required: true
       x-summary: Summary for tr
       description: Description for `tr`
     tr_image_path:
       type: string
-      required: false
+      nullable: true
       x-summary: Summary for tr_image_path
       description: Description for `tr_image_path`

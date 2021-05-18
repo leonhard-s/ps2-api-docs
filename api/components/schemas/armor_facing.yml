@@ -3,11 +3,9 @@ armor_facing:
   properties:
     armor_facing_id:
       type: integer
-      required: true
       x-summary: Summary for armor_facing_id
       description: Description for `armor_facing_id`
     description:
       type: string
-      required: true
       x-summary: Summary for description
       description: Description for `description`

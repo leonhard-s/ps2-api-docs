@@ -3,51 +3,41 @@ characters_stat:
   properties:
     character_id:
       type: integer
-      required: true
       x-summary: Summary for character_id
       description: Description for `character_id`
     stat_name:
       type: string
-      required: true
       x-summary: Summary for stat_name
       description: Description for `stat_name`
     profile_id:
       type: integer
-      required: true
       x-summary: Summary for profile_id
       description: Description for `profile_id`
     value_forever:
       type: integer
-      required: true
       x-summary: Summary for value_forever
       description: Description for `value_forever`
     value_monthly:
       type: integer
-      required: true
       x-summary: Summary for value_monthly
       description: Description for `value_monthly`
     value_weekly:
       type: integer
-      required: true
       x-summary: Summary for value_weekly
       description: Description for `value_weekly`
     value_daily:
       type: integer
-      required: true
       x-summary: Summary for value_daily
       description: Description for `value_daily`
     value_one_life_max:
       type: integer
-      required: true
       x-summary: Summary for value_one_life_max
       description: Description for `value_one_life_max`
     last_save:
       type: integer
-      required: true
       x-summary: Summary for last_save
       description: Description for `last_save`
     last_save_date:
       type: string
-      required: true
       x-summary: Summary for last_save_date
       description: Description for `last_save_date`

@@ -3,66 +3,53 @@ profile:
   properties:
     profile_id:
       type: integer
-      required: true
       x-summary: Summary for profile_id
       description: Description for `profile_id`
     profile_type_id:
       type: integer
-      required: true
       x-summary: Summary for profile_type_id
       description: Description for `profile_type_id`
     profile_type_description:
       type: string
-      required: true
       x-summary: Summary for profile_type_description
       description: Description for `profile_type_description`
     faction_id:
       type: integer
-      required: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
     name:
       type: unknown
-      required: true
       x-summary: Summary for name
       description: Description for `name`
     description:
       type: unknown
-      required: true
       x-summary: Summary for description
       description: Description for `description`
     image_set_id:
       type: integer
-      required: true
       x-summary: Summary for image_set_id
       description: Description for `image_set_id`
     image_id:
       type: integer
-      required: true
       x-summary: Summary for image_id
       description: Description for `image_id`
     image_path:
       type: string
-      required: true
       x-summary: Summary for image_path
       description: Description for `image_path`
     movement_speed:
       type: integer
-      required: true
       x-summary: Summary for movement_speed
       description: Description for `movement_speed`
     backpedal_speed_modifier:
       type: number
-      required: true
       x-summary: Summary for backpedal_speed_modifier
       description: Description for `backpedal_speed_modifier`
     sprint_speed_modifier:
       type: number
-      required: true
       x-summary: Summary for sprint_speed_modifier
       description: Description for `sprint_speed_modifier`
     strafe_speed_modifier:
       type: number
-      required: true
       x-summary: Summary for strafe_speed_modifier
       description: Description for `strafe_speed_modifier`

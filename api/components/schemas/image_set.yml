@@ -3,31 +3,25 @@ image_set:
   properties:
     image_set_id:
       type: integer
-      required: true
       x-summary: Summary for image_set_id
       description: Description for `image_set_id`
     image_id:
       type: integer
-      required: true
       x-summary: Summary for image_id
       description: Description for `image_id`
     description:
       type: string
-      required: true
       x-summary: Summary for description
       description: Description for `description`
     type_id:
       type: integer
-      required: true
       x-summary: Summary for type_id
       description: Description for `type_id`
     type_description:
       type: string
-      required: true
       x-summary: Summary for type_description
       description: Description for `type_description`
     image_path:
       type: string
-      required: true
       x-summary: Summary for image_path
       description: Description for `image_path`

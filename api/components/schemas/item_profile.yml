@@ -3,11 +3,9 @@ item_profile:
   properties:
     item_id:
       type: integer
-      required: true
       x-summary: Summary for item_id
       description: Description for `item_id`
     profile_id:
       type: integer
-      required: true
       x-summary: Summary for profile_id
       description: Description for `profile_id`

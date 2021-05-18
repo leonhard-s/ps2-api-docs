@@ -3,106 +3,102 @@ weapon_datasheet:
   properties:
     item_id:
       type: integer
-      required: true
       x-summary: Summary for item_id
       description: Description for `item_id`
     direct_damage:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for direct_damage
       description: Description for `direct_damage`
     indirect_damage:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for indirect_damage
       description: Description for `indirect_damage`
     damage:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for damage
       description: Description for `damage`
     damage_min:
       type: integer
-      required: true
       x-summary: Summary for damage_min
       description: Description for `damage_min`
     damage_max:
       type: integer
-      required: true
       x-summary: Summary for damage_max
       description: Description for `damage_max`
     fire_cone:
       type: number
-      required: false
+      nullable: true
       x-summary: Summary for fire_cone
       description: Description for `fire_cone`
     fire_cone_min:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for fire_cone_min
       description: Description for `fire_cone_min`
     fire_cone_max:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for fire_cone_max
       description: Description for `fire_cone_max`
     fire_rate_ms:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for fire_rate_ms
       description: Description for `fire_rate_ms`
     fire_rate_ms_min:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for fire_rate_ms_min
       description: Description for `fire_rate_ms_min`
     fire_rate_mx_max:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for fire_rate_mx_max
       description: Description for `fire_rate_mx_max`
     reload_ms:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for reload_ms
       description: Description for `reload_ms`
     reload_ms_min:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for reload_ms_min
       description: Description for `reload_ms_min`
     reload_ms_max:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for reload_ms_max
       description: Description for `reload_ms_max`
     clip_size:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for clip_size
       description: Description for `clip_size`
     capacity:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for capacity
       description: Description for `capacity`
     range:
       type: unknown
-      required: true
       x-summary: Summary for range
       description: Description for `range`
     show_clip_size:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for show_clip_size
       description: Description for `show_clip_size`
     show_fire_modes:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for show_fire_modes
       description: Description for `show_fire_modes`
     show_range:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for show_range
       description: Description for `show_range`

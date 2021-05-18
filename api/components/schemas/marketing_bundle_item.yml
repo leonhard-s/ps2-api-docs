@@ -3,21 +3,17 @@ marketing_bundle_item:
   properties:
     marketing_bundle_id:
       type: integer
-      required: true
       x-summary: Summary for marketing_bundle_id
       description: Description for `marketing_bundle_id`
     item_id:
       type: integer
-      required: true
       x-summary: Summary for item_id
       description: Description for `item_id`
     quantity:
       type: integer
-      required: true
       x-summary: Summary for quantity
       description: Description for `quantity`
     release_time:
       type: integer
-      required: true
       x-summary: Summary for release_time
       description: Description for `release_time`

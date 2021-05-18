@@ -3,16 +3,13 @@ characters_leaderboard:
   properties:
     character_id:
       type: integer
-      required: true
       x-summary: Summary for character_id
       description: Description for `character_id`
     value:
       type: integer
-      required: true
       x-summary: Summary for value
       description: Description for `value`
     rank:
       type: integer
-      required: true
       x-summary: Summary for rank
       description: Description for `rank`

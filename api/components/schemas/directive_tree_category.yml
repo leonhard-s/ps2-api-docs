@@ -3,11 +3,9 @@ directive_tree_category:
   properties:
     directive_tree_category_id:
       type: integer
-      required: true
       x-summary: Summary for directive_tree_category_id
       description: Description for `directive_tree_category_id`
     name:
       type: unknown
-      required: true
       x-summary: Summary for name
       description: Description for `name`

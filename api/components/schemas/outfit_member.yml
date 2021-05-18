@@ -3,31 +3,25 @@ outfit_member:
   properties:
     outfit_id:
       type: integer
-      required: true
       x-summary: Summary for outfit_id
       description: Description for `outfit_id`
     character_id:
       type: integer
-      required: true
       x-summary: Summary for character_id
       description: Description for `character_id`
     member_since:
       type: integer
-      required: true
       x-summary: Summary for member_since
       description: Description for `member_since`
     member_since_date:
       type: string
-      required: true
       x-summary: Summary for member_since_date
       description: Description for `member_since_date`
     rank:
       type: string
-      required: true
       x-summary: Summary for rank
       description: Description for `rank`
     rank_ordinal:
       type: integer
-      required: true
       x-summary: Summary for rank_ordinal
       description: Description for `rank_ordinal`

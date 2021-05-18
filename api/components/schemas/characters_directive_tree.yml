@@ -3,31 +3,25 @@ characters_directive_tree:
   properties:
     character_id:
       type: integer
-      required: true
       x-summary: Summary for character_id
       description: Description for `character_id`
     directive_tree_id:
       type: integer
-      required: true
       x-summary: Summary for directive_tree_id
       description: Description for `directive_tree_id`
     current_directive_tier_id:
       type: integer
-      required: true
       x-summary: Summary for current_directive_tier_id
       description: Description for `current_directive_tier_id`
     current_level:
       type: integer
-      required: true
       x-summary: Summary for current_level
       description: Description for `current_level`
     completion_time:
       type: integer
-      required: true
       x-summary: Summary for completion_time
       description: Description for `completion_time`
     completion_time_date:
       type: string
-      required: true
       x-summary: Summary for completion_time_date
       description: Description for `completion_time_date`

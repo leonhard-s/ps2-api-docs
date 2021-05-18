@@ -3,26 +3,22 @@ vehicle_attachment:
   properties:
     item_id:
       type: integer
-      required: true
       x-summary: Summary for item_id
       description: Description for `item_id`
     vehicle_id:
       type: integer
-      required: true
       x-summary: Summary for vehicle_id
       description: Description for `vehicle_id`
     faction_id:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
     description:
       type: string
-      required: true
       x-summary: Summary for description
       description: Description for `description`
     slot_id:
       type: integer
-      required: true
       x-summary: Summary for slot_id
       description: Description for `slot_id`

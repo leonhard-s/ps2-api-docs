@@ -3,16 +3,13 @@ fire_group_to_fire_mode:
   properties:
     fire_group_id:
       type: integer
-      required: true
       x-summary: Summary for fire_group_id
       description: Description for `fire_group_id`
     fire_mode_id:
       type: integer
-      required: true
       x-summary: Summary for fire_mode_id
       description: Description for `fire_mode_id`
     fire_mode_index:
       type: integer
-      required: true
       x-summary: Summary for fire_mode_index
       description: Description for `fire_mode_index`

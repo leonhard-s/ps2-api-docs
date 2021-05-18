@@ -3,11 +3,9 @@ objective_set_to_objective:
   properties:
     objective_set_id:
       type: integer
-      required: true
       x-summary: Summary for objective_set_id
       description: Description for `objective_set_id`
     objective_group_id:
       type: integer
-      required: true
       x-summary: Summary for objective_group_id
       description: Description for `objective_group_id`

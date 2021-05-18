@@ -3,56 +3,45 @@ world_event:
   properties:
     facility_id:
       type: integer
-      required: true
       x-summary: Summary for facility_id
       description: Description for `facility_id`
     faction_old:
       type: integer
-      required: true
       x-summary: Summary for faction_old
       description: Description for `faction_old`
     faction_new:
       type: integer
-      required: true
       x-summary: Summary for faction_new
       description: Description for `faction_new`
     duration_held:
       type: integer
-      required: true
       x-summary: Summary for duration_held
       description: Description for `duration_held`
     objective_id:
       type: integer
-      required: true
       x-summary: Summary for objective_id
       description: Description for `objective_id`
     timestamp:
       type: integer
-      required: true
       x-summary: Summary for timestamp
       description: Description for `timestamp`
     zone_id:
       type: integer
-      required: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
     world_id:
       type: integer
-      required: true
       x-summary: Summary for world_id
       description: Description for `world_id`
     event_type:
       type: string
-      required: true
       x-summary: Summary for event_type
       description: Description for `event_type`
     table_type:
       type: string
-      required: true
       x-summary: Summary for table_type
       description: Description for `table_type`
     outfit_id:
       type: integer
-      required: true
       x-summary: Summary for outfit_id
       description: Description for `outfit_id`

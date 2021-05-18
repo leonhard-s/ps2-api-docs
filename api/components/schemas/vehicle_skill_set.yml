@@ -3,21 +3,17 @@ vehicle_skill_set:
   properties:
     vehicle_id:
       type: integer
-      required: true
       x-summary: Summary for vehicle_id
       description: Description for `vehicle_id`
     skill_set_id:
       type: integer
-      required: true
       x-summary: Summary for skill_set_id
       description: Description for `skill_set_id`
     faction_id:
       type: integer
-      required: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
     display_index:
       type: integer
-      required: true
       x-summary: Summary for display_index
       description: Description for `display_index`

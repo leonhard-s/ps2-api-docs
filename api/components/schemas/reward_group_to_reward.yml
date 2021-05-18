@@ -3,11 +3,9 @@ reward_group_to_reward:
   properties:
     reward_group_id:
       type: integer
-      required: true
       x-summary: Summary for reward_group_id
       description: Description for `reward_group_id`
     reward_id:
       type: integer
-      required: true
       x-summary: Summary for reward_id
       description: Description for `reward_id`

@@ -3,11 +3,9 @@ player_state:
   properties:
     player_state_id:
       type: integer
-      required: true
       x-summary: Summary for player_state_id
       description: Description for `player_state_id`
     description:
       type: string
-      required: true
       x-summary: Summary for description
       description: Description for `description`

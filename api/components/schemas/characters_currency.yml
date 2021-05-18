@@ -3,26 +3,21 @@ characters_currency:
   properties:
     character_id:
       type: integer
-      required: true
       x-summary: Summary for character_id
       description: Description for `character_id`
     currency_id:
       type: integer
-      required: true
       x-summary: Summary for currency_id
       description: Description for `currency_id`
     currency_name:
       type: string
-      required: true
       x-summary: Summary for currency_name
       description: Description for `currency_name`
     quantity:
       type: integer
-      required: true
       x-summary: Summary for quantity
       description: Description for `quantity`
     prestige_currency:
       type: integer
-      required: true
       x-summary: Summary for prestige_currency
       description: Description for `prestige_currency`

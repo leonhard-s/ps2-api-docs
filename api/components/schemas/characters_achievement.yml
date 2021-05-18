@@ -3,46 +3,37 @@ characters_achievement:
   properties:
     character_id:
       type: integer
-      required: true
       x-summary: Summary for character_id
       description: Description for `character_id`
     achievement_id:
       type: integer
-      required: true
       x-summary: Summary for achievement_id
       description: Description for `achievement_id`
     earned_count:
       type: integer
-      required: true
       x-summary: Summary for earned_count
       description: Description for `earned_count`
     start:
       type: integer
-      required: true
       x-summary: Summary for start
       description: Description for `start`
     start_date:
       type: string
-      required: true
       x-summary: Summary for start_date
       description: Description for `start_date`
     finish:
       type: integer
-      required: true
       x-summary: Summary for finish
       description: Description for `finish`
     finish_date:
       type: string
-      required: true
       x-summary: Summary for finish_date
       description: Description for `finish_date`
     last_save:
       type: integer
-      required: true
       x-summary: Summary for last_save
       description: Description for `last_save`
     last_save_date:
       type: string
-      required: true
       x-summary: Summary for last_save_date
       description: Description for `last_save_date`

@@ -3,36 +3,33 @@ directive_tree:
   properties:
     directive_tree_id:
       type: integer
-      required: true
       x-summary: Summary for directive_tree_id
       description: Description for `directive_tree_id`
     directive_tree_category_id:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for directive_tree_category_id
       description: Description for `directive_tree_category_id`
     name:
       type: unknown
-      required: true
       x-summary: Summary for name
       description: Description for `name`
     description:
       type: unknown
-      required: true
       x-summary: Summary for description
       description: Description for `description`
     image_set_id:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for image_set_id
       description: Description for `image_set_id`
     image_id:
       type: integer
-      required: false
+      nullable: true
       x-summary: Summary for image_id
       description: Description for `image_id`
     image_path:
       type: string
-      required: false
+      nullable: true
       x-summary: Summary for image_path
       description: Description for `image_path`

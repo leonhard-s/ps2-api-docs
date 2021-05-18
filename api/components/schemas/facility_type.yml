@@ -3,11 +3,9 @@ facility_type:
   properties:
     facility_type_id:
       type: integer
-      required: true
       x-summary: Summary for facility_type_id
       description: Description for `facility_type_id`
     description:
       type: string
-      required: true
       x-summary: Summary for description
       description: Description for `description`
