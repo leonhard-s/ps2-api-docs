@@ -3,6 +3,8 @@ currency:
   properties:
     currency_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for currency_id
       description: Description for `currency_id`
     name:
@@ -11,6 +13,8 @@ currency:
       description: Description for `name`
     icon_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for icon_id
       description: Description for `icon_id`
     inventory_cap:

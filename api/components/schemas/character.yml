@@ -3,6 +3,8 @@ character:
   properties:
     character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
@@ -17,14 +19,18 @@ character:
           type: string
     faction_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
     head_id:
       type: integer
+      minimum: 0
       x-summary: Summary for head_id
       description: Description for `head_id`
     title_id:
       type: integer
+      minimum: 0
       x-summary: Summary for title_id
       description: Description for `title_id`
     times:
@@ -74,6 +80,8 @@ character:
           type: integer
     profile_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for profile_id
       description: Description for `profile_id`
     daily_ribbon:

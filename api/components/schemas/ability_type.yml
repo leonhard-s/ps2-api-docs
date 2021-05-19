@@ -3,6 +3,8 @@ ability_type:
   properties:
     ability_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for ability_type_id
       description: Description for `ability_type_id`
     description:

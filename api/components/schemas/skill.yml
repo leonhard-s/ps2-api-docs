@@ -3,10 +3,14 @@ skill:
   properties:
     skill_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for skill_id
       description: Description for `skill_id`
     skill_line_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for skill_line_id
       description: Description for `skill_line_id`
     skill_line_index:
@@ -54,11 +58,15 @@ skill:
           type: string
     image_set_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for image_set_id
       description: Description for `image_set_id`
     image_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for image_id
       description: Description for `image_id`

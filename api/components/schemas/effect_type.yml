@@ -3,6 +3,8 @@ effect_type:
   properties:
     effect_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for effect_type_id
       description: Description for `effect_type_id`
     description:

@@ -3,20 +3,27 @@ achievement:
   properties:
     achievement_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for achievement_id
       description: Description for `achievement_id`
     item_id:
       type: integer
       nullable: true
+      minimum: 0
       x-summary: Summary for item_id
       description: Description for `item_id`
     objective_group_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for objective_group_id
       description: Description for `objective_group_id`
     reward_id:
       type: integer
       nullable: true
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for reward_id
       description: Description for `reward_id`
     repeatable:
@@ -56,13 +63,13 @@ achievement:
     image_set_id:
       type: integer
       nullable: true
-      x-summary: Summary for image_set_id
-      description: Description for `image_set_id`
+      minimum: 0
+      exclusiveMinimum: true
     image_id:
       type: integer
       nullable: true
-      x-summary: Summary for image_id
-      description: Description for `image_id`
+      minimum: 0
+      exclusiveMinimum: true
     image_path:
       type: string
       nullable: true

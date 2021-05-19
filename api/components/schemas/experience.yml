@@ -3,6 +3,8 @@ experience:
   properties:
     experience_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for experience_id
       description: Description for `experience_id`
     description:

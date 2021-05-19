@@ -3,10 +3,14 @@ profile:
   properties:
     profile_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for profile_id
       description: Description for `profile_id`
     profile_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for profile_type_id
       description: Description for `profile_type_id`
     profile_type_description:
@@ -15,6 +19,8 @@ profile:
       description: Description for `profile_type_description`
     faction_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
     name:
@@ -49,10 +55,14 @@ profile:
           type: string
     image_set_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for image_set_id
       description: Description for `image_set_id`
     image_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for image_id
       description: Description for `image_id`
     image_path:

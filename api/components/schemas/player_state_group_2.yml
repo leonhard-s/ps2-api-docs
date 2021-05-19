@@ -3,10 +3,14 @@ player_state_group_2:
   properties:
     player_state_group_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for player_state_group_id
       description: Description for `player_state_group_id`
     player_state_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for player_state_id
       description: Description for `player_state_id`
     can_iron_sight:

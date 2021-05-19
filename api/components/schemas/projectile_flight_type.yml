@@ -3,6 +3,8 @@ projectile_flight_type:
   properties:
     projectile_flight_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for projectile_flight_type_id
       description: Description for `projectile_flight_type_id`
     description:

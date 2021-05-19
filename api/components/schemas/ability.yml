@@ -3,10 +3,14 @@ ability:
   properties:
     ability_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for ability_id
       description: Description for `ability_id`
     ability_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for ability_type_id
       description: Description for `ability_type_id`
     expire_msec:
@@ -31,6 +35,8 @@ ability:
       description: Description for `reuse_delay_msec`
     resource_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for resource_type_id
       description: Description for `resource_type_id`

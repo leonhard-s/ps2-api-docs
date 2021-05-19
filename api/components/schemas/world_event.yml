@@ -3,6 +3,8 @@ world_event:
   properties:
     facility_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for facility_id
       description: Description for `facility_id`
     faction_old:
@@ -27,10 +29,14 @@ world_event:
       description: Description for `timestamp`
     zone_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
     world_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for world_id
       description: Description for `world_id`
     event_type:

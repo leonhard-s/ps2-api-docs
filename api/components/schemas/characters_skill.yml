@@ -3,11 +3,15 @@ characters_skill:
   properties:
     character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
     skill_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for skill_id
       description: Description for `skill_id`
     last_save:

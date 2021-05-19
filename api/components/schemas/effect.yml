@@ -3,15 +3,21 @@ effect:
   properties:
     effect_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for effect_id
       description: Description for `effect_id`
     effect_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for effect_type_id
       description: Description for `effect_type_id`
     ability_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for ability_id
       description: Description for `ability_id`
@@ -22,6 +28,8 @@ effect:
       description: Description for `target_type_id`
     resist_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for resist_type_id
       description: Description for `resist_type_id`
     is_drain:

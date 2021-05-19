@@ -3,6 +3,8 @@ characters_weapon_stat:
   properties:
     character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`

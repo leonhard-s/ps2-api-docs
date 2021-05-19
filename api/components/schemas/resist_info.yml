@@ -3,10 +3,14 @@ resist_info:
   properties:
     resist_info_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for resist_info_id
       description: Description for `resist_info_id`
     resist_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for resist_type_id
       description: Description for `resist_type_id`
     resist_percent:

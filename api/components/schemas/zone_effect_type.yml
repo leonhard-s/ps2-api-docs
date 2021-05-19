@@ -3,6 +3,8 @@ zone_effect_type:
   properties:
     zone_effect_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for zone_effect_type_id
       description: Description for `zone_effect_type_id`
     description:

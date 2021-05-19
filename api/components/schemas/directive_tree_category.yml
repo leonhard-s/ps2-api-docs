@@ -3,6 +3,8 @@ directive_tree_category:
   properties:
     directive_tree_category_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for directive_tree_category_id
       description: Description for `directive_tree_category_id`
     name:

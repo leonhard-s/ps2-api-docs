@@ -3,10 +3,14 @@ image_set:
   properties:
     image_set_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for image_set_id
       description: Description for `image_set_id`
     image_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for image_id
       description: Description for `image_id`
     description:
@@ -15,6 +19,8 @@ image_set:
       description: Description for `description`
     type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for type_id
       description: Description for `type_id`
     type_description:

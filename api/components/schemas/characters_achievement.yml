@@ -3,11 +3,15 @@ characters_achievement:
   properties:
     character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
     achievement_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for achievement_id
       description: Description for `achievement_id`
     earned_count:

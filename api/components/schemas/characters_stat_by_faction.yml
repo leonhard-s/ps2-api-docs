@@ -3,6 +3,8 @@ characters_stat_by_faction:
   properties:
     character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
@@ -12,6 +14,7 @@ characters_stat_by_faction:
       description: Description for `stat_name`
     profile_id:
       type: integer
+      minimum: 0
       x-summary: Summary for profile_id
       description: Description for `profile_id`
     value_forever_vs:

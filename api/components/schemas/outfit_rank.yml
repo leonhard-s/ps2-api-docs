@@ -3,6 +3,8 @@ outfit_rank:
   properties:
     outfit_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for outfit_id
       description: Description for `outfit_id`
     ordinal:

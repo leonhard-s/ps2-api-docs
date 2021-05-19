@@ -3,6 +3,8 @@ marketing_bundle:
   properties:
     marketing_bundle_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for marketing_bundle_id
       description: Description for `marketing_bundle_id`
     name:
@@ -37,6 +39,8 @@ marketing_bundle:
           type: string
     image_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for image_id
       description: Description for `image_id`
     station_cash_price:

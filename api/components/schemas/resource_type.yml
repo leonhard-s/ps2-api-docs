@@ -1,13 +1,19 @@
 resource_type:
-  description: Description for `resource_type`.
+  description: |
+    Resources are entity-specific states used by other mechanics.
+
+    You can think of them as attributes attached to a character or vehicle that is then modified by other game mechanics.
+
+    This includes active class abilities like the Combat Medic's Regeneration Device or the Heavy Assault's shield, physical resources like Cortium carried by A.N.T.s or Collossi, but are also used as a reservoir for other game mechanics like Esamir's Electrical Storm vehicle de-buff.
   properties:
     resource_type_id:
       type: integer
-      x-summary: Summary for resource_type_id
-      description: Description for `resource_type_id`
+      minimum: 0
+      exclusiveMinimum: true
+      description: Unique ID of the resource type.
     description:
       type: string
-      x-summary: Summary for description
-      description: Description for `description`
-  example:
-    $ref: ../examples/resource_type.json
+      description: |
+        An internal description of what this  resource type is used for.
+
+        This string is not safe to display to users as this  field could be blank or set to a dummy value like `Esamir.Storm.VehicleOverload`.

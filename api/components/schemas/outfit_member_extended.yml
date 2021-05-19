@@ -3,6 +3,8 @@ outfit_member_extended:
   properties:
     character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
@@ -24,6 +26,8 @@ outfit_member_extended:
       description: Description for `member_rank_ordinal`
     outfit_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for outfit_id
       description: Description for `outfit_id`
     name:
@@ -52,6 +56,8 @@ outfit_member_extended:
       description: Description for `time_created_date`
     leader_character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for leader_character_id
       description: Description for `leader_character_id`
     member_count:

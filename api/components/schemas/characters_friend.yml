@@ -3,6 +3,8 @@ characters_friend:
   properties:
     character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
@@ -20,7 +22,9 @@ characters_friend:
         properties:
           character_id:
             type: integer
-            format: int6464
+            format: int64
+            minimum: 0
+            exclusiveMinimum: true
           last_login_time:
             type: string
           online:

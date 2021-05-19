@@ -3,6 +3,8 @@ objective_type:
   properties:
     objective_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for objective_type_id
       description: Description for `objective_type_id`
     description:

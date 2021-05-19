@@ -3,11 +3,15 @@ characters_world:
   properties:
     character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
     world_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for world_id
       description: Description for `world_id`
   example:

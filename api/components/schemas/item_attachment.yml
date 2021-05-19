@@ -3,10 +3,14 @@ item_attachment:
   properties:
     item_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for item_id
       description: Description for `item_id`
     attachment_item_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for attachment_item_id
       description: Description for `attachment_item_id`
   example:

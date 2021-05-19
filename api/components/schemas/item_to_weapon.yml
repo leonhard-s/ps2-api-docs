@@ -3,10 +3,14 @@ item_to_weapon:
   properties:
     item_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for item_id
       description: Description for `item_id`
     weapon_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for weapon_id
       description: Description for `weapon_id`

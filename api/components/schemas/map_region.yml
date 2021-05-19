@@ -3,14 +3,20 @@ map_region:
   properties:
     map_region_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for map_region_id
       description: Description for `map_region_id`
     zone_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
     facility_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for facility_id
       description: Description for `facility_id`
@@ -20,6 +26,8 @@ map_region:
       description: Description for `facility_name`
     facility_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for facility_type_id
       description: Description for `facility_type_id`
@@ -50,6 +58,8 @@ map_region:
       description: Description for `reward_amount`
     reward_currency_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for reward_currency_id
       description: Description for `reward_currency_id`

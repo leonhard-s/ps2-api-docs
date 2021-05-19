@@ -3,6 +3,8 @@ single_character_by_id:
   properties:
     character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
@@ -12,14 +14,20 @@ single_character_by_id:
       description: Description for `name`
     faction_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
     head_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for head_id
       description: Description for `head_id`
     title_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for title_id
       description: Description for `title_id`
     times:

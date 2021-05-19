@@ -3,6 +3,8 @@ fire_group:
   properties:
     fire_group_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for fire_group_id
       description: Description for `fire_group_id`
     chamber_duration_ms:

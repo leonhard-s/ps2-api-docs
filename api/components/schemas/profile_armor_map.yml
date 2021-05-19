@@ -3,10 +3,14 @@ profile_armor_map:
   properties:
     profile_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for profile_id
       description: Description for `profile_id`
     armor_info_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for armor_info_id
       description: Description for `armor_info_id`
     rank:

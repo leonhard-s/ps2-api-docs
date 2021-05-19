@@ -3,10 +3,14 @@ directive_tree:
   properties:
     directive_tree_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for directive_tree_id
       description: Description for `directive_tree_id`
     directive_tree_category_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for directive_tree_category_id
       description: Description for `directive_tree_category_id`
@@ -42,11 +46,15 @@ directive_tree:
           type: string
     image_set_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for image_set_id
       description: Description for `image_set_id`
     image_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for image_id
       description: Description for `image_id`

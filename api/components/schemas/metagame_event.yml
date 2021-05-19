@@ -3,6 +3,8 @@ metagame_event:
   properties:
     metagame_event_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for metagame_event_id
       description: Description for `metagame_event_id`
     name:

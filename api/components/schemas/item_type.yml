@@ -3,6 +3,8 @@ item_type:
   properties:
     item_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for item_type_id
       description: Description for `item_type_id`
     name:

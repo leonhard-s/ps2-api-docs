@@ -3,6 +3,8 @@ title:
   properties:
     title_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for title_id
       description: Description for `title_id`
     name:

@@ -3,10 +3,14 @@ fire_mode_2:
   properties:
     fire_mode_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for fire_mode_id
       description: Description for `fire_mode_id`
     fire_mode_type_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for fire_mode_type_id
       description: Description for `fire_mode_type_id`
@@ -95,6 +99,8 @@ fire_mode_2:
       description: Description for `cof_scalar_moving`
     player_state_group_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for player_state_group_id
       description: Description for `player_state_group_id`
     damage_direct_effect_id:

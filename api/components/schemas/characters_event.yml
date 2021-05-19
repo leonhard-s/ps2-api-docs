@@ -3,6 +3,8 @@ characters_event:
   properties:
     character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
@@ -16,10 +18,14 @@ characters_event:
       description: Description for `timestamp`
     zone_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
     world_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for world_id
       description: Description for `world_id`
     event_type:

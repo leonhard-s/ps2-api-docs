@@ -3,6 +3,8 @@ event:
   properties:
     character_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
@@ -12,6 +14,8 @@ event:
       description: Description for `vehicle_definition_id`
     faction_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
     attacker_player_guid:
@@ -20,23 +24,28 @@ event:
       description: Description for `attacker_player_guid`
     attacker_character_id:
       type: integer
+      minimum: 0
       format: int64
       x-summary: Summary for attacker_character_id
       description: Description for `attacker_character_id`
     attacker_loadout_id:
       type: integer
+      minimum: 0
       x-summary: Summary for attacker_loadout_id
       description: Description for `attacker_loadout_id`
     attacker_weapon_id:
       type: integer
+      minimum: 0
       x-summary: Summary for attacker_weapon_id
       description: Description for `attacker_weapon_id`
     attacker_vehicle_id:
       type: integer
+      minimum: 0
       x-summary: Summary for attacker_vehicle_id
       description: Description for `attacker_vehicle_id`
     projectile_id:
       type: integer
+      minimum: 0
       x-summary: Summary for projectile_id
       description: Description for `projectile_id`
     timestamp:
@@ -45,10 +54,14 @@ event:
       description: Description for `timestamp`
     zone_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
     world_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for world_id
       description: Description for `world_id`
     event_type:

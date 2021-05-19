@@ -3,10 +3,14 @@ fire_mode:
   properties:
     fire_mode_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for fire_mode_id
       description: Description for `fire_mode_id`
     item_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for item_id
       description: Description for `item_id`
     type:
@@ -30,6 +34,8 @@ fire_mode:
           type: string
     player_state_group_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       nullable: true
       x-summary: Summary for player_state_group_id
       description: Description for `player_state_group_id`

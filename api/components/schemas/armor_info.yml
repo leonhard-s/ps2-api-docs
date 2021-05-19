@@ -3,6 +3,8 @@ armor_info:
   properties:
     armor_info_id:
       type: integer
+      minimum: 0
+      exclusiveMinimum: true
       x-summary: Summary for armor_info_id
       description: Description for `armor_info_id`
     armor_facing_id:
