@@ -31,7 +31,7 @@ The OpenAPI standard allows the insertion of custom fields into the standard. Th
 
   For ID-type properties, this field defines the qualified   name of the collection with this field as its primary key.
 
-  For example, the property `outfit.leader_character_id` has   the value `character_id` as its `x-reference-to` field.
+  For example, the property `outfit.leader_character_id` has the collection `character` as its `x-reference-to` field.
 
   This field may be used to dynamically create or validate   joins to related data.
 
