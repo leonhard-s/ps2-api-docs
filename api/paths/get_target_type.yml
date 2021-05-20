@@ -1,6 +1,9 @@
 get:
-  summary: Summary of target_type
-  description: Description for `target_type`
+  summary: Target Types
+  description: |
+    Enumerator for target types.
+
+    This is used to specify whether a given effect or ability can be case on allies, enemies, or both.
   responses:
     "200":
       description: OK

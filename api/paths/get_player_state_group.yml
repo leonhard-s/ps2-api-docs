@@ -1,6 +1,9 @@
 get:
-  summary: Summary of player_state_group
-  description: Description for `player_state_group`
+  summary: Player State Groups
+  description: |
+    Player-state-specific overrides for a `fire_mode`.
+
+    *This table has been superseded by `player_state_group_2`, which provides additional information and more fields.*
   responses:
     "200":
       description: OK

@@ -1,6 +1,9 @@
 get:
-  summary: Summary of profile
-  description: Description for `profile`
+  summary: Profiles
+  description: |
+    Lists target-able entities.
+
+    *This endpoint has been superseded by `profile_2`, which also includes non-infantry target types like vehicles or deployables.*
   responses:
     "200":
       description: OK

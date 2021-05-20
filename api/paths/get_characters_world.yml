@@ -1,6 +1,7 @@
 get:
-  summary: Summary of characters_world
-  description: Description for `characters_world`
+  summary: Character World
+  description: |
+    A mapping endpoint connecting characters to their associated `world` (i.e. game server).
   responses:
     "200":
       description: OK

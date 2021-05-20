@@ -1,6 +1,9 @@
 get:
-  summary: Summary of item_attachment
-  description: Description for `item_attachment`
+  summary: Item Attachment
+  description: |
+    A mapping of items to their available attachments.
+
+    The `attachment_item_id` field still points to another `item` entry. This is a many-to-many relationship.
   responses:
     "200":
       description: OK

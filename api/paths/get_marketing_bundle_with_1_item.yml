@@ -1,6 +1,9 @@
 get:
-  summary: Summary of marketing_bundle_with_1_item
-  description: Description for `marketing_bundle_with_1_item`
+  summary: Marketing Bundles (Single)
+  description: |
+    Single-item marketing "bundles".
+
+    This endpoint lists purchasable items in the depot that only consist of a single item. This is used for DBC-purchasable scopes, as well as individual cosmetics and items in the depot.
   responses:
     "200":
       description: OK

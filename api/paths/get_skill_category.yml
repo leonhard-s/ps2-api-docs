@@ -1,6 +1,9 @@
 get:
-  summary: Summary of skill_category
-  description: Description for `skill_category`
+  summary: Skill Category
+  description: |
+    A skill category for a particular class or vehicle.
+
+    Skill categories are groups like "Passive Systems", "Performance Slot", or weapon-specific groups like scopes or rail attachments.
   responses:
     "200":
       description: OK

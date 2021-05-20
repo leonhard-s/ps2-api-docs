@@ -1,6 +1,9 @@
 get:
-  summary: Summary of resist_type
-  description: Description for `resist_type`
+  summary: Resist Types
+  description: |
+    Defines the damage types a given damage `effect` can have, like "Melee" or "Small Arms".
+
+    This is used by the `resist_info` collection to map out basis damage multipliers depending on the damage source.
   responses:
     "200":
       description: OK

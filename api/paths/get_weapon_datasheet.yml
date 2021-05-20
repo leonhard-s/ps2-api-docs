@@ -1,6 +1,9 @@
 get:
-  summary: Summary of weapon_datasheet
-  description: Description for `weapon_datasheet`
+  summary: Weapon Datasheet
+  description: |
+    In-game description of a given weapon in the depot.
+
+    Note that this table is **not** a reliable source of weapon data. Refer to the `fire_mode_2` collection for reliable statistics.
   responses:
     "200":
       description: OK

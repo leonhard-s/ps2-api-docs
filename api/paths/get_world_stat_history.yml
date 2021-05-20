@@ -1,6 +1,7 @@
 get:
-  summary: Summary of world_stat_history
-  description: Description for `world_stat_history`
+  summary: World Stat History
+  description: |
+    Another defunct table formerly used in conjunction with the "World Domination Series" events. See the `empire_score` collection for details.
   responses:
     "200":
       description: OK

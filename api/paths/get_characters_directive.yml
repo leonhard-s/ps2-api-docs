@@ -1,6 +1,9 @@
 get:
-  summary: Summary of characters_directive
-  description: Description for `characters_directive`
+  summary: Character Directive Completion
+  description: |
+    Tracker for character directive progress.
+
+    A mapping storing whether a given character has completed this directive.
   responses:
     "200":
       description: OK

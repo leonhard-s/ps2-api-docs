@@ -1,6 +1,9 @@
 get:
-  summary: Summary of fire_mode
-  description: Description for `fire_mode`
+  summary: Fire Modes
+  description: |
+    A fire mode of a weapon.
+
+    *This table was superseded by `fire_mode_2`, which provides more detailed and accurate information.*
   responses:
     "200":
       description: OK

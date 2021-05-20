@@ -1,6 +1,11 @@
 get:
-  summary: Summary of characters_event
-  description: Description for `characters_event`
+  summary: Character Events
+  description: |
+    REST endpoint for character-specific events.
+
+    Historical events for a given character. Only the last 1000 events are available. The fields available depend on the event type (proper enumeration of all fields per type TBA).
+
+    Known event types: `AchievementEarned`, `ItemAdded`
   responses:
     "200":
       description: OK

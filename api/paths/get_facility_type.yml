@@ -1,6 +1,9 @@
 get:
-  summary: Summary of facility_type
-  description: Description for `facility_type`
+  summary: Facility Types
+  description: |
+    Enumeration endpoint for `facility_type_id` fields.
+
+    This table is mostly for developer reference as it does not provide localised names. The `description` strings are generally safe to display as the English locale ("Amp Station", etc.), though "Relic Outpost (Desolation)" (ID 11) might not be suitable.
   responses:
     "200":
       description: OK

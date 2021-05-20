@@ -1,6 +1,11 @@
 get:
-  summary: Summary of outfit_member
-  description: Description for `outfit_member`
+  summary: Outfit Members
+  description: |
+    Information for a `character`'s membership status within their `outfit`.
+
+    For characters that are not in an outfit, no entry will exist in this collection.
+
+    Note that there is no `outfit_member_id`. This collection uses the `character_id` as its primary key.
   responses:
     "200":
       description: OK

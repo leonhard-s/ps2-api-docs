@@ -1,6 +1,9 @@
 get:
-  summary: Summary of resist_info
-  description: Description for `resist_info`
+  summary: Resist Info
+  description: |
+    A `profile`-specific set of base resistances against various types of `effect`s.
+
+    This endpoint defines the damage multipliers between vehicle and infantry types. This includes base small arms resistance for MAXes, and large vehicle's immunity to infantry weapons and light explosives.
   responses:
     "200":
       description: OK

@@ -1,6 +1,7 @@
 get:
-  summary: Summary of metagame_event
-  description: Description for `metagame_event`
+  summary: Metagame Events
+  description: |
+    Endpoint for in-game events (aka. alerts). This includes tracking "Outfit Wars" match progress.
   responses:
     "200":
       description: OK

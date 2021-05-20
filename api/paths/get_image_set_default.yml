@@ -1,6 +1,9 @@
 get:
-  summary: Summary of image_set_default
-  description: Description for `image_set_default`
+  summary: Image Set Default
+  description: |
+    Specifies the default image to use for a given `image_set`.
+
+    This collection defines the value of the `image` field for most collections providing an `image_set_id`.
   responses:
     "200":
       description: OK

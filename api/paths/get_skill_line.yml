@@ -1,6 +1,11 @@
 get:
-  summary: Summary of skill_line
-  description: Description for `skill_line`
+  summary: Skill Line
+  description: |
+    A series of skills or certifications.
+
+    These represents groups of certifications like "Reload Speed", where subsequent upgrades improve an existing skill.
+
+    Skills that are not upgradable may only have a single entry in their skill line.
   responses:
     "200":
       description: OK

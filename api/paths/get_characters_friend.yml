@@ -1,6 +1,11 @@
 get:
-  summary: Summary of characters_friend
-  description: Description for `characters_friend`
+  summary: Character Friends List
+  description: |
+    Retrieve the friends list for a given character.
+
+    In addition to the `character` IDs, the returned object also lists the `last_login_time` timestamp and online status of the character. Note that unlike the `characters_online_status` endpoint, the `online` flag in this list only switches between 0 and 1 and does not represent the world ID they are logged into.
+
+    The `name` property is always NULL.
   responses:
     "200":
       description: OK

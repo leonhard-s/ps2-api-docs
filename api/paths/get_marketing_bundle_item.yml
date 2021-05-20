@@ -1,6 +1,7 @@
 get:
-  summary: Summary of marketing_bundle_item
-  description: Description for `marketing_bundle_item`
+  summary: Marketing Bundle Items
+  description: |
+    A mapping of `marketing_bundle`s to the `item`s they contain.
   responses:
     "200":
       description: OK

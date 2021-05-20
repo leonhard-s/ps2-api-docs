@@ -1,6 +1,9 @@
 get:
-  summary: Summary of facility_link
-  description: Description for `facility_link`
+  summary: Lattice Links
+  description: |
+    A lattice link connecting two facilities by their `facility_id`.
+
+    The order of the bases has no known significance (i.e. there is no "directionality" to the lattice).
   responses:
     "200":
       description: OK

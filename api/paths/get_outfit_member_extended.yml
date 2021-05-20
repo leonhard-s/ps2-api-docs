@@ -1,6 +1,9 @@
 get:
-  summary: Summary of outfit_member_extended
-  description: Description for `outfit_member_extended`
+  summary: Outfit Member (Extended)
+  description: |
+    A helper table containing information for both a character's `outfit_member` entry and the corresponding `outfit`'s.
+
+    For single-character lookups, this is faster than querying both of these tables individually.
   responses:
     "200":
       description: OK

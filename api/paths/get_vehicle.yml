@@ -1,6 +1,9 @@
 get:
-  summary: Summary of vehicle
-  description: Description for `vehicle`
+  summary: Vehicles
+  description: |
+    Vehicle names and descriptions.
+
+    Note that the `cost` field is unused and generally either NULL or set to 0.
   responses:
     "200":
       description: OK

@@ -1,6 +1,9 @@
 get:
-  summary: Summary of item_to_weapon
-  description: Description for `item_to_weapon`
+  summary: Item To Weapon
+  description: |
+    A mapping of `item`s to the corresponding `weapon`.
+
+    The weapon object specifies the firing behavior whereas the item defines the name, cost, and description.
   responses:
     "200":
       description: OK

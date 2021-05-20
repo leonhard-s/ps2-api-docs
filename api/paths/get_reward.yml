@@ -1,6 +1,9 @@
 get:
-  summary: Summary of reward
-  description: Description for `reward`
+  summary: Reward
+  description: |
+    A reward granted to a player upon completion of a `directive` or `achievement`.
+
+    Refer to the corresponding `reward_type` for information on generic parameters.
   responses:
     "200":
       description: OK

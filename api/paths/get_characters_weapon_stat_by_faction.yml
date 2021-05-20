@@ -1,6 +1,11 @@
 get:
-  summary: Summary of characters_weapon_stat_by_faction
-  description: Description for `characters_weapon_stat_by_faction`
+  summary: Character Weapon Stats By Faction
+  description: |
+    Weapon-specific character stats for a given character. Unlike `characters_weapon_stat`, this enumerates faction-specific data like deaths, kills and damage dealt.
+
+    `stat_name` can be one of the following statistics: `weapon_damage_given`, `weapon_damage_taken_by`, `weapon_headshots`, `weapon_killed_by`, `weapon_kills`, and `weapon_vehicle_kills`
+
+    Note that friendly fire is not tracked for these tables.
   responses:
     "200":
       description: OK

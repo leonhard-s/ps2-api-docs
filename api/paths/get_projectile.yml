@@ -1,6 +1,11 @@
 get:
-  summary: Summary of projectile
-  description: Description for `projectile`
+  summary: Projectiles
+  description: |
+    This endpoint defines the flight characteristics of a given weapon projectile.
+
+    This includes lifespan before auto-detonation, drag, the gravity scaling factor, and speed.
+
+    Note that a projectile's speed is often overridden by its corresponding `fire_mode_2`.
   responses:
     "200":
       description: OK

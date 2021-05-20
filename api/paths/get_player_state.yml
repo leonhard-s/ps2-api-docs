@@ -1,6 +1,9 @@
 get:
-  summary: Summary of player_state
-  description: Description for `player_state`
+  summary: Player States
+  description: |
+    Enumerator for player states.
+
+    This endpoint lists the player states that may affect a weapon's characteristics. The actual state-specific overrides are provided by `player_state_group`.
   responses:
     "200":
       description: OK

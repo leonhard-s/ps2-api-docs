@@ -1,6 +1,9 @@
 get:
-  summary: Summary of character_name
-  description: Description for `character_name`
+  summary: Character Names
+  description: |
+    A high-performance, indexed endpoint for character name lookups.
+
+    This endpoint is significantly faster than querying the regular `character` collection. Use this for resolving player kill feeds or outfit rosters.
   responses:
     "200":
       description: OK

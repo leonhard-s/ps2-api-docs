@@ -1,6 +1,11 @@
 get:
-  summary: Summary of effect
-  description: Description for `effect`
+  summary: Effects
+  description: |
+    An effect acting on a character or vehicle.
+
+    Effects are usually created by an `ability` or are the result of a weapon firing.
+
+    Access the corresponding `effect_type` for information on generic parameters.
   responses:
     "200":
       description: OK

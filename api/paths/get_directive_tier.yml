@@ -1,6 +1,9 @@
 get:
-  summary: Summary of directive_tier
-  description: Description for `directive_tier`
+  summary: Directive Tiers
+  description: |
+    A tier in a `directive_tree`.
+
+    Tiers are specific to a given tree; "Combat Medic: Adept" is distinct from "Engineer: Adept".
   responses:
     "200":
       description: OK

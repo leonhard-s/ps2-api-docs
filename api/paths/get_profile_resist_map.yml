@@ -1,6 +1,7 @@
 get:
-  summary: Summary of profile_resist_map
-  description: Description for `profile_resist_map`
+  summary: Profile Resist Map
+  description: |
+    This endpoint maps a given `profile` to the `resist_info` entries for that profile.
   responses:
     "200":
       description: OK

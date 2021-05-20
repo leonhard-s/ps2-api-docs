@@ -1,6 +1,11 @@
 get:
-  summary: Summary of characters_event_grouped
-  description: Description for `characters_event_grouped`
+  summary: Character vs. Character Events
+  description: |
+    This endpoint lists character-specific events specific to other characters.
+
+    In particular, it lists the number of kills and deaths for each character by character, which can be used to calculate matchup-specific KDRs.
+
+    The only values available for the `table_type` field are `"KILL"` and `"DEATH"`.
   responses:
     "200":
       description: OK

@@ -1,6 +1,9 @@
 get:
-  summary: Summary of experience
-  description: Description for `experience`
+  summary: Experience
+  description: |
+    Types of experience a character may earn.
+
+    This endpoint lists the different types of "experience ticks" that are available. Note that not all experience IDs received through the WebSocket event stream's `GainExperience` event are present in this table.
   responses:
     "200":
       description: OK

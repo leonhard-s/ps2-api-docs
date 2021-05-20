@@ -1,6 +1,9 @@
 get:
-  summary: Summary of faction
-  description: Description for `faction`
+  summary: Faction
+  description: |
+    Localised faction display data.
+
+    The `code_tag` field matches the canonical empire tag for all playable factions. For ID 0 (Nanite Systems), it is set to "None", rather than "NS".
   responses:
     "200":
       description: OK

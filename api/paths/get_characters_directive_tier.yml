@@ -1,6 +1,9 @@
 get:
-  summary: Summary of characters_directive_tier
-  description: Description for `characters_directive_tier`
+  summary: Character Directive Tier Completion
+  description: |
+    Tracker for character directive tier progress.
+
+    This is a simple mapping of if and when a given `character` has completed the given `directive_tier`. If the tier is not yet completed, the `completion_time` field will be zero.
   responses:
     "200":
       description: OK

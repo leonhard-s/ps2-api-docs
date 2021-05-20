@@ -1,6 +1,11 @@
 get:
-  summary: Summary of item_type
-  description: Description for `item_type`
+  summary: Item Type
+  description: |
+    An internal differentiation based on item functionality.
+
+    For in-game item types like "Vehicle Weapon" or "Carbine", see the `item_category` collection instead.
+
+    This differentiates items into the type of action they produce. This includes normal differentiations like "Consumable", or "Weapon", but also internal mechanics like "CreateVehicle" or "GiveCurrency".
   responses:
     "200":
       description: OK

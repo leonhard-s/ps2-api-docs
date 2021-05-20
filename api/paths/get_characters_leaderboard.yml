@@ -1,6 +1,14 @@
 get:
-  summary: Summary of characters_leaderboard
-  description: Description for `characters_leaderboard`
+  summary: Character Leaderboard
+  description: |
+    Query the position of a character in the server leaderboard.
+
+    Note that only the top 10'000 characters are stored in the leaderboard, this may not produce a result for all characters.
+
+    The stat to look up is specified using the `name` argument. Possible values include `Kills`, `Score`, `Time`, `Deaths`.
+    The period to track is specified using the `period` argument. Possible values are `Forever`, `Weekly`, `Daily`, `OneLife`.
+
+    The `OneLife` period is only reset when a character dies without being revived or redeploying and can be an unexpectedly high value.
   responses:
     "200":
       description: OK

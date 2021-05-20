@@ -1,6 +1,9 @@
 get:
-  summary: Summary of fire_group
-  description: Description for `fire_group`
+  summary: Fire Groups
+  description: |
+    A fire group of a weapon.
+
+    Fire groups are comparable to the in-game fire modes, such as fixed-size burst, semi or fully automatic. They are also used to implement auxiliary fire modes such as under-barrel grenade launchers.
   responses:
     "200":
       description: OK

@@ -1,6 +1,11 @@
 get:
-  summary: Summary of effect_type
-  description: Description for `effect_type`
+  summary: Effect Types
+  description: |
+    A type of `effect`.
+
+    Effect types act like base classes and mostly serve to categorize their respective effects.
+
+    The generic `param*` fields of an effect type are populated with string values denoting the purpose of that field in effects of that type.
   responses:
     "200":
       description: OK

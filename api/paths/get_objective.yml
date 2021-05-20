@@ -1,6 +1,11 @@
 get:
-  summary: Summary of objective
-  description: Description for `objective`
+  summary: Objectives
+  description: |
+    Objectives define a goal a character must complete to progress towards a given `achievement` or `directive`.
+
+    For information on generic parameters, refer to the corresponding `objective_type`.
+
+    The differences and hierarchy between `objective_group`s and `objective_set`s is not yet documented.
   responses:
     "200":
       description: OK

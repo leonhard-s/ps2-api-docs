@@ -1,6 +1,7 @@
 get:
-  summary: Summary of vehicle_faction
-  description: Description for `vehicle_faction`
+  summary: Vehicle Faction
+  description: |
+    A mapping specifying what factions a vehicle is available on.
   responses:
     "200":
       description: OK

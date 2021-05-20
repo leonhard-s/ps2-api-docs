@@ -1,6 +1,9 @@
 get:
-  summary: Summary of currency
-  description: Description for `currency`
+  summary: Currency
+  description: |
+    A list of currencies in the game.
+
+    As of May 2021, only Nanites are included in this table. Other currencies like outfit resources, A7, or other currencies introduced as part of the "Escalation" game update are not available in the API.
   responses:
     "200":
       description: OK

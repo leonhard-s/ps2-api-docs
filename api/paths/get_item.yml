@@ -1,6 +1,9 @@
 get:
-  summary: Summary of item
-  description: Description for `item`
+  summary: Item
+  description: |
+    An item a character may gain access to.
+
+    Note that this includes both tangible items (like a cosmetic, weapon, or consumable), and internal mechanics like loadout slots, vehicle spawns and related functionality.
   responses:
     "200":
       description: OK

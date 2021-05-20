@@ -1,6 +1,11 @@
 get:
-  summary: Summary of characters_skill
-  description: Description for `characters_skill`
+  summary: Character Skills
+  description: |
+    A mapping of `character`s to `skill`s they have unlocked.
+
+    Skills include both Certifications and A.S.P. (aka. Prestige) Skills.
+
+    The `last_save` field reports the UTC timestamp of when the character has unlocked the skill.
   responses:
     "200":
       description: OK

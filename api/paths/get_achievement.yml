@@ -1,6 +1,9 @@
 get:
-  summary: Summary of achievement
-  description: Description for `achievement`
+  summary: Achievements
+  description: |
+    An achievement a player may pursue.
+
+    Achievements include weapon medals and service ribbons. Directives are tracked separately, in the `directive` endpoint.
   responses:
     "200":
       description: OK

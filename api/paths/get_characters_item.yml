@@ -1,6 +1,11 @@
 get:
-  summary: Summary of characters_item
-  description: Description for `characters_item`
+  summary: Character Items
+  description: |
+    Lists a character's unlocked items.
+
+    This includes weapons and attachments unlocked via certification points, as well as cosmetics unlocked via Daybreak Cash. If the `account_level` flag is set for a given entry, it was unlocked through DBC or has been unlocked as part of a giveaway or redeemable code.
+
+    Note that the size of this payload varies wildly with the age of a character. High level characters with many unlocks will have thousands of entries, making this a very expensive table.
   responses:
     "200":
       description: OK

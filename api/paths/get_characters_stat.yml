@@ -1,6 +1,13 @@
 get:
-  summary: Summary of characters_stat
-  description: Description for `characters_stat`
+  summary: Character Statistics
+  description: |
+    General character statistics.
+
+    This endpoint provides two sets of statistics: one for the entire `character` (provided with `profile_id` set to 0), and a different set for specific profiles.
+
+    The following statistics are profile-independent: `achievement_count`, `assist_count`, `facility_defended_count`, `medal_count`, `skill_points`, `weapon_deaths`, `weapon_fire_count`, `weapon_hit_count`, `weapon_play_time`, and `weapon_score`.
+
+    Profile-specific statistics are separate: `deaths`, `fire_count`, `hit_count`, `play_time`, and `score`.
   responses:
     "200":
       description: OK

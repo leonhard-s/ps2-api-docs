@@ -1,6 +1,11 @@
 get:
-  summary: Summary of player_state_group_2
-  description: Description for `player_state_group_2`
+  summary: Player State Groups 2
+  description: |
+    Player-state specific overrides for a `fire_mode`.
+
+    *This table superseded the original `player_state_group` and provides additional information.*
+
+    This table defines the player-state-specific accuracy penalties for infantry weapons.
   responses:
     "200":
       description: OK

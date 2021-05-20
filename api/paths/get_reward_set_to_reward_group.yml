@@ -1,6 +1,9 @@
 get:
-  summary: Summary of reward_set_to_reward_group
-  description: Description for `reward_set_to_reward_group`
+  summary: Reward Set To Reward Group
+  description: |
+    Lists the reward groups contained in a given reward set.
+
+    The differentiation between reward groups and reward sets is currently undocumented.
   responses:
     "200":
       description: OK

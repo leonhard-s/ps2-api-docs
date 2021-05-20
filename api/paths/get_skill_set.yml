@@ -1,6 +1,9 @@
 get:
-  summary: Summary of skill_set
-  description: Description for `skill_set`
+  summary: Skill Set
+  description: |
+    A skill set for a particular vehicle or class.
+
+    This is mostly used for groups in the certification menu, e.g. "Infiltrator: Suit Slot" or "Sunderer: Abilities".
   responses:
     "200":
       description: OK

@@ -1,6 +1,11 @@
 get:
-  summary: Summary of zone
-  description: Description for `zone`
+  summary: Zones
+  description: |
+    A zone or continent in the game.
+
+    There are dynamic and static zones. Static zones include VR Training and the regular continents in the game.
+
+    Dynamic zones are created as needed and include Tutorial zones, Sanctuary instances, as well as Desolation instances.
   responses:
     "200":
       description: OK

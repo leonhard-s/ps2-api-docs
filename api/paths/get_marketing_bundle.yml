@@ -1,6 +1,9 @@
 get:
-  summary: Summary of marketing_bundle
-  description: Description for `marketing_bundle`
+  summary: Marketing Bundle
+  description: |
+    A purchasable bundle in the in-game depot.
+
+    Refer to the `marketing_bundle_item` collection to retrieve the contents of this bundle.
   responses:
     "200":
       description: OK

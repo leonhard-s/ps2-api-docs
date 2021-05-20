@@ -1,6 +1,9 @@
 get:
-  summary: Summary of fire_group_to_fire_mode
-  description: Description for `fire_group_to_fire_mode`
+  summary: Fire Group To Fire Mode
+  description: |
+    Mapping endpoint from `fire_group`s to available `fire_mode`s.
+
+    This is a many-to-many relationship.
   responses:
     "200":
       description: OK

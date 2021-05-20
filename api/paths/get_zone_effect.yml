@@ -1,6 +1,11 @@
 get:
-  summary: Summary of zone_effect
-  description: Description for `zone_effect`
+  summary: Zone Effect
+  description: |
+    An effect or buff applied in an area.
+
+    Zone effects are area-bound effects acting on a group of characters or entities.
+
+    Access the corresponding `zone_effect` for information on generic parameters.
   responses:
     "200":
       description: OK

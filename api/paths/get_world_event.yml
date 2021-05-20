@@ -1,6 +1,9 @@
 get:
-  summary: Summary of world_event
-  description: Description for `world_event`
+  summary: World Events
+  description: |
+    REST endpoint for world (i.e. game server) specific events.
+
+    Known names for the `type` parameter are `METAGAME` and `FACILITY`.
   responses:
     "200":
       description: OK

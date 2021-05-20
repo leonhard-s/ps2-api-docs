@@ -1,6 +1,9 @@
 get:
-  summary: Summary of weapon
-  description: Description for `weapon`
+  summary: Weapons
+  description: |
+    Generic weapon statistics.
+
+    This endpoint lists weapon data that is not involved in firing mechanics. This includes equip times, movement speed modifiers, and heat capacity for heat-based weapons.
   responses:
     "200":
       description: OK

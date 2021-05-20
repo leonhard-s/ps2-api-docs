@@ -1,6 +1,7 @@
 get:
-  summary: Summary of characters_directive_objective
-  description: Description for `characters_directive_objective`
+  summary: Character Directive Progress
+  description: |
+    Maps characters to their current objective progress for a given `directive`.
   responses:
     "200":
       description: OK

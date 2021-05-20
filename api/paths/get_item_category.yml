@@ -1,6 +1,9 @@
 get:
-  summary: Summary of item_category
-  description: Description for `item_category`
+  summary: Item Categories
+  description: |
+    Player-facing item categories.
+
+    These are the categories visible in the in-game depot, such as "Infantry Gear", "Weapon Camo" or "Carbine".
   responses:
     "200":
       description: OK

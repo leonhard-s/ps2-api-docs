@@ -1,6 +1,9 @@
 get:
-  summary: Summary of directive
-  description: Description for `directive`
+  summary: Directives
+  description: |
+    A directive a character may complete.
+
+    The tasks and in-game activities that contribute towards this directive are specified via the `objective_set` specified in the `objective_set_id` field.
   responses:
     "200":
       description: OK

@@ -1,6 +1,9 @@
 get:
-  summary: Summary of character
-  description: Description for `character`
+  summary: Characters
+  description: |
+    Main endpoint for data related to player characters.
+
+    Note that this table is not very fast due to the large number of rows (tens of millions of entries). Use the `character_name` to resolve names, or bundle your lookups in batches of ~100 for large data sets
   responses:
     "200":
       description: OK

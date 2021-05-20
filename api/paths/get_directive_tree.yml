@@ -1,6 +1,9 @@
 get:
-  summary: Summary of directive_tree
-  description: Description for `directive_tree`
+  summary: Directive Trees
+  description: |
+    A multi-tiered collection of directives.
+
+    Directive trees are chains of related directives like "Heavy Assault" in the "Infantry" category, or "Shotguns" in the "Weapons" category.
   responses:
     "200":
       description: OK

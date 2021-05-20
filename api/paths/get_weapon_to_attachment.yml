@@ -1,6 +1,7 @@
 get:
-  summary: Summary of weapon_to_attachment
-  description: Description for `weapon_to_attachment`
+  summary: Weapon To Attachments
+  description: |
+    A mapping of weapons to the attachments they can be equipped with.
   responses:
     "200":
       description: OK

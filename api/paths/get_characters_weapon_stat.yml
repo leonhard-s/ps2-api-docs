@@ -1,6 +1,9 @@
 get:
-  summary: Summary of characters_weapon_stat
-  description: Description for `characters_weapon_stat`
+  summary: Character Weapon Stats
+  description: |
+    Generic weapon statistics for a given character. For faction-specific stats like damage dealt or kills, refer to the `characters_weapon_stat_by_faction` instead.
+
+    This collection lists weapon-specific stats that are not faction-specific. This includes the following `stat_name` values: `weapon_deaths`, `weapon_fire_count`, `weapon_hit_count`, `weapon_play_time`, and `weapon_score`.
   responses:
     "200":
       description: OK

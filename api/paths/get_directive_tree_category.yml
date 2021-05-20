@@ -1,6 +1,9 @@
 get:
-  summary: Summary of directive_tree_category
-  description: Description for `directive_tree_category`
+  summary: Directive Tree Categories
+  description: |
+    A category containing `directive_tree`s.
+
+    Directive tree categories s are the topmost grouping for directives. In-game, they are represented by the side-bar entries "Infantry", "Weapons", or "Vehicles".
   responses:
     "200":
       description: OK

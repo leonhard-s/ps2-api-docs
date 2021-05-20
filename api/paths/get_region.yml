@@ -1,6 +1,9 @@
 get:
-  summary: Summary of region
-  description: Description for `region`
+  summary: Regions
+  description: |
+    Regions on a continent.
+
+    This is the game world equivalent of the `map_region` endpoint and shares the same IDs (`map_region_id` = `region_id`).
   responses:
     "200":
       description: OK

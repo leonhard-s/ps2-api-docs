@@ -1,6 +1,7 @@
 get:
-  summary: Summary of title
-  description: Description for `title`
+  summary: Title
+  description: |
+    A title to display alongside the character's name.
   responses:
     "200":
       description: OK

@@ -1,6 +1,9 @@
 get:
-  summary: Summary of profile_2
-  description: Description for `profile_2`
+  summary: Profiles (2)
+  description: |
+    Endpoint for resolving target profiles.
+
+    Profiles exist for most entities in the game, particularly ones that can be killed. This includes player classes, vehicles, deployables, as well as campaign items.
   responses:
     "200":
       description: OK

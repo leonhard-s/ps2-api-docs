@@ -1,6 +1,9 @@
 get:
-  summary: Summary of empire_scores
-  description: Description for `empire_scores`
+  summary: Empire Scores
+  description: |
+    Unused endpoint for server-wide events like the "World Domination Series".
+
+    No such events have occurred since 2014, "Outfit Wars" uses the `metagame_event` system instead.
   responses:
     "200":
       description: OK

@@ -1,6 +1,11 @@
 get:
-  summary: Summary of fire_mode_type
-  description: Description for `fire_mode_type`
+  summary: Fire Mode Type
+  description: |
+    Specifies the action taken when a weapon is fired.
+
+    The default fire mode type, `Projectile`, is used for hip-fired or otherwise not ADS-able weapons. `IronSight` is used when aiming down sights (ADS).
+
+    `Melee` is used for both quick knifing and equipped knives. `Thrown` is responsible for grenades and mines, and `Trigger Item Ability` is a hook used to place turrets and other constructable items.
   responses:
     "200":
       description: OK

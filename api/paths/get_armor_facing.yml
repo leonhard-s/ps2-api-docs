@@ -1,6 +1,11 @@
 get:
-  summary: Summary of armor_facing
-  description: Description for `armor_facing`
+  summary: Armor Facing
+  description: |
+    Enumerator-like endpoint for armor facing directions.
+
+    This table is used to switch between `armor_info` entries depending on the attacker's position.
+
+    Note that this uses the relative position of the attacker and the impacted vehicle, not the impact location of the projectile.
   responses:
     "200":
       description: OK

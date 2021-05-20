@@ -1,6 +1,9 @@
 get:
-  summary: Summary of characters_directive_tree
-  description: Description for `characters_directive_tree`
+  summary: Character Directive Tree Completion
+  description: |
+    Tracker for character directive tree progress.
+
+    This stores the current level of a given directive tree for a given character (e.g. "Assault Rifles: Adept").
   responses:
     "200":
       description: OK

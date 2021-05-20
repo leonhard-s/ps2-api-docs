@@ -1,6 +1,13 @@
 get:
-  summary: Summary of armor_info
-  description: Description for `armor_info`
+  summary: Armor Info
+  description: |
+    An armor info entry for an entity.
+
+    Armor is a vehicle-specific property that modifies incoming damage depending on the angle of attack. Note that this mechanic uses the relative position of the attacker and the impacted vehicle, not the impact location of the projectile.
+
+    A vehicle may have multiple `armor_info` entries associated with different `armor_facing` directions.
+
+    Note that these armor percentages can be negative, resulting in damage being increased beyond the base damage of the weapon.
   responses:
     "200":
       description: OK

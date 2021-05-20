@@ -1,6 +1,15 @@
 get:
-  summary: Summary of characters_stat_by_faction
-  description: Description for `characters_stat_by_faction`
+  summary: Character Stats By Faction
+  description: |
+    Character statistics by faction.
+
+    All statistics report values for all factions and multiple periods (forever, monthly, weekly, daily and one life). Note that the `kills` stat does not track team kills.
+
+    The following values exist for the `stat_name` property: `domination_count`, `facility_capture_count`, `killed_by`, `kills`, `revenge_count`, `weapon_damage_given`, `weapon_damage_taken_by`, `weapon_headshots`, `weapon_kills`, and `weapon_vehicle_kills`.
+
+    Note that the character-wide stats for kills use the `weapon_kills` and `weapon_vehicle_kills` tables; the `kills` and `killed_by` tables are **not** available for the character-wide stat.
+
+    The only profile-specific stats (i.e. ones with non-zero `profile_id` values) are `kills` and `killed_by`.
   responses:
     "200":
       description: OK

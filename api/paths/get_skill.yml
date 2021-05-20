@@ -1,6 +1,7 @@
 get:
-  summary: Summary of skill
-  description: Description for `skill`
+  summary: Skills
+  description: |
+    A certification or A.S.P. skill a `character` can unlock.
   responses:
     "200":
       description: OK

@@ -1,6 +1,12 @@
 get:
-  summary: Summary of characters_stat_history
-  description: Description for `characters_stat_history`
+  summary: Character Stat History
+  description: |
+    Historical character statistics endpoint.
+
+    In addition to the daily, weekly, and monthly lists (stored in the `day`, `week`, and `month` sub-key respectively), this endpoint lists the `all_time`, and `one_life_max` values for these stats as well. 
+    Note that the `battle_rank` value is reset by the A.S.P. prestige system and does not reflect the actual cumulative battle rank of the player.
+
+    The stat names available are: `battle_rank`, `certs`, `deaths`, `facility_capture`, `facility_defend`, `kills`, `medals`, `ribbons`, `score`, and `time`.
   responses:
     "200":
       description: OK

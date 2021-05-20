@@ -1,6 +1,9 @@
 get:
-  summary: Summary of vehicle_attachment
-  description: Description for `vehicle_attachment`
+  summary: Vehicle Attachments
+  description: |
+    Maps a vehicle-faction combination to a list of items that can be attached to that vehicle.
+
+    This is used to specify what cosmetics and weapons are available for a given vehicle on a given faction.
   responses:
     "200":
       description: OK

@@ -1,6 +1,11 @@
 get:
-  summary: Summary of ability
-  description: Description for `ability`
+  summary: Abilities
+  description: |
+    An ability triggered by a character or vehicle.
+
+    See the corresponding `ability_type` for information on generic parameters.
+
+    The in-game mechanics these abilities correspond to are currently undocumented due to the lack of links between abilities and other types in the API. More information needed & much appreciated.
   responses:
     "200":
       description: OK

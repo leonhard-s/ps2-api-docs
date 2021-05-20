@@ -1,6 +1,9 @@
 get:
-  summary: Summary of objective_set_to_objective
-  description: Description for `objective_set_to_objective`
+  summary: Objective Set To Objective
+  description: |
+    Mapping of objective sets to individual objectives contained in that set.
+
+    Objective sets are specified by `achievement`s and `directive`s to track the types of achievements that will count towards this objective.
   responses:
     "200":
       description: OK

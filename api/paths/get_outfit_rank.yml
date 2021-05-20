@@ -1,6 +1,9 @@
 get:
-  summary: Summary of outfit_rank
-  description: Description for `outfit_rank`
+  summary: Outfit Ranks
+  description: |
+    A custom rank defined by an `outfit`. This endpoint allows retrieval of an outfit's ranks structure.
+
+    The `ordinal` field positions the given rank within the outfit hierarchy; the lower the value, the higher the rank.
   responses:
     "200":
       description: OK

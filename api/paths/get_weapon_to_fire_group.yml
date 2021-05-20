@@ -1,6 +1,9 @@
 get:
-  summary: Summary of weapon_to_fire_group
-  description: Description for `weapon_to_fire_group`
+  summary: Weapon To Fire Group
+  description: |
+    Lists the fire groups for a given weapon.
+
+    Note that an API `fire_group` is equivalent to an in-game fire mode. Weapons with multiple fire modes in-game (including under-barrel launchers) will have more than one fire groups in the API.
   responses:
     "200":
       description: OK

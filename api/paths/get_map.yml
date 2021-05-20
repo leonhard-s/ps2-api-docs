@@ -1,6 +1,7 @@
 get:
-  summary: Summary of map
-  description: Description for `map`
+  summary: Map
+  description: |
+    REST endpoint for returning the current map status for a given continent and world.
   responses:
     "200":
       description: OK

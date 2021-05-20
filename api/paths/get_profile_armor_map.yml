@@ -1,6 +1,7 @@
 get:
-  summary: Summary of profile_armor_map
-  description: Description for `profile_armor_map`
+  summary: Profile Armor Map
+  description: |
+    This endpoint maps a given `profile` to the `armor_info` entries for that profile.
   responses:
     "200":
       description: OK

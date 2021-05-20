@@ -1,6 +1,11 @@
 get:
-  summary: Summary of image
-  description: Description for `image`
+  summary: Images
+  description: |
+    An image available on the Ps2 file CDN.
+
+    Identical images at different resolutions are joined together via the `image_set` endpoint.
+
+    Note that this collection is not a reliable indicator of whether a given image exists on the file CDN.
   responses:
     "200":
       description: OK

@@ -1,6 +1,9 @@
 get:
-  summary: Summary of zone_effect_type
-  description: Description for `zone_effect_type`
+  summary: Zone Effect Types
+  description: |
+    A type of zone effect.
+
+    Zone effect types specify the core function of a given `zone_effect`. The `param*` fields in the zone effect type list what these generic parameters are used for in effects of this type.
   responses:
     "200":
       description: OK

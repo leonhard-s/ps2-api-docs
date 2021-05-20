@@ -1,6 +1,11 @@
 get:
-  summary: Summary of resource_type
-  description: Description for `resource_type`
+  summary: Resource Types
+  description: |
+    Resources are entity-specific states used by other mechanics.
+
+    You can think of them as attributes attached to a character or vehicle that are then modified by other game mechanics.
+
+    This includes active class abilities like the Combat Medic's Nano Regen Device or the Heavy Assault's over-shield, physical resources like Cortium carried by A.N.T.s or Collossi, but are also used as a reservoir for external mechanics like Esamir's Electrical Storm vehicle de-buff.
   responses:
     "200":
       description: OK

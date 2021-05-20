@@ -1,6 +1,9 @@
 get:
-  summary: Summary of projectile_flight_type
-  description: Description for `projectile_flight_type`
+  summary: Projectile Flight Types
+  description: |
+    Enumerator for projectile flight models.
+
+    This collection defines the basic flight characteristics of a projectile.
   responses:
     "200":
       description: OK

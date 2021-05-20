@@ -1,6 +1,9 @@
 get:
-  summary: Summary of outfit
-  description: Description for `outfit`
+  summary: Outfits
+  description: |
+    A player-run outfit (aka. guild).
+
+    The `alias` field represents the outfits tag.
   responses:
     "200":
       description: OK

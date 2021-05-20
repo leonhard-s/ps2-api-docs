@@ -1,6 +1,7 @@
 get:
-  summary: Summary of item_profile
-  description: Description for `item_profile`
+  summary: Item Profiles
+  description: |
+    A mapping of `item`s to `profile`s that have access to them.
   responses:
     "200":
       description: OK

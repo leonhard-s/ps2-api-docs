@@ -1,6 +1,16 @@
 get:
-  summary: Summary of map_hex
-  description: Description for `map_hex`
+  summary: Map Hexes
+  description: |
+    An individual territory hex on the map.
+
+    Note that the `x` and `y` coordinates are not using a regular, Cartesian coordinate system. Rather, they are using a hexagonal coordinate system, with all hexes being positioned on this grid via integer coordinates.
+
+    An introduction on hexagonal coordinate systems can be found in this article:
+    <https://www.redblobgames.com/grids/hexagons/#coordinates-axial>
+
+    Note that the coordinate system in PlanetSide 2 has its second axis go from bottom left to top right, unlike the article linked above. All of the principles and transformations still apply.
+
+    The following link contains a usage example of this endpoint. The module's purpose is to generate SVG files containing merged base outlines for a given continent: <https://github.com/auto-pl/apl-api/blob/main/apl_api/hexgen.py>
   responses:
     "200":
       description: OK

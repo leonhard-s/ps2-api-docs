@@ -1,6 +1,9 @@
 get:
-  summary: Summary of map_region
-  description: Description for `map_region`
+  summary: Map Regions
+  description: |
+    A facility on the continent map.
+
+    As there is no `facility` endpoint, this collection also acts as the primary endpoint for `facility_id`-type fields.
   responses:
     "200":
       description: OK

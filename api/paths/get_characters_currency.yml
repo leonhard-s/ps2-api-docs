@@ -1,6 +1,9 @@
 get:
-  summary: Summary of characters_currency
-  description: Description for `characters_currency`
+  summary: Character Currency
+  description: |
+    Maps characters to their current currency balance.
+
+    Currently, this only tracks Nanites and ASP tokens. The other resources introduces as part of the "Escalation" game update are not available through the API.
   responses:
     "200":
       description: OK

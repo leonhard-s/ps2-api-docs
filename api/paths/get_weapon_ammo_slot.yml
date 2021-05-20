@@ -1,6 +1,11 @@
 get:
-  summary: Summary of weapon_ammo_slot
-  description: Description for `weapon_ammo_slot`
+  summary: Weapon Ammo Slot
+  description: |
+    Ammo slot information for a given `weapon`.
+
+    This collection specifies the refill rate, clip size and ammo capacity for a given weapon and ammo slot.
+
+    This is also used to modify ammo counts depending on attachments.
   responses:
     "200":
       description: OK
