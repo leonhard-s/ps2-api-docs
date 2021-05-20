@@ -8,6 +8,8 @@ characters_stat_history:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     stat_name:
       type: string
       x-summary: Summary for stat_name

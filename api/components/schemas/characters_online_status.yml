@@ -8,9 +8,13 @@ characters_online_status:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     online_status:
       type: integer
       x-summary: Summary for online_status
       description: Description for `online_status`
+      x-reference-to:
+        - world.world_id
   example:
     $ref: ../examples/characters_online_status.json

@@ -8,6 +8,8 @@ characters_stat:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     stat_name:
       type: string
       x-summary: Summary for stat_name
@@ -16,6 +18,8 @@ characters_stat:
       type: integer
       x-summary: Summary for profile_id
       description: Description for `profile_id`
+      x-reference-to:
+        - profile_2.profile_id
     value_forever:
       type: integer
       x-summary: Summary for value_forever

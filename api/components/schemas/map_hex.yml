@@ -7,12 +7,16 @@ map_hex:
       exclusiveMinimum: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
+      x-reference-to:
+        - zone.zone_id
     map_region_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       x-summary: Summary for map_region_id
       description: Description for `map_region_id`
+      x-reference-to:
+        - map_region.map_region_id
     x:
       type: integer
       x-summary: Summary for x

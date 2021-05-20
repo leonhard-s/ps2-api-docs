@@ -13,6 +13,8 @@ image_set:
       exclusiveMinimum: true
       x-summary: Summary for image_id
       description: Description for `image_id`
+      x-reference-to:
+        - image.image_id
     description:
       type: string
       x-summary: Summary for description

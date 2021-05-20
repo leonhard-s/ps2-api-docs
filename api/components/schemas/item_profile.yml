@@ -7,11 +7,16 @@ item_profile:
       exclusiveMinimum: true
       x-summary: Summary for item_id
       description: Description for `item_id`
+      x-reference-to:
+        - item.item_id
     profile_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       x-summary: Summary for profile_id
       description: Description for `profile_id`
+      x-reference-to:
+        - profile.profile_id
+        - profile_2.profile_id
   example:
     $ref: ../examples/item_profile.json

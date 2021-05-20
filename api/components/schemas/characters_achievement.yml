@@ -8,12 +8,16 @@ characters_achievement:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     achievement_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       x-summary: Summary for achievement_id
       description: Description for `achievement_id`
+      x-reference-to:
+        - achievement.achievement_id
     earned_count:
       type: integer
       x-summary: Summary for earned_count

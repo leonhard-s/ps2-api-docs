@@ -14,6 +14,8 @@ item:
       nullable: true
       x-summary: Summary for item_type_id
       description: Description for `item_type_id`
+      x-reference-to:
+        - item_type.item_type_id
     item_category_id:
       type: integer
       minimum: 0
@@ -21,16 +23,22 @@ item:
       nullable: true
       x-summary: Summary for item_category_id
       description: Description for `item_category_id`
+      x-reference-to:
+        - item_category.item_category_id
     activatable_ability_id:
       type: integer
       nullable: true
       x-summary: Summary for activatable_ability_id
       description: Description for `activatable_ability_id`
+      x-reference-to:
+        - ability.ability_id
     passive_ability_id:
       type: integer
       nullable: true
       x-summary: Summary for passive_ability_id
       description: Description for `passive_ability_id`
+      x-reference-to:
+        - ability.ability_id
     is_vehicle_weapon:
       type: integer
       x-summary: Summary for is_vehicle_weapon
@@ -70,6 +78,8 @@ item:
       nullable: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
+      x-reference-to:
+        - faction.faction_id
     max_stack_size:
       type: integer
       nullable: true
@@ -82,6 +92,8 @@ item:
       nullable: true
       x-summary: Summary for image_set_id
       description: Description for `image_set_id`
+      x-reference-to:
+        - image_set.image_set_id
     image_id:
       type: integer
       minimum: 0
@@ -89,6 +101,8 @@ item:
       nullable: true
       x-summary: Summary for image_id
       description: Description for `image_id`
+      x-reference-to:
+        - image.image_id
     image_path:
       type: string
       nullable: true
@@ -99,6 +113,8 @@ item:
       nullable: true
       x-summary: Summary for skill_set_id
       description: Description for `skill_set_id`
+      x-reference-to:
+        - skill_set.skill_set_id
     is_default_attachment:
       type: integer
       x-summary: Summary for is_default_attachment

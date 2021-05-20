@@ -14,6 +14,8 @@ directive_tree:
       nullable: true
       x-summary: Summary for directive_tree_category_id
       description: Description for `directive_tree_category_id`
+      x-reference-to:
+        - directive_tree_category.directive_tree_category_id
     name:
       type: object
       x-summary: Summary for name
@@ -51,6 +53,8 @@ directive_tree:
       nullable: true
       x-summary: Summary for image_set_id
       description: Description for `image_set_id`
+      x-reference-to:
+        - image_set.image_set_id
     image_id:
       type: integer
       minimum: 0
@@ -58,6 +62,8 @@ directive_tree:
       nullable: true
       x-summary: Summary for image_id
       description: Description for `image_id`
+      x-reference-to:
+        - image.image_id
     image_path:
       type: string
       nullable: true

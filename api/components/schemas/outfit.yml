@@ -38,6 +38,8 @@ outfit:
       format: int64
       x-summary: Summary for leader_character_id
       description: Description for `leader_character_id`
+      x-reference-to:
+        - character.character_id
     member_count:
       type: integer
       x-summary: Summary for member_count

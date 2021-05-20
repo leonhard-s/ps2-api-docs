@@ -13,6 +13,8 @@ profile_resist_map:
       exclusiveMinimum: true
       x-summary: Summary for resist_info_id
       description: Description for `resist_info_id`
+      x-reference-to:
+        - resist_info.resist_info_id
     rank:
       type: integer
       x-summary: Summary for rank

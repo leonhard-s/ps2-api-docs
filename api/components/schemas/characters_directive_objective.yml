@@ -8,24 +8,32 @@ characters_directive_objective:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     directive_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       x-summary: Summary for directive_id
       description: Description for `directive_id`
+      x-reference-to:
+        - directive.directive_id
     objective_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       x-summary: Summary for objective_id
       description: Description for `objective_id`
+      x-reference-to:
+        - objective.objective_id
     objective_group_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       x-summary: Summary for objective_group_id
       description: Description for `objective_group_id`
+      x-reference-to:
+        - objective.objective_group_id
     status:
       type: integer
       x-summary: Summary for status

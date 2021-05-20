@@ -13,6 +13,8 @@ fire_mode:
       exclusiveMinimum: true
       x-summary: Summary for item_id
       description: Description for `item_id`
+      x-reference-to:
+        - item.item_id
     type:
       type: string
       x-summary: Summary for type
@@ -39,6 +41,8 @@ fire_mode:
       nullable: true
       x-summary: Summary for player_state_group_id
       description: Description for `player_state_group_id`
+      x-reference-to:
+        - player_state_group.player_state_group_id
     cof_recoil:
       type: number
       nullable: true

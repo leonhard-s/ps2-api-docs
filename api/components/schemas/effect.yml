@@ -14,6 +14,8 @@ effect:
       nullable: true
       x-summary: Summary for effect_type_id
       description: Description for `effect_type_id`
+      x-reference-to:
+        - effect_type.effect_type_id
     ability_id:
       type: integer
       minimum: 0
@@ -21,17 +23,22 @@ effect:
       nullable: true
       x-summary: Summary for ability_id
       description: Description for `ability_id`
+      x-reference-to:
+        - ability.ability_id
     target_type_id:
       type: integer
       nullable: true
       x-summary: Summary for target_type_id
       description: Description for `target_type_id`
+      x-reference-to:
+        - target_type.target_type_id
     resist_type_id:
       type: integer
       minimum: 0
-      exclusiveMinimum: true
       x-summary: Summary for resist_type_id
       description: Description for `resist_type_id`
+      x-reference-to:
+        - resist_type.resist_type_id
     is_drain:
       type: integer
       nullable: true

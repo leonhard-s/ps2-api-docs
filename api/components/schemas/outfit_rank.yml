@@ -7,6 +7,8 @@ outfit_rank:
       exclusiveMinimum: true
       x-summary: Summary for outfit_id
       description: Description for `outfit_id`
+      x-reference-to:
+        - outfit.outfit_id
     ordinal:
       type: integer
       x-summary: Summary for ordinal

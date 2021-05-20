@@ -7,6 +7,8 @@ world_event:
       exclusiveMinimum: true
       x-summary: Summary for facility_id
       description: Description for `facility_id`
+      x-reference-to:
+        - map_region.facility_id
     faction_old:
       type: integer
       x-summary: Summary for faction_old
@@ -23,6 +25,8 @@ world_event:
       type: integer
       x-summary: Summary for objective_id
       description: Description for `objective_id`
+      x-reference-to:
+        - objective.objective_id
     timestamp:
       type: integer
       x-summary: Summary for timestamp
@@ -33,12 +37,16 @@ world_event:
       exclusiveMinimum: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
+      x-reference-to:
+        - zone.zone_id
     world_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       x-summary: Summary for world_id
       description: Description for `world_id`
+      x-reference-to:
+        - world.world_id
     event_type:
       type: string
       x-summary: Summary for event_type
@@ -51,5 +59,7 @@ world_event:
       type: integer
       x-summary: Summary for outfit_id
       description: Description for `outfit_id`
+      x-reference-to:
+        - outfit.outfit_id
   example:
     $ref: ../examples/world_event.json

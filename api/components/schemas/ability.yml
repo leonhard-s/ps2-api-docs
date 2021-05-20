@@ -13,6 +13,8 @@ ability:
       exclusiveMinimum: true
       x-summary: Summary for ability_type_id
       description: Description for `ability_type_id`
+      x-reference-to:
+        - ability_type.ability_type_id
     expire_msec:
       type: integer
       nullable: true
@@ -40,6 +42,8 @@ ability:
       nullable: true
       x-summary: Summary for resource_type_id
       description: Description for `resource_type_id`
+      x-reference-to:
+        - resource_type.resource_type_id
     resource_first_cost:
       type: number
       nullable: true

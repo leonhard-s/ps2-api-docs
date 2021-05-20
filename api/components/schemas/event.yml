@@ -8,6 +8,8 @@ event:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     vehicle_definition_id:
       type: integer
       x-summary: Summary for vehicle_definition_id
@@ -18,6 +20,8 @@ event:
       exclusiveMinimum: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
+      x-reference-to:
+        - faction.faction_id
     attacker_player_guid:
       type: integer
       x-summary: Summary for attacker_player_guid
@@ -28,11 +32,15 @@ event:
       format: int64
       x-summary: Summary for attacker_character_id
       description: Description for `attacker_character_id`
+      x-reference-to:
+        - character.character_id
     attacker_loadout_id:
       type: integer
       minimum: 0
       x-summary: Summary for attacker_loadout_id
       description: Description for `attacker_loadout_id`
+      x-reference-to:
+        - loadout.loadout_id
     attacker_weapon_id:
       type: integer
       minimum: 0
@@ -43,11 +51,15 @@ event:
       minimum: 0
       x-summary: Summary for attacker_vehicle_id
       description: Description for `attacker_vehicle_id`
+      x-reference-to:
+        - vehicle.vehicle_id
     projectile_id:
       type: integer
       minimum: 0
       x-summary: Summary for projectile_id
       description: Description for `projectile_id`
+      x-reference-to:
+        - projectile.projectile_id
     timestamp:
       type: integer
       x-summary: Summary for timestamp
@@ -58,12 +70,16 @@ event:
       exclusiveMinimum: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
+      x-reference-to:
+        - zone.zone_id
     world_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       x-summary: Summary for world_id
       description: Description for `world_id`
+      x-reference-to:
+        - world.world_id
     event_type:
       type: string
       x-summary: Summary for event_type

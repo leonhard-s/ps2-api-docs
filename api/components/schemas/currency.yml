@@ -17,6 +17,8 @@ currency:
       exclusiveMinimum: true
       x-summary: Summary for icon_id
       description: Description for `icon_id`
+      x-reference-to:
+        - image.image_id
     inventory_cap:
       type: integer
       x-summary: Summary for inventory_cap

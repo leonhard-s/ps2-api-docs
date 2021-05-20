@@ -29,17 +29,17 @@ The OpenAPI standard allows the insertion of custom fields into the standard. Th
 
 - **`x-reference-to`**
 
-  For ID-type properties, this field defines the qualified   name of the collection with this field as its primary key.
+  For ID-type properties, this field defines the qualified names of collections that can be joined to this field as an array of strings.
 
-  For example, the property `outfit.leader_character_id` has the collection `character` as its `x-reference-to` field.
+  For example, the property `outfit.leader_character_id` has the value `character.character_id` in its `x-reference-to` list.
 
-  This field may be used to dynamically create or validate   joins to related data.
+  This field may be used to dynamically create or validate joins to related data.
 
 - **`x-summary`**
 
   A one-line summary of a given field.
 
-  The regular `description` field is a multiline string using   CommonMark (i.e. Markdown). This is a shorter, plain ASCII   alternative that it suitable for use in IDE IntelliSense or   other in-code documentation.
+  The regular `description` field is a multiline string using CommonMark (i.e. Markdown). This is a shorter, plain ASCII alternative that it suitable for use in IDE IntelliSense or other in-code documentation.
 
 ## Contributing
 

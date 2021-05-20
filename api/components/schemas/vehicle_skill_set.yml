@@ -7,16 +7,22 @@ vehicle_skill_set:
       exclusiveMinimum: true
       x-summary: Summary for vehicle_id
       description: Description for `vehicle_id`
+      x-reference-to:
+        - vehicle.vehicle_id
     skill_set_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       x-summary: Summary for skill_set_id
       description: Description for `skill_set_id`
+      x-reference-to:
+        - skill_set.skill_set_id
     faction_id:
       type: integer
       x-summary: Summary for faction_id
       description: Description for `faction_id`
+      x-reference-to:
+        - faction.faction_id
     display_index:
       type: integer
       x-summary: Summary for display_index

@@ -8,6 +8,8 @@ single_character_by_id:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     name:
       type: string
       x-summary: Summary for name
@@ -18,6 +20,8 @@ single_character_by_id:
       exclusiveMinimum: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
+      x-reference-to:
+        - faction.faction_id
     head_id:
       type: integer
       minimum: 0
@@ -30,6 +34,8 @@ single_character_by_id:
       exclusiveMinimum: true
       x-summary: Summary for title_id
       description: Description for `title_id`
+      x-reference-to:
+        - title.title_id
     times:
       type: string
       x-summary: Summary for times
@@ -46,6 +52,9 @@ single_character_by_id:
       type: integer
       x-summary: Summary for profile_id
       description: Description for `profile_id`
+      x-reference-to:
+        - profile.profile_id
+        - profile_2.profile_id
     daily_ribbon:
       type: string
       x-summary: Summary for daily_ribbon

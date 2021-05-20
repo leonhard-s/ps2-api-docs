@@ -8,6 +8,8 @@ outfit_member_extended:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     member_since:
       type: integer
       x-summary: Summary for member_since
@@ -30,6 +32,8 @@ outfit_member_extended:
       exclusiveMinimum: true
       x-summary: Summary for outfit_id
       description: Description for `outfit_id`
+      x-reference-to:
+        - outfit.outfit_id
     name:
       type: string
       x-summary: Summary for name
@@ -60,6 +64,8 @@ outfit_member_extended:
       exclusiveMinimum: true
       x-summary: Summary for leader_character_id
       description: Description for `leader_character_id`
+      x-reference-to:
+        - character.character_id
     member_count:
       type: integer
       x-summary: Summary for member_count

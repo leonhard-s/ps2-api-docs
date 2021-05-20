@@ -29,6 +29,8 @@ faction:
       nullable: true
       x-summary: Summary for image_set_id
       description: Description for `image_set_id`
+      x-reference-to:
+        - image_set.image_set_id
     image_id:
       type: integer
       minimum: 0
@@ -36,6 +38,8 @@ faction:
       nullable: true
       x-summary: Summary for image_id
       description: Description for `image_id`
+      x-reference-to:
+        - image.image_id
     image_path:
       type: string
       nullable: true

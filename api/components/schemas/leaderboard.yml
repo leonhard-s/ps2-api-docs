@@ -8,6 +8,8 @@ leaderboard:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     value:
       type: integer
       x-summary: Summary for value

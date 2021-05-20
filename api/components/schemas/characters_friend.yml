@@ -8,6 +8,8 @@ characters_friend:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     name:
       type: string
       nullable: true
@@ -25,6 +27,8 @@ characters_friend:
             format: int64
             minimum: 0
             exclusiveMinimum: true
+            x-reference-to:
+              - character.character_id
           last_login_time:
             type: string
           online:

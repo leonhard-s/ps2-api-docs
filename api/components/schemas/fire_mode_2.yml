@@ -14,11 +14,15 @@ fire_mode_2:
       nullable: true
       x-summary: Summary for fire_mode_type_id
       description: Description for `fire_mode_type_id`
+      x-reference-to:
+        - fire_mode_type.fire_mode_type_id
     ability_id:
       type: integer
       nullable: true
       x-summary: Summary for ability_id
       description: Description for `ability_id`
+      x-reference-to:
+        - ability.ability_id
     ammo_slot:
       type: integer
       nullable: true
@@ -103,11 +107,15 @@ fire_mode_2:
       exclusiveMinimum: true
       x-summary: Summary for player_state_group_id
       description: Description for `player_state_group_id`
+      x-reference-to:
+        - player_state_group.player_state_group_id
     damage_direct_effect_id:
       type: integer
       nullable: true
       x-summary: Summary for damage_direct_effect_id
       description: Description for `damage_direct_effect_id`
+      x-reference-to:
+        - effect.effect_id
     damage_head_multiplier:
       type: number
       nullable: true
@@ -118,6 +126,8 @@ fire_mode_2:
       nullable: true
       x-summary: Summary for damage_indirect_effect_id
       description: Description for `damage_indirect_effect_id`
+      x-reference-to:
+        - effect.effect_id
     damage_legs_multiplier:
       type: number
       nullable: true

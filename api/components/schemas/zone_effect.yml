@@ -13,10 +13,14 @@ zone_effect:
       exclusiveMinimum: true
       x-summary: Summary for zone_effect_type_id
       description: Description for `zone_effect_type_id`
+      x-reference-to:
+        - zone_effect_type.zone_effect_type_id
     ability_id:
       type: integer
       x-summary: Summary for ability_id
       description: Description for `ability_id`
+      x-reference-to:
+        - ability.ability_id
     param1:
       type: number
       nullable: true

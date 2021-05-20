@@ -13,6 +13,8 @@ map_region:
       exclusiveMinimum: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
+      x-reference-to:
+        - zone.zone_id
     facility_id:
       type: integer
       minimum: 0
@@ -31,6 +33,8 @@ map_region:
       nullable: true
       x-summary: Summary for facility_type_id
       description: Description for `facility_type_id`
+      x-reference-to:
+        - facility_type.facility_type_id
     facility_type:
       type: string
       nullable: true

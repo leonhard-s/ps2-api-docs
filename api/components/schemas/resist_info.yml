@@ -13,6 +13,8 @@ resist_info:
       exclusiveMinimum: true
       x-summary: Summary for resist_type_id
       description: Description for `resist_type_id`
+      x-reference-to:
+        - resist_type.resist_type_id
     resist_percent:
       type: number
       nullable: true

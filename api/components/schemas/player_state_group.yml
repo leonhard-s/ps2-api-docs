@@ -11,6 +11,8 @@ player_state_group:
       type: string
       x-summary: Summary for player_state
       description: Description for `player_state`
+      x-reference-to:
+        - player_state.player_state_id
     min_cone_of_fire:
       type: number
       nullable: true

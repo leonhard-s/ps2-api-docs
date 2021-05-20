@@ -13,6 +13,8 @@ player_state_group_2:
       exclusiveMinimum: true
       x-summary: Summary for player_state_id
       description: Description for `player_state_id`
+      x-reference-to:
+        - player_state.player_state_id
     can_iron_sight:
       type: integer
       x-summary: Summary for can_iron_sight

@@ -7,6 +7,8 @@ world_stat_history:
       exclusiveMinimum: true
       x-summary: Summary for world_id
       description: Description for `world_id`
+      x-reference-to:
+        - world.world_id
     stat_name:
       type: string
       x-summary: Summary for stat_name

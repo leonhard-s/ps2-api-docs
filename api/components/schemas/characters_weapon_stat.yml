@@ -8,6 +8,8 @@ characters_weapon_stat:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     stat_name:
       type: string
       x-summary: Summary for stat_name
@@ -16,10 +18,14 @@ characters_weapon_stat:
       type: integer
       x-summary: Summary for item_id
       description: Description for `item_id`
+      x-reference-to:
+        - item.item_id
     vehicle_id:
       type: integer
       x-summary: Summary for vehicle_id
       description: Description for `vehicle_id`
+      x-reference-to:
+        - vehicle.vehicle_id
     value:
       type: integer
       x-summary: Summary for value

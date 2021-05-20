@@ -13,6 +13,8 @@ profile_armor_map:
       exclusiveMinimum: true
       x-summary: Summary for armor_info_id
       description: Description for `armor_info_id`
+      x-reference-to:
+        - armor_info.armor_info_id
     rank:
       type: integer
       x-summary: Summary for rank

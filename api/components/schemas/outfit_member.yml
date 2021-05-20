@@ -7,6 +7,8 @@ outfit_member:
       exclusiveMinimum: true
       x-summary: Summary for outfit_id
       description: Description for `outfit_id`
+      x-reference-to:
+        - outfit.outfit_id
     character_id:
       type: integer
       minimum: 0
@@ -14,6 +16,8 @@ outfit_member:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     member_since:
       type: integer
       x-summary: Summary for member_since

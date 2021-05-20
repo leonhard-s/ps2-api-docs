@@ -13,6 +13,8 @@ projectile:
       exclusiveMinimum: true
       x-summary: Summary for projectile_flight_type_id
       description: Description for `projectile_flight_type_id`
+      x-reference-to:
+        - projectile_flight_type.projectile_flight_type_id
     speed:
       type: integer
       x-summary: Summary for speed

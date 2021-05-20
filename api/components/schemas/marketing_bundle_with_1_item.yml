@@ -13,6 +13,8 @@ marketing_bundle_with_1_item:
       exclusiveMinimum: true
       x-summary: Summary for item_id
       description: Description for `item_id`
+      x-reference-to:
+        - item.item_id
     item_quantity:
       type: integer
       x-summary: Summary for item_quantity

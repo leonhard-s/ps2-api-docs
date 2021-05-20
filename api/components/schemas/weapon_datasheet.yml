@@ -7,6 +7,8 @@ weapon_datasheet:
       exclusiveMinimum: true
       x-summary: Summary for item_id
       description: Description for `item_id`
+      x-reference-to:
+        - item.item_id
     direct_damage:
       type: integer
       nullable: true

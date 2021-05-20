@@ -13,6 +13,8 @@ objective:
       exclusiveMinimum: true
       x-summary: Summary for objective_type_id
       description: Description for `objective_type_id`
+      x-reference-to:
+        - objective_type.objective_type_id
     objective_group_id:
       type: integer
       minimum: 0

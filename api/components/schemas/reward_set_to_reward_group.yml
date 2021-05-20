@@ -13,5 +13,7 @@ reward_set_to_reward_group:
       exclusiveMinimum: true
       x-summary: Summary for reward_group_id
       description: Description for `reward_group_id`
+      x-reference-to:
+        - reward_group_to_reward.reward_group_id
   example:
     $ref: ../examples/reward_set_to_reward_group.json

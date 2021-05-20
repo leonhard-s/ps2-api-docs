@@ -11,6 +11,8 @@ armor_info:
       type: integer
       x-summary: Summary for armor_facing_id
       description: Description for `armor_facing_id`
+      x-reference-to:
+        - armor_facing.armor_facing_id
     armor_percent:
       type: number
       nullable: true

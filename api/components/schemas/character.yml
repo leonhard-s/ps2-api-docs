@@ -23,6 +23,8 @@ character:
       exclusiveMinimum: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
+      x-reference-to:
+        - faction.faction_id
     head_id:
       type: integer
       minimum: 0
@@ -33,6 +35,8 @@ character:
       minimum: 0
       x-summary: Summary for title_id
       description: Description for `title_id`
+      x-reference-to:
+        - title.title_id
     times:
       type: object
       x-summary: Summary for times
@@ -84,6 +88,8 @@ character:
       exclusiveMinimum: true
       x-summary: Summary for profile_id
       description: Description for `profile_id`
+      x-reference-to:
+        - profile_2.profile_id
     daily_ribbon:
       type: object
       x-summary: Summary for daily_ribbon

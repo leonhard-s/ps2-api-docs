@@ -7,11 +7,15 @@ vehicle_faction:
       exclusiveMinimum: true
       x-summary: Summary for vehicle_id
       description: Description for `vehicle_id`
+      x-reference-to:
+        - vehicle.vehicle_id
     faction_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       x-summary: Summary for faction_id
       description: Description for `faction_id`
+      x-reference-to:
+        - faction.faction_id
   example:
     $ref: ../examples/vehicle_faction.json

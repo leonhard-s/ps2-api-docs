@@ -8,10 +8,14 @@ characters_event:
       format: int64
       x-summary: Summary for character_id
       description: Description for `character_id`
+      x-reference-to:
+        - character.character_id
     achievement_id:
       type: integer
       x-summary: Summary for achievement_id
       description: Description for `achievement_id`
+      x-reference-to:
+        - achievement.achievement_id
     timestamp:
       type: integer
       x-summary: Summary for timestamp
@@ -22,12 +26,16 @@ characters_event:
       exclusiveMinimum: true
       x-summary: Summary for zone_id
       description: Description for `zone_id`
+      x-reference-to:
+        - zone.zone_id
     world_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       x-summary: Summary for world_id
       description: Description for `world_id`
+      x-reference-to:
+        - world.world_id
     event_type:
       type: string
       x-summary: Summary for event_type
