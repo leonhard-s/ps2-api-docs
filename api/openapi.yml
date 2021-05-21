@@ -19,6 +19,233 @@ info:
 servers:
   - url: https://census.daybreakgames.com/
 
+components:
+  schemas:
+    ability:
+      $ref: ./components/schemas/ability.yml#/ability
+    ability_type:
+      $ref: ./components/schemas/ability_type.yml#/ability_type
+    achievement:
+      $ref: ./components/schemas/achievement.yml#/achievement
+    armor_facing:
+      $ref: ./components/schemas/armor_facing.yml#/armor_facing
+    armor_info:
+      $ref: ./components/schemas/armor_info.yml#/armor_info
+    character:
+      $ref: ./components/schemas/character.yml#/character
+    character_name:
+      $ref: ./components/schemas/character_name.yml#/character_name
+    characters_achievement:
+      $ref: ./components/schemas/characters_achievement.yml#/characters_achievement
+    characters_currency:
+      $ref: ./components/schemas/characters_currency.yml#/characters_currency
+    characters_directive:
+      $ref: ./components/schemas/characters_directive.yml#/characters_directive
+    characters_directive_objective:
+      $ref: ./components/schemas/characters_directive_objective.yml#/characters_directive_objective
+    characters_directive_tier:
+      $ref: ./components/schemas/characters_directive_tier.yml#/characters_directive_tier
+    characters_directive_tree:
+      $ref: ./components/schemas/characters_directive_tree.yml#/characters_directive_tree
+    characters_event:
+      $ref: ./components/schemas/characters_event.yml#/characters_event
+    characters_event_grouped:
+      $ref: ./components/schemas/characters_event_grouped.yml#/characters_event_grouped
+    characters_friend:
+      $ref: ./components/schemas/characters_friend.yml#/characters_friend
+    characters_item:
+      $ref: ./components/schemas/characters_item.yml#/characters_item
+    characters_leaderboard:
+      $ref: ./components/schemas/characters_leaderboard.yml#/characters_leaderboard
+    characters_online_status:
+      $ref: ./components/schemas/characters_online_status.yml#/characters_online_status
+    characters_skill:
+      $ref: ./components/schemas/characters_skill.yml#/characters_skill
+    characters_stat:
+      $ref: ./components/schemas/characters_stat.yml#/characters_stat
+    characters_stat_by_faction:
+      $ref: ./components/schemas/characters_stat_by_faction.yml#/characters_stat_by_faction
+    characters_stat_history:
+      $ref: ./components/schemas/characters_stat_history.yml#/characters_stat_history
+    characters_weapon_stat:
+      $ref: ./components/schemas/characters_weapon_stat.yml#/characters_weapon_stat
+    characters_weapon_stat_by_faction:
+      $ref: ./components/schemas/characters_weapon_stat_by_faction.yml#/characters_weapon_stat_by_faction
+    characters_world:
+      $ref: ./components/schemas/characters_world.yml#/characters_world
+    currency:
+      $ref: ./components/schemas/currency.yml#/currency
+    datatype:
+      $ref: ./components/schemas/datatype.yml#/datatype
+    directive:
+      $ref: ./components/schemas/directive.yml#/directive
+    directive_tier:
+      $ref: ./components/schemas/directive_tier.yml#/directive_tier
+    directive_tree:
+      $ref: ./components/schemas/directive_tree.yml#/directive_tree
+    directive_tree_category:
+      $ref: ./components/schemas/directive_tree_category.yml#/directive_tree_category
+    effect:
+      $ref: ./components/schemas/effect.yml#/effect
+    effect_type:
+      $ref: ./components/schemas/effect_type.yml#/effect_type
+    empire_scores:
+      $ref: ./components/schemas/empire_scores.yml#/empire_scores
+    event:
+      $ref: ./components/schemas/event.yml#/event
+    experience:
+      $ref: ./components/schemas/experience.yml#/experience
+    experience_rank:
+      $ref: ./components/schemas/experience_rank.yml#/experience_rank
+    facility_link:
+      $ref: ./components/schemas/facility_link.yml#/facility_link
+    facility_type:
+      $ref: ./components/schemas/facility_type.yml#/facility_type
+    faction:
+      $ref: ./components/schemas/faction.yml#/faction
+    fire_group:
+      $ref: ./components/schemas/fire_group.yml#/fire_group
+    fire_group_to_fire_mode:
+      $ref: ./components/schemas/fire_group_to_fire_mode.yml#/fire_group_to_fire_mode
+    fire_mode:
+      $ref: ./components/schemas/fire_mode.yml#/fire_mode
+    fire_mode_2:
+      $ref: ./components/schemas/fire_mode_2.yml#/fire_mode_2
+    fire_mode_to_projectile:
+      $ref: ./components/schemas/fire_mode_to_projectile.yml#/fire_mode_to_projectile
+    fire_mode_type:
+      $ref: ./components/schemas/fire_mode_type.yml#/fire_mode_type
+    image:
+      $ref: ./components/schemas/image.yml#/image
+    image_set:
+      $ref: ./components/schemas/image_set.yml#/image_set
+    image_set_default:
+      $ref: ./components/schemas/image_set_default.yml#/image_set_default
+    item:
+      $ref: ./components/schemas/item.yml#/item
+    item_attachment:
+      $ref: ./components/schemas/item_attachment.yml#/item_attachment
+    item_category:
+      $ref: ./components/schemas/item_category.yml#/item_category
+    item_profile:
+      $ref: ./components/schemas/item_profile.yml#/item_profile
+    item_to_weapon:
+      $ref: ./components/schemas/item_to_weapon.yml#/item_to_weapon
+    item_type:
+      $ref: ./components/schemas/item_type.yml#/item_type
+    leaderboard:
+      $ref: ./components/schemas/leaderboard.yml#/leaderboard
+    loadout:
+      $ref: ./components/schemas/loadout.yml#/loadout
+    map:
+      $ref: ./components/schemas/map.yml#/map
+    map_hex:
+      $ref: ./components/schemas/map_hex.yml#/map_hex
+    map_region:
+      $ref: ./components/schemas/map_region.yml#/map_region
+    marketing_bundle:
+      $ref: ./components/schemas/marketing_bundle.yml#/marketing_bundle
+    marketing_bundle_item:
+      $ref: ./components/schemas/marketing_bundle_item.yml#/marketing_bundle_item
+    marketing_bundle_with_1_item:
+      $ref: ./components/schemas/marketing_bundle_with_1_item.yml#/marketing_bundle_with_1_item
+    metagame_event:
+      $ref: ./components/schemas/metagame_event.yml#/metagame_event
+    metagame_event_state:
+      $ref: ./components/schemas/metagame_event_state.yml#/metagame_event_state
+    objective:
+      $ref: ./components/schemas/objective.yml#/objective
+    objective_set_to_objective:
+      $ref: ./components/schemas/objective_set_to_objective.yml#/objective_set_to_objective
+    objective_type:
+      $ref: ./components/schemas/objective_type.yml#/objective_type
+    outfit:
+      $ref: ./components/schemas/outfit.yml#/outfit
+    outfit_member:
+      $ref: ./components/schemas/outfit_member.yml#/outfit_member
+    outfit_member_extended:
+      $ref: ./components/schemas/outfit_member_extended.yml#/outfit_member_extended
+    outfit_rank:
+      $ref: ./components/schemas/outfit_rank.yml#/outfit_rank
+    player_state:
+      $ref: ./components/schemas/player_state.yml#/player_state
+    player_state_group:
+      $ref: ./components/schemas/player_state_group.yml#/player_state_group
+    player_state_group_2:
+      $ref: ./components/schemas/player_state_group_2.yml#/player_state_group_2
+    profile:
+      $ref: ./components/schemas/profile.yml#/profile
+    profile_2:
+      $ref: ./components/schemas/profile_2.yml#/profile_2
+    profile_armor_map:
+      $ref: ./components/schemas/profile_armor_map.yml#/profile_armor_map
+    profile_resist_map:
+      $ref: ./components/schemas/profile_resist_map.yml#/profile_resist_map
+    projectile:
+      $ref: ./components/schemas/projectile.yml#/projectile
+    projectile_flight_type:
+      $ref: ./components/schemas/projectile_flight_type.yml#/projectile_flight_type
+    region:
+      $ref: ./components/schemas/region.yml#/region
+    resist_info:
+      $ref: ./components/schemas/resist_info.yml#/resist_info
+    resist_type:
+      $ref: ./components/schemas/resist_type.yml#/resist_type
+    resource_type:
+      $ref: ./components/schemas/resource_type.yml#/resource_type
+    reward:
+      $ref: ./components/schemas/reward.yml#/reward
+    reward_group_to_reward:
+      $ref: ./components/schemas/reward_group_to_reward.yml#/reward_group_to_reward
+    reward_set_to_reward_group:
+      $ref: ./components/schemas/reward_set_to_reward_group.yml#/reward_set_to_reward_group
+    reward_type:
+      $ref: ./components/schemas/reward_type.yml#/reward_type
+    single_character_by_id:
+      $ref: ./components/schemas/single_character_by_id.yml#/single_character_by_id
+    skill:
+      $ref: ./components/schemas/skill.yml#/skill
+    skill_category:
+      $ref: ./components/schemas/skill_category.yml#/skill_category
+    skill_line:
+      $ref: ./components/schemas/skill_line.yml#/skill_line
+    skill_set:
+      $ref: ./components/schemas/skill_set.yml#/skill_set
+    target_type:
+      $ref: ./components/schemas/target_type.yml#/target_type
+    title:
+      $ref: ./components/schemas/title.yml#/title
+    vehicle:
+      $ref: ./components/schemas/vehicle.yml#/vehicle
+    vehicle_attachment:
+      $ref: ./components/schemas/vehicle_attachment.yml#/vehicle_attachment
+    vehicle_faction:
+      $ref: ./components/schemas/vehicle_faction.yml#/vehicle_faction
+    vehicle_skill_set:
+      $ref: ./components/schemas/vehicle_skill_set.yml#/vehicle_skill_set
+    weapon:
+      $ref: ./components/schemas/weapon.yml#/weapon
+    weapon_ammo_slot:
+      $ref: ./components/schemas/weapon_ammo_slot.yml#/weapon_ammo_slot
+    weapon_datasheet:
+      $ref: ./components/schemas/weapon_datasheet.yml#/weapon_datasheet
+    weapon_to_attachment:
+      $ref: ./components/schemas/weapon_to_attachment.yml#/weapon_to_attachment
+    weapon_to_fire_group:
+      $ref: ./components/schemas/weapon_to_fire_group.yml#/weapon_to_fire_group
+    world:
+      $ref: ./components/schemas/world.yml#/world
+    world_event:
+      $ref: ./components/schemas/world_event.yml#/world_event
+    world_stat_history:
+      $ref: ./components/schemas/world_stat_history.yml#/world_stat_history
+    zone:
+      $ref: ./components/schemas/zone.yml#/zone
+    zone_effect:
+      $ref: ./components/schemas/zone_effect.yml#/zone_effect
+    zone_effect_type:
+      $ref: ./components/schemas/zone_effect_type.yml#/zone_effect_type
+
 paths:
   /get/ps2:v2:
     $ref: paths/get_datatype.yml
