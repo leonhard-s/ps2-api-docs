@@ -38,5 +38,3 @@ characters_directive_tree:
       type: string
       x-summary: Summary for completion_time_date
       description: Description for `completion_time_date`
-  example:
-    $ref: ../examples/characters_directive_tree.json

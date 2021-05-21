@@ -16,5 +16,3 @@ image:
       type: string
       x-summary: Summary for path
       description: Description for `path`
-  example:
-    $ref: ../examples/image.json

@@ -11,5 +11,3 @@ projectile_flight_type:
       type: string
       x-summary: Summary for description
       description: Description for `description`
-  example:
-    $ref: ../examples/projectile_flight_type.json

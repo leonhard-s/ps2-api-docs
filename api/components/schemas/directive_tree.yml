@@ -69,5 +69,3 @@ directive_tree:
       nullable: true
       x-summary: Summary for image_path
       description: Description for `image_path`
-  example:
-    $ref: ../examples/directive_tree.json

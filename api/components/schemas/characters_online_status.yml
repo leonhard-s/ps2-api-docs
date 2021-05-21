@@ -16,5 +16,3 @@ characters_online_status:
       description: Description for `online_status`
       x-reference-to:
         - world.world_id
-  example:
-    $ref: ../examples/characters_online_status.json

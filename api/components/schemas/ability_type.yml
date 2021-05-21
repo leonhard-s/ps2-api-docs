@@ -102,5 +102,3 @@ ability_type:
       nullable: true
       x-summary: Summary for string4
       description: Description for `string4`
-  example:
-    $ref: ../examples/ability_type.json

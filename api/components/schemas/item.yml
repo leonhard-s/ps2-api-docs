@@ -119,5 +119,3 @@ item:
       type: integer
       x-summary: Summary for is_default_attachment
       description: Description for `is_default_attachment`
-  example:
-    $ref: ../examples/item.json

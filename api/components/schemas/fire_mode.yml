@@ -163,5 +163,3 @@ fire_mode:
       nullable: true
       x-summary: Summary for indirect_damage_resist_type
       description: Description for `indirect_damage_resist_type`
-  example:
-    $ref: ../examples/fire_mode.json

@@ -22,5 +22,3 @@ item_category:
           type: string
         it:
           type: string
-  example:
-    $ref: ../examples/item_category.json

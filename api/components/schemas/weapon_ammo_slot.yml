@@ -33,5 +33,3 @@ weapon_ammo_slot:
       nullable: true
       x-summary: Summary for refill_ammo_delay_ms
       description: Description for `refill_ammo_delay_ms`
-  example:
-    $ref: ../examples/weapon_ammo_slot.json

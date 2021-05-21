@@ -20,3 +20,5 @@ get:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/directive_tree.json

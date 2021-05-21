@@ -32,5 +32,3 @@ datatype:
         A list of resolvable names for this collection.
 
         The given names can be passed to the `c:resolve` query command to join additional fields to the response object.
-  example:
-    $ref: ../examples/datatype.json

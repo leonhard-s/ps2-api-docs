@@ -15,5 +15,3 @@ reward_group_to_reward:
       description: Description for `reward_id`
       x-reference-to:
         - reward.reward_id
-  example:
-    $ref: ../examples/reward_group_to_reward.json

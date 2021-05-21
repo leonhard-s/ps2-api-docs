@@ -67,5 +67,3 @@ map_region:
       nullable: true
       x-summary: Summary for reward_currency_id
       description: Description for `reward_currency_id`
-  example:
-    $ref: ../examples/map_region.json

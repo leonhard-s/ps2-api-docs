@@ -98,5 +98,3 @@ projectile:
       nullable: true
       x-summary: Summary for lockon_seek_in_flight
       description: Description for `lockon_seek_in_flight`
-  example:
-    $ref: ../examples/projectile.json

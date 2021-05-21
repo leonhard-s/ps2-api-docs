@@ -44,5 +44,3 @@ outfit:
       type: integer
       x-summary: Summary for member_count
       description: Description for `member_count`
-  example:
-    $ref: ../examples/outfit.json

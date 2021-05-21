@@ -458,5 +458,3 @@ fire_mode_2:
           type: string
         it:
           type: string
-  example:
-    $ref: ../examples/fire_mode_2.json

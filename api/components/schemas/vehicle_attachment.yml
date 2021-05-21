@@ -34,5 +34,3 @@ vehicle_attachment:
       type: integer
       x-summary: Summary for slot_id
       description: Description for `slot_id`
-  example:
-    $ref: ../examples/vehicle_attachment.json

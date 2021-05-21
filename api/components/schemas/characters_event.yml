@@ -44,5 +44,3 @@ characters_event:
       type: string
       x-summary: Summary for table_type
       description: Description for `table_type`
-  example:
-    $ref: ../examples/characters_event.json

@@ -34,5 +34,3 @@ resist_info:
       type: string
       x-summary: Summary for description
       description: Description for `description`
-  example:
-    $ref: ../examples/resist_info.json

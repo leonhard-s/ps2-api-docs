@@ -18,5 +18,3 @@ characters_item:
       description: Description for `item_id`
       x-reference-to:
         - item.item_id
-  example:
-    $ref: ../examples/characters_item.json

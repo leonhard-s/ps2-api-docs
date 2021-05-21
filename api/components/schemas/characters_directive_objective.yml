@@ -42,5 +42,3 @@ characters_directive_objective:
       type: integer
       x-summary: Summary for state_data
       description: Description for `state_data`
-  example:
-    $ref: ../examples/characters_directive_objective.json

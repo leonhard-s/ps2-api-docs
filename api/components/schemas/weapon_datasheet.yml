@@ -117,5 +117,3 @@ weapon_datasheet:
       nullable: true
       x-summary: Summary for show_range
       description: Description for `show_range`
-  example:
-    $ref: ../examples/weapon_datasheet.json

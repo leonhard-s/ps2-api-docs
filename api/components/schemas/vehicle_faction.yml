@@ -17,5 +17,3 @@ vehicle_faction:
       description: Description for `faction_id`
       x-reference-to:
         - faction.faction_id
-  example:
-    $ref: ../examples/vehicle_faction.json

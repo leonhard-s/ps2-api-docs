@@ -18,5 +18,3 @@ characters_event_grouped:
       description: Description for `character_id`
       x-reference-to:
         - character.character_id
-  example:
-    $ref: ../examples/characters_event_grouped.json
