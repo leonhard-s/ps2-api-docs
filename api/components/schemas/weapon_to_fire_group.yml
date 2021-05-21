@@ -22,5 +22,3 @@ weapon_to_fire_group:
       nullable: true
       x-summary: Summary for fire_group_index
       description: Description for `fire_group_index`
-  example:
-    $ref: ../examples/weapon_to_fire_group.json

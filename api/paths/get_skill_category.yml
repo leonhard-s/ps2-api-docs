@@ -15,8 +15,10 @@ get:
               skill_category_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/skill_category.yml#/skill_category
+                  $ref: ../openapi.yml#/components/schemas/skill_category
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/skill_category.json

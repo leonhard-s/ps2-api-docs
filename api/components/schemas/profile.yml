@@ -91,5 +91,3 @@ profile:
       type: number
       x-summary: Summary for strafe_speed_modifier
       description: Description for `strafe_speed_modifier`
-  example:
-    $ref: ../examples/profile.json

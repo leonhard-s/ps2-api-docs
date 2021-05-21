@@ -15,8 +15,10 @@ get:
               reward_group_to_reward_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/reward_group_to_reward.yml#/reward_group_to_reward
+                  $ref: ../openapi.yml#/components/schemas/reward_group_to_reward
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/reward_group_to_reward.json

@@ -46,5 +46,3 @@ metagame_event:
       nullable: true
       x-summary: Summary for experience_bonus
       description: Description for `experience_bonus`
-  example:
-    $ref: ../examples/metagame_event.json

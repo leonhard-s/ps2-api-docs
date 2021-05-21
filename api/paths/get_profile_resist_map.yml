@@ -13,8 +13,10 @@ get:
               profile_resist_map_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/profile_resist_map.yml#/profile_resist_map
+                  $ref: ../openapi.yml#/components/schemas/profile_resist_map
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/profile_resist_map.json

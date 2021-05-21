@@ -18,5 +18,3 @@ item_profile:
       x-reference-to:
         - profile.profile_id
         - profile_2.profile_id
-  example:
-    $ref: ../examples/item_profile.json

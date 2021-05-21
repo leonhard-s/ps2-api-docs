@@ -18,5 +18,3 @@ fire_mode_to_projectile:
       description: Description for `projectile_id`
       x-reference-to:
         - projectile.projectile_id
-  example:
-    $ref: ../examples/fire_mode_to_projectile.json

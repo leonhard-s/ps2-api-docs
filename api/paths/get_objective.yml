@@ -17,8 +17,10 @@ get:
               objective_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/objective.yml#/objective
+                  $ref: ../openapi.yml#/components/schemas/objective
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/objective.json

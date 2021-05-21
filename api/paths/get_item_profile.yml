@@ -13,8 +13,10 @@ get:
               item_profile_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/item_profile.yml#/item_profile
+                  $ref: ../openapi.yml#/components/schemas/item_profile
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/item_profile.json

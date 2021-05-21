@@ -17,8 +17,10 @@ get:
               item_type_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/item_type.yml#/item_type
+                  $ref: ../openapi.yml#/components/schemas/item_type
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/item_type.json

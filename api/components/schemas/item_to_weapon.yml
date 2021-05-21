@@ -18,5 +18,3 @@ item_to_weapon:
       description: Description for `weapon_id`
       x-reference-to:
         - weapon.weapon_id
-  example:
-    $ref: ../examples/item_to_weapon.json

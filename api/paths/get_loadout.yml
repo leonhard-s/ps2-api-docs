@@ -26,8 +26,10 @@ get:
               loadout_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/loadout.yml#/loadout
+                  $ref: ../openapi.yml#/components/schemas/loadout
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/loadout.json

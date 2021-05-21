@@ -74,5 +74,3 @@ weapon:
       nullable: true
       x-summary: Summary for melee_detect_height
       description: Description for `melee_detect_height`
-  example:
-    $ref: ../examples/weapon.json

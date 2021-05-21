@@ -13,8 +13,10 @@ get:
               profile_armor_map_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/profile_armor_map.yml#/profile_armor_map
+                  $ref: ../openapi.yml#/components/schemas/profile_armor_map
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/profile_armor_map.json

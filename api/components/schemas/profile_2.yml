@@ -11,5 +11,3 @@ profile_2:
       type: string
       x-summary: Summary for description
       description: Description for `description`
-  example:
-    $ref: ../examples/profile_2.json

@@ -13,8 +13,10 @@ get:
               vehicle_skill_set_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/vehicle_skill_set.yml#/vehicle_skill_set
+                  $ref: ../openapi.yml#/components/schemas/vehicle_skill_set
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/vehicle_skill_set.json

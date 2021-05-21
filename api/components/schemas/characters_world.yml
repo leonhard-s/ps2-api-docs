@@ -18,5 +18,3 @@ characters_world:
       description: Description for `world_id`
       x-reference-to:
         - world.world_id
-  example:
-    $ref: ../examples/characters_world.json

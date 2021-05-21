@@ -15,8 +15,10 @@ get:
               projectile_flight_type_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/projectile_flight_type.yml#/projectile_flight_type
+                  $ref: ../openapi.yml#/components/schemas/projectile_flight_type
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/projectile_flight_type.json

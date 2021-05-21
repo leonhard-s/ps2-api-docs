@@ -15,8 +15,10 @@ get:
               map_region_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/map_region.yml#/map_region
+                  $ref: ../openapi.yml#/components/schemas/map_region
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/map_region.json

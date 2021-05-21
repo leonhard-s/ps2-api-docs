@@ -34,5 +34,3 @@ outfit_member:
       type: integer
       x-summary: Summary for rank_ordinal
       description: Description for `rank_ordinal`
-  example:
-    $ref: ../examples/outfit_member.json

@@ -19,8 +19,10 @@ get:
               leaderboard_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/leaderboard.yml#/leaderboard
+                  $ref: ../openapi.yml#/components/schemas/leaderboard
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/leaderboard.json

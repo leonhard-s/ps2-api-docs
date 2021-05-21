@@ -15,8 +15,10 @@ get:
               experience_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/experience.yml#/experience
+                  $ref: ../openapi.yml#/components/schemas/experience
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/experience.json

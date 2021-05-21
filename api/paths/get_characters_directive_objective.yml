@@ -13,8 +13,10 @@ get:
               characters_directive_objective_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/characters_directive_objective.yml#/characters_directive_objective
+                  $ref: ../openapi.yml#/components/schemas/characters_directive_objective
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/characters_directive_objective.json

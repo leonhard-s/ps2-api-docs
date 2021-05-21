@@ -17,8 +17,10 @@ get:
               ability_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/ability.yml#/ability
+                  $ref: ../openapi.yml#/components/schemas/ability
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/ability.json

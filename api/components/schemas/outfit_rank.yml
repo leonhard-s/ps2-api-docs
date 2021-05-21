@@ -21,5 +21,3 @@ outfit_rank:
       type: string
       x-summary: Summary for description
       description: Description for `description`
-  example:
-    $ref: ../examples/outfit_rank.json

@@ -10,5 +10,3 @@ armor_facing:
       type: string
       x-summary: Summary for description
       description: Description for `description`
-  example:
-    $ref: ../examples/armor_facing.json

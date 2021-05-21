@@ -9,5 +9,3 @@ target_type:
       type: string
       x-summary: Summary for description
       description: Description for `description`
-  example:
-    $ref: ../examples/target_type.json

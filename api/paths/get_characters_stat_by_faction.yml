@@ -21,8 +21,10 @@ get:
               characters_stat_by_faction_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/characters_stat_by_faction.yml#/characters_stat_by_faction
+                  $ref: ../openapi.yml#/components/schemas/characters_stat_by_faction
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/characters_stat_by_faction.json

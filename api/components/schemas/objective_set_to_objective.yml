@@ -15,5 +15,3 @@ objective_set_to_objective:
       description: Description for `objective_group_id`
       x-reference-to:
         - objective.objective_group_id
-  example:
-    $ref: ../examples/objective_set_to_objective.json

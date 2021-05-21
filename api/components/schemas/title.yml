@@ -22,5 +22,3 @@ title:
           type: string
         it:
           type: string
-  example:
-    $ref: ../examples/title.json

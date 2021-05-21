@@ -18,5 +18,3 @@ player_state_group:
       nullable: true
       x-summary: Summary for min_cone_of_fire
       description: Description for `min_cone_of_fire`
-  example:
-    $ref: ../examples/player_state_group.json

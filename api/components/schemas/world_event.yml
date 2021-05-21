@@ -61,5 +61,3 @@ world_event:
       description: Description for `outfit_id`
       x-reference-to:
         - outfit.outfit_id
-  example:
-    $ref: ../examples/world_event.json

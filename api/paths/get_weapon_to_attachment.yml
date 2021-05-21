@@ -13,8 +13,10 @@ get:
               weapon_to_attachment_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/weapon_to_attachment.yml#/weapon_to_attachment
+                  $ref: ../openapi.yml#/components/schemas/weapon_to_attachment
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/weapon_to_attachment.json

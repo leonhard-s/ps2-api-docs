@@ -15,8 +15,10 @@ get:
               character_name_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/character_name.yml#/character_name
+                  $ref: ../openapi.yml#/components/schemas/character_name
               results:
                 type: integer
                 minimum: 0
                 description: The number of results returned.
+          example:
+            $ref: ../components/examples/character_name.json

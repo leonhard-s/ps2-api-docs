@@ -26,5 +26,3 @@ characters_skill:
       type: string
       x-summary: Summary for last_save_date
       description: Description for `last_save_date`
-  example:
-    $ref: ../examples/characters_skill.json

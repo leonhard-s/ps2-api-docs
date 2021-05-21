@@ -33,5 +33,3 @@ characters_friend:
             type: string
           online:
             type: boolean
-  example:
-    $ref: ../examples/characters_friend.json
