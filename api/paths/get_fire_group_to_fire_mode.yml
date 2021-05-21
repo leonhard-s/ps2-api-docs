@@ -15,7 +15,7 @@ get:
               fire_group_to_fire_mode_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/fire_group_to_fire_mode.yml#/fire_group_to_fire_mode
+                  $ref: ../openapi.yml#/components/schemas/fire_group_to_fire_mode
               results:
                 type: integer
                 minimum: 0

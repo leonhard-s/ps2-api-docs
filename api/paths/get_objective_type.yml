@@ -17,7 +17,7 @@ get:
               objective_type_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/objective_type.yml#/objective_type
+                  $ref: ../openapi.yml#/components/schemas/objective_type
               results:
                 type: integer
                 minimum: 0

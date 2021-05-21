@@ -15,7 +15,7 @@ get:
               directive_tree_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/directive_tree.yml#/directive_tree
+                  $ref: ../openapi.yml#/components/schemas/directive_tree
               results:
                 type: integer
                 minimum: 0

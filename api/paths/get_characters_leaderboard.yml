@@ -20,7 +20,7 @@ get:
               characters_leaderboard_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/characters_leaderboard.yml#/characters_leaderboard
+                  $ref: ../openapi.yml#/components/schemas/characters_leaderboard
               results:
                 type: integer
                 minimum: 0

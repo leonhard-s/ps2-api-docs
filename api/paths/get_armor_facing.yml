@@ -17,7 +17,7 @@ get:
               armor_facing_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/armor_facing.yml#/armor_facing
+                  $ref: ../openapi.yml#/components/schemas/armor_facing
               results:
                 type: integer
                 minimum: 0

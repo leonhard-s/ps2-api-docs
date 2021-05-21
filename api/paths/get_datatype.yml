@@ -15,7 +15,7 @@ get:
               datatype_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/datatype.yml#/datatype
+                  $ref: ../openapi.yml#/components/schemas/datatype
               results:
                 type: integer
                 minimum: 0

@@ -26,7 +26,7 @@ get:
               loadout_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/loadout.yml#/loadout
+                  $ref: ../openapi.yml#/components/schemas/loadout
               results:
                 type: integer
                 minimum: 0

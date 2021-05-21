@@ -15,7 +15,7 @@ get:
               character_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/character.yml#/character
+                  $ref: ../openapi.yml#/components/schemas/character
               results:
                 type: integer
                 minimum: 0

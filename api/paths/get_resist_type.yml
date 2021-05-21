@@ -15,7 +15,7 @@ get:
               resist_type_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/resist_type.yml#/resist_type
+                  $ref: ../openapi.yml#/components/schemas/resist_type
               results:
                 type: integer
                 minimum: 0

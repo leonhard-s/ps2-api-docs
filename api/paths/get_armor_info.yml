@@ -19,7 +19,7 @@ get:
               armor_info_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/armor_info.yml#/armor_info
+                  $ref: ../openapi.yml#/components/schemas/armor_info
               results:
                 type: integer
                 minimum: 0

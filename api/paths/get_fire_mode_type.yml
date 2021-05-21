@@ -17,7 +17,7 @@ get:
               fire_mode_type_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/fire_mode_type.yml#/fire_mode_type
+                  $ref: ../openapi.yml#/components/schemas/fire_mode_type
               results:
                 type: integer
                 minimum: 0

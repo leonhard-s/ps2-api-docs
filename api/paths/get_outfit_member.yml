@@ -17,7 +17,7 @@ get:
               outfit_member_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/outfit_member.yml#/outfit_member
+                  $ref: ../openapi.yml#/components/schemas/outfit_member
               results:
                 type: integer
                 minimum: 0

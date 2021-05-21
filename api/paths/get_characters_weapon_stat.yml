@@ -15,7 +15,7 @@ get:
               characters_weapon_stat_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/characters_weapon_stat.yml#/characters_weapon_stat
+                  $ref: ../openapi.yml#/components/schemas/characters_weapon_stat
               results:
                 type: integer
                 minimum: 0

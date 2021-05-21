@@ -19,7 +19,7 @@ get:
               characters_stat_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/characters_stat.yml#/characters_stat
+                  $ref: ../openapi.yml#/components/schemas/characters_stat
               results:
                 type: integer
                 minimum: 0

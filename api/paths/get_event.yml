@@ -17,7 +17,7 @@ get:
               event_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/event.yml#/event
+                  $ref: ../openapi.yml#/components/schemas/event
               results:
                 type: integer
                 minimum: 0

@@ -17,7 +17,7 @@ get:
               characters_event_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/characters_event.yml#/characters_event
+                  $ref: ../openapi.yml#/components/schemas/characters_event
               results:
                 type: integer
                 minimum: 0

@@ -15,7 +15,7 @@ get:
               region_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/region.yml#/region
+                  $ref: ../openapi.yml#/components/schemas/region
               results:
                 type: integer
                 minimum: 0

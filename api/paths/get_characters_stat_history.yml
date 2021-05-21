@@ -18,7 +18,7 @@ get:
               characters_stat_history_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/characters_stat_history.yml#/characters_stat_history
+                  $ref: ../openapi.yml#/components/schemas/characters_stat_history
               results:
                 type: integer
                 minimum: 0

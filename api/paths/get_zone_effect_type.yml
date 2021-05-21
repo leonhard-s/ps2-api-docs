@@ -15,7 +15,7 @@ get:
               zone_effect_type_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/zone_effect_type.yml#/zone_effect_type
+                  $ref: ../openapi.yml#/components/schemas/zone_effect_type
               results:
                 type: integer
                 minimum: 0

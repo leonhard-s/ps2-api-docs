@@ -17,7 +17,7 @@ get:
               zone_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/zone.yml#/zone
+                  $ref: ../openapi.yml#/components/schemas/zone
               results:
                 type: integer
                 minimum: 0

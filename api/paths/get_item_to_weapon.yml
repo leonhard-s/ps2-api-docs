@@ -15,7 +15,7 @@ get:
               item_to_weapon_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/item_to_weapon.yml#/item_to_weapon
+                  $ref: ../openapi.yml#/components/schemas/item_to_weapon
               results:
                 type: integer
                 minimum: 0

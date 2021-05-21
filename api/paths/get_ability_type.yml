@@ -17,7 +17,7 @@ get:
               ability_type_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/ability_type.yml#/ability_type
+                  $ref: ../openapi.yml#/components/schemas/ability_type
               results:
                 type: integer
                 minimum: 0

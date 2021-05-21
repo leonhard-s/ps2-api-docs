@@ -22,7 +22,7 @@ get:
               map_hex_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/map_hex.yml#/map_hex
+                  $ref: ../openapi.yml#/components/schemas/map_hex
               results:
                 type: integer
                 minimum: 0

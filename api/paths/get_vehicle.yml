@@ -15,7 +15,7 @@ get:
               vehicle_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/vehicle.yml#/vehicle
+                  $ref: ../openapi.yml#/components/schemas/vehicle
               results:
                 type: integer
                 minimum: 0

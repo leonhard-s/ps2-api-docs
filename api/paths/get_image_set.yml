@@ -17,7 +17,7 @@ get:
               image_set_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/image_set.yml#/image_set
+                  $ref: ../openapi.yml#/components/schemas/image_set
               results:
                 type: integer
                 minimum: 0

@@ -15,7 +15,7 @@ get:
               facility_type_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/facility_type.yml#/facility_type
+                  $ref: ../openapi.yml#/components/schemas/facility_type
               results:
                 type: integer
                 minimum: 0

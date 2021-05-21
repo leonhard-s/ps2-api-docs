@@ -15,7 +15,7 @@ get:
               reward_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/reward.yml#/reward
+                  $ref: ../openapi.yml#/components/schemas/reward
               results:
                 type: integer
                 minimum: 0

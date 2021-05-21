@@ -17,7 +17,7 @@ get:
               resource_type_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/resource_type.yml#/resource_type
+                  $ref: ../openapi.yml#/components/schemas/resource_type
               results:
                 type: integer
                 minimum: 0

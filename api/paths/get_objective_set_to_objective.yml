@@ -15,7 +15,7 @@ get:
               objective_set_to_objective_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/objective_set_to_objective.yml#/objective_set_to_objective
+                  $ref: ../openapi.yml#/components/schemas/objective_set_to_objective
               results:
                 type: integer
                 minimum: 0

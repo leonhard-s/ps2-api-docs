@@ -15,7 +15,7 @@ get:
               fire_group_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/fire_group.yml#/fire_group
+                  $ref: ../openapi.yml#/components/schemas/fire_group
               results:
                 type: integer
                 minimum: 0

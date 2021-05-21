@@ -15,7 +15,7 @@ get:
               item_list:
                 type: array
                 items:
-                  $ref: ../components/schemas/item.yml#/item
+                  $ref: ../openapi.yml#/components/schemas/item
               results:
                 type: integer
                 minimum: 0
