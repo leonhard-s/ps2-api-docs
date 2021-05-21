@@ -246,6 +246,344 @@ components:
     zone_effect_type:
       $ref: ./components/schemas/zone_effect_type.yml#/zone_effect_type
 
+  examples:
+    ability:
+      value:
+        $ref: ./components/examples/ability.json
+    ability_type:
+      value:
+        $ref: ./components/examples/ability_type.json
+    achievement:
+      value:
+        $ref: ./components/examples/achievement.json
+    armor_facing:
+      value:
+        $ref: ./components/examples/armor_facing.json
+    armor_info:
+      value:
+        $ref: ./components/examples/armor_info.json
+    character:
+      value:
+        $ref: ./components/examples/character.json
+    character_name:
+      value:
+        $ref: ./components/examples/character_name.json
+    characters_achievement:
+      value:
+        $ref: ./components/examples/characters_achievement.json
+    characters_currency:
+      value:
+        $ref: ./components/examples/characters_currency.json
+    characters_directive:
+      value:
+        $ref: ./components/examples/characters_directive.json
+    characters_directive_objective:
+      value:
+        $ref: ./components/examples/characters_directive_objective.json
+    characters_directive_tier:
+      value:
+        $ref: ./components/examples/characters_directive_tier.json
+    characters_directive_tree:
+      value:
+        $ref: ./components/examples/characters_directive_tree.json
+    characters_event:
+      value:
+        $ref: ./components/examples/characters_event.json
+    characters_event_grouped:
+      value:
+        $ref: ./components/examples/characters_event_grouped.json
+    characters_friend:
+      value:
+        $ref: ./components/examples/characters_friend.json
+    characters_item:
+      value:
+        $ref: ./components/examples/characters_item.json
+    characters_leaderboard:
+      value:
+        $ref: ./components/examples/characters_leaderboard.json
+    characters_online_status:
+      value:
+        $ref: ./components/examples/characters_online_status.json
+    characters_skill:
+      value:
+        $ref: ./components/examples/characters_skill.json
+    characters_stat:
+      value:
+        $ref: ./components/examples/characters_stat.json
+    characters_stat_by_faction:
+      value:
+        $ref: ./components/examples/characters_stat_by_faction.json
+    characters_stat_history:
+      value:
+        $ref: ./components/examples/characters_stat_history.json
+    characters_weapon_stat:
+      value:
+        $ref: ./components/examples/characters_weapon_stat.json
+    characters_weapon_stat_by_faction:
+      value:
+        $ref: ./components/examples/characters_weapon_stat_by_faction.json
+    characters_world:
+      value:
+        $ref: ./components/examples/characters_world.json
+    currency:
+      value:
+        $ref: ./components/examples/currency.json
+    datatype:
+      value:
+        $ref: ./components/examples/datatype.json
+    directive:
+      value:
+        $ref: ./components/examples/directive.json
+    directive_tier:
+      value:
+        $ref: ./components/examples/directive_tier.json
+    directive_tree:
+      value:
+        $ref: ./components/examples/directive_tree.json
+    directive_tree_category:
+      value:
+        $ref: ./components/examples/directive_tree_category.json
+    effect:
+      value:
+        $ref: ./components/examples/effect.json
+    effect_type:
+      value:
+        $ref: ./components/examples/effect_type.json
+    empire_scores:
+      value:
+        $ref: ./components/examples/empire_scores.json
+    event:
+      value:
+        $ref: ./components/examples/event.json
+    experience:
+      value:
+        $ref: ./components/examples/experience.json
+    experience_rank:
+      value:
+        $ref: ./components/examples/experience_rank.json
+    facility_link:
+      value:
+        $ref: ./components/examples/facility_link.json
+    facility_type:
+      value:
+        $ref: ./components/examples/facility_type.json
+    faction:
+      value:
+        $ref: ./components/examples/faction.json
+    fire_group:
+      value:
+        $ref: ./components/examples/fire_group.json
+    fire_group_to_fire_mode:
+      value:
+        $ref: ./components/examples/fire_group_to_fire_mode.json
+    fire_mode:
+      value:
+        $ref: ./components/examples/fire_mode.json
+    fire_mode_2:
+      value:
+        $ref: ./components/examples/fire_mode_2.json
+    fire_mode_to_projectile:
+      value:
+        $ref: ./components/examples/fire_mode_to_projectile.json
+    fire_mode_type:
+      value:
+        $ref: ./components/examples/fire_mode_type.json
+    image:
+      value:
+        $ref: ./components/examples/image.json
+    image_set:
+      value:
+        $ref: ./components/examples/image_set.json
+    image_set_default:
+      value:
+        $ref: ./components/examples/image_set_default.json
+    item:
+      value:
+        $ref: ./components/examples/item.json
+    item_attachment:
+      value:
+        $ref: ./components/examples/item_attachment.json
+    item_category:
+      value:
+        $ref: ./components/examples/item_category.json
+    item_profile:
+      value:
+        $ref: ./components/examples/item_profile.json
+    item_to_weapon:
+      value:
+        $ref: ./components/examples/item_to_weapon.json
+    item_type:
+      value:
+        $ref: ./components/examples/item_type.json
+    leaderboard:
+      value:
+        $ref: ./components/examples/leaderboard.json
+    loadout:
+      value:
+        $ref: ./components/examples/loadout.json
+    map:
+      value:
+        $ref: ./components/examples/map.json
+    map_hex:
+      value:
+        $ref: ./components/examples/map_hex.json
+    map_region:
+      value:
+        $ref: ./components/examples/map_region.json
+    marketing_bundle:
+      value:
+        $ref: ./components/examples/marketing_bundle.json
+    marketing_bundle_item:
+      value:
+        $ref: ./components/examples/marketing_bundle_item.json
+    marketing_bundle_with_1_item:
+      value:
+        $ref: ./components/examples/marketing_bundle_with_1_item.json
+    metagame_event:
+      value:
+        $ref: ./components/examples/metagame_event.json
+    metagame_event_state:
+      value:
+        $ref: ./components/examples/metagame_event_state.json
+    objective:
+      value:
+        $ref: ./components/examples/objective.json
+    objective_set_to_objective:
+      value:
+        $ref: ./components/examples/objective_set_to_objective.json
+    objective_type:
+      value:
+        $ref: ./components/examples/objective_type.json
+    outfit:
+      value:
+        $ref: ./components/examples/outfit.json
+    outfit_member:
+      value:
+        $ref: ./components/examples/outfit_member.json
+    outfit_member_extended:
+      value:
+        $ref: ./components/examples/outfit_member_extended.json
+    outfit_rank:
+      value:
+        $ref: ./components/examples/outfit_rank.json
+    player_state:
+      value:
+        $ref: ./components/examples/player_state.json
+    player_state_group:
+      value:
+        $ref: ./components/examples/player_state_group.json
+    player_state_group_2:
+      value:
+        $ref: ./components/examples/player_state_group_2.json
+    profile:
+      value:
+        $ref: ./components/examples/profile.json
+    profile_2:
+      value:
+        $ref: ./components/examples/profile_2.json
+    profile_armor_map:
+      value:
+        $ref: ./components/examples/profile_armor_map.json
+    profile_resist_map:
+      value:
+        $ref: ./components/examples/profile_resist_map.json
+    projectile:
+      value:
+        $ref: ./components/examples/projectile.json
+    projectile_flight_type:
+      value:
+        $ref: ./components/examples/projectile_flight_type.json
+    region:
+      value:
+        $ref: ./components/examples/region.json
+    resist_info:
+      value:
+        $ref: ./components/examples/resist_info.json
+    resist_type:
+      value:
+        $ref: ./components/examples/resist_type.json
+    resource_type:
+      value:
+        $ref: ./components/examples/resource_type.json
+    reward:
+      value:
+        $ref: ./components/examples/reward.json
+    reward_group_to_reward:
+      value:
+        $ref: ./components/examples/reward_group_to_reward.json
+    reward_set_to_reward_group:
+      value:
+        $ref: ./components/examples/reward_set_to_reward_group.json
+    reward_type:
+      value:
+        $ref: ./components/examples/reward_type.json
+    single_character_by_id:
+      value:
+        $ref: ./components/examples/single_character_by_id.json
+    skill:
+      value:
+        $ref: ./components/examples/skill.json
+    skill_category:
+      value:
+        $ref: ./components/examples/skill_category.json
+    skill_line:
+      value:
+        $ref: ./components/examples/skill_line.json
+    skill_set:
+      value:
+        $ref: ./components/examples/skill_set.json
+    target_type:
+      value:
+        $ref: ./components/examples/target_type.json
+    title:
+      value:
+        $ref: ./components/examples/title.json
+    vehicle:
+      value:
+        $ref: ./components/examples/vehicle.json
+    vehicle_attachment:
+      value:
+        $ref: ./components/examples/vehicle_attachment.json
+    vehicle_faction:
+      value:
+        $ref: ./components/examples/vehicle_faction.json
+    vehicle_skill_set:
+      value:
+        $ref: ./components/examples/vehicle_skill_set.json
+    weapon:
+      value:
+        $ref: ./components/examples/weapon.json
+    weapon_ammo_slot:
+      value:
+        $ref: ./components/examples/weapon_ammo_slot.json
+    weapon_datasheet:
+      value:
+        $ref: ./components/examples/weapon_datasheet.json
+    weapon_to_attachment:
+      value:
+        $ref: ./components/examples/weapon_to_attachment.json
+    weapon_to_fire_group:
+      value:
+        $ref: ./components/examples/weapon_to_fire_group.json
+    world:
+      value:
+        $ref: ./components/examples/world.json
+    world_event:
+      value:
+        $ref: ./components/examples/world_event.json
+    world_stat_history:
+      value:
+        $ref: ./components/examples/world_stat_history.json
+    zone:
+      value:
+        $ref: ./components/examples/zone.json
+    zone_effect:
+      value:
+        $ref: ./components/examples/zone_effect.json
+    zone_effect_type:
+      value:
+        $ref: ./components/examples/zone_effect_type.json
+
 paths:
   /get/ps2:v2:
     $ref: ./paths/get_datatype.yml
