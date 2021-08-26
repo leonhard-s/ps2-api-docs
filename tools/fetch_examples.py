@@ -46,7 +46,6 @@ async def main(game: str) -> None:
                 return [await client.request(q) for q in queries]
 
             tasks.append(worker(query, query_null))
-        print(tasks)
         print('Fetching examples...')
         results = await asyncio.gather(*tasks)
         print('Writing examples...')
