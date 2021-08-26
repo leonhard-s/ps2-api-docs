@@ -3,5 +3,4 @@ ${{ datatype }}:
   properties:
     ${{ field }}:
       type: ${{ type }}
-      x-summary: Summary for ${{ field }}
       description: Description for `${{ field }}`

@@ -6,7 +6,6 @@ characters_world:
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      x-summary: Summary for character_id
       description: Description for `character_id`
       x-reference-to:
         - character.character_id
@@ -14,7 +13,6 @@ characters_world:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for world_id
       description: Description for `world_id`
       x-reference-to:
         - world.world_id

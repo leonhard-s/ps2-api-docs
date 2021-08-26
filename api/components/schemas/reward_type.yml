@@ -5,41 +5,32 @@ reward_type:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for reward_type_id
       description: Description for `reward_type_id`
     description:
       type: string
-      x-summary: Summary for description
       description: Description for `description`
     count_min:
       type: string
       nullable: true
-      x-summary: Summary for count_min
       description: Description for `count_min`
     count_max:
       type: integer
       nullable: true
-      x-summary: Summary for count_max
       description: Description for `count_max`
     param1:
       type: string
-      x-summary: Summary for param1
       description: Description for `param1`
     param2:
       type: string
-      x-summary: Summary for param2
       description: Description for `param2`
     param3:
       type: string
-      x-summary: Summary for param3
       description: Description for `param3`
     param4:
       type: string
       nullable: true
-      x-summary: Summary for param4
       description: Description for `param4`
     param5:
       type: string
       nullable: true
-      x-summary: Summary for param5
       description: Description for `param5`

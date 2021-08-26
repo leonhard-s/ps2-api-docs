@@ -5,7 +5,6 @@ weapon_to_attachment:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for weapon_group_id
       description: Description for `weapon_group_id`
       x-reference-to:
         - weapon.weapon_group_id
@@ -13,7 +12,6 @@ weapon_to_attachment:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for attachment_id
       description: Description for `attachment_id`
       x-reference-to:
         - item.item_id
@@ -21,7 +19,6 @@ weapon_to_attachment:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for item_id
       description: Description for `item_id`
       x-reference-to:
         - item.item_id

@@ -5,15 +5,12 @@ world:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for world_id
       description: Description for `world_id`
     state:
       type: string
-      x-summary: Summary for state
       description: Description for `state`
     name:
       type: object
-      x-summary: Summary for name
       description: Description for `name`
       properties:
         de:

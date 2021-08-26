@@ -5,7 +5,6 @@ item_profile:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for item_id
       description: Description for `item_id`
       x-reference-to:
         - item.item_id
@@ -13,7 +12,6 @@ item_profile:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for profile_id
       description: Description for `profile_id`
       x-reference-to:
         - profile.profile_id

@@ -5,27 +5,22 @@ skill_category:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for skill_category_id
       description: Description for `skill_category_id`
     skill_set_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for skill_set_id
       description: Description for `skill_set_id`
       x-reference-to:
         - skill_set.skill_set_id
     skill_set_index:
       type: integer
-      x-summary: Summary for skill_set_index
       description: Description for `skill_set_index`
     skill_points:
       type: integer
-      x-summary: Summary for skill_points
       description: Description for `skill_points`
     name:
       type: object
-      x-summary: Summary for name
       description: Description for `name`
       properties:
         de:
@@ -40,7 +35,6 @@ skill_category:
           type: string
     description:
       type: object
-      x-summary: Summary for description
       description: Description for `description`
       properties:
         de:
@@ -58,7 +52,6 @@ skill_category:
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      x-summary: Summary for image_set_id
       description: Description for `image_set_id`
       x-reference-to:
         - image_set.image_set_id
@@ -67,12 +60,10 @@ skill_category:
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      x-summary: Summary for image_id
       description: Description for `image_id`
       x-reference-to:
         - image.image_id
     image_path:
       type: string
       nullable: true
-      x-summary: Summary for image_path
       description: Description for `image_path`

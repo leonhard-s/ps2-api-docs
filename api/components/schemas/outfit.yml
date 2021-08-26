@@ -5,42 +5,33 @@ outfit:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for outfit_id
       description: Description for `outfit_id`
     name:
       type: string
-      x-summary: Summary for name
       description: Description for `name`
     name_lower:
       type: string
-      x-summary: Summary for name_lower
       description: Description for `name_lower`
     alias:
       type: string
-      x-summary: Summary for alias
       description: Description for `alias`
     alias_lower:
       type: string
-      x-summary: Summary for alias_lower
       description: Description for `alias_lower`
     time_created:
       type: integer
-      x-summary: Summary for time_created
       description: Description for `time_created`
     time_created_date:
       type: string
-      x-summary: Summary for time_created_date
       description: Description for `time_created_date`
     leader_character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      x-summary: Summary for leader_character_id
       description: Description for `leader_character_id`
       x-reference-to:
         - character.character_id
     member_count:
       type: integer
-      x-summary: Summary for member_count
       description: Description for `member_count`

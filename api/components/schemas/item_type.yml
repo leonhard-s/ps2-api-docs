@@ -5,13 +5,10 @@ item_type:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for item_type_id
       description: Description for `item_type_id`
     name:
       type: string
-      x-summary: Summary for name
       description: Description for `name`
     code:
       type: string
-      x-summary: Summary for code
       description: Description for `code`

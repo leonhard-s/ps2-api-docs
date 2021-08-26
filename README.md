@@ -35,12 +35,6 @@ The OpenAPI standard allows the insertion of custom fields into the standard. Th
 
   This field may be used to dynamically create or validate joins to related data.
 
-- **`x-summary`**
-
-  A one-line summary of a given field.
-
-  The regular `description` field is a multiline string using CommonMark (i.e. Markdown). This is a shorter, plain ASCII alternative that it suitable for use in IDE IntelliSense or other in-code documentation.
-
 ## Contributing
 
 Contributions of any form are always appreciated and vital to the project, be it corrections, more specific examples, edge cases or other improvements.

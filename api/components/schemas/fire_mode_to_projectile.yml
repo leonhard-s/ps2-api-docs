@@ -5,7 +5,6 @@ fire_mode_to_projectile:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for fire_mode_id
       description: Description for `fire_mode_id`
       x-reference-to:
         - fire_mode.fire_mode_id
@@ -14,7 +13,6 @@ fire_mode_to_projectile:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for projectile_id
       description: Description for `projectile_id`
       x-reference-to:
         - projectile.projectile_id

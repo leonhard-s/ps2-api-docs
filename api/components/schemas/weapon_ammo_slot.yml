@@ -5,31 +5,25 @@ weapon_ammo_slot:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for weapon_id
       description: Description for `weapon_id`
       x-reference-to:
         - weapon.weapon_id
     weapon_slot_index:
       type: integer
-      x-summary: Summary for weapon_slot_index
       description: Description for `weapon_slot_index`
     clip_size:
       type: integer
       nullable: true
-      x-summary: Summary for clip_size
       description: Description for `clip_size`
     capacity:
       type: integer
       nullable: true
-      x-summary: Summary for capacity
       description: Description for `capacity`
     refill_ammo_rate:
       type: integer
       nullable: true
-      x-summary: Summary for refill_ammo_rate
       description: Description for `refill_ammo_rate`
     refill_ammo_delay_ms:
       type: integer
       nullable: true
-      x-summary: Summary for refill_ammo_delay_ms
       description: Description for `refill_ammo_delay_ms`

@@ -5,17 +5,14 @@ profile_armor_map:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for profile_id
       description: Description for `profile_id`
     armor_info_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for armor_info_id
       description: Description for `armor_info_id`
       x-reference-to:
         - armor_info.armor_info_id
     rank:
       type: integer
-      x-summary: Summary for rank
       description: Description for `rank`

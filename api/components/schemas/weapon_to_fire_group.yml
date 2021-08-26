@@ -5,7 +5,6 @@ weapon_to_fire_group:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for weapon_id
       description: Description for `weapon_id`
       x-reference-to:
         - weapon.weapon_id
@@ -13,12 +12,10 @@ weapon_to_fire_group:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for fire_group_id
       description: Description for `fire_group_id`
       x-reference-to:
         - fire_group_to_fire_mode.fire_group_id
     fire_group_index:
       type: integer
       nullable: true
-      x-summary: Summary for fire_group_index
       description: Description for `fire_group_index`

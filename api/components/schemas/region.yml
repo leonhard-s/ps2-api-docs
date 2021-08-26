@@ -5,25 +5,21 @@ region:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for region_id
       description: Description for `region_id`
     zone_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for zone_id
       description: Description for `zone_id`
       x-reference-to:
         - zone.zone_id
     initial_faction_id:
       type: integer
-      x-summary: Summary for initial_faction_id
       description: Description for `initial_faction_id`
       x-reference-to:
         - faction.faction_id
     name:
       type: object
-      x-summary: Summary for name
       description: Description for `name`
       properties:
         de:

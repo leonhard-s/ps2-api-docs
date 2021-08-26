@@ -3,18 +3,15 @@ characters_event_grouped:
   properties:
     table_type:
       type: string
-      x-summary: Summary for table_type
       description: Description for `table_type`
     count:
       type: integer
-      x-summary: Summary for count
       description: Description for `count`
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      x-summary: Summary for character_id
       description: Description for `character_id`
       x-reference-to:
         - character.character_id

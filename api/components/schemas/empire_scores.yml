@@ -3,31 +3,24 @@ empire_scores:
   properties:
     tracker_name:
       type: string
-      x-summary: Summary for tracker_name
       description: Description for `tracker_name`
     tracker_description:
       type: string
-      x-summary: Summary for tracker_description
       description: Description for `tracker_description`
     start_date:
       type: string
-      x-summary: Summary for start_date
       description: Description for `start_date`
     start_time:
       type: integer
-      x-summary: Summary for start_time
       description: Description for `start_time`
     end_date:
       type: string
-      x-summary: Summary for end_date
       description: Description for `end_date`
     end_time:
       type: integer
-      x-summary: Summary for end_time
       description: Description for `end_time`
     name:
       type: object
-      x-summary: Summary for name
       description: Description for `name`
       properties:
         de:
@@ -42,7 +35,6 @@ empire_scores:
           type: string
     description:
       type: object
-      x-summary: Summary for description
       description: Description for `description`
       properties:
         de:

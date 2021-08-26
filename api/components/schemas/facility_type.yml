@@ -3,9 +3,7 @@ facility_type:
   properties:
     facility_type_id:
       type: integer
-      x-summary: Summary for facility_type_id
       description: Description for `facility_type_id`
     description:
       type: string
-      x-summary: Summary for description
       description: Description for `description`

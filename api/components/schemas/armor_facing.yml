@@ -4,9 +4,7 @@ armor_facing:
     armor_facing_id:
       type: integer
       minimum: 0
-      x-summary: Summary for armor_facing_id
       description: Description for `armor_facing_id`
     description:
       type: string
-      x-summary: Summary for description
       description: Description for `description`

@@ -5,13 +5,11 @@ map_region:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for map_region_id
       description: Description for `map_region_id`
     zone_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for zone_id
       description: Description for `zone_id`
       x-reference-to:
         - zone.zone_id
@@ -20,50 +18,41 @@ map_region:
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      x-summary: Summary for facility_id
       description: Description for `facility_id`
     facility_name:
       type: string
-      x-summary: Summary for facility_name
       description: Description for `facility_name`
     facility_type_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      x-summary: Summary for facility_type_id
       description: Description for `facility_type_id`
       x-reference-to:
         - facility_type.facility_type_id
     facility_type:
       type: string
       nullable: true
-      x-summary: Summary for facility_type
       description: Description for `facility_type`
     location_x:
       type: number
       nullable: true
-      x-summary: Summary for location_x
       description: Description for `location_x`
     location_y:
       type: number
       nullable: true
-      x-summary: Summary for location_y
       description: Description for `location_y`
     location_z:
       type: number
       nullable: true
-      x-summary: Summary for location_z
       description: Description for `location_z`
     reward_amount:
       type: integer
       nullable: true
-      x-summary: Summary for reward_amount
       description: Description for `reward_amount`
     reward_currency_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      x-summary: Summary for reward_currency_id
       description: Description for `reward_currency_id`

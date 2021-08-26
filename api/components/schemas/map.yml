@@ -3,9 +3,7 @@ map:
   properties:
     ZoneId:
       type: integer
-      x-summary: Summary for ZoneId
       description: Description for `ZoneId`
     Regions:
       type: string
-      x-summary: Summary for Regions
       description: Description for `Regions`

@@ -3,15 +3,12 @@ experience_rank:
   properties:
     rank:
       type: integer
-      x-summary: Summary for rank
       description: Description for `rank`
     xp_max:
       type: number
-      x-summary: Summary for xp_max
       description: Description for `xp_max`
     vs:
       type: object
-      x-summary: Summary for vs
       description: Description for `vs`
       properties:
         de:
@@ -27,11 +24,9 @@ experience_rank:
     vs_image_path:
       type: string
       nullable: true
-      x-summary: Summary for vs_image_path
       description: Description for `vs_image_path`
     nc:
       type: object
-      x-summary: Summary for nc
       description: Description for `nc`
       properties:
         de:
@@ -47,11 +42,9 @@ experience_rank:
     nc_image_path:
       type: string
       nullable: true
-      x-summary: Summary for nc_image_path
       description: Description for `nc_image_path`
     tr:
       type: object
-      x-summary: Summary for tr
       description: Description for `tr`
       properties:
         de:
@@ -67,5 +60,4 @@ experience_rank:
     tr_image_path:
       type: string
       nullable: true
-      x-summary: Summary for tr_image_path
       description: Description for `tr_image_path`

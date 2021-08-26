@@ -5,13 +5,11 @@ objective:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for objective_id
       description: Description for `objective_id`
     objective_type_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for objective_type_id
       description: Description for `objective_type_id`
       x-reference-to:
         - objective_type.objective_type_id
@@ -19,50 +17,40 @@ objective:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for objective_group_id
       description: Description for `objective_group_id`
     param1:
       type: integer
       nullable: true
-      x-summary: Summary for param1
       description: Description for `param1`
     param2:
       type: integer
       nullable: true
-      x-summary: Summary for param2
       description: Description for `param2`
     param3:
       type: integer
       nullable: true
-      x-summary: Summary for param3
       description: Description for `param3`
     param4:
       type: integer
       nullable: true
-      x-summary: Summary for param4
       description: Description for `param4`
     param5:
       type: integer
       nullable: true
-      x-summary: Summary for param5
       description: Description for `param5`
     param6:
       type: integer
       nullable: true
-      x-summary: Summary for param6
       description: Description for `param6`
     param7:
       type: string
       nullable: true
-      x-summary: Summary for param7
       description: Description for `param7`
     param8:
       type: integer
       nullable: true
-      x-summary: Summary for param8
       description: Description for `param8`
     param9:
       type: integer
       nullable: true
-      x-summary: Summary for param9
       description: Description for `param9`

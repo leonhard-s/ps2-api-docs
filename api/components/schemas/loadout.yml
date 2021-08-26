@@ -5,13 +5,11 @@ loadout:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for loadout_id
       description: Description for `loadout_id`
     profile_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for profile_id
       description: Description for `profile_id`
       x-reference-to:
         - profile.profile_id
@@ -20,11 +18,9 @@ loadout:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for faction_id
       description: Description for `faction_id`
       x-reference-to:
         - faction.faction_id
     code_name:
       type: string
-      x-summary: Summary for code_name
       description: Description for `code_name`

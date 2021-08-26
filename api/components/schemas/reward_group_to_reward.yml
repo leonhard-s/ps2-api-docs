@@ -5,13 +5,11 @@ reward_group_to_reward:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for reward_group_id
       description: Description for `reward_group_id`
     reward_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for reward_id
       description: Description for `reward_id`
       x-reference-to:
         - reward.reward_id

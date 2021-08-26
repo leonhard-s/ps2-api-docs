@@ -5,11 +5,9 @@ metagame_event:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for metagame_event_id
       description: Description for `metagame_event_id`
     name:
       type: object
-      x-summary: Summary for name
       description: Description for `name`
       properties:
         de:
@@ -24,7 +22,6 @@ metagame_event:
           type: string
     description:
       type: object
-      x-summary: Summary for description
       description: Description for `description`
       properties:
         de:
@@ -39,10 +36,8 @@ metagame_event:
           type: string
     type:
       type: integer
-      x-summary: Summary for type
       description: Description for `type`
     experience_bonus:
       type: integer
       nullable: true
-      x-summary: Summary for experience_bonus
       description: Description for `experience_bonus`

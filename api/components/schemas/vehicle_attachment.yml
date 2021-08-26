@@ -5,7 +5,6 @@ vehicle_attachment:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for item_id
       description: Description for `item_id`
       x-reference-to:
         - item.item_id
@@ -13,7 +12,6 @@ vehicle_attachment:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for vehicle_id
       description: Description for `vehicle_id`
       x-reference-to:
         - vehicle.vehicle_id
@@ -22,15 +20,12 @@ vehicle_attachment:
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      x-summary: Summary for faction_id
       description: Description for `faction_id`
       x-reference-to:
         - faction.faction_id
     description:
       type: string
-      x-summary: Summary for description
       description: Description for `description`
     slot_id:
       type: integer
-      x-summary: Summary for slot_id
       description: Description for `slot_id`

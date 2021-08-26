@@ -5,7 +5,6 @@ datatype:
       oneOf:
         - type: integer
         - type: string
-      x-summary: Number of rows in the table
       description: |
         The number of entries in this collection.
 
@@ -14,20 +13,17 @@ datatype:
       oneOf:
         - type: boolean
         - type: string
-      x-summary: Table visibility flag
       description: |
         Whether the table is hidden from the API. Always `false` for public API tables.
 
         Note that this value might be the string `"false"`, or a literal JSON `false` in the response.
     name:
       type: string
-      x-summary: Unique name of the collection
       description: Unique name of the collection.
     resolve_list:
       type: array
       items:
         type: string
-      x-summary: List of resolvable names
       description: |
         A list of resolvable names for this collection.
 

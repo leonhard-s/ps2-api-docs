@@ -6,19 +6,16 @@ single_character_by_id:
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      x-summary: Summary for character_id
       description: Description for `character_id`
       x-reference-to:
         - character.character_id
     name:
       type: string
-      x-summary: Summary for name
       description: Description for `name`
     faction_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for faction_id
       description: Description for `faction_id`
       x-reference-to:
         - faction.faction_id
@@ -26,56 +23,44 @@ single_character_by_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for head_id
       description: Description for `head_id`
     title_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for title_id
       description: Description for `title_id`
       x-reference-to:
         - title.title_id
     times:
       type: string
-      x-summary: Summary for times
       description: Description for `times`
     certs:
       type: string
-      x-summary: Summary for certs
       description: Description for `certs`
     battle_rank:
       type: string
-      x-summary: Summary for battle_rank
       description: Description for `battle_rank`
     profile_id:
       type: integer
-      x-summary: Summary for profile_id
       description: Description for `profile_id`
       x-reference-to:
         - profile.profile_id
         - profile_2.profile_id
     daily_ribbon:
       type: string
-      x-summary: Summary for daily_ribbon
       description: Description for `daily_ribbon`
     prestige_level:
       type: integer
-      x-summary: Summary for prestige_level
       description: Description for `prestige_level`
     currency:
       type: string
-      x-summary: Summary for currency
       description: Description for `currency`
     stats:
       type: string
-      x-summary: Summary for stats
       description: Description for `stats`
     items:
       type: string
-      x-summary: Summary for items
       description: Description for `items`
     sub_timing:
       type: boolean
-      x-summary: Summary for sub_timing
       description: Description for `sub_timing`

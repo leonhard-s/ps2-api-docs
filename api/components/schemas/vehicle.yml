@@ -5,11 +5,9 @@ vehicle:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for vehicle_id
       description: Description for `vehicle_id`
     name:
       type: object
-      x-summary: Summary for name
       description: Description for `name`
       properties:
         de:
@@ -24,7 +22,6 @@ vehicle:
           type: string
     description:
       type: object
-      x-summary: Summary for description
       description: Description for `description`
       properties:
         de:
@@ -41,27 +38,22 @@ vehicle:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for type_id
       description: Description for `type_id`
     type_name:
       type: string
-      x-summary: Summary for type_name
       description: Description for `type_name`
     cost:
       type: integer
       nullable: true
-      x-summary: Summary for cost
       description: Description for `cost`
     cost_resource_id:
       type: integer
       nullable: true
-      x-summary: Summary for cost_resource_id
       description: Description for `cost_resource_id`
     image_set_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for image_set_id
       description: Description for `image_set_id`
       x-reference-to:
         - image_set.image_set_id
@@ -70,12 +62,10 @@ vehicle:
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      x-summary: Summary for image_id
       description: Description for `image_id`
       x-reference-to:
         - image.image_id
     image_path:
       type: string
       nullable: true
-      x-summary: Summary for image_path
       description: Description for `image_path`

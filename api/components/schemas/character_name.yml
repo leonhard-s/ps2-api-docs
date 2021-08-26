@@ -6,13 +6,11 @@ character_name:
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      x-summary: Summary for character_id
       description: Description for `character_id`
       x-reference-to:
         - character.character_id
     name:
       type: object
-      x-summary: Summary for name
       description: Description for `name`
       properties:
         first:

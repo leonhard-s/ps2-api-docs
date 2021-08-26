@@ -5,14 +5,11 @@ image:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for image_id
       description: Description for `image_id`
     description:
       type: string
       nullable: true
-      x-summary: Summary for description
       description: Description for `description`
     path:
       type: string
-      x-summary: Summary for path
       description: Description for `path`

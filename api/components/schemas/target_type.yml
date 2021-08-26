@@ -3,9 +3,7 @@ target_type:
   properties:
     target_type_id:
       type: integer
-      x-summary: Summary for target_type_id
       description: Description for `target_type_id`
     description:
       type: string
-      x-summary: Summary for description
       description: Description for `description`

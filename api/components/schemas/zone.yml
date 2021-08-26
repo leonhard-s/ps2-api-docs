@@ -5,19 +5,15 @@ zone:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for zone_id
       description: Description for `zone_id`
     code:
       type: string
-      x-summary: Summary for code
       description: Description for `code`
     hex_size:
       type: integer
-      x-summary: Summary for hex_size
       description: Description for `hex_size`
     name:
       type: object
-      x-summary: Summary for name
       description: Description for `name`
       properties:
         de:
@@ -32,7 +28,6 @@ zone:
           type: string
     description:
       type: object
-      x-summary: Summary for description
       description: Description for `description`
       properties:
         de:

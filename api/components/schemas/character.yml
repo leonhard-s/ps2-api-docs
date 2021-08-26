@@ -6,11 +6,9 @@ character:
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      x-summary: Summary for character_id
       description: Description for `character_id`
     name:
       type: object
-      x-summary: Summary for name
       description: Description for `name`
       properties:
         first:
@@ -21,25 +19,21 @@ character:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for faction_id
       description: Description for `faction_id`
       x-reference-to:
         - faction.faction_id
     head_id:
       type: integer
       minimum: 0
-      x-summary: Summary for head_id
       description: Description for `head_id`
     title_id:
       type: integer
       minimum: 0
-      x-summary: Summary for title_id
       description: Description for `title_id`
       x-reference-to:
         - title.title_id
     times:
       type: object
-      x-summary: Summary for times
       description: Description for `times`
       properties:
         creation:
@@ -60,7 +54,6 @@ character:
           type: integer
     certs:
       type: object
-      x-summary: Summary for certs
       description: Description for `certs`
       properties:
         earned_points:
@@ -75,7 +68,6 @@ character:
           type: number
     battle_rank:
       type: object
-      x-summary: Summary for battle_rank
       description: Description for `battle_rank`
       properties:
         percent_to_next:
@@ -86,13 +78,11 @@ character:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for profile_id
       description: Description for `profile_id`
       x-reference-to:
         - profile_2.profile_id
     daily_ribbon:
       type: object
-      x-summary: Summary for daily_ribbon
       description: Description for `daily_ribbon`
       properties:
         count:
@@ -103,5 +93,4 @@ character:
           type: string
     prestige_level:
       type: integer
-      x-summary: Summary for prestige_level
       description: Description for `prestige_level`

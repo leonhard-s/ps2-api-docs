@@ -5,7 +5,6 @@ outfit_member:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for outfit_id
       description: Description for `outfit_id`
       x-reference-to:
         - outfit.outfit_id
@@ -14,23 +13,18 @@ outfit_member:
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      x-summary: Summary for character_id
       description: Description for `character_id`
       x-reference-to:
         - character.character_id
     member_since:
       type: integer
-      x-summary: Summary for member_since
       description: Description for `member_since`
     member_since_date:
       type: string
-      x-summary: Summary for member_since_date
       description: Description for `member_since_date`
     rank:
       type: string
-      x-summary: Summary for rank
       description: Description for `rank`
     rank_ordinal:
       type: integer
-      x-summary: Summary for rank_ordinal
       description: Description for `rank_ordinal`

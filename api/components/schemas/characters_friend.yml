@@ -6,18 +6,15 @@ characters_friend:
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      x-summary: Summary for character_id
       description: Description for `character_id`
       x-reference-to:
         - character.character_id
     name:
       type: string
       nullable: true
-      x-summary: Summary for name
       description: Description for `name`
     friend_list:
       type: array
-      x-summary: Summary for friend_list
       description: Description for `friend_list`
       items:
         type: object

@@ -5,13 +5,11 @@ achievement:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for achievement_id
       description: Description for `achievement_id`
     item_id:
       type: integer
       nullable: true
       minimum: 0
-      x-summary: Summary for item_id
       description: Description for `item_id`
       x-reference-to:
         - item.item_id
@@ -19,7 +17,6 @@ achievement:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for objective_group_id
       description: Description for `objective_group_id`
       x-reference-to:
         - objective.objective_group_id
@@ -28,17 +25,14 @@ achievement:
       nullable: true
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for reward_id
       description: Description for `reward_id`
       x-reference-to:
         - reward.reward_id
     repeatable:
       type: integer
-      x-summary: Summary for repeatable
       description: Description for `repeatable`
     name:
       type: object
-      x-summary: Summary for name
       description: Description for `name`
       properties:
         de:
@@ -53,7 +47,6 @@ achievement:
           type: string
     description:
       type: object
-      x-summary: Summary for description
       description: Description for `description`
       properties:
         de:
@@ -71,7 +64,6 @@ achievement:
       nullable: true
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for image_set_id
       description: Description for `image_set_id`
       x-reference-to:
         - image_set.image_set_id
@@ -80,12 +72,10 @@ achievement:
       nullable: true
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for image_id
       description: Description for `image_id`
       x-reference-to:
         - image.image_id
     image_path:
       type: string
       nullable: true
-      x-summary: Summary for image_path
       description: Description for `image_path`

@@ -5,13 +5,11 @@ directive:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for directive_id
       description: Description for `directive_id`
     directive_tree_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for directive_tree_id
       description: Description for `directive_tree_id`
       x-reference-to:
         - directive_tree.directive_tree_id
@@ -20,7 +18,6 @@ directive:
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      x-summary: Summary for directive_tier_id
       description: Description for `directive_tier_id`
       x-reference-to:
         - directive_tier.directive_tier_id
@@ -29,7 +26,6 @@ directive:
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      x-summary: Summary for objective_set_id
       description: Description for `objective_set_id`
       x-reference-to:
         - objective_set_to_objective.objective_set_id
@@ -37,11 +33,9 @@ directive:
       type: integer
       minimum: 0
       nullable: true
-      x-summary: Summary for qualify_requirement_id
       description: Description for `qualify_requirement_id`
     name:
       type: object
-      x-summary: Summary for name
       description: Description for `name`
       properties:
         de:
@@ -56,7 +50,6 @@ directive:
           type: string
     description:
       type: object
-      x-summary: Summary for description
       description: Description for `description`
       properties:
         de:
@@ -74,7 +67,6 @@ directive:
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      x-summary: Summary for image_set_id
       description: Description for `image_set_id`
       x-reference-to:
         - image_set.image_set_id
@@ -83,12 +75,10 @@ directive:
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      x-summary: Summary for image_id
       description: Description for `image_id`
       x-reference-to:
         - image.image_id
     image_path:
       type: string
       nullable: true
-      x-summary: Summary for image_path
       description: Description for `image_path`

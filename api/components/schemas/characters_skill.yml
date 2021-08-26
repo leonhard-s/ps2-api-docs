@@ -6,7 +6,6 @@ characters_skill:
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      x-summary: Summary for character_id
       description: Description for `character_id`
       x-reference-to:
         - character.character_id
@@ -14,15 +13,12 @@ characters_skill:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for skill_id
       description: Description for `skill_id`
       x-reference-to:
         - skill.skill_id
     last_save:
       type: integer
-      x-summary: Summary for last_save
       description: Description for `last_save`
     last_save_date:
       type: string
-      x-summary: Summary for last_save_date
       description: Description for `last_save_date`

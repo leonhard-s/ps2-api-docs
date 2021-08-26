@@ -6,7 +6,6 @@ characters_directive_tree:
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      x-summary: Summary for character_id
       description: Description for `character_id`
       x-reference-to:
         - character.character_id
@@ -14,7 +13,6 @@ characters_directive_tree:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for directive_tree_id
       description: Description for `directive_tree_id`
       x-reference-to:
         - directive_tree.directive_tree_id
@@ -22,19 +20,15 @@ characters_directive_tree:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for current_directive_tier_id
       description: Description for `current_directive_tier_id`
       x-reference-to:
         - directive_tier.directive_tier_id
     current_level:
       type: integer
-      x-summary: Summary for current_level
       description: Description for `current_level`
     completion_time:
       type: integer
-      x-summary: Summary for completion_time
       description: Description for `completion_time`
     completion_time_date:
       type: string
-      x-summary: Summary for completion_time_date
       description: Description for `completion_time_date`

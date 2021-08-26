@@ -5,9 +5,7 @@ profile_2:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      x-summary: Summary for profile_id
       description: Description for `profile_id`
     description:
       type: string
-      x-summary: Summary for description
       description: Description for `description`
