@@ -1,24 +1,25 @@
 characters_skill:
-  description: Description for `characters_skill`.
+  description: |
+    Lists skills unlocked by a given character.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     skill_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `skill_id`
+      description: ID of the skill.
       x-reference-to:
         - skill.skill_id
     last_save:
       type: integer
-      description: Description for `last_save`
+      description: UTC timestamp of when this skill was unlocked.
     last_save_date:
       type: string
-      description: Description for `last_save_date`
+      description: String version of `last_save`.

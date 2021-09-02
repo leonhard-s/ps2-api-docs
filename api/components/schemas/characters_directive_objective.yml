@@ -1,38 +1,42 @@
 characters_directive_objective:
-  description: Description for `characters_directive_objective`.
+  description: |
+    Directive objective progress data for a given character.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     directive_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `directive_id`
+      description: ID of the directive.
       x-reference-to:
         - directive.directive_id
     objective_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `objective_id`
+      description: ID of the objective being tracked.
       x-reference-to:
         - objective.objective_id
     objective_group_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `objective_group_id`
+      description: The objective group counting towards this directive.
       x-reference-to:
         - objective.objective_group_id
     status:
-      type: integer
-      description: Description for `status`
+      type: boolean
+      description: Status flag indicating whether the objective is enabled.
     state_data:
       type: integer
-      description: Description for `state_data`
+      description: |
+        Objective type specific state value.
+
+        This represents the current progress of the character towards this objective. The target value is generally stored as part of the corresponding `objective` and its `objective_type`.

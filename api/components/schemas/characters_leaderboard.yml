@@ -1,17 +1,20 @@
 characters_leaderboard:
-  description: Description for `characters_leaderboard`.
+  description: |
+    Query the server leaderboard for the character's position.
+
+    Note that only the top 10'000 characters are tracked.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     value:
       type: integer
-      description: Description for `value`
+      description: The character's value on the queried table.
     rank:
       type: integer
-      description: Description for `rank`
+      description: The character's server-wide rank resulting from that score.

@@ -1,39 +1,36 @@
 characters_event:
-  description: Description for `characters_event`.
+  description: |
+    REST endpoint for retrieving past events.
+
+    The fields available depend on the event. Only fixed fields available for all event types are listed below.
+
+    Known event types are: `BATTLE_RANK`, `ITEM`, `ACHIEVEMENT`, `DEATH`, `KILL`, `VEHICLE_DESTROY`, and `FACILITY_CHARACTER`.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character. For death or kill events, this is the ID of the victim.
       x-reference-to:
         - character.character_id
-    achievement_id:
-      type: integer
-      description: Description for `achievement_id`
-      x-reference-to:
-        - achievement.achievement_id
     timestamp:
       type: integer
-      description: Description for `timestamp`
+      description: UTC timestamp of when this event occurred.
     zone_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `zone_id`
+      description: ID of the zone in which the event occurred.
       x-reference-to:
         - zone.zone_id
     world_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `world_id`
+      description: ID of the game world on which the event occurred.
       x-reference-to:
         - world.world_id
-    event_type:
-      type: string
-      description: Description for `event_type`
     table_type:
       type: string
-      description: Description for `table_type`
+      description: Internal name of the queried table. Note that these names do not match the ones used to select them in the query.

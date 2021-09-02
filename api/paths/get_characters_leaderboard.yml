@@ -17,13 +17,24 @@ get:
           schema:
             type: object
             properties:
+              limit:
+                type: integer
+                description: Internal, always equal to 1.
               characters_leaderboard_list:
                 type: array
                 items:
                   $ref: ../openapi.yml#/components/schemas/characters_leaderboard
-              results:
+              returned: 
                 type: integer
-                minimum: 0
-                description: The number of results returned.
+                description: |
+                  The number of results returned.
+                  
+                  Set to 1 if the queried character has a leaderboard entry, otherwise 0.
+              key:
+                type: string
+                description: The name of the leaderboard table returned.
+              count:
+                type: integer
+                description: The number of entries in the given leaderboard table. Generally set to 10'000.
           example:
             $ref: ../components/examples/characters_leaderboard.json

@@ -1,21 +1,22 @@
 characters_friend:
-  description: Description for `characters_friend`.
+  description: |
+    Endpoint for querying a character's friend list.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     name:
       type: string
       nullable: true
-      description: Description for `name`
+      description: Always NULL, unused.
     friend_list:
       type: array
-      description: Description for `friend_list`
+      description: A list of objects representing entries in the character's friend list.
       items:
         type: object
         properties:

@@ -1,26 +1,32 @@
 characters_stat_history:
-  description: Description for `characters_stat_history`.
+  description: |
+    Historical statistics for a given character.
+
+    These are used for the timelines displayed in the in-game statistics panel.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     stat_name:
       type: string
-      description: Description for `stat_name`
+      description: Name of the statistic being tracked.
     all_time:
       type: integer
-      description: Description for `all_time`
+      description: All-time total.
     one_life_max:
       type: integer
-      description: Description for `one_life_max`
+      description: |
+        Highest value ever achieved without dying.
+
+        Note that this only counts deaths by enemies without being revived.
     day:
       type: object
-      description: Description for `day`
+      description: Values for the last 31 calendar days.
       properties:
         d01:
           type: number
@@ -86,7 +92,7 @@ characters_stat_history:
           type: number
     month:
       type: object
-      description: Description for `month`
+      description: Values for the last 12 calendar months.
       properties:
         m01:
           type: number
@@ -114,7 +120,7 @@ characters_stat_history:
           type: number
     week:
       type: object
-      description: Description for `week`
+      description: Values for the last 7 calendar days.
       properties:
         w01:
           type: number
@@ -144,7 +150,7 @@ characters_stat_history:
           type: number
     last_save:
       type: integer
-      description: Description for `last_save`
+      description: UTC timemstamp of when this table was last updated.
     last_save_date:
       type: string
-      description: Description for `last_save_date`
+      description: String version of `last_save`.

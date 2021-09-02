@@ -1,31 +1,32 @@
 characters_directive:
-  description: Description for `characters_directive`.
+  description: |
+    Completion status of a single directive for a given character.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     directive_tree_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `directive_tree_id`
+      description: ID of the directive tree that this directive belongs to.
       x-reference-to:
         - directive_tree.directive_tree_id
     directive_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `directive_id`
+      description: ID of the directive.
       x-reference-to:
         - directive.directive_id
     completion_time:
       type: integer
-      description: Description for `completion_time`
+      description: UTC timestamp of when this directive was completed.
     completion_time_date:
       type: string
-      description: Description for `completion_time_date`
+      description: String version of `completion_time`.

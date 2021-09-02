@@ -1,40 +1,47 @@
 characters_stat:
-  description: Description for `characters_stat`.
+  description: |
+    Character-wide statistics endpoint.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     stat_name:
       type: string
-      description: Description for `stat_name`
+      description: Name of the statistic being tracked.
     profile_id:
       type: integer
-      description: Description for `profile_id`
+      description: |
+        ID of the profile for which the stat is tracked.
+
+        Note that many statistics are only tracked character-wide (i.e. `profile_id=0`).
       x-reference-to:
         - profile_2.profile_id
     value_forever:
       type: integer
-      description: Description for `value_forever`
+      description: All-time total.
     value_monthly:
       type: integer
-      description: Description for `value_monthly`
+      description: Value for the last 31 calendar days.
     value_weekly:
       type: integer
-      description: Description for `value_weekly`
+      description: Value for the last 7 calendar days.
     value_daily:
       type: integer
-      description: Description for `value_daily`
+      description: Value for the last 24 real-time hours.
     value_one_life_max:
       type: integer
-      description: Description for `value_one_life_max`
+      description: |
+        Highest value ever achieved without dying.
+
+        Note that this only counts deaths by enemies without being revived.
     last_save:
       type: integer
-      description: Description for `last_save`
+      description: UTC timemstamp of when this table was last updated.
     last_save_date:
       type: string
-      description: Description for `last_save_date`
+      description: String version of `last_save`.

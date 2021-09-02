@@ -1,18 +1,33 @@
 characters_item:
-  description: Description for `characters_item`.
+  description: |
+    Contents of a given character's item inventory.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     item_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `item_id`
+      description: ID of the item.
       x-reference-to:
         - item.item_id
+    account_level:
+      type: boolean
+      nullable: true
+      description: |
+        Whether this item has been unlocked account-wide.
+
+        This is an indication that the given item was unlocked via Daybreak Cash or redeemable codes rather than through certifications.
+    stack_count:
+      type: integer
+      nullable: true
+      description: |
+        The number of items in the character's inventory.
+
+        This is used for items that can be obtained more than once, such as consumables or grenades.

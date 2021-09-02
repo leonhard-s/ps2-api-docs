@@ -1,18 +1,19 @@
 characters_world:
-  description: Description for `characters_world`.
+  description: |
+    Map a character to the world they are playing on.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     world_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `world_id`
+      description: ID of the world.
       x-reference-to:
         - world.world_id

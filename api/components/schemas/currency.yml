@@ -1,21 +1,22 @@
 currency:
-  description: Description for `currency`.
+  description: |
+    A currency attainable by a character.
   properties:
     currency_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `currency_id`
+      description: ID of the currency.
     name:
       type: string
-      description: Description for `name`
+      description: Localised name of the currency.
     icon_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `icon_id`
+      description: ID of the currency's icon image asset.
       x-reference-to:
         - image.image_id
     inventory_cap:
       type: integer
-      description: Description for `inventory_cap`
+      description: Maximum amount of currency the player may hold at once (e.g. 750 Nanites).

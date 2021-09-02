@@ -1,34 +1,38 @@
 characters_directive_tree:
-  description: Description for `characters_directive_tree`.
+  description: |
+    Directive tree progress for a given character.
+    
+    This tracks the character's progress within a given directive tree, such as "Combat Medic".
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     directive_tree_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `directive_tree_id`
+      description: ID of the directive tree.
       x-reference-to:
         - directive_tree.directive_tree_id
     current_directive_tier_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `current_directive_tier_id`
-      x-reference-to:
-        - directive_tier.directive_tier_id
+      description: |
+        The current tier of the player within this directive tree.
+
+        Despite its name, this does not represent a `directive_tier` ID. Instead, it is a value from 1 (None) to 5 (Master) representing what stage of the directive tier the character is at.
     current_level:
       type: integer
-      description: Description for `current_level`
+      description: This value is always 0, use `current_directive_tier_id` instead.
     completion_time:
       type: integer
-      description: Description for `completion_time`
+      description: UTC timestamp of when this directive tree was completed.
     completion_time_date:
       type: string
-      description: Description for `completion_time_date`
+      description: String version of `completion_time`.

@@ -1,17 +1,20 @@
 characters_event_grouped:
-  description: Description for `characters_event_grouped`.
+  description: |
+    Statistics table for player vs. player comparisons.
+
+    This table lists the number of times the given character has killed or been killed by another character. As such, this table can only be used for one character at a time: query it by the target character and any `character_id` values in the response will represent the other character.
   properties:
     table_type:
       type: string
-      description: Description for `table_type`
+      description: The type of event. Always either `KILL` or `DEATH`.
     count:
       type: integer
-      description: Description for `count`
+      description: The number of times the queried player has killed (or been killed by) the other player.
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the other character.
       x-reference-to:
         - character.character_id

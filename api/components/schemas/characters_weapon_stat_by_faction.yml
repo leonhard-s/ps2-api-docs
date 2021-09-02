@@ -1,39 +1,42 @@
 characters_weapon_stat_by_faction:
-  description: Description for `characters_weapon_stat_by_faction`.
+  description: |
+    Weapon-specific statistics for a given character.
+
+    Note that faction stats are often only tracked for enemy factions; team damage is not listed in this table, for example.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     stat_name:
       type: string
-      description: Description for `stat_name`
+      description: Name of the statistic being tracked.
     item_id:
       type: integer
-      description: Description for `item_id`
+      description: ID of the item being tracked.
       x-reference-to:
         - item.item_id
     vehicle_id:
       type: integer
-      description: Description for `vehicle_id`
+      description: ID of the vehicle this weapon belongs to (if any).
       x-reference-to:
         - vehicle.vehicle_id
     value_vs:
       type: integer
-      description: Description for `value_vs`
+      description: All-time total for VS.
     value_nc:
       type: integer
-      description: Description for `value_nc`
+      description: All-time total for NC.
     value_tr:
       type: integer
-      description: Description for `value_tr`
+      description: All-time total for TR.
     last_save:
       type: integer
-      description: Description for `last_save`
+      description: UTC timemstamp of when this table was last updated.
     last_save_date:
       type: string
-      description: Description for `last_save_date`
+      description: String version of `last_save`.
