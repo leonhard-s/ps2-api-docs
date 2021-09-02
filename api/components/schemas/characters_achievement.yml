@@ -1,39 +1,48 @@
 characters_achievement:
-  description: Description for `characters_achievement`.
+  description: |
+    Achievement completion data for a given character.
+
+    See the `achievement` collection for details on the achievement itself.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     achievement_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `achievement_id`
+      description: ID of the achievement.
       x-reference-to:
         - achievement.achievement_id
     earned_count:
       type: integer
-      description: Description for `earned_count`
+      description: How often the character has completed the given achievement.
     start:
       type: integer
-      description: Description for `start`
+      description: |
+        The UTC timestamp the character started progression towards this achievement at.
+
+        For repeatable achievements, this marks the last time the achievement was gained.
     start_date:
       type: string
-      description: Description for `start_date`
+      description: String version of `start`.
     finish:
       type: integer
-      description: Description for `finish`
+      description: |
+        The time the character completed this achievement. Only valid for one-time achievements such as medals.
+
+        For repeatable achievements, this is always 0.
     finish_date:
       type: string
-      description: Description for `finish_date`
+      description: String version of `finish`.
     last_save:
       type: integer
-      description: Description for `last_save`
+      description: The last time the character gained this achievement at as a UTC timestamp.
     last_save_date:
       type: string
-      description: Description for `last_save_date`
+      description: String version of `last_save`.

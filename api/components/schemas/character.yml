@@ -1,15 +1,15 @@
 character:
-  description: Description for `character`.
+  description: A player-controlled character.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
     name:
       type: object
-      description: Description for `name`
+      description: Name of the character. Consider using the `character_name` endpoint instead if you want to look up players by name.
       properties:
         first:
           type: string
@@ -19,22 +19,36 @@ character:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `faction_id`
+      description: |
+        ID of the faction of the character.
+
+        For NSOs, this will always be faction 4 (NSO). This does not reflect the home faction of NSO players.
       x-reference-to:
         - faction.faction_id
     head_id:
       type: integer
       minimum: 0
-      description: Description for `head_id`
+      description: |
+        The head model selected by the player. This includes the two genders as well as the four head types, giving a total of eight variants.
+
+        For human player models, head IDs `1` through `4` are the male variants, `5` through `8` are the female head shapes.
+
+        There are ~160 characters with a head ID of `0` (bad data?), and NSO characters appear to be limited to head IDs `1` through `4`.
     title_id:
       type: integer
       minimum: 0
-      description: Description for `title_id`
+      description: |
+        ID of the title selected by the player, if any.
+
+        If a player has no title selected, this field will be `0`.
       x-reference-to:
         - title.title_id
     times:
       type: object
-      description: Description for `times`
+      description: |
+        Data object containing time data about the player.
+
+        The `last_save` timestamp generally lines up with the end of the player's most recent session.
       properties:
         creation:
           type: integer
@@ -54,7 +68,10 @@ character:
           type: integer
     certs:
       type: object
-      description: Description for `certs`
+      description: |
+        Certification data for the player.
+
+        Earned certs are acquired through experience gain (1 certs every 250 exp). Gifted certs are ones received through login rewards or other cert grants.
       properties:
         earned_points:
           type: integer
@@ -68,7 +85,7 @@ character:
           type: number
     battle_rank:
       type: object
-      description: Description for `battle_rank`
+      description: Current battle rank and progress towards the next.
       properties:
         percent_to_next:
           type: number
@@ -78,12 +95,15 @@ character:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `profile_id`
+      description: The most recent class the character played as.
       x-reference-to:
         - profile_2.profile_id
     daily_ribbon:
       type: object
-      description: Description for `daily_ribbon`
+      description: |
+        Data object about daily ribbon boni.
+
+        Note that daily ribbon boni have been removed as of summer 2020.
       properties:
         count:
           type: integer
@@ -93,4 +113,4 @@ character:
           type: string
     prestige_level:
       type: integer
-      description: Description for `prestige_level`
+      description: The A.S.P. rank of the character.

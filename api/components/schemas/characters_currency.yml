@@ -1,27 +1,32 @@
 characters_currency:
-  description: Description for `characters_currency`.
+  description: |
+    Currency data for a character.
+
+    This endpoint currently only contains an entry for Nanites, with an extra key inserted for A.S.P. tokens.
+
+    As of September 2021, there is no way to query for newer resources like A-7, ISO-4, or Merit.
   properties:
     character_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       format: int64
-      description: Description for `character_id`
+      description: ID of the character.
       x-reference-to:
         - character.character_id
     currency_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `currency_id`
+      description: ID of the currency.
       x-reference-to:
         - currency.currency_id
     currency_name:
       type: string
-      description: Description for `currency_name`
+      description: Display name of the currency.
     quantity:
       type: integer
-      description: Description for `quantity`
+      description: Quantity of resources owned by the player.
     prestige_currency:
       type: integer
-      description: Description for `prestige_currency`
+      description: Number of A.S.P. tokens available to the player.

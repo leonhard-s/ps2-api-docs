@@ -1,131 +1,143 @@
 ability:
-  description: Description for `ability`.
+  description: |
+    An ability triggered by a character or vehicle.
+
+    See to the corresponding ability type for information on generic parameters (`param*`) and strings (`string*`).
   properties:
     ability_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `ability_id`
+      description: Unique identifier.
     ability_type_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `ability_type_id`
+      description: The type of this ability. The ability type defines the basic mechanics of the ability.
       x-reference-to:
         - ability_type.ability_type_id
     expire_msec:
       type: integer
       nullable: true
-      description: Description for `expire_msec`
+      description: The duration of a single-shot ability in milliseconds.
     first_use_delay_msec:
-      type: integer
+      type: |
+        The initial delay before the ability can be used in milliseconds.
+
+        As of April 2021, this field is always 0 or 1 for all abilities. Since an initial cast delay of 1 millisecond makes little sense, this field is likely unused.
       nullable: true
       description: Description for `first_use_delay_msec`
     next_use_delay_msec:
       type: integer
       nullable: true
-      description: Description for `next_use_delay_msec`
+      description: |
+        The cooldown of a single-shot ability in milliseconds.
+
+        The difference between this field and `reuse_delay_msec` has not been tested yet.
     reuse_delay_msec:
       type: integer
       nullable: true
-      description: Description for `reuse_delay_msec`
+      description: |
+        The recharge cooldown for multi-use abilities in milliseconds.
+
+        The difference between this field and `next_use_delay_msec` has not been tested yet.
     resource_type_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
       nullable: true
-      description: Description for `resource_type_id`
+      description: The type of resource consumed by this ability.
       x-reference-to:
         - resource_type.resource_type_id
     resource_first_cost:
       type: number
       nullable: true
-      description: Description for `resource_first_cost`
+      description: The initial resource cost when casting the ability.
     resource_cost_per_msec:
       type: number
       nullable: true
-      description: Description for `resource_cost_per_msec`
+      description: The continuous resource drain while the ability is active.
     distance_max:
       type: integer
       nullable: true
-      description: Description for `distance_max`
+      description: Range of the ability (spherical area of effect).
     radius_max:
       type: integer
       nullable: true
-      description: Description for `radius_max`
+      description: Range of the ability (cylindrical area of effect).
     flag_toggle:
       type: integer
       nullable: true
-      description: Description for `flag_toggle`
+      description: Whether the ability is channeled and can be toggled on and off.
     param1:
       type: integer
       nullable: true
-      description: Description for `param1`
+      description: "Generic parameter #1."
     param2:
       type: integer
       nullable: true
-      description: Description for `param2`
+      description: "Generic parameter #2."
     param3:
       type: integer
       nullable: true
-      description: Description for `param3`
+      description: "Generic parameter #3."
     param4:
       type: integer
       nullable: true
-      description: Description for `param4`
+      description: "Generic parameter #4."
     param5:
       type: integer
       nullable: true
-      description: Description for `param5`
+      description: "Generic parameter #5."
     param6:
       type: integer
       nullable: true
-      description: Description for `param6`
+      description: "Generic parameter #6."
     param7:
       type: integer
       nullable: true
-      description: Description for `param7`
+      description: "Generic parameter #7."
     param8:
       type: integer
       nullable: true
-      description: Description for `param8`
+      description: "Generic parameter #8."
     param9:
       type: integer
       nullable: true
-      description: Description for `param9`
+      description: "Generic parameter #9."
     param10:
       type: integer
       nullable: true
-      description: Description for `param10`
+      description: "Generic parameter #10."
     param11:
       type: integer
       nullable: true
-      description: Description for `param11`
+      description: "Generic parameter #11."
     param12:
       type: integer
       nullable: true
-      description: Description for `param12`
+      description: "Generic parameter #12."
     param13:
       type: integer
       nullable: true
-      description: Description for `param13`
+      description: "Generic parameter #13."
     param14:
       type: integer
       nullable: true
-      description: Description for `param14`
+      description: "Generic parameter #14."
     string1:
       type: integer
       nullable: true
-      description: Description for `string1`
+      description: "Generic string #1."
     string2:
       type: integer
       nullable: true
-      description: Description for `string2`
+      description: "Generic string #2."
     string3:
       type: integer
       nullable: true
-      description: Description for `string3`
+      description: "Generic string #3."
     string4:
       type: integer
       nullable: true
-      description: Description for `string4`
+      description: "Generic string #4."

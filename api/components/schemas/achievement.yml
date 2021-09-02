@@ -1,23 +1,26 @@
 achievement:
-  description: Description for `achievement`.
+  description: |
+    An achievement a character may pursue.
+
+    Achievements come in two forms: weapon medals (can only be completed once) and service ribbons (can be completed repeatedly).
   properties:
     achievement_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `achievement_id`
+      description: Unique identifier.
     item_id:
       type: integer
       nullable: true
       minimum: 0
-      description: Description for `item_id`
+      description: The item associated with this achievement. An item ID of `0` signifies that this achievement is a service ribbon that is not tied to any weapon such as piloting or facility type specific capture ribbons.
       x-reference-to:
         - item.item_id
     objective_group_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `objective_group_id`
+      description: The objective group of this achievement. All objectives in this group will count towards this achievement.
       x-reference-to:
         - objective.objective_group_id
     reward_id:
@@ -25,15 +28,15 @@ achievement:
       nullable: true
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `reward_id`
+      description: The reward granted upon completion.
       x-reference-to:
         - reward.reward_id
     repeatable:
       type: integer
-      description: Description for `repeatable`
+      description: Whether this achievement is repeatable. Service ribbons are repeatable, weapon medals are generally not.
     name:
       type: object
-      description: Description for `name`
+      description: Localised name of the achievement. Note that this is not unique as weapon medals all share the weapon's name.
       properties:
         de:
           type: string
@@ -47,7 +50,7 @@ achievement:
           type: string
     description:
       type: object
-      description: Description for `description`
+      description: Localised description for this achievement.
       properties:
         de:
           type: string
@@ -64,7 +67,7 @@ achievement:
       nullable: true
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `image_set_id`
+      description: ID of the image set for this achievement.
       x-reference-to:
         - image_set.image_set_id
     image_id:
@@ -72,10 +75,10 @@ achievement:
       nullable: true
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `image_id`
+      description: Default image for this achievement.
       x-reference-to:
         - image.image_id
     image_path:
       type: string
       nullable: true
-      description: Description for `image_path`
+      description: Relative path to the default image to this achievement.

@@ -1,84 +1,89 @@
 ability_type:
-  description: Description for `ability_type`.
+  description: |
+    Ability types specify the basic function of an ability and are comparable to a sub class in object-oriented programming.
+
+    The `param*` fields in the ability type specify what the corresponding field is used for in abilities of this type. Note that some abilities do populate additional fields whose purpose is not specified by their ability type. Whether these extra fields are bad data or actually used is unknown.
+
+    Similarly, the `string*` fields provide room for custom, ability type specific string fields.
   properties:
     ability_type_id:
       type: integer
       minimum: 0
       exclusiveMinimum: true
-      description: Description for `ability_type_id`
+      description: Unique identifier.
     description:
       type: string
       nullable: true
-      description: Description for `description`
+      description: A brief description of what this ability type is for.
     param1:
       type: string
       nullable: true
-      description: Description for `param1`
+      description: "Description for generic parameter #1."
     param2:
       type: string
       nullable: true
-      description: Description for `param2`
+      description: "Description for generic parameter #2."
     param3:
       type: string
       nullable: true
-      description: Description for `param3`
+      description: "Description for generic parameter #3."
     param4:
       type: string
       nullable: true
-      description: Description for `param4`
+      description: "Description for generic parameter #4."
     param5:
       type: string
       nullable: true
-      description: Description for `param5`
+      description: "Description for generic parameter #5."
     param6:
       type: string
       nullable: true
-      description: Description for `param6`
+      description: "Description for generic parameter #6."
     param7:
       type: string
       nullable: true
-      description: Description for `param7`
+      description: "Description for generic parameter #7."
     param8:
       type: string
       nullable: true
-      description: Description for `param8`
+      description: "Description for generic parameter #8."
     param9:
       type: string
       nullable: true
-      description: Description for `param9`
+      description: "Description for generic parameter #9."
     param10:
       type: string
       nullable: true
-      description: Description for `param10`
+      description: "Description for generic parameter #10."
     param11:
       type: string
       nullable: true
-      description: Description for `param11`
+      description: "Description for generic parameter #11."
     param12:
       type: string
       nullable: true
-      description: Description for `param12`
+      description: "Description for generic parameter #12."
     param13:
       type: string
       nullable: true
-      description: Description for `param13`
+      description: "Description for generic parameter #13."
     param14:
       type: string
       nullable: true
-      description: Description for `param14`
+      description: "Description for generic parameter #14."
     string1:
       type: string
       nullable: true
-      description: Description for `string1`
+      description: "Description for generic string #1."
     string2:
       type: string
       nullable: true
-      description: Description for `string2`
+      description: "Description for generic string #2."
     string3:
       type: string
       nullable: true
-      description: Description for `string3`
+      description: "Description for generic string #3."
     string4:
       type: string
       nullable: true
-      description: Description for `string4`
+      description: "Description for generic string #4."
