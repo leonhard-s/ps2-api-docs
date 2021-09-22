@@ -13,6 +13,8 @@ info:
 
     According to the OpenAPI standard, a quoted integer (e.g. `"12"`) should be typed as a `string`.
     However, due to the PS2 API quoting nearly every value it returns, following this convention would make the type hints meaningless.
+
+    This specification therefore will type values by what the corresponding field can be cast to, or what it "should be".
   version: "0.1"
   termsOfService: https://census.daybreakgames.com#services-api-policy
 
