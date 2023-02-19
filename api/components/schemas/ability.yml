@@ -21,12 +21,12 @@ ability:
       nullable: true
       description: The duration of a single-shot ability in milliseconds.
     first_use_delay_msec:
-      type: |
+      type: integer
+      nullable: true
+      description: |
         The initial delay before the ability can be used in milliseconds.
 
         As of April 2021, this field is always 0 or 1 for all abilities. Since an initial cast delay of 1 millisecond makes little sense, this field is likely unused.
-      nullable: true
-      description: Description for `first_use_delay_msec`
     next_use_delay_msec:
       type: integer
       nullable: true
