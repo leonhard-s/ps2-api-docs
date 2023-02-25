@@ -19,6 +19,7 @@
                     "ability_id": {
                         "type": "integer",
                         "minimum": 0,
+                        "exclusiveMinimum": true,
                         "description": "Unique identifier."
                     },
                     "ability_type_id": {
@@ -6457,6 +6458,14 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    "geometry_id": {
+                        "type": "integer",
+                        "description": "ID of the terrain loaded.\n\nFor realtime events (such as Death and GainExperience), the zone_id field of the event will use the geometry_id of the zone if dynamic is 1.\n"
+                    },
+                    "dynamic": {
+                        "type": "integer",
+                        "description": "Whether the zone is instanced, i.e. dynamically spawned and not persistent."
                     }
                 }
             },
@@ -13077,6 +13086,7 @@
                                                     "ability_id": {
                                                         "type": "integer",
                                                         "minimum": 0,
+                                                        "exclusiveMinimum": true,
                                                         "description": "Unique identifier."
                                                     },
                                                     "ability_type_id": {
@@ -26974,6 +26984,14 @@
                                                                 "type": "string"
                                                             }
                                                         }
+                                                    },
+                                                    "geometry_id": {
+                                                        "type": "integer",
+                                                        "description": "ID of the terrain loaded.\n\nFor realtime events (such as Death and GainExperience), the zone_id field of the event will use the geometry_id of the zone if dynamic is 1.\n"
+                                                    },
+                                                    "dynamic": {
+                                                        "type": "integer",
+                                                        "description": "Whether the zone is instanced, i.e. dynamically spawned and not persistent."
                                                     }
                                                 }
                                             }

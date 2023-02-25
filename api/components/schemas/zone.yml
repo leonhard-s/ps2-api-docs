@@ -40,3 +40,12 @@ zone:
           type: string
         it:
           type: string
+    geometry_id:
+      type: integer
+      description: |
+        ID of the terrain loaded.
+
+        For realtime events (such as Death and GainExperience), the zone_id field of the event will use the geometry_id of the zone if dynamic is 1.
+    dynamic:
+      type: integer
+      description: Whether the zone is instanced, i.e. dynamically spawned and not persistent.
