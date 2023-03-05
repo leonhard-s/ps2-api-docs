@@ -1,9 +1,0 @@
-facility_type:
-  description: Description for `facility_type`.
-  properties:
-    facility_type_id:
-      type: integer
-      description: Description for `facility_type_id`
-    description:
-      type: string
-      description: Description for `description`

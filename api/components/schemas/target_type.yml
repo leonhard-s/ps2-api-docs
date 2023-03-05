@@ -1,9 +1,0 @@
-target_type:
-  description: Description for `target_type`.
-  properties:
-    target_type_id:
-      type: integer
-      description: Description for `target_type_id`
-    description:
-      type: string
-      description: Description for `description`

@@ -1,9 +1,0 @@
-map:
-  description: Description for `map`.
-  properties:
-    ZoneId:
-      type: integer
-      description: Description for `ZoneId`
-    Regions:
-      type: string
-      description: Description for `Regions`
