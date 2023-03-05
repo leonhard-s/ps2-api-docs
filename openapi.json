@@ -33,5 +33,46 @@
       "url": "https://census.lithafalcon.cc",
       "description": "Unofficial Community endpoint for static data.\nVisit the project URL for details."
     }
-  ]
+  ],
+  "paths": {
+    "/get/{game}": {
+      "get": {
+        "summary": "Listing available collections",
+        "description": "Return a list of all collections available for the current game/namespace.\n\nThe keys in the entries' `resolve_list` field can be passed to the `c:resolve` parameter when accessing the respective collection to insert additional data into the response payload.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "gameParam": {
+        "name": "game",
+        "in": "path",
+        "description": "The API game to access.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "ps2",
+            "ps2:v2",
+            "ps2ps4eu",
+            "ps2ps4eu:v2",
+            "ps2ps4us",
+            "ps2ps4us:v2"
+          ]
+        },
+        "example": "ps2"
+      }
+    }
+  },
+  "security": [],
+  "tags": [],
+  "externalDocs": {
+    "description": "Official documentation for the documentation for the PlanetSide 2 API.",
+    "url": "http://census.daybreakgames.com/"
+  }
 }
