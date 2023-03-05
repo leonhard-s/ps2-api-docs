@@ -3,7 +3,7 @@
   "info": {
     "title": "PlanetSide 2 API",
     "summary": "Public API for PlanetSide 2 community developers",
-    "description": "Unofficial API specification for [PlanetSide 2](https://www.planetside2.com/) as made available through the [Daybreak Game Company Census API](http://census.daybreakgames.com/).\nThese API specs are not affiliated with Daybreak Game Company, Rogue Planet Games, or the PlanetSide 2 developer team and come with absolutely no warranty.",
+    "description": "Unofficial API specification for [PlanetSide 2](https://www.planetside2.com/) as made available through the [Daybreak Game Company Census API](http://census.daybreakgames.com/).\n\nThese API specs are not affiliated with Daybreak Game Company, Rogue Planet Games, or the PlanetSide 2 developer team and come with absolutely no warranty.",
     "termsOfService": "https://census.daybreakgames.com#services-api-policy",
     "contact": {
       "name": "Project Homepage",
@@ -11,5 +11,27 @@
     },
     "version": "0.3"
   },
-  "paths": {}
+  "servers": [
+    {
+      "url": "http://census.daybreakgames.com",
+      "description": "Casual-use Daybreak Games endpoint, throttled to 10 requests per minute and IP address"
+    },
+    {
+      "url": "http://census.daybreakgames.com/{serviceId}",
+      "description": "Production Daybreak Games endpoint, with service ID",
+      "variables": {
+        "serviceId": {
+          "enum": [
+            "s:example"
+          ],
+          "default": "s:example",
+          "description": "Unique string used to identify a given consumer on the API. The default value of `s:example` underlies the same rate limits as the endpoint without service ID information."
+        }
+      }
+    },
+    {
+      "url": "https://census.lithafalcon.cc",
+      "description": "Unofficial Community endpoint for static data.\nVisit the project URL for details."
+    }
+  ]
 }
