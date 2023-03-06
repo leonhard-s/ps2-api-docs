@@ -38,12 +38,82 @@
     "/get/{game}": {
       "get": {
         "summary": "Listing available collections",
-        "description": "Return a list of all collections available for the current game/namespace.\n\nThe keys in the entries' `resolve_list` field can be passed to the `c:resolve` parameter when accessing the respective collection to insert additional data into the response payload.",
+        "description": "Return a list of all collections available for the current game namespace.\n\nThe keys in the entries' `resolve_list` field can be passed to the `c:resolve` parameter when accessing the respective collection to insert additional data into the response payload.\n\nNote that while the examples only show a single record, this endpoint cannot be filtered and always returns all results.",
         "parameters": [
           {
             "$ref": "#/components/parameters/gameParam"
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/datatype_list"
+                },
+                "examples": {
+                  "Character": {
+                    "value": {
+                      "datatype_list": {
+                        "name": "character",
+                        "hidden": false,
+                        "count": 15095335,
+                        "resolve_list": [
+                          "item",
+                          "item_full",
+                          "profile",
+                          "faction",
+                          "stat",
+                          "stat_by_faction",
+                          "weapon_stat",
+                          "weapon_stat_by_faction",
+                          "stat_history",
+                          "online_status",
+                          "friends",
+                          "world",
+                          "outfit",
+                          "outfit_member",
+                          "outfit_member_extended",
+                          "currency"
+                        ]
+                      },
+                      "results": 1
+                    }
+                  },
+                  "Outfit Member": {
+                    "value": {
+                      "datatype_list": {
+                        "name": "outfit_member",
+                        "hidden": false,
+                        "count": "?",
+                        "resolve_list": [
+                          "character",
+                          "character_name",
+                          "characters_stat_history",
+                          "online_status",
+                          "outfit"
+                        ]
+                      },
+                      "results": 1
+                    }
+                  },
+                  "Character Online Status": {
+                    "value": {
+                      "datatype_list": {
+                        "count": "dynamic",
+                        "hidden": "false",
+                        "name": "characters_online_status",
+                        "resolve_list": []
+                      },
+                      "results": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
@@ -65,7 +135,101 @@
             "ps2ps4us:v2"
           ]
         },
-        "example": "ps2"
+        "examples": [
+          "ps2",
+          "ps2ps4eu",
+          "ps2ps4us"
+        ]
+      }
+    },
+    "schemas": {
+      "datatype": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string",
+                "enum": [
+                  "dynamic",
+                  "?"
+                ]
+              }
+            ],
+            "description": "The number of entries in this colleciton. The values `?` and `dynamic` both signify an uncountable collection. Note that even though no count is displayed here, it may still be accessible via the `count/{game}/{collection}` endpoint."
+          },
+          "hidden": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "string",
+                "enum": [
+                  "false"
+                ]
+              }
+            ],
+            "description": "Whether this table is hidden from the API. Always false-y. Note that this may either be an actual `false` value, or the string `\"false\"`."
+          },
+          "name": {
+            "type": "string",
+            "description": "Unique name of the collection."
+          },
+          "resolve_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of resolvable names for the collection. These can be passed to the `c:resolve` query parameter to insert additional fields into the returned payload."
+          }
+        },
+        "examples": [
+          {
+            "name": "character",
+            "hidden": false,
+            "count": 13981911,
+            "resolve_list": [
+              "item",
+              "item_full",
+              "profile",
+              "faction",
+              "stat",
+              "stat_by_faction",
+              "weapon_stat",
+              "weapon_stat_by_faction",
+              "stat_history",
+              "online_status",
+              "friends",
+              "world",
+              "outfit",
+              "outfit_member",
+              "outfit_member_extended",
+              "currency"
+            ]
+          }
+        ]
+      },
+      "datatype_list": {
+        "type": "object",
+        "properties": {
+          "datatype_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/datatype"
+            }
+          },
+          "results": {
+            "type": "integer",
+            "description": "Number of results returned.",
+            "examples": [
+              1
+            ]
+          }
+        }
       }
     }
   },
