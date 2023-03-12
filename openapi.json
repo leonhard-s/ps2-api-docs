@@ -12,6 +12,10 @@
     "version": "0.3"
   },
   "jsonSchemaDialect": "https://spec.openapis.org/oas/3.1/dialect/base",
+  "externalDocs": {
+    "description": "Official documentation for the documentation for the PlanetSide 2 API.",
+    "url": "http://census.daybreakgames.com/"
+  },
   "servers": [
     {
       "url": "http://census.daybreakgames.com",
@@ -35,13 +39,20 @@
       "description": "Unofficial Community endpoint for static data.\nVisit the project URL for details."
     }
   ],
+  "tags": [
+    {
+      "name": "general",
+      "description": "Basic endpoint structure available for all supported games and namespaces.\n\nThe parameters listed here are available for all collections. The PlanetSide 2 endpoints are listed separtely, but generally also support the full set of query parameters and commands.\nFor a list of exceptions, see the [\"Special\" PS2 Collections](https://census.daybreakgames.com/#special-collections) section of the Census API documentation."
+    }
+  ],
+  "security": [],
   "paths": {
     "/get/{game}": {
       "get": {
         "summary": "Listing available collections",
         "description": "Return a list of all collections available for the current game namespace.\n\nThe keys in the entries' `resolve_list` field can be passed to the `c:resolve` parameter when accessing the respective collection to insert additional data into the response payload.\n\nNote that while the examples only show a single record, this endpoint cannot be filtered and always returns all results.",
         "tags": [
-          "introspection"
+          "general"
         ],
         "parameters": [
           {
@@ -122,10 +133,10 @@
     },
     "/count/{game}/{collection}": {
       "get": {
-        "summary": "Get the number of records in a given collection",
-        "description": "Instead of returning the given results directly, this endpoint returns the number of results.\n\nThis is especially useful for large collections which cannot be fetched in full, such as `character`. This endpoint still supports filtering by parameters, as well as some query commands such as `c:has`.\n\nConsumers may also want to query the result count for a given query before fetching to decide whether to paginate the response.",
+        "summary": "Get the number of records in a collection",
+        "description": "Instead of returning the given results directly, this endpoint returns the number of results.\n\nThis is especially useful for large collections which cannot be fetched in full, such as `ps2/character`. This endpoint still supports filtering by parameters, as well as some query commands such as `c:has`.\n\nConsumers may also want to query the result count for a given query before fetching to decide whether to paginate the response.",
         "tags": [
-          "introspection"
+          "general"
         ],
         "parameters": [
           {
@@ -165,6 +176,180 @@
           }
         }
       }
+    },
+    "/get/{game}/{collection}": {
+      "get": {
+        "summary": "Retrieve results from a collection",
+        "description": "This endpoint documents generic parameters available on most collections. For details on collection-specific variables and response schemas, please see the respective collection's query entry.",
+        "tags": [
+          "general"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/collectionParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcShowParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcHideParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcSortParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcHasParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcResolveParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcCaseParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcLimitParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcLimitPerDbParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcStartParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcIncludeNullParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcLangParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcJoinParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcTreeParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcTimingParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcExactMatchFirstParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcDistinctParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcRetryParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "{collection}_list": {
+                      "type": "array",
+                      "members": {
+                        "type": "object"
+                      }
+                    },
+                    "results": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "timing": {
+                      "type": "object",
+                      "summary": "Only included if `c:timing` is enabled.",
+                      "properties": {
+                        "total-ms": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Character Info": {
+                    "description": "Shows basic character information while hiding unwanted fields.\nhttps://census.daybreakgames.com/get/ps2/character?c:show=name.first,faction_id,battle_rank.value,prestige_level",
+                    "value": {
+                      "character_list": [
+                        {
+                          "name": {
+                            "first": "360Xvortex"
+                          },
+                          "faction_id": "3",
+                          "battle_rank": {
+                            "value": "1"
+                          },
+                          "prestige_level": "0"
+                        }
+                      ],
+                      "returned": 1
+                    }
+                  },
+                  "Faction tags": {
+                    "description": "Uses `c:distinct` to get all faction tags.\nhttps://census.daybreakgames.com/get/ps2/faction?c:distinct=code_tag",
+                    "value": {
+                      "count": 5,
+                      "faction_list": [
+                        {
+                          "code_tag": [
+                            "NC",
+                            "None",
+                            "NSO",
+                            "TR",
+                            "VS"
+                          ]
+                        }
+                      ],
+                      "returned": 1
+                    }
+                  },
+                  "Map state with facility names": {
+                    "description": "Example using nested key access to insert data into the middle of a payload. Note that only one record is shown for brevity, the provided link returns the entire zone's region list.\nhttps://census.daybreakgames.com/get/ps2/map?world_id=1&zone_ids=2&c:join=map_region%5Einject_at:map_region%5Eon:Regions.Row.RowData.RegionId%5Eto:map_region_id",
+                    "value": {
+                      "map_list": [
+                        {
+                          "ZoneId": "2",
+                          "Regions": {
+                            "IsList": "1",
+                            "Row": [
+                              {
+                                "RowData": {
+                                  "RegionId": "2101",
+                                  "FactionId": "3",
+                                  "map_region": {
+                                    "map_region_id": "2101",
+                                    "zone_id": "2",
+                                    "facility_id": "7500",
+                                    "facility_name": "Hvar",
+                                    "facility_type_id": "4",
+                                    "facility_type": "Tech Plant",
+                                    "location_x": "-656.0273",
+                                    "location_y": "491.7669",
+                                    "location_z": "-2444.069",
+                                    "reward_amount": "1",
+                                    "reward_currency_id": "1000"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "returned": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -182,9 +367,20 @@
             "zone"
           ]
         },
-        "examples": [
-          "character"
-        ]
+        "examples": {
+          "character": {
+            "summary": "Character",
+            "value": "character"
+          },
+          "outfit": {
+            "summary": "Outfit",
+            "value": "outfit"
+          },
+          "world": {
+            "summary": "Game Servers",
+            "value": "world"
+          }
+        }
       },
       "gameParam": {
         "name": "game",
@@ -202,11 +398,355 @@
             "ps2ps4us:v2"
           ]
         },
-        "examples": [
-          "ps2",
-          "ps2ps4eu",
-          "ps2ps4us"
-        ]
+        "examples": {
+          "ps2": {
+            "summary": "PS2 on PC (all servers)",
+            "value": "ps2"
+          },
+          "ps2ps4eu": {
+            "summary": "PS2 on PS4 (EU server)",
+            "value": "ps2ps4eu"
+          },
+          "ps2ps4us": {
+            "summary": "PS2 on PS4 (US server)",
+            "value": "ps2ps4us"
+          }
+        }
+      },
+      "qcShowParam": {
+        "name": "c:show",
+        "in": "query",
+        "description": "If set, only the response keys listed will be included in the response object. Overrides `c:hide`. Multiple fields can be comma-separated. Dot-notation is supported to select sub-keys.",
+        "schema": {
+          "type": "string"
+        },
+        "style": "form",
+        "explode": false,
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "Basic Character Info": {
+            "summary": "Basic character info only",
+            "value": "name.first,character_id,battle_rank.value,prestige_level"
+          }
+        }
+      },
+      "qcHideParam": {
+        "name": "c:hide",
+        "in": "query",
+        "description": "If set, the given response fields will be excluded from the response. If `c:show` is also set, this parameter will be ignored. Multiple fields can be comma-separated. Dot-notation is supported to select sub-keys.",
+        "schema": {
+          "type": "string"
+        },
+        "style": "form",
+        "explode": false,
+        "examples": {
+          "hideNoisyKeys": {
+            "summary": "Remove noisy subkeys",
+            "value": "name.first_lower,cert,daily_ribbon"
+          }
+        }
+      },
+      "qcSortParam": {
+        "name": "c:sort",
+        "in": "query",
+        "description": "Allows sorting the results by one or more fields. Multiple fields can be comma-separated. The sorting direction can be specified by appending `:1` (ascending, default) or `:-1` (descending).",
+        "schema": {
+          "type": "string"
+        },
+        "style": "form",
+        "explode": false,
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "factionAsp": {
+            "summary": "Sort by faction (asc) and ASP rank (desc)",
+            "value": "faction_id,prestige_level:-1"
+          }
+        }
+      },
+      "qcHasParam": {
+        "name": "c:has",
+        "in": "query",
+        "description": "Filters results by entries with non-NULL values in the given fields. Multiple fields can be comma-separated.",
+        "schema": {
+          "type": "string"
+        },
+        "style": "form",
+        "explode": false
+      },
+      "qcResolveParam": {
+        "name": "c:resolve",
+        "in": "query",
+        "description": "Include additional fields in the response. See the `resolve_list` field of the collection list for permissible values for a given collection.",
+        "schema": {
+          "type": "string"
+        },
+        "style": "form",
+        "explode": true,
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "outfitMember": {
+            "summary": "Outfit Member",
+            "value": "outfit_member"
+          },
+          "profile": {
+            "summary": "Last Seen Profile",
+            "value": "profile"
+          }
+        }
+      },
+      "qcCaseParam": {
+        "name": "c:case",
+        "in": "query",
+        "description": "Whether case sensitivity is enabled for string comparisongs. Defaults to true. Note that this impacts query performance, `ps2/character.name`, `ps2/outfit.name`, `ps2/outfit.alias` all provide lowercase variants for improved performance.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "true",
+            "false",
+            "0",
+            "1"
+          ]
+        },
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "disable": {
+            "summary": "Disabled",
+            "value": "false"
+          }
+        }
+      },
+      "qcLimitParam": {
+        "name": "c:limit",
+        "in": "query",
+        "description": "Return up to N results from the collection. Defaults to 1.",
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000
+        },
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "five": {
+            "summary": "5 Results",
+            "value": 5
+          }
+        }
+      },
+      "qcLimitPerDbParam": {
+        "name": "c:limitPerDB",
+        "in": "query",
+        "description": "The `ps2/character` collection is distributed across 20 distinct databases. The per-DB limit may be more predictable in some use-cases. If set, `c:limit` will be ignored. For collections other than `ps2/character`, this parameter falls behaves exactly like `c:limit`.",
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5000
+        },
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "five": {
+            "summary": "1 Result per DB",
+            "value": 1
+          }
+        }
+      },
+      "qcStartParam": {
+        "name": "c:start",
+        "in": "query",
+        "description": "Skips the first N results from the result list. Together with `c:limit`, can be used for pagination. Note that sorting may be required to get consistent orderings. Due to the multiple databases used, this behaves unusually for the `ps2/character` collection.",
+        "schema": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": 0
+          },
+          "five": {
+            "summary": "Skip first 10 Results",
+            "value": 10
+          }
+        }
+      },
+      "qcIncludeNullParam": {
+        "name": "c:includeNull",
+        "in": "query",
+        "description": "Whether to include response keys for NULL values, rather than omitting them. Note that this does not return the canonical `null`, but the string `\"NULL\"`.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "true",
+            "false",
+            "1",
+            "0"
+          ]
+        },
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "five": {
+            "summary": "Enabled",
+            "value": "true"
+          }
+        }
+      },
+      "qcLangParam": {
+        "name": "c:lang",
+        "in": "query",
+        "description": "By default, localized fields such as `ps2/item.name` will return results for all supported locales. This field allows specifying a single locale to return, greatly reducing response payload size.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "en",
+            "de",
+            "es",
+            "fr",
+            "it",
+            "tr"
+          ]
+        },
+        "examples": {
+          "enOnly": {
+            "summary": "Only EN locale",
+            "value": "en"
+          }
+        }
+      },
+      "qcJoinParam": {
+        "name": "c:join",
+        "in": "query",
+        "description": "Similar to `c:resolve`, but allows specifying arbitrary subqueries to add to the response. For details, see the [Census API documentation](https://census.daybreakgames.com/#collection-joining) or the community [Census API Primer](https://github.com/leonhard-s/auraxium/wiki/Census-API-Primer#joined-queries).",
+        "schema": {
+          "type": "string"
+        },
+        "style": "form",
+        "explode": false,
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "charctersWorld": {
+            "summary": "Character with game server",
+            "value": "characers_world"
+          },
+          "characterOnlineStatus": {
+            "summary": "Character online status",
+            "value": "characters_online_status^show:online_status"
+          }
+        }
+      },
+      "qcTreeParam": {
+        "name": "c:tree",
+        "in": "query",
+        "description": "Allows rearranging lists of result into a tree. See the [Census API documentation](https://census.daybreakgames.com/#tree-reformatting) for deatils.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "qcTimingParam": {
+        "name": "c:timing",
+        "in": "query",
+        "description": "Adds the top-level field `timing` containing timing information to the result object. For queries using `c:resolve` or `c:join`, this also contains information about the subqueries.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "true",
+            "false",
+            "0",
+            "1"
+          ]
+        },
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "timing": {
+            "summary": "With timing info",
+            "value": "true"
+          }
+        }
+      },
+      "qcExactMatchFirstParam": {
+        "name": "c:exactMatchFirst",
+        "in": "query",
+        "description": "When performing fuzzy string queries, such as `^` (startswith) or `*` (contains), promote any match exactly matching the full input string to the top of the search list. Useful for user-facing name lookups.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "true",
+            "false",
+            "0",
+            "1"
+          ]
+        }
+      },
+      "qcDistinctParam": {
+        "name": "c:distinct",
+        "in": "query",
+        "description": "Instead of fetching results, list all distinct values for a given field. Note that this may include duplicate entries for `ps2/character` due to the multiple databases. Results are truncated to 20'000 values.",
+        "schema": {
+          "type": "string"
+        },
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "factions": {
+            "summary": "Unique factions",
+            "value": "faction_id"
+          },
+          "profiles": {
+            "summary": "Unique profiles",
+            "value": "profile_id"
+          }
+        }
+      },
+      "qcRetryParam": {
+        "name": "c:retry",
+        "in": "query",
+        "description": "By default, the API will retry any queries once before failing. By setting this value to `false`, you can fail earlier, which can be useful if you have your own retry mechanisms or logging configuration.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "true",
+            "false",
+            "0",
+            "1"
+          ]
+        },
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "noRetry": {
+            "summary": "Retry disabled",
+            "value": "false"
+          }
+        }
       }
     },
     "schemas": {
@@ -299,11 +839,5 @@
         }
       }
     }
-  },
-  "security": [],
-  "tags": [],
-  "externalDocs": {
-    "description": "Official documentation for the documentation for the PlanetSide 2 API.",
-    "url": "http://census.daybreakgames.com/"
   }
 }
