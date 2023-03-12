@@ -65,7 +65,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/datatype_list"
+                  "type": "object",
+                  "properties": {
+                    "datatype_list": {
+                      "$ref": "#/components/schemas/datatype"
+                    },
+                    "results": {
+                      "type": "integer"
+                    }
+                  }
                 },
                 "examples": {
                   "Character": {
@@ -819,24 +827,6 @@
             ]
           }
         ]
-      },
-      "datatype_list": {
-        "type": "object",
-        "properties": {
-          "datatype_list": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/datatype"
-            }
-          },
-          "results": {
-            "type": "integer",
-            "description": "Number of results returned.",
-            "examples": [
-              1
-            ]
-          }
-        }
       }
     }
   }
