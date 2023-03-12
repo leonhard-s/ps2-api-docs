@@ -30,7 +30,7 @@
             "s:example"
           ],
           "default": "s:example",
-          "description": "Unique string used to identify a given consumer on the API. The default value of `s:example` underlies the same rate limits as the endpoint without service ID information."
+          "description": "Unique string used to identify a given consumer on the API. The default value of `s:example` underlies the same rate limits as the endpoint without service ID information. A custom service ID can be requested via [this form](https://census.daybreakgames.com/#devSignup)."
         }
       }
     },
