@@ -41,8 +41,12 @@
   ],
   "tags": [
     {
-      "name": "general",
+      "name": "General",
       "description": "Basic endpoint structure available for all supported games and namespaces.\n\nThe parameters listed here are available for all collections. The PlanetSide 2 endpoints are listed separtely, but generally also support the full set of query parameters and commands.\nFor a list of exceptions, see the [\"Special\" PS2 Collections](https://census.daybreakgames.com/#special-collections) section of the Census API documentation."
+    },
+    {
+      "name": "Characters",
+      "description": "Collections related to PlanetSide 2 character information and lookups.\n\nNote that while they have been removed for brevity, all of the operations and special modes from the `General` section still apply."
     }
   ],
   "security": [],
@@ -52,7 +56,7 @@
         "summary": "Listing available collections",
         "description": "Return a list of all collections available for the current game namespace.\n\nThe keys in the entries' `resolve_list` field can be passed to the `c:resolve` parameter when accessing the respective collection to insert additional data into the response payload.\n\nNote that while the examples only show a single record, this endpoint cannot be filtered and always returns all results.",
         "tags": [
-          "general"
+          "General"
         ],
         "parameters": [
           {
@@ -144,7 +148,7 @@
         "summary": "Get the number of records in a collection",
         "description": "Instead of returning the given results directly, this endpoint returns the number of results.\n\nThis is especially useful for large collections which cannot be fetched in full, such as `ps2/character`. This endpoint still supports filtering by parameters, as well as some query commands such as `c:has`.\n\nConsumers may also want to query the result count for a given query before fetching to decide whether to paginate the response.",
         "tags": [
-          "general"
+          "General"
         ],
         "parameters": [
           {
@@ -190,7 +194,7 @@
         "summary": "Retrieve results from a collection",
         "description": "This endpoint documents generic parameters available on most collections. For details on collection-specific variables and response schemas, please see the respective collection's query entry.",
         "tags": [
-          "general"
+          "General"
         ],
         "parameters": [
           {
