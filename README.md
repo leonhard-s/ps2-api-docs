@@ -2,6 +2,12 @@
 
 Unofficial OpenAPI specification and documentation provider for the PlanetSide 2 API.
 
+> ## Update Notice
+>
+> This project is currently being updated for OpenAPI 3.1, including improved documentation of query commands, parameters, and response variants.
+>
+> The work-in-progress of the new version can be found on the [`openapi-3.1`](https://github.com/leonhard-s/ps2-api-docs/tree/openapi-3.1) branch.
+
 ***
 
 This repository maintains a full list of all collections in the [PlanetSide 2 API](https://census.daybreakgames.com/). Currently, only the REST endpoint is documented. A WebSocket API reference may be added in a later version.
