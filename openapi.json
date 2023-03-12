@@ -253,6 +253,111 @@
           }
         }
       }
+    },
+    "/get/{game}/character": {
+      "get": {
+        "summary": "Character",
+        "description": "Game-specific documentation for the `character` collection.\n\nThis collection is randomly distributed across 20 different databases, causing some unusual behaviour when filtering. For example, the `c:distinct` parameter will fetch the distinct values for each database and aggregate them in the response, resulting in duplicate entries. This and other special cases are documented with the corresponding query command parameters in the `General` section.\n\nIn addition to the commonly-used parameters provided, this endpoint may be queried by any of its fields, including sub-keys like `times.creation`.",
+        "tags": [
+          "Characters"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/qcLimitPerDbParam"
+          },
+          {
+            "name": "character_id",
+            "in": "query",
+            "description": "Unique identifier for this collection. Note that character IDs are not guaranteed to be unique across games; the same ID may be assigned to different characters for `ps2` than for `ps2ps4us`.",
+            "schema": {
+              "type": "string"
+            },
+            "x-cast-to": "int64",
+            "examples": {
+              "pc": {
+                "summary": "Higby (PC)",
+                "value": "5428010618015189601"
+              },
+              "ps4eu": {
+                "summary": "Dreadnaught (PS4 EU)",
+                "value": "5428352936466451601"
+              },
+              "ps4us": {
+                "summary": "Kevin (PS4 US)",
+                "value": "5428352933375941729"
+              }
+            }
+          },
+          {
+            "name": "name.first",
+            "in": "query",
+            "description": "Name of the character. Note that when looking up characters, it is preferable to query `name.first_lower` with a lowercase version of the search string.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "notSet": {
+                "summary": "Unset",
+                "value": ""
+              },
+              "higby": {
+                "summary": "Higby",
+                "value": "Higby"
+              }
+            }
+          },
+          {
+            "name": "name.first_lower",
+            "in": "query",
+            "description": "Lowercase version of `name.first`. When performing case-insensitive lookups, using this field is more performant than setting `c:case=false.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "notSet": {
+                "summary": "Unset",
+                "value": ""
+              },
+              "higby": {
+                "summary": "Higby",
+                "value": "higby"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "character_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/character"
+                      }
+                    },
+                    "results": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/character_higby"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -697,9 +802,210 @@
             "description": "A list of resolvable names for the collection. These can be passed to the `c:resolve` query parameter to insert additional fields into the returned payload."
           }
         }
+      },
+      "character": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int64"
+          },
+          "name": {
+            "type": "object",
+            "description": "Name of the character. Use the `first_lower` field for faster case-insensitive searches without needing to set `c:case=false`.",
+            "properties": {
+              "first": {
+                "type": "string"
+              },
+              "first_lower": {
+                "type": "string"
+              }
+            }
+          },
+          "faction_id": {
+            "type": "string",
+            "description": "Faction of the character. For NSOs, this equals the value of NSOs. An NSOs currently or home faction is not exposed on the REST API, but can be determined via the `team_id` of some WebSocket payloads.",
+            "x-reference-to": "faction.faction_id",
+            "x-cast-to": "int32"
+          },
+          "head_id": {
+            "type": "string",
+            "description": "Identifier for the character's in-game model. Note that with gender change tokens, this is no longer guaranteed to be immutable across a character's career.",
+            "x-cast-to": "int32"
+          },
+          "title_id": {
+            "type": "string",
+            "description": "Currently selected title of the character. Useful for playing long names of players, e.g. \"Snowblower Higby\". A title ID of `0` corresponds to a player having selected \"No Title\" in-game.",
+            "x-reference-to": "title.title_id",
+            "x-cast-to": "int32"
+          },
+          "times": {
+            "type": "object",
+            "description": "Sub-object providing login time and playtime information.",
+            "properties": {
+              "creation": {
+                "type": "string",
+                "description": "Character creation timestamp in UTC."
+              },
+              "creation_date": {
+                "type": "string",
+                "description": "Human-readable version of `creation`."
+              },
+              "last_save": {
+                "type": "string",
+                "description": "Last time the character info was updated. This generally corresponds to the last time the character logged off. For this reason, characters are generally not available on the API during their first play session."
+              },
+              "last_save_date": {
+                "type": "string",
+                "description": "Human-readable version of `last_save`."
+              },
+              "last_login": {
+                "type": "string",
+                "description": "Last time the character logged in. Together with `last_save`, this can be used to construct the duration of the last play session of the character."
+              },
+              "last_login_date": {
+                "type": "string",
+                "description": "Human-readable version of `last_login`."
+              },
+              "login_count": {
+                "type": "string",
+                "x-cast-to": "int32",
+                "description": "Number of individual logins by the character."
+              },
+              "minutes_played": {
+                "type": "string",
+                "x-cast-to": "int32",
+                "description": "Total playtime in minutes."
+              }
+            }
+          },
+          "certs": {
+            "type": "object",
+            "description": "Sub-object providing certification point information.",
+            "properties": {
+              "earned_points": {
+                "type": "string",
+                "description": "Certifications earned through experience gain.",
+                "x-cast-to": "int32"
+              },
+              "gifted_points": {
+                "type": "string",
+                "description": "Certifications gifted through in-game events or refunds.",
+                "x-cast-to": "int32"
+              },
+              "spent_points": {
+                "type": "string",
+                "description": "Certifications points spent on skills and implant bundles.",
+                "x-cast-to": "int32"
+              },
+              "available_points": {
+                "type": "string",
+                "description": "Current certification point balance.",
+                "x-cast-to": "int32"
+              },
+              "percent_to_next": {
+                "type": "string",
+                "description": "Progress to earning the next certification point (every 250 exp).",
+                "x-cast-to": "float"
+              }
+            }
+          },
+          "battle_rank": {
+            "type": "object",
+            "description": "Sub-object providing battle rank information.",
+            "properties": {
+              "percent_to_next": {
+                "type": "string",
+                "description": "Progress to the next level-up.",
+                "x-cast-to": "float"
+              },
+              "value": {
+                "type": "string",
+                "description": "Current battle rank. Note that due to the A.S.P. prestige system, this is no longer sufficient to express player level. Always check `prestige_level` as well."
+              }
+            }
+          },
+          "profile_id": {
+            "type": "string",
+            "description": "Class of the character when the last logged off. This value can generally only be one of the 24 infantry classes available in the legacy `ps2/profile` collection, though other values are possible due to bad data or deleted characters.",
+            "x-cast-to": "int32",
+            "x-reference-to": "profile_2.profile_id"
+          },
+          "daily_ribbon": {
+            "type": "object",
+            "description": "Sub-object for daily ribbon bonuses. Note that ribbon bonuses have been disabled, rendering this object useless. It is recommended to treat is as optional in client code in case it ever gets removed from the response object.",
+            "properties": {
+              "count": {
+                "type": "string",
+                "description": "Number of daily ribbon bonuses available for collection.",
+                "x-cast-to": "int32"
+              },
+              "time": {
+                "type": "string",
+                "description": "Next time a daily ribbon bonus will be granted."
+              },
+              "date": {
+                "type": "string",
+                "description": "Human-readable version of `time`."
+              }
+            }
+          },
+          "prestige_level": {
+            "type": "string",
+            "description": "The A.S.P. rank of the character.",
+            "x-cast-to": "int32"
+          }
+        }
       }
     },
     "examples": {
+      "character_higby": {
+        "summary": "Higby",
+        "value": {
+          "character_list": [
+            {
+              "character_id": "5428010618015189601",
+              "name": {
+                "first": "Higby",
+                "first_lower": "higby"
+              },
+              "faction_id": "2",
+              "head_id": "1",
+              "title_id": "100",
+              "times": {
+                "creation": "1353427357",
+                "creation_date": "2012-11-20 16:02:37.0",
+                "last_save": "1669323771",
+                "last_save_date": "2022-11-24 21:02:51.0",
+                "last_login": "1669320455",
+                "last_login_date": "2022-11-24 20:07:35.0",
+                "login_count": "1738",
+                "minutes_played": "75517"
+              },
+              "certs": {
+                "earned_points": "214706",
+                "gifted_points": "78844",
+                "spent_points": "257491",
+                "available_points": "36059",
+                "percent_to_next": "0.1721388888362"
+              },
+              "battle_rank": {
+                "percent_to_next": "2",
+                "value": "101"
+              },
+              "profile_id": "4",
+              "daily_ribbon": {
+                "count": "0",
+                "time": "1669248000",
+                "date": "2022-11-24 00:00:00.0"
+              },
+              "prestige_level": "0"
+            }
+          ],
+          "returned": 1
+        }
+      },
       "collection_characterInfo": {
         "summary": "Character Info",
         "description": "Shows basic character information while hiding unwanted fields.\nhttps://census.daybreakgames.com/get/ps2/character?c:show=name.first,faction_id,battle_rank.value,prestige_level",
