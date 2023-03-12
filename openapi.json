@@ -83,61 +83,14 @@
                   }
                 },
                 "examples": {
-                  "Character": {
-                    "value": {
-                      "datatype_list": {
-                        "name": "character",
-                        "hidden": false,
-                        "count": 15095335,
-                        "resolve_list": [
-                          "item",
-                          "item_full",
-                          "profile",
-                          "faction",
-                          "stat",
-                          "stat_by_faction",
-                          "weapon_stat",
-                          "weapon_stat_by_faction",
-                          "stat_history",
-                          "online_status",
-                          "friends",
-                          "world",
-                          "outfit",
-                          "outfit_member",
-                          "outfit_member_extended",
-                          "currency"
-                        ]
-                      },
-                      "results": 1
-                    }
+                  "character": {
+                    "$ref": "#/components/examples/datatype_character"
                   },
-                  "Outfit Member": {
-                    "value": {
-                      "datatype_list": {
-                        "name": "outfit_member",
-                        "hidden": false,
-                        "count": "?",
-                        "resolve_list": [
-                          "character",
-                          "character_name",
-                          "characters_stat_history",
-                          "online_status",
-                          "outfit"
-                        ]
-                      },
-                      "results": 1
-                    }
+                  "outfitMember": {
+                    "$ref": "#/components/examples/datatype_outfitMember"
                   },
-                  "Character Online Status": {
-                    "value": {
-                      "datatype_list": {
-                        "count": "dynamic",
-                        "hidden": "false",
-                        "name": "characters_online_status",
-                        "resolve_list": []
-                      },
-                      "results": 1
-                    }
+                  "characterOnlineStatus": {
+                    "$ref": "#/components/examples/datatype_characterOnlineStatus"
                   }
                 }
               }
@@ -175,15 +128,11 @@
                   }
                 },
                 "examples": {
-                  "Success": {
-                    "value": {
-                      "count": 14
-                    }
+                  "success": {
+                    "$ref": "#/components/examples/count_success"
                   },
-                  "Error": {
-                    "value": {
-                      "count": -1
-                    }
+                  "error": {
+                    "$ref": "#/components/examples/count_error"
                   }
                 }
               }
@@ -289,76 +238,14 @@
                   }
                 },
                 "examples": {
-                  "Character Info": {
-                    "description": "Shows basic character information while hiding unwanted fields.\nhttps://census.daybreakgames.com/get/ps2/character?c:show=name.first,faction_id,battle_rank.value,prestige_level",
-                    "value": {
-                      "character_list": [
-                        {
-                          "name": {
-                            "first": "360Xvortex"
-                          },
-                          "faction_id": "3",
-                          "battle_rank": {
-                            "value": "1"
-                          },
-                          "prestige_level": "0"
-                        }
-                      ],
-                      "returned": 1
-                    }
+                  "characterInfo": {
+                    "$ref": "#/components/examples/collection_characterInfo"
                   },
-                  "Faction tags": {
-                    "description": "Uses `c:distinct` to get all faction tags.\nhttps://census.daybreakgames.com/get/ps2/faction?c:distinct=code_tag",
-                    "value": {
-                      "count": 5,
-                      "faction_list": [
-                        {
-                          "code_tag": [
-                            "NC",
-                            "None",
-                            "NSO",
-                            "TR",
-                            "VS"
-                          ]
-                        }
-                      ],
-                      "returned": 1
-                    }
+                  "factionTags": {
+                    "$ref": "#/components/examples/collection_factionTags"
                   },
-                  "Map state with facility names": {
-                    "description": "Example using nested key access to insert data into the middle of a payload. Note that only one record is shown for brevity, the provided link returns the entire zone's region list.\nhttps://census.daybreakgames.com/get/ps2/map?world_id=1&zone_ids=2&c:join=map_region%5Einject_at:map_region%5Eon:Regions.Row.RowData.RegionId%5Eto:map_region_id",
-                    "value": {
-                      "map_list": [
-                        {
-                          "ZoneId": "2",
-                          "Regions": {
-                            "IsList": "1",
-                            "Row": [
-                              {
-                                "RowData": {
-                                  "RegionId": "2101",
-                                  "FactionId": "3",
-                                  "map_region": {
-                                    "map_region_id": "2101",
-                                    "zone_id": "2",
-                                    "facility_id": "7500",
-                                    "facility_name": "Hvar",
-                                    "facility_type_id": "4",
-                                    "facility_type": "Tech Plant",
-                                    "location_x": "-656.0273",
-                                    "location_y": "491.7669",
-                                    "location_z": "-2444.069",
-                                    "reward_amount": "1",
-                                    "reward_currency_id": "1000"
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "returned": 1
-                    }
+                  "mapFacilities": {
+                    "$ref": "#/components/examples/collection_mapFacilities"
                   }
                 }
               }
@@ -809,12 +696,103 @@
             },
             "description": "A list of resolvable names for the collection. These can be passed to the `c:resolve` query parameter to insert additional fields into the returned payload."
           }
-        },
-        "examples": [
-          {
+        }
+      }
+    },
+    "examples": {
+      "collection_characterInfo": {
+        "summary": "Character Info",
+        "description": "Shows basic character information while hiding unwanted fields.\nhttps://census.daybreakgames.com/get/ps2/character?c:show=name.first,faction_id,battle_rank.value,prestige_level",
+        "value": {
+          "character_list": [
+            {
+              "name": {
+                "first": "360Xvortex"
+              },
+              "faction_id": "3",
+              "battle_rank": {
+                "value": "1"
+              },
+              "prestige_level": "0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "collection_factionTags": {
+        "summary": "Faction tags",
+        "description": "Uses `c:distinct` to get all faction tags.\nhttps://census.daybreakgames.com/get/ps2/faction?c:distinct=code_tag",
+        "value": {
+          "count": 5,
+          "faction_list": [
+            {
+              "code_tag": [
+                "NC",
+                "None",
+                "NSO",
+                "TR",
+                "VS"
+              ]
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "collection_mapFacilities": {
+        "summary": "Map state with facility names",
+        "description": "Example using nested key access to insert data into the middle of a payload. Note that only one record is shown for brevity, the provided link returns the entire zone's region list.\nhttps://census.daybreakgames.com/get/ps2/map?world_id=1&zone_ids=2&c:join=map_region%5Einject_at:map_region%5Eon:Regions.Row.RowData.RegionId%5Eto:map_region_id",
+        "value": {
+          "map_list": [
+            {
+              "ZoneId": "2",
+              "Regions": {
+                "IsList": "1",
+                "Row": [
+                  {
+                    "RowData": {
+                      "RegionId": "2101",
+                      "FactionId": "3",
+                      "map_region": {
+                        "map_region_id": "2101",
+                        "zone_id": "2",
+                        "facility_id": "7500",
+                        "facility_name": "Hvar",
+                        "facility_type_id": "4",
+                        "facility_type": "Tech Plant",
+                        "location_x": "-656.0273",
+                        "location_y": "491.7669",
+                        "location_z": "-2444.069",
+                        "reward_amount": "1",
+                        "reward_currency_id": "1000"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "count_success": {
+        "summary": "Success",
+        "value": {
+          "count": 14
+        }
+      },
+      "count_error": {
+        "summary": "Error",
+        "value": {
+          "count": -1
+        }
+      },
+      "datatype_character": {
+        "summary": "Character",
+        "value": {
+          "datatype_list": {
             "name": "character",
             "hidden": false,
-            "count": 13981911,
+            "count": 15095335,
             "resolve_list": [
               "item",
               "item_full",
@@ -833,8 +811,39 @@
               "outfit_member_extended",
               "currency"
             ]
-          }
-        ]
+          },
+          "results": 1
+        }
+      },
+      "datatype_outfitMember": {
+        "summary": "Outfit Member",
+        "value": {
+          "datatype_list": {
+            "name": "outfit_member",
+            "hidden": false,
+            "count": "?",
+            "resolve_list": [
+              "character",
+              "character_name",
+              "characters_stat_history",
+              "online_status",
+              "outfit"
+            ]
+          },
+          "results": 1
+        }
+      },
+      "datatype_characterOnlineStatus": {
+        "summary": "Character Online Status",
+        "value": {
+          "datatype_list": {
+            "count": "dynamic",
+            "hidden": "false",
+            "name": "characters_online_status",
+            "resolve_list": []
+          },
+          "results": 1
+        }
       }
     }
   }
