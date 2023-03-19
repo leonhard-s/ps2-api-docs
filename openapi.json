@@ -269,63 +269,13 @@
             "$ref": "#/components/parameters/qcLimitPerDbParam"
           },
           {
-            "name": "character_id",
-            "in": "query",
-            "description": "Unique identifier for this collection. Note that character IDs are not guaranteed to be unique across games; the same ID may be assigned to different characters for `ps2` than for `ps2ps4us`.",
-            "schema": {
-              "type": "string"
-            },
-            "x-cast-to": "int64",
-            "examples": {
-              "pc": {
-                "summary": "Higby (PC)",
-                "value": "5428010618015189601"
-              },
-              "ps4eu": {
-                "summary": "Dreadnaught (PS4 EU)",
-                "value": "5428352936466451601"
-              },
-              "ps4us": {
-                "summary": "Kevin (PS4 US)",
-                "value": "5428352933375941729"
-              }
-            }
+            "$ref": "#/components/parameters/characterIdParam"
           },
           {
-            "name": "name.first",
-            "in": "query",
-            "description": "Name of the character. Note that when looking up characters, it is preferable to query `name.first_lower` with a lowercase version of the search string.",
-            "schema": {
-              "type": "string"
-            },
-            "examples": {
-              "notSet": {
-                "summary": "Unset",
-                "value": ""
-              },
-              "higby": {
-                "summary": "Higby",
-                "value": "Higby"
-              }
-            }
+            "$ref": "#/components/parameters/characterNameFirstParam"
           },
           {
-            "name": "name.first_lower",
-            "in": "query",
-            "description": "Lowercase version of `name.first`. When performing case-insensitive lookups, using this field is more performant than setting `c:case=false.",
-            "schema": {
-              "type": "string"
-            },
-            "examples": {
-              "notSet": {
-                "summary": "Unset",
-                "value": ""
-              },
-              "higby": {
-                "summary": "Higby",
-                "value": "higby"
-              }
-            }
+            "$ref": "#/components/parameters/characterNameFirstLowerParam"
           }
         ],
         "responses": {
@@ -351,6 +301,108 @@
                 "examples": {
                   "higby": {
                     "$ref": "#/components/examples/character_higby"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/character_name": {
+      "get": {
+        "summary": "Character Name",
+        "description": "Optimized, low-bandwidth endpoint for character name resolution.",
+        "tags": [
+          "Characters"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterNameFirstParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterNameFirstLowerParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "character_name_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/character_name"
+                      }
+                    },
+                    "results": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/character_name_higby"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/faction": {
+      "get": {
+        "summary": "Faction",
+        "description": "Playable and NPC factions.",
+        "tags": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/factionIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "faction_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/faction"
+                      }
+                    },
+                    "results": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "NS": {
+                    "$ref": "#/components/examples/faction_ns"
+                  },
+                  "TR": {
+                    "$ref": "#/components/examples/faction_tr"
+                  },
+                  "NSO": {
+                    "$ref": "#/components/examples/faction_nso"
                   }
                 }
               }
@@ -755,11 +807,85 @@
             "value": "false"
           }
         }
+      },
+      "characterIdParam": {
+        "name": "character_id",
+        "in": "query",
+        "description": "Unique identifier of a charcter. Note that character IDs are not guaranteed to be unique across games; the same ID may be assigned to different characters for `ps2` than for `ps2ps4us`.\n\nWhen converting this value to native representations, note that a 64 bit integer type is required to avoid truncation.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int64",
+        "examples": {
+          "pc": {
+            "summary": "Higby (PC)",
+            "value": "5428010618015189601"
+          },
+          "ps4eu": {
+            "summary": "Dreadnaught (PS4 EU)",
+            "value": "5428352936466451601"
+          },
+          "ps4us": {
+            "summary": "Kevin (PS4 US)",
+            "value": "5428352933375941729"
+          }
+        }
+      },
+      "characterNameFirstParam": {
+        "name": "name.first",
+        "in": "query",
+        "description": "Name of the character. Note that when looking up characters, it is preferable to query `name.first_lower` with a lowercase version of the search string.",
+        "schema": {
+          "type": "string"
+        },
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "higby": {
+            "summary": "Higby",
+            "value": "Higby"
+          }
+        }
+      },
+      "characterNameFirstLowerParam": {
+        "name": "name.first_lower",
+        "in": "query",
+        "description": "Lowercase version of `name.first`. When performing case-insensitive lookups, using this field is more performant than setting `c:case=false`.",
+        "schema": {
+          "type": "string"
+        },
+        "examples": {
+          "notSet": {
+            "summary": "Unset",
+            "value": ""
+          },
+          "higby": {
+            "summary": "Higby",
+            "value": "higby"
+          }
+        }
+      },
+      "factionIdParam": {
+        "name": "faction_id",
+        "in": "query",
+        "description": "Unique identifier of a faction.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
       }
     },
     "schemas": {
       "datatype": {
         "type": "object",
+        "required": [
+          "count",
+          "hidden",
+          "name",
+          "resolve_list"
+        ],
         "properties": {
           "count": {
             "oneOf": [
@@ -805,6 +931,18 @@
       },
       "character": {
         "type": "object",
+        "required": [
+          "character_id",
+          "name",
+          "faction_id",
+          "head_id",
+          "title_id",
+          "times",
+          "certs",
+          "battle_rank",
+          "profile_id",
+          "prestige_level"
+        ],
         "properties": {
           "character_id": {
             "type": "string",
@@ -814,6 +952,10 @@
           "name": {
             "type": "object",
             "description": "Name of the character. Use the `first_lower` field for faster case-insensitive searches without needing to set `c:case=false`.",
+            "required": [
+              "first",
+              "first_lower"
+            ],
             "properties": {
               "first": {
                 "type": "string"
@@ -842,6 +984,16 @@
           },
           "times": {
             "type": "object",
+            "required": [
+              "creation",
+              "creation_date",
+              "last_save",
+              "last_save_date",
+              "last_login",
+              "last_login_date",
+              "login_count",
+              "minutes_played"
+            ],
             "description": "Sub-object providing login time and playtime information.",
             "properties": {
               "creation": {
@@ -883,6 +1035,13 @@
           "certs": {
             "type": "object",
             "description": "Sub-object providing certification point information.",
+            "required": [
+              "earned_points",
+              "gifted_points",
+              "spent_points",
+              "available_points",
+              "percent_to_next"
+            ],
             "properties": {
               "earned_points": {
                 "type": "string",
@@ -914,6 +1073,10 @@
           "battle_rank": {
             "type": "object",
             "description": "Sub-object providing battle rank information.",
+            "required": [
+              "percent_to_next",
+              "value"
+            ],
             "properties": {
               "percent_to_next": {
                 "type": "string",
@@ -955,6 +1118,94 @@
             "type": "string",
             "description": "The A.S.P. rank of the character.",
             "x-cast-to": "int32"
+          }
+        }
+      },
+      "character_name": {
+        "type": "object",
+        "required": [
+          "character_id",
+          "name"
+        ],
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int64"
+          },
+          "name": {
+            "type": "object",
+            "description": "Name of the character. Use the `first_lower` field for faster case-insensitive searches without needing to set `c:case=false`.",
+            "required": [
+              "first",
+              "first_lower"
+            ],
+            "properties": {
+              "first": {
+                "type": "string"
+              },
+              "first_lower": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "faction": {
+        "type": "object",
+        "required": [
+          "faction_id",
+          "name",
+          "code_tag",
+          "user_selectable"
+        ],
+        "properties": {
+          "faction_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "name": {
+            "description": "Canonical name of the faction",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "code_tag": {
+            "type": "string",
+            "description": "The unique tag of the faction, or `None` for common-pool nanite systems."
+          },
+          "user_selectable": {
+            "type": "string",
+            "description": "Whether this faction is playable or reserved for NPCs.",
+            "x-cast-to": "bool"
+          }
+        }
+      },
+      "localized_string": {
+        "type": "object",
+        "properties": {
+          "de": {
+            "type": "string",
+            "description": "German locale"
+          },
+          "en": {
+            "type": "string",
+            "description": "English locale"
+          },
+          "es": {
+            "type": "string",
+            "description": "Spanish locale"
+          },
+          "fr": {
+            "type": "string",
+            "description": "French locale"
+          },
+          "it": {
+            "type": "string",
+            "description": "Italian locale"
+          },
+          "tr": {
+            "type": "string",
+            "description": "Turkish locale, unfinished and not available for most fields"
           }
         }
       }
@@ -1001,6 +1252,21 @@
                 "date": "2022-11-24 00:00:00.0"
               },
               "prestige_level": "0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "character_name_higby": {
+        "summary": "Higby",
+        "value": {
+          "character_list": [
+            {
+              "character_id": "5428010618015189601",
+              "name": {
+                "first": "Higby",
+                "first_lower": "higby"
+              }
             }
           ],
           "returned": 1
@@ -1149,6 +1415,74 @@
             "resolve_list": []
           },
           "results": 1
+        }
+      },
+      "faction_ns": {
+        "summary": "Common",
+        "value": {
+          "faction_list": [
+            {
+              "faction_id": "0",
+              "name": {
+                "de": "Kein",
+                "en": "None",
+                "es": "Ninguno",
+                "fr": "Aucun",
+                "it": "Nessuno",
+                "tr": "None"
+              },
+              "code_tag": "None",
+              "user_selectable": "0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "faction_tr": {
+        "summary": "TR",
+        "value": {
+          "faction_list": [
+            {
+              "faction_id": "3",
+              "name": {
+                "de": "Terranische Republik",
+                "en": "Terran Republic",
+                "es": "República Terran",
+                "fr": "République Terrane",
+                "it": "Repubblica Terrestre",
+                "tr": "Terran Cumhuriyeti"
+              },
+              "image_set_id": "20",
+              "image_id": "18",
+              "image_path": "/files/ps2/images/static/18.png",
+              "code_tag": "TR",
+              "user_selectable": "1"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "faction_nso": {
+        "summary": "NSO",
+        "value": {
+          "faction_list": [
+            {
+              "faction_id": "4",
+              "name": {
+                "de": "NS-Agenten",
+                "en": "NS Operatives",
+                "es": "Operativos NS",
+                "fr": "Agents NS",
+                "it": "Agenti NS"
+              },
+              "image_set_id": "804586",
+              "image_id": "93615",
+              "image_path": "/files/ps2/images/static/93615.png",
+              "code_tag": "NSO",
+              "user_selectable": "1"
+            }
+          ],
+          "returned": 1
         }
       }
     }
