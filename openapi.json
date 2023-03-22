@@ -401,14 +401,141 @@
                   }
                 },
                 "examples": {
-                  "NS": {
-                    "$ref": "#/components/examples/faction_ns"
-                  },
-                  "TR": {
-                    "$ref": "#/components/examples/faction_tr"
-                  },
-                  "NSO": {
-                    "$ref": "#/components/examples/faction_nso"
+                  "tr": {
+                    "$ref": "#/components/examples/faction"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/loadout": {
+      "get": {
+        "summary": "Loadout",
+        "description": "Enumeration of the six infantry classes for each playable faction.\n\nNote that this is different from the in-game loadouts, which are not available on the API.",
+        "tags": [
+          "Basics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/loadoutIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "loadout_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/loadout"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "ncInfiltrator": {
+                    "$ref": "#/components/examples/loadout"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/profile": {
+      "get": {
+        "summary": "Profile (Infantry)",
+        "description": "Original endpoint for infantry profiles. This covers the names and loadout IDs connected to a given profile, and additionally provides movement speed multiplier information for infantry classes. Note that the key fields are also provided by `ps2/profile_2`, which not only covers infantry but also vehicles, deployables, and other entities.",
+        "tags": [
+          "Basics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/profileIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/loadoutIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "profile_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/profile"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "trLightAssault": {
+                    "$ref": "#/components/examples/profile"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/profile_2": {
+      "get": {
+        "summary": "Profile (All)",
+        "description": "Extended profile endpoint containing all entity types, including NPCs, construction items, and deployables.",
+        "tags": [
+          "Basics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/profileIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "profile_2_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/profile_2"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "sunderer": {
+                    "$ref": "#/components/examples/profile_2"
                   }
                 }
               }
@@ -881,6 +1008,24 @@
           "type": "string"
         },
         "x-cast-to": "int32"
+      },
+      "loadoutIdParam": {
+        "name": "loadout_id",
+        "in": "query",
+        "description": "Unique identifier of a loadout.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "profileIdParam": {
+        "name": "profile_id",
+        "in": "query",
+        "description": "Unique identifier of a profile.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
       }
     },
     "schemas": {
@@ -1118,6 +1263,22 @@
             "description": "Canonical name of the faction",
             "$ref": "#/components/schemas/localized_string"
           },
+          "image_set_id": {
+            "type": "string",
+            "description": "The `ps2/image_set` of the faction.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "The `ps2/image` of the faction.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Relative path to the default image of the faction."
+          },
           "code_tag": {
             "type": "string",
             "description": "The unique tag of the faction, or `None` for common-pool nanite systems."
@@ -1126,6 +1287,105 @@
             "type": "string",
             "description": "Whether this faction is playable or reserved for NPCs.",
             "x-cast-to": "bool"
+          }
+        }
+      },
+      "loadout": {
+        "type": "object",
+        "properties": {
+          "loadout_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "profile_id": {
+            "type": "string",
+            "description": "The `ps2/profile_2` matching this loadout.",
+            "x-cast-to": "int32",
+            "x-reference-to": "profile_2.profile_id"
+          },
+          "faction_id": {
+            "type": "string",
+            "description": "The `ps2/faction` of the loadout.",
+            "x-cast-to": "int32",
+            "x-reference-to": "faction.faction_id"
+          }
+        }
+      },
+      "profile": {
+        "type": "object",
+        "properties": {
+          "profile_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "profile_type_id": {
+            "type": "string",
+            "description": "The type of the profile. There is no public `profile_type` collection, this is an internal ID.",
+            "x-cast-to": "int32"
+          },
+          "profile_type_description": {
+            "type": "string",
+            "description": "Internal description for the associated `profile_type_id`."
+          },
+          "name": {
+            "description": "Localized name of the profile",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Localized description of the profile",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "The `ps2/image_set` of the profile.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "The `ps2/image` of the profile.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Relative path to the default image of the profile."
+          },
+          "movement_speed": {
+            "type": "string",
+            "description": "The base movement speed of the profile.",
+            "x-cast-to": "float"
+          },
+          "backpedal_speed_modifier": {
+            "type": "string",
+            "description": "The modifier applied to the movement speed when walking backwards.",
+            "x-cast-to": "float"
+          },
+          "sprint_speed_modifier": {
+            "type": "string",
+            "description": "The modifier applied to the movement speed when sprinting.",
+            "x-cast-to": "float"
+          },
+          "crouch_speed_modifier": {
+            "type": "string",
+            "description": "The modifier applied to the movement speed when crouching.",
+            "x-cast-to": "float"
+          }
+        }
+      },
+      "profile_2": {
+        "type": "object",
+        "properties": {
+          "profile_id": {
+            "type": "string",
+            "description": "Unique ID of the collection. Note that this is one of the few collections where the ID field is not `<collection>_id`.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Internal description of this profile. Not localized or user-facing."
           }
         }
       },
@@ -1366,28 +1626,7 @@
           "returned": 1
         }
       },
-      "faction_ns": {
-        "summary": "Common",
-        "value": {
-          "faction_list": [
-            {
-              "faction_id": "0",
-              "name": {
-                "de": "Kein",
-                "en": "None",
-                "es": "Ninguno",
-                "fr": "Aucun",
-                "it": "Nessuno",
-                "tr": "None"
-              },
-              "code_tag": "None",
-              "user_selectable": "0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "faction_tr": {
+      "faction": {
         "summary": "TR",
         "value": {
           "faction_list": [
@@ -1411,24 +1650,64 @@
           "returned": 1
         }
       },
-      "faction_nso": {
-        "summary": "NSO",
+      "loadout": {
+        "summary": "NC Infiltrator",
         "value": {
-          "faction_list": [
+          "loadout_list": [
             {
-              "faction_id": "4",
+              "loadout_id": "1",
+              "profile_id": "2",
+              "faction_id": "2",
+              "code_name": "NC Infiltrator"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "profile": {
+        "summary": "TR Light Assault",
+        "value": {
+          "profile_list": [
+            {
+              "profile_id": "12",
+              "profile_type_id": "3",
+              "profile_type_description": "Light Assault",
+              "faction_id": "3",
               "name": {
-                "de": "NS-Agenten",
-                "en": "NS Operatives",
-                "es": "Operativos NS",
-                "fr": "Agents NS",
-                "it": "Agenti NS"
+                "de": "Leichte Angriffseinheit",
+                "en": "Light Assault",
+                "es": "Asalto ligero",
+                "fr": "Assaut léger",
+                "it": "Assalto Leggero",
+                "tr": "Hafif Taarruz"
               },
-              "image_set_id": "804586",
-              "image_id": "93615",
-              "image_path": "/files/ps2/images/static/93615.png",
-              "code_tag": "NSO",
-              "user_selectable": "1"
+              "description": {
+                "de": "Leichte Angriffseinheit",
+                "en": "Light Assault",
+                "es": "Asalto ligero",
+                "fr": "Assaut léger",
+                "it": "Assalto Leggero",
+                "tr": "Hafif Taarruz"
+              },
+              "image_set_id": "8",
+              "image_id": "62",
+              "image_path": "/files/ps2/images/static/62.png",
+              "movement_speed": "4",
+              "backpedal_speed_modifier": "0.75",
+              "sprint_speed_modifier": "1.625",
+              "strafe_speed_modifier": "0.75"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "profile_2": {
+        "summary": "Sunderer",
+        "value": {
+          "profile_2_list": [
+            {
+              "profile_id": "33",
+              "description": "Sunderer"
             }
           ],
           "returned": 1
