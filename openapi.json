@@ -880,12 +880,6 @@
     "schemas": {
       "datatype": {
         "type": "object",
-        "required": [
-          "count",
-          "hidden",
-          "name",
-          "resolve_list"
-        ],
         "properties": {
           "count": {
             "oneOf": [
@@ -931,18 +925,6 @@
       },
       "character": {
         "type": "object",
-        "required": [
-          "character_id",
-          "name",
-          "faction_id",
-          "head_id",
-          "title_id",
-          "times",
-          "certs",
-          "battle_rank",
-          "profile_id",
-          "prestige_level"
-        ],
         "properties": {
           "character_id": {
             "type": "string",
@@ -952,10 +934,6 @@
           "name": {
             "type": "object",
             "description": "Name of the character. Use the `first_lower` field for faster case-insensitive searches without needing to set `c:case=false`.",
-            "required": [
-              "first",
-              "first_lower"
-            ],
             "properties": {
               "first": {
                 "type": "string"
@@ -984,16 +962,6 @@
           },
           "times": {
             "type": "object",
-            "required": [
-              "creation",
-              "creation_date",
-              "last_save",
-              "last_save_date",
-              "last_login",
-              "last_login_date",
-              "login_count",
-              "minutes_played"
-            ],
             "description": "Sub-object providing login time and playtime information.",
             "properties": {
               "creation": {
@@ -1035,13 +1003,6 @@
           "certs": {
             "type": "object",
             "description": "Sub-object providing certification point information.",
-            "required": [
-              "earned_points",
-              "gifted_points",
-              "spent_points",
-              "available_points",
-              "percent_to_next"
-            ],
             "properties": {
               "earned_points": {
                 "type": "string",
@@ -1073,10 +1034,6 @@
           "battle_rank": {
             "type": "object",
             "description": "Sub-object providing battle rank information.",
-            "required": [
-              "percent_to_next",
-              "value"
-            ],
             "properties": {
               "percent_to_next": {
                 "type": "string",
@@ -1123,10 +1080,6 @@
       },
       "character_name": {
         "type": "object",
-        "required": [
-          "character_id",
-          "name"
-        ],
         "properties": {
           "character_id": {
             "type": "string",
@@ -1136,10 +1089,6 @@
           "name": {
             "type": "object",
             "description": "Name of the character. Use the `first_lower` field for faster case-insensitive searches without needing to set `c:case=false`.",
-            "required": [
-              "first",
-              "first_lower"
-            ],
             "properties": {
               "first": {
                 "type": "string"
@@ -1153,12 +1102,6 @@
       },
       "faction": {
         "type": "object",
-        "required": [
-          "faction_id",
-          "name",
-          "code_tag",
-          "user_selectable"
-        ],
         "properties": {
           "faction_id": {
             "type": "string",
