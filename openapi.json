@@ -543,6 +543,98 @@
           }
         }
       }
+    },
+    "/get/{game}/world": {
+      "get": {
+        "summary": "World",
+        "description": "A game server for a given region and game.",
+        "tags": [
+          "Basics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/worldIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "world_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/world"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "connery": {
+                    "$ref": "#/components/examples/world"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "get/{game}/zone": {
+      "get": {
+        "summary": "Zone",
+        "description": "World continent and dynamic zone information.",
+        "tags": [
+          "Basics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/zoneIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "zone_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/zone"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "indar": {
+                    "$ref": "#/components/examples/zone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1026,6 +1118,24 @@
           "type": "string"
         },
         "x-cast-to": "int32"
+      },
+      "worldIdParam": {
+        "name": "world_id",
+        "in": "query",
+        "description": "Unique identifier of a world.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "zoneIdParam": {
+        "name": "zone_id",
+        "in": "query",
+        "description": "Unique identifier of a zone.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
       }
     },
     "schemas": {
@@ -1389,6 +1499,69 @@
           }
         }
       },
+      "world": {
+        "type": "object",
+        "properties": {
+          "world_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "online",
+              "locked"
+            ],
+            "description": "Current availability of the game server."
+          },
+          "name": {
+            "description": "Localized name of the world",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Localized description set for some worlds. Unused for most.",
+            "$ref": "#/components/schemas/localized_string"
+          }
+        }
+      },
+      "zone": {
+        "type": "object",
+        "properties": {
+          "zone_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "code": {
+            "type": "string",
+            "description": "Internal code of the zone. Used to connect map textures to the zone."
+          },
+          "hex_size": {
+            "type": "string",
+            "description": "Radius of a map hex in metres.",
+            "x-cast-to": "float"
+          },
+          "name": {
+            "description": "Localized name of the zone",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Localized description of the zone",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "geometry_id": {
+            "type": "string",
+            "description": "Internal geometry ID of the zones with dynamic IDs. Prior to this field being added, this ID was referred to as `definition_id` by community developers.",
+            "x-cast-to": "int32"
+          },
+          "dynamic": {
+            "type": "string",
+            "description": "Whether this zone is dynamic or not. Multiple dynamic zones of the same `geometry_id` may exist for a given `ps2/world`, such as Sanctuary instances or Outfit Wars rooms.",
+            "x-cast-to": "bool"
+          }
+        }
+      },
       "localized_string": {
         "type": "object",
         "properties": {
@@ -1708,6 +1881,55 @@
             {
               "profile_id": "33",
               "description": "Sunderer"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "world": {
+        "summary": "Cobalt",
+        "value": {
+          "world_list": [
+            {
+              "world_id": "13",
+              "state": "online",
+              "name": {
+                "en": "Cobalt",
+                "de": "Cobalt",
+                "es": "Cobalt",
+                "fr": "Cobalt",
+                "it": "Cobalt",
+                "tr": "Cobalt"
+              }
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "zone": {
+        "summary": "Oshur",
+        "value": {
+          "zone_list": [
+            {
+              "zone_id": "344",
+              "code": "Oshur",
+              "hex_size": "100",
+              "name": {
+                "de": "Oshur",
+                "en": "Oshur",
+                "es": "Oshur",
+                "fr": "Oshur",
+                "it": "Oshur"
+              },
+              "description": {
+                "de": "Oshurs Strand-Archipel und das glitzernde blaue Wasser bieten die Möglichkeit für Einsätze zu Land, Luft und Wasser.",
+                "en": "Oshur's sandy archipelago and sparkling blue waters provide opportunities for engagement by land, sea, and air.",
+                "es": "El arenoso archipiélago de Oshur y sus resplandecientes aguas azules son el entorno ideal para luchar por tierra, mar y aire.",
+                "fr": "L'archipel sablonneux d'Oshur et ses eaux bleues cristallines offrent des possibilités de combats terrestres, maritimes et aériens.",
+                "it": "L'arcipelago sabbioso e le vivaci acque blu di Oshur forniscono ottime opportunità d'ingaggio via mare, terra e aria."
+              },
+              "geometry_id": "367",
+              "dynamic": "0"
             }
           ],
           "returned": 1
