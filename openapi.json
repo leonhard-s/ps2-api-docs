@@ -51,6 +51,10 @@
     {
       "name": "Basics",
       "description": "General information about factions, classes, continents, and servers in PlanetSide 2."
+    },
+    {
+      "name": "Player Outfits",
+      "description": "Collections related to PlanetSide 2 outfits and outfit membership."
     }
   ],
   "security": [],
@@ -365,6 +369,144 @@
         }
       }
     },
+    "/get/{game}/characters_friend": {
+      "get": {
+        "summary": "Friends List",
+        "description": "Query the friends list of a character.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_friend_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_friend"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/characters_friend"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_online_status": {
+      "get": {
+        "summary": "Online Status",
+        "description": "Query the online status of a character.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_online_status_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_online_status"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/characters_online_status"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_world": {
+      "get": {
+        "summary": "Character Server Lookup",
+        "description": "Query the server a character is on.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_world_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_world"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/characters_world"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/faction": {
       "get": {
         "summary": "Faction",
@@ -449,6 +591,196 @@
                 "examples": {
                   "ncInfiltrator": {
                     "$ref": "#/components/examples/loadout"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/outfit": {
+      "get": {
+        "summary": "Outfit",
+        "description": "A player-run outfit or clan.",
+        "tags": [
+          "Player Outfits"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/outfitIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "outfit_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/outfit"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "fno": {
+                    "$ref": "#/components/examples/outfit"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/outfit_member": {
+      "get": {
+        "summary": "Outfit Member",
+        "description": "Outfit membership information for a givne character. Characters that are not members of any outfit will not have an entry in this collection.",
+        "tags": [
+          "Player Outfits"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/outfitIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "outfit_member_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/outfit_member"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "luperza": {
+                    "$ref": "#/components/examples/outfit_member"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/outfit_member_extended": {
+      "get": {
+        "summary": "Outfit Member (Extended)",
+        "description": "Another variant of the `ps2/outfit_member` collection, but with the contents of the corresponding `ps2/outfit` merged in. This is useful for bulk lookups of outfit information for heterogenous lists of characters without requiring the explicit use of `c:join` or `c:resolve`.",
+        "tags": [
+          "Player Outfits"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/outfitIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "outfit_member_extended_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/outfit_member_extended"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "luperza": {
+                    "$ref": "#/components/examples/outfit_member_extended"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/outfit_rank": {
+      "get": {
+        "summary": "Custom Outfit Rank",
+        "description": "Outfits can define their own custom rank names and permissions, which are listed here. Outfits using the default rank names may not have an entry here.",
+        "tags": [
+          "Player Outfits"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/outfitIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "outfit_rank_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/outfit_rank"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "fno": {
+                    "$ref": "#/components/examples/outfit_rank"
                   }
                 }
               }
@@ -590,7 +922,7 @@
         }
       }
     },
-    "get/{game}/zone": {
+    "/get/{game}/zone": {
       "get": {
         "summary": "Zone",
         "description": "World continent and dynamic zone information.",
@@ -1110,6 +1442,15 @@
         },
         "x-cast-to": "int32"
       },
+      "outfitIdParam": {
+        "name": "outfit_id",
+        "in": "query",
+        "description": "Unique identifier of an outfit.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int64"
+      },
       "profileIdParam": {
         "name": "profile_id",
         "in": "query",
@@ -1361,6 +1702,60 @@
           }
         }
       },
+      "characters_friend": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the friends list is being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "name": {
+            "type": "string",
+            "description": "Defunct. Always returns `null`."
+          },
+          "friend_list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "character_id": {
+                  "type": "string",
+                  "description": "Character ID of the friend.",
+                  "x-cast-to": "int64",
+                  "x-reference-to": "character.character_id"
+                },
+                "last_login_time": {
+                  "type": "string",
+                  "description": "Last time the friend logged in."
+                },
+                "online": {
+                  "type": "string",
+                  "description": "Whether the friend is currently online. Offline players will return 0, otherwise the value will be the `world_id` of the `ps2/world` they are online on.",
+                  "x-cast-to": "int32"
+                }
+              }
+            }
+          }
+        }
+      },
+      "characters_online_status": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the online status is being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "online_status": {
+            "type": "string",
+            "description": "Whether the character is currently online. Offline players will return 0, otherwise the value will be the `world_id` of the `ps2/world` they are online on.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
       "faction": {
         "type": "object",
         "properties": {
@@ -1400,6 +1795,23 @@
           }
         }
       },
+      "characters_world": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the world is being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "world_id": {
+            "type": "string",
+            "description": "The `ps2/world` of the character.",
+            "x-cast-to": "int32",
+            "x-reference-to": "world.world_id"
+          }
+        }
+      },
       "loadout": {
         "type": "object",
         "properties": {
@@ -1419,6 +1831,180 @@
             "description": "The `ps2/faction` of the loadout.",
             "x-cast-to": "int32",
             "x-reference-to": "faction.faction_id"
+          }
+        }
+      },
+      "outfit": {
+        "type": "object",
+        "properties": {
+          "outfit_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "Canonical name of the outfit."
+          },
+          "name_lower": {
+            "type": "string",
+            "description": "Lowercase version of `name`."
+          },
+          "alias": {
+            "type": "string",
+            "description": "The outfit's alias (aka. tag), or an empty string if the outfit has no alias."
+          },
+          "alias_lower": {
+            "type": "string",
+            "description": "Lowercase version of `alias`."
+          },
+          "time_created": {
+            "type": "string",
+            "description": "Time the outfit was created."
+          },
+          "time_creeated_date": {
+            "type": "string",
+            "description": "Human-readable version of `time_created`."
+          },
+          "leader_character_id": {
+            "type": "string",
+            "description": "The `ps2/character` of the outfit's leader.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "member_count": {
+            "type": "string",
+            "description": "Number of members in the outfit.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "outfit_member": {
+        "type": "object",
+        "properties": {
+          "outfit_id": {
+            "type": "string",
+            "description": "The `ps2/outfit` the character is a member of.",
+            "x-cast-to": "int64",
+            "x-reference-to": "outfit.outfit_id"
+          },
+          "character_id": {
+            "type": "string",
+            "description": "The `ps2/character` for this membership entry.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "member_since": {
+            "type": "string",
+            "description": "Time the character joined the outfit."
+          },
+          "member_since_date": {
+            "type": "string",
+            "description": "Human-readable version of `member_since`."
+          },
+          "rank": {
+            "type": "string",
+            "description": "Custom rank of the character in the outfit.",
+            "x-cast-to": "int32"
+          },
+          "rank_ordinal": {
+            "type": "string",
+            "description": "Ordinal of the character's rank in the outfit. Lower values are higher ranks.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "outfit_member_extended": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "The `ps2/character` for this membership entry.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "member_since": {
+            "type": "string",
+            "description": "Time the character joined the outfit."
+          },
+          "member_since_date": {
+            "type": "string",
+            "description": "Human-readable version of `member_since`."
+          },
+          "member_rank": {
+            "type": "string",
+            "description": "Custom rank of the character in the outfit.",
+            "x-cast-to": "int32"
+          },
+          "member_rank_ordinal": {
+            "type": "string",
+            "description": "Ordinal of the character's rank in the outfit. Lower values are higher ranks.",
+            "x-cast-to": "int32"
+          },
+          "outfit_id": {
+            "type": "string",
+            "description": "The `ps2/outfit` the character is a member of.",
+            "x-cast-to": "int64",
+            "x-reference-to": "outfit.outfit_id"
+          },
+          "name": {
+            "type": "string",
+            "description": "Canonical name of the outfit."
+          },
+          "name_lower": {
+            "type": "string",
+            "description": "Lowercase version of `name`."
+          },
+          "alias": {
+            "type": "string",
+            "description": "The outfit's alias (aka. tag), or an empty string if the outfit has no alias."
+          },
+          "alias_lower": {
+            "type": "string",
+            "description": "Lowercase version of `alias`."
+          },
+          "time_created": {
+            "type": "string",
+            "description": "Time the outfit was created."
+          },
+          "time_creeated_date": {
+            "type": "string",
+            "description": "Human-readable version of `time_created`."
+          },
+          "leader_character_id": {
+            "type": "string",
+            "description": "The `ps2/character` of the outfit's leader.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "member_count": {
+            "type": "string",
+            "description": "Number of members in the outfit.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "outfit_rank": {
+        "type": "object",
+        "properties": {
+          "outfit_id": {
+            "type": "string",
+            "description": "The `ps2/outfit` the rank belongs to.",
+            "x-cast-to": "int64",
+            "x-reference-to": "outfit.outfit_id"
+          },
+          "ordinal": {
+            "type": "string",
+            "description": "Ordinal of the rank. Lower values are higher ranks.",
+            "x-cast-to": "int32"
+          },
+          "name": {
+            "type": "string",
+            "description": "Custom name of the rank."
+          },
+          "description": {
+            "type": "string",
+            "description": "Custom description of the rank."
           }
         }
       },
@@ -1654,6 +2240,60 @@
           "returned": 1
         }
       },
+      "characters_friend": {
+        "summary": "Higby",
+        "description": "Only the first 3 friends are shown for brevity.",
+        "value": {
+          "characters_friend_list": [
+            {
+              "character_id": "5428010618015189601",
+              "name": null,
+              "friend_list": [
+                {
+                  "character_id": "5428010618014254785",
+                  "last_login_time": "1679721693",
+                  "online": "0"
+                },
+                {
+                  "character_id": "5428010618014429969",
+                  "last_login_time": "1658899596",
+                  "online": "0"
+                },
+                {
+                  "character_id": "5428010618015193969",
+                  "last_login_time": "1679718619",
+                  "online": "0"
+                }
+              ]
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_online_status": {
+        "summary": "Higby",
+        "value": {
+          "characters_online_status_list": [
+            {
+              "character_id": "5428010618015189601",
+              "online_status": "0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_world": {
+        "summary": "Higby",
+        "value": {
+          "characters_world_list": [
+            {
+              "character_id": "5428010618015189601",
+              "world_id": "1"
+            }
+          ],
+          "returned": 1
+        }
+      },
       "collection_characterInfo": {
         "summary": "Character Info",
         "description": "Shows basic character information while hiding unwanted fields.\nhttps://census.daybreakgames.com/get/ps2/character?c:show=name.first,faction_id,battle_rank.value,prestige_level",
@@ -1832,6 +2472,79 @@
               "profile_id": "2",
               "faction_id": "2",
               "code_name": "NC Infiltrator"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "outfit": {
+        "summary": "Friday Night Ops",
+        "value": {
+          "outfit_list": [
+            {
+              "outfit_id": "37525047953333155",
+              "name": "Friday Night Ops",
+              "name_lower": "friday night ops",
+              "alias": "FNO",
+              "alias_lower": "fno",
+              "time_created": "1413001215",
+              "time_created_date": "2014-10-11 04:20:15.0",
+              "leader_character_id": "5428010618015197505",
+              "member_count": "5"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "outfit_member": {
+        "summary": "Luperza",
+        "value": {
+          "outfit_member_list": [
+            {
+              "outfit_id": "37525047953333155",
+              "character_id": "5428010618015197505",
+              "member_since": "1413001215",
+              "member_since_date": "2014-10-11 04:20:15.0",
+              "rank": "Leader",
+              "rank_ordinal": "1"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "outfit_member_extended": {
+        "summary": "Luperza",
+        "value": {
+          "outfit_member_extended_list": [
+            {
+              "character_id": "5428010618015197505",
+              "member_since": "1413001215",
+              "member_since_date": "2014-10-11 04:20:15.0",
+              "member_rank": "Leader",
+              "member_rank_ordinal": "1",
+              "outfit_id": "37525047953333155",
+              "name": "Friday Night Ops",
+              "name_lower": "friday night ops",
+              "alias": "FNO",
+              "alias_lower": "fno",
+              "time_created": "1413001215",
+              "time_created_date": "2014-10-11 04:20:15.0",
+              "leader_character_id": "5428010618015197505",
+              "member_count": "5"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "outfit_rank": {
+        "summary": "URGE Bastion Commander",
+        "value": {
+          "outfit_rank_list": [
+            {
+              "outfit_id": "37564049462661850",
+              "ordinal": "5",
+              "name": "BASTION COMMANDER",
+              "description": "Outfit Enlisted"
             }
           ],
           "returned": 1
