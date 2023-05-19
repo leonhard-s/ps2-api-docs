@@ -483,7 +483,7 @@
             "$ref": "#/components/parameters/statNameParam_characters_stat"
           },
           {
-            "$ref": "#/components/parameters/profileIdParam_characters_stat"
+            "$ref": "#/components/parameters/profileIdParam_character"
           }
         ],
         "responses": {
@@ -509,6 +509,226 @@
                 "examples": {
                   "higby": {
                     "$ref": "#/components/examples/characters_stat"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_stat_by_faction": {
+      "get": {
+        "summary": "Character Statistics by Faction",
+        "description": "Faction-specific statistics endpoint. Useful for determining faction bias or kill spread.\n\n- `stat_name` lists the name of the stat\n- `profile` represents the class, with a value of 0 denoting a character-wide value\n\nAll `value_*` fields are provided per-faction. Note that the value for the own faction is often blanked: `value_nc` of the stat `kills` cannot be used to enumerate an NC character's team kills, for example.",
+        "tags": [
+          "Statistics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/statNameParam_characters_stat_by_faction"
+          },
+          {
+            "$ref": "#/components/parameters/profileIdParam_character"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_stat_by_faction_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_stat_by_faction"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/characters_stat_by_faction"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_stat_history": {
+      "get": {
+        "summary": "Historical Statistics",
+        "description": "Statistics endpoint for historical character stats. In addition to the `all_time` and `one_life_max` keys, values are also provided for the last 31 days (`day`), 12 months (`month`), or 13 weeks (`week`).\n\n- `stat_name` lists the name of the stat\n- `profile` represents the class, with a value of 0 denoting a character-wide value.",
+        "tags": [
+          "Statistics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/statNameParam_characters_stat_history"
+          },
+          {
+            "$ref": "#/components/parameters/profileIdParam_character"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_stat_history_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_stat_history"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/characters_stat_history"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_weapon_stat": {
+      "get": {
+        "summary": "Weapon Statistics",
+        "description": "Weapon statistics endpoint containing generic values such as playtime or score while wielding. The most common use is calculating the accuracy of a player with a given weapon by dividing `weapon_hit_count` by `weapon_fire_count`.\n\n- `stat_name` lists the name of the stat\n- `item_id` identifies the item for the weapon. Note that this value can be zero, in that case it serves as a catch-all for all weapons for the given `vehicle_id`.\n- `vehicle_id` the vehicle on which the weapon is available.",
+        "tags": [
+          "Statistics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/statNameParam_characters_weapon_stat"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/vehicleIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_weapon_stat_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_weapon_stat"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "weapon": {
+                    "$ref": "#/components/examples/characters_weapon_stat_infantry_weapon"
+                  },
+                  "vehicle": {
+                    "$ref": "#/components/examples/characters_weapon_stat_vehicle"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_weapon_stat_by_faction": {
+      "get": {
+        "summary": "Weapon Statistics By Faction",
+        "description": "Faction-specific weapon statistics endpoint containing combat-focussed stats such as kills, deaths, headshots and damage dealt/taken.\n\n- `stat_name` lists the name of the stat\n- `item_id` identifies the item for the weapon. Note that this value can be zero, in that case it serves as a catch-all for all weapons for the given `vehicle_id`.\n- `vehicle_id` the vehicle on which the weapon is available.",
+        "tags": [
+          "Statistics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/statNameParam_characters_weapon_stat_by_faction"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/vehicleIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_weapon_stat_by_faction_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_weapon_stat_by_faction"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "weapon": {
+                    "$ref": "#/components/examples/characters_weapon_stat_by_faction_infantry_weapon"
+                  },
+                  "vehicle": {
+                    "$ref": "#/components/examples/characters_weapon_stat_by_faction_vehicle"
                   }
                 }
               }
@@ -1489,6 +1709,15 @@
         },
         "x-cast-to": "int32"
       },
+      "itemIdParam": {
+        "name": "item_id",
+        "in": "query",
+        "description": "Unique identifier of an item.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "loadoutIdParam": {
         "name": "loadout_id",
         "in": "query",
@@ -1541,7 +1770,63 @@
           ]
         }
       },
-      "profileIdParam_characters_stat": {
+      "statNameParam_characters_stat_by_faction": {
+        "name": "stat_name",
+        "in": "query",
+        "description": "Name of a statistic for the `characters_stat_by_faction` collection.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "domination_count",
+            "facility_capture_count",
+            "killed_by",
+            "kills",
+            "revenge_count",
+            "weapon_damage_given",
+            "weapon_damage_taken_by",
+            "weapon_headshots",
+            "weapon_killed_by",
+            "weapon_kills",
+            "weapon_vehicle_kills"
+          ]
+        }
+      },
+      "statNameParam_characters_stat_history": {
+        "name": "stat_name",
+        "in": "query",
+        "description": "Name of a statistic for the `characters_stat_history` collection.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "battle_rank",
+            "certs",
+            "deaths",
+            "facility_capture",
+            "facility_defend",
+            "kills",
+            "medals",
+            "ribbons",
+            "score",
+            "time"
+          ]
+        }
+      },
+      "statNameParam_characters_weapon_stat": {
+        "name": "stat_name",
+        "in": "query",
+        "description": "Name of a statistic for the `characters_weapon_stat` collection.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "weapon_deaths",
+            "weapon_fire_count",
+            "weapon_hit_count",
+            "weapon_play_time",
+            "weapon_score"
+          ]
+        }
+      },
+      "profileIdParam_character": {
         "name": "profile_id",
         "in": "query",
         "description": "Subset of identifiers from the `profile_id` collection. The values map onto the NC loadout IDs regardless of faction. 0: All time, 1: Infiltrator, 3: Light Assault, 4: Combat Medic, 5: Engineer, 6: MAX Unit.",
@@ -1557,6 +1842,15 @@
             "7"
           ]
         }
+      },
+      "vehicleIdParam": {
+        "name": "vehicle_id",
+        "in": "query",
+        "description": "Unique identifier of a vehicle.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
       },
       "worldIdParam": {
         "name": "world_id",
@@ -1896,6 +2190,442 @@
           "value_one_life_max": {
             "type": "string",
             "description": "Highest value of the stat in a single life.",
+            "x-cast-to": "int32"
+          },
+          "last_save": {
+            "type": "string",
+            "description": "Last time the stat was saved."
+          },
+          "last_save_date": {
+            "type": "string",
+            "description": "Human-readable version of `last_save`."
+          }
+        }
+      },
+      "characters_stat_by_faction": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the stats are being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "stat_name": {
+            "type": "string",
+            "description": "Name of the stat being returned."
+          },
+          "profile_id": {
+            "type": "string",
+            "description": "Class for which stats are being returne.",
+            "x-cast-to": "int32",
+            "x-reference-to": "profile_2.profile_id"
+          },
+          "value_forever_vs": {
+            "type": "string",
+            "description": "All-time value of the stat (VS).",
+            "x-cast-to": "int32"
+          },
+          "value_forever_nc": {
+            "type": "string",
+            "description": "All-time value of the stat (NC).",
+            "x-cast-to": "int32"
+          },
+          "value_forever_tr": {
+            "type": "string",
+            "description": "All-time value of the stat (TR).",
+            "x-cast-to": "int32"
+          },
+          "value_monthly_vs": {
+            "type": "string",
+            "description": "Value of the stat for the last 30 days (VS).",
+            "x-cast-to": "int32"
+          },
+          "value_monthly_nc": {
+            "type": "string",
+            "description": "Value of the stat for the last 30 days (NC).",
+            "x-cast-to": "int32"
+          },
+          "value_monthly_tr": {
+            "type": "string",
+            "description": "Value of the stat for the last 30 days (TR).",
+            "x-cast-to": "int32"
+          },
+          "value_weekly_vs": {
+            "type": "string",
+            "description": "Value of the stat for the last 7 days (VS).",
+            "x-cast-to": "int32"
+          },
+          "value_weekly_nc": {
+            "type": "string",
+            "description": "Value of the stat for the last 7 days (NC).",
+            "x-cast-to": "int32"
+          },
+          "value_weekly_tr": {
+            "type": "string",
+            "description": "Value of the stat for the last 7 days (TR).",
+            "x-cast-to": "int32"
+          },
+          "value_daily_vs": {
+            "type": "string",
+            "description": "Value of the stat for the last 24 hours (VS).",
+            "x-cast-to": "int32"
+          },
+          "value_daily_nc": {
+            "type": "string",
+            "description": "Value of the stat for the last 24 hours (NC).",
+            "x-cast-to": "int32"
+          },
+          "value_daily_tr": {
+            "type": "string",
+            "description": "Value of the stat for the last 24 hours (TR).",
+            "x-cast-to": "int32"
+          },
+          "value_one_life_max_vs": {
+            "type": "string",
+            "description": "Highest value of the stat in a single life (VS).",
+            "x-cast-to": "int32"
+          },
+          "value_one_life_max_nc": {
+            "type": "string",
+            "description": "Highest value of the stat in a single life (NC).",
+            "x-cast-to": "int32"
+          },
+          "value_one_life_max_tr": {
+            "type": "string",
+            "description": "Highest value of the stat in a single life (TR).",
+            "x-cast-to": "int32"
+          },
+          "last_save": {
+            "type": "string",
+            "description": "Last time the stat was saved."
+          },
+          "last_save_date": {
+            "type": "string",
+            "description": "Human-readable version of `last_save`."
+          }
+        }
+      },
+      "characters_stat_history": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the stats are being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "stat_name": {
+            "type": "string",
+            "description": "Name of the stat being returned."
+          },
+          "all_time": {
+            "type": "string",
+            "description": "All-time value of the stat.",
+            "x-cast-to": "int32"
+          },
+          "one_life_max": {
+            "type": "string",
+            "description": "Highest value of the stat in a single life.",
+            "x-cast-to": "int32"
+          },
+          "day": {
+            "type": "object",
+            "properties": {
+              "d01": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d02": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d03": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d04": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d05": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d06": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d07": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d08": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d09": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d10": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d11": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d12": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d13": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d14": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d15": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d16": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d17": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d18": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d19": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d20": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d21": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d22": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d23": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d24": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d25": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d26": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d27": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d28": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d29": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d30": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d31": {
+                "type": "string",
+                "x-cast-to": "int32"
+              }
+            }
+          },
+          "month": {
+            "type": "object",
+            "properties": {
+              "m01": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m02": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m03": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m04": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m05": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m06": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m07": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m08": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m09": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m10": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m11": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m12": {
+                "type": "string",
+                "x-cast-to": "int32"
+              }
+            }
+          },
+          "week": {
+            "type": "object",
+            "properties": {
+              "w01": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w02": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w03": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w04": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w05": {
+                "type": "string",
+                "x-cast-to": "int32"
+              }
+            }
+          },
+          "last_save": {
+            "type": "string",
+            "description": "Last time the stat was saved."
+          },
+          "last_save_date": {
+            "type": "string",
+            "description": "Human-readable version of `last_save`."
+          }
+        }
+      },
+      "characters_weapon_stat": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "The ID of the character.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "stat_name": {
+            "type": "string",
+            "description": "The name of the stat being recorded.",
+            "x-reference-to": "characters_stat.stat_name"
+          },
+          "item_id": {
+            "type": "string",
+            "description": "The ID of the item.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
+          },
+          "vehicle_id": {
+            "type": "string",
+            "description": "The ID of the vehicle.",
+            "x-cast-to": "int32",
+            "x-reference-to": "vehicle.vehicle_id"
+          },
+          "value": {
+            "type": "string",
+            "description": "The all-time value of the given stat.",
+            "x-cast-to": "int32"
+          },
+          "last_save": {
+            "type": "string",
+            "description": "Last time the stat was saved."
+          },
+          "last_save_date": {
+            "type": "string",
+            "description": "Human-readable version of `last_save`."
+          }
+        }
+      },
+      "characters_weapon_stat_by_faction": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "The ID of the character.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "stat_name": {
+            "type": "string",
+            "description": "The name of the stat being recorded.",
+            "x-reference-to": "characters_stat.stat_name"
+          },
+          "item_id": {
+            "type": "string",
+            "description": "The ID of the item.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
+          },
+          "vehicle_id": {
+            "type": "string",
+            "description": "The ID of the vehicle.",
+            "x-cast-to": "int32",
+            "x-reference-to": "vehicle.vehicle_id"
+          },
+          "value_vs": {
+            "type": "string",
+            "description": "The all-time value of the given stat for the VS faction.",
+            "x-cast-to": "int32"
+          },
+          "value_nc": {
+            "type": "string",
+            "description": "The all-time value of the given stat for the NC faction.",
+            "x-cast-to": "int32"
+          },
+          "value_tr": {
+            "type": "string",
+            "description": "The all-time value of the given stat for the TR faction.",
             "x-cast-to": "int32"
           },
           "last_save": {
@@ -2448,11 +3178,11 @@
       },
       "characters_stat": {
         "summary": "Character Statistics",
-        "description": "Shows the playtime for Combat Medic.\nhttps://census.daybreakgames.com/get/ps2/characters_stat?character_id=5428072203494645969&stat_name=play_time&profile_id=4",
+        "description": "Shows the playtime for Combat Medic.\nhttps://census.daybreakgames.com/get/ps2/characters_stat?character_id=5428010618015189601&stat_name=play_time&profile_id=4",
         "value": {
           "characters_stat_list": [
             {
-              "character_id": "5428072203494645969",
+              "character_id": "5428010618015189601",
               "stat_name": "play_time",
               "profile_id": "4",
               "value_forever": "4947689",
@@ -2462,6 +3192,192 @@
               "value_one_life_max": "10459",
               "last_save": "1684499211",
               "last_save_date": "2023-05-19 12:26:50.711936"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_stat_by_faction": {
+        "summary": "Character Statistics by Faction",
+        "description": "Shows the kills of an NC character. Note that no NC kills are listed, which is doubtful.\nhttps://census.daybreakgames.com/get/ps2/characters_stat_by_faction?character_id=5428010618015189601&stat_name=kills",
+        "value": {
+          "characters_stat_by_faction_list": [
+            {
+              "character_id": "5428010618015189601",
+              "stat_name": "kills",
+              "profile_id": "1",
+              "value_forever_vs": "3026",
+              "value_forever_nc": "3356",
+              "value_forever_tr": "2551",
+              "value_monthly_vs": "3",
+              "value_monthly_nc": "0",
+              "value_monthly_tr": "8",
+              "value_weekly_vs": "1",
+              "value_weekly_nc": "0",
+              "value_weekly_tr": "3",
+              "value_daily_vs": "0",
+              "value_daily_nc": "0",
+              "value_daily_tr": "1",
+              "value_one_life_max_vs": "7",
+              "value_one_life_max_nc": "9",
+              "value_one_life_max_tr": "6",
+              "last_save": "1669295387",
+              "last_save_date": "2022-11-24 13:09:46.730053"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_stat_history": {
+        "summary": "Historical Statistics",
+        "description": "Historical kills of an NC character.\nhttps://census.daybreakgames.com/get/ps2/characters_stat_history?character_id=5428010618015189601&stat_name=kills",
+        "value": {
+          "characters_stat_history_list": [
+            {
+              "character_id": "5428010618015189601",
+              "stat_name": "kills",
+              "all_time": "68754",
+              "one_life_max": "185",
+              "day": {
+                "d01": "26",
+                "d02": "0",
+                "d03": "0",
+                "d04": "5",
+                "d05": "20",
+                "d06": "51",
+                "d07": "0",
+                "d08": "0",
+                "d09": "0",
+                "d10": "0",
+                "d11": "0",
+                "d12": "0",
+                "d13": "0",
+                "d14": "0",
+                "d15": "0",
+                "d16": "0",
+                "d17": "0",
+                "d18": "0",
+                "d19": "0",
+                "d20": "0",
+                "d21": "0",
+                "d22": "0",
+                "d23": "0",
+                "d24": "0",
+                "d25": "0",
+                "d26": "0",
+                "d27": "0",
+                "d28": "0",
+                "d29": "0",
+                "d30": "0",
+                "d31": "0"
+              },
+              "month": {
+                "m01": "102",
+                "m02": "0",
+                "m03": "0",
+                "m04": "0",
+                "m05": "0",
+                "m06": "0",
+                "m07": "0",
+                "m08": "0",
+                "m09": "0",
+                "m10": "0",
+                "m11": "0",
+                "m12": "0"
+              },
+              "week": {
+                "w01": "51",
+                "w02": "51",
+                "w03": "0",
+                "w04": "0",
+                "w05": "0",
+                "w06": "0",
+                "w07": "0",
+                "w08": "0",
+                "w09": "0",
+                "w10": "0",
+                "w11": "0",
+                "w12": "0",
+                "w13": "0"
+              },
+              "last_save": "1669295387",
+              "last_save_date": "2022-11-24 13:09:47.032"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_weapon_stat_infantry_weapon": {
+        "summary": "Infantry Weapon Statistics",
+        "description": "Hit count of the NC1 Gauss Rifle of an NC character.\nhttps://census.daybreakgames.com/get/ps2/characters_weapon_stat?character_id=5428010618015189601&stat_name=weapon_hit_count&item_id=4",
+        "value": {
+          "characters_weapon_stat_list": [
+            {
+              "character_id": "5428010618015189601",
+              "stat_name": "weapon_hit_count",
+              "item_id": "4",
+              "vehicle_id": "0",
+              "value": "11446",
+              "last_save": "1394703677",
+              "last_save_date": "2014-03-13 09:41:17.0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_weapon_stat_vehicle": {
+        "summary": "Vehicle Statistics",
+        "description": "Death count of the Flash of an NC character.\nhttps://census.daybreakgames.com/get/ps2/characters_weapon_stat?character_id=5428010618015189601&item_id=0&vehicle_id=!0&stat_name=weapon_deaths&vehicle_id=1",
+        "value": {
+          "characters_weapon_stat_list": [
+            {
+              "character_id": "5428010618015189601",
+              "stat_name": "weapon_deaths",
+              "item_id": "0",
+              "vehicle_id": "1",
+              "value": "16",
+              "last_save": "1448994374",
+              "last_save_date": "2015-12-01 18:26:14.0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_weapon_stat_by_faction_infantry_weapon": {
+        "summary": "Infantry Weapon Statistics",
+        "description": "Hit count of the NC1 Gauss Rifle of an NC character.\nhttps://census.daybreakgames.com/get/ps2/characters_weapon_stat_by_faction?character_id=5428010618015189601&stat_name=weapon_headshots&vehicle_id=0&item_id=4",
+        "value": {
+          "characters_weapon_stat_by_faction_list": [
+            {
+              "character_id": "5428010618015189601",
+              "stat_name": "weapon_headshots",
+              "item_id": "4",
+              "vehicle_id": "0",
+              "value_vs": "94",
+              "value_nc": "0",
+              "value_tr": "149",
+              "last_save": "1394669799",
+              "last_save_date": "2014-03-13 00:16:39.0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_weapon_stat_by_faction_vehicle": {
+        "summary": "Vehicle Statistics",
+        "description": "Total vehicle kills for a Vanguard, any weapon.\nhttps://census.daybreakgames.com/get/ps2/characters_weapon_stat_by_faction?character_id=5428010618015189601&stat_name=weapon_vehicle_kills&vehicle_id=5&item_id=0",
+        "value": {
+          "characters_weapon_stat_by_faction_list": [
+            {
+              "character_id": "5428010618015189601",
+              "stat_name": "weapon_vehicle_kills",
+              "item_id": "0",
+              "vehicle_id": "5",
+              "value_vs": "5",
+              "value_nc": "0",
+              "value_tr": "5",
+              "last_save": "1571838169",
+              "last_save_date": "2019-10-23 13:42:49.0"
             }
           ],
           "returned": 1
