@@ -59,6 +59,10 @@
     {
       "name": "Statistics",
       "description": "Collections concerning character statistics for weapon, classes, or vehicles."
+    },
+    {
+      "name": "Leaderboards",
+      "description": "Global or server-wide leaderboards for select statistics."
     }
   ],
   "security": [],
@@ -411,6 +415,64 @@
                 "examples": {
                   "higby": {
                     "$ref": "#/components/examples/characters_friend"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_leaderboard": {
+      "get": {
+        "summary": "Character Leaderboard",
+        "description": "Query the leaderboard for a character. Note that only the top 10'000 players for a given statistic are tracked in the leaderboard; many characters will not have an entry in this collection.\n\nThe `limit` key inserted into the response indicates the number of requested entries when passing multiple character IDs. Comparison with `returned` may be used to determine whether any characters were skipped due to not being in the leaderboard.",
+        "tags": [
+          "Leaderboards"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/leaderboardCharacterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/leaderboardNameParam"
+          },
+          {
+            "$ref": "#/components/parameters/leaderboardPeriodParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "limit": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "characters_leaderboard_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/leaderboard"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "key": {
+                      "type": "string"
+                    },
+                    "count": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
                   }
                 }
               }
@@ -821,6 +883,65 @@
                 "examples": {
                   "tr": {
                     "$ref": "#/components/examples/faction"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/leaderbord": {
+      "get": {
+        "summary": "Global Leaderboard",
+        "description": "Global leaderboard for a given server. This only includes the top 10'000 players for a given category and is not directly searchable. See `characters_leaderboard` to look up a character's ranking.\n\n`c:start` and `c:limit` are supported and allow for pagination. `c:join` and `c:tree` are also permitted. Any other query commands will be silently ignored.\n\nUnlike most other tables, this one defaults to a `c:limit` value of 10 and is always sorted in ascending order of leaderboard rank.",
+        "tags": [
+          "Leaderboards"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/leaderboardNameParam"
+          },
+          {
+            "$ref": "#/components/parameters/leaderboardPeriodParam"
+          },
+          {
+            "$ref": "#/components/parameters/worldIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "leaderboard_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/leaderboard"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "key": {
+                      "type": "string"
+                    },
+                    "count": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "cobalt_all_time_kills": {
+                    "$ref": "#/components/examples/leaderboard"
                   }
                 }
               }
@@ -1718,6 +1839,56 @@
         },
         "x-cast-to": "int32"
       },
+      "leaderboardNameParam": {
+        "name": "name",
+        "in": "query",
+        "description": "Name of a statistic for leaderboards.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Kills",
+            "Score",
+            "Time",
+            "Deaths"
+          ]
+        }
+      },
+      "leaderboardPeriodParam": {
+        "name": "period",
+        "in": "query",
+        "description": "Time period for a leadboard.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Forever",
+            "Monthly",
+            "Weekly",
+            "Daily",
+            "OneLife"
+          ]
+        }
+      },
+      "leaderboardCharacterIdParam": {
+        "name": "character_id",
+        "in": "query",
+        "description": "Unique identifier of a character for which to fetch leaderboard data.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int64"
+      },
+      "leaderboardWorldParam": {
+        "name": "world",
+        "in": "query",
+        "description": "Server for which to fetch leaderboard data. Note that this may return results for defunct servers, such as Lithcorp (ID 11) despite those characters since having been transfered to Cobalt (ID 13).",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "loadoutIdParam": {
         "name": "loadout_id",
         "in": "query",
@@ -1823,6 +1994,22 @@
             "weapon_hit_count",
             "weapon_play_time",
             "weapon_score"
+          ]
+        }
+      },
+      "statNameParam_characters_weapon_stat_by_faction": {
+        "name": "stat_name",
+        "in": "query",
+        "description": "Name of a statistic for the `characters_weapon_stat_by_faction` collection.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "weapon_damage_given",
+            "weapon_damage_taken_by",
+            "weapon_headshots",
+            "weapon_killed_by",
+            "weapon_kills",
+            "weapon_vehicle_kills"
           ]
         }
       },
@@ -2694,6 +2881,27 @@
           }
         }
       },
+      "leaderboard": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "The ID of the character.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "value": {
+            "type": "string",
+            "description": "The all-time value of the given statistic.",
+            "x-cast-to": "int32"
+          },
+          "rank": {
+            "type": "string",
+            "description": "The rank of the character for the given statistic.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
       "loadout": {
         "type": "object",
         "properties": {
@@ -3152,6 +3360,22 @@
           "returned": 1
         }
       },
+      "characters_leaderboard": {
+        "summary": "Higby's leaderboard entry for all-time kills.\nhttps://census.daybreakgames.com/get/ps2/characters_leaderboard?character_id=5428010618015189601&name=Kills&period=Forever",
+        "value": {
+          "limit": 1,
+          "characters_leaderboard_list": [
+            {
+              "character_id": "5428010618015189601",
+              "value": "68754",
+              "rank": "6583"
+            }
+          ],
+          "returned": 1,
+          "key": "Forever_Kills",
+          "count": 10000
+        }
+      },
       "characters_online_status": {
         "summary": "Higby",
         "value": {
@@ -3550,6 +3774,67 @@
             }
           ],
           "returned": 1
+        }
+      },
+      "leaderboard": {
+        "summary": "All-time kills on Cobalt.\n\nhttps://census.daybreakgames.com/get/ps2/leaderboard?name=Kills&period=Forever&world=13",
+        "value": {
+          "limit": 10,
+          "leaderboard_list": [
+            {
+              "character_id": "5428011263289812449",
+              "value": "1004944",
+              "rank": "0"
+            },
+            {
+              "character_id": "5428092148238898497",
+              "value": "933727",
+              "rank": "1"
+            },
+            {
+              "character_id": "5428143250883637345",
+              "value": "871442",
+              "rank": "2"
+            },
+            {
+              "character_id": "8252189355200955505",
+              "value": "726831",
+              "rank": "3"
+            },
+            {
+              "character_id": "8280485721807277905",
+              "value": "611044",
+              "rank": "4"
+            },
+            {
+              "character_id": "5428123302629266225",
+              "value": "587284",
+              "rank": "5"
+            },
+            {
+              "character_id": "5428359100729973969",
+              "value": "564648",
+              "rank": "6"
+            },
+            {
+              "character_id": "5428064957346113809",
+              "value": "554749",
+              "rank": "7"
+            },
+            {
+              "character_id": "5428551667113611937",
+              "value": "552295",
+              "rank": "8"
+            },
+            {
+              "character_id": "8261280742797131393",
+              "value": "548013",
+              "rank": "9"
+            }
+          ],
+          "returned": 10,
+          "key": "Forever_Kills",
+          "count": 10000
         }
       },
       "loadout": {
