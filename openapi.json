@@ -3,7 +3,7 @@
   "info": {
     "title": "PlanetSide 2 API",
     "summary": "Public API for PlanetSide 2 community developers",
-    "description": "Unofficial API specification for [PlanetSide 2](https://www.planetside2.com/) as made available through the [Daybreak Game Company Census API](http://census.daybreakgames.com/).\n\nThese API specs are not affiliated with Daybreak Game Company, Rogue Planet Games, or the PlanetSide 2 developer team and come with absolutely no warranty.",
+    "description": "Unofficial API specification for [PlanetSide 2](https://www.planetside2.com/) as made available through the [Daybreak Game Company Census API](https://census.daybreakgames.com/).\n\nThese API specs are not affiliated with Daybreak Game Company, Rogue Planet Games, or the PlanetSide 2 developer team and come with absolutely no warranty.",
     "termsOfService": "https://census.daybreakgames.com#services-api-policy",
     "contact": {
       "name": "Project Homepage",
@@ -14,15 +14,15 @@
   "jsonSchemaDialect": "https://spec.openapis.org/oas/3.1/dialect/base",
   "externalDocs": {
     "description": "Official documentation for the documentation for the PlanetSide 2 API.",
-    "url": "http://census.daybreakgames.com/"
+    "url": "https://census.daybreakgames.com/"
   },
   "servers": [
     {
-      "url": "http://census.daybreakgames.com",
+      "url": "https://census.daybreakgames.com",
       "description": "Casual-use Daybreak Games endpoint, throttled to 10 requests per minute and IP address"
     },
     {
-      "url": "http://census.daybreakgames.com/{serviceId}",
+      "url": "https://census.daybreakgames.com/{serviceId}",
       "description": "Production Daybreak Games endpoint, with service ID",
       "variables": {
         "serviceId": {
@@ -63,6 +63,10 @@
     {
       "name": "Leaderboards",
       "description": "Global or server-wide leaderboards for select statistics."
+    },
+    {
+      "name": "Items & Bundles",
+      "description": "Collections related to item enumeration and availability, as well as the in-game depot."
     }
   ],
   "security": [],
@@ -415,6 +419,55 @@
                 "examples": {
                   "higby": {
                     "$ref": "#/components/examples/characters_friend"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_item": {
+      "get": {
+        "summary": "Character Items",
+        "description": "Query the items of a character. Note that this collection no longer lists account-wide item unlocks as this served as a fingerprint to identify players across multiple characters.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_item_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_item"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/characters_item"
                   }
                 }
               }
@@ -891,7 +944,289 @@
         }
       }
     },
-    "/get/{game}/leaderbord": {
+    "/get/{game}/item": {
+      "get": {
+        "summary": "Items",
+        "description": "Items in PlanetSide 2 are used to represent weapons, tools, and consumables, but also cosmetic items and internal control objects for player renaming or outfit resource consumption. Use the `item_type` collection to narrow searches to specific types.",
+        "tags": [
+          "Items & Bundles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "item_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/item"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "knife": {
+                    "$ref": "#/components/examples/item"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/item_attachment": {
+      "get": {
+        "summary": "Item Attachments",
+        "description": "Maps attachment items to the items they can be attached to.",
+        "tags": [
+          "Items & Bundles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "item_attachment_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/item_attachment"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "knife": {
+                    "$ref": "#/components/examples/item_attachment"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/item_category": {
+      "get": {
+        "summary": "Item Categories",
+        "description": "Item categories are used to group items together for display in the loadout screen or depot.",
+        "tags": [
+          "Items & Bundles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemCategoryIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "item_category_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/item_category"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "knife": {
+                    "$ref": "#/components/examples/item_category"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/item_profile": {
+      "get": {
+        "summary": "Item-Class Mapping",
+        "description": "Maps items to profiles (classes/vehicles) that have access to them.",
+        "tags": [
+          "Items & Bundles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/profileIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "item_profile_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/item_profile"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "knife": {
+                    "$ref": "#/components/examples/item_profile"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/item_to_weapon": {
+      "get": {
+        "summary": "Item-Weapon Mapping",
+        "description": "Maps items (including name, availability) to its respective weapon object\n\nNot all items have a weapon objects, though some filtering can be done through the `item_type_id` field, with the ID 26 representing most weapon types.",
+        "tags": [
+          "Items & Bundles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/weaponIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "item_to_weapon_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/item_to_weapon"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "knife": {
+                    "$ref": "#/components/examples/item_to_weapon"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/item_type": {
+      "get": {
+        "summary": "Item Types",
+        "description": "Items in PlanetSide 2 represent many different things beyond weapons, such as implant packs, cosmetics, or name change tokens. They are also used as internal helpers when pulling outfit resources, spawning vehicles, or interacting with certain terminals.\n\nThis collection lists the different item types, though many of these are never encountered on the API.",
+        "tags": [
+          "Items & Bundles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "item_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/item_type"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "knife": {
+                    "$ref": "#/components/examples/item_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/leaderboard": {
       "get": {
         "summary": "Global Leaderboard",
         "description": "Global leaderboard for a given server. This only includes the top 10'000 players for a given category and is not directly searchable. See `characters_leaderboard` to look up a character's ranking.\n\n`c:start` and `c:limit` are supported and allow for pagination. `c:join` and `c:tree` are also permitted. Any other query commands will be silently ignored.\n\nUnlike most other tables, this one defaults to a `c:limit` value of 10 and is always sorted in ascending order of leaderboard rank.",
@@ -988,6 +1323,150 @@
                 "examples": {
                   "ncInfiltrator": {
                     "$ref": "#/components/examples/loadout"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/marketing_bundle": {
+      "get": {
+        "summary": "Bundles",
+        "description": "Bundles available for purchase in the in-game store (Depot). This collection represents actual bundles. For pseudo-bundles used to purchase individual weapon attachments or cosmetics, see the `marketing_bundle_with_1_item` collection instead.\n\nNote that there is no guaranteed way of determining whether a given bundle is currently available for purchase. This collection contains many entries for defunct items and bundles, such as the single-use camos from the early days of the game.\n\nThis collection is automatically maintained and generally accurate with regards to certification prices, the daybreak/station cash values are generally less reliable.",
+        "tags": [
+          "Items & Bundles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/marketingBundleIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "marketing_bundle_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/marketing_bundle"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "ns15mBundle": {
+                    "$ref": "#/components/examples/marketing_bundle"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/marketing_bundle_item": {
+      "get": {
+        "summary": "Items Available in Bundles",
+        "description": "Maps marketing bundles to the items they contain.",
+        "tags": [
+          "Items & Bundles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/marketingBundleIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "marketing_bundle_item_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/marketing_bundle_item"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "ns15mBundle": {
+                    "$ref": "#/components/examples/marketing_bundle_item"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/marketing_bundle_with_1_item": {
+      "get": {
+        "summary": "Individual Item Bundles",
+        "description": "These are pseudo-bundles with exactly 1 item each, allowing players to buy individual weapons or cosmetics with Daybreak Cash (formerly Station Cash).\n\nNote that in the case of weapons, these bundles are genreally mirrored by 'regular' bundles in the `ps2/marketing_bundle` collection, with the same `marketing_bundle_id`.",
+        "tags": [
+          "Items & Bundles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/marketingBundleIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "marketing_bundle_with_1_item_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/marketing_bundle_with_1_item"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "ns15mBundle": {
+                    "$ref": "#/components/examples/marketing_bundle_with_1_item"
                   }
                 }
               }
@@ -1839,6 +2318,24 @@
         },
         "x-cast-to": "int32"
       },
+      "itemTypeIdParam": {
+        "name": "item_type_id",
+        "in": "query",
+        "description": "Unique identifier of an item type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "itemCategoryIdParam": {
+        "name": "item_category_id",
+        "in": "query",
+        "description": "Unique identifier of an item category.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "leaderboardNameParam": {
         "name": "name",
         "in": "query",
@@ -1893,6 +2390,15 @@
         "name": "loadout_id",
         "in": "query",
         "description": "Unique identifier of a loadout.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "marketingBundleIdParam": {
+        "name": "marketing_bundle_id",
+        "in": "query",
+        "description": "Unique identifier of a marketing bundle.",
         "schema": {
           "type": "string"
         },
@@ -2034,6 +2540,15 @@
         "name": "vehicle_id",
         "in": "query",
         "description": "Unique identifier of a vehicle.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "weaponIdParam": {
+        "name": "weapon_id",
+        "in": "query",
+        "description": "Unique identifier of a weapon.",
         "schema": {
           "type": "string"
         },
@@ -2316,6 +2831,23 @@
                 }
               }
             }
+          }
+        }
+      },
+      "characters_item": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character side of the relationship.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "item_id": {
+            "type": "string",
+            "description": "Item side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
           }
         }
       },
@@ -2825,6 +3357,23 @@
           }
         }
       },
+      "characters_world": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the world is being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "world_id": {
+            "type": "string",
+            "description": "The `ps2/world` of the character.",
+            "x-cast-to": "int32",
+            "x-reference-to": "world.world_id"
+          }
+        }
+      },
       "faction": {
         "type": "object",
         "properties": {
@@ -2864,20 +3413,278 @@
           }
         }
       },
-      "characters_world": {
+      "item": {
         "type": "object",
         "properties": {
-          "character_id": {
+          "item_id": {
             "type": "string",
-            "description": "Character for which the world is being returned.",
-            "x-cast-to": "int64",
-            "x-reference-to": "character.character_id"
-          },
-          "world_id": {
-            "type": "string",
-            "description": "The `ps2/world` of the character.",
+            "description": "Unique ID of the collection.",
             "x-cast-to": "int32",
-            "x-reference-to": "world.world_id"
+            "x-reference-to": "item.item_id"
+          },
+          "item_type_id": {
+            "type": "string",
+            "description": "The `ps2/item_type` of the item.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item_type.item_type_id"
+          },
+          "item_category_id": {
+            "type": "string",
+            "description": "The `ps2/item_category` of the item.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item_category.item_category_id"
+          },
+          "activatable_ability_id": {
+            "type": "string",
+            "description": "The active `ps2/ability` granted upon equipping this item, such as the Heavy Assault's Overshield or MAX abilities.",
+            "x-cast-to": "int32",
+            "x-reference-to": "ability.ability_id"
+          },
+          "passive_ability_id": {
+            "type": "string",
+            "description": "The passive `ps2/ability` granted upon equipping this item, such as a suppressor or scope.",
+            "x-cast-to": "int32",
+            "x-reference-to": "ability.ability_id"
+          },
+          "is_vehicle_weapon": {
+            "type": "string",
+            "description": "Whether this item is a vehicle weapon.",
+            "x-cast-to": "bool"
+          },
+          "name": {
+            "description": "Display name of the item.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Description of the item.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "faction_id": {
+            "type": "string",
+            "description": "The `ps2/faction` of the item. Items with a faction ID of 0 are common-pool and available to all factions.",
+            "x-cast-to": "int32",
+            "x-reference-to": "faction.faction_id"
+          },
+          "max_stack_size": {
+            "type": "string",
+            "description": "The maximum number of this item that can be held at once. Primarily used for consumables or carried explosives.",
+            "x-cast-to": "int32"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "The `ps2/image_set` of the item's display icon.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "The `ps2/image` of the item's display icon.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Relative path to the default image of the item."
+          },
+          "skill_set_id": {
+            "type": "string",
+            "description": "The `ps2/skill_set` of the item. Remnant of the original certification menu, used to unlock the weapon in the certification skill tree and lock out purchasing of attachments for weapons the player has not unlocked yet.",
+            "x-cast-to": "int32",
+            "x-reference-to": "skill_set.skill_set_id"
+          },
+          "is_default_attachment": {
+            "type": "string",
+            "description": "If true, the item is auto-granted to the player, such as the default scope and ammo types.",
+            "x-cast-to": "bool"
+          }
+        }
+      },
+      "item_attachment": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "description": "Host item the `attachment_item_id` can be attached to.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
+          },
+          "attachment_item_id": {
+            "type": "string",
+            "description": "Item that can be attached to the `item_id`.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
+          }
+        }
+      },
+      "item_category": {
+        "type": "object",
+        "properties": {
+          "item_category_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item_category.item_category_id"
+          },
+          "name": {
+            "description": "Display name of the item category.",
+            "$ref": "#/components/schemas/localized_string"
+          }
+        }
+      },
+      "item_profile": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "description": "Item side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
+          },
+          "profile_id": {
+            "type": "string",
+            "description": "Profile side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "profile_2.profile_id"
+          }
+        }
+      },
+      "item_to_weapon": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "description": "Item side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
+          },
+          "weapon_id": {
+            "type": "string",
+            "description": "Weapon side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "weapon.weapon_id"
+          }
+        }
+      },
+      "item_type": {
+        "type": "object",
+        "properties": {
+          "item_type_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item_type.item_type_id"
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the item type."
+          },
+          "code": {
+            "type": "string",
+            "description": "Internal code of the item type."
+          }
+        }
+      },
+      "marketing_bundle": {
+        "type": "object",
+        "properties": {
+          "marketing_bundle_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32",
+            "x-reference-to": "marketing_bundle.marketing_bundle_id"
+          },
+          "name": {
+            "description": "Display name of the marketing bundle.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Description of the marketing bundle.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "The `ps2/image` of the marketing bundle's display icon.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "station_cash_price": {
+            "type": "string",
+            "description": "The price of the marketing bundle in Station Cash.",
+            "x-cast-to": "int32"
+          },
+          "cert_price": {
+            "type": "string",
+            "description": "The price of the marketing bundle in Certification Points.",
+            "x-cast-to": "int32"
+          },
+          "release_time": {
+            "type": "string",
+            "description": "The time the marketing bundle was released as a UTC timestamp.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "marketing_bundle_item": {
+        "type": "object",
+        "properties": {
+          "marketing_bundle_id": {
+            "type": "string",
+            "description": "Marketing bundle side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "marketing_bundle.marketing_bundle_id"
+          },
+          "item_id": {
+            "type": "string",
+            "description": "Item side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
+          },
+          "quantity": {
+            "type": "string",
+            "description": "The quantity of the item in the marketing bundle.",
+            "x-cast-to": "int32"
+          },
+          "release_time": {
+            "type": "string",
+            "description": "The time the marketing bundle was released as a UTC timestamp.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "marketing_bundle_with_1_item": {
+        "type": "object",
+        "properties": {
+          "marketing_bundle_id": {
+            "type": "string",
+            "description": "Marketing bundle side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "marketing_bundle_with_1_item.marketing_bundle_id"
+          },
+          "item_id": {
+            "type": "string",
+            "description": "Item side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
+          },
+          "item_quantity": {
+            "type": "string",
+            "description": "The quantity of the item in the marketing bundle.",
+            "x-cast-to": "int32"
+          },
+          "station_cash_price": {
+            "type": "string",
+            "description": "The price of the marketing bundle in Daybreak Cash (formerly Station Cash).",
+            "x-cast-to": "int32"
+          },
+          "cert_price": {
+            "type": "string",
+            "description": "The price of the marketing bundle in Certification Points.",
+            "x-cast-to": "int32"
+          },
+          "release_time": {
+            "type": "string",
+            "description": "The time the marketing bundle was released as a UTC timestamp.",
+            "x-cast-to": "int32"
           }
         }
       },
@@ -3360,6 +4167,34 @@
           "returned": 1
         }
       },
+      "characters_item": {
+        "summary": "Higby's items. Note that the list has been truncated to 5 items as it always returns the full list.\nhttps://census.daybreakgames.com/get/ps2/characters_item?character_id=5428010618015189601",
+        "value": {
+          "characters_item_list": [
+            {
+              "character_id": "5428010618015189601",
+              "item_id": "1"
+            },
+            {
+              "character_id": "5428010618015189601",
+              "item_id": "7"
+            },
+            {
+              "character_id": "5428010618015189601",
+              "item_id": "13"
+            },
+            {
+              "character_id": "5428010618015189601",
+              "item_id": "19"
+            },
+            {
+              "character_id": "5428010618015189601",
+              "item_id": "23"
+            }
+          ],
+          "returned": 2522
+        }
+      },
       "characters_leaderboard": {
         "summary": "Higby's leaderboard entry for all-time kills.\nhttps://census.daybreakgames.com/get/ps2/characters_leaderboard?character_id=5428010618015189601&name=Kills&period=Forever",
         "value": {
@@ -3776,8 +4611,323 @@
           "returned": 1
         }
       },
+      "item": {
+        "summary": "NC1 Gauss Rifle",
+        "value": {
+          "item_list": [
+            {
+              "item_id": "4",
+              "item_type_id": "26",
+              "item_category_id": "7",
+              "is_vehicle_weapon": "0",
+              "name": {
+                "de": "NC1 Gaußgewehr",
+                "en": "NC1 Gauss Rifle",
+                "es": "Rifle Gauss NC1",
+                "fr": "Fusil Gauss NC1",
+                "it": "Fucile Gauss NC1",
+                "tr": "NC1 Gauss Tüfeği"
+              },
+              "description": {
+                "de": "Das Standard-Gaußgewehr NC1 war die erste erfolgreiche Einführung der Gaußgewehr-Technologie in kleinen Waffen. Nur für NK.",
+                "en": "The standard issue NC1 Gauss Rifle was the first successful implementation of coilgun technology in small arms. NC use only.",
+                "es": "El rifle NC1 Gauss estándar representó la primera implementación de tecnología coilgun en armas pequeñas. Solo para NC",
+                "fr": "Le fusil Gauss NC1 standard représente la première application réussie de la technologie de canon magnétique aux armes de petit calibre. NC uniquement.",
+                "it": "Il fucile Gauss NC1 standard rappresenta la prima applicazione riuscita della tecnologia di accelerazione magnetica nelle armi di piccole dimensioni. Esclusivo NC.",
+                "tr": "Standart üretim NC1 Gauss Tüfeği, bobinsilahı teknolojisininin hafif silahlara ilk başarılı uygulanmasıdır. Yalnızca Yeni Birleşim kullanımı için."
+              },
+              "faction_id": "2",
+              "max_stack_size": "1",
+              "image_set_id": "2745",
+              "image_id": "5310",
+              "image_path": "/files/ps2/images/static/5310.png",
+              "skill_set_id": "132",
+              "is_default_attachment": "0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "item_attachment": {
+        "summary": "10 Attachments for the NC1 Gauss Rifle\nhttps://census.daybreakgames.com/get/ps2/item_attachment?item_id=4&c:limit=10",
+        "value": {
+          "item_attachment_list": [
+            {
+              "item_id": "4",
+              "attachment_item_id": "34"
+            },
+            {
+              "item_id": "4",
+              "attachment_item_id": "74"
+            },
+            {
+              "item_id": "4",
+              "attachment_item_id": "115"
+            },
+            {
+              "item_id": "4",
+              "attachment_item_id": "148"
+            },
+            {
+              "item_id": "4",
+              "attachment_item_id": "149"
+            },
+            {
+              "item_id": "4",
+              "attachment_item_id": "150"
+            },
+            {
+              "item_id": "4",
+              "attachment_item_id": "151"
+            },
+            {
+              "item_id": "4",
+              "attachment_item_id": "558"
+            },
+            {
+              "item_id": "4",
+              "attachment_item_id": "796"
+            },
+            {
+              "item_id": "4",
+              "attachment_item_id": "799"
+            }
+          ],
+          "returned": 10
+        }
+      },
+      "item_category": {
+        "summary": "Assault Rifles",
+        "value": {
+          "item_category_list": [
+            {
+              "item_category_id": "7",
+              "name": {
+                "de": "Sturmgewehr",
+                "en": "Assault Rifle",
+                "es": "Rifle de asalto",
+                "fr": "Fusil d'assaut",
+                "it": "Fucile d'assalto",
+                "tr": "Taarruz Tüfeği"
+              }
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "item_profile": {
+        "summary": "Classes that can use the default NC pistol.\nhttps://census.daybreakgames.com/get/ps2/item_profile?item_id=1&c:limit=10",
+        "value": {
+          "item_profile_list": [
+            {
+              "item_id": "1",
+              "profile_id": "2"
+            },
+            {
+              "item_id": "1",
+              "profile_id": "4"
+            },
+            {
+              "item_id": "1",
+              "profile_id": "5"
+            },
+            {
+              "item_id": "1",
+              "profile_id": "6"
+            },
+            {
+              "item_id": "1",
+              "profile_id": "7"
+            }
+          ],
+          "returned": 5
+        }
+      },
+      "item_to_weapon": {
+        "summary": "Connects the Beamer VS3 to its weapon object.\ncensus.daybreakgames.com/get/ps2/item_to_weapon?item_id=21",
+        "value": {
+          "item_to_weapon_list": [
+            {
+              "item_id": "21",
+              "weapon_id": "13"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "item_type": {
+        "summary": "A selection of common item types.\nhttps://census.daybreakgames.com/get/ps2/item_type?item_type_id=26,27,38,39,48",
+        "value": {
+          "item_type_list": [
+            {
+              "item_type_id": "26",
+              "name": "Weapon",
+              "code": "Weapon"
+            },
+            {
+              "item_type_id": "27",
+              "name": "Attachment",
+              "code": "Attachment"
+            },
+            {
+              "item_type_id": "38",
+              "name": "Vehicle Cosmetic",
+              "code": "VehicleCosmetic"
+            },
+            {
+              "item_type_id": "39",
+              "name": "Infantry Cosmetic",
+              "code": "InfantryCosmetic"
+            },
+            {
+              "item_type_id": "48",
+              "name": "Construction Module",
+              "code": "ConstructionModule"
+            }
+          ],
+          "returned": 5
+        }
+      },
+      "marketing_bundle": {
+        "summary": "'PlanetSide Legacy Bundle (2022)'. Note the NULL value for the cert price as this is a DBC-only bundle.\nhttps://census.daybreakgames.com/get/ps2/marketing_bundle?marketing_bundle_id=812821&c:includeNull=1",
+        "value": {
+          "marketing_bundle_list": [
+            {
+              "marketing_bundle_id": "812821",
+              "name": {
+                "de": "PlanetSide-Legacy-Paket (2022)",
+                "en": "PlanetSide Legacy Bundle (2022)",
+                "es": "Lote de legado de Planetside (2022)",
+                "fr": "Ensemble \"Héritage de PlanetSide\"(2022)",
+                "it": "Pacchetto Legacy PlanetSide (2022)",
+                "tr": "NULL"
+              },
+              "description": {
+                "de": "Feiere die Geschichte der PlanetSide-Serie! Dieses Paket beinhaltet kosmetische Gegenstände für alle Fraktionen und Waffen für VS, NK und TR. Der Heldenbooster wird nur dem Charakter gewährt, der das Paket kauft. \"Perfekte\" Implantate sind für das komplette Konto verfügbar und können nicht zerlegt werden.",
+                "en": "Celebrate the legacy of the PlanetSide franchise! This bundle contains cosmetics for all factions, and weapons for VS, NC, and TR. Heroic Boost is granted only to the character that purchases the bundle. \"Perfect\" Implants are granted account-wide, and cannot be broken down.",
+                "es": "\"¡Celebra el legado de la serie PlanetSide! El lote contiene decoraciones para todas las facciones y armas para SV, NC y RT. El potenciador \nheroico solo está disponible para el personaje que compre el lote. Los implantes \"\"perfectos\"\" se conceden a toda la cuenta y no pueden desmontarse.\"",
+                "fr": "Fêtez l'héritage de la franchise PlanetSide ! Cet ensemble contient des armes pour toutes les factions, et des éléments esthétiques pour la RT, le NC et la SV. Le Boost héroïque n'est fourni que pour le personnage qui achète le lot. Les implants de type \"Parfait\" sont disponibles pour l'ensemble du compte et ne peuvent être décomposés.",
+                "it": "Celebra le origini del franchise di PlanetSide! Questo pacchetto contiene oggetti cosmetici per tutte le fazioni e armi per SV, NC e RT. Il potenziamento eroico può essere usato solo dal personaggio che ha acquistato il pacchetto. Gli impianti \"Perfect\" sono per tutto l'account e non si possono smontare.",
+                "tr": "NULL"
+              },
+              "image_id": "807193",
+              "station_cash_price": "0",
+              "cert_price": "NULL",
+              "release_time": "1683702000"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "marketing_bundle_item": {
+        "summary": "Lists items contained in the 'PlanetSide Legacy Bundle (2022)'.\nhttps://census.daybreakgames.com/get/ps2/marketing_bundle_item?marketing_bundle_id=812821&c:limit=20",
+        "value": {
+          "marketing_bundle_item_list": [
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "75432",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013508",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013533",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013480",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013477",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013476",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013586",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013587",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013588",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013589",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013590",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013592",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013593",
+              "quantity": "1",
+              "release_time": "1683702000"
+            },
+            {
+              "marketing_bundle_id": "812821",
+              "item_id": "6013594",
+              "quantity": "1",
+              "release_time": "1683702000"
+            }
+          ],
+          "returned": 14
+        }
+      },
+      "marketing_bundle_with_1_item": {
+        "summary": "Comet VM2.\nhttps://census.daybreakgames.com/get/ps2/marketing_bundle_with_1_item?marketing_bundle_id=465",
+        "value": {
+          "marketing_bundle_with_1_item_list": [
+            {
+              "marketing_bundle_id": "465",
+              "item_id": "17001",
+              "item_quantity": "1",
+              "station_cash_price": "100",
+              "release_time": "1334041200"
+            }
+          ],
+          "returned": 1
+        }
+      },
       "leaderboard": {
-        "summary": "All-time kills on Cobalt.\n\nhttps://census.daybreakgames.com/get/ps2/leaderboard?name=Kills&period=Forever&world=13",
+        "summary": "All-time kills on Cobalt.\nhttps://census.daybreakgames.com/get/ps2/leaderboard?name=Kills&period=Forever&world=13",
         "value": {
           "limit": 10,
           "leaderboard_list": [
