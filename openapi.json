@@ -67,6 +67,10 @@
     {
       "name": "Items & Bundles",
       "description": "Collections related to item enumeration and availability, as well as the in-game depot."
+    },
+    {
+      "name": "Weapons & Firing Mechanics",
+      "description": "Weapon and firing mechanics data, including fire modes, projectiles, and ammo types."
     }
   ],
   "security": [],
@@ -1744,6 +1748,138 @@
                 "examples": {
                   "sunderer": {
                     "$ref": "#/components/examples/profile_2"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/weapon": {
+      "get": {
+        "summary": "Weapon",
+        "description": "Baseline weapon data, such as equip times, stock sights, and movement speed modifiers.",
+        "tags": [
+          "Weapons & Firing Mechanics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/weaponIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "weapon_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/weapon"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "regular": {
+                    "$ref": "#/components/examples/weapon_regular"
+                  },
+                  "knife": {
+                    "$ref": "#/components/examples/weapon_knife"
+                  },
+                  "heat": {
+                    "$ref": "#/components/examples/weapon_heat"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/weapon_ammo_slot": {
+      "get": {
+        "summary": "Ammo Slots",
+        "description": "Ammo slot data for a given weapon, including the clip size, reserve ammo capacity, and resupply behaviour.",
+        "tags": [
+          "Weapons & Firing Mechanics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/weaponIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "weapon_ammo_slot_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/weapon_ammo_slot"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "weapon_ammo_slot": {
+                    "$ref": "#/components/examples/weapon_ammo_slot"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/weapon_datasheet": {
+      "get": {
+        "summary": "Weapon Datasheet",
+        "description": "**Deprecated:** This table is not directly tied to the underlying fire mode and player state group data and may differ wildly from the true values!\n\nSuggested alternatives for the values provided by this collection are listed as part of the `weapon_datasheet` schema.",
+        "tags": [
+          "Weapons & Firing Mechanics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "weapon_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/weapon_datasheet"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "weapon_datasheet": {
+                    "$ref": "#/components/examples/weapon_datasheet"
                   }
                 }
               }
@@ -3982,6 +4118,235 @@
           }
         }
       },
+      "weapon": {
+        "type": "object",
+        "properties": {
+          "world_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "weapon_group_id": {
+            "type": "string",
+            "description": "ID of the weapon's group. Weapons in the same group are treated as a single weapon despite having distinct items. Examples include upgradable pseudo-weapons such as the medic or engineer tool, or the Infiltrator's Recon dart gun.\n\nNote that not all weapons have weapon groups, and that most weapon groups have only one weapon in them. The presence of this field has no bearing on the weapon being grouped or not.",
+            "x-cast-to": "int32"
+          },
+          "turn_modifier": {
+            "type": "string",
+            "description": "The modifier applied to the turn speed when the weapon is equipped.",
+            "x-cast-to": "float"
+          },
+          "move_modifier": {
+            "type": "string",
+            "description": "The modifier applied to the movement speed when the weapon is equipped.",
+            "x-cast-to": "float"
+          },
+          "sprint_recovery_ms": {
+            "type": "string",
+            "description": "Time after sprinting during which the cone-of-fire will retain its sprinting value before starting to recover.",
+            "x-cast-to": "int32"
+          },
+          "equip_ms": {
+            "type": "string",
+            "description": "The time in milliseconds it takes to equip the weapon.",
+            "x-cast-to": "int32"
+          },
+          "unequip_ms": {
+            "type": "string",
+            "description": "The time in milliseconds it takes to unequip the weapon.",
+            "x-cast-to": "int32"
+          },
+          "to_iron_sights_ms": {
+            "type": "string",
+            "description": "Transition duration when entering aim-down-sights in milliseconds.",
+            "x-cast-to": "int32"
+          },
+          "from_iron_sights_ms": {
+            "type": "string",
+            "description": "Transition duration when exiting aim-down-sights in milliseconds.",
+            "x-cast-to": "int32"
+          },
+          "heat_capacity": {
+            "type": "string",
+            "description": "Total capacity for heat-based weapons. This is comparable to the magazine size of regular weapons.",
+            "x-cast-to": "int32"
+          },
+          "heat_bleed_off_rate": {
+            "type": "string",
+            "description": "Rate at which heat is dissipated when not firing. Note that this value is represented as an integer on the API despite being a float internally.",
+            "x-cast-to": "int32"
+          },
+          "heat_overheat_penalty_ms": {
+            "type": "string",
+            "description": "The time in milliseconds it takes for the weapon to start cooling down after overheating.",
+            "x-cast-to": "int32"
+          },
+          "melee_detect_width": {
+            "type": "string",
+            "description": "On melee weapons, designates the width of the quick knife attack hitbox.",
+            "x-cast-to": "int32"
+          },
+          "melee_detect_height": {
+            "type": "string",
+            "description": "On melee weapons, designates the height of the quick knife attack hitbox.",
+            "x-cast-to": "int32"
+          },
+          "requires_ammo": {
+            "type": "string",
+            "description": "Whether equipping this weapon requires ammunition to be available. Used for grenades or the medic's shield regen device to prevent selection when out of ammo.",
+            "x-cast-to": "boolean"
+          },
+          "use_cooldown_ms": {
+            "type": "string",
+            "description": "Time in milliseconds between uses of this weapon.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "weapon_ammo_slot": {
+        "type": "object",
+        "properties": {
+          "weapon_id": {
+            "type": "string",
+            "description": "ID of the weapon to which this ammo slot belongs.",
+            "x-cast-to": "int32"
+          },
+          "weapon_slot_index": {
+            "type": "string",
+            "description": "Index of the slot in the weapon's ammo slot list.",
+            "x-cast-to": "int32"
+          },
+          "clip_size": {
+            "type": "string",
+            "description": "The number of bullets in a single clip of this ammo slot.",
+            "x-cast-to": "int32"
+          },
+          "capacity": {
+            "type": "string",
+            "description": "Reserve ammunition capacity of this ammo slot.",
+            "x-cast-to": "int32"
+          },
+          "refill_ammo_rate": {
+            "type": "string",
+            "description": "Number of bullets refilled per ammo resupply tick.",
+            "x-cast-to": "int32"
+          },
+          "refill_ammo_delay_ms": {
+            "type": "string",
+            "description": "If specified, applies an extra cooldown to the ammo resupply speed of the weapon slot.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "weapon_datasheet": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "description": "ID of the item to which this datasheet belongs.",
+            "x-cast-to": "int32"
+          },
+          "direct_damage": {
+            "type": "string",
+            "description": "Unreliable! Please refer to the damage effect listed in `ps2/fire_mode_2.damage_direct_effect_id` instead.",
+            "x-cast-to": "int32"
+          },
+          "indirect_damage": {
+            "type": "string",
+            "description": "Unreliable! Please refer to the damage effect listed in `ps2/fire_mode_2.damage_indirect_effect_id` instead.",
+            "x-cast-to": "int32"
+          },
+          "damage": {
+            "type": "string",
+            "description": "Unreliable! Please use the values from `ps2/fire_mode_2` instead.",
+            "x-cast-to": "int32"
+          },
+          "damage_min": {
+            "type": "string",
+            "description": "Unreliable! Please use the values from `ps2/fire_mode_2` instead.",
+            "x-cast-to": "int32"
+          },
+          "damage_max": {
+            "type": "string",
+            "description": "Unreliable! Please use the values from `ps2/fire_mode_2` instead.",
+            "x-cast-to": "int32"
+          },
+          "fire_cone": {
+            "type": "string",
+            "description": "Unreliable! Please refer to the player state group listed in `ps2/fire_mode_2.player_state_group_id` instead.",
+            "x-cast-to": "int32"
+          },
+          "fire_cone_min": {
+            "type": "string",
+            "description": "Unreliable! Please refer to the player state group listed in `ps2/fire_mode_2.player_state_group_id` instead.",
+            "x-cast-to": "int32"
+          },
+          "fire_cone_max": {
+            "type": "string",
+            "description": "Unreliable! Please refer to the `cof_` values in `ps2/fire_mode_2` instead.",
+            "x-cast-to": "int32"
+          },
+          "fire_rate_ms": {
+            "type": "string",
+            "description": "Unreliable! Please use `ps2/fire_mode_2.fire_refire_ms` instead.",
+            "x-cast-to": "int32"
+          },
+          "fire_rate_ms_min": {
+            "type": "string",
+            "description": "Unreliable! Please use `ps2/fire_mode_2.fire_refire_ms` instead.",
+            "x-cast-to": "int32"
+          },
+          "fire_rate_ms_max": {
+            "type": "string",
+            "description": "Unreliable! Please use `ps2/fire_mode_2.fire_refire_ms` instead.",
+            "x-cast-to": "int32"
+          },
+          "reload_ms": {
+            "type": "string",
+            "description": "Unreliable! Please add the values of `ps2/fire_mode_2.reload_time_ms` instead.",
+            "x-cast-to": "int32"
+          },
+          "reload_ms_min": {
+            "type": "string",
+            "description": "Unreliable! Please add the values of `ps2/fire_mode_2.reload_time_ms` instead.",
+            "x-cast-to": "int32"
+          },
+          "reload_ms_max": {
+            "type": "string",
+            "description": "Unreliable! Please add the values of `ps2/fire_mode_2.reload_time_ms` and `ps2/fire_mode_2.reload_chamber_ms` together to get long reload time.",
+            "x-cast-to": "int32"
+          },
+          "clip_size": {
+            "type": "string",
+            "description": "Unreliable! Please refer to the matching `ps2/weapon_ammo_slot` instead.",
+            "x-cast-to": "int32"
+          },
+          "capacity": {
+            "type": "string",
+            "description": "Unreliable! Please refer to the matching `ps2/weapon_ammo_slot` instead.",
+            "x-cast-to": "int32"
+          },
+          "range": {
+            "description": "Localized name of the displayed range of the weapon.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "show_clip_size": {
+            "type": "string",
+            "description": "Whether the clip size should be displayed in the UI.",
+            "x-cast-to": "boolean"
+          },
+          "show_fire_modes": {
+            "type": "string",
+            "description": "Whether the fire modes (in-game interpretation of this term) should be displayed in the UI.",
+            "x-cast-to": "boolean"
+          },
+          "show_range": {
+            "type": "string",
+            "description": "Whether the range string should be displayed in the UI.",
+            "x-cast-to": "boolean"
+          }
+        }
+      },
       "world": {
         "type": "object",
         "properties": {
@@ -5118,6 +5483,141 @@
             {
               "profile_id": "33",
               "description": "Sunderer"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "weapon_regular": {
+        "summary": "NC1 Gauss Rifle.\nhttps://census.daybreakgames.com/get/ps2/weapon?weapon_id=4",
+        "value": {
+          "weapon_list": [
+            {
+              "weapon_id": "4",
+              "weapon_group_id": "3",
+              "turn_modifier": "1.0",
+              "move_modifier": "1.0",
+              "sprint_recovery_ms": "300",
+              "equip_ms": "650",
+              "unequip_ms": "250",
+              "to_iron_sights_ms": "150",
+              "from_iron_sights_ms": "150"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "weapon_knife": {
+        "summary": "Auraxium Chainblade (Knife).\nhttps://census.daybreakgames.com/get/ps2/weapon?weapon_id=20",
+        "value": {
+          "weapon_list": [
+            {
+              "weapon_id": "20",
+              "turn_modifier": "1.0",
+              "move_modifier": "1.0",
+              "sprint_recovery_ms": "0",
+              "equip_ms": "250",
+              "unequip_ms": "250",
+              "to_iron_sights_ms": "150",
+              "from_iron_sights_ms": "150",
+              "melee_detect_width": "0.15",
+              "melee_detect_height": "0.1"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "weapon_heat": {
+        "summary": "Darkstar (Heat-based weapon).\nhttps://census.daybreakgames.com/get/ps2/weapon?weapon_id=111",
+        "value": {
+          "weapon_list": [
+            {
+              "weapon_id": "111",
+              "weapon_group_id": "1226",
+              "turn_modifier": "1.0",
+              "move_modifier": "1.0",
+              "sprint_recovery_ms": "300",
+              "equip_ms": "750",
+              "unequip_ms": "250",
+              "to_iron_sights_ms": "150",
+              "from_iron_sights_ms": "150",
+              "heat_capacity": "999",
+              "heat_bleed_off_rate": "364",
+              "heat_overheat_penalty_ms": "1750"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "weapon_ammo_slot": {
+        "summary": "Ammo Slots for the NC1 Gauss Rifle.\nhttps://census.daybreakgames.com/get/ps2/weapon_ammo_slot?weapon_id=4&c:limit=10",
+        "value": {
+          "weapon_ammo_slot_list": [
+            {
+              "weapon_id": "4",
+              "weapon_slot_index": "0",
+              "clip_size": "30",
+              "capacity": "180",
+              "refill_ammo_rate": "30"
+            },
+            {
+              "weapon_id": "4",
+              "weapon_slot_index": "1",
+              "clip_size": "1",
+              "capacity": "4",
+              "refill_ammo_rate": "1"
+            },
+            {
+              "weapon_id": "4",
+              "weapon_slot_index": "2",
+              "clip_size": "1",
+              "capacity": "2",
+              "refill_ammo_rate": "1",
+              "refill_ammo_delay_ms": "5000"
+            },
+            {
+              "weapon_id": "4",
+              "weapon_slot_index": "3",
+              "clip_size": "1",
+              "capacity": "2",
+              "refill_ammo_rate": "1",
+              "refill_ammo_delay_ms": "5000"
+            }
+          ],
+          "returned": 4
+        }
+      },
+      "weapon_datasheet": {
+        "summary": "Datasheet for the NS-11A. Note the incorrect damage values; none of which match the 143-to-125 damage model it has as of writing.\nhttps://census.daybreakgames.com/get/ps2/weapon_datasheet?item_id=70998",
+        "value": {
+          "weapon_datasheet_list": [
+            {
+              "item_id": "70998",
+              "damage": "143",
+              "damage_min": "75",
+              "damage_max": "225",
+              "fire_cone": "1.125",
+              "fire_cone_min": "0",
+              "fire_cone_max": "7",
+              "fire_rate_ms": "92",
+              "fire_rate_ms_min": "60",
+              "fire_rate_mx_max": "135",
+              "reload_ms": "2000",
+              "reload_ms_min": "1250",
+              "reload_ms_max": "3500",
+              "clip_size": "35",
+              "capacity": "210",
+              "range": {
+                "de": "Lang",
+                "en": "Long",
+                "es": "Largo",
+                "fr": "Long",
+                "it": "Lunga",
+                "tr": "Uzun"
+              },
+              "show_clip_size": "1",
+              "show_fire_modes": "1",
+              "show_range": "1"
             }
           ],
           "returned": 1
