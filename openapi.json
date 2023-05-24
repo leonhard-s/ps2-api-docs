@@ -948,6 +948,58 @@
         }
       }
     },
+    "/get/{game}/fire_group": {
+      "get": {
+        "summary": "Fire Group",
+        "description": "Fire groups in the API are synonymous with fire modes in-game, they represent the different operating modes some weapons can switch between.\n\nThis includes select-fire modes for infantry weapons, as well as knives switching between quick knife, wielded knive, and - in the case of power knives - the one-hit-kill mode.",
+        "tags": [
+          "Weapons & Firing Mechanics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/fireGroupIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "fire_group_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/fire_group"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "chamber": {
+                    "$ref": "#/components/examples/fire_group_chamber"
+                  },
+                  "regular": {
+                    "$ref": "#/components/examples/fire_group_regular"
+                  },
+                  "spool": {
+                    "$ref": "#/components/examples/fire_group_spool"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/item": {
       "get": {
         "summary": "Items",
@@ -1888,6 +1940,93 @@
         }
       }
     },
+    "/get/{game}/weapon_to_attachment": {
+      "get": {
+        "summary": "Weapon Attachments",
+        "description": "Maps weapons to the attachments available to them. This table is largely synonymous with `ps2/item_attachment`, but contains additional entries that may not resolve to a valid item.\n\nFor this reason, it is recommended to base any attachment queries on the `ps2/item_attachment` endpoint instead.",
+        "tags": [
+          "Weapons & Firing Mechanics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "weapon_to_attachment_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/weapon_to_attachment"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "weapon_to_attachment": {
+                    "$ref": "#/components/examples/weapon_to_attachment"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/weapon_to_fire_group": {
+      "get": {
+        "summary": "Weapon Fire Groups",
+        "description": "Maps weapons to their set of fire groups. The `fire_group_index` field matches the in-game fire mode selection; hitting 'B' in-game is equivalent to incrementing the index by 1.",
+        "tags": [
+          "Weapons & Firing Mechanics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/weaponIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/fireGroupIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "weapon_to_fire_group_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/weapon_to_fire_group"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "weapon_to_fire_group": {
+                    "$ref": "#/components/examples/weapon_to_fire_group"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/world": {
       "get": {
         "summary": "World",
@@ -2440,6 +2579,15 @@
         "name": "faction_id",
         "in": "query",
         "description": "Unique identifier of a faction.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "fireGroupIdParam": {
+        "name": "fire_group_id",
+        "in": "query",
+        "description": "Unique identifier of a fire group.",
         "schema": {
           "type": "string"
         },
@@ -3549,6 +3697,41 @@
           }
         }
       },
+      "fire_group": {
+        "type": "object",
+        "properties": {
+          "fire_group_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "chamber_duration_ms": {
+            "type": "string",
+            "description": "The time between shots on bolt action or pump action weapons.",
+            "x-cast-to": "int32"
+          },
+          "transition_duration_ms": {
+            "type": "string",
+            "description": "Time to transition to this fire group on select-fire weapon.",
+            "x-cast-to": "int32"
+          },
+          "spool_up_ms": {
+            "type": "string",
+            "description": "Time to reach maximum fire rate on spool-upup weapons.",
+            "x-cast-to": "int32"
+          },
+          "spool_up_initial_refire_ms": {
+            "type": "string",
+            "description": "Initial refire time (inverse of fire rate) for spool-up weapons.",
+            "x-cast-to": "int32"
+          },
+          "can_chamber_ironsights": {
+            "type": "string",
+            "description": "Whether the weapon can be chambered while aiming down sights. Only set on weapons with this capability by default, weapons requiring attachments such as straight-pull bolts will not have this set.",
+            "x-cast-to": "bool"
+          }
+        }
+      },
       "item": {
         "type": "object",
         "properties": {
@@ -4347,6 +4530,46 @@
           }
         }
       },
+      "weapon_to_attachment": {
+        "type": "object",
+        "properties": {
+          "weapon_group_id": {
+            "type": "string",
+            "description": "ID of the weapon group to which this item can be attached.",
+            "x-cast-to": "int32"
+          },
+          "attachment_id": {
+            "type": "string",
+            "description": "Internal ID of this mapping. Does not map to any other field in the API.",
+            "x-cast-to": "int32"
+          },
+          "item_id": {
+            "type": "string",
+            "description": "Unique ID of the attachment item.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "weapon_to_fire_group": {
+        "type": "object",
+        "properties": {
+          "weapon_id": {
+            "type": "string",
+            "description": "Unique ID of the weapon.",
+            "x-cast-to": "int32"
+          },
+          "fire_group_id": {
+            "type": "string",
+            "description": "Unique ID of the fire group.",
+            "x-cast-to": "int32"
+          },
+          "fire_group_index": {
+            "type": "string",
+            "description": "Index of the fire group in the weapon's fire group list.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
       "world": {
         "type": "object",
         "properties": {
@@ -4971,6 +5194,46 @@
               "image_path": "/files/ps2/images/static/18.png",
               "code_tag": "TR",
               "user_selectable": "1"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "fire_group_chamber": {
+        "summary": "TRS-12 Uppercut. Note that it has per-chamber reload and can rechamber while aiming down sights.\nhttps://census.daybreakgames.com/get/ps2/fire_group?fire_group_id=39001",
+        "value": {
+          "fire_group_list": [
+            {
+              "fire_group_id": "39001",
+              "chamber_duration_ms": "600",
+              "can_chamber_ironsights": "1"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "fire_group_regular": {
+        "summary": "NC1 Gauss Rifle. Example of a standard infantry weapon fire group.\nhttps://census.daybreakgames.com/get/ps2/fire_group?fire_group_id=4",
+        "value": {
+          "fire_group_list": [
+            {
+              "fire_group_id": "4",
+              "transition_duration_ms": "500",
+              "can_chamber_ironsights": "0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "fire_group_spool": {
+        "summary": "G30 Vulcan. This weapon has a spool-up time, meaning that its rate-of-fire increases over time.\nhttps://census.daybreakgames.com/get/ps2/fire_group?fire_group_id=424",
+        "value": {
+          "fire_group_list": [
+            {
+              "fire_group_id": "424",
+              "spool_up_ms": "1000",
+              "spool_up_initial_refire_ms": "200",
+              "can_chamber_ironsights": "0"
             }
           ],
           "returned": 1
@@ -5621,6 +5884,57 @@
             }
           ],
           "returned": 1
+        }
+      },
+      "weapon_to_attachment": {
+        "summary": "NC1 Gauss Rifle attachments.\nhttps://census.daybreakgames.com/get/ps2/weapon_to_attachment?weapon_group_id=3&c:limit=5",
+        "value": {
+          "weapon_to_attachment_list": [
+            {
+              "weapon_group_id": "3",
+              "attachment_id": "300",
+              "item_id": "74"
+            },
+            {
+              "weapon_group_id": "3",
+              "attachment_id": "302",
+              "item_id": "76"
+            },
+            {
+              "weapon_group_id": "3",
+              "attachment_id": "303",
+              "item_id": "115"
+            },
+            {
+              "weapon_group_id": "3",
+              "attachment_id": "304",
+              "item_id": "148"
+            },
+            {
+              "weapon_group_id": "3",
+              "attachment_id": "305",
+              "item_id": "149"
+            }
+          ],
+          "returned": 5
+        }
+      },
+      "weapon_to_fire_group": {
+        "summary": "Cycler TRV fire groups.\nhttps://census.daybreakgames.com/get/ps2/weapon_to_fire_group?weapon_id=7124&c:limit=10",
+        "value": {
+          "weapon_to_fire_group_list": [
+            {
+              "weapon_id": "7124",
+              "fire_group_id": "7124",
+              "fire_group_index": "0"
+            },
+            {
+              "weapon_id": "7124",
+              "fire_group_id": "17124",
+              "fire_group_index": "1"
+            }
+          ],
+          "returned": 2
         }
       },
       "world": {
