@@ -1107,6 +1107,101 @@
         }
       }
     },
+    "/get/{game}/fire_mode_to_projectile": {
+      "get": {
+        "summary": "Fire Mode to Projectile",
+        "description": "Maps fire modes to their projectiles.",
+        "tags": [
+          "Weapons & Firing Mechanics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/fireModeIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "fire_mode_to_projectile_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/fire_mode_to_projectile"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "fire_mode_to_projectile": {
+                    "$ref": "#/components/examples/fire_mode_to_projectile"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/fire_mode_type": {
+      "get": {
+        "summary": "Fire Mode Type",
+        "description": "Enumeration of the types of fire modes.\n\nThis servers to differentiate between melee attacks, projectile weapons, throwables, and pseudo-weapon fire modes used to trigger activated items.",
+        "tags": [
+          "Weapons & Firing Mechanics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/fireModeTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "fire_mode_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/fire_mode_type"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "fire_mode_type": {
+                    "$ref": "#/components/examples/fire_mode_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/item": {
       "get": {
         "summary": "Items",
@@ -1915,6 +2010,98 @@
         }
       }
     },
+    "/get/{game}/projectile": {
+      "get": {
+        "summary": "Projectiles",
+        "description": "Projectiles specify the travel characteristics of a weapon on its way to the target, such as its speed, its bullet drop, or maximum flight time/distance.\n\nNote that multiple fire modes can use the same projectile. This usually includes the hipfire vs. aimed fire modes, but can also include different weapons altogether.",
+        "tags": [
+          "Weapons & Firing Mechanics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/projectileIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "projectile_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/projectile"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "projectile": {
+                    "$ref": "#/components/examples/projectile"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/projectile_flight_type": {
+      "get": {
+        "summary": "Projectile Flight Type",
+        "description": "Enumerates the flight types used to categorize projectiles by their travel characteristics.\n\nThis mostly controls whether the projectile is ballistic, Flak-based, or \"Dynamic\", used to represent thrown items such as grenades, explosives, and ammo packs.",
+        "tags": [
+          "Weapons & Firing Mechanics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/projectileFlightTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "projectile_flight_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/projectile_flight_type"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "projectile_flight_type": {
+                    "$ref": "#/components/examples/projectile_flight_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/weapon": {
       "get": {
         "summary": "Weapon",
@@ -2709,6 +2896,15 @@
         },
         "x-cast-to": "int32"
       },
+      "fireModeTypeIdParam": {
+        "name": "fire_mode_type_id",
+        "in": "query",
+        "description": "Unique identifier of a fire mode type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "itemIdParam": {
         "name": "item_id",
         "in": "query",
@@ -2817,6 +3013,24 @@
         "name": "profile_id",
         "in": "query",
         "description": "Unique identifier of a profile.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "projectileIdParam": {
+        "name": "projectile_id",
+        "in": "query",
+        "description": "Unique identifier of a projectile.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "projectileFlightTypeIdParam": {
+        "name": "projectile_flight_type_id",
+        "in": "query",
+        "description": "Unique identifier of a projectile flight type.",
         "schema": {
           "type": "string"
         },
@@ -4464,6 +4678,37 @@
           }
         }
       },
+      "fire_mode_to_projectile": {
+        "type": "object",
+        "properties": {
+          "fire_mode_id": {
+            "type": "string",
+            "description": "Fire mode side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "fire_mode.fire_mode_id"
+          },
+          "projectile_id": {
+            "type": "string",
+            "description": "Projectile side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "projectile.projectile_id"
+          }
+        }
+      },
+      "fire_mode_type": {
+        "type": "object",
+        "properties": {
+          "fire_mode_type_id": {
+            "type": "string",
+            "description": "Unique ID of the fire mode type.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the type of fire mode"
+          }
+        }
+      },
       "item": {
         "type": "object",
         "properties": {
@@ -5030,6 +5275,127 @@
           "description": {
             "type": "string",
             "description": "Internal description of this profile. Not localized or user-facing."
+          }
+        }
+      },
+      "projectile": {
+        "type": "object",
+        "properties": {
+          "projectile_id": {
+            "type": "string",
+            "description": "Unique ID of the projectile.",
+            "x-cast-to": "int32"
+          },
+          "projectile_flight_type_id": {
+            "type": "string",
+            "description": "The `ps2/projectile_flight_type` of the projectile.",
+            "x-cast-to": "int32",
+            "x-reference-to": "projectile_flight_type.projectile_flight_type_id"
+          },
+          "speed": {
+            "type": "string",
+            "description": "The initial speed of the projectile upon firing in meters per second. Note that this may be different from the muzzle velocity displayed for a given weapon.",
+            "x-cast-to": "int32"
+          },
+          "speed_max": {
+            "type": "string",
+            "description": "Upper bound of the speed of the projectile in meters per second. On projectiles with a non-NULL `acceleration`, this is the top speed the projectile will reach.",
+            "x-cast-to": "int32"
+          },
+          "acceleration": {
+            "type": "string",
+            "description": "The acceleration of the projectile in metres per second per second. If NULL, the projectile will not accelerate and retain its initial speed.",
+            "x-cast-to": "float"
+          },
+          "turn_rate": {
+            "type": "string",
+            "description": "Turn rate of the projectile in degrees per second. Used to limit the ability of lock-on projectiles to track their target.",
+            "x-cast-to": "float"
+          },
+          "lifespan": {
+            "type": "string",
+            "description": "Lifespan of the projectile in seconds. Together with `speed`, `acceleration`, and `speed_max`, this can be used to calculate the maximum range of a given projectile.",
+            "x-cast-to": "float"
+          },
+          "drag": {
+            "type": "string",
+            "x-cast-to": "float"
+          },
+          "gravity": {
+            "type": "string",
+            "description": "Gravity applied to the projectile in metres per second per second. Togther with the current `speed`, this can be used to calculate bullet drop over time.",
+            "x-cast-to": "float"
+          },
+          "lockon_acceleration": {
+            "type": "string",
+            "description": "Acceleration of the projectile while locked onto a target.",
+            "x-cast-to": "float"
+          },
+          "lockon_lifespan": {
+            "type": "string",
+            "description": "Duration of the lock-on effect in seconds. After this time, the lock will be lost.",
+            "x-cast-to": "float"
+          },
+          "lockon_proximity_distance": {
+            "type": "string",
+            "description": "Distance at which the projectile will proximity-lock onto a target while in flight. Note that this value designates the diameter of the sphere of influence, not the radius.",
+            "x-cast-to": "float"
+          },
+          "arm_distance": {
+            "type": "string",
+            "description": "Minimum travel distance before the projectile is armed and can detonate. Used for Flak and Archer explosions.",
+            "x-cast-to": "int32"
+          },
+          "tether_distance": {},
+          "detonate_distance": {
+            "type": "string",
+            "description": "Proximity required for Flak detonation.",
+            "x-cast-to": "float"
+          },
+          "detonate_on_contact": {
+            "type": "string",
+            "description": "Whether the projectile will detonate on contact with a surface or player.",
+            "x-cast-to": "bool"
+          },
+          "sticky": {
+            "type": "string",
+            "description": "Whether the projectile will stick to surfaces. This includes Sticky Grenades and bricks of C-4 explosives.",
+            "x-cast-to": "bool"
+          },
+          "sticks_to_players": {
+            "type": "string",
+            "description": "Whether the projectile will stick to infantry on contact. Note that in addition to Sticky Grenades, this will also be true for projectiles that only stick to MAXes, such as Nano-Repair or Anti-Vehicle Grenades.",
+            "x-cast-to": "bool"
+          },
+          "lockon_lose_angle": {
+            "type": "string",
+            "description": "Field of view of the projectile when tracking a target. If the target escapes this cone, the lock is lost.",
+            "x-cast-to": "float"
+          },
+          "lockon_seek_in_flight": {
+            "type": "string",
+            "description": "Whether a dumb-fired projectile will attempt to lock onto targets in flight. Used by the Coyote and Hyena missile launchers.",
+            "x-cast-to": "bool"
+          },
+          "projectile_radius": {
+            "type": "string",
+            "description": "The radius of the projectile in metres. Relevant to hitbox collisions.",
+            "x-cast-to": "float"
+          }
+        }
+      },
+      "projectile_flight_type": {
+        "type": "object",
+        "properties": {
+          "projectile_flight_type_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the projectile flight type.",
+            "x-cast-to": "string"
           }
         }
       },
@@ -6359,6 +6725,18 @@
           "returned": 1
         }
       },
+      "fire_mode_to_projectile": {
+        "summary": "NS-11A\nhttps://census.daybreakgames.com/get/ps2/fire_mode_to_projectile?fire_mode_id=2001",
+        "value": {
+          "fire_mode_to_projectile_list": [
+            {
+              "fire_mode_id": "2001",
+              "projectile_id": "8000"
+            }
+          ],
+          "returned": 1
+        }
+      },
       "item": {
         "summary": "NC1 Gauss Rifle",
         "value": {
@@ -6394,6 +6772,30 @@
             }
           ],
           "returned": 1
+        }
+      },
+      "fire_mode_type": {
+        "summary": "Full list of all fire mode types.\nhttps://census.daybreakgames.com/get/ps2/fire_mode_type?c:limit=20",
+        "value": {
+          "fire_mode_type_list": [
+            {
+              "fire_mode_type_id": "0",
+              "description": "Projectile"
+            },
+            {
+              "fire_mode_type_id": "3",
+              "description": "Melee"
+            },
+            {
+              "fire_mode_type_id": "8",
+              "description": "Trigger Item Ability"
+            },
+            {
+              "fire_mode_type_id": "12",
+              "description": "Thrown"
+            }
+          ],
+          "returned": 4
         }
       },
       "item_attachment": {
@@ -6869,6 +7271,56 @@
             }
           ],
           "returned": 1
+        }
+      },
+      "projectile": {
+        "summary": "Hawk GD-68\nhttps://census.daybreakgames.com/get/ps2/projectile?projectile_id=33004",
+        "value": {
+          "projectile_list": [
+            {
+              "projectile_id": "33004",
+              "projectile_flight_type_id": "1",
+              "speed": "50",
+              "speed_max": "100",
+              "turn_rate": "1.5",
+              "lifespan": "5",
+              "drag": "0",
+              "gravity": "1",
+              "lockon_acceleration": "6.67",
+              "lockon_lifespan": "5",
+              "detonate_on_contact": "1",
+              "sticky": "0",
+              "sticks_to_players": "0",
+              "lockon_lose_angle": "145",
+              "lockon_seek_in_flight": "0",
+              "projectile_radius": "0.03"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "projectile_flight_type": {
+        "summary": "List all flight types.\nhttps://census.daybreakgames.com/get/ps2/projectile_flight_type?c:limit=10",
+        "value": {
+          "projectile_flight_type_list": [
+            {
+              "projectile_flight_type_id": "1",
+              "description": "Ballistic"
+            },
+            {
+              "projectile_flight_type_id": "3",
+              "description": "True Ballstic - Uses Real Gravity"
+            },
+            {
+              "projectile_flight_type_id": "9",
+              "description": "Dynamic"
+            },
+            {
+              "projectile_flight_type_id": "10",
+              "description": "Proximity Detonate"
+            }
+          ],
+          "returned": 4
         }
       },
       "weapon_regular": {
