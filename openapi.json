@@ -4193,57 +4193,55 @@
           },
           "lockon_acquire_close_ms": {
             "type": "string",
-            "description": "Outdated field. No workaround available, please refer to the PS2 Wiki.",
+            "description": "Time required to establish a lock at a distance of `lockon_range_close` metres. Interpolated linearly.",
             "x-cast-to": "int32"
           },
           "lockon_acquire_far_ms": {
             "type": "string",
-            "description": "Outdated field. No workaround available, please refer to the PS2 Wiki.",
+            "description": "Time required to establish a lock at a distance of `lockon_range_far` metres. Interpolated linearly.",
             "x-cast-to": "int32"
           },
           "lockon_acquire_ms": {
             "type": "string",
-            "description": "Outdated field. No workaround available, please refer to the PS2 Wiki.",
+            "description": "Defunct field. Always returns zero.",
             "x-cast-to": "int32"
           },
           "lockon_angle": {
             "type": "string",
-            "description": "Outdated field. No workaround available, please refer to the PS2 Wiki.",
+            "description": "Field of view of the cone within which targets may be locked.",
             "x-cast-to": "float"
           },
           "lockon_lose_ms": {
             "type": "string",
-            "description": "Outdated field. No workaround available, please refer to the PS2 Wiki.",
+            "description": "Period in which an already established lock remains active after losing line of sight with the target. This is the window during which the player may flick the mouse to shoot around obstacles.",
             "x-cast-to": "int32"
           },
           "lockon_maintain": {
             "type": "string",
-            "description": "Outdated field. No workaround available, please refer to the PS2 Wiki.",
             "x-cast-to": "bool"
           },
           "lockon_radius": {
             "type": "string",
-            "description": "Outdated field. No workaround available, please refer to the PS2 Wiki.",
+            "description": "Defunct field. Always returns zero.",
             "x-cast-to": "float"
           },
           "lockon_range": {
             "type": "string",
-            "description": "Outdated field. No workaround available, please refer to the PS2 Wiki.",
+            "description": "Defunct field. Always returns zero.",
             "x-cast-to": "float"
           },
           "lockon_range_close": {
             "type": "string",
-            "description": "Outdated field. No workaround available, please refer to the PS2 Wiki.",
+            "description": "Distance at which `lockon_acquire_close_ms` is applied. Note that this is not a minimum distance from the target, only a lower bound for the lock-on time.",
             "x-cast-to": "float"
           },
           "lockon_range_far": {
             "type": "string",
-            "description": "Outdated field. No workaround available, please refer to the PS2 Wiki.",
+            "description": "Distance at which `lockon_acquire_far_ms` is applied. Note that this may not line up with the maximum range at which a lock can be established.",
             "x-cast-to": "float"
           },
           "lockon_required": {
             "type": "string",
-            "description": "Outdated field. No workaround available, please refer to the PS2 Wiki.",
             "x-cast-to": "float"
           },
           "recoil_angle_max": {
