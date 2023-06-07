@@ -75,6 +75,10 @@
     {
       "name": "Vehicles",
       "description": "Collections related to vehicles, attachments, and vehicle certifications."
+    },
+    {
+      "name": "Damage Calculation",
+      "description": "Armor values and resistances."
     }
   ],
   "security": [],
@@ -329,6 +333,101 @@
                 "examples": {
                   "higby": {
                     "$ref": "#/components/examples/character_higby"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/armor_facing": {
+      "get": {
+        "summary": "Armor Facing",
+        "description": "Enumerates the armor facing angles used for directional damage reduction on vehicles.",
+        "tags": [
+          "Damage Calculation"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/armorFacingIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "armor_facing_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/armorFacing"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "armorFacing": {
+                    "$ref": "#/components/examples/armorFacing"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/armor_info": {
+      "get": {
+        "summary": "Armor Info",
+        "description": "A set of armor values for each armor facing angle on a vehicle.",
+        "tags": [
+          "Damage Calculation"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/armorInfoIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/armorFacingIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "armor_info_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/armorInfo"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "armorInfo": {
+                    "$ref": "#/components/examples/armorInfo"
                   }
                 }
               }
@@ -2949,6 +3048,24 @@
           }
         }
       },
+      "armorFacingIdParam": {
+        "name": "armor_facing_id",
+        "in": "query",
+        "description": "Unique ID of the armor facing direction.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "armorInfoIdParam": {
+        "name": "armor_info_id",
+        "in": "query",
+        "description": "Unique ID of the armor info entry.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "characterIdParam": {
         "name": "character_id",
         "in": "query",
@@ -3369,6 +3486,45 @@
               "type": "string"
             },
             "description": "A list of resolvable names for the collection. These can be passed to the `c:resolve` query parameter to insert additional fields into the returned payload."
+          }
+        }
+      },
+      "armor_facing": {
+        "type": "object",
+        "properties": {
+          "armor_facing_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the armor facing direction."
+          }
+        }
+      },
+      "armor_info": {
+        "type": "object",
+        "properties": {
+          "armor_info_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "armor_facing_id": {
+            "type": "string",
+            "description": "ID of the armor facing direction.",
+            "x-cast-to": "int32"
+          },
+          "armor_percent": {
+            "type": "string",
+            "description": "Damage reduction in percent. Negative values increase damage taken.",
+            "x-cast-to": "float"
+          },
+          "armor_amount": {
+            "type": "string",
+            "description": "Flat damage reduction applied to incoming damage. Only used in the tutorial to make target dummies invincible.",
+            "x-cast-to": "int32"
           }
         }
       },
@@ -6002,6 +6158,86 @@
       }
     },
     "examples": {
+      "armor_facing": {
+        "summary": "All armor facing directions.\nhttps://census.daybreakgames.com/get/ps2/armor_facing?c:limit=10",
+        "value": {
+          "armor_facing_list": [
+            {
+              "armor_facing_id": "0",
+              "description": "Front"
+            },
+            {
+              "armor_facing_id": "1",
+              "description": "Right"
+            },
+            {
+              "armor_facing_id": "2",
+              "description": "Top"
+            },
+            {
+              "armor_facing_id": "3",
+              "description": "Rear"
+            },
+            {
+              "armor_facing_id": "4",
+              "description": "Left"
+            },
+            {
+              "armor_facing_id": "5",
+              "description": "Bottom"
+            },
+            {
+              "armor_facing_id": "6",
+              "description": "All"
+            }
+          ],
+          "returned": 7
+        }
+      },
+      "armor_info": {
+        "summary": "Default Sunderer armor values, excluding Blockade Armor.\nhttps://census.daybreakgames.com/get/ps2/armor_info?&description=^Sunderer&armor_info_id=%3C50&c:limit=10",
+        "value": {
+          "armor_info_list": [
+            {
+              "armor_info_id": "20",
+              "armor_facing_id": "0",
+              "armor_percent": "0",
+              "description": "Sunderer - Front"
+            },
+            {
+              "armor_info_id": "21",
+              "armor_facing_id": "1",
+              "armor_percent": "0",
+              "description": "Sunderer - Right"
+            },
+            {
+              "armor_info_id": "22",
+              "armor_facing_id": "2",
+              "armor_percent": "0",
+              "description": "Sunderer - Top"
+            },
+            {
+              "armor_info_id": "23",
+              "armor_facing_id": "3",
+              "armor_percent": "0",
+              "description": "Sunderer - Rear"
+            },
+            {
+              "armor_info_id": "24",
+              "armor_facing_id": "4",
+              "armor_percent": "0",
+              "description": "Sunderer - Left"
+            },
+            {
+              "armor_info_id": "25",
+              "armor_facing_id": "5",
+              "armor_percent": "0",
+              "description": "Sunderer - Bottom"
+            }
+          ],
+          "returned": 6
+        }
+      },
       "character_higby": {
         "summary": "Higby",
         "value": {
