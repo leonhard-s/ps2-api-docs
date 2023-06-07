@@ -71,6 +71,10 @@
     {
       "name": "Weapons & Firing Mechanics",
       "description": "Weapon and firing mechanics data, including fire modes, projectiles, and ammo types."
+    },
+    {
+      "name": "Vehicles",
+      "description": "Collections related to vehicles, attachments, and vehicle certifications."
     }
   ],
   "security": [],
@@ -2094,6 +2098,141 @@
                 "examples": {
                   "projectile_flight_type": {
                     "$ref": "#/components/examples/projectile_flight_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/vehicle": {
+      "get": {
+        "summary": "Vehicle",
+        "description": "Basic vehicle information such as name, description, and type.\n\nNote that vehicle types are only used internally and are not directly tied to damage mechanics or resistances. Liberators and Galaxies are still considered \"Light Aircraft\" in this endpoint.",
+        "tags": [
+          "Vehicles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/vehicleIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "vehicle_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/vehicle"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "harasser": {
+                    "$ref": "#/components/examples/vehicle"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/vehicle_attachment": {
+      "get": {
+        "summary": "Vehicle Attachments",
+        "description": "Maps items to the vehicles and factions that have access to them.\n\nThe `slot_id` field is used to identify where the item is attached to. The below list shows the types of items for each slot as of June 2023:\n\n```\nID   Description\n\n1    Primary Weapon\n2    Secondary Weapon\n3    Ability Slot\n4    Defensive Slot\n5    Chassis / Airframe\n6    Cockpit / Hood Ornament\n7    Camo\n8    Decal\n9    Exterior\n10   Weapon Slot / Catapult\n11   Weapon Slot / Catapult\n12   Afterburner / Nitrous\n13   (Unused)\n14   (Internal: Headlights)\n15   Horn\n16   Trim\n17   Lighting\n18   Hubcaps\n19   Other\n20   Tire Traits / Catapult\n21   Catapult\n22   Catapult\n```\n\nNote that this list is maintained manually and may be out of date. The slot associations are not available on the API.",
+        "tags": [
+          "Vehicles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/vehicleIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/factionIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "vehicle_attachment_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/vehicle_attachment"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "harasser": {
+                    "$ref": "#/components/examples/vehicle_attachment"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/vehicle_faction": {
+      "get": {
+        "sumamry": "Vehicle Faction Map",
+        "description": "Maps vehicles to the factions that have access to them.",
+        "tags": [
+          "Vehicles"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/vehicleIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/factionIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "vehicle_faction_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/vehicle_faction"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "harasser": {
+                    "$ref": "#/components/examples/vehicle_faction"
                   }
                 }
               }
@@ -5399,6 +5538,107 @@
           }
         }
       },
+      "vehicle": {
+        "type": "object",
+        "properties": {
+          "vehicle_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "name": {
+            "description": "Display name of the vehicle.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Description of the vehicle.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "type_id": {
+            "type": "string",
+            "description": "ID of the vehicle type. Note that vehicle types are not related to damage types; Liberators still qualify as \"Light Aircraft\".",
+            "x-cast-to": "int32"
+          },
+          "type_name": {
+            "type": "string",
+            "description": "Internal name of the vehicle type. Note that vehicle types are not related to damage types; Liberators still qualify as \"Light Aircraft\"."
+          },
+          "cost": {
+            "type": "string",
+            "description": "Defunct field. Does not reflect the actual resource cost of the vehicle.",
+            "x-cast-to": "int32"
+          },
+          "cost_resource_id": {
+            "type": "string",
+            "description": "ID of the currency used to purchase the vehicle.",
+            "x-cast-to": "int32"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "ID of the image set for the vehicle icon.",
+            "x-cast-to": "int32"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "ID of the default image for the vehicle icon.",
+            "x-cast-to": "int32"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Path to the default image for the vehicle icon.",
+            "x-cast-to": "string"
+          }
+        }
+      },
+      "vehicle_attachment": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "description": "Unique ID of the attachment item.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
+          },
+          "vehicle_id": {
+            "type": "string",
+            "description": "Unique ID of the vehicle.",
+            "x-cast-to": "int32",
+            "x-reference-to": "vehicle.vehicle_id"
+          },
+          "faction_id": {
+            "type": "string",
+            "description": "ID of the faction that can use the attachment.",
+            "x-cast-to": "int32",
+            "x-reference-to": "faction.faction_id"
+          },
+          "description": {
+            "type": "string",
+            "description": "Internal description of the vehicle/faction combination."
+          },
+          "slot_id": {
+            "type": "string",
+            "description": "ID of the slot the attachment occupies. See the `ps2/vehicle_attachment` endpoint documentation for a mapping of slot IDs to item types.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "vehicle_faction": {
+        "type": "object",
+        "properties": {
+          "vehicle_id": {
+            "type": "string",
+            "description": "Unique ID of the vehicle.",
+            "x-cast-to": "int32",
+            "x-reference-to": "vehicle.vehicle_id"
+          },
+          "faction_id": {
+            "type": "string",
+            "description": "ID of the faction that can use the vehicle.",
+            "x-cast-to": "int32",
+            "x-reference-to": "faction.faction_id"
+          }
+        }
+      },
       "weapon": {
         "type": "object",
         "properties": {
@@ -7318,6 +7558,216 @@
             {
               "projectile_flight_type_id": "10",
               "description": "Proximity Detonate"
+            }
+          ],
+          "returned": 4
+        }
+      },
+      "vehicle": {
+        "summary": "Liberator.\nhttps://census.daybreakgames.com/get/ps2/vehicle?vehicle_id=10",
+        "value": {
+          "vehicle_list": [
+            {
+              "vehicle_id": "10",
+              "name": {
+                "de": "Liberator",
+                "en": "Liberator",
+                "es": "Liberator",
+                "fr": "Libérateur",
+                "it": "Liberator",
+                "tr": "KURTARICI"
+              },
+              "description": {
+                "de": "Der Liberator ist ein Drei-Mann-Kampfflugzeug. Das Artelleriegeschütz ist extrem wirksam gegen Bodenziele und er verfügt ebenso über ein Heckgeschütz, um gegnerische Jäger abzuwehren.",
+                "en": "The Liberator is a three man gun ship.  The bombardier weapon is very powerful against ground targets and it has a tail gun to ward off enemy fighters.",
+                "es": "El Liberator es una nave de asalto de tres plazas. Su arma bombardera es muy potente contra objetivos terrestres y tiene un puesto de artillero de cola para defenderse de los cazas enemigos.",
+                "fr": "Le Libérateur est un appareil de combat servi par 3 hommes d'équipage. Son bombardier est très puissant contre les cibles au sol et il possède un canonnier arrière pour repousser les combattants ennemis.",
+                "it": "Il Liberator è una cannoniera volante con tre uomini di equipaggio. L'armamento di bordo è molto potente contro i bersagli a terra e possiede anche un cannone sulla coda per tenere lontani i caccia nemici.",
+                "tr": "Kurtarıcı, üç kişilik bir savaş helikopteridir. Bombardıman silahı yer hedeflerine karşı çok güçlüdür ve kuyruk silahı düşman savaşçılarını paramparça eder."
+              },
+              "type_id": "1",
+              "type_name": "Light Aircraft",
+              "cost": "0",
+              "cost_resource_id": "4",
+              "image_set_id": "93",
+              "image_id": "3981",
+              "image_path": "/files/ps2/images/static/3981.png"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "vehicle_attachment": {
+        "summary": "Primary weapons for a VS Harasser.\nhttps://census.daybreakgames.com/get/ps2/vehicle_attachment?vehicle_id=12&faction_id=1&slot_id=1&c:limit=100",
+        "value": {
+          "vehicle_attachment_list": [
+            {
+              "item_id": "6100",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "M12 Kobalt-H"
+                }
+              }
+            },
+            {
+              "item_id": "6103",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "M20 Basilisk-H"
+                }
+              }
+            },
+            {
+              "item_id": "6106",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "G30 Walker"
+                }
+              }
+            },
+            {
+              "item_id": "6109",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "G40-F Ranger"
+                }
+              }
+            },
+            {
+              "item_id": "6112",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "M60-G Bulldog-H"
+                }
+              }
+            },
+            {
+              "item_id": "6115",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "M40 Fury-H"
+                }
+              }
+            },
+            {
+              "item_id": "6118",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "E540 Halberd-H"
+                }
+              }
+            },
+            {
+              "item_id": "6125",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "Proton II PPA-H"
+                }
+              }
+            },
+            {
+              "item_id": "6126",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "Saron HRB-H"
+                }
+              }
+            },
+            {
+              "item_id": "802898",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "Aphelion VEX-4H"
+                }
+              }
+            },
+            {
+              "item_id": "6006397",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "Halberd-H SE"
+                }
+              }
+            },
+            {
+              "item_id": "6011884",
+              "vehicle_id": "12",
+              "faction_id": "1",
+              "description": "Harasser VS",
+              "slot_id": "1",
+              "item_id_join_item": {
+                "name": {
+                  "en": "V42 Pariah-H"
+                }
+              }
+            }
+          ],
+          "returned": 12
+        }
+      },
+      "vehicle_faction": {
+        "summary": "Factions that can use the Harasser.\nhttps://census.daybreakgames.com/get/ps2/vehicle_faction?vehicle_id=12&c:limit=10",
+        "value": {
+          "vehicle_faction_list": [
+            {
+              "vehicle_id": "12",
+              "faction_id": "1"
+            },
+            {
+              "vehicle_id": "12",
+              "faction_id": "2"
+            },
+            {
+              "vehicle_id": "12",
+              "faction_id": "3"
+            },
+            {
+              "vehicle_id": "12",
+              "faction_id": "4"
             }
           ],
           "returned": 4
