@@ -367,7 +367,7 @@
                     "armor_facing_list": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/armorFacing"
+                        "$ref": "#/components/schemas/armor_facing"
                       }
                     },
                     "returned": {
@@ -377,8 +377,8 @@
                   }
                 },
                 "examples": {
-                  "armorFacing": {
-                    "$ref": "#/components/examples/armorFacing"
+                  "armor_facing": {
+                    "$ref": "#/components/examples/armor_facing"
                   }
                 }
               }
@@ -416,7 +416,7 @@
                     "armor_info_list": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/armorInfo"
+                        "$ref": "#/components/schemas/armor_info"
                       }
                     },
                     "returned": {
@@ -426,8 +426,8 @@
                   }
                 },
                 "examples": {
-                  "armorInfo": {
-                    "$ref": "#/components/examples/armorInfo"
+                  "armor_info": {
+                    "$ref": "#/components/examples/armor_info"
                   }
                 }
               }
@@ -2113,6 +2113,104 @@
         }
       }
     },
+    "/get/{game}/profile_armor_map": {
+      "get": {
+        "summary": "Profile Armor Map",
+        "description": "Maps profiles to the relevant `ps2/armor_info` entries.\n\nNote that many of the IDs used here are only available in `ps2/profile_2`. Additionally, armor values only concern vehicles, with infantry and deployable classes not having any entries here.",
+        "tags": [
+          "Damage Calculation"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/armorInfoIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/profileIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "profile_armor_map_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/profile_armor_map"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "magrider": {
+                    "$ref": "#/components/examples/profile_armor_map"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/profile_resist_map": {
+      "get": {
+        "summary": "Profile Resist Map",
+        "description": "Maps profiles to the relevant `ps2/resist_info` entries. Note that many of the profile IDs used here are only available in the `ps2/profile_2` collection.",
+        "tags": [
+          "Damage Calculation"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/resistInfoIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/profileIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "profile_resist_map_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/profile_resist_map"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "lightning": {
+                    "$ref": "#/components/examples/profile_resist_map"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/projectile": {
       "get": {
         "summary": "Projectiles",
@@ -2197,6 +2295,144 @@
                 "examples": {
                   "projectile_flight_type": {
                     "$ref": "#/components/examples/projectile_flight_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/resist_info": {
+      "get": {
+        "summary": "Resist Info",
+        "description": "Lists resistances against certain types of damage.",
+        "tags": [
+          "Damage Calculation"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/resistInfoIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "resist_info_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/resist_info"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "resist_info": {
+                    "$ref": "#/components/examples/resist_info"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/resist_type": {
+      "get": {
+        "summary": "Resist Types",
+        "description": "Enumeration of resistance types used to balance damage types against various targets.",
+        "tags": [
+          "Damage Calculation"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/resistTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "resist_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/resist_type"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "resist_type": {
+                    "$ref": "#/components/examples/resist_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/target_type": {
+      "get": {
+        "summary": "Target Types",
+        "description": "Enumerates the target types used to categorize the applicable targets of a weapon or effect.\n\nThis is effectively a constant mapping and can be cached aggressively.",
+        "tags": [
+          "Damage Calculation"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/targetTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "target_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/target_type"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "target_type": {
+                    "$ref": "#/components/examples/target_type"
                   }
                 }
               }
@@ -2297,7 +2533,7 @@
     },
     "/get/{game}/vehicle_faction": {
       "get": {
-        "sumamry": "Vehicle Faction Map",
+        "summary": "Vehicle Faction Map",
         "description": "Maps vehicles to the factions that have access to them.",
         "tags": [
           "Vehicles"
@@ -3405,6 +3641,32 @@
             "7"
           ]
         }
+      },
+      "resistInfoIdParam": {
+        "name": "resist_info_id",
+        "in": "query",
+        "description": "Unique identifier of a resist info entry.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "resistTypeIdParam": {
+        "name": "resist_type_id",
+        "in": "query",
+        "description": "Unique identifier of a resist type.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "targetTypeIdParam": {
+        "name": "target_type_id",
+        "in": "query",
+        "description": "Unique identifier of a target type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
       },
       "vehicleIdParam": {
         "name": "vehicle_id",
@@ -5573,6 +5835,50 @@
           }
         }
       },
+      "profile_armor_map": {
+        "type": "object",
+        "properties": {
+          "profile_id": {
+            "type": "string",
+            "description": "The profile side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "profile_2.profile_id"
+          },
+          "armor_info_id": {
+            "type": "string",
+            "description": "The armor info side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "armor_info.armor_info_id"
+          },
+          "rank": {
+            "type": "string",
+            "description": "Unknown. Always 1 as of 2023-06-09.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "profile_resist_map": {
+        "type": "object",
+        "properties": {
+          "profile_id": {
+            "type": "string",
+            "description": "The profile side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "profile_2.profile_id"
+          },
+          "resist_info_id": {
+            "type": "string",
+            "description": "The resist info side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "resist_info.resist_info_id"
+          },
+          "rank": {
+            "type": "string",
+            "description": "Unknown.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
       "projectile": {
         "type": "object",
         "properties": {
@@ -5690,6 +5996,67 @@
           "description": {
             "type": "string",
             "description": "Description of the projectile flight type.",
+            "x-cast-to": "string"
+          }
+        }
+      },
+      "resist_info": {
+        "type": "object",
+        "properties": {
+          "resist_info_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "resist_type_id": {
+            "type": "string",
+            "description": "Resist type associated with this resist info entry.",
+            "x-cast-to": "int32",
+            "x-reference-to": "resist_type.resist_type_id"
+          },
+          "resist_percent": {
+            "type": "string",
+            "description": "Percentage of damage resisted. Negative numbers increase damage. Note that resistances can be greater than 100% to compensate for extra damage from relevant `armor_info` entries.",
+            "x-cast-to": "float"
+          },
+          "multiplier_when_headshot": {
+            "type": "string",
+            "description": "Headshot multiplier for this resistance.",
+            "x-cast-to": "float"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the resist info entry.",
+            "x-cast-to": "string"
+          }
+        }
+      },
+      "resist_type": {
+        "type": "object",
+        "properties": {
+          "resist_type_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the resist type.",
+            "x-cast-to": "string"
+          }
+        }
+      },
+      "target_type": {
+        "type": "object",
+        "properties": {
+          "target_type_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the target type.",
             "x-cast-to": "string"
           }
         }
@@ -7749,6 +8116,72 @@
           "returned": 1
         }
       },
+      "profile_armor_map": {
+        "summary": "Armor map for the Magrider.\nhttps://census.daybreakgames.com/get/ps2/profile_armor_map?profile_id=29&c:limit=6",
+        "value": {
+          "profile_armor_map_list": [
+            {
+              "profile_id": "29",
+              "armor_info_id": "40",
+              "rank": "1"
+            },
+            {
+              "profile_id": "29",
+              "armor_info_id": "41",
+              "rank": "1"
+            },
+            {
+              "profile_id": "29",
+              "armor_info_id": "42",
+              "rank": "1"
+            },
+            {
+              "profile_id": "29",
+              "armor_info_id": "43",
+              "rank": "1"
+            },
+            {
+              "profile_id": "29",
+              "armor_info_id": "44",
+              "rank": "1"
+            },
+            {
+              "profile_id": "29",
+              "armor_info_id": "45",
+              "rank": "1"
+            }
+          ],
+          "returned": 6
+        }
+      },
+      "profile_resist_map": {
+        "summary": "Resist map for the Lightning. Note that the example has been truncated for brevity.\nhttps://census.daybreakgames.com/get/ps2/profile_resist_map?profile_id=26&c:limit=50",
+        "value": {
+          "profile_resist_map_list": [
+            {
+              "profile_id": "26",
+              "resist_info_id": "31",
+              "rank": "1"
+            },
+            {
+              "profile_id": "26",
+              "resist_info_id": "32",
+              "rank": "1"
+            },
+            {
+              "profile_id": "26",
+              "resist_info_id": "33",
+              "rank": "1"
+            },
+            {
+              "profile_id": "26",
+              "resist_info_id": "34",
+              "rank": "1"
+            }
+          ],
+          "returned": 26
+        }
+      },
       "projectile": {
         "summary": "Hawk GD-68\nhttps://census.daybreakgames.com/get/ps2/projectile?projectile_id=33004",
         "value": {
@@ -7794,6 +8227,137 @@
             {
               "projectile_flight_type_id": "10",
               "description": "Proximity Detonate"
+            }
+          ],
+          "returned": 4
+        }
+      },
+      "resist_info": {
+        "summary": "MAX Melee resistance.\nhttps://census.daybreakgames.com/get/ps2/resist_info?resist_info_id=1",
+        "value": {
+          "resist_info_list": [
+            {
+              "resist_info_id": "1",
+              "resist_type_id": "1",
+              "resist_percent": "80",
+              "multiplier_when_headshot": "1",
+              "description": "MAX - Melee"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "resist_type": {
+        "summary": "List of all resist types.\nhttps://census.daybreakgames.com/get/ps2/resist_type?c:limit=100",
+        "value": {
+          "resist_type_list": [
+            {
+              "resist_type_id": "0",
+              "description": "None"
+            },
+            {
+              "resist_type_id": "1",
+              "description": "Melee"
+            },
+            {
+              "resist_type_id": "2",
+              "description": "Small Arms"
+            },
+            {
+              "resist_type_id": "4",
+              "description": "Heavy Machine Guns"
+            },
+            {
+              "resist_type_id": "5",
+              "description": "Heavy Anti-Armor"
+            },
+            {
+              "resist_type_id": "6",
+              "description": "Common Explosive"
+            },
+            {
+              "resist_type_id": "7",
+              "description": "Tank Shell"
+            },
+            {
+              "resist_type_id": "8",
+              "description": "Aircraft Machine Gun"
+            },
+            {
+              "resist_type_id": "12",
+              "description": "Flak Explosive Blast"
+            },
+            {
+              "resist_type_id": "20",
+              "description": "Sniper Rifles"
+            },
+            {
+              "resist_type_id": "22",
+              "description": "Anti-Aircraft Machine Gun"
+            },
+            {
+              "resist_type_id": "23",
+              "description": "Air to Ground Warhead"
+            },
+            {
+              "resist_type_id": "28",
+              "description": "AP Gatling"
+            },
+            {
+              "resist_type_id": "34",
+              "description": "Infantry Rocket Launchers"
+            },
+            {
+              "resist_type_id": "40",
+              "description": "Anti-Materiel Rifle"
+            },
+            {
+              "resist_type_id": "45",
+              "description": "A2A Missile"
+            },
+            {
+              "resist_type_id": "46",
+              "description": "Core Explosion / Glaive"
+            },
+            {
+              "resist_type_id": "47",
+              "description": "Orbital Strike"
+            },
+            {
+              "resist_type_id": "64",
+              "description": "Burning"
+            },
+            {
+              "resist_type_id": "68",
+              "description": "Infantry Lock-on"
+            },
+            {
+              "resist_type_id": "69",
+              "description": "Melee: Armor Piercing"
+            }
+          ],
+          "returned": 21
+        }
+      },
+      "target_type": {
+        "summary": "List of all target types.\nhttps://census.daybreakgames.com/get/ps2/target_type?c:limit=10",
+        "value": {
+          "target_type_list": [
+            {
+              "target_type_id": "1",
+              "description": "Self"
+            },
+            {
+              "target_type_id": "2",
+              "description": "Any"
+            },
+            {
+              "target_type_id": "3",
+              "description": "Enemy"
+            },
+            {
+              "target_type_id": "4",
+              "description": "Ally"
             }
           ],
           "returned": 4
