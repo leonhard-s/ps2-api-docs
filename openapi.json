@@ -1104,6 +1104,104 @@
         }
       }
     },
+    "/get/{game}/effect": {
+      "get": {
+        "summary": "Effect",
+        "description": "An effect acting on players or vehicles.\n\nThis includes direct and indirect damage effects, healing, revives, and resource modifiers such as EMPs destroying shields.\n\nSee the `ps2/effect_type` collection for a list of available effect types.",
+        "tags": [
+          "Effects & Abilities"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/effectIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/effectTypeIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/abilityIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "effect_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/effect"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "effect": {
+                    "$ref": "#/components/examples/effect"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/effect_type": {
+      "get": {
+        "summary": "Effect Type",
+        "description": "A type of effect.\n\nThe generic fields `paramX` and `stringX` are documented here. Note that not all fields are used by all effect types, or at all.",
+        "tags": [
+          "Effects & Abilities"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/effectTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "effect_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/effect_type"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "effect_type": {
+                    "$ref": "#/components/examples/effect_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/faction": {
       "get": {
         "summary": "Faction",
@@ -3476,6 +3574,24 @@
           }
         }
       },
+      "effectIdParam": {
+        "name": "effect_id",
+        "in": "query",
+        "description": "Unique ID of the effect.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "effectTypeIdParam": {
+        "name": "effect_type_id",
+        "in": "query",
+        "description": "Unique ID of the effect type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "factionIdParam": {
         "name": "faction_id",
         "in": "query",
@@ -4896,6 +5012,181 @@
             "description": "The `ps2/world` of the character.",
             "x-cast-to": "int32",
             "x-reference-to": "world.world_id"
+          }
+        }
+      },
+      "effect": {
+        "type": "object",
+        "properties": {
+          "effect_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "effect_type_id": {
+            "type": "string",
+            "description": "Unique identifier of the effect's type.",
+            "x-cast-to": "int32",
+            "x-reference-to": "effect_type.effect_type_id"
+          },
+          "ability_type_id": {
+            "type": "string",
+            "description": "Unique identifier of the ability type associated with this effect.",
+            "x-cast-to": "int32",
+            "x-reference-to": "ability_type.ability_type_id"
+          },
+          "target_type_id": {
+            "type": "string",
+            "description": "Target type used to select targets for this effect.",
+            "x-cast-to": "int32",
+            "x-reference-to": "target_type.target_type_id"
+          },
+          "resist_type_id": {
+            "type": "string",
+            "description": "Resist type used to calculate damage resistance for this effect.",
+            "x-cast-to": "int32",
+            "x-reference-to": "resist_type.resist_type_id"
+          },
+          "is_drain": {
+            "type": "string",
+            "description": "Unkown. Appears to control the resource drain of toggled abilities (e.g. Heavy Overshield) while they are active, among other things.",
+            "x-cast-to": "boolean"
+          },
+          "duration_seconds": {
+            "type": "string",
+            "description": "Duration over which the effect is applied, in seconds.",
+            "x-cast-to": "int32"
+          },
+          "param1": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param2": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param3": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param4": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param5": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param6": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param7": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param8": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param9": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param10": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param11": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param12": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param13": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/effect_type` for details.",
+            "x-cast-to": "float"
+          }
+        }
+      },
+      "effect_type": {
+        "type": "object",
+        "properties": {
+          "effect_type_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the effect type."
+          },
+          "param1": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param2": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param3": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param4": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param5": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param6": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param7": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param8": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param9": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param10": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param11": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param12": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
+          },
+          "param13": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on effects of this type."
           }
         }
       },
@@ -7540,6 +7831,54 @@
             "resolve_list": []
           },
           "returned": 1
+        }
+      },
+      "effect": {
+        "summary": "Lasher damage effects.\n",
+        "value": {}
+      },
+      "effect_type": {
+        "summary": "A selection of common effect types.\nhttps://census.daybreakgames.com/get/ps2/effect_type?effect_type_id=11,12,36,40&c:limit=4",
+        "value": {
+          "effect_type_list": [
+            {
+              "effect_type_id": "11",
+              "description": "Heal",
+              "param1": "HP per sec",
+              "param2": "Distance Max",
+              "param3": "0 Heal, 1 Repair"
+            },
+            {
+              "effect_type_id": "12",
+              "description": "Revive",
+              "param1": "Health Percent",
+              "param2": "Distance Max",
+              "param3": "Sec to revive"
+            },
+            {
+              "effect_type_id": "36",
+              "description": "Damage",
+              "param1": "Damage Amount"
+            },
+            {
+              "effect_type_id": "40",
+              "description": "Indirect Damage",
+              "param1": "Damage within inside radius",
+              "param2": "Inside Radius (min)",
+              "param3": "Minimum Damage (Damage at max radius)",
+              "param4": "There is no Param4",
+              "param5": "Outside Radius (max)",
+              "param6": "Direct Impact Damage",
+              "param7": "Fire off Ability ID",
+              "param8": "Arming Distance",
+              "param9": "Arming Scaling Distance",
+              "param10": "Ignore Impacted Object (1 = true)",
+              "param11": "Screen Effect ID",
+              "param12": "Armor Penetration",
+              "param13": "Same faction resist percentage"
+            }
+          ],
+          "returned": 4
         }
       },
       "faction": {
