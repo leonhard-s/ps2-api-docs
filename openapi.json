@@ -4580,7 +4580,7 @@
           "user_selectable": {
             "type": "string",
             "description": "Whether this faction is playable or reserved for NPCs.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           }
         }
       },
@@ -4615,7 +4615,7 @@
           "can_chamber_ironsights": {
             "type": "string",
             "description": "Whether the weapon can be chambered while aiming down sights. Only set on weapons with this capability by default, weapons requiring attachments such as straight-pull bolts will not have this set.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           }
         }
       },
@@ -4800,21 +4800,21 @@
           "automatic": {
             "type": "string",
             "description": "Whether the fire mode is automatic or not, i.e. whether it will refire on its own if the trigger is held down. Note that this may conflict with the fire mode's `description`, in particular for vehicle weapons.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "grief_immune": {
             "type": "string",
             "description": "If true, the fire mode is not considered as part of the grief points system and can not cause a weapon lock.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "iron_sights": {
             "type": "string",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "laser_guided": {
             "type": "string",
             "description": "If true, projectiles fired will continue to follow the crosshair after firing.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "move_modifier": {
             "type": "string",
@@ -4829,7 +4829,7 @@
           "sprint_fire": {
             "type": "string",
             "description": "Whether the firte mode can be used while sprinting.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "turn_modifier": {
             "type": "string",
@@ -4839,7 +4839,7 @@
           "use_in_water": {
             "type": "string",
             "description": "Whether the fire mode can be used while submerged.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "zoom_default": {
             "type": "string",
@@ -4989,7 +4989,7 @@
           },
           "lockon_maintain": {
             "type": "string",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "lockon_radius": {
             "type": "string",
@@ -5103,12 +5103,12 @@
           "reload_block_auto": {
             "type": "string",
             "description": "If true, an empty magazine will force the player out of ADS in order to reload.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "reload_continuous": {
             "type": "string",
             "description": "Whether the weapon uses a per-shell reload animation, such as pump-action shotguns.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "reload_ammo_fill_ms": {
             "type": "string",
@@ -5148,7 +5148,7 @@
           "sway_can_steady": {
             "type": "string",
             "description": "Whether scope sway can be steadied by holding breath.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "sway_period_x": {
             "type": "string",
@@ -5302,7 +5302,7 @@
           "is_vehicle_weapon": {
             "type": "string",
             "description": "Whether this item is a vehicle weapon.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "name": {
             "description": "Display name of the item.",
@@ -5348,7 +5348,7 @@
           "is_default_attachment": {
             "type": "string",
             "description": "If true, the item is auto-granted to the player, such as the default scope and ammo types.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           }
         }
       },
@@ -5956,17 +5956,17 @@
           "detonate_on_contact": {
             "type": "string",
             "description": "Whether the projectile will detonate on contact with a surface or player.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "sticky": {
             "type": "string",
             "description": "Whether the projectile will stick to surfaces. This includes Sticky Grenades and bricks of C-4 explosives.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "sticks_to_players": {
             "type": "string",
             "description": "Whether the projectile will stick to infantry on contact. Note that in addition to Sticky Grenades, this will also be true for projectiles that only stick to MAXes, such as Nano-Repair or Anti-Vehicle Grenades.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "lockon_lose_angle": {
             "type": "string",
@@ -5976,7 +5976,7 @@
           "lockon_seek_in_flight": {
             "type": "string",
             "description": "Whether a dumb-fired projectile will attempt to lock onto targets in flight. Used by the Coyote and Hyena missile launchers.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           },
           "projectile_radius": {
             "type": "string",
@@ -6490,7 +6490,7 @@
           "dynamic": {
             "type": "string",
             "description": "Whether this zone is dynamic or not. Multiple dynamic zones of the same `geometry_id` may exist for a given `ps2/world`, such as Sanctuary instances or Outfit Wars rooms.",
-            "x-cast-to": "bool"
+            "x-cast-to": "boolean"
           }
         }
       },
