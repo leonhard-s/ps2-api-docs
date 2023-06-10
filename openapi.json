@@ -79,6 +79,10 @@
     {
       "name": "Damage Calculation",
       "description": "Armor values and resistances."
+    },
+    {
+      "name": "Effects & Abilities",
+      "description": "Collections related to abilities, effects, their types and consumed resources."
     }
   ],
   "security": [],
@@ -278,6 +282,101 @@
                   },
                   "mapFacilities": {
                     "$ref": "#/components/examples/collection_mapFacilities"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/ability": {
+      "get": {
+        "summary": "Ability",
+        "description": "An ability triggered by a character or vehicle.\n\nAbilities in the API are more generic than the in-game abilities and also cover other mechanics such as scopes and consumables.\n\nThe generic fields `paramX` and `stringX` are documented in the the corresponding `ps2/ability_type` entry.",
+        "tags": [
+          "Effects & Abilities"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/abilityIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/abilityTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ability_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ability"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "ability": {
+                    "$ref": "#/components/examples/ability"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/ability_type": {
+      "get": {
+        "summary": "Ability Type",
+        "description": "A type of ability.\n\nThe generic fields `paramX` and `stringX` are documented here. Note that most of these generic fields are currently not used.",
+        "tags": [
+          "Effects & Abilities"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/abilityTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ability_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ability_type"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "ability_type": {
+                    "$ref": "#/components/examples/ability_type"
                   }
                 }
               }
@@ -3284,6 +3383,22 @@
           }
         }
       },
+      "abilityIdParam": {
+        "name": "ability_id",
+        "description": "Unique ID of an ability.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "abilityTypeIdParam": {
+        "name": "ability_type_id",
+        "description": "Unique ID of an ability type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "armorFacingIdParam": {
         "name": "armor_facing_id",
         "in": "query",
@@ -3748,6 +3863,245 @@
               "type": "string"
             },
             "description": "A list of resolvable names for the collection. These can be passed to the `c:resolve` query parameter to insert additional fields into the returned payload."
+          }
+        }
+      },
+      "ability": {
+        "type": "object",
+        "properties": {
+          "ability_id": {
+            "type": "string",
+            "description": "Unique identifier of the ability.",
+            "x-cast-to": "int32"
+          },
+          "ability_type_id": {
+            "type": "string",
+            "description": "Unique identifier of the ability's type.",
+            "x-cast-to": "int32",
+            "x-reference-to": "ps2/ability_type"
+          },
+          "expire_msec": {
+            "type": "string",
+            "description": "Duration of the ability in milliseconds.",
+            "x-cast-to": "int32"
+          },
+          "first_use_delay_msec": {
+            "type": "string",
+            "description": "Initial delay before the ability can be used for the first time in milliseconds.",
+            "x-cast-to": "int32"
+          },
+          "next_use_delay_msec": {
+            "type": "string",
+            "description": "Reuse cooldown for toggled abilities (mostly cloaks) in milliseconds",
+            "x-cast-to": "int32"
+          },
+          "reuse_delay_msec": {
+            "type": "string",
+            "description": "Ability cooldown in milliseconds.",
+            "x-cast-to": "int32"
+          },
+          "resource_type_id": {
+            "type": "string",
+            "description": "Unique identifier of the resource type consumed by the ability.",
+            "x-cast-to": "int32",
+            "x-reference-to": "ps2/resource_type"
+          },
+          "resource_first_cost": {
+            "type": "string",
+            "description": "Initial cost for activating the ability.",
+            "x-cast-to": "float"
+          },
+          "resource_cost_per_msec": {
+            "type": "string",
+            "description": "Cost per millisecond for keeping the ability active.",
+            "x-cast-to": "float"
+          },
+          "distance_max": {
+            "type": "string",
+            "description": "Maximum cast range of the ability for targeted abilities, such as the Nano-Repair Kit (aka. repair gun).",
+            "x-cast-to": "float"
+          },
+          "radius_max": {
+            "type": "string",
+            "description": "Effect radius of the ability, such as the Nano Regen Device (aka. AoE heal).",
+            "x-cast-to": "float"
+          },
+          "flag_toggle": {
+            "type": "string",
+            "description": "Whether the ability is toggled.",
+            "x-cast-to": "boolean"
+          },
+          "param1": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param2": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param3": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param4": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param5": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param6": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param7": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param8": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param9": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param10": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param11": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param12": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param13": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param14": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/ability_type` for details.",
+            "x-cast-to": "float"
+          },
+          "string1": {
+            "type": "string",
+            "description": "Generic string field. See the corresponding `ps2/ability_type` for details."
+          },
+          "string2": {
+            "type": "string",
+            "description": "Generic string field. See the corresponding `ps2/ability_type` for details."
+          },
+          "string3": {
+            "type": "string",
+            "description": "Generic string field. See the corresponding `ps2/ability_type` for details."
+          },
+          "string4": {
+            "type": "string",
+            "description": "Generic string field. See the corresponding `ps2/ability_type` for details."
+          }
+        }
+      },
+      "ability_type": {
+        "type": "object",
+        "properties": {
+          "ability_type_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the ability type."
+          },
+          "param1": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param2": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param3": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param4": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param5": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param6": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param7": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param8": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param9": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param10": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param11": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param12": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param13": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "param14": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on abilities of this type."
+          },
+          "string1": {
+            "type": "string",
+            "description": "Documentation for this string parameter on abilities of this type."
+          },
+          "string2": {
+            "type": "string",
+            "description": "Documentation for this string parameter on abilities of this type."
+          },
+          "string3": {
+            "type": "string",
+            "description": "Documentation for this string parameter on abilities of this type."
+          },
+          "string4": {
+            "type": "string",
+            "description": "Documentation for this string parameter on abilities of this type."
           }
         }
       },
@@ -6525,6 +6879,78 @@
       }
     },
     "examples": {
+      "ability": {
+        "summary": "AoE Heal (Level 6).\nhttps://census.daybreakgames.com/get/ps2/ability?ability_id=7719",
+        "value": {
+          "ability_list": [
+            {
+              "ability_id": "7719",
+              "ability_type_id": "10",
+              "resource_type_id": "38",
+              "resource_first_cost": "0.32",
+              "resource_cost_per_msec": "0.32",
+              "radius_max": "7",
+              "flag_toggle": "1"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "ability_type": {
+        "summary": "All ability types.\nhttps://census.daybreakgames.com/get/ps2/ability_type?c:limit=50",
+        "value": {
+          "ability_type_list": [
+            {
+              "ability_type_id": "3"
+            },
+            {
+              "ability_type_id": "4"
+            },
+            {
+              "ability_type_id": "5",
+              "description": "Target not used"
+            },
+            {
+              "ability_type_id": "6"
+            },
+            {
+              "ability_type_id": "8"
+            },
+            {
+              "ability_type_id": "10",
+              "param1": "Check Target Requirement Periodically"
+            },
+            {
+              "ability_type_id": "12"
+            },
+            {
+              "ability_type_id": "13"
+            },
+            {
+              "ability_type_id": "16"
+            },
+            {
+              "ability_type_id": "17",
+              "param1": "Check Target Requirement Periodically"
+            },
+            {
+              "ability_type_id": "19"
+            },
+            {
+              "ability_type_id": "26",
+              "description": "Stays locked on first valid target found"
+            },
+            {
+              "ability_type_id": "30"
+            },
+            {
+              "ability_type_id": "34",
+              "description": "MountedVehicleMaintainOnGuid"
+            }
+          ],
+          "returned": 14
+        }
+      },
       "armor_facing": {
         "summary": "All armor facing directions.\nhttps://census.daybreakgames.com/get/ps2/armor_facing?c:limit=10",
         "value": {
