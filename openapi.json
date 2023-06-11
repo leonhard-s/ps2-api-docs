@@ -2592,6 +2592,52 @@
         }
       }
     },
+    "/get/{game}/resource_type": {
+      "get": {
+        "summary": "Resource Type",
+        "description": "Resources consumed by abilities such as the Heavy Overshield.",
+        "tags": [
+          "Effects & Abilities"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/resourceTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "resource_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/resource_type"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "resource_type": {
+                    "$ref": "#/components/examples/resource_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/target_type": {
       "get": {
         "summary": "Target Types",
@@ -3976,6 +4022,15 @@
         "schema": {
           "type": "string"
         }
+      },
+      "resourceTypeIdParam": {
+        "name": "resource_type_id",
+        "in": "query",
+        "description": "Unique identifier of a resource type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
       },
       "targetTypeIdParam": {
         "name": "target_type_id",
@@ -6794,6 +6849,21 @@
           }
         }
       },
+      "resource_type": {
+        "type": "object",
+        "properties": {
+          "resource_type_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the resource type.",
+            "x-cast-to": "string"
+          }
+        }
+      },
       "target_type": {
         "type": "object",
         "properties": {
@@ -9437,6 +9507,78 @@
             }
           ],
           "returned": 21
+        }
+      },
+      "resource_type": {
+        "summary": "All resource types.\nhttps://census.daybreakgames.com/get/ps2/resource_type?c:limit=50",
+        "value": {
+          "resource_type_list": [
+            {
+              "resource_type_id": "1",
+              "description": "Health"
+            },
+            {
+              "resource_type_id": "7",
+              "description": "Fuel"
+            },
+            {
+              "resource_type_id": "9",
+              "description": "Heavy Shield"
+            },
+            {
+              "resource_type_id": "35",
+              "description": "Cloaker Juice"
+            },
+            {
+              "resource_type_id": "38",
+              "description": "Medic Fuel"
+            },
+            {
+              "resource_type_id": "41",
+              "description": "NC MAX Aegis Shield 01"
+            },
+            {
+              "resource_type_id": "43",
+              "description": "NC MAX Aegis Shield 02"
+            },
+            {
+              "resource_type_id": "44",
+              "description": "NC MAX Aegis Shield 03"
+            },
+            {
+              "resource_type_id": "45",
+              "description": "NC MAX Aegis Shield 04"
+            },
+            {
+              "resource_type_id": "46",
+              "description": "NC MAX Aegis Shield 05"
+            },
+            {
+              "resource_type_id": "50",
+              "description": "VS: MAX: Ability: Zealot"
+            },
+            {
+              "resource_type_id": "58",
+              "description": "Cortium"
+            },
+            {
+              "resource_type_id": "75",
+              "description": "Ambusher Fuel"
+            },
+            {
+              "resource_type_id": "133",
+              "description": "NSO: MAX: Time Bomb"
+            },
+            {
+              "resource_type_id": "154",
+              "description": "Thrust"
+            },
+            {
+              "resource_type_id": "157",
+              "description": "Demeter Veil"
+            }
+          ],
+          "returned": 16
         }
       },
       "target_type": {
