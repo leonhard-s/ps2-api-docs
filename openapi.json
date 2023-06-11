@@ -83,6 +83,10 @@
     {
       "name": "Effects & Abilities",
       "description": "Collections related to abilities, effects, their types and consumed resources."
+    },
+    {
+      "name": "Certifications & A.S.P.",
+      "description": "Collections related to certification trees and A.S.P. skills."
     }
   ],
   "security": [],
@@ -2638,6 +2642,199 @@
         }
       }
     },
+    "/get/{game}/skill": {
+      "get": {
+        "summary": "Skill",
+        "description": "Purchasable skills, such as certifications and A.S.P. skills.",
+        "tags": [
+          "Certifications & A.S.P."
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/skillIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/skillLineIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "skill_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/skill"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "skill": {
+                    "$ref": "#/components/examples/skill"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/skill_line": {
+      "get": {
+        "summary": "Skill Line",
+        "description": "Skill lines represent upgrade paths for skills, such as Ammo Capacity.",
+        "tags": [
+          "Certifications & A.S.P."
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/skillLineIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/skillCategoryIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "skill_line_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/skill_line"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "skill_line": {
+                    "$ref": "#/components/examples/skill_line"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/skill_category": {
+      "get": {
+        "summary": "Skill Category",
+        "description": "Skill categories represent a grouping of skills.\n\nThey usually group skills by the loadout slots for which they provide items, such as \"Passive Systems\" or \"Ability Slot\". On weapons, they generally represent a given attachment slot.",
+        "tags": [
+          "Certifications & A.S.P."
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/skillCategoryIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/skillSetIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "skill_category_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/skill_category"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "skill_category": {
+                    "$ref": "#/components/examples/skill_category"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/skill_set": {
+      "get": {
+        "summary": "Skill Set",
+        "description": "Skill sets represent the top-level grouping of skills.\n\nIn the old certification menu, this would group weapon-related skill lines into a sub-tree beneath the weapon itself.",
+        "tags": [
+          "Certifications & A.S.P."
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/skillSetIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "skill_set_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/skill_set"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "skill_set": {
+                    "$ref": "#/components/examples/skill_set"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/target_type": {
       "get": {
         "summary": "Target Types",
@@ -2811,6 +3008,51 @@
                 "examples": {
                   "harasser": {
                     "$ref": "#/components/examples/vehicle_faction"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/vehicle_skill_set": {
+      "get": {
+        "summary": "Vehicle Skill Set",
+        "description": "Maps vehicles to the skill sets that they use.\n\nNote that this relationship is expressed for each faction separetly.",
+        "tags": [
+          "Certifications & A.S.P."
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/vehicleIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/skillSetIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "vehicle_skill_set_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/vehicle_skill_set"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "vehicle_skill_set": {
+                    "$ref": "#/components/examples/vehicle_skill_set"
                   }
                 }
               }
@@ -3887,6 +4129,42 @@
         "name": "projectile_flight_type_id",
         "in": "query",
         "description": "Unique identifier of a projectile flight type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "skillIdParam": {
+        "name": "skill_id",
+        "in": "query",
+        "description": "Unique identifier of a skill.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "skillLineIdParam": {
+        "name": "skill_id",
+        "in": "query",
+        "description": "Unique identifier of a skill line.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "skillCategoryIdParam": {
+        "name": "skill_category_id",
+        "in": "query",
+        "description": "Unique identifier of a skill category.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "skillSetIdParam": {
+        "name": "skill_set_id",
+        "in": "query",
+        "description": "Unique identifier of a skill set.",
         "schema": {
           "type": "string"
         },
@@ -6864,6 +7142,211 @@
           }
         }
       },
+      "skill": {
+        "type": "object",
+        "properties": {
+          "skill_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "skill_line_id": {
+            "type": "string",
+            "description": "Skill line containing this skill.",
+            "x-cast-to": "int32",
+            "x-reference-to": "skill_line.skill_line_id"
+          },
+          "skill_line_index": {
+            "type": "string",
+            "description": "Position of this skill for upgradable skill lines such as Ammo Capacity.",
+            "x-cast-to": "int32"
+          },
+          "skill_points": {
+            "type": "string",
+            "description": "Number of skill points (Certs or A.S.P. tokens) required to unlock this skill.",
+            "x-cast-to": "int32"
+          },
+          "grant_item_id": {
+            "type": "string",
+            "description": "Item granted by this skill. The skill must be unlocked for the item to be available in the player's loadouts.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
+          },
+          "name": {
+            "description": "Display name of the skill.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Description of the skill.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "Image set associated with this skill.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "Image associated with this skill.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Path to the image associated with this skill.",
+            "x-cast-to": "string"
+          }
+        }
+      },
+      "skill_line": {
+        "type": "object",
+        "properties": {
+          "skill_line_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "skill_points": {
+            "type": "string",
+            "description": "Unused.",
+            "x-cast-to": "int32"
+          },
+          "skill_category_id": {
+            "type": "string",
+            "description": "Skill category containing this skill line.",
+            "x-cast-to": "int32",
+            "x-reference-to": "skill_category.skill_category_id"
+          },
+          "skill_category_index": {
+            "type": "string",
+            "description": "Position of this skill line within its skill category.",
+            "x-cast-to": "int32"
+          },
+          "name": {
+            "description": "Display name of the skill line.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Description of the skill line.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "Image set associated with this skill line.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "Image associated with this skill line.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Path to the image associated with this skill line.",
+            "x-cast-to": "string"
+          }
+        }
+      },
+      "skill_category": {
+        "type": "object",
+        "properties": {
+          "skill_category_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "skill_set_id": {
+            "type": "string",
+            "description": "Skill set containing this skill category.",
+            "x-cast-to": "int32",
+            "x-reference-to": "skill_set.skill_set_id"
+          },
+          "skill_set_index": {
+            "type": "string",
+            "description": "Position of this skill category within its skill set.",
+            "x-cast-to": "int32"
+          },
+          "skill_points": {
+            "type": "string",
+            "description": "Unused.",
+            "x-cast-to": "int32"
+          },
+          "name": {
+            "description": "Display name of the skill category.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Description of the skill category.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "Image set associated with this skill category.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "Image associated with this skill category.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Path to the image associated with this skill category.",
+            "x-cast-to": "string"
+          }
+        }
+      },
+      "skill_set": {
+        "type": "object",
+        "properties": {
+          "skill_set_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "skill_points": {
+            "type": "string",
+            "description": "Unlock cost of the skill set. For weapon skill sets, this is equal to the certification cost of the weapon item.",
+            "x-cast-to": "int32"
+          },
+          "required_item_id": {
+            "type": "string",
+            "description": "The item associated with this skill set. Contained skill lines are only available once this item has been unlocked.",
+            "x-cast-to": "int32",
+            "x-reference-to": "item.item_id"
+          },
+          "name": {
+            "description": "Display name of the skill set.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Description of the skill set.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "Image set associated with this skill set.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "Image associated with this skill set.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Path to the image associated with this skill set.",
+            "x-cast-to": "string"
+          }
+        }
+      },
       "target_type": {
         "type": "object",
         "properties": {
@@ -6977,6 +7460,34 @@
             "description": "ID of the faction that can use the vehicle.",
             "x-cast-to": "int32",
             "x-reference-to": "faction.faction_id"
+          }
+        }
+      },
+      "vehicle_skill_set": {
+        "type": "object",
+        "properties": {
+          "vehicle_id": {
+            "type": "string",
+            "description": "Vehicle side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "vehicle.vehicle_id"
+          },
+          "skill_set_id": {
+            "type": "string",
+            "description": "Skill set side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "skill_set.skill_set_id"
+          },
+          "faction_id": {
+            "type": "string",
+            "description": "ID of the faction that can use the skill set.",
+            "x-cast-to": "int32",
+            "x-reference-to": "faction.faction_id"
+          },
+          "display_index": {
+            "type": "string",
+            "description": "Index used to sort the skill sets in the vehicle's UI.",
+            "x-cast-to": "int32"
           }
         }
       },
@@ -9581,6 +10092,130 @@
           "returned": 16
         }
       },
+      "skill": {
+        "summary": "Suppressor.\nhttps://census.daybreakgames.com/get/ps2/skill?skill_id=34",
+        "value": {
+          "skill_list": [
+            {
+              "skill_id": "34",
+              "skill_line_id": "13",
+              "skill_line_index": "0",
+              "skill_points": "100",
+              "grant_item_id": "182",
+              "name": {
+                "de": "Schalldämpfer",
+                "en": "Suppressor",
+                "es": "Silenciador",
+                "fr": "Silencieux",
+                "it": "Soppressore",
+                "tr": "Susturucu"
+              },
+              "description": {
+                "de": "Verringert Mündungsfeuer und Lautstärke.",
+                "en": "Decreases muzzle flash and audio range.",
+                "es": "Disminuye el alcance del fogonazo y el sonido al disparar.",
+                "fr": "Diminue l'éclair du tir et le bruit.",
+                "it": "Riduce la fiammata e la gittata sonora dell'arma.",
+                "tr": "Namlu alevi ve sesinin duyulma mesafesini azaltır."
+              },
+              "image_set_id": "443",
+              "image_id": "1300",
+              "image_path": "/files/ps2/images/static/1300.png"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "skill_line": {
+        "summary": "Maximum Ammo Capacity.\nhttps://census.daybreakgames.com/get/ps2/skill_line?skill_line_id=88",
+        "value": {
+          "skill_line_list": [
+            {
+              "skill_line_id": "88",
+              "skill_points": "0",
+              "skill_category_id": "44",
+              "skill_category_index": "0",
+              "name": {
+                "de": "Maximale Munitionskapazität",
+                "en": "Maximum Ammo Capacity",
+                "es": "Capacidad de munición máxima",
+                "fr": "Capacité maximale en munitions",
+                "it": "Capacità di munizioni massima",
+                "tr": "Maksimum Cephane Kapasitesi"
+              },
+              "description": {
+                "de": "Erhöht die maximale Munitionskapazität der Waffe.",
+                "en": "Increases the maximum ammo capacity of the weapon.",
+                "es": "Aumenta la capacidad de munición máxima del arma.",
+                "fr": "Augmente la capacité maximale en munitions de l'arme.",
+                "it": "Aumenta la capacità massima di munizioni dell'arma.",
+                "tr": "Silahın azami cephane kapasitesini arttırır."
+              },
+              "image_set_id": "2049",
+              "image_id": "3744",
+              "image_path": "/files/ps2/images/static/3744.png"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "skill_category": {
+        "summary": "Passive Systems.\nhttps://census.daybreakgames.com/get/ps2/skill_category?skill_category_id=1",
+        "value": {
+          "skill_category_list": [
+            {
+              "skill_category_id": "1",
+              "skill_set_id": "10",
+              "skill_set_index": "0",
+              "skill_points": "0",
+              "name": {
+                "de": "Passive Systeme",
+                "en": "Passive Systems",
+                "es": "Sistemas pasivos",
+                "fr": "Systèmes passifs",
+                "it": "Sistemi passivi",
+                "tr": "Pasif Sistemler"
+              },
+              "image_set_id": "1",
+              "image_id": "35",
+              "image_path": "/files/ps2/images/static/35.png"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "skill_set": {
+        "summary": "M40 Fury-F skill set.\nhttps://census.daybreakgames.com/get/ps2/skill_set?skill_set_id=43",
+        "value": {
+          "skill_set_list": [
+            {
+              "skill_set_id": "43",
+              "skill_points": "875",
+              "required_item_id": "2510",
+              "name": {
+                "de": "PRIMÄRWAFFE: M40 Fury-F",
+                "en": "PRIMARY WEAPON:  M40 Fury-F",
+                "es": "ARMA PRIMARIA: M40 Fury-F",
+                "fr": "ARME PRINCIPALE: Furie-F M40",
+                "it": "ARMA PRIMARIA: M40 Fury-F",
+                "tr": "PRIMARY WEAPON:  M40 Fury-F"
+              },
+              "description": {
+                "de": "Der Fury feuert 40mm-Granaten, die effektiv gegen die Infanterie  und leichte Panzerungen sind. Er kann ebenso leichten Schaden an schwer gepanzerten Ziele verursachen. Für alle Fraktionen.",
+                "en": "The Fury launches 40mm grenades that are effective against infantry and light armor.  It is also capable of light damage against heavy armor.  All factions can use this weapon.",
+                "es": "El Fury lanza granadas de 40 mm eficaces contra infantería y blindaje ligero. Además, son capaces de dañar ligeramente blindajes pesados. Todas las facciones pueden usar esta arma.",
+                "fr": "Le Furie lance des grenades de 40mm qui sont efficaces contre l'infanterie et les blindages légers. Il est également capable d'infliger des dégâts légers aux blindages lourds. Toutes les factions peuvent l'utiliser.",
+                "it": "Il Fury lancia granate di 40 mm efficaci contro la fanteria e le corazzature leggere. Può anche infliggere danni leggeri ai corazzati pesanti. Quest'arma può essere usata da tutte le fazioni.",
+                "tr": "The Fury launches 40mm grenades that are effective against infantry and light armor.  It is also capable of light damage against heavy armor.  All factions can use this weapon."
+              },
+              "image_set_id": "2029",
+              "image_id": "3724",
+              "image_path": "/files/ps2/images/static/3724.png"
+            }
+          ],
+          "returned": 1
+        }
+      },
       "target_type": {
         "summary": "List of all target types.\nhttps://census.daybreakgames.com/get/ps2/target_type?c:limit=10",
         "value": {
@@ -9813,6 +10448,20 @@
             }
           ],
           "returned": 4
+        }
+      },
+      "vehicle_skill_set": {
+        "summary": "L-30R Vektor (VS).\nhttps://census.daybreakgames.com/get/ps2/vehicle_skill_set?vehicle_id=10&skill_set_id=39&faction_id=1",
+        "value": {
+          "vehicle_skill_set_list": [
+            {
+              "vehicle_id": "10",
+              "skill_set_id": "39",
+              "faction_id": "1",
+              "display_index": "4"
+            }
+          ],
+          "returned": 1
         }
       },
       "weapon_regular": {
