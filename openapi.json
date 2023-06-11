@@ -3018,10 +3018,10 @@
     },
     "/get/{game}/vehicle_skill_set": {
       "get": {
-        "summary": "Vehicle Skill Set",
+        "summary": "Vehicle Skill Set Map",
         "description": "Maps vehicles to the skill sets that they use.\n\nNote that this relationship is expressed for each faction separetly.",
         "tags": [
-          "Certifications & A.S.P."
+          "Vehicles"
         ],
         "parameters": [
           {
