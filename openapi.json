@@ -1107,7 +1107,7 @@
     "/get/{game}/effect": {
       "get": {
         "summary": "Effect",
-        "description": "An effect acting on players or vehicles.\n\nThis includes direct and indirect damage effects, healing, revives, and resource modifiers such as EMPs destroying shields.\n\nSee the `ps2/effect_type` collection for a list of available effect types.",
+        "description": "A weapon-based effect acting on players or vehicles.\n\nWeapon-based effects include direct and indirect damage effects, tactical grenade impacts, as well as pseudo-weapons such as the Medic tool or Engineer repair tool. For world-based effects, weapon attachments and buffs, see the `ps2/zone_effect` collection instead.\n\nSee the `ps2/effect_type` collection for a list of available effect types.",
         "tags": [
           "Effects & Abilities"
         ],
@@ -3083,6 +3083,93 @@
           }
         }
       }
+    },
+    "/get/{game}/zone_effect": {
+      "get": {
+        "summary": "Zone Effects",
+        "description": "Passive effects such as weapon stat modifications from attachments or equipped skills.\n\nFor weapon damage effects, see `ps2/effect` instead. See the `ps2/zone_effect_type` collection for a list of available zone effect types.",
+        "tags": [
+          "Effects & Abilities"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/zoneEffectIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/zoneEffectTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "zone_effect_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/zone_effect"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "zone_effect": {
+                    "$ref": "#/components/examples/zone_effect"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/zone_effect_type": {
+      "get": {
+        "summary": "Zone Effect Types",
+        "description": "A type of zone effect.\n\nThe generic fields `paramX` and `stringX` are documented here. Note that not all fields are used by all zone effect types, or at all.",
+        "tags": [
+          "Effects & Abilities"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/zoneEffectTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "zone_effect_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/zone_effect_type"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "zone_effect_type": {
+                    "$ref": "#/components/examples/zone_effect_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -3930,6 +4017,22 @@
         "name": "zone_id",
         "in": "query",
         "description": "Unique identifier of a zone.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "zoneEffectIdParam": {
+        "name": "zone_effect_id",
+        "description": "Unique ID of a zone effect.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "zoneEffectTypeIdParam": {
+        "name": "zone_effect_type_id",
+        "description": "Unique ID of a zone  type.",
         "schema": {
           "type": "string"
         },
@@ -7139,6 +7242,200 @@
           }
         }
       },
+      "zone_effect": {
+        "type": "object",
+        "properties": {
+          "zone_effect_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "zone_effect_type_id": {
+            "type": "string",
+            "description": "Unique ID of the zone effect type.",
+            "x-cast-to": "int32",
+            "x-reference-to": "zone_effect_type.zone_effect_type_id"
+          },
+          "ability_id": {
+            "type": "string",
+            "description": "Unique ID of the associated ability.",
+            "x-cast-to": "int32",
+            "x-reference-to": "ability.ability_id"
+          },
+          "param1": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param2": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param3": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param4": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param5": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param6": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param7": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param8": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param9": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param10": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param11": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param12": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param13": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param14": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/zone_effect_type` for details.",
+            "x-cast-to": "float"
+          },
+          "string1": {
+            "type": "string",
+            "description": "Generic string field. See the corresponding `ps2/zone_effect_type` for details."
+          },
+          "string2": {
+            "type": "string",
+            "description": "Generic string field. See the corresponding `ps2/zone_effect_type` for details."
+          },
+          "string3": {
+            "type": "string",
+            "description": "Generic string field. See the corresponding `ps2/zone_effect_type` for details."
+          },
+          "string4": {
+            "type": "string",
+            "description": "Generic string field. See the corresponding `ps2/zone_effect_type` for details."
+          }
+        }
+      },
+      "zone_effect_type": {
+        "type": "object",
+        "properties": {
+          "zone_effect_type_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the zone effect type."
+          },
+          "param1": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param2": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param3": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param4": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param5": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param6": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param7": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param8": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param9": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param10": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param11": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param12": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param13": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "param14": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on zone effects of this type."
+          },
+          "string1": {
+            "type": "string",
+            "description": "Documentation for this string parameter on zone effects of this type."
+          },
+          "string2": {
+            "type": "string",
+            "description": "Documentation for this string parameter on zone effects of this type."
+          },
+          "string3": {
+            "type": "string",
+            "description": "Documentation for this string parameter on zone effects of this type."
+          },
+          "string4": {
+            "type": "string",
+            "description": "Documentation for this string parameter on zone effects of this type."
+          }
+        }
+      },
       "localized_string": {
         "type": "object",
         "properties": {
@@ -7834,8 +8131,46 @@
         }
       },
       "effect": {
-        "summary": "Lasher damage effects.\n",
-        "value": {}
+        "summary": "Lasher X2 damage effects.\nhttps://census.daybreakgames.com/get/ps2/effect?effect_id=7540,249&c:limit=2",
+        "value": {
+          "effect_list": [
+            {
+              "effect_id": "249",
+              "effect_type_id": "40",
+              "target_type_id": "3",
+              "resist_type_id": "6",
+              "is_drain": "0",
+              "duration_seconds": "0",
+              "param1": "75",
+              "param2": "1",
+              "param3": "25",
+              "param5": "3",
+              "param6": "0",
+              "param7": "0",
+              "param8": "0",
+              "param9": "0",
+              "param13": "75"
+            },
+            {
+              "effect_id": "7540",
+              "effect_type_id": "45",
+              "ability_id": "0",
+              "target_type_id": "2",
+              "resist_type_id": "2",
+              "is_drain": "0",
+              "duration_seconds": "0",
+              "param1": "155",
+              "param2": "10",
+              "param3": "105",
+              "param5": "65",
+              "param6": "0",
+              "param7": "0",
+              "param8": "0",
+              "param9": "0"
+            }
+          ],
+          "returned": 2
+        }
       },
       "effect_type": {
         "summary": "A selection of common effect types.\nhttps://census.daybreakgames.com/get/ps2/effect_type?effect_type_id=11,12,36,40&c:limit=4",
@@ -9568,6 +9903,42 @@
               },
               "geometry_id": "367",
               "dynamic": "0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "zone_effect": {
+        "summary": "Suppressor.\nhttps://census.daybreakgames.com/get/ps2/zone_effect?zone_effect_id=750052",
+        "value": {
+          "zone_effect_list": [
+            {
+              "zone_effect_id": "750052",
+              "zone_effect_type_id": "58",
+              "ability_id": "80412",
+              "param1": "0",
+              "param2": "1",
+              "param3": "1",
+              "param4": "0",
+              "string1": "BlockSpotOnDamageTaken"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "zone_effect_type": {
+        "summary": "Modify character flag.\nhttps://census.daybreakgames.com/get/ps2/zone_effect_type?zone_effect_type_id=58",
+        "value": {
+          "zone_effect_type_list": [
+            {
+              "zone_effect_type_id": "58",
+              "description": "Modify the given character flag",
+              "param1": "Operation (see tooltip)",
+              "param2": "ModifyValue",
+              "param3": "Persist",
+              "param4": "OneShot",
+              "param5": "Always Create ",
+              "string1": "CharacterFlagKey"
             }
           ],
           "returned": 1
