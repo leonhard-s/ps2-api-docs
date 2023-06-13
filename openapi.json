@@ -87,6 +87,10 @@
     {
       "name": "Certifications & A.S.P.",
       "description": "Collections related to certification trees and A.S.P. skills."
+    },
+    {
+      "name": "Progression",
+      "description": "Collections related to in-game progression, such as directives, weapon medals, titles, and service ribbons."
     }
   ],
   "security": [],
@@ -389,6 +393,58 @@
         }
       }
     },
+    "/get/{game}/achievement": {
+      "get": {
+        "summary": "Achievements",
+        "description": "Endpoint for weapon medals and service ribbons.\n\nThere is no \"achievement type\" collection or field, but they can be grouped by the `repeatable` field, which is only true for service ribbons.",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/achievementIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/itemIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "achievement_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/achievement"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "medals": {
+                    "$ref": "#/components/examples/achievement_medals"
+                  },
+                  "ribbon": {
+                    "$ref": "#/components/examples/achievement_ribbon"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/character": {
       "get": {
         "summary": "Character",
@@ -436,6 +492,52 @@
                 "examples": {
                   "higby": {
                     "$ref": "#/components/examples/character_higby"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/currency": {
+      "get": {
+        "summary": "Currency",
+        "description": "Lists currencies available in the game.\n\nAs of 2023-06-13, the only currency available are Nanites. Outfit resources and other currencies such as Daybreak Cash, ISO-4, or A7 are not available on the API, while Cert Points and A.S.P. tokens are stored in the `character` collection.",
+        "tags": [
+          "Basics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/currencyIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "currency_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/currency"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "nanites": {
+                    "$ref": "#/components/examples/currency"
                   }
                 }
               }
@@ -1198,6 +1300,95 @@
                 "examples": {
                   "effect_type": {
                     "$ref": "#/components/examples/effect_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/experience": {
+      "get": {
+        "summary": "Experience",
+        "description": "Lists the different types of experience ticks.",
+        "tags": [
+          "Basics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/experienceIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "experience_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/experience"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "experience": {
+                    "$ref": "#/components/examples/experience"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/experience_rank": {
+      "get": {
+        "summary": "Experience Rank",
+        "description": "Player rank gained through leveling up.\n\nNote that the `rank` field is not unique, as each rank is duplicated for each prestige (aka. A.S.P.) level. The prestige entries can only be distinguished by their icons.",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "experience_rank_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/experience_rank"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "experience_rank": {
+                    "$ref": "#/components/examples/experience_rank"
                   }
                 }
               }
@@ -3858,6 +4049,7 @@
       },
       "abilityIdParam": {
         "name": "ability_id",
+        "in": "query",
         "description": "Unique ID of an ability.",
         "schema": {
           "type": "string"
@@ -3866,7 +4058,17 @@
       },
       "abilityTypeIdParam": {
         "name": "ability_type_id",
+        "in": "query",
         "description": "Unique ID of an ability type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "achievementIdParam": {
+        "name": "achievement_id",
+        "in": "query",
+        "description": "Unique ID of an achievement.",
         "schema": {
           "type": "string"
         },
@@ -3949,6 +4151,15 @@
           }
         }
       },
+      "currencyIdParam": {
+        "name": "currency_id",
+        "in": "query",
+        "description": "Unique ID of a currency.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "effectIdParam": {
         "name": "effect_id",
         "in": "query",
@@ -3962,6 +4173,15 @@
         "name": "effect_type_id",
         "in": "query",
         "description": "Unique ID of the effect type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "experienceIdParam": {
+        "name": "experience_id",
+        "in": "query",
+        "description": "Unique ID of the experience type.",
         "schema": {
           "type": "string"
         },
@@ -4654,6 +4874,58 @@
           "string4": {
             "type": "string",
             "description": "Documentation for this string parameter on abilities of this type."
+          }
+        }
+      },
+      "achievement": {
+        "type": "object",
+        "properties": {
+          "achievement_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "item_id": {
+            "type": "string",
+            "description": "ID of the item associated with this achievement. Can be used to associate weapons with their medals/ribbon.",
+            "x-cast-to": "int32"
+          },
+          "objective_group_id": {
+            "type": "string",
+            "description": "ID of the objective group counting towards this achievement.",
+            "x-cast-to": "int32"
+          },
+          "reward_id": {
+            "type": "string",
+            "description": "ID of the reward granted upon completion of this achievement.",
+            "x-cast-to": "int32"
+          },
+          "repeatable": {
+            "type": "string",
+            "description": "Whether this achievement can be gained more than once. True for ribbons, false for medals.",
+            "x-cast-to": "bool"
+          },
+          "name": {
+            "description": "Name of the achievement.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Description of the achievement.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "ID of the image set associated with this achievement.",
+            "x-cast-to": "int32"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "ID of the image associated with this achievement.",
+            "x-cast-to": "int32"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Path to the image associated with this achievement."
           }
         }
       },
@@ -5451,6 +5723,31 @@
           }
         }
       },
+      "currency": {
+        "type": "object",
+        "properties": {
+          "currency_id": {
+            "type": "string",
+            "description": "Unique ID of the currency.",
+            "x-cast-to": "int32"
+          },
+          "name": {
+            "description": "The name of the currency.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "icon_id": {
+            "type": "string",
+            "description": "Icon ID of the resource. This is actually an `image_set_id`.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "inventory_cap": {
+            "type": "string",
+            "description": "The maximum amount of this currency that can be held in a character's inventory.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
       "effect": {
         "type": "object",
         "properties": {
@@ -5623,6 +5920,78 @@
           "param13": {
             "type": "string",
             "description": "Documentation for this numeric parameter on effects of this type."
+          }
+        }
+      },
+      "experience": {
+        "type": "object",
+        "properties": {
+          "experience_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the experience type."
+          },
+          "xp": {
+            "type": "string",
+            "description": "The amount of XP granted by this experience type.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "experience_rank": {
+        "type": "object",
+        "properties": {
+          "rank": {
+            "type": "string",
+            "description": "The ordinal rank of the experience type. Note that this is the same for each prestige level (0 through 3).",
+            "x-cast-to": "int32"
+          },
+          "xp_max": {
+            "type": "string",
+            "description": "Unused.",
+            "x-cast-to": "int32"
+          },
+          "vs": {
+            "description": "Subkey for the Vanu Sovereignty.",
+            "$ref": "#/components/schemas/experience_rank_faction"
+          },
+          "nc": {
+            "description": "Subkey for the New Conglomerate.",
+            "$ref": "#/components/schemas/experience_rank_faction"
+          },
+          "tr": {
+            "description": "Subkey for the Terran Republic.",
+            "$ref": "#/components/schemas/experience_rank_faction"
+          }
+        }
+      },
+      "experience_rank_faction": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "The title of the rank for the given faction.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "The `ps2/image_set` of the rank for the given faction.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "The `ps2/image` of the rank for the given faction.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "The path to the image of the rank for the given faction.",
+            "x-reference-to": "image.path"
           }
         }
       },
@@ -8120,6 +8489,148 @@
           "returned": 14
         }
       },
+      "achievement_medals": {
+        "summary": "Betelgeuse Weapon Medals.\nhttps://census.daybreakgames.com/get/ps2/achievement?item_id=1894&c:limit=10&repeatable=0",
+        "value": {
+          "achievement_list": [
+            {
+              "achievement_id": "12411",
+              "item_id": "1894",
+              "objective_group_id": "12411",
+              "reward_id": "100",
+              "repeatable": "0",
+              "name": {
+                "de": "Betelgeuse 54-A",
+                "en": "Betelgeuse 54-A",
+                "es": "Betelgeuse 54-A",
+                "fr": "Bételgeuse 54-A",
+                "it": "Betelgeuse 54-A"
+              },
+              "description": {
+                "de": "10 Feinde getötet",
+                "en": "10 Enemies Killed",
+                "es": "10 enemigos muertos",
+                "fr": "10 ennemis tués",
+                "it": "10 nemici uccisi",
+                "tr": "10 Düşman Öldürüldü"
+              },
+              "image_set_id": "1564",
+              "image_id": "3072",
+              "image_path": "/files/ps2/images/static/3072.png"
+            },
+            {
+              "achievement_id": "12412",
+              "item_id": "1894",
+              "objective_group_id": "12412",
+              "reward_id": "101",
+              "repeatable": "0",
+              "name": {
+                "de": "Betelgeuse 54-A",
+                "en": "Betelgeuse 54-A",
+                "es": "Betelgeuse 54-A",
+                "fr": "Bételgeuse 54-A",
+                "it": "Betelgeuse 54-A"
+              },
+              "description": {
+                "de": "50 Feinde getötet",
+                "en": "50 Enemies Killed",
+                "es": "50 enemigos muertos",
+                "fr": "50 ennemis tués",
+                "it": "50 nemici uccisi",
+                "tr": "50 Düşman Öldürüldü"
+              },
+              "image_set_id": "1565",
+              "image_id": "3079",
+              "image_path": "/files/ps2/images/static/3079.png"
+            },
+            {
+              "achievement_id": "12413",
+              "item_id": "1894",
+              "objective_group_id": "12413",
+              "reward_id": "102",
+              "repeatable": "0",
+              "name": {
+                "de": "Betelgeuse 54-A",
+                "en": "Betelgeuse 54-A",
+                "es": "Betelgeuse 54-A",
+                "fr": "Bételgeuse 54-A",
+                "it": "Betelgeuse 54-A"
+              },
+              "description": {
+                "de": "100 Feinde getötet",
+                "en": "100 Enemies Killed",
+                "es": "100 enemigos muertos",
+                "fr": "100 ennemis tués",
+                "it": "100 nemici uccisi",
+                "tr": "100 Düşman Öldürüldü"
+              },
+              "image_set_id": "1566",
+              "image_id": "3075",
+              "image_path": "/files/ps2/images/static/3075.png"
+            },
+            {
+              "achievement_id": "12414",
+              "item_id": "1894",
+              "objective_group_id": "12414",
+              "reward_id": "615",
+              "repeatable": "0",
+              "name": {
+                "de": "Betelgeuse 54-A",
+                "en": "Betelgeuse 54-A",
+                "es": "Betelgeuse 54-A",
+                "fr": "Bételgeuse 54-A",
+                "it": "Betelgeuse 54-A"
+              },
+              "description": {
+                "de": "1000 Feinde getötet",
+                "en": "1000 Enemies Killed",
+                "es": "1000 enemigos muertos",
+                "fr": "1 000 ennemis tués",
+                "it": "1000 nemici uccisi",
+                "tr": "1000 Düşman Öldürüldü"
+              },
+              "image_set_id": "1567",
+              "image_id": "3068",
+              "image_path": "/files/ps2/images/static/3068.png"
+            }
+          ],
+          "returned": 4
+        }
+      },
+      "achievement_ribbon": {
+        "summary": "Healing Ribbons.\nhttps://census.daybreakgames.com/get/ps2/achievement?achievement_id=2554",
+        "value": {
+          "achievement_list": [
+            {
+              "achievement_id": "2554",
+              "item_id": "0",
+              "objective_group_id": "2554",
+              "reward_id": "3019",
+              "repeatable": "1",
+              "name": {
+                "de": "Heilung läuft",
+                "en": "Healing",
+                "es": "Curación",
+                "fr": "Guérison en cours",
+                "it": "Guarigione",
+                "tr": "İyileştiriliyor"
+              },
+              "description": {
+                "de": "Sanitäter können schnell den Schaden heilen, der verbündeten Truppen zugefügt wurde und sie dadurch länger im Kampf behalten.",
+                "en": "Medics can quickly heal damage that has been done to allied troops keeping in the fight longer.",
+                "es": "Los médicos pueden curar a las tropas aliadas rápidamente para mantenerlas más tiempo en combate.",
+                "fr": "Les Médecins peuvent guérir rapidement les dégâts infligés aux troupes alliées et les garder plus longtemps au combat. ",
+                "it": "I medici possono velocemente guarire i danni inferti alle truppe alleate facendole restare più a lungo nel combattimento.",
+                "tr": "Sıhhıyeler müttefik askerlerin daha uzun süre savaşmalarını sağlamak için hızlıca yaraları sarabilirler."
+              },
+              "image_set_id": "7996",
+              "image_id": "8440",
+              "image_path": "/files/ps2/images/static/8440.png"
+            }
+          ],
+          "returned": 1
+        }
+      },
       "armor_facing": {
         "summary": "All armor facing directions.\nhttps://census.daybreakgames.com/get/ps2/armor_facing?c:limit=10",
         "value": {
@@ -8652,6 +9163,26 @@
           "count": -1
         }
       },
+      "currency": {
+        "summary": "Nanites.\nhttps://census.daybreakgames.com/get/ps2/currency?c:limit=10",
+        "value": {
+          "currency_list": [
+            {
+              "currency_id": "4",
+              "name": {
+                "de": "Naniten",
+                "en": "Nanites",
+                "es": "Nanites",
+                "fr": "Nanites",
+                "it": "Naniti"
+              },
+              "icon_id": "13606",
+              "inventory_cap": "750"
+            }
+          ],
+          "returned": 1
+        }
+      },
       "datatype_character": {
         "summary": "Character",
         "value": {
@@ -8795,6 +9326,70 @@
             }
           ],
           "returned": 4
+        }
+      },
+      "experience": {
+        "summary": "Heal Experience Tick.\nhttps://census.daybreakgames.com/get/ps2/experience?experience_id=4",
+        "value": {
+          "experience_list": [
+            {
+              "experience_id": "4",
+              "description": "Heal Player",
+              "xp": "10"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "experience_rank": {
+        "summary": "BR100, non-ASP.\nhttps://census.daybreakgames.com/get/ps2/experience_rank?rank=100&vs.title.en=!A.S.P.%20Operative",
+        "value": {
+          "experience_rank_list": [
+            {
+              "rank": "100",
+              "xp_max": "18868950",
+              "vs": {
+                "title": {
+                  "de": "Paragon",
+                  "en": "Paragon",
+                  "es": "Paragón",
+                  "fr": "Parangon",
+                  "it": "Campione",
+                  "tr": "Paragon"
+                },
+                "image_set_id": "1927",
+                "image_id": "4363"
+              },
+              "vs_image_path": "/files/ps2/images/static/4363.png",
+              "nc": {
+                "title": {
+                  "de": "Vollstrecker",
+                  "en": "Executor",
+                  "es": "Ejecutor",
+                  "fr": "Exécuteur",
+                  "it": "Esecutore",
+                  "tr": "Uygulayıcı"
+                },
+                "image_set_id": "1727",
+                "image_id": "4364"
+              },
+              "nc_image_path": "/files/ps2/images/static/4364.png",
+              "tr": {
+                "title": {
+                  "de": "Feldmarschall",
+                  "en": "Field Marshal",
+                  "es": "Mariscal de campo",
+                  "fr": "Maréchal",
+                  "it": "Generale dell'Esercito",
+                  "tr": "Mareşal"
+                },
+                "image_set_id": "1827",
+                "image_id": "4362"
+              },
+              "tr_image_path": "/files/ps2/images/static/4362.png"
+            }
+          ],
+          "returned": 1
         }
       },
       "faction": {
