@@ -3182,6 +3182,220 @@
         }
       }
     },
+    "/get/{game}/reward": {
+      "get": {
+        "summary": "Reward",
+        "description": "",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/rewardIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/rewardTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/reward"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "reward_list": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/reward"
+                          }
+                        },
+                        "returned": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "reward": {
+                    "$ref": "#/components/examples/reward"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/reward_group_to_reward": {
+      "get": {
+        "summary": "Reward Map",
+        "description": "Maps a reward group to one or more rewards.\n\nThis collection, together with `reward_set_to_reward_group`, allows connecting directive tiers to the rewards they grant upon completion.",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/rewardIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/rewardGroupIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/reward_group_to_reward"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "reward_group_to_reward_list": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/reward_group_to_reward"
+                          }
+                        },
+                        "returned": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "reward_group_to_reward": {
+                    "$ref": "#/components/examples/reward_group_to_reward"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/reward_set_to_reward_group": {
+      "get": {
+        "summary": "Reward Set Map",
+        "description": "Maps a reward set to its reward group.\n\nThis collection, together with `reward_group_to_reward`, allows connecting directive tiers to the rewards they grant upon completion.",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/rewardSetIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/rewardGroupIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/reward_set_to_reward_group"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "reward_set_to_reward_group_list": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/reward_set_to_reward_group"
+                          }
+                        },
+                        "returned": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "reward_set_to_reward_group": {
+                    "$ref": "#/components/examples/reward_set_to_reward_group"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/reward_type": {
+      "get": {
+        "summary": "Reward Type",
+        "description": "A type of reward.\n\nThe generic `paramX` fields are documented here. Note that not all fields are used by all reward types, or at all.",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/rewardTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reward_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/reward_type"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "reward_type": {
+                    "$ref": "#/components/examples/reward_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/skill": {
       "get": {
         "summary": "Skill",
@@ -4821,10 +5035,37 @@
         },
         "x-cast-to": "int32"
       },
+      "rewardIdParam": {
+        "name": "reward_id",
+        "in": "query",
+        "description": "Unique identifier of a reward.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "rewardGroupIdParam": {
+        "name": "reward_group_id",
+        "in": "query",
+        "description": "Unique identifier of a reward group.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "rewardSetIdParam": {
         "name": "reward_set_id",
         "in": "query",
         "description": "Unique identifier of a reward set.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "rewardTypeIdParam": {
+        "name": "reward_type_id",
+        "in": "query",
+        "description": "Unique identifier of a reward type.",
         "schema": {
           "type": "string"
         },
@@ -8294,6 +8535,132 @@
           }
         }
       },
+      "reward": {
+        "type": "object",
+        "properties": {
+          "reward_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "reward_type_id": {
+            "type": "string",
+            "description": "Reward type associated with this reward.",
+            "x-cast-to": "int32",
+            "x-reference-to": "reward_type.reward_type_id"
+          },
+          "count_min": {
+            "type": "string",
+            "description": "Minimum number of items rewarded.",
+            "x-cast-to": "int32"
+          },
+          "count_max": {
+            "type": "string",
+            "description": "Maximum number of items rewarded.",
+            "x-cast-to": "int32"
+          },
+          "param1": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/reward_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param2": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/reward_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param3": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/reward_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param4": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/reward_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param5": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/reward_type` for details.",
+            "x-cast-to": "float"
+          }
+        }
+      },
+      "reward_group_to_reward": {
+        "type": "object",
+        "properties": {
+          "reward_group_id": {
+            "type": "string",
+            "description": "Reward group associated with this reward.",
+            "x-cast-to": "int32"
+          },
+          "reward_id": {
+            "type": "string",
+            "description": "Reward associated with this reward group.",
+            "x-cast-to": "int32",
+            "x-reference-to": "reward.reward_id"
+          }
+        }
+      },
+      "reward_set_to_reward_group": {
+        "type": "object",
+        "properties": {
+          "reward_set_id": {
+            "type": "string",
+            "description": "Reward set associated with this reward group.",
+            "x-cast-to": "int32"
+          },
+          "reward_group_id": {
+            "type": "string",
+            "description": "Reward group associated with this reward set.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "reward_type": {
+        "type": "object",
+        "properties": {
+          "reward_type_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the reward type."
+          },
+          "count_min": {
+            "type": "string",
+            "description": "Documentation for this parameter on rewards of this type.",
+            "x-cast-to": "int32"
+          },
+          "count_max": {
+            "type": "string",
+            "description": "Documentation for this parameter on rewards of this type.",
+            "x-cast-to": "int32"
+          },
+          "param1": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on rewards of this type."
+          },
+          "param2": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on rewards of this type."
+          },
+          "param3": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on rewards of this type."
+          },
+          "param4": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on rewards of this type."
+          },
+          "param5": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on rewards of this type."
+          }
+        }
+      },
       "skill": {
         "type": "object",
         "properties": {
@@ -11627,6 +11994,91 @@
             }
           ],
           "returned": 16
+        }
+      },
+      "reward": {
+        "summary": "VS Auraxium Light Assault armor.\nhttps://census.daybreakgames.com/get/ps2/reward?reward_id=4771",
+        "value": {
+          "reward_list": [
+            {
+              "reward_id": "4771",
+              "reward_type_id": "1",
+              "count_min": "1",
+              "count_max": "1",
+              "param1": "15746",
+              "param2": "0",
+              "param3": "0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "reward_group_to_reward": {
+        "summary": "VS Light Assault Mastery reward group to rewards.\nhttps://census.daybreakgames.com/get/ps2/reward_group_to_reward?reward_group_id=10074&c:limit=10",
+        "value": {
+          "reward_group_to_reward_list": [
+            {
+              "reward_group_id": "10074",
+              "reward_id": "4771"
+            },
+            {
+              "reward_group_id": "10074",
+              "reward_id": "4772"
+            },
+            {
+              "reward_group_id": "10074",
+              "reward_id": "4773"
+            },
+            {
+              "reward_group_id": "10074",
+              "reward_id": "6699"
+            }
+          ],
+          "returned": 4
+        }
+      },
+      "reward_set_to_reward_group": {
+        "summary": "VS Light Assault Mastery reward group.\nhttps://census.daybreakgames.com/get/ps2/reward_set_to_reward_group?reward_set_id=4466",
+        "value": {
+          "reward_set_to_reward_group_list": [
+            {
+              "reward_set_id": "4466",
+              "reward_group_id": "10074"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "reward_type": {
+        "summary": "All reward types.\nhttps://census.daybreakgames.com/get/ps2/reward_type?c:limit=10",
+        "value": {
+          "reward_type_list": [
+            {
+              "reward_type_id": "1",
+              "description": "Item",
+              "count_min": "# of items to give",
+              "param1": "Item ID",
+              "param2": "currency_type (-1 for coin)",
+              "param3": "Flag Goto Claim",
+              "param4": "Required Scalar Percent"
+            },
+            {
+              "reward_type_id": "2",
+              "description": "Currency",
+              "count_min": "rand # to add to P1",
+              "param1": "# of coin",
+              "param2": "currency_type (-1 for coin)",
+              "param3": "award type"
+            },
+            {
+              "reward_type_id": "3",
+              "description": "XP",
+              "param1": "# of exp",
+              "param2": "Profile (0 = current)",
+              "param3": "award type"
+            }
+          ],
+          "returned": 3
         }
       },
       "skill": {
