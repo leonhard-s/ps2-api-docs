@@ -693,6 +693,312 @@
         }
       }
     },
+    "/get/{game}/characters_achievement": {
+      "get": {
+        "summary": "Character Achievements",
+        "description": "List the achievement progress for a character.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/achievementIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_achievement_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_achievement"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "medal": {
+                    "$ref": "#/components/examples/characters_achievement_medal"
+                  },
+                  "ribbon": {
+                    "$ref": "#/components/examples/characters_achievement_ribbon"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_currency": {
+      "get": {
+        "summary": "Character Currency",
+        "description": "Lists the currencies owned by a character.\n\nNote that this table has been inconsistent since the introduction of the A.S.P. system: in addition to the currency value (Nanites), an extra `prestige_currency` key has been added, rather than being its own currency.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/currencyIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_currency_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_currency"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "currency": {
+                    "$ref": "#/components/examples/characters_currency"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_directive": {
+      "get": {
+        "summary": "Character Directives",
+        "description": "Directive completion information for a character.\n\nNote that this also lists entries for incomplete directives; use the `completion_time` field to determine whether a directive has been completed.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveTreeIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_directive_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_directive"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "directive": {
+                    "$ref": "#/components/examples/characters_directive"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_directive_objective": {
+      "get": {
+        "summary": "Character Directive Objectives",
+        "description": "Current progress of a character within a directive.\n\nThe current value of the directive progress can be found in the `state_data` field of this endpoint. The corresponding target value is found in the corresponding `objective`, usually in the `param1` field.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/objectiveIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_directive_objective_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_directive_objective"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "directive_objective": {
+                    "$ref": "#/components/examples/characters_directive_objective"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_directive_tier": {
+      "get": {
+        "summary": "Character Directive Tier",
+        "description": "Directive tier completion information for a character.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveTreeIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveTierIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_directive_tier_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_directive_tier"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "directive_tier": {
+                    "$ref": "#/components/examples/characters_directive_tier"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_directive_tree": {
+      "get": {
+        "summary": "Character Directive Tree",
+        "description": "Directive tree completion information for a character.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveTreeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_directive_tree_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_directive_tree"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "directive_tree": {
+                    "$ref": "#/components/examples/characters_directive_tree"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/characters_friend": {
       "get": {
         "summary": "Friends List",
@@ -884,6 +1190,55 @@
                 "examples": {
                   "higby": {
                     "$ref": "#/components/examples/characters_online_status"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_skill": {
+      "get": {
+        "summary": "Character Skills",
+        "description": "List the skills unlocked by a character.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/skillIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_skill_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_skill"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/characters_skill"
                   }
                 }
               }
@@ -5871,6 +6226,220 @@
           }
         }
       },
+      "characters_achievement": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the achievement list is being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "achievement_id": {
+            "type": "string",
+            "description": "Unique ID of the achievement being returned.",
+            "x-cast-to": "int32",
+            "x-reference-to": "achievement.achievement_id"
+          },
+          "earned_count": {
+            "type": "string",
+            "description": "Number of times the achievement has been earned. Only exceeds 1 for ribbons.",
+            "x-cast-to": "int32"
+          },
+          "start": {
+            "type": "string",
+            "description": "UTC timestamp of when progression towards this achievement started. For repeatable achievements, this marks the last time the achievement was gained."
+          },
+          "start_date": {
+            "type": "string",
+            "description": "Human-readable version of `start`."
+          },
+          "finish": {
+            "type": "string",
+            "description": "UTC timestamp of when this achievement was completed. Remains at zero for repeatable achievements."
+          },
+          "finish_date": {
+            "type": "string",
+            "description": "Human-readable version of `finish`."
+          },
+          "last_save": {
+            "type": "string",
+            "description": "UTC timestamp of when the underlying table was updated."
+          },
+          "last_save_date": {
+            "type": "string",
+            "description": "Human-readable version of `last_save`."
+          }
+        }
+      },
+      "characters_currency": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the currency list is being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "currency_id": {
+            "type": "string",
+            "description": "Unique ID of the currency being returned.",
+            "x-cast-to": "int32",
+            "x-reference-to": "currency.currency_id"
+          },
+          "currency_name": {
+            "type": "string",
+            "description": "Internal name of the currency being returned."
+          },
+          "quantity": {
+            "type": "string",
+            "description": "Amount of currency the character owns.",
+            "x-cast-to": "int32"
+          },
+          "prestige_currency": {
+            "type": "string",
+            "description": "Number of A.S.P. tokens available to the character.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "characters_directive": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the directive list is being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "directive_tree_id": {
+            "type": "string",
+            "description": "ID of the directive tree containing the directive.",
+            "x-cast-to": "int32",
+            "x-reference-to": "directive_tree.directive_tree_id"
+          },
+          "directive_id": {
+            "type": "string",
+            "description": "ID of the directive.",
+            "x-cast-to": "int32",
+            "x-reference-to": "directive.directive_id"
+          },
+          "completion_time": {
+            "type": "string",
+            "description": "UTC timestamp of when the directive was completed. Zero if not completed."
+          },
+          "completion_time_date": {
+            "type": "string",
+            "description": "Human-readable version of `completion_time`."
+          }
+        }
+      },
+      "characters_directive_objective": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the directive objective status is being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "directive_id": {
+            "type": "string",
+            "description": "ID of the directive for which objective status is returned.",
+            "x-cast-to": "int32",
+            "x-reference-to": "directive.directive_id"
+          },
+          "objective_id": {
+            "type": "string",
+            "description": "ID of the objective for which status is returned.",
+            "x-cast-to": "int32",
+            "x-reference-to": "objective.objective_id"
+          },
+          "objective_group_id": {
+            "type": "string",
+            "description": "ID of the objective group for which status is returned.",
+            "x-cast-to": "int32",
+            "x-reference-to": "objective_group.objective_group_id"
+          },
+          "status": {
+            "type": "string",
+            "description": "Unknown.",
+            "x-cast-to": "boolean"
+          },
+          "state_data": {
+            "type": "string",
+            "description": "Progress of the character of the objective. This is the \"current\" value of the progress. The total can be found in the corresponding `objective`, usually under `param1`.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "characters_directive_tier": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the directive tier list is being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "directive_tree_id": {
+            "type": "string",
+            "description": "ID of the directive tree containing the directive.",
+            "x-cast-to": "int32",
+            "x-reference-to": "directive_tree.directive_tree_id"
+          },
+          "directive_tier_id": {
+            "type": "string",
+            "description": "ID of the directive tier.",
+            "x-cast-to": "int32",
+            "x-reference-to": "directive_tier.directive_tier_id"
+          },
+          "completion_time": {
+            "type": "string",
+            "description": "UTC timestamp of when the directive tier was completed. Zero if not completed."
+          },
+          "completion_time_date": {
+            "type": "string",
+            "description": "Human-readable version of `completion_time`."
+          }
+        }
+      },
+      "characters_directive_tree": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character for which the directive tree list is being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "directive_tree_id": {
+            "type": "string",
+            "description": "ID of the directive tree.",
+            "x-cast-to": "int32",
+            "x-reference-to": "directive_tree.directive_tree_id"
+          },
+          "current_directive_tier_id": {
+            "type": "string",
+            "description": "Unique ID of the directive tier the character is currently on.",
+            "x-cast-to": "int32",
+            "x-reference-to": "directive_tier.directive_tier_id"
+          },
+          "current_level": {
+            "type": "string",
+            "description": "Defunct field. Always returns zero.",
+            "x-cast-to": "int32"
+          },
+          "completion_time": {
+            "type": "string",
+            "description": "UTC timestamp of when the directive tree was completed. Zero if not completed."
+          },
+          "completion_time_date": {
+            "type": "string",
+            "description": "Human-readable version of `completion_time`."
+          }
+        }
+      },
       "characters_friend": {
         "type": "object",
         "properties": {
@@ -5939,6 +6508,31 @@
             "type": "string",
             "description": "Whether the character is currently online. Offline players will return 0, otherwise the value will be the `world_id` of the `ps2/world` they are online on.",
             "x-cast-to": "int32"
+          }
+        }
+      },
+      "characters_skill": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character side of the relationship.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
+          },
+          "skill_id": {
+            "type": "string",
+            "description": "Skill side of the relationship.",
+            "x-cast-to": "int32",
+            "x-reference-to": "skill.skill_id"
+          },
+          "last_save": {
+            "type": "string",
+            "description": "UTC timestamp of when the underlying table was updated."
+          },
+          "last_save_date": {
+            "type": "string",
+            "description": "Human-readable version of `last_save`."
           }
         }
       },
@@ -9936,6 +10530,121 @@
           "returned": 1
         }
       },
+      "characters_achievement_medal": {
+        "summary": "SVA-88 Bronze Medal.\nhttps://census.daybreakgames.com/get/ps2/characters_achievement?character_id=5428010618015189601&achievement_id=113",
+        "value": {
+          "characters_achievement_list": [
+            {
+              "character_id": "5428010618015189601",
+              "achievement_id": "113",
+              "earned_count": "1",
+              "start": "1384645540",
+              "start_date": "2013-11-16 23:45:40.0",
+              "finish": "1404874213",
+              "finish_date": "2014-07-09 02:50:13.0",
+              "last_save": "1412784696",
+              "last_save_date": "2014-10-08 16:11:36.142294"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_achievement_ribbon": {
+        "summary": "Revive Ribbons.\nhttps://census.daybreakgames.com/get/ps2/characters_achievement?character_id=5428010618015189601&achievement_id=2552",
+        "value": {
+          "characters_achievement_list": [
+            {
+              "character_id": "5428010618015189601",
+              "achievement_id": "2552",
+              "earned_count": "468",
+              "start": "1432682221",
+              "start_date": "2015-05-26 23:17:01.0",
+              "finish": "0",
+              "finish_date": "1970-01-01 00:00:00.0",
+              "last_save": "1432659069",
+              "last_save_date": "2015-05-26 16:51:09.0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_currency": {
+        "summary": "Higby's currencies.\nhttps://census.daybreakgames.com/get/ps2/characters_currency?character_id=5428010618015189601",
+        "value": {
+          "characters_currency_list": [
+            {
+              "character_id": "5428010618015189601",
+              "currency_id": "4",
+              "currency_name": "nanites",
+              "quantity": "750",
+              "prestige_currency": "0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_directive": {
+        "summary": "Healing.\nhttps://census.daybreakgames.com/get/ps2/characters_directive?character_id=5428010618015189601&directive_id=141",
+        "value": {
+          "characters_directive_list": [
+            {
+              "character_id": "5428010618015189601",
+              "directive_tree_id": "28",
+              "directive_id": "141",
+              "completion_time": "1585080577",
+              "completion_time_date": "2020-03-24 20:09:37.0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_directive_objective": {
+        "summary": "Headshot kill progress.\nhttps://census.daybreakgames.com/get/ps2/characters_directive_objective?character_id=5428010618015189601&directive_id=1732",
+        "value": {
+          "characters_directive_objective_list": [
+            {
+              "character_id": "5428010618015189601",
+              "directive_id": "1732",
+              "objective_id": "13402",
+              "objective_group_id": "13402",
+              "status": "1",
+              "state_data": "42"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_directive_tier": {
+        "summary": "Carbines (Novice).\nhttps://census.daybreakgames.com/get/ps2/characters_directive_tier?character_id=5428010618015189601&directive_tree_id=4&directive_tier_id=1",
+        "value": {
+          "characters_directive_tier_list": [
+            {
+              "character_id": "5428010618015189601",
+              "directive_tree_id": "4",
+              "directive_tier_id": "1",
+              "completion_time": "1585080577",
+              "completion_time_date": "2020-03-24 20:09:37.0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_directive_tree": {
+        "summary": "Carbines.\nhttps://census.daybreakgames.com/get/ps2/characters_directive_tree?character_id=5428010618015189601&directive_tree_id=4",
+        "value": {
+          "characters_directive_tree_list": [
+            {
+              "character_id": "5428010618015189601",
+              "directive_tree_id": "4",
+              "current_directive_tier_id": "5",
+              "current_level": "0",
+              "completion_time": "1585080577",
+              "completion_time_date": "2020-03-24 20:09:37.0"
+            }
+          ],
+          "returned": 1
+        }
+      },
       "characters_friend": {
         "summary": "Higby",
         "description": "Only the first 3 friends are shown for brevity.",
@@ -10017,6 +10726,20 @@
             {
               "character_id": "5428010618015189601",
               "online_status": "0"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "characters_skill": {
+        "summary": "Nanite Auto Repair.\nhttps://census.daybreakgames.com/get/ps2/characters_skill?character_id=5428010618015189601&skill_id=113",
+        "value": {
+          "characters_skill_list": [
+            {
+              "character_id": "5428010618015189601",
+              "skill_id": "113",
+              "last_save": "1412784699",
+              "last_save_date": "2014-10-08 16:11:39.389"
             }
           ],
           "returned": 1
