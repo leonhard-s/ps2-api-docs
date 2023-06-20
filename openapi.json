@@ -1210,6 +1210,208 @@
         }
       }
     },
+    "/get/{game}/directive": {
+      "get": {
+        "summary": "Directive",
+        "description": "An individual directive that may be completed by a player.\n\nThis collection lists an individual directive, such as \"100 Roadkills\".",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveTreeIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveTierIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/objectiveSetIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "directive_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/directive"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/directive"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/directive_tier": {
+      "get": {
+        "summary": "Directive Tier",
+        "description": "A completion tier within a directive tree.\n\nThis covers the individual stages of directive tiers, such as \"Combat Medic: Adept\".",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveTreeIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveTierIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/rewardSetIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "directive_tier_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/directive_tier"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/directive_tier"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/directive_tree": {
+      "get": {
+        "summary": "Directive Tree",
+        "description": "A tree of directives sorted into multiple tiers.\n\nThis collection represents the individual paths within a directive category, such as \"Light Assault\" or \"Combat Medic\".",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveTreeIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveTreeCategoryIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "directive_tree_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/directive_tree"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/directive_tree"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/directive_tree_category": {
+      "get": {
+        "summary": "Directive Tree Category",
+        "description": "Top-level categorisation of directive trees.\n\nThis covers the main sections in the Directive menu, such as \"Infantry\", \"Vehicles\", or \"Events\".",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/directiveTreeCategoryIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "directive_tree_category_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/directive_tree_category"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/directive_tree_category"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/effect": {
       "get": {
         "summary": "Effect",
@@ -4160,6 +4362,42 @@
         },
         "x-cast-to": "int32"
       },
+      "directiveIdParam": {
+        "name": "directive_id",
+        "in": "query",
+        "description": "Unique ID of a directive.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "directiveTierIdParam": {
+        "name": "directive_tier_id",
+        "in": "query",
+        "description": "Unique ID of a directive tier.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "directiveTreeIdParam": {
+        "name": "directive_tree_id",
+        "in": "query",
+        "description": "Unique ID of a directive tree.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "directiveTreeCategoryIdParam": {
+        "name": "directive_tree_category_id",
+        "in": "query",
+        "description": "Unique ID of a directive tree category.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "effectIdParam": {
         "name": "effect_id",
         "in": "query",
@@ -4318,6 +4556,15 @@
         },
         "x-cast-to": "int32"
       },
+      "objectiveSetIdParam": {
+        "name": "objective_set_id",
+        "in": "query",
+        "description": "Unique identifier of an objective set.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "outfitIdParam": {
         "name": "outfit_id",
         "in": "query",
@@ -4349,6 +4596,15 @@
         "name": "projectile_flight_type_id",
         "in": "query",
         "description": "Unique identifier of a projectile flight type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "rewardSetIdParam": {
+        "name": "reward_set_id",
+        "in": "query",
+        "description": "Unique identifier of a reward set.",
         "schema": {
           "type": "string"
         },
@@ -5745,6 +6001,167 @@
             "type": "string",
             "description": "The maximum amount of this currency that can be held in a character's inventory.",
             "x-cast-to": "int32"
+          }
+        }
+      },
+      "directive": {
+        "type": "object",
+        "properties": {
+          "directive_id": {
+            "type": "string",
+            "description": "Unique ID of the directive.",
+            "x-cast-to": "int32"
+          },
+          "directive_tree_id": {
+            "type": "string",
+            "description": "Unique ID of the directive tree.",
+            "x-cast-to": "int32",
+            "x-reference-to": "directive_tree.directive_tree_id"
+          },
+          "directive_tier_id": {
+            "type": "string",
+            "description": "Unique ID of the directive tier.",
+            "x-cast-to": "int32",
+            "x-reference-to": "directive_tier.directive_tier_id"
+          },
+          "objective_set_id": {
+            "type": "string",
+            "description": "Unique ID of the objective set.",
+            "x-cast-to": "int32",
+            "x-reference-to": "objective_set.objective_set_id"
+          },
+          "name": {
+            "description": "The name of the directive.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "The description of the directive.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "Unique ID of the image set for this directive.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "Unique ID of the defaultimage.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Path to the default image.",
+            "x-reference-to": "image.image_path"
+          }
+        }
+      },
+      "directive_tier": {
+        "type": "object",
+        "properties": {
+          "directive_tree_id": {
+            "type": "string",
+            "description": "Unique ID of the directive tree this tier belongs to.",
+            "x-cast-to": "int32",
+            "x-reference-to": "directive_tree.directive_tree_id"
+          },
+          "directive_tier_id": {
+            "type": "string",
+            "description": "Unique ID of the directive tier.",
+            "x-cast-to": "int32"
+          },
+          "reward_set_id": {
+            "type": "string",
+            "description": "Unique ID of the reward set awarded for completing this directive tier.",
+            "x-cast-to": "int32",
+            "x-reference-to": "reward_set.reward_set_id"
+          },
+          "directive_points": {
+            "type": "string",
+            "description": "The amount of directive points awarded for completing this directive tier.",
+            "x-cast-to": "int32"
+          },
+          "completion_count": {
+            "type": "string",
+            "description": "The number of directives within this tier that must be completed to complete it.",
+            "x-cast-to": "int32"
+          },
+          "name": {
+            "description": "The name of the directive tier.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "Unique ID of the image set for this directive tier.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "Unique ID of the default image.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Path to the default image.",
+            "x-reference-to": "image.image_path"
+          }
+        }
+      },
+      "directive_tree": {
+        "type": "object",
+        "properties": {
+          "directive_tree_id": {
+            "type": "string",
+            "description": "Unique ID of the directive tree.",
+            "x-cast-to": "int32"
+          },
+          "directive_tree_category_id": {
+            "type": "string",
+            "description": "Unique ID of the category of the directive tree.",
+            "x-cast-to": "int32",
+            "x-reference-to": "directive_tree_category.directive_tree_category_id"
+          },
+          "name": {
+            "description": "The name of the directive tree.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "The description of the directive tree.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "Unique ID of the image set for this directive tree.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "Unique ID of the default image.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Path to the default image.",
+            "x-reference-to": "image.image_path"
+          }
+        }
+      },
+      "directive_tree_category": {
+        "type": "object",
+        "properties": {
+          "directive_tree_category_id": {
+            "type": "string",
+            "description": "Unique ID of the directive tree category.",
+            "x-cast-to": "int32"
+          },
+          "name": {
+            "description": "The name of the directive tree category.",
+            "$ref": "#/components/schemas/localized_string"
           }
         }
       },
@@ -9239,6 +9656,103 @@
             "name": "characters_online_status",
             "resolve_list": []
           },
+          "returned": 1
+        }
+      },
+      "directive": {
+        "summary": "Saviour kills.\nhttps://census.daybreakgames.com/get/ps2/directive?directive_id=153",
+        "value": {
+          "directive_list": [
+            {
+              "directive_id": "153",
+              "directive_tree_id": "28",
+              "directive_tier_id": "1",
+              "objective_set_id": "4154",
+              "name": {
+                "de": "Rettungskills",
+                "en": "Savior Kills",
+                "es": "Víctimas: salvadores",
+                "fr": "Victimes Sauveur",
+                "it": "Uccisioni come Salvatore"
+              },
+              "description": {
+                "de": "Rette Verbündete vor dem Tod, indem du Feinde tötest, die dabei sind, sie zu töten.",
+                "en": "Save allies from death by killing enemies who are about to kill them.",
+                "es": "Salva de la muerte a tus aliados acabando con los enemigos que estén a punto de matarlos.",
+                "fr": "Sauver des alliés de la mort en tuant des ennemis sur le point de les tuer.",
+                "it": "Salva gli alleati dalla morte uccidendo i nemici che stanno per ucciderli."
+              },
+              "image_set_id": "13518",
+              "image_id": "77759",
+              "image_path": "/files/ps2/images/static/77759.png"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "directive_tier": {
+        "summary": "Light Assault Master Tier (VS).\nhttps://census.daybreakgames.com/get/ps2/directive_tier?directive_tier_id=4&directive_tree_id=24",
+        "value": {
+          "directive_tier_list": [
+            {
+              "directive_tree_id": "24",
+              "directive_tier_id": "4",
+              "reward_set_id": "4466",
+              "directive_points": "100",
+              "completion_count": "5",
+              "name": {
+                "de": "Meister",
+                "en": "Master",
+                "es": "Maestro",
+                "fr": "Maître",
+                "it": "Maestri"
+              },
+              "image_set_id": "13650",
+              "image_id": "78275",
+              "image_path": "/files/ps2/images/static/78275.png"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "directive_tree": {
+        "summary": "Light Machine Guns.\nhttps://census.daybreakgames.com/get/ps2/directive_tree?directive_tree_id=8",
+        "value": {
+          "directive_tree_list": [
+            {
+              "directive_tree_id": "8",
+              "directive_tree_category_id": "7",
+              "name": {
+                "de": "Leichte Maschinengewehre",
+                "en": "Light Machine Guns",
+                "es": "Ametralladoras ligeras",
+                "fr": "Mitrailleuses légères",
+                "it": "Mitragliatrici leggere"
+              },
+              "image_set_id": "14193",
+              "image_id": "79616",
+              "image_path": "/files/ps2/images/static/79616.png"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "directive_tree_category": {
+        "summary": "Infantry.\nhttps://census.daybreakgames.com/get/ps2/directive_tree_category?directive_tree_category_id=3",
+        "value": {
+          "directive_tree_category_list": [
+            {
+              "directive_tree_category_id": "3",
+              "name": {
+                "de": "Infanterie",
+                "en": "Infantry",
+                "es": "Infantería",
+                "fr": "Infanterie",
+                "it": "Fanteria",
+                "tr": "Piyade"
+              }
+            }
+          ],
           "returned": 1
         }
       },
