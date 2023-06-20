@@ -2430,6 +2430,153 @@
         }
       }
     },
+    "/get/{game}/objective": {
+      "get": {
+        "summary": "Objective",
+        "description": "An objective tracking progress towards a directive, mission, or achievement.\n\nSee the `ps2/objective_type` collection for a list of available objective types.",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/objectiveIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/objectiveTypeIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/objectiveGroupIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "objective_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/objective"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "ns15mBundle": {
+                    "$ref": "#/components/examples/objective"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/objective_set_to_objective": {
+      "get": {
+        "summary": "Objective Set Map",
+        "description": "Maps objective sets to objective groups.\n\nThis collection is peculiar as neither of the types it connects are available on the API. It is however essential for connecting the `ps2/directive` collection to `ps2/objective` and `ps2/objective_type`.\n\nNote that when joining to these queries, the `^on:` and `^to:` fields must be used to specify the relationship.",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/objectiveSetIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/objectiveGroupIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "objective_set_to_objective_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/objective_set_to_objective"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "ns15mBundle": {
+                    "$ref": "#/components/examples/objective_set_to_objective"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/objective_type": {
+      "get": {
+        "summary": "Objective Type",
+        "description": "A type of objective.\n\nThe generic `paramX` fields are documented here. Note that not all fields are used by all objective types, or at all.",
+        "tags": [
+          "Progression"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/objectiveTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "objective_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/objective_type"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "capturePoint": {
+                    "$ref": "#/components/examples/objective_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/outfit": {
       "get": {
         "summary": "Outfit",
@@ -4602,10 +4749,37 @@
         },
         "x-cast-to": "int32"
       },
+      "objectiveIdParam": {
+        "name": "objective_id",
+        "in": "query",
+        "description": "Unique identifier of an objective.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "objectiveGroupIdParam": {
+        "name": "objective_group_id",
+        "in": "query",
+        "description": "Unique identifier of an objective group.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "objectiveSetIdParam": {
         "name": "objective_set_id",
         "in": "query",
         "description": "Unique identifier of an objective set.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "objectiveTypeIdParam": {
+        "name": "objective_type_id",
+        "in": "query",
+        "description": "Unique identifier of an objective type.",
         "schema": {
           "type": "string"
         },
@@ -7503,6 +7677,143 @@
             "description": "The `ps2/faction` of the loadout.",
             "x-cast-to": "int32",
             "x-reference-to": "faction.faction_id"
+          }
+        }
+      },
+      "objective": {
+        "type": "object",
+        "properties": {
+          "objective_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "objective_type_id": {
+            "type": "string",
+            "description": "The `ps2/objective_type` of the objective.",
+            "x-cast-to": "int32",
+            "x-reference-to": "objective_type.objective_type_id"
+          },
+          "objective_group_id": {
+            "type": "string",
+            "description": "Unknown. This field allows connecting objectives to directives via the `ps2/objective_set_to_objective` collection.",
+            "x-cast-to": "int32"
+          },
+          "param1": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/objective_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param2": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/objective_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param3": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/objective_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param4": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/objective_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param5": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/objective_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param6": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/objective_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param7": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/objective_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param8": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/objective_type` for details.",
+            "x-cast-to": "float"
+          },
+          "param9": {
+            "type": "string",
+            "description": "Generic numeric parameter. See the corresponding `ps2/objective_type` for details.",
+            "x-cast-to": "float"
+          }
+        }
+      },
+      "objective_set_to_objective": {
+        "type": "object",
+        "properties": {
+          "objective_set_id": {
+            "type": "string",
+            "description": "Objective set side of the relationship.",
+            "x-cast-to": "int32",
+            "x-joins-to": [
+              "directive.objective_set_id"
+            ]
+          },
+          "objective_group_id": {
+            "type": "string",
+            "description": "Objective group side of the relationship.",
+            "x-cast-to": "int32",
+            "x-joins-to": [
+              "objective.objective_group_id"
+            ]
+          }
+        }
+      },
+      "objective_type": {
+        "type": "object",
+        "properties": {
+          "objective_type_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the objective type."
+          },
+          "param1": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on objectives of this type."
+          },
+          "param2": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on objectives of this type."
+          },
+          "param3": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on objectives of this type."
+          },
+          "param4": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on objectives of this type."
+          },
+          "param5": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on objectives of this type."
+          },
+          "param6": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on objectives of this type."
+          },
+          "param7": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on objectives of this type."
+          },
+          "param8": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on objectives of this type."
+          },
+          "param9": {
+            "type": "string",
+            "description": "Documentation for this numeric parameter on objectives of this type."
           }
         }
       },
@@ -10848,6 +11159,54 @@
               "profile_id": "2",
               "faction_id": "2",
               "code_name": "NC Infiltrator"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "objective": {
+        "summary": "Combat Medic Kills.\nhttps://census.daybreakgames.com/get/ps2/objective?objective_id=11649",
+        "value": {
+          "objective_list": [
+            {
+              "objective_id": "11649",
+              "objective_type_id": "12",
+              "objective_group_id": "10137",
+              "param1": "15",
+              "param4": "-1",
+              "param5": "-1",
+              "param8": "-1"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "objective_set_to_objective": {
+        "summary": "Objective Group for the \"Combat Medic Kills\" directive.\nhttps://census.daybreakgames.com/get/ps2/objective_set_to_objective?objective_set_id=4113",
+        "value": {
+          "objective_set_to_objective_list": [
+            {
+              "objective_set_id": "4113",
+              "objective_group_id": "10137"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "objective_type": {
+        "summary": "Kill Count.\nhttps://census.daybreakgames.com/get/ps2/objective_type?objective_type_id=12",
+        "value": {
+          "objective_type_list": [
+            {
+              "objective_type_id": "12",
+              "description": "Total Kill Count",
+              "param1": "Kill Count",
+              "param2": "Npc",
+              "param3": "Npc Classification",
+              "param4": "Vehicle",
+              "param5": "Item",
+              "param6": "Item Classification",
+              "param8": "Friendly Fire"
             }
           ],
           "returned": 1
