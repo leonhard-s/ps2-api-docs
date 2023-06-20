@@ -3274,6 +3274,52 @@
         }
       }
     },
+    "/get/{game}/title": {
+      "get": {
+        "summary": "Title",
+        "description": "Selectable titles for a character.\n\nNote that title IDs of 0 signify no title being selected.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/titleIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "title_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/title"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "title": {
+                    "$ref": "#/components/examples/title"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/vehicle": {
       "get": {
         "summary": "Vehicle",
@@ -4790,6 +4836,15 @@
         "name": "target_type_id",
         "in": "query",
         "description": "Unique identifier of a target type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "titleIdParam": {
+        "name": "title_id",
+        "in": "query",
+        "description": "Unique identifier of a character title.",
         "schema": {
           "type": "string"
         },
@@ -8148,6 +8203,20 @@
           }
         }
       },
+      "title": {
+        "type": "object",
+        "properties": {
+          "title_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "name": {
+            "description": "Display name of the title.",
+            "$ref": "#/components/schemas/localized_string"
+          }
+        }
+      },
       "vehicle": {
         "type": "object",
         "properties": {
@@ -11347,6 +11416,24 @@
             }
           ],
           "returned": 4
+        }
+      },
+      "title": {
+        "summary": "Dreadnaught (BR 120).\nhttps://census.daybreakgames.com/get/ps2/title?title_id=202",
+        "value": {
+          "title_list": [
+            {
+              "title_id": "202",
+              "name": {
+                "de": "Dreadnaught",
+                "en": "Dreadnaught",
+                "es": "Acorazado",
+                "fr": "Dreadnaught",
+                "it": "Dreadnaught"
+              }
+            }
+          ],
+          "returned": 1
         }
       },
       "vehicle": {
