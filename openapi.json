@@ -3751,6 +3751,47 @@
         }
       }
     },
+    "/get/{game}/single_character_by_id": {
+      "get": {
+        "summary": "Single Character By ID",
+        "description": "Endpoint for retrieving bulk character stats.\n\nThis endpoint's payload is a superset of `character` and additionally includes data from related `characters_*` collections:\n- `characters_currency`\n- `characters_stat_history`\n- `characters_stat`\n- `characters_stat_by_faction`\n- `characters_weapon_stat`\n- `characters_weapon_stat_by_faction`\n- `characters_items`\n\nThis endpoint is generally faster than querying these collections individually, but it comes with significant bandwidth costs. Note that this endpoint does not support most query commands, and that `c:show` and `c:hide` cannot be used to reduce the amount of data returned.",
+        "tags": [
+          "Character Information"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "single_character_by_id_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/single_character_by_id"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/skill": {
       "get": {
         "summary": "Skill",
@@ -6272,15 +6313,9 @@
           }
         }
       },
-      "characters_currency": {
+      "characters_currency_core": {
         "type": "object",
         "properties": {
-          "character_id": {
-            "type": "string",
-            "description": "Character for which the currency list is being returned.",
-            "x-cast-to": "int64",
-            "x-reference-to": "character.character_id"
-          },
           "currency_id": {
             "type": "string",
             "description": "Unique ID of the currency being returned.",
@@ -6302,6 +6337,24 @@
             "x-cast-to": "int32"
           }
         }
+      },
+      "characters_currency": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/characters_currency_core"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "character_id": {
+                "type": "string",
+                "description": "Character for which the currency list is being returned.",
+                "x-cast-to": "int64",
+                "x-reference-to": "character.character_id"
+              }
+            }
+          }
+        ]
       },
       "characters_directive": {
         "type": "object",
@@ -6478,15 +6531,9 @@
           }
         }
       },
-      "characters_item": {
+      "characters_item_core": {
         "type": "object",
         "properties": {
-          "character_id": {
-            "type": "string",
-            "description": "Character side of the relationship.",
-            "x-cast-to": "int64",
-            "x-reference-to": "character.character_id"
-          },
           "item_id": {
             "type": "string",
             "description": "Item side of the relationship.",
@@ -6494,6 +6541,24 @@
             "x-reference-to": "item.item_id"
           }
         }
+      },
+      "characters_item": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/characters_item_core"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "character_id": {
+                "type": "string",
+                "description": "Character side of the relationship.",
+                "x-cast-to": "int64",
+                "x-reference-to": "character.character_id"
+              }
+            }
+          }
+        ]
       },
       "characters_online_status": {
         "type": "object",
@@ -6536,15 +6601,9 @@
           }
         }
       },
-      "characters_stat": {
+      "characters_stat_core": {
         "type": "object",
         "properties": {
-          "character_id": {
-            "type": "string",
-            "description": "Character for which the stats are being returned.",
-            "x-cast-to": "int64",
-            "x-reference-to": "character.character_id"
-          },
           "stat_name": {
             "type": "string",
             "description": "Name of the stat being returned."
@@ -6590,15 +6649,27 @@
           }
         }
       },
-      "characters_stat_by_faction": {
+      "characters_stat": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/characters_stat_core"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "character_id": {
+                "type": "string",
+                "description": "Character for which the stats are being returned.",
+                "x-cast-to": "int64",
+                "x-reference-to": "character.character_id"
+              }
+            }
+          }
+        ]
+      },
+      "characters_stat_by_faction_core": {
         "type": "object",
         "properties": {
-          "character_id": {
-            "type": "string",
-            "description": "Character for which the stats are being returned.",
-            "x-cast-to": "int64",
-            "x-reference-to": "character.character_id"
-          },
           "stat_name": {
             "type": "string",
             "description": "Name of the stat being returned."
@@ -6694,19 +6765,27 @@
           }
         }
       },
-      "characters_stat_history": {
+      "characters_stat_by_faction": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/characters_stat_by_faction_core"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "character_id": {
+                "type": "string",
+                "description": "Character for which the stats are being returned.",
+                "x-cast-to": "int64",
+                "x-reference-to": "character.character_id"
+              }
+            }
+          }
+        ]
+      },
+      "characters_stat_history_core": {
         "type": "object",
         "properties": {
-          "character_id": {
-            "type": "string",
-            "description": "Character for which the stats are being returned.",
-            "x-cast-to": "int64",
-            "x-reference-to": "character.character_id"
-          },
-          "stat_name": {
-            "type": "string",
-            "description": "Name of the stat being returned."
-          },
           "all_time": {
             "type": "string",
             "description": "All-time value of the stat.",
@@ -6934,15 +7013,31 @@
           }
         }
       },
-      "characters_weapon_stat": {
+      "characters_stat_history": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/characters_stat_core"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "character_id": {
+                "type": "string",
+                "description": "Character for which the stats are being returned.",
+                "x-cast-to": "int64",
+                "x-reference-to": "character.character_id"
+              },
+              "stat_name": {
+                "type": "string",
+                "description": "Name of the stat being returned."
+              }
+            }
+          }
+        ]
+      },
+      "characters_weapon_stat_core": {
         "type": "object",
         "properties": {
-          "character_id": {
-            "type": "string",
-            "description": "The ID of the character.",
-            "x-cast-to": "int64",
-            "x-reference-to": "character.character_id"
-          },
           "stat_name": {
             "type": "string",
             "description": "The name of the stat being recorded.",
@@ -6975,15 +7070,27 @@
           }
         }
       },
-      "characters_weapon_stat_by_faction": {
+      "characters_weapon_stat": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/characters_weapon_stat_core"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "character_id": {
+                "type": "string",
+                "description": "The ID of the character.",
+                "x-cast-to": "int64",
+                "x-reference-to": "character.character_id"
+              }
+            }
+          }
+        ]
+      },
+      "characters_weapon_stat_by_faction_core": {
         "type": "object",
         "properties": {
-          "character_id": {
-            "type": "string",
-            "description": "The ID of the character.",
-            "x-cast-to": "int64",
-            "x-reference-to": "character.character_id"
-          },
           "stat_name": {
             "type": "string",
             "description": "The name of the stat being recorded.",
@@ -7025,6 +7132,24 @@
             "description": "Human-readable version of `last_save`."
           }
         }
+      },
+      "characters_weapon_stat_by_faction": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/characters_weapon_stat_by_faction_core"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "character_id": {
+                "type": "string",
+                "description": "The ID of the character.",
+                "x-cast-to": "int64",
+                "x-reference-to": "character.character_id"
+              }
+            }
+          }
+        ]
       },
       "characters_world": {
         "type": "object",
@@ -9254,6 +9379,91 @@
             "description": "Documentation for this numeric parameter on rewards of this type."
           }
         }
+      },
+      "single_character_by_id": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/character"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "currency": {
+                "$ref": "#/components/schemas/characters_currency_core"
+              },
+              "stats": {
+                "type": "object",
+                "properties": {
+                  "stat_history": {
+                    "type": "object",
+                    "properties": {
+                      "deaths": {
+                        "$ref": "#/components/schemas/characters_stat_history_core"
+                      },
+                      "kills": {
+                        "$ref": "#/components/schemas/characters_stat_history_core"
+                      },
+                      "score": {
+                        "$ref": "#/components/schemas/characters_stat_history_core"
+                      },
+                      "time": {
+                        "$ref": "#/components/schemas/characters_stat_history_core"
+                      },
+                      "facility_capture": {
+                        "$ref": "#/components/schemas/characters_stat_history_core"
+                      },
+                      "facility_defend": {
+                        "$ref": "#/components/schemas/characters_stat_history_core"
+                      },
+                      "battle_rank": {
+                        "$ref": "#/components/schemas/characters_stat_history_core"
+                      },
+                      "certs": {
+                        "$ref": "#/components/schemas/characters_stat_history_core"
+                      },
+                      "medals": {
+                        "$ref": "#/components/schemas/characters_stat_history_core"
+                      },
+                      "ribbons": {
+                        "$ref": "#/components/schemas/characters_stat_history_core"
+                      }
+                    }
+                  },
+                  "stat": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/characters_stat_core"
+                    }
+                  },
+                  "stat_by_faction": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/characters_stat_by_faction_core"
+                    }
+                  },
+                  "weapon_stat": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/characters_weapon_stat_core"
+                    }
+                  },
+                  "weapon_stat_by_faction": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/characters_weapon_stat_by_faction_core"
+                    }
+                  }
+                }
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/characters_item"
+                }
+              }
+            }
+          }
+        ]
       },
       "skill": {
         "type": "object",
