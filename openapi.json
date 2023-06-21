@@ -91,6 +91,10 @@
     {
       "name": "Progression",
       "description": "Collections related to in-game progression, such as directives, weapon medals, titles, and service ribbons."
+    },
+    {
+      "name": "Map Data",
+      "description": "Collections related to map rendering, such as facility types, lattice links, and map hexes."
     }
   ],
   "security": [],
@@ -1954,6 +1958,101 @@
         }
       }
     },
+    "/get/{game}/facility_link": {
+      "get": {
+        "summary": "Facility Link",
+        "description": "Resolves lattice links between facilities.\n\nThere is no reliable difference between `facility_id_a` and `facility_id_b`; the former tends to be closer to the respective warpgate, but this does not hold true for all links. It is recommended to treat the link direction as arbitrary.",
+        "tags": [
+          "Map Data"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/facilityIdAParam"
+          },
+          {
+            "$ref": "#/components/parameters/facilityIdBParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "facility_link_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/facility_link"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "facility_link": {
+                    "$ref": "#/components/examples/facility_link"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/facility_type": {
+      "get": {
+        "summary": "Facility Type",
+        "description": "Lists all facility types across all zones and game modes.",
+        "tags": [
+          "Map Data"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/facilityTypeIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "facility_type_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/facility_type"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "facility_type": {
+                    "$ref": "#/components/examples/facility_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/faction": {
       "get": {
         "summary": "Faction",
@@ -2633,6 +2732,153 @@
                 "examples": {
                   "ncInfiltrator": {
                     "$ref": "#/components/examples/loadout"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/map": {
+      "get": {
+        "summary": "Map",
+        "description": "Map status endpoint.\n\nThis collection can only be queried with a single `world_id` and any number of `zone_ids` (note that the parameter is plural). Also note the non-standard payload format requiring different parsing rules.\n\nFor partially locked continents, the unavailable regions will report a `FactionId` of zero.",
+        "tags": [
+          "Map Data"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/worldIdParam"
+          },
+          {
+            "name": "zone_ids",
+            "in": "query",
+            "description": "Unique identifier of a zone.",
+            "schema": {
+              "type": "string"
+            },
+            "x-cast-to": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "map_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/map"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "indar": {
+                    "$ref": "#/components/examples/map"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/map_hex": {
+      "get": {
+        "summary": "Map Hex",
+        "description": "Endpoint for retrieving map hex coordinates.\n\nThis data can be used to reconstruct the in-game facility outlines from API data.\n\nThe X and Y coordinates listed in the entries to this collection are not Cartesian and do not match up with the `location_<n>` fields of `map_region`. Instead, they are describing locations in a non-orthogonal hexagonal grid, which must be converted by the user.\n\nThis website has a great write-up on hexagonal coordinate systems: <https://www.redblobgames.com/grids/hexagons/>\nThe coordinate system used by PlanetSide 2 matches the \"Axial coordinates\" described in the article, except that the first coordinate X faces east, and the second coordinate Y faces up and to the right at a 60° angle.",
+        "tags": [
+          "Map Data"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/mapRegionIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "map_hex_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/map_hex"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "indar": {
+                    "$ref": "#/components/examples/map_hex"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/map_region": {
+      "get": {
+        "summary": "Map Region",
+        "description": "A region on the in-game map.\n\nMap regions are largely identical to their corresponding regions, but use the internal `facility_name` instead of a localized string. A `map_region_id` and `region_id` are interchangeable.\n\nAdditionally, this collection allows connecting facilities to map region IDs.\n\nNote that the continuous outfit resource gain is listed in \"ticks\", not minutes. Ticks are 5 minutes as of writing, meaning that a Tech Plant will list a tick reward of 8 Synthium, corresponding to the 1.6 Synthium per minute advertised in-game.",
+        "tags": [
+          "Map Data"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/mapRegionIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "map_region_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/map_region"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "indar": {
+                    "$ref": "#/components/examples/map_region"
                   }
                 }
               }
@@ -3391,6 +3637,55 @@
                 "examples": {
                   "projectile_flight_type": {
                     "$ref": "#/components/examples/projectile_flight_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/region": {
+      "get": {
+        "summary": "Region",
+        "description": "Display name of the game regions.\n\nThis endpoint mostly contains the localized display name of the a map region. Regions and map regions are interchangeable and governed by the same IDs.",
+        "tags": [
+          "Map Data"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/regionIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/zoneIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "region_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/region"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "region": {
+                    "$ref": "#/components/examples/region"
                   }
                 }
               }
@@ -5228,6 +5523,33 @@
         },
         "x-cast-to": "int32"
       },
+      "facilityIdAParam": {
+        "name": "facility_id_a",
+        "in": "query",
+        "description": "Unique ID of the first facility.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "facilityIdBParam": {
+        "name": "facility_id_b",
+        "in": "query",
+        "description": "Unique ID of the second facility.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "facilityTypeIdParam": {
+        "name": "facility_type_id",
+        "in": "query",
+        "description": "Unique ID of the facility type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "factionIdParam": {
         "name": "faction_id",
         "in": "query",
@@ -5350,6 +5672,15 @@
         },
         "x-cast-to": "int32"
       },
+      "mapRegionIdParam": {
+        "name": "map_region_id",
+        "in": "query",
+        "description": "Unique identifier of a map region.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "marketingBundleIdParam": {
         "name": "marketing_bundle_id",
         "in": "query",
@@ -5426,6 +5757,15 @@
         "name": "projectile_flight_type_id",
         "in": "query",
         "description": "Unique identifier of a projectile flight type.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "regionIdParam": {
+        "name": "region_id",
+        "in": "query",
+        "description": "Unique identifier of a region.",
         "schema": {
           "type": "string"
         },
@@ -7601,6 +7941,63 @@
           }
         }
       },
+      "facility_link": {
+        "type": "object",
+        "properties": {
+          "zone_id": {
+            "type": "string",
+            "description": "The ID of the zone in which the facility link is located.",
+            "x-cast-to": "int32",
+            "x-reference-to": "zone.zone_id"
+          },
+          "facility_id_a": {
+            "type": "string",
+            "description": "The ID of the first facility in the link.",
+            "x-cast-to": "int32",
+            "x-reference-to": "map_region.facility_id"
+          },
+          "facility_link_b": {
+            "type": "string",
+            "description": "The ID of the second facility in the link.",
+            "x-cast-to": "int32",
+            "x-reference-to": "map_region.facility_id"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the facility link."
+          }
+        }
+      },
+      "facility_type": {
+        "type": "object",
+        "properties": {
+          "facility_type_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the facility type."
+          },
+          "image_id": {
+            "type": "string",
+            "description": "Default image of the facility type's map icon.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "image_set_id": {
+            "type": "string",
+            "description": "The `ps2/image_set` of the facility type's map icon.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "The path to the facility type's map icon."
+          }
+        }
+      },
       "faction": {
         "type": "object",
         "properties": {
@@ -8493,6 +8890,177 @@
           }
         }
       },
+      "map": {
+        "type": "object",
+        "properties": {
+          "ZoneId": {
+            "type": "string",
+            "description": "Zone for which map data is returned.",
+            "x-cast-to": "int32",
+            "x-reference-to": "zone.zone_id"
+          },
+          "Regions": {
+            "type": "object",
+            "properties": {
+              "IsList": {
+                "type": "string",
+                "description": "Irrelevant field, always true.",
+                "x-cast-to": "boolean"
+              },
+              "Row": {
+                "type": "array",
+                "description": "List of map row entries.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "RowData": {
+                      "type": "object",
+                      "properties": {
+                        "RegionId": {
+                          "type": "string",
+                          "description": "Region for which ownership data is returned.",
+                          "x-cast-to": "int32",
+                          "x-reference-to": "map_region.map_region_id"
+                        },
+                        "FactionId": {
+                          "type": "string",
+                          "description": "Faction that owns the region.",
+                          "x-cast-to": "int32",
+                          "x-reference-to": "faction.faction_id"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "map_hex": {
+        "type": "object",
+        "properties": {
+          "zone_id": {
+            "type": "string",
+            "description": "Zone containing the region for which a hex is returned.",
+            "x-cast-to": "int32",
+            "x-reference-to": "zone.zone_id"
+          },
+          "map_region_id": {
+            "type": "string",
+            "description": "Region for which a hex is returned.",
+            "x-cast-to": "int32",
+            "x-reference-to": "map_region.map_region_id"
+          },
+          "x": {
+            "type": "string",
+            "description": "X coordinate of the hex. See the endpoint documentation for `map_hex` for details on converting these indices into Cartesian coordinates.",
+            "x-cast-to": "int32"
+          },
+          "y": {
+            "type": "string",
+            "description": "Y coordinate of the hex. See the endpoint documentation for `map_hex` for details on converting these indices into Cartesian coordinates.",
+            "x-cast-to": "int32"
+          },
+          "hex_type": {
+            "type": "string",
+            "description": "Type of the hex. 0: capturable by anyone, 1: not capturable, 2: locked to a single faction.",
+            "x-cast-to": "int32"
+          },
+          "type_name": {
+            "type": "string",
+            "description": "Name of the hex type."
+          }
+        }
+      },
+      "map_region": {
+        "type": "object",
+        "properties": {
+          "map_region_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "zone_id": {
+            "type": "string",
+            "description": "Zone the map region is located in.",
+            "x-cast-to": "int32",
+            "x-reference-to": "zone.zone_id"
+          },
+          "facility_id": {
+            "type": "string",
+            "description": "Capturable facility associated with the map region. Note that some regions do not have facilities associated with them, such as The Shattered Warpgate.",
+            "x-cast-to": "int32"
+          },
+          "facility_name": {
+            "type": "string",
+            "description": "Internal name of the facility. See the corresponding `region` for a localized value."
+          },
+          "facility_type_id": {
+            "type": "string",
+            "description": "Type of the facility associated with the map region.",
+            "x-cast-to": "int32",
+            "x-reference-to": "facility_type.facility_type_id"
+          },
+          "facility_type": {
+            "type": "string",
+            "description": "Internal name of the facility type."
+          },
+          "location_x": {
+            "type": "string",
+            "description": "North-south coordinate of the map region.",
+            "x-cast-to": "float"
+          },
+          "location_y": {
+            "type": "string",
+            "description": "Elevation of the map region.",
+            "x-cast-to": "float"
+          },
+          "location_z": {
+            "type": "string",
+            "description": "East-west coordinate of the map region.",
+            "x-cast-to": "float"
+          },
+          "reward_amount": {
+            "type": "string",
+            "description": "Defunct field. Used to list the amount of domain-specific resources (air/vehicles/infantry) granted for owning this facility.",
+            "x-cast-to": "int32"
+          },
+          "reward_currency_id": {
+            "type": "string",
+            "description": "Defunct field. Used to list the type of domain-specific resources (air/vehicles/infantry) granted for owning this facility.",
+            "x-cast-to": "int32"
+          },
+          "capture_reward": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string",
+                "description": "Internal name of the outfit resource granted for capturing this region."
+              },
+              "amount": {
+                "type": "string",
+                "description": "Amount of the outfit resource granted for capturing this region.",
+                "x-cast-to": "float"
+              }
+            }
+          },
+          "tick_reward": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string",
+                "description": "Internal name of the outfit resource granted while holding this region."
+              },
+              "amount": {
+                "type": "string",
+                "description": "Amount of the outfit resource granted per tick while holding this region.",
+                "x-cast-to": "float"
+              }
+            }
+          }
+        }
+      },
       "marketing_bundle": {
         "type": "object",
         "properties": {
@@ -9190,6 +9758,32 @@
             "type": "string",
             "description": "Description of the projectile flight type.",
             "x-cast-to": "string"
+          }
+        }
+      },
+      "region": {
+        "type": "object",
+        "properties": {
+          "region_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "zone_id": {
+            "type": "string",
+            "description": "ID of the zone in which the region is located.",
+            "x-cast-to": "int32",
+            "x-reference-to": "zone.zone_id"
+          },
+          "initial_faction_id": {
+            "type": "string",
+            "description": "Defunct field. No longer applicable as warpgates are rotated on zone unlock.",
+            "x-cast-to": "int32",
+            "x-reference-to": "faction.faction_id"
+          },
+          "name": {
+            "description": "Name of the region.",
+            "$ref": "#/components/schemas/localized_string"
           }
         }
       },
@@ -11586,6 +12180,46 @@
           "returned": 1
         }
       },
+      "facility_link": {
+        "summary": "Indar Northern Warpgate Links.\nhttps://census.daybreakgames.com/get/ps2/facility_link?facility_id_a=7801&c:limit=10",
+        "value": {
+          "facility_link_list": [
+            {
+              "zone_id": "2",
+              "facility_id_a": "7801",
+              "facility_id_b": "201"
+            },
+            {
+              "zone_id": "2",
+              "facility_id_a": "7801",
+              "facility_id_b": "209",
+              "description": "Indar - WG.Ocean to SO10.CraterFiringRange"
+            },
+            {
+              "zone_id": "2",
+              "facility_id_a": "7801",
+              "facility_id_b": "210",
+              "description": "Indar - WG.Ocean to SO11.AlkaliStorage"
+            }
+          ],
+          "returned": 3
+        }
+      },
+      "facility_type": {
+        "summary": "Interlinks.\nhttps://census.daybreakgames.com/get/ps2/facility_type?facility_type_id=8",
+        "value": {
+          "facility_type_list": [
+            {
+              "facility_type_id": "8",
+              "description": "Interlink Facility",
+              "image_id": "9121",
+              "image_set_id": "3158",
+              "image_path": "/files/ps2/images/static/9121.png"
+            }
+          ],
+          "returned": 1
+        }
+      },
       "faction": {
         "summary": "TR",
         "value": {
@@ -12251,6 +12885,111 @@
           "returned": 5
         }
       },
+      "map": {
+        "summary": "Connery Indar State (truncated to 2 entries).\nhttps://census.daybreakgames.com/get/ps2/map?zone_ids=2&world_id=1",
+        "value": {
+          "map_list": [
+            {
+              "ZoneId": "2",
+              "Regions": {
+                "IsList": "1",
+                "Row": [
+                  {
+                    "RowData": {
+                      "RegionId": "2101",
+                      "FactionId": "1"
+                    }
+                  },
+                  {
+                    "RowData": {
+                      "RegionId": "2421",
+                      "FactionId": "1"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "map_hex": {
+        "summary": "Old Auraxium Mines.\nhttps://census.daybreakgames.com/get/ps2/map_hex?map_region_id=2448&c:limit=10",
+        "value": {
+          "map_hex_list": [
+            {
+              "zone_id": "2",
+              "map_region_id": "2448",
+              "x": "17",
+              "y": "-12",
+              "hex_type": "0",
+              "type_name": "Unrestricted access"
+            },
+            {
+              "zone_id": "2",
+              "map_region_id": "2448",
+              "x": "17",
+              "y": "-11",
+              "hex_type": "0",
+              "type_name": "Unrestricted access"
+            },
+            {
+              "zone_id": "2",
+              "map_region_id": "2448",
+              "x": "18",
+              "y": "-13",
+              "hex_type": "0",
+              "type_name": "Unrestricted access"
+            },
+            {
+              "zone_id": "2",
+              "map_region_id": "2448",
+              "x": "18",
+              "y": "-12",
+              "hex_type": "0",
+              "type_name": "Unrestricted access"
+            },
+            {
+              "zone_id": "2",
+              "map_region_id": "2448",
+              "x": "18",
+              "y": "-11",
+              "hex_type": "0",
+              "type_name": "Unrestricted access"
+            }
+          ],
+          "returned": 5
+        }
+      },
+      "map_region": {
+        "summary": "Mao Tech Plant.\nhttps://census.daybreakgames.com/get/ps2/map_region?facility_id=4401",
+        "value": {
+          "map_region_list": [
+            {
+              "map_region_id": "2102",
+              "zone_id": "2",
+              "facility_id": "4401",
+              "facility_name": "Mao",
+              "facility_type_id": "4",
+              "facility_type": "Tech Plant",
+              "location_x": "1810",
+              "location_y": "110",
+              "location_z": "1514",
+              "reward_amount": "1",
+              "reward_currency_id": "1000",
+              "capture_reward": {
+                "description": "Synthium - Uncommon",
+                "amount": "8"
+              },
+              "tick_reward": {
+                "description": "Synthium - Uncommon",
+                "amount": "8"
+              }
+            }
+          ],
+          "returned": 1
+        }
+      },
       "marketing_bundle": {
         "summary": "'PlanetSide Legacy Bundle (2022)'. Note the NULL value for the cert price as this is a DBC-only bundle.\nhttps://census.daybreakgames.com/get/ps2/marketing_bundle?marketing_bundle_id=812821&c:includeNull=1",
         "value": {
@@ -12748,6 +13487,27 @@
             }
           ],
           "returned": 4
+        }
+      },
+      "region": {
+        "summary": "Mao Tech Plant.\nhttps://census.daybreakgames.com/get/ps2/region?region_id=2102",
+        "value": {
+          "region_list": [
+            {
+              "region_id": "2102",
+              "zone_id": "2",
+              "initial_faction_id": "1",
+              "name": {
+                "de": "Mao",
+                "en": "Mao",
+                "es": "Mao",
+                "fr": "Mao",
+                "it": "Mao",
+                "tr": "Mao"
+              }
+            }
+          ],
+          "returned": 1
         }
       },
       "resist_info": {
