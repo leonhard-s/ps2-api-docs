@@ -103,6 +103,10 @@
     {
       "name": "Metagame & Alerts",
       "description": "Endpoints related to in-game alerts, outfit wars, and other large-scale events."
+    },
+    {
+      "name": "Event History",
+      "description": "ReST interface for in-game events, such as kills, deaths, and battle rank gains."
     }
   ],
   "security": [],
@@ -1003,6 +1007,103 @@
                 "examples": {
                   "directive_tree": {
                     "$ref": "#/components/examples/characters_directive_tree"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_event": {
+      "get": {
+        "summary": "Character Event",
+        "description": "ReST endpoint for retrieving historical character event data.\n\nLike `event`, but allows querying by character. The `character_id` and `id` fields are interchangeable.",
+        "tags": [
+          "Event History"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterEventCharacterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterEventTypeParam"
+          },
+          {
+            "$ref": "#/components/parameters/beforeParam"
+          },
+          {
+            "$ref": "#/components/parameters/afterParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_event_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/event"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/characters_event_grouped": {
+      "get": {
+        "summary": "Grouped Character Event",
+        "description": "Return character vs. character statistics.\n\nAllows calculating player vs. player KDR.",
+        "tags": [
+          "Event History"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/characterEventsGroupedEventTypeParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "characters_event_grouped_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/characters_event_grouped"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
                   }
                 }
               }
@@ -1912,6 +2013,53 @@
                 "examples": {
                   "effect_type": {
                     "$ref": "#/components/examples/effect_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/event": {
+      "get": {
+        "summary": "Event",
+        "description": "ReST endpoint for retrieving historical event data.\n\nThese largely mirror the corresponding events in the ESS:\n\n- `ItemAdded` -> `ITEM`\n- `Death` -> `KILL`/`DEATH`\n- `BattleRankUp` -> `BATTLE_RANK`\n- `PlayerFacilityCapture`/`PlayerFacilityDefend` -> `FACILITY_CHARACTER`\n- `AchievementEarned` -> `ACHIEVEMENT`\n- `FacilityControl` -> `FACILITYCONTROL`\n- `MetagameEvent` -> `METAGAME`",
+        "tags": [
+          "Event History"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/eventTypeParam"
+          },
+          {
+            "$ref": "#/components/parameters/beforeParam"
+          },
+          {
+            "$ref": "#/components/parameters/afterParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "event_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/event"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
                   }
                 }
               }
@@ -3231,7 +3379,7 @@
         "summary": "Metagame Event",
         "description": "In-game alerts and other alert-like events.\n\nNote that this endpoint lists alert types that are not currently enabled in-game, such as the 'Aerial Anomaly' and 'MAXimum Pressure' alert types.",
         "tags": [
-          "Events & Alerts"
+          "Metagame & Alerts"
         ],
         "parameters": [
           {
@@ -3277,7 +3425,7 @@
         "summary": "Metagame Event State",
         "description": "Enumeratess the available states for alerts.",
         "tags": [
-          "Events & Alerts"
+          "Metagame & Alerts"
         ],
         "parameters": [
           {
@@ -5104,6 +5252,59 @@
         }
       }
     },
+    "/get/{game}/world_event": {
+      "get": {
+        "summary": "World Event",
+        "description": "ReST endpoint for retrieving historical world events.\n\nThe `world_id` and `id` fields are interchangeable.",
+        "tags": [
+          "Event History"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/worldIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/worldEventWorldIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/worldEventTypeParam"
+          },
+          {
+            "$ref": "#/components/parameters/beforeParam"
+          },
+          {
+            "$ref": "#/components/parameters/afterParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "world_event_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/world_event"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/world_stat_history": {
       "get": {
         "summary": "(Defunct) World Stat History",
@@ -5703,6 +5904,14 @@
         },
         "x-cast-to": "int32"
       },
+      "afterParam": {
+        "name": "after",
+        "in": "query",
+        "description": "Only return results newer than the given UTC timestamp.",
+        "schema": {
+          "type": "string"
+        }
+      },
       "armorFacingIdParam": {
         "name": "armor_facing_id",
         "in": "query",
@@ -5742,6 +5951,14 @@
             "summary": "Kevin (PS4 US)",
             "value": "5428352933375941729"
           }
+        }
+      },
+      "beforeParam": {
+        "name": "before",
+        "in": "query",
+        "description": "Only return results older than the given UTC timestamp.",
+        "schema": {
+          "type": "string"
         }
       },
       "characterNameFirstParam": {
@@ -5842,6 +6059,63 @@
           "type": "string"
         },
         "x-cast-to": "int32"
+      },
+      "eventTypeParam": {
+        "name": "type",
+        "in": "query",
+        "description": "Type of event to retrieve.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "BATTLE_RANK",
+            "ITEM",
+            "ACHIEVEMENT",
+            "DEATH",
+            "KILL",
+            "VEHICLE_DESTROY",
+            "FACILITY_CHARACTER",
+            "FACILITYCONTROL",
+            "METAGAME"
+          ]
+        }
+      },
+      "characterEventTypeParam": {
+        "name": "type",
+        "in": "query",
+        "description": "Type of event to retrieve.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "BATTLE_RANK",
+            "ITEM",
+            "ACHIEVEMENT",
+            "DEATH",
+            "KILL",
+            "VEHICLE_DESTROY",
+            "FACILITY_CHARACTER"
+          ]
+        }
+      },
+      "characterEventCharacterIdParam": {
+        "name": "id",
+        "in": "query",
+        "description": "Alias for `character_id`.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int64"
+      },
+      "characterEventsGroupedEventTypeParam": {
+        "name": "type",
+        "in": "query",
+        "description": "Type of event to retrieve.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "DEATH",
+            "KILL"
+          ]
+        }
       },
       "experienceIdParam": {
         "name": "experience_id",
@@ -6388,6 +6662,27 @@
         "name": "world_id",
         "in": "query",
         "description": "Unique identifier of a world.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "worldEventTypeParam": {
+        "name": "type",
+        "in": "query",
+        "description": "Event name for the `world_event` collection.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "FACILITYCONTROL",
+            "METAGAME"
+          ]
+        }
+      },
+      "worldEventWorldIdParam": {
+        "name": "id",
+        "in": "query",
+        "description": "Alias for `world_id`.",
         "schema": {
           "type": "string"
         },
@@ -7195,6 +7490,338 @@
           "completion_time_date": {
             "type": "string",
             "description": "Human-readable version of `completion_time`."
+          }
+        }
+      },
+      "characters_event": {
+        "oneOf": [
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/event_base"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "battle_rank": {
+                    "type": "string",
+                    "description": "The new battle rank of the character.",
+                    "x-cast-to": "int32"
+                  },
+                  "event_type": {
+                    "type": "string",
+                    "description": "Type of event. This generally matches the event types used by the ESS.",
+                    "x-cast-to": "int32"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/event_base"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "item_id": {
+                    "type": "string",
+                    "description": "The ID of the item that was added.",
+                    "x-cast-to": "int32",
+                    "x-reference-to": "item.item_id"
+                  },
+                  "item_count": {
+                    "type": "string",
+                    "description": "The number of items that were added.",
+                    "x-cast-to": "int32"
+                  },
+                  "event_type": {
+                    "type": "string",
+                    "description": "Type of event. This generally matches the event types used by the ESS.",
+                    "x-cast-to": "int32"
+                  },
+                  "context": {
+                    "type": "string",
+                    "description": "Identifier string for the conext in which the item was granted."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/event_base"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "achievement_id": {
+                    "type": "string",
+                    "description": "The ID of the achievement that was granted.",
+                    "x-cast-to": "int32",
+                    "x-reference-to": "achievement.achievement_id"
+                  },
+                  "event_type": {
+                    "type": "string",
+                    "description": "Type of event. This generally matches the event types used by the ESS.",
+                    "x-cast-to": "int32"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/event_base"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "attacker_character_id": {
+                    "type": "string",
+                    "description": "The ID of the character that performed the kill.",
+                    "x-reference-to": "character.character_id",
+                    "x-cast-to": "int64"
+                  },
+                  "is_headshot": {
+                    "type": "string",
+                    "description": "Whether or not the kill was a headshot.",
+                    "x-cast-to": "bool"
+                  },
+                  "is_critical": {
+                    "type": "string",
+                    "description": "Whether or not the kill was a critical hit. Not currently used by PlanetSide 2.",
+                    "x-cast-to": "bool"
+                  },
+                  "attacker_weapon_id": {
+                    "type": "string",
+                    "description": "The ID of the item that was used to perform the kill. Note that this is an item ID and not the weapon ID, despite the name.",
+                    "x-reference-to": "item.item_id",
+                    "x-cast-to": "int32"
+                  },
+                  "attacker_vehicle_id": {
+                    "type": "string",
+                    "description": "The ID of the vehicle that the attacker was in when they performed the kill.",
+                    "x-reference-to": "vehicle.vehicle_id",
+                    "x-cast-to": "int32"
+                  },
+                  "character_loadout_id": {
+                    "type": "string",
+                    "description": "The ID of the loadout that the dying player was playing as.",
+                    "x-reference-to": "loadout.loadout_id",
+                    "x-cast-to": "int32"
+                  },
+                  "attacker_fire_mode_id": {
+                    "type": "string",
+                    "description": "The ID of the fire mode that was used to perform the kill.",
+                    "x-reference-to": "fire_mode_2.fire_mode_id",
+                    "x-cast-to": "int32"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/event_base"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "attacker_character_id": {
+                    "type": "string",
+                    "description": "The ID of the character that performed the kill.",
+                    "x-reference-to": "character.character_id",
+                    "x-cast-to": "int64"
+                  },
+                  "is_headshot": {
+                    "type": "string",
+                    "description": "Whether or not the kill was a headshot.",
+                    "x-cast-to": "bool"
+                  },
+                  "is_critical": {
+                    "type": "string",
+                    "description": "Whether or not the kill was a critical hit. Not currently used by PlanetSide 2.",
+                    "x-cast-to": "bool"
+                  },
+                  "attacker_weapon_id": {
+                    "type": "string",
+                    "description": "The ID of the item that was used to perform the kill. Note that this is an item ID and not the weapon ID, despite the name.",
+                    "x-reference-to": "item.item_id",
+                    "x-cast-to": "int32"
+                  },
+                  "attacker_vehicle_id": {
+                    "type": "string",
+                    "description": "The ID of the vehicle that the attacker was in when they performed the kill.",
+                    "x-reference-to": "vehicle.vehicle_id",
+                    "x-cast-to": "int32"
+                  },
+                  "character_loadout_id": {
+                    "type": "string",
+                    "description": "The ID of the loadout that the dying player was playing as.",
+                    "x-reference-to": "loadout.loadout_id",
+                    "x-cast-to": "int32"
+                  },
+                  "attacker_fire_mode_id": {
+                    "type": "string",
+                    "description": "The ID of the fire mode that was used to perform the kill.",
+                    "x-reference-to": "fire_mode_2.fire_mode_id",
+                    "x-cast-to": "int32"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/event_base"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "vehicle_definition_id": {
+                    "type": "string",
+                    "description": "The ID of the vehicle that was destroyed.",
+                    "x-reference-to": "vehicle.vehicle_id",
+                    "x-cast-to": "int32"
+                  },
+                  "faction_id": {
+                    "type": "string",
+                    "description": "The ID of the faction that the vehicle belonged to.",
+                    "x-reference-to": "faction.faction_id",
+                    "x-cast-to": "int32"
+                  },
+                  "attacker_player_guid": {
+                    "type": "string",
+                    "description": "Unknown. Generally identical to `attacker_character_id`.",
+                    "x-cast-to": "int64"
+                  },
+                  "attacker_character_id": {
+                    "type": "string",
+                    "description": "Unique ID of the player that destroyed the vehicle.",
+                    "x-reference-to": "character.character_id",
+                    "x-cast-to": "int64"
+                  },
+                  "attacker_loadout_id": {
+                    "type": "string",
+                    "description": "The ID of the loadout that the attacker was playing as.",
+                    "x-reference-to": "loadout.loadout_id",
+                    "x-cast-to": "int32"
+                  },
+                  "attacker_weapon_id": {
+                    "type": "string",
+                    "description": "The ID of the item that was used to destroy the vehicle. Note that this is an item ID and not the weapon ID, despite the name.",
+                    "x-reference-to": "item.item_id",
+                    "x-cast-to": "int32"
+                  },
+                  "attacker_vehicle_id": {
+                    "type": "string",
+                    "description": "The ID of the vehicle that the attacker was in when they destroyed the vehicle.",
+                    "x-reference-to": "vehicle.vehicle_id",
+                    "x-cast-to": "int32"
+                  },
+                  "projectile_id": {
+                    "type": "string",
+                    "description": "Unknown. The IDs provided in this field are not available on the `projectile` endpoint.",
+                    "x-cast-to": "int32"
+                  },
+                  "event_type": {
+                    "type": "string",
+                    "description": "Type of event. This generally matches the event types used by the ESS.",
+                    "x-cast-to": "int32"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/event_base"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "facility_id": {
+                    "type": "string",
+                    "description": "The ID of the facility that was captured.",
+                    "x-reference-to": "facility.facility_id",
+                    "x-cast-to": "int32"
+                  },
+                  "outfit_id": {
+                    "type": "string",
+                    "description": "The ID of the outfit that captured the facility, or the facility that owns the facility at the time of defence.",
+                    "x-reference-to": "outfit.outfit_id",
+                    "x-cast-to": "int64"
+                  },
+                  "event_type": {
+                    "type": "string",
+                    "description": "Type of event. This generally matches the event types used by the ESS."
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "event_base": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "The ID of the character that ranked up.",
+            "x-reference-to": "character.character_id",
+            "x-cast-to": "int64"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "UTC timestamp of the event."
+          },
+          "zone_id": {
+            "type": "string",
+            "description": "The ID of the zone where the character ranked up.",
+            "x-reference-to": "zone.zone_id",
+            "x-cast-to": "int32"
+          },
+          "world_id": {
+            "type": "string",
+            "description": "The ID of the world where the character ranked up.",
+            "x-reference-to": "world.world_id",
+            "x-cast-to": "int32"
+          },
+          "table_type": {
+            "type": "string",
+            "description": "Internal name of the table.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "characters_event_grouped": {
+        "type": "object",
+        "properties": {
+          "table_type": {
+            "type": "string",
+            "description": "Type of event being returned.",
+            "enum": [
+              "KILL",
+              "DEATH"
+            ]
+          },
+          "count": {
+            "type": "string",
+            "description": "Number of matching events.",
+            "x-cast-to": "int32"
+          },
+          "character_id": {
+            "type": "string",
+            "description": "Other character for which the event list is being returned.",
+            "x-cast-to": "int64",
+            "x-reference-to": "character.character_id"
           }
         }
       },
@@ -8266,6 +8893,16 @@
             "$ref": "#/components/schemas/localized_string"
           }
         }
+      },
+      "event": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/characters_event"
+          },
+          {
+            "$ref": "#/components/schemas/world_event"
+          }
+        ]
       },
       "experience": {
         "type": "object",
@@ -11241,6 +11878,120 @@
             "$ref": "#/components/schemas/localized_string"
           }
         }
+      },
+      "world_event": {
+        "anyOf": [
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/event_base"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "facility_id": {
+                    "type": "string",
+                    "description": "The ID of the facility that was captured.",
+                    "x-reference-to": "map_region.facility_id",
+                    "x-cast-to": "int32"
+                  },
+                  "faction_old": {
+                    "type": "string",
+                    "description": "The faction that owned the facility before the capture.",
+                    "x-reference-to": "faction.faction_id",
+                    "x-cast-to": "int32"
+                  },
+                  "faction_new": {
+                    "type": "string",
+                    "description": "The faction that owns the facility after the capture.",
+                    "x-reference-to": "faction.faction_id",
+                    "x-cast-to": "int32"
+                  },
+                  "duration_held": {
+                    "type": "string",
+                    "description": "Time in seconds since the facility was held by the previous owner.",
+                    "x-cast-to": "int32"
+                  },
+                  "objective_id": {
+                    "type": "string",
+                    "description": "Unknown.",
+                    "x-reference-to": "objective.objective_id",
+                    "x-cast-to": "int32"
+                  },
+                  "event_type": {
+                    "type": "string",
+                    "description": "Type of event. This generally matches the event types used by the ESS.",
+                    "x-cast-to": "int32"
+                  },
+                  "outfit_id": {
+                    "type": "string",
+                    "description": "Unique ID of the outfit that captured the facility.",
+                    "x-reference-to": "outfit.outfit_id",
+                    "x-cast-to": "int64"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/event_base"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "metagame_event_id": {
+                    "type": "string",
+                    "description": "Unique ID of the metagame event.",
+                    "x-reference-to": "metagame_event.metagame_event_id",
+                    "x-cast-to": "int32"
+                  },
+                  "metagame_event_state": {
+                    "type": "string",
+                    "description": "Unique ID of the metagame event state.",
+                    "x-cast-to": "int32"
+                  },
+                  "faction_nc": {
+                    "type": "string",
+                    "description": "Current scope of the NC faction.",
+                    "x-cast-to": "float"
+                  },
+                  "faction_tr": {
+                    "type": "string",
+                    "description": "Current scope of the TR faction.",
+                    "x-cast-to": "float"
+                  },
+                  "faction_vs": {
+                    "type": "string",
+                    "description": "Current scope of the VS faction.",
+                    "x-cast-to": "float"
+                  },
+                  "experience_bonus": {
+                    "type": "string",
+                    "description": "Experience bonus for the winning faction.",
+                    "x-cast-to": "int32"
+                  },
+                  "event_type": {
+                    "type": "string",
+                    "description": "Type of event. This generally matches the event types used by the ESS.",
+                    "x-cast-to": "int32"
+                  },
+                  "instance_id": {
+                    "type": "string",
+                    "description": "Unique ID of this particular instance of the metagame event. Only unique per server restart, not globally.",
+                    "x-cast-to": "int32"
+                  },
+                  "metagame_event_state_name": {
+                    "type": "string",
+                    "description": "Name of the metagame event state.",
+                    "x-cast-to": "int32"
+                  }
+                }
+              }
+            ]
+          }
+        ]
       },
       "world_stat_history": {
         "type": "object",
