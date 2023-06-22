@@ -95,6 +95,10 @@
     {
       "name": "Map Data",
       "description": "Collections related to map rendering, such as facility types, lattice links, and map hexes."
+    },
+    {
+      "name": "Image Assets",
+      "description": "Image sets, icons and other assets available through the static `/files/` path."
     }
   ],
   "security": [],
@@ -2345,6 +2349,150 @@
                 "examples": {
                   "fire_mode_type": {
                     "$ref": "#/components/examples/fire_mode_type"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/image": {
+      "get": {
+        "summary": "Image",
+        "description": "Lists individual image assets available on the API.\n\nNote that historically, not all assets listed here are available on the image endpoint, and not all available assets are listed.",
+        "tags": [
+          "Image Assets"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/imageIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/image"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "image": {
+                    "$ref": "#/components/examples/image"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/image_set": {
+      "get": {
+        "summary": "Image Set",
+        "description": "Lists related image assets belonging to the same set.\n\nNote that this endpoint is a mapping; the `iamge_set_id` is not a unique key. The individual image types in a set are generally used to provide different sizes of the same image (e.g. icon previes or minimal icons).",
+        "tags": [
+          "Image Assets"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/imageSetIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/imageSetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image_set_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/image_set"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "image_set": {
+                    "$ref": "#/components/examples/image_set"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/image_set_default": {
+      "get": {
+        "summary": "Image Set Default",
+        "description": "Lists the default image for a given image set.",
+        "tags": [
+          "Image Assets"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/imageSetIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/imageIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image_set_default_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/image_set_default"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "image_set_default": {
+                    "$ref": "#/components/examples/image_set_default"
                   }
                 }
               }
@@ -5586,6 +5734,24 @@
         },
         "x-cast-to": "int32"
       },
+      "imageIdParam": {
+        "name": "image_id",
+        "in": "query",
+        "description": "Unique identifier of an image.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "imageSetIdParam": {
+        "name": "image_set_id",
+        "in": "query",
+        "description": "Identifier of an image set.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
       "itemIdParam": {
         "name": "item_id",
         "in": "query",
@@ -8716,6 +8882,91 @@
           "description": {
             "type": "string",
             "description": "Description of the type of fire mode"
+          }
+        }
+      },
+      "image": {
+        "type": "object",
+        "properties": {
+          "image_id": {
+            "type": "string",
+            "description": "Unique ID of the image.",
+            "x-cast-to": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the asset."
+          },
+          "path": {
+            "type": "string",
+            "description": "Relative to the image asset. Prefix the base URL to the Census API endpoint to create a fully-qualified URL."
+          }
+        }
+      },
+      "image_set": {
+        "type": "object",
+        "properties": {
+          "image_set_id": {
+            "type": "string",
+            "description": "ID of the image set. Note that this is not a unique ID, this collection is a mapping.",
+            "x-cast-to": "int32"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "ID of the image asset for this image set and type.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the image set."
+          },
+          "type_id": {
+            "type": "string",
+            "description": "Type ID of the current image within the set. Usually, this refers to scale.",
+            "x-cast-to": "int32"
+          },
+          "type_description": {
+            "type": "string",
+            "description": "Type description of the current image within the set. Usually, this refers to scale."
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Relative to the image asset. Prefix the base URL to the Census API endpoint to create a fully-qualified URL."
+          }
+        }
+      },
+      "image_set_default": {
+        "type": "object",
+        "properties": {
+          "image_set_id": {
+            "type": "string",
+            "description": "ID of the image set. Note that this is not a unique ID, this collection is a mapping.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image_set.image_set_id"
+          },
+          "image_id": {
+            "type": "string",
+            "description": "ID of the image asset for this image set and type.",
+            "x-cast-to": "int32",
+            "x-reference-to": "image.image_id"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the image set."
+          },
+          "type_id": {
+            "type": "string",
+            "description": "Type ID of the current image within the set. Usually, this refers to scale.",
+            "x-cast-to": "int32"
+          },
+          "type_description": {
+            "type": "string",
+            "description": "Type description of the current image within the set. Usually, this refers to scale."
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Relative to the image asset. Prefix the base URL to the Census API endpoint to create a fully-qualified URL."
           }
         }
       },
@@ -12679,6 +12930,67 @@
             {
               "fire_mode_id": "2001",
               "projectile_id": "8000"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "image": {
+        "summary": "A.M.P. Station map icon.\nhttps://census.daybreakgames.com/get/ps2/image?image_id=24",
+        "value": {
+          "image_list": [
+            {
+              "image_id": "24",
+              "description": "energy_facility.dds",
+              "path": "/files/ps2/images/static/24.png"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "image_set": {
+        "summary": "A.M.P. Station map icons (all sizes).\nhttps://census.daybreakgames.com/get/ps2/image_set?image_id=24&c:limit=10",
+        "value": {
+          "image_set_list": [
+            {
+              "image_set_id": "806486",
+              "image_id": "24",
+              "description": "energy_facility.dds",
+              "type_id": "4",
+              "type_description": "Very Small (16 pixel height)",
+              "image_path": "/files/ps2/images/static/24.png"
+            },
+            {
+              "image_set_id": "806486",
+              "image_id": "24",
+              "description": "energy_facility.dds",
+              "type_id": "5",
+              "type_description": "Small (32 pixel height)",
+              "image_path": "/files/ps2/images/static/24.png"
+            },
+            {
+              "image_set_id": "806486",
+              "image_id": "24",
+              "description": "energy_facility.dds",
+              "type_id": "6",
+              "type_description": "Medium (64 pixel height)",
+              "image_path": "/files/ps2/images/static/24.png"
+            }
+          ],
+          "returned": 3
+        }
+      },
+      "image_set_default": {
+        "summary": "Default image for A.M.P. Station map icons.\nhttps://census.daybreakgames.com/get/ps2/image_set_default?image_set_id=806486",
+        "value": {
+          "image_set_default_list": [
+            {
+              "image_set_id": "806486",
+              "image_id": "24",
+              "description": "energy_facility.dds",
+              "type_id": "6",
+              "type_description": "Medium (64 pixel height)",
+              "image_path": "/files/ps2/images/static/24.png"
             }
           ],
           "returned": 1
