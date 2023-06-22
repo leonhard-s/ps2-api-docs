@@ -99,6 +99,10 @@
     {
       "name": "Image Assets",
       "description": "Image sets, icons and other assets available through the static `/files/` path."
+    },
+    {
+      "name": "Metagame & Alerts",
+      "description": "Endpoints related to in-game alerts, outfit wars, and other large-scale events."
     }
   ],
   "security": [],
@@ -1775,6 +1779,49 @@
         }
       }
     },
+    "/get/{game}/empire_scores": {
+      "get": {
+        "summary": "(Defunct) Empire Scores",
+        "description": "Defunct endpoint for the \"World Domination Series\" event scores.",
+        "tags": [
+          "Metagame & Alerts"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "empire_scores_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/empire_scores"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "higby": {
+                    "$ref": "#/components/examples/empire_scores"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/effect": {
       "get": {
         "summary": "Effect",
@@ -2418,7 +2465,7 @@
             "$ref": "#/components/parameters/imageSetIdParam"
           },
           {
-            "$ref": "#/components/parameters/imageSetParam"
+            "$ref": "#/components/parameters/imageIdParam"
           }
         ],
         "responses": {
@@ -3171,6 +3218,98 @@
                 "examples": {
                   "ns15mBundle": {
                     "$ref": "#/components/examples/marketing_bundle_with_1_item"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/metagame_event": {
+      "get": {
+        "summary": "Metagame Event",
+        "description": "In-game alerts and other alert-like events.\n\nNote that this endpoint lists alert types that are not currently enabled in-game, such as the 'Aerial Anomaly' and 'MAXimum Pressure' alert types.",
+        "tags": [
+          "Events & Alerts"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/metagameEventIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "metagame_event_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/metagame_event"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "ns15mBundle": {
+                    "$ref": "#/components/examples/metagame_event"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/{game}/metagame_event_state": {
+      "get": {
+        "summary": "Metagame Event State",
+        "description": "Enumeratess the available states for alerts.",
+        "tags": [
+          "Events & Alerts"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/metagameEventStateIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "metagame_event_state_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/metagame_event_state"
+                      }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "ns15mBundle": {
+                    "$ref": "#/components/examples/metagame_event_state"
                   }
                 }
               }
@@ -4965,6 +5104,48 @@
         }
       }
     },
+    "/get/{game}/world_stat_history": {
+      "get": {
+        "summary": "(Defunct) World Stat History",
+        "description": "Historical data for a given global event.",
+        "tags": [
+          "Metagame & Alerts"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gameParam"
+          },
+          {
+            "$ref": "#/components/parameters/worldIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "world_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/world_stat_history"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "world_stat_history": {
+                    "$ref": "#/components/examples/world_stat_history"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get/{game}/zone": {
       "get": {
         "summary": "Zone",
@@ -5851,6 +6032,24 @@
         "name": "marketing_bundle_id",
         "in": "query",
         "description": "Unique identifier of a marketing bundle.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "metagameEventIdParam": {
+        "name": "metagame_event_id",
+        "in": "query",
+        "description": "Unique identifier of a metagame event.",
+        "schema": {
+          "type": "string"
+        },
+        "x-cast-to": "int32"
+      },
+      "metagameEventStateIdParam": {
+        "name": "metagame_event_state_id",
+        "in": "query",
+        "description": "Unique identifier of a metagame event state.",
         "schema": {
           "type": "string"
         },
@@ -8035,6 +8234,39 @@
           }
         }
       },
+      "empire_scores": {
+        "type": "object",
+        "properties": {
+          "tracker_name": {
+            "type": "string",
+            "description": "Unique name of the tracker."
+          },
+          "tracker_description": {
+            "type": "string",
+            "description": "Description of the tracker."
+          },
+          "start_date": {
+            "type": "string",
+            "description": "Human-readable version of `start_time`."
+          },
+          "start_time": {
+            "type": "string",
+            "description": "UTC timestamp of when the event started."
+          },
+          "end_date": {
+            "type": "string",
+            "description": "Human-readable version of `end_time`."
+          },
+          "end_time": {
+            "type": "string",
+            "description": "UTC timestamp of when the event ended."
+          },
+          "name": {
+            "description": "Display name of the event.",
+            "$ref": "#/components/schemas/localized_string"
+          }
+        }
+      },
       "experience": {
         "type": "object",
         "properties": {
@@ -9413,6 +9645,48 @@
             "type": "string",
             "description": "The time the marketing bundle was released as a UTC timestamp.",
             "x-cast-to": "int32"
+          }
+        }
+      },
+      "metagame_event": {
+        "type": "object",
+        "properties": {
+          "metagame_event_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "name": {
+            "description": "Display name of the alert.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "description": {
+            "description": "Description of the alert.",
+            "$ref": "#/components/schemas/localized_string"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the alert.",
+            "x-cast-to": "int32"
+          },
+          "experience_bonus": {
+            "type": "string",
+            "description": "The experience bonus applied during the alert in percent.",
+            "x-cast-to": "int32"
+          }
+        }
+      },
+      "metagame_event_state": {
+        "type": "object",
+        "properties": {
+          "metagame_event_state_id": {
+            "type": "string",
+            "description": "Unique ID of the collection.",
+            "x-cast-to": "int32"
+          },
+          "name": {
+            "type": "string",
+            "description": "Internal name of the event state."
           }
         }
       },
@@ -10968,6 +11242,286 @@
           }
         }
       },
+      "world_stat_history": {
+        "type": "object",
+        "properties": {
+          "world_id": {
+            "type": "string",
+            "description": "Unique ID of the world for which the data is returned.",
+            "x-cast-to": "int32",
+            "x-reference-to": "world.world_id"
+          },
+          "stat_name": {
+            "type": "string",
+            "description": "Name of the stat for which the data is returned.",
+            "x-reference-to": "stat.stat_name"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of the tracker for which the data is returned."
+          },
+          "tracker_name": {
+            "type": "string",
+            "description": "Name of the tracker for which the data is returned."
+          },
+          "faction": {
+            "type": "string",
+            "description": "Code for the faction for which the data is returned."
+          },
+          "all_time": {
+            "type": "string",
+            "description": "Total value of the stat for the given world, tracker and faction.",
+            "x-cast-to": "int32"
+          },
+          "day": {
+            "type": "object",
+            "properties": {
+              "d01": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d02": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d03": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d04": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d05": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d06": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d07": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d08": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d09": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d10": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d11": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d12": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d13": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d14": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d15": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d16": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d17": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d18": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d19": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d20": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d21": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d22": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d23": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d24": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d25": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d26": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d27": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d28": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d29": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d30": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "d31": {
+                "type": "string",
+                "x-cast-to": "int32"
+              }
+            }
+          },
+          "month": {
+            "type": "object",
+            "properties": {
+              "m01": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m02": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m03": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m04": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m05": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m06": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m07": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m08": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m09": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m10": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m11": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "m12": {
+                "type": "string",
+                "x-cast-to": "int32"
+              }
+            }
+          },
+          "week": {
+            "type": "object",
+            "properties": {
+              "w01": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w02": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w03": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w04": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w05": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w06": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w07": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w08": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w09": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w10": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w11": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w12": {
+                "type": "string",
+                "x-cast-to": "int32"
+              },
+              "w13": {
+                "type": "string",
+                "x-cast-to": "int32"
+              }
+            }
+          },
+          "last_save": {
+            "type": "string",
+            "description": "UTC timestamp of when the tracker was last updated."
+          },
+          "last_save_date": {
+            "type": "string",
+            "description": "Human-readable version of `last_save`."
+          }
+        }
+      },
       "zone": {
         "type": "object",
         "properties": {
@@ -12367,6 +12921,30 @@
           "returned": 4
         }
       },
+      "empire_scores": {
+        "summary": "World Domination Series Pre-season.\nhttps://census.daybreakgames.com/get/ps2/empire_scores?tracker_name=WDS01",
+        "value": {
+          "empire_scores_list": [
+            {
+              "tracker_name": "WDS01",
+              "tracker_description": "WDS01",
+              "start_date": "2013-09-16 07:00:00.0",
+              "start_time": "1379314800",
+              "end_date": "2013-10-28 07:00:00.0",
+              "end_time": "1382943600",
+              "name": {
+                "de": "World Domination Series 1 - Vorsaison",
+                "en": "World Domination Series Pre-season",
+                "es": "Pretemporada de World Domination Series",
+                "fr": "Les séries Domination du Monde Pré-saison",
+                "it": "Precampionato Serie Dominio Universale",
+                "tr": "World Domination Series Pre-season"
+              }
+            }
+          ],
+          "returned": 1
+        }
+      },
       "experience": {
         "summary": "Heal Experience Tick.\nhttps://census.daybreakgames.com/get/ps2/experience?experience_id=4",
         "value": {
@@ -13438,6 +14016,61 @@
             }
           ],
           "returned": 1
+        }
+      },
+      "metagame_event": {
+        "summary": "Oshur Alert (started by VS).\nhttps://census.daybreakgames.com/get/ps2/metagame_event?metagame_event_id=224",
+        "value": {
+          "metagame_event_list": [
+            {
+              "metagame_event_id": "224",
+              "name": {
+                "de": "Oshur-Erleuchtung",
+                "en": "Oshur Enlightenment",
+                "es": "Iluminación en Oshur",
+                "fr": "Éveil spirituel d'Oshur",
+                "it": "Risveglio di Oshur"
+              },
+              "description": {
+                "de": "Kontrolliere das Gebiet, um Oshur zu sperren.",
+                "en": "Control territory to lock Oshur",
+                "es": "Controla territorio para bloquear Oshur",
+                "fr": "Contrôlez le territoire pour verrouiller Oshur",
+                "it": "Controlla il territorio per bloccare Oshur"
+              },
+              "type": "9",
+              "experience_bonus": "25"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "metagame_event_state": {
+        "summary": "All alert states.\nhttps://census.daybreakgames.com/get/ps2/metagame_event_state?c:limit=10",
+        "value": {
+          "metagame_event_state_list": [
+            {
+              "metagame_event_state_id": "135",
+              "name": "started"
+            },
+            {
+              "metagame_event_state_id": "136",
+              "name": "restarted"
+            },
+            {
+              "metagame_event_state_id": "137",
+              "name": "canceled"
+            },
+            {
+              "metagame_event_state_id": "138",
+              "name": "ended"
+            },
+            {
+              "metagame_event_state_id": "139",
+              "name": "xp bonus changed"
+            }
+          ],
+          "returned": 5
         }
       },
       "leaderboard": {
@@ -14677,6 +15310,86 @@
                 "it": "Cobalt",
                 "tr": "Cobalt"
               }
+            }
+          ],
+          "returned": 1
+        }
+      },
+      "world_stat_history": {
+        "summary": "World Domination Series Pre-season (Connery NC).\nhttps://census.daybreakgames.com/get/ps2/world_stat_history?tracker_name=WDS01&world_id=1&faction=nc",
+        "value": {
+          "world_stat_history_list": [
+            {
+              "world_id": "1",
+              "stat_name": "EmpireScore.WDS01.NC",
+              "type": "EmpireScore",
+              "tracker_name": "WDS01",
+              "faction": "nc",
+              "all_time": "361919",
+              "day": {
+                "d01": "0",
+                "d02": "0",
+                "d03": "0",
+                "d04": "0",
+                "d05": "0",
+                "d06": "0",
+                "d07": "0",
+                "d08": "0",
+                "d09": "0",
+                "d10": "0",
+                "d11": "0",
+                "d12": "0",
+                "d13": "0",
+                "d14": "0",
+                "d15": "0",
+                "d16": "0",
+                "d17": "0",
+                "d18": "0",
+                "d19": "0",
+                "d20": "0",
+                "d21": "0",
+                "d22": "0",
+                "d23": "0",
+                "d24": "0",
+                "d25": "0",
+                "d26": "0",
+                "d27": "0",
+                "d28": "0",
+                "d29": "0",
+                "d30": "0",
+                "d31": "0"
+              },
+              "month": {
+                "m01": "0",
+                "m02": "0",
+                "m03": "0",
+                "m04": "0",
+                "m05": "309277",
+                "m06": "52642",
+                "m07": "0",
+                "m08": "0",
+                "m09": "0",
+                "m10": "0",
+                "m11": "0",
+                "m12": "0"
+              },
+              "week": {
+                "w01": "0",
+                "w02": "0",
+                "w03": "0",
+                "w04": "0",
+                "w05": "0",
+                "w06": "0",
+                "w07": "0",
+                "w08": "0",
+                "w09": "0",
+                "w10": "0",
+                "w11": "0",
+                "w12": "0",
+                "w13": "0"
+              },
+              "last_save": "1393574969",
+              "last_save_date": "2014-02-28 08:09:29.0"
             }
           ],
           "returned": 1
