@@ -277,7 +277,7 @@
                   "properties": {
                     "{collection}_list": {
                       "type": "array",
-                      "members": {
+                      "items": {
                         "type": "object",
                         "additionalProperties": true
                       }
@@ -6699,6 +6699,7 @@
       },
       "zoneEffectIdParam": {
         "name": "zone_effect_id",
+        "in": "query",
         "description": "Unique ID of a zone effect.",
         "schema": {
           "type": "string"
@@ -6707,6 +6708,7 @@
       },
       "zoneEffectTypeIdParam": {
         "name": "zone_effect_type_id",
+        "in": "query",
         "description": "Unique ID of a zone  type.",
         "schema": {
           "type": "string"
