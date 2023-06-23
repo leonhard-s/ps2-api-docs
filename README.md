@@ -6,7 +6,7 @@ Unofficial OpenAPI specification and documentation provider for the PlanetSide 2
 >
 > This project is currently being updated for OpenAPI 3.1, including improved documentation of query commands, parameters, and response variants.
 >
-> The work-in-progress of the new version can be found on the [`openapi-3.1`](https://github.com/leonhard-s/ps2-api-docs/tree/openapi-3.1) branch.
+> The previous version can be found on the [`develop`](https://github.com/leonhard-s/ps2-api-docs/tree/develop) branch.
 
 ***
 
@@ -14,13 +14,13 @@ This repository maintains a full list of all collections in the [PlanetSide 2 AP
 
 ## Usage
 
-This repository defines the API endpoints according to the [OpenAPI 3.0](https://swagger.io/specification/) speficiation, which manifests itself as a JSON document defining available server endpoints, paths/routes, schemata and example payloads.
+This repository defines the API endpoints according to the [OpenAPI 3.1](https://swagger.io/specification/) speficiation, which manifests itself as a JSON document defining available server endpoints, paths/routes, schemata and example payloads.
 
 An HTML version of this specification is automatically built using [ReDoc](https://github.com/Redocly/redoc) and hosted [here](https://ps2-api-docs.readthedocs.io/en/latest/openapi.html).
+<!-- 
+Alternatively, you can build the latest version of the specification by cloning this repository and running the `tools/build_spec.py` script. This option is recommended for CI/CD setups as it will always use the latest version of the specification. -->
 
-Alternatively, you can build the latest version of the specification by cloning this repository and running the `tools/build_spec.py` script. This option is recommended for CI/CD setups as it will always use the latest version of the specification.
-
-## Details
+<!-- ## Details
 
 ### A note regarding types
 
@@ -39,7 +39,7 @@ The OpenAPI standard allows the insertion of custom fields into the standard. Th
 
   For example, the property `outfit.leader_character_id` has the value `character.character_id` in its `x-reference-to` list.
 
-  This field may be used to dynamically create or validate joins to related data.
+  This field may be used to dynamically create or validate joins to related data. -->
 
 ## Contributing
 
