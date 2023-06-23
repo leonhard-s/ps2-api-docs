@@ -1,6 +1,0 @@
-${{ datatype }}:
-  description: Description for `${{ datatype }}`.
-  properties:
-    ${{ field }}:
-      type: ${{ type }}
-      description: Description for `${{ field }}`
