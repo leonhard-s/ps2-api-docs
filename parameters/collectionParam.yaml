@@ -1,0 +1,20 @@
+description: Name of the collection to access.
+examples:
+  character:
+    summary: Character
+    value: character
+  outfit:
+    summary: Outfit
+    value: outfit
+  world:
+    summary: Game Servers
+    value: world
+in: path
+name: collection
+required: true
+schema:
+  enum:
+  - character
+  - world
+  - zone
+  type: string

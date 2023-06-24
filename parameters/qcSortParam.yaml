@@ -1,0 +1,16 @@
+description: Allows sorting the results by one or more fields. Multiple fields can
+  be comma-separated. The sorting direction can be specified by appending `:1` (ascending,
+  default) or `:-1` (descending).
+examples:
+  factionAsp:
+    summary: Sort by faction (asc) and ASP rank (desc)
+    value: faction_id,prestige_level:-1
+  notSet:
+    summary: Unset
+    value: ''
+explode: false
+in: query
+name: c:sort
+schema:
+  type: string
+style: form

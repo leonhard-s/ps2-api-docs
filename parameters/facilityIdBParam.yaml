@@ -1,0 +1,6 @@
+description: Unique ID of the second facility.
+in: query
+name: facility_id_b
+schema:
+  type: string
+x-cast-to: int32

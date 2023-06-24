@@ -1,0 +1,6 @@
+description: Identifier of an image set.
+in: query
+name: image_set_id
+schema:
+  type: string
+x-cast-to: int32

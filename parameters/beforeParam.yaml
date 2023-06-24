@@ -1,0 +1,5 @@
+description: Only return results older than the given UTC timestamp.
+in: query
+name: before
+schema:
+  type: string

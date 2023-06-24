@@ -1,0 +1,16 @@
+description: Skips the first N results from the result list. Together with `c:limit`,
+  can be used for pagination. Note that sorting may be required to get consistent
+  orderings. Due to the multiple databases used, this behaves unusually for the `ps2/character`
+  collection.
+examples:
+  five:
+    summary: Skip first 10 Results
+    value: 10
+  notSet:
+    summary: Unset
+    value: 0
+in: query
+name: c:start
+schema:
+  minimum: 0
+  type: integer

@@ -1,0 +1,11 @@
+description: Name of a statistic for leaderboards.
+in: query
+name: name
+required: true
+schema:
+  enum:
+  - Kills
+  - Score
+  - Time
+  - Deaths
+  type: string

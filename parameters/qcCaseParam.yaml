@@ -1,0 +1,19 @@
+description: Whether case sensitivity is enabled for string comparisongs. Defaults
+  to true. Note that this impacts query performance, `ps2/character.name`, `ps2/outfit.name`,
+  `ps2/outfit.alias` all provide lowercase variants for improved performance.
+examples:
+  disable:
+    summary: Disabled
+    value: 'false'
+  notSet:
+    summary: Unset
+    value: ''
+in: query
+name: c:case
+schema:
+  enum:
+  - 'true'
+  - 'false'
+  - '0'
+  - '1'
+  type: string

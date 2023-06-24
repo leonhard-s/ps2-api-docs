@@ -120,7 +120,7 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           }
         ],
         "responses": {
@@ -174,10 +174,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/collectionParam"
+            "$ref": "parameters/collectionParam.yaml"
           }
         ],
         "responses": {
@@ -220,61 +220,61 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/collectionParam"
+            "$ref": "parameters/collectionParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcShowParam"
+            "$ref": "parameters/qcShowParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcHideParam"
+            "$ref": "parameters/qcHideParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcSortParam"
+            "$ref": "parameters/qcSortParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcHasParam"
+            "$ref": "parameters/qcHasParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcResolveParam"
+            "$ref": "parameters/qcResolveParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcCaseParam"
+            "$ref": "parameters/qcCaseParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcLimitParam"
+            "$ref": "parameters/qcLimitParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcLimitPerDbParam"
+            "$ref": "parameters/qcLimitPerDbParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcStartParam"
+            "$ref": "parameters/qcStartParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcIncludeNullParam"
+            "$ref": "parameters/qcIncludeNullParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcLangParam"
+            "$ref": "parameters/qcLangParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcJoinParam"
+            "$ref": "parameters/qcJoinParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcTreeParam"
+            "$ref": "parameters/qcTreeParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcTimingParam"
+            "$ref": "parameters/qcTimingParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcExactMatchFirstParam"
+            "$ref": "parameters/qcExactMatchFirstParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcDistinctParam"
+            "$ref": "parameters/qcDistinctParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcRetryParam"
+            "$ref": "parameters/qcRetryParam.yaml"
           }
         ],
         "responses": {
@@ -339,13 +339,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/abilityIdParam"
+            "$ref": "parameters/abilityIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/abilityTypeIdParam"
+            "$ref": "parameters/abilityTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -390,10 +390,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/abilityTypeIdParam"
+            "$ref": "parameters/abilityTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -438,13 +438,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/achievementIdParam"
+            "$ref": "parameters/achievementIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           }
         ],
         "responses": {
@@ -494,19 +494,19 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/qcLimitPerDbParam"
+            "$ref": "parameters/qcLimitPerDbParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterNameFirstParam"
+            "$ref": "parameters/characterNameFirstParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterNameFirstLowerParam"
+            "$ref": "parameters/characterNameFirstLowerParam.yaml"
           }
         ],
         "responses": {
@@ -551,10 +551,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/currencyIdParam"
+            "$ref": "parameters/currencyIdParam.yaml"
           }
         ],
         "responses": {
@@ -599,10 +599,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/armorFacingIdParam"
+            "$ref": "parameters/armorFacingIdParam.yaml"
           }
         ],
         "responses": {
@@ -647,13 +647,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/armorInfoIdParam"
+            "$ref": "parameters/armorInfoIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/armorFacingIdParam"
+            "$ref": "parameters/armorFacingIdParam.yaml"
           }
         ],
         "responses": {
@@ -698,16 +698,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterNameFirstParam"
+            "$ref": "parameters/characterNameFirstParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterNameFirstLowerParam"
+            "$ref": "parameters/characterNameFirstLowerParam.yaml"
           }
         ],
         "responses": {
@@ -752,13 +752,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/achievementIdParam"
+            "$ref": "parameters/achievementIdParam.yaml"
           }
         ],
         "responses": {
@@ -808,13 +808,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/currencyIdParam"
+            "$ref": "parameters/currencyIdParam.yaml"
           }
         ],
         "responses": {
@@ -859,16 +859,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveTreeIdParam"
+            "$ref": "parameters/directiveTreeIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveIdParam"
+            "$ref": "parameters/directiveIdParam.yaml"
           }
         ],
         "responses": {
@@ -913,16 +913,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveIdParam"
+            "$ref": "parameters/directiveIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/objectiveIdParam"
+            "$ref": "parameters/objectiveIdParam.yaml"
           }
         ],
         "responses": {
@@ -967,16 +967,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveTreeIdParam"
+            "$ref": "parameters/directiveTreeIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveTierIdParam"
+            "$ref": "parameters/directiveTierIdParam.yaml"
           }
         ],
         "responses": {
@@ -1021,13 +1021,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveTreeIdParam"
+            "$ref": "parameters/directiveTreeIdParam.yaml"
           }
         ],
         "responses": {
@@ -1072,22 +1072,22 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterEventCharacterIdParam"
+            "$ref": "parameters/characterEventCharacterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterEventTypeParam"
+            "$ref": "parameters/characterEventTypeParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/beforeParam"
+            "$ref": "parameters/beforeParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/afterParam"
+            "$ref": "parameters/afterParam.yaml"
           }
         ],
         "responses": {
@@ -1125,13 +1125,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterEventsGroupedEventTypeParam"
+            "$ref": "parameters/characterEventsGroupedEventTypeParam.yaml"
           }
         ],
         "responses": {
@@ -1169,10 +1169,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           }
         ],
         "responses": {
@@ -1217,13 +1217,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           }
         ],
         "responses": {
@@ -1268,16 +1268,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/leaderboardCharacterIdParam"
+            "$ref": "parameters/leaderboardCharacterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/leaderboardNameParam"
+            "$ref": "parameters/leaderboardNameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/leaderboardPeriodParam"
+            "$ref": "parameters/leaderboardPeriodParam.yaml"
           }
         ],
         "responses": {
@@ -1326,10 +1326,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           }
         ],
         "responses": {
@@ -1374,13 +1374,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/skillIdParam"
+            "$ref": "parameters/skillIdParam.yaml"
           }
         ],
         "responses": {
@@ -1425,16 +1425,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/statNameParam_characters_stat"
+            "$ref": "parameters/statNameParam_characters_stat.yaml"
           },
           {
-            "$ref": "#/components/parameters/profileIdParam_character"
+            "$ref": "parameters/profileIdParam_character.yaml"
           }
         ],
         "responses": {
@@ -1479,16 +1479,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/statNameParam_characters_stat_by_faction"
+            "$ref": "parameters/statNameParam_characters_stat_by_faction.yaml"
           },
           {
-            "$ref": "#/components/parameters/profileIdParam_character"
+            "$ref": "parameters/profileIdParam_character.yaml"
           }
         ],
         "responses": {
@@ -1533,16 +1533,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/statNameParam_characters_stat_history"
+            "$ref": "parameters/statNameParam_characters_stat_history.yaml"
           },
           {
-            "$ref": "#/components/parameters/profileIdParam_character"
+            "$ref": "parameters/profileIdParam_character.yaml"
           }
         ],
         "responses": {
@@ -1587,19 +1587,19 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/statNameParam_characters_weapon_stat"
+            "$ref": "parameters/statNameParam_characters_weapon_stat.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/vehicleIdParam"
+            "$ref": "parameters/vehicleIdParam.yaml"
           }
         ],
         "responses": {
@@ -1649,19 +1649,19 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/statNameParam_characters_weapon_stat_by_faction"
+            "$ref": "parameters/statNameParam_characters_weapon_stat_by_faction.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/vehicleIdParam"
+            "$ref": "parameters/vehicleIdParam.yaml"
           }
         ],
         "responses": {
@@ -1711,10 +1711,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           }
         ],
         "responses": {
@@ -1759,19 +1759,19 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveIdParam"
+            "$ref": "parameters/directiveIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveTreeIdParam"
+            "$ref": "parameters/directiveTreeIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveTierIdParam"
+            "$ref": "parameters/directiveTierIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/objectiveSetIdParam"
+            "$ref": "parameters/objectiveSetIdParam.yaml"
           }
         ],
         "responses": {
@@ -1816,16 +1816,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveTreeIdParam"
+            "$ref": "parameters/directiveTreeIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveTierIdParam"
+            "$ref": "parameters/directiveTierIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/rewardSetIdParam"
+            "$ref": "parameters/rewardSetIdParam.yaml"
           }
         ],
         "responses": {
@@ -1870,13 +1870,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveTreeIdParam"
+            "$ref": "parameters/directiveTreeIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveTreeCategoryIdParam"
+            "$ref": "parameters/directiveTreeCategoryIdParam.yaml"
           }
         ],
         "responses": {
@@ -1921,10 +1921,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/directiveTreeCategoryIdParam"
+            "$ref": "parameters/directiveTreeCategoryIdParam.yaml"
           }
         ],
         "responses": {
@@ -1969,7 +1969,7 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           }
         ],
         "responses": {
@@ -2014,16 +2014,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/effectIdParam"
+            "$ref": "parameters/effectIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/effectTypeIdParam"
+            "$ref": "parameters/effectTypeIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/abilityIdParam"
+            "$ref": "parameters/abilityIdParam.yaml"
           }
         ],
         "responses": {
@@ -2068,10 +2068,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/effectTypeIdParam"
+            "$ref": "parameters/effectTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -2116,16 +2116,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/eventTypeParam"
+            "$ref": "parameters/eventTypeParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/beforeParam"
+            "$ref": "parameters/beforeParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/afterParam"
+            "$ref": "parameters/afterParam.yaml"
           }
         ],
         "responses": {
@@ -2163,10 +2163,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/experienceIdParam"
+            "$ref": "parameters/experienceIdParam.yaml"
           }
         ],
         "responses": {
@@ -2211,7 +2211,7 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           }
         ],
         "responses": {
@@ -2256,13 +2256,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/facilityIdAParam"
+            "$ref": "parameters/facilityIdAParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/facilityIdBParam"
+            "$ref": "parameters/facilityIdBParam.yaml"
           }
         ],
         "responses": {
@@ -2307,10 +2307,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/facilityTypeIdParam"
+            "$ref": "parameters/facilityTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -2355,10 +2355,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/factionIdParam"
+            "$ref": "parameters/factionIdParam.yaml"
           }
         ],
         "responses": {
@@ -2403,10 +2403,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/fireGroupIdParam"
+            "$ref": "parameters/fireGroupIdParam.yaml"
           }
         ],
         "responses": {
@@ -2461,13 +2461,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/fireModeIdParam"
+            "$ref": "parameters/fireModeIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           }
         ],
         "responses": {
@@ -2512,10 +2512,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/fireModeIdParam"
+            "$ref": "parameters/fireModeIdParam.yaml"
           }
         ],
         "responses": {
@@ -2580,13 +2580,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/fireModeIdParam"
+            "$ref": "parameters/fireModeIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           }
         ],
         "responses": {
@@ -2631,10 +2631,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/fireModeTypeIdParam"
+            "$ref": "parameters/fireModeTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -2679,10 +2679,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/imageIdParam"
+            "$ref": "parameters/imageIdParam.yaml"
           }
         ],
         "responses": {
@@ -2727,13 +2727,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/imageSetIdParam"
+            "$ref": "parameters/imageSetIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/imageIdParam"
+            "$ref": "parameters/imageIdParam.yaml"
           }
         ],
         "responses": {
@@ -2778,13 +2778,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/imageSetIdParam"
+            "$ref": "parameters/imageSetIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/imageIdParam"
+            "$ref": "parameters/imageIdParam.yaml"
           }
         ],
         "responses": {
@@ -2829,10 +2829,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           }
         ],
         "responses": {
@@ -2877,10 +2877,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           }
         ],
         "responses": {
@@ -2925,10 +2925,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemCategoryIdParam"
+            "$ref": "parameters/itemCategoryIdParam.yaml"
           }
         ],
         "responses": {
@@ -2973,13 +2973,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/profileIdParam"
+            "$ref": "parameters/profileIdParam.yaml"
           }
         ],
         "responses": {
@@ -3024,13 +3024,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/weaponIdParam"
+            "$ref": "parameters/weaponIdParam.yaml"
           }
         ],
         "responses": {
@@ -3075,10 +3075,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemTypeIdParam"
+            "$ref": "parameters/itemTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -3123,16 +3123,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/leaderboardNameParam"
+            "$ref": "parameters/leaderboardNameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/leaderboardPeriodParam"
+            "$ref": "parameters/leaderboardPeriodParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/worldIdParam"
+            "$ref": "parameters/worldIdParam.yaml"
           }
         ],
         "responses": {
@@ -3184,10 +3184,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/loadoutIdParam"
+            "$ref": "parameters/loadoutIdParam.yaml"
           }
         ],
         "responses": {
@@ -3232,10 +3232,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/worldIdParam"
+            "$ref": "parameters/worldIdParam.yaml"
           },
           {
             "name": "zone_ids",
@@ -3289,10 +3289,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/mapRegionIdParam"
+            "$ref": "parameters/mapRegionIdParam.yaml"
           }
         ],
         "responses": {
@@ -3337,10 +3337,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/mapRegionIdParam"
+            "$ref": "parameters/mapRegionIdParam.yaml"
           }
         ],
         "responses": {
@@ -3385,10 +3385,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/marketingBundleIdParam"
+            "$ref": "parameters/marketingBundleIdParam.yaml"
           }
         ],
         "responses": {
@@ -3433,13 +3433,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/marketingBundleIdParam"
+            "$ref": "parameters/marketingBundleIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           }
         ],
         "responses": {
@@ -3484,13 +3484,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/marketingBundleIdParam"
+            "$ref": "parameters/marketingBundleIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           }
         ],
         "responses": {
@@ -3535,10 +3535,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/metagameEventIdParam"
+            "$ref": "parameters/metagameEventIdParam.yaml"
           }
         ],
         "responses": {
@@ -3583,10 +3583,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/metagameEventStateIdParam"
+            "$ref": "parameters/metagameEventStateIdParam.yaml"
           }
         ],
         "responses": {
@@ -3631,16 +3631,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/objectiveIdParam"
+            "$ref": "parameters/objectiveIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/objectiveTypeIdParam"
+            "$ref": "parameters/objectiveTypeIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/objectiveGroupIdParam"
+            "$ref": "parameters/objectiveGroupIdParam.yaml"
           }
         ],
         "responses": {
@@ -3685,13 +3685,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/objectiveSetIdParam"
+            "$ref": "parameters/objectiveSetIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/objectiveGroupIdParam"
+            "$ref": "parameters/objectiveGroupIdParam.yaml"
           }
         ],
         "responses": {
@@ -3736,10 +3736,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/objectiveTypeIdParam"
+            "$ref": "parameters/objectiveTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -3784,10 +3784,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/outfitIdParam"
+            "$ref": "parameters/outfitIdParam.yaml"
           }
         ],
         "responses": {
@@ -3832,13 +3832,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/outfitIdParam"
+            "$ref": "parameters/outfitIdParam.yaml"
           }
         ],
         "responses": {
@@ -3883,13 +3883,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/outfitIdParam"
+            "$ref": "parameters/outfitIdParam.yaml"
           }
         ],
         "responses": {
@@ -3934,10 +3934,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/outfitIdParam"
+            "$ref": "parameters/outfitIdParam.yaml"
           }
         ],
         "responses": {
@@ -3982,13 +3982,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/profileIdParam"
+            "$ref": "parameters/profileIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/loadoutIdParam"
+            "$ref": "parameters/loadoutIdParam.yaml"
           }
         ],
         "responses": {
@@ -4029,10 +4029,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/profileIdParam"
+            "$ref": "parameters/profileIdParam.yaml"
           }
         ],
         "responses": {
@@ -4073,13 +4073,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/armorInfoIdParam"
+            "$ref": "parameters/armorInfoIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/profileIdParam"
+            "$ref": "parameters/profileIdParam.yaml"
           }
         ],
         "responses": {
@@ -4124,13 +4124,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/resistInfoIdParam"
+            "$ref": "parameters/resistInfoIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/profileIdParam"
+            "$ref": "parameters/profileIdParam.yaml"
           }
         ],
         "responses": {
@@ -4175,10 +4175,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/projectileIdParam"
+            "$ref": "parameters/projectileIdParam.yaml"
           }
         ],
         "responses": {
@@ -4223,10 +4223,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/projectileFlightTypeIdParam"
+            "$ref": "parameters/projectileFlightTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -4271,13 +4271,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/regionIdParam"
+            "$ref": "parameters/regionIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/zoneIdParam"
+            "$ref": "parameters/zoneIdParam.yaml"
           }
         ],
         "responses": {
@@ -4322,10 +4322,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/resistInfoIdParam"
+            "$ref": "parameters/resistInfoIdParam.yaml"
           }
         ],
         "responses": {
@@ -4370,10 +4370,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/resistTypeIdParam"
+            "$ref": "parameters/resistTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -4418,10 +4418,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/resourceTypeIdParam"
+            "$ref": "parameters/resourceTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -4466,13 +4466,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/rewardIdParam"
+            "$ref": "parameters/rewardIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/rewardTypeIdParam"
+            "$ref": "parameters/rewardTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -4517,13 +4517,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/rewardIdParam"
+            "$ref": "parameters/rewardIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/rewardGroupIdParam"
+            "$ref": "parameters/rewardGroupIdParam.yaml"
           }
         ],
         "responses": {
@@ -4568,13 +4568,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/rewardSetIdParam"
+            "$ref": "parameters/rewardSetIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/rewardGroupIdParam"
+            "$ref": "parameters/rewardGroupIdParam.yaml"
           }
         ],
         "responses": {
@@ -4619,10 +4619,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/rewardTypeIdParam"
+            "$ref": "parameters/rewardTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -4667,10 +4667,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/characterIdParam"
+            "$ref": "parameters/characterIdParam.yaml"
           }
         ],
         "responses": {
@@ -4708,13 +4708,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/skillIdParam"
+            "$ref": "parameters/skillIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/skillLineIdParam"
+            "$ref": "parameters/skillLineIdParam.yaml"
           }
         ],
         "responses": {
@@ -4759,13 +4759,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/skillLineIdParam"
+            "$ref": "parameters/skillLineIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/skillCategoryIdParam"
+            "$ref": "parameters/skillCategoryIdParam.yaml"
           }
         ],
         "responses": {
@@ -4810,13 +4810,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/skillCategoryIdParam"
+            "$ref": "parameters/skillCategoryIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/skillSetIdParam"
+            "$ref": "parameters/skillSetIdParam.yaml"
           }
         ],
         "responses": {
@@ -4861,10 +4861,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/skillSetIdParam"
+            "$ref": "parameters/skillSetIdParam.yaml"
           }
         ],
         "responses": {
@@ -4909,10 +4909,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/targetTypeIdParam"
+            "$ref": "parameters/targetTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -4957,10 +4957,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/titleIdParam"
+            "$ref": "parameters/titleIdParam.yaml"
           }
         ],
         "responses": {
@@ -5005,10 +5005,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/vehicleIdParam"
+            "$ref": "parameters/vehicleIdParam.yaml"
           }
         ],
         "responses": {
@@ -5049,16 +5049,16 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/vehicleIdParam"
+            "$ref": "parameters/vehicleIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/factionIdParam"
+            "$ref": "parameters/factionIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           }
         ],
         "responses": {
@@ -5099,13 +5099,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/vehicleIdParam"
+            "$ref": "parameters/vehicleIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/factionIdParam"
+            "$ref": "parameters/factionIdParam.yaml"
           }
         ],
         "responses": {
@@ -5146,13 +5146,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/vehicleIdParam"
+            "$ref": "parameters/vehicleIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/skillSetIdParam"
+            "$ref": "parameters/skillSetIdParam.yaml"
           }
         ],
         "responses": {
@@ -5193,10 +5193,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/weaponIdParam"
+            "$ref": "parameters/weaponIdParam.yaml"
           }
         ],
         "responses": {
@@ -5247,10 +5247,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/weaponIdParam"
+            "$ref": "parameters/weaponIdParam.yaml"
           }
         ],
         "responses": {
@@ -5291,10 +5291,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           }
         ],
         "responses": {
@@ -5335,10 +5335,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/itemIdParam"
+            "$ref": "parameters/itemIdParam.yaml"
           }
         ],
         "responses": {
@@ -5379,13 +5379,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/weaponIdParam"
+            "$ref": "parameters/weaponIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/fireGroupIdParam"
+            "$ref": "parameters/fireGroupIdParam.yaml"
           }
         ],
         "responses": {
@@ -5426,10 +5426,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/worldIdParam"
+            "$ref": "parameters/worldIdParam.yaml"
           }
         ],
         "responses": {
@@ -5474,22 +5474,22 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/worldIdParam"
+            "$ref": "parameters/worldIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/worldEventWorldIdParam"
+            "$ref": "parameters/worldEventWorldIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/worldEventTypeParam"
+            "$ref": "parameters/worldEventTypeParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/beforeParam"
+            "$ref": "parameters/beforeParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/afterParam"
+            "$ref": "parameters/afterParam.yaml"
           }
         ],
         "responses": {
@@ -5527,10 +5527,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/worldIdParam"
+            "$ref": "parameters/worldIdParam.yaml"
           }
         ],
         "responses": {
@@ -5571,10 +5571,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/zoneIdParam"
+            "$ref": "parameters/zoneIdParam.yaml"
           }
         ],
         "responses": {
@@ -5619,13 +5619,13 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/zoneEffectIdParam"
+            "$ref": "parameters/zoneEffectIdParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/zoneEffectTypeIdParam"
+            "$ref": "parameters/zoneEffectTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -5666,10 +5666,10 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/gameParam"
+            "$ref": "parameters/gameParam.yaml"
           },
           {
-            "$ref": "#/components/parameters/zoneEffectTypeIdParam"
+            "$ref": "parameters/zoneEffectTypeIdParam.yaml"
           }
         ],
         "responses": {
@@ -5703,1240 +5703,7 @@
     }
   },
   "components": {
-    "parameters": {
-      "collectionParam": {
-        "name": "collection",
-        "in": "path",
-        "description": "Name of the collection to access.",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "enum": [
-            "character",
-            "world",
-            "zone"
-          ]
-        },
-        "examples": {
-          "character": {
-            "summary": "Character",
-            "value": "character"
-          },
-          "outfit": {
-            "summary": "Outfit",
-            "value": "outfit"
-          },
-          "world": {
-            "summary": "Game Servers",
-            "value": "world"
-          }
-        }
-      },
-      "gameParam": {
-        "name": "game",
-        "in": "path",
-        "description": "The API game to access.",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "enum": [
-            "ps2",
-            "ps2:v2",
-            "ps2ps4eu",
-            "ps2ps4eu:v2",
-            "ps2ps4us",
-            "ps2ps4us:v2"
-          ]
-        },
-        "examples": {
-          "ps2": {
-            "summary": "PS2 on PC (all servers)",
-            "value": "ps2"
-          },
-          "ps2ps4eu": {
-            "summary": "PS2 on PS4 (EU server)",
-            "value": "ps2ps4eu"
-          },
-          "ps2ps4us": {
-            "summary": "PS2 on PS4 (US server)",
-            "value": "ps2ps4us"
-          }
-        }
-      },
-      "qcShowParam": {
-        "name": "c:show",
-        "in": "query",
-        "description": "If set, only the response keys listed will be included in the response object. Overrides `c:hide`. Multiple fields can be comma-separated. Dot-notation is supported to select sub-keys.",
-        "schema": {
-          "type": "string"
-        },
-        "style": "form",
-        "explode": false,
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "Basic Character Info": {
-            "summary": "Basic character info only",
-            "value": "name.first,character_id,battle_rank.value,prestige_level"
-          }
-        }
-      },
-      "qcHideParam": {
-        "name": "c:hide",
-        "in": "query",
-        "description": "If set, the given response fields will be excluded from the response. If `c:show` is also set, this parameter will be ignored. Multiple fields can be comma-separated. Dot-notation is supported to select sub-keys.",
-        "schema": {
-          "type": "string"
-        },
-        "style": "form",
-        "explode": false,
-        "examples": {
-          "hideNoisyKeys": {
-            "summary": "Remove noisy subkeys",
-            "value": "name.first_lower,cert,daily_ribbon"
-          }
-        }
-      },
-      "qcSortParam": {
-        "name": "c:sort",
-        "in": "query",
-        "description": "Allows sorting the results by one or more fields. Multiple fields can be comma-separated. The sorting direction can be specified by appending `:1` (ascending, default) or `:-1` (descending).",
-        "schema": {
-          "type": "string"
-        },
-        "style": "form",
-        "explode": false,
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "factionAsp": {
-            "summary": "Sort by faction (asc) and ASP rank (desc)",
-            "value": "faction_id,prestige_level:-1"
-          }
-        }
-      },
-      "qcHasParam": {
-        "name": "c:has",
-        "in": "query",
-        "description": "Filters results by entries with non-NULL values in the given fields. Multiple fields can be comma-separated.",
-        "schema": {
-          "type": "string"
-        },
-        "style": "form",
-        "explode": false
-      },
-      "qcResolveParam": {
-        "name": "c:resolve",
-        "in": "query",
-        "description": "Include additional fields in the response. See the `resolve_list` field of the collection list for permissible values for a given collection.",
-        "schema": {
-          "type": "string"
-        },
-        "style": "form",
-        "explode": true,
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "outfitMember": {
-            "summary": "Outfit Member",
-            "value": "outfit_member"
-          },
-          "profile": {
-            "summary": "Last Seen Profile",
-            "value": "profile"
-          }
-        }
-      },
-      "qcCaseParam": {
-        "name": "c:case",
-        "in": "query",
-        "description": "Whether case sensitivity is enabled for string comparisongs. Defaults to true. Note that this impacts query performance, `ps2/character.name`, `ps2/outfit.name`, `ps2/outfit.alias` all provide lowercase variants for improved performance.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "true",
-            "false",
-            "0",
-            "1"
-          ]
-        },
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "disable": {
-            "summary": "Disabled",
-            "value": "false"
-          }
-        }
-      },
-      "qcLimitParam": {
-        "name": "c:limit",
-        "in": "query",
-        "description": "Return up to N results from the collection. Defaults to 1.",
-        "schema": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 100000
-        },
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "five": {
-            "summary": "5 Results",
-            "value": 5
-          }
-        }
-      },
-      "qcLimitPerDbParam": {
-        "name": "c:limitPerDB",
-        "in": "query",
-        "description": "The `ps2/character` collection is distributed across 20 distinct databases. The per-DB limit may be more predictable in some use-cases. If set, `c:limit` will be ignored. For collections other than `ps2/character`, this parameter falls behaves exactly like `c:limit`.",
-        "schema": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 5000
-        },
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "five": {
-            "summary": "1 Result per DB",
-            "value": 1
-          }
-        }
-      },
-      "qcStartParam": {
-        "name": "c:start",
-        "in": "query",
-        "description": "Skips the first N results from the result list. Together with `c:limit`, can be used for pagination. Note that sorting may be required to get consistent orderings. Due to the multiple databases used, this behaves unusually for the `ps2/character` collection.",
-        "schema": {
-          "type": "integer",
-          "minimum": 0
-        },
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": 0
-          },
-          "five": {
-            "summary": "Skip first 10 Results",
-            "value": 10
-          }
-        }
-      },
-      "qcIncludeNullParam": {
-        "name": "c:includeNull",
-        "in": "query",
-        "description": "Whether to include response keys for NULL values, rather than omitting them. Note that this does not return the canonical `null`, but the string `\"NULL\"`.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "true",
-            "false",
-            "1",
-            "0"
-          ]
-        },
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "five": {
-            "summary": "Enabled",
-            "value": "true"
-          }
-        }
-      },
-      "qcLangParam": {
-        "name": "c:lang",
-        "in": "query",
-        "description": "By default, localized fields such as `ps2/item.name` will return results for all supported locales. This field allows specifying a single locale to return, greatly reducing response payload size.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "en",
-            "de",
-            "es",
-            "fr",
-            "it",
-            "tr"
-          ]
-        },
-        "examples": {
-          "enOnly": {
-            "summary": "Only EN locale",
-            "value": "en"
-          }
-        }
-      },
-      "qcJoinParam": {
-        "name": "c:join",
-        "in": "query",
-        "description": "Similar to `c:resolve`, but allows specifying arbitrary subqueries to add to the response. For details, see the [Census API documentation](https://census.daybreakgames.com/#collection-joining) or the community [Census API Primer](https://github.com/leonhard-s/auraxium/wiki/Census-API-Primer#joined-queries).",
-        "schema": {
-          "type": "string"
-        },
-        "style": "form",
-        "explode": false,
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "charctersWorld": {
-            "summary": "Character with game server",
-            "value": "characers_world"
-          },
-          "characterOnlineStatus": {
-            "summary": "Character online status",
-            "value": "characters_online_status^show:online_status"
-          }
-        }
-      },
-      "qcTreeParam": {
-        "name": "c:tree",
-        "in": "query",
-        "description": "Allows rearranging lists of result into a tree. See the [Census API documentation](https://census.daybreakgames.com/#tree-reformatting) for deatils.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "qcTimingParam": {
-        "name": "c:timing",
-        "in": "query",
-        "description": "Adds the top-level field `timing` containing timing information to the result object. For queries using `c:resolve` or `c:join`, this also contains information about the subqueries.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "true",
-            "false",
-            "0",
-            "1"
-          ]
-        },
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "timing": {
-            "summary": "With timing info",
-            "value": "true"
-          }
-        }
-      },
-      "qcExactMatchFirstParam": {
-        "name": "c:exactMatchFirst",
-        "in": "query",
-        "description": "When performing fuzzy string queries, such as `^` (startswith) or `*` (contains), promote any match exactly matching the full input string to the top of the search list. Useful for user-facing name lookups.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "true",
-            "false",
-            "0",
-            "1"
-          ]
-        }
-      },
-      "qcDistinctParam": {
-        "name": "c:distinct",
-        "in": "query",
-        "description": "Instead of fetching results, list all distinct values for a given field. Note that this may include duplicate entries for `ps2/character` due to the multiple databases. Results are truncated to 20'000 values.",
-        "schema": {
-          "type": "string"
-        },
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "factions": {
-            "summary": "Unique factions",
-            "value": "faction_id"
-          },
-          "profiles": {
-            "summary": "Unique profiles",
-            "value": "profile_id"
-          }
-        }
-      },
-      "qcRetryParam": {
-        "name": "c:retry",
-        "in": "query",
-        "description": "By default, the API will retry any queries once before failing. By setting this value to `false`, you can fail earlier, which can be useful if you have your own retry mechanisms or logging configuration.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "true",
-            "false",
-            "0",
-            "1"
-          ]
-        },
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "noRetry": {
-            "summary": "Retry disabled",
-            "value": "false"
-          }
-        }
-      },
-      "abilityIdParam": {
-        "name": "ability_id",
-        "in": "query",
-        "description": "Unique ID of an ability.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "abilityTypeIdParam": {
-        "name": "ability_type_id",
-        "in": "query",
-        "description": "Unique ID of an ability type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "achievementIdParam": {
-        "name": "achievement_id",
-        "in": "query",
-        "description": "Unique ID of an achievement.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "afterParam": {
-        "name": "after",
-        "in": "query",
-        "description": "Only return results newer than the given UTC timestamp.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "armorFacingIdParam": {
-        "name": "armor_facing_id",
-        "in": "query",
-        "description": "Unique ID of the armor facing direction.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "armorInfoIdParam": {
-        "name": "armor_info_id",
-        "in": "query",
-        "description": "Unique ID of the armor info entry.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "characterIdParam": {
-        "name": "character_id",
-        "in": "query",
-        "description": "Unique identifier of a charcter. Note that character IDs are not guaranteed to be unique across games; the same ID may be assigned to different characters for `ps2` than for `ps2ps4us`.\n\nWhen converting this value to native representations, note that a 64 bit integer type is required to avoid truncation.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int64",
-        "examples": {
-          "pc": {
-            "summary": "Higby (PC)",
-            "value": "5428010618015189601"
-          },
-          "ps4eu": {
-            "summary": "Dreadnaught (PS4 EU)",
-            "value": "5428352936466451601"
-          },
-          "ps4us": {
-            "summary": "Kevin (PS4 US)",
-            "value": "5428352933375941729"
-          }
-        }
-      },
-      "beforeParam": {
-        "name": "before",
-        "in": "query",
-        "description": "Only return results older than the given UTC timestamp.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "characterNameFirstParam": {
-        "name": "name.first",
-        "in": "query",
-        "description": "Name of the character. Note that when looking up characters, it is preferable to query `name.first_lower` with a lowercase version of the search string.",
-        "schema": {
-          "type": "string"
-        },
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "higby": {
-            "summary": "Higby",
-            "value": "Higby"
-          }
-        }
-      },
-      "characterNameFirstLowerParam": {
-        "name": "name.first_lower",
-        "in": "query",
-        "description": "Lowercase version of `name.first`. When performing case-insensitive lookups, using this field is more performant than setting `c:case=false`.",
-        "schema": {
-          "type": "string"
-        },
-        "examples": {
-          "notSet": {
-            "summary": "Unset",
-            "value": ""
-          },
-          "higby": {
-            "summary": "Higby",
-            "value": "higby"
-          }
-        }
-      },
-      "currencyIdParam": {
-        "name": "currency_id",
-        "in": "query",
-        "description": "Unique ID of a currency.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "directiveIdParam": {
-        "name": "directive_id",
-        "in": "query",
-        "description": "Unique ID of a directive.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "directiveTierIdParam": {
-        "name": "directive_tier_id",
-        "in": "query",
-        "description": "Unique ID of a directive tier.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "directiveTreeIdParam": {
-        "name": "directive_tree_id",
-        "in": "query",
-        "description": "Unique ID of a directive tree.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "directiveTreeCategoryIdParam": {
-        "name": "directive_tree_category_id",
-        "in": "query",
-        "description": "Unique ID of a directive tree category.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "effectIdParam": {
-        "name": "effect_id",
-        "in": "query",
-        "description": "Unique ID of the effect.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "effectTypeIdParam": {
-        "name": "effect_type_id",
-        "in": "query",
-        "description": "Unique ID of the effect type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "eventTypeParam": {
-        "name": "type",
-        "in": "query",
-        "description": "Type of event to retrieve.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "BATTLE_RANK",
-            "ITEM",
-            "ACHIEVEMENT",
-            "DEATH",
-            "KILL",
-            "VEHICLE_DESTROY",
-            "FACILITY_CHARACTER",
-            "FACILITYCONTROL",
-            "METAGAME"
-          ]
-        }
-      },
-      "characterEventTypeParam": {
-        "name": "type",
-        "in": "query",
-        "description": "Type of event to retrieve.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "BATTLE_RANK",
-            "ITEM",
-            "ACHIEVEMENT",
-            "DEATH",
-            "KILL",
-            "VEHICLE_DESTROY",
-            "FACILITY_CHARACTER"
-          ]
-        }
-      },
-      "characterEventCharacterIdParam": {
-        "name": "id",
-        "in": "query",
-        "description": "Alias for `character_id`.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int64"
-      },
-      "characterEventsGroupedEventTypeParam": {
-        "name": "type",
-        "in": "query",
-        "description": "Type of event to retrieve.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "DEATH",
-            "KILL"
-          ]
-        }
-      },
-      "experienceIdParam": {
-        "name": "experience_id",
-        "in": "query",
-        "description": "Unique ID of the experience type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "facilityIdAParam": {
-        "name": "facility_id_a",
-        "in": "query",
-        "description": "Unique ID of the first facility.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "facilityIdBParam": {
-        "name": "facility_id_b",
-        "in": "query",
-        "description": "Unique ID of the second facility.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "facilityTypeIdParam": {
-        "name": "facility_type_id",
-        "in": "query",
-        "description": "Unique ID of the facility type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "factionIdParam": {
-        "name": "faction_id",
-        "in": "query",
-        "description": "Unique identifier of a faction.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "fireGroupIdParam": {
-        "name": "fire_group_id",
-        "in": "query",
-        "description": "Unique identifier of a fire group.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "fireModeIdParam": {
-        "name": "fire_mode_id",
-        "in": "query",
-        "description": "Unique identifier of a fire mode.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "fireModeTypeIdParam": {
-        "name": "fire_mode_type_id",
-        "in": "query",
-        "description": "Unique identifier of a fire mode type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "imageIdParam": {
-        "name": "image_id",
-        "in": "query",
-        "description": "Unique identifier of an image.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "imageSetIdParam": {
-        "name": "image_set_id",
-        "in": "query",
-        "description": "Identifier of an image set.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "itemIdParam": {
-        "name": "item_id",
-        "in": "query",
-        "description": "Unique identifier of an item.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "itemTypeIdParam": {
-        "name": "item_type_id",
-        "in": "query",
-        "description": "Unique identifier of an item type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "itemCategoryIdParam": {
-        "name": "item_category_id",
-        "in": "query",
-        "description": "Unique identifier of an item category.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "leaderboardNameParam": {
-        "name": "name",
-        "in": "query",
-        "description": "Name of a statistic for leaderboards.",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "enum": [
-            "Kills",
-            "Score",
-            "Time",
-            "Deaths"
-          ]
-        }
-      },
-      "leaderboardPeriodParam": {
-        "name": "period",
-        "in": "query",
-        "description": "Time period for a leadboard.",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "enum": [
-            "Forever",
-            "Monthly",
-            "Weekly",
-            "Daily",
-            "OneLife"
-          ]
-        }
-      },
-      "leaderboardCharacterIdParam": {
-        "name": "character_id",
-        "in": "query",
-        "description": "Unique identifier of a character for which to fetch leaderboard data.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int64"
-      },
-      "leaderboardWorldParam": {
-        "name": "world",
-        "in": "query",
-        "description": "Server for which to fetch leaderboard data. Note that this may return results for defunct servers, such as Lithcorp (ID 11) despite those characters since having been transfered to Cobalt (ID 13).",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "loadoutIdParam": {
-        "name": "loadout_id",
-        "in": "query",
-        "description": "Unique identifier of a loadout.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "mapRegionIdParam": {
-        "name": "map_region_id",
-        "in": "query",
-        "description": "Unique identifier of a map region.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "marketingBundleIdParam": {
-        "name": "marketing_bundle_id",
-        "in": "query",
-        "description": "Unique identifier of a marketing bundle.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "metagameEventIdParam": {
-        "name": "metagame_event_id",
-        "in": "query",
-        "description": "Unique identifier of a metagame event.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "metagameEventStateIdParam": {
-        "name": "metagame_event_state_id",
-        "in": "query",
-        "description": "Unique identifier of a metagame event state.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "objectiveIdParam": {
-        "name": "objective_id",
-        "in": "query",
-        "description": "Unique identifier of an objective.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "objectiveGroupIdParam": {
-        "name": "objective_group_id",
-        "in": "query",
-        "description": "Unique identifier of an objective group.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "objectiveSetIdParam": {
-        "name": "objective_set_id",
-        "in": "query",
-        "description": "Unique identifier of an objective set.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "objectiveTypeIdParam": {
-        "name": "objective_type_id",
-        "in": "query",
-        "description": "Unique identifier of an objective type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "outfitIdParam": {
-        "name": "outfit_id",
-        "in": "query",
-        "description": "Unique identifier of an outfit.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int64"
-      },
-      "profileIdParam": {
-        "name": "profile_id",
-        "in": "query",
-        "description": "Unique identifier of a profile.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "projectileIdParam": {
-        "name": "projectile_id",
-        "in": "query",
-        "description": "Unique identifier of a projectile.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "projectileFlightTypeIdParam": {
-        "name": "projectile_flight_type_id",
-        "in": "query",
-        "description": "Unique identifier of a projectile flight type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "regionIdParam": {
-        "name": "region_id",
-        "in": "query",
-        "description": "Unique identifier of a region.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "rewardIdParam": {
-        "name": "reward_id",
-        "in": "query",
-        "description": "Unique identifier of a reward.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "rewardGroupIdParam": {
-        "name": "reward_group_id",
-        "in": "query",
-        "description": "Unique identifier of a reward group.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "rewardSetIdParam": {
-        "name": "reward_set_id",
-        "in": "query",
-        "description": "Unique identifier of a reward set.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "rewardTypeIdParam": {
-        "name": "reward_type_id",
-        "in": "query",
-        "description": "Unique identifier of a reward type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "skillIdParam": {
-        "name": "skill_id",
-        "in": "query",
-        "description": "Unique identifier of a skill.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "skillLineIdParam": {
-        "name": "skill_line_id",
-        "in": "query",
-        "description": "Unique identifier of a skill line.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "skillCategoryIdParam": {
-        "name": "skill_category_id",
-        "in": "query",
-        "description": "Unique identifier of a skill category.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "skillSetIdParam": {
-        "name": "skill_set_id",
-        "in": "query",
-        "description": "Unique identifier of a skill set.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "statNameParam_characters_stat": {
-        "name": "stat_name",
-        "in": "query",
-        "description": "Name of a statistic for the `characters_stat` collection.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "achievement_count",
-            "assist_count",
-            "deaths",
-            "facility_defended_count",
-            "fire_count",
-            "hit_count",
-            "medal_count",
-            "play_time",
-            "score",
-            "skill_points",
-            "weapon_deaths",
-            "weapon_fire_count",
-            "weapon_hit_count",
-            "weapon_play_time",
-            "weapon_score"
-          ]
-        }
-      },
-      "statNameParam_characters_stat_by_faction": {
-        "name": "stat_name",
-        "in": "query",
-        "description": "Name of a statistic for the `characters_stat_by_faction` collection.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "domination_count",
-            "facility_capture_count",
-            "killed_by",
-            "kills",
-            "revenge_count",
-            "weapon_damage_given",
-            "weapon_damage_taken_by",
-            "weapon_headshots",
-            "weapon_killed_by",
-            "weapon_kills",
-            "weapon_vehicle_kills"
-          ]
-        }
-      },
-      "statNameParam_characters_stat_history": {
-        "name": "stat_name",
-        "in": "query",
-        "description": "Name of a statistic for the `characters_stat_history` collection.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "battle_rank",
-            "certs",
-            "deaths",
-            "facility_capture",
-            "facility_defend",
-            "kills",
-            "medals",
-            "ribbons",
-            "score",
-            "time"
-          ]
-        }
-      },
-      "statNameParam_characters_weapon_stat": {
-        "name": "stat_name",
-        "in": "query",
-        "description": "Name of a statistic for the `characters_weapon_stat` collection.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "weapon_deaths",
-            "weapon_fire_count",
-            "weapon_hit_count",
-            "weapon_play_time",
-            "weapon_score"
-          ]
-        }
-      },
-      "statNameParam_characters_weapon_stat_by_faction": {
-        "name": "stat_name",
-        "in": "query",
-        "description": "Name of a statistic for the `characters_weapon_stat_by_faction` collection.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "weapon_damage_given",
-            "weapon_damage_taken_by",
-            "weapon_headshots",
-            "weapon_killed_by",
-            "weapon_kills",
-            "weapon_vehicle_kills"
-          ]
-        }
-      },
-      "profileIdParam_character": {
-        "name": "profile_id",
-        "in": "query",
-        "description": "Subset of identifiers from the `profile_id` collection. The values map onto the NC loadout IDs regardless of faction. 0: All time, 1: Infiltrator, 3: Light Assault, 4: Combat Medic, 5: Engineer, 6: MAX Unit.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "0",
-            "1",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-          ]
-        }
-      },
-      "resistInfoIdParam": {
-        "name": "resist_info_id",
-        "in": "query",
-        "description": "Unique identifier of a resist info entry.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "resistTypeIdParam": {
-        "name": "resist_type_id",
-        "in": "query",
-        "description": "Unique identifier of a resist type.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "resourceTypeIdParam": {
-        "name": "resource_type_id",
-        "in": "query",
-        "description": "Unique identifier of a resource type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "targetTypeIdParam": {
-        "name": "target_type_id",
-        "in": "query",
-        "description": "Unique identifier of a target type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "titleIdParam": {
-        "name": "title_id",
-        "in": "query",
-        "description": "Unique identifier of a character title.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "vehicleIdParam": {
-        "name": "vehicle_id",
-        "in": "query",
-        "description": "Unique identifier of a vehicle.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "weaponIdParam": {
-        "name": "weapon_id",
-        "in": "query",
-        "description": "Unique identifier of a weapon.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "worldIdParam": {
-        "name": "world_id",
-        "in": "query",
-        "description": "Unique identifier of a world.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "worldEventTypeParam": {
-        "name": "type",
-        "in": "query",
-        "description": "Event name for the `world_event` collection.",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "FACILITYCONTROL",
-            "METAGAME"
-          ]
-        }
-      },
-      "worldEventWorldIdParam": {
-        "name": "id",
-        "in": "query",
-        "description": "Alias for `world_id`.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "zoneIdParam": {
-        "name": "zone_id",
-        "in": "query",
-        "description": "Unique identifier of a zone.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "zoneEffectIdParam": {
-        "name": "zone_effect_id",
-        "in": "query",
-        "description": "Unique ID of a zone effect.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      },
-      "zoneEffectTypeIdParam": {
-        "name": "zone_effect_type_id",
-        "in": "query",
-        "description": "Unique ID of a zone  type.",
-        "schema": {
-          "type": "string"
-        },
-        "x-cast-to": "int32"
-      }
-    },
+    "parameters": {},
     "schemas": {},
     "examples": {}
   }

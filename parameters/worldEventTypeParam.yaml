@@ -1,0 +1,8 @@
+description: Event name for the `world_event` collection.
+in: query
+name: type
+schema:
+  enum:
+  - FACILITYCONTROL
+  - METAGAME
+  type: string

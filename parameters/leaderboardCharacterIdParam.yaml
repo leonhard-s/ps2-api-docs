@@ -1,0 +1,7 @@
+description: Unique identifier of a character for which to fetch leaderboard data.
+in: query
+name: character_id
+required: true
+schema:
+  type: string
+x-cast-to: int64

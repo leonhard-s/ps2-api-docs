@@ -1,0 +1,23 @@
+description: The API game to access.
+examples:
+  ps2:
+    summary: PS2 on PC (all servers)
+    value: ps2
+  ps2ps4eu:
+    summary: PS2 on PS4 (EU server)
+    value: ps2ps4eu
+  ps2ps4us:
+    summary: PS2 on PS4 (US server)
+    value: ps2ps4us
+in: path
+name: game
+required: true
+schema:
+  enum:
+  - ps2
+  - ps2:v2
+  - ps2ps4eu
+  - ps2ps4eu:v2
+  - ps2ps4us
+  - ps2ps4us:v2
+  type: string

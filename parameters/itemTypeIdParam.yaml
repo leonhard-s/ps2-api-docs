@@ -1,0 +1,6 @@
+description: Unique identifier of an item type.
+in: query
+name: item_type_id
+schema:
+  type: string
+x-cast-to: int32

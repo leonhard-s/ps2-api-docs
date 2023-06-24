@@ -1,0 +1,6 @@
+description: Unique identifier of a metagame event state.
+in: query
+name: metagame_event_state_id
+schema:
+  type: string
+x-cast-to: int32

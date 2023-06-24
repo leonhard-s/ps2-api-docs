@@ -1,0 +1,17 @@
+description: The `ps2/character` collection is distributed across 20 distinct databases.
+  The per-DB limit may be more predictable in some use-cases. If set, `c:limit` will
+  be ignored. For collections other than `ps2/character`, this parameter falls behaves
+  exactly like `c:limit`.
+examples:
+  five:
+    summary: 1 Result per DB
+    value: 1
+  notSet:
+    summary: Unset
+    value: ''
+in: query
+name: c:limitPerDB
+schema:
+  maximum: 5000
+  minimum: 1
+  type: integer

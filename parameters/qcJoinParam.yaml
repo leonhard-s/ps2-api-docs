@@ -1,0 +1,19 @@
+description: Similar to `c:resolve`, but allows specifying arbitrary subqueries to
+  add to the response. For details, see the [Census API documentation](https://census.daybreakgames.com/#collection-joining)
+  or the community [Census API Primer](https://github.com/leonhard-s/auraxium/wiki/Census-API-Primer#joined-queries).
+examples:
+  characterOnlineStatus:
+    summary: Character online status
+    value: characters_online_status^show:online_status
+  charctersWorld:
+    summary: Character with game server
+    value: characers_world
+  notSet:
+    summary: Unset
+    value: ''
+explode: false
+in: query
+name: c:join
+schema:
+  type: string
+style: form

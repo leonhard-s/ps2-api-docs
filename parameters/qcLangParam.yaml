@@ -1,0 +1,18 @@
+description: By default, localized fields such as `ps2/item.name` will return results
+  for all supported locales. This field allows specifying a single locale to return,
+  greatly reducing response payload size.
+examples:
+  enOnly:
+    summary: Only EN locale
+    value: en
+in: query
+name: c:lang
+schema:
+  enum:
+  - en
+  - de
+  - es
+  - fr
+  - it
+  - tr
+  type: string

@@ -1,0 +1,13 @@
+description: If set, the given response fields will be excluded from the response.
+  If `c:show` is also set, this parameter will be ignored. Multiple fields can be
+  comma-separated. Dot-notation is supported to select sub-keys.
+examples:
+  hideNoisyKeys:
+    summary: Remove noisy subkeys
+    value: name.first_lower,cert,daily_ribbon
+explode: false
+in: query
+name: c:hide
+schema:
+  type: string
+style: form

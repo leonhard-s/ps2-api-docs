@@ -1,0 +1,18 @@
+description: Whether to include response keys for NULL values, rather than omitting
+  them. Note that this does not return the canonical `null`, but the string `"NULL"`.
+examples:
+  five:
+    summary: Enabled
+    value: 'true'
+  notSet:
+    summary: Unset
+    value: ''
+in: query
+name: c:includeNull
+schema:
+  enum:
+  - 'true'
+  - 'false'
+  - '1'
+  - '0'
+  type: string

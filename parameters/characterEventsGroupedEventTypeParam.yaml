@@ -1,0 +1,8 @@
+description: Type of event to retrieve.
+in: query
+name: type
+schema:
+  enum:
+  - DEATH
+  - KILL
+  type: string

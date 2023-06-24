@@ -1,0 +1,12 @@
+description: Name of a statistic for the `characters_weapon_stat_by_faction` collection.
+in: query
+name: stat_name
+schema:
+  enum:
+  - weapon_damage_given
+  - weapon_damage_taken_by
+  - weapon_headshots
+  - weapon_killed_by
+  - weapon_kills
+  - weapon_vehicle_kills
+  type: string
