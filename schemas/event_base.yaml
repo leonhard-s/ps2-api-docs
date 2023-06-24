@@ -1,0 +1,24 @@
+properties:
+  character_id:
+    description: The ID of the character that ranked up.
+    type: string
+    x-cast-to: int64
+    x-reference-to: character.character_id
+  table_type:
+    description: Internal name of the table.
+    type: string
+    x-cast-to: int32
+  timestamp:
+    description: UTC timestamp of the event.
+    type: string
+  world_id:
+    description: The ID of the world where the character ranked up.
+    type: string
+    x-cast-to: int32
+    x-reference-to: world.world_id
+  zone_id:
+    description: The ID of the zone where the character ranked up.
+    type: string
+    x-cast-to: int32
+    x-reference-to: zone.zone_id
+type: object

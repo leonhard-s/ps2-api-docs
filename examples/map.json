@@ -1,0 +1,25 @@
+{
+  "map_list": [
+    {
+      "ZoneId": "2",
+      "Regions": {
+        "IsList": "1",
+        "Row": [
+          {
+            "RowData": {
+              "RegionId": "2101",
+              "FactionId": "1"
+            }
+          },
+          {
+            "RowData": {
+              "RegionId": "2421",
+              "FactionId": "1"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "returned": 1
+}

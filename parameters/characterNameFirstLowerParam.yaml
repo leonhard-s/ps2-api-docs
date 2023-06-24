@@ -1,0 +1,13 @@
+description: Lowercase version of `name.first`. When performing case-insensitive lookups,
+  using this field is more performant than setting `c:case=false`.
+examples:
+  higby:
+    summary: Higby
+    value: higby
+  notSet:
+    summary: Unset
+    value: ''
+in: query
+name: name.first_lower
+schema:
+  type: string

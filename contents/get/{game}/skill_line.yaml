@@ -1,0 +1,14 @@
+examples:
+  skill_line:
+    value:
+      $ref: ../../../examples/skill_line.json
+schema:
+  properties:
+    returned:
+      minimum: 0
+      type: integer
+    skill_line_list:
+      items:
+        $ref: ../../../schemas/skill_line.yaml
+      type: array
+  type: object

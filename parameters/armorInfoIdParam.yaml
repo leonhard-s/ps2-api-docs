@@ -1,0 +1,6 @@
+description: Unique ID of the armor info entry.
+in: query
+name: armor_info_id
+schema:
+  type: string
+x-cast-to: int32

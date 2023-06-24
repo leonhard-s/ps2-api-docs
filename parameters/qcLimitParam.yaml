@@ -1,0 +1,14 @@
+description: Return up to N results from the collection. Defaults to 1.
+examples:
+  five:
+    summary: 5 Results
+    value: 5
+  notSet:
+    summary: Unset
+    value: ''
+in: query
+name: c:limit
+schema:
+  maximum: 100000
+  minimum: 1
+  type: integer

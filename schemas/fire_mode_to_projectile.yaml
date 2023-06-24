@@ -1,0 +1,12 @@
+properties:
+  fire_mode_id:
+    description: Fire mode side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: fire_mode.fire_mode_id
+  projectile_id:
+    description: Projectile side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: projectile.projectile_id
+type: object

@@ -1,0 +1,6 @@
+description: Unique identifier of a loadout.
+in: query
+name: loadout_id
+schema:
+  type: string
+x-cast-to: int32

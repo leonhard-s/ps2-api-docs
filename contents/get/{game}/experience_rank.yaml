@@ -1,0 +1,14 @@
+examples:
+  experience_rank:
+    value:
+      $ref: ../../../examples/experience_rank.json
+schema:
+  properties:
+    experience_rank_list:
+      items:
+        $ref: ../../../schemas/experience_rank.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

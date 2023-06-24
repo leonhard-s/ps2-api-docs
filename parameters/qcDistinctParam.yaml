@@ -1,0 +1,17 @@
+description: Instead of fetching results, list all distinct values for a given field.
+  Note that this may include duplicate entries for `ps2/character` due to the multiple
+  databases. Results are truncated to 20'000 values.
+examples:
+  factions:
+    summary: Unique factions
+    value: faction_id
+  notSet:
+    summary: Unset
+    value: ''
+  profiles:
+    summary: Unique profiles
+    value: profile_id
+in: query
+name: c:distinct
+schema:
+  type: string

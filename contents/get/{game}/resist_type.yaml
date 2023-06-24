@@ -1,0 +1,14 @@
+examples:
+  resist_type:
+    value:
+      $ref: ../../../examples/resist_type.json
+schema:
+  properties:
+    resist_type_list:
+      items:
+        $ref: ../../../schemas/resist_type.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

@@ -1,0 +1,6 @@
+description: Unique identifier of a reward.
+in: query
+name: reward_id
+schema:
+  type: string
+x-cast-to: int32

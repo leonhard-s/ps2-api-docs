@@ -1,0 +1,6 @@
+description: Unique identifier of a character title.
+in: query
+name: title_id
+schema:
+  type: string
+x-cast-to: int32

@@ -1,0 +1,18 @@
+description: Include additional fields in the response. See the `resolve_list` field
+  of the collection list for permissible values for a given collection.
+examples:
+  notSet:
+    summary: Unset
+    value: ''
+  outfitMember:
+    summary: Outfit Member
+    value: outfit_member
+  profile:
+    summary: Last Seen Profile
+    value: profile
+explode: true
+in: query
+name: c:resolve
+schema:
+  type: string
+style: form

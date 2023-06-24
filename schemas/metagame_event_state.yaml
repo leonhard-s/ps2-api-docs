@@ -1,0 +1,9 @@
+properties:
+  metagame_event_state_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  name:
+    description: Internal name of the event state.
+    type: string
+type: object

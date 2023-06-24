@@ -1,0 +1,14 @@
+examples:
+  harasser:
+    value:
+      $ref: ../../../examples/vehicle_faction.json
+schema:
+  properties:
+    returned:
+      minimum: 0
+      type: integer
+    vehicle_faction_list:
+      items:
+        $ref: ../../../schemas/vehicle_faction.yaml
+      type: array
+  type: object

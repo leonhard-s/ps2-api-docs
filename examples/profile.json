@@ -1,0 +1,34 @@
+{
+  "profile_list": [
+    {
+      "profile_id": "12",
+      "profile_type_id": "3",
+      "profile_type_description": "Light Assault",
+      "faction_id": "3",
+      "name": {
+        "de": "Leichte Angriffseinheit",
+        "en": "Light Assault",
+        "es": "Asalto ligero",
+        "fr": "Assaut l\u00e9ger",
+        "it": "Assalto Leggero",
+        "tr": "Hafif Taarruz"
+      },
+      "description": {
+        "de": "Leichte Angriffseinheit",
+        "en": "Light Assault",
+        "es": "Asalto ligero",
+        "fr": "Assaut l\u00e9ger",
+        "it": "Assalto Leggero",
+        "tr": "Hafif Taarruz"
+      },
+      "image_set_id": "8",
+      "image_id": "62",
+      "image_path": "/files/ps2/images/static/62.png",
+      "movement_speed": "4",
+      "backpedal_speed_modifier": "0.75",
+      "sprint_speed_modifier": "1.625",
+      "strafe_speed_modifier": "0.75"
+    }
+  ],
+  "returned": 1
+}

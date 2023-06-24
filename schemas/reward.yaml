@@ -1,0 +1,44 @@
+properties:
+  count_max:
+    description: Maximum number of items rewarded.
+    type: string
+    x-cast-to: int32
+  count_min:
+    description: Minimum number of items rewarded.
+    type: string
+    x-cast-to: int32
+  param1:
+    description: Generic numeric parameter. See the corresponding `ps2/reward_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param2:
+    description: Generic numeric parameter. See the corresponding `ps2/reward_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param3:
+    description: Generic numeric parameter. See the corresponding `ps2/reward_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param4:
+    description: Generic numeric parameter. See the corresponding `ps2/reward_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param5:
+    description: Generic numeric parameter. See the corresponding `ps2/reward_type`
+      for details.
+    type: string
+    x-cast-to: float
+  reward_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  reward_type_id:
+    description: Reward type associated with this reward.
+    type: string
+    x-cast-to: int32
+    x-reference-to: reward_type.reward_type_id
+type: object

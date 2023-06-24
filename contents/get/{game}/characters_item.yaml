@@ -1,0 +1,14 @@
+examples:
+  higby:
+    value:
+      $ref: ../../../examples/characters_item.json
+schema:
+  properties:
+    characters_item_list:
+      items:
+        $ref: ../../../schemas/characters_item.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

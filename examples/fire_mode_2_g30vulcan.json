@@ -1,0 +1,52 @@
+{
+  "fire_mode_2_list": [
+    {
+      "fire_mode_id": "424",
+      "fire_mode_type_id": "0",
+      "automatic": "1",
+      "grief_immune": "0",
+      "iron_sights": "0",
+      "laser_guided": "0",
+      "move_modifier": "1",
+      "sprint_fire": "0",
+      "turn_modifier": "1",
+      "use_in_water": "0",
+      "zoom_default": "1",
+      "cof_range": "50",
+      "cof_recoil": "0.01",
+      "cof_scalar": "1",
+      "cof_scalar_moving": "1",
+      "player_state_group_id": "301",
+      "damage_direct_effect_id": "174",
+      "damage_legs_multiplier": "-0.1",
+      "fire_ammo_per_shot": "1",
+      "fire_burst_count": "1",
+      "fire_detect_range": "50",
+      "fire_refire_ms": "80",
+      "fire_pellets_per_shot": "1",
+      "lockon_maintain": "0",
+      "lockon_required": "0",
+      "recoil_first_shot_modifier": "1",
+      "reload_block_auto": "0",
+      "reload_continuous": "0",
+      "reload_time_ms": "2500",
+      "sway_can_steady": "0",
+      "armor_penetration": "0",
+      "max_damage": "143",
+      "max_damage_range": "15",
+      "min_damage": "100",
+      "min_damage_range": "60",
+      "shield_bypass_pct": "0",
+      "charge_minimum_ms": "0",
+      "description": {
+        "de": "Automatik",
+        "en": "Auto",
+        "es": "Autom\u00e1tico",
+        "fr": "Automatique",
+        "it": "Automatico",
+        "tr": "Otomatik"
+      }
+    }
+  ],
+  "returned": 1
+}

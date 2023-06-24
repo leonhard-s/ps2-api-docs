@@ -1,0 +1,19 @@
+description: Adds the top-level field `timing` containing timing information to the
+  result object. For queries using `c:resolve` or `c:join`, this also contains information
+  about the subqueries.
+examples:
+  notSet:
+    summary: Unset
+    value: ''
+  timing:
+    summary: With timing info
+    value: 'true'
+in: query
+name: c:timing
+schema:
+  enum:
+  - 'true'
+  - 'false'
+  - '0'
+  - '1'
+  type: string

@@ -1,0 +1,6 @@
+description: Unique ID of a currency.
+in: query
+name: currency_id
+schema:
+  type: string
+x-cast-to: int32

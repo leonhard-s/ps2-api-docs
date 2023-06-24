@@ -1,0 +1,28 @@
+properties:
+  character_id:
+    description: Character for which the directive tree list is being returned.
+    type: string
+    x-cast-to: int64
+    x-reference-to: character.character_id
+  completion_time:
+    description: UTC timestamp of when the directive tree was completed. Zero if not
+      completed.
+    type: string
+  completion_time_date:
+    description: Human-readable version of `completion_time`.
+    type: string
+  current_directive_tier_id:
+    description: Unique ID of the directive tier the character is currently on.
+    type: string
+    x-cast-to: int32
+    x-reference-to: directive_tier.directive_tier_id
+  current_level:
+    description: Defunct field. Always returns zero.
+    type: string
+    x-cast-to: int32
+  directive_tree_id:
+    description: ID of the directive tree.
+    type: string
+    x-cast-to: int32
+    x-reference-to: directive_tree.directive_tree_id
+type: object

@@ -1,0 +1,43 @@
+{
+  "character_list": [
+    {
+      "character_id": "5428010618015189601",
+      "name": {
+        "first": "Higby",
+        "first_lower": "higby"
+      },
+      "faction_id": "2",
+      "head_id": "1",
+      "title_id": "100",
+      "times": {
+        "creation": "1353427357",
+        "creation_date": "2012-11-20 16:02:37.0",
+        "last_save": "1669323771",
+        "last_save_date": "2022-11-24 21:02:51.0",
+        "last_login": "1669320455",
+        "last_login_date": "2022-11-24 20:07:35.0",
+        "login_count": "1738",
+        "minutes_played": "75517"
+      },
+      "certs": {
+        "earned_points": "214706",
+        "gifted_points": "78844",
+        "spent_points": "257491",
+        "available_points": "36059",
+        "percent_to_next": "0.1721388888362"
+      },
+      "battle_rank": {
+        "percent_to_next": "2",
+        "value": "101"
+      },
+      "profile_id": "4",
+      "daily_ribbon": {
+        "count": "0",
+        "time": "1669248000",
+        "date": "2022-11-24 00:00:00.0"
+      },
+      "prestige_level": "0"
+    }
+  ],
+  "returned": 1
+}

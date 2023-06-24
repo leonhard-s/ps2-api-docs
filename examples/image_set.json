@@ -1,0 +1,29 @@
+{
+  "image_set_list": [
+    {
+      "image_set_id": "806486",
+      "image_id": "24",
+      "description": "energy_facility.dds",
+      "type_id": "4",
+      "type_description": "Very Small (16 pixel height)",
+      "image_path": "/files/ps2/images/static/24.png"
+    },
+    {
+      "image_set_id": "806486",
+      "image_id": "24",
+      "description": "energy_facility.dds",
+      "type_id": "5",
+      "type_description": "Small (32 pixel height)",
+      "image_path": "/files/ps2/images/static/24.png"
+    },
+    {
+      "image_set_id": "806486",
+      "image_id": "24",
+      "description": "energy_facility.dds",
+      "type_id": "6",
+      "type_description": "Medium (64 pixel height)",
+      "image_path": "/files/ps2/images/static/24.png"
+    }
+  ],
+  "returned": 3
+}

@@ -1,0 +1,11 @@
+{
+  "fire_group_list": [
+    {
+      "fire_group_id": "424",
+      "spool_up_ms": "1000",
+      "spool_up_initial_refire_ms": "200",
+      "can_chamber_ironsights": "0"
+    }
+  ],
+  "returned": 1
+}

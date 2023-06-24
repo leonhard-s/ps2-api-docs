@@ -1,0 +1,19 @@
+{
+  "directive_tree_list": [
+    {
+      "directive_tree_id": "8",
+      "directive_tree_category_id": "7",
+      "name": {
+        "de": "Leichte Maschinengewehre",
+        "en": "Light Machine Guns",
+        "es": "Ametralladoras ligeras",
+        "fr": "Mitrailleuses l\u00e9g\u00e8res",
+        "it": "Mitragliatrici leggere"
+      },
+      "image_set_id": "14193",
+      "image_id": "79616",
+      "image_path": "/files/ps2/images/static/79616.png"
+    }
+  ],
+  "returned": 1
+}

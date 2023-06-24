@@ -1,0 +1,31 @@
+{
+  "skill_list": [
+    {
+      "skill_id": "34",
+      "skill_line_id": "13",
+      "skill_line_index": "0",
+      "skill_points": "100",
+      "grant_item_id": "182",
+      "name": {
+        "de": "Schalld\u00e4mpfer",
+        "en": "Suppressor",
+        "es": "Silenciador",
+        "fr": "Silencieux",
+        "it": "Soppressore",
+        "tr": "Susturucu"
+      },
+      "description": {
+        "de": "Verringert M\u00fcndungsfeuer und Lautst\u00e4rke.",
+        "en": "Decreases muzzle flash and audio range.",
+        "es": "Disminuye el alcance del fogonazo y el sonido al disparar.",
+        "fr": "Diminue l'\u00e9clair du tir et le bruit.",
+        "it": "Riduce la fiammata e la gittata sonora dell'arma.",
+        "tr": "Namlu alevi ve sesinin duyulma mesafesini azalt\u0131r."
+      },
+      "image_set_id": "443",
+      "image_id": "1300",
+      "image_path": "/files/ps2/images/static/1300.png"
+    }
+  ],
+  "returned": 1
+}

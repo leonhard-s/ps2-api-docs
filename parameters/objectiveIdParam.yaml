@@ -1,0 +1,6 @@
+description: Unique identifier of an objective.
+in: query
+name: objective_id
+schema:
+  type: string
+x-cast-to: int32

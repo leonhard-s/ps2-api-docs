@@ -1,0 +1,16 @@
+description: If set, only the response keys listed will be included in the response
+  object. Overrides `c:hide`. Multiple fields can be comma-separated. Dot-notation
+  is supported to select sub-keys.
+examples:
+  Basic Character Info:
+    summary: Basic character info only
+    value: name.first,character_id,battle_rank.value,prestige_level
+  notSet:
+    summary: Unset
+    value: ''
+explode: false
+in: query
+name: c:show
+schema:
+  type: string
+style: form

@@ -1,0 +1,6 @@
+description: Allows rearranging lists of result into a tree. See the [Census API documentation](https://census.daybreakgames.com/#tree-reformatting)
+  for deatils.
+in: query
+name: c:tree
+schema:
+  type: string

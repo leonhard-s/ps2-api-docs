@@ -1,0 +1,24 @@
+{
+  "metagame_event_list": [
+    {
+      "metagame_event_id": "224",
+      "name": {
+        "de": "Oshur-Erleuchtung",
+        "en": "Oshur Enlightenment",
+        "es": "Iluminaci\u00f3n en Oshur",
+        "fr": "\u00c9veil spirituel d'Oshur",
+        "it": "Risveglio di Oshur"
+      },
+      "description": {
+        "de": "Kontrolliere das Gebiet, um Oshur zu sperren.",
+        "en": "Control territory to lock Oshur",
+        "es": "Controla territorio para bloquear Oshur",
+        "fr": "Contr\u00f4lez le territoire pour verrouiller Oshur",
+        "it": "Controlla il territorio per bloccare Oshur"
+      },
+      "type": "9",
+      "experience_bonus": "25"
+    }
+  ],
+  "returned": 1
+}

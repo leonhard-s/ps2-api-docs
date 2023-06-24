@@ -1,0 +1,16 @@
+{
+  "characters_weapon_stat_by_faction_list": [
+    {
+      "character_id": "5428010618015189601",
+      "stat_name": "weapon_vehicle_kills",
+      "item_id": "0",
+      "vehicle_id": "5",
+      "value_vs": "5",
+      "value_nc": "0",
+      "value_tr": "5",
+      "last_save": "1571838169",
+      "last_save_date": "2019-10-23 13:42:49.0"
+    }
+  ],
+  "returned": 1
+}

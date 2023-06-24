@@ -1,0 +1,39 @@
+properties:
+  description:
+    $ref: "localized_string.yaml"
+    description: Description of the skill line.
+  image_id:
+    description: Image associated with this skill line.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  image_path:
+    description: Path to the image associated with this skill line.
+    type: string
+    x-cast-to: string
+  image_set_id:
+    description: Image set associated with this skill line.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+  name:
+    $ref: "localized_string.yaml"
+    description: Display name of the skill line.
+  skill_category_id:
+    description: Skill category containing this skill line.
+    type: string
+    x-cast-to: int32
+    x-reference-to: skill_category.skill_category_id
+  skill_category_index:
+    description: Position of this skill line within its skill category.
+    type: string
+    x-cast-to: int32
+  skill_line_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  skill_points:
+    description: Unused.
+    type: string
+    x-cast-to: int32
+type: object

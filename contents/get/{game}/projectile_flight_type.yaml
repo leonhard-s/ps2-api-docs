@@ -1,0 +1,14 @@
+examples:
+  projectile_flight_type:
+    value:
+      $ref: ../../../examples/projectile_flight_type.json
+schema:
+  properties:
+    projectile_flight_type_list:
+      items:
+        $ref: ../../../schemas/projectile_flight_type.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

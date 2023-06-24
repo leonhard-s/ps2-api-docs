@@ -1,0 +1,16 @@
+{
+  "characters_weapon_stat_by_faction_list": [
+    {
+      "character_id": "5428010618015189601",
+      "stat_name": "weapon_headshots",
+      "item_id": "4",
+      "vehicle_id": "0",
+      "value_vs": "94",
+      "value_nc": "0",
+      "value_tr": "149",
+      "last_save": "1394669799",
+      "last_save_date": "2014-03-13 00:16:39.0"
+    }
+  ],
+  "returned": 1
+}

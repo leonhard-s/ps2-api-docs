@@ -1,0 +1,20 @@
+examples:
+  chamber:
+    value:
+      $ref: ../../../examples/fire_group_chamber.json
+  regular:
+    value:
+      $ref: ../../../examples/fire_group_regular.json
+  spool:
+    value:
+      $ref: ../../../examples/fire_group_spool.json
+schema:
+  properties:
+    fire_group_list:
+      items:
+        $ref: ../../../schemas/fire_group.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

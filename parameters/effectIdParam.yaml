@@ -1,0 +1,6 @@
+description: Unique ID of the effect.
+in: query
+name: effect_id
+schema:
+  type: string
+x-cast-to: int32

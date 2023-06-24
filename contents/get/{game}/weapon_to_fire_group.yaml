@@ -1,0 +1,14 @@
+examples:
+  weapon_to_fire_group:
+    value:
+      $ref: ../../../examples/weapon_to_fire_group.json
+schema:
+  properties:
+    returned:
+      minimum: 0
+      type: integer
+    weapon_to_fire_group_list:
+      items:
+        $ref: ../../../schemas/weapon_to_fire_group.yaml
+      type: array
+  type: object

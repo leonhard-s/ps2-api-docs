@@ -1,0 +1,34 @@
+{
+  "item_list": [
+    {
+      "item_id": "4",
+      "item_type_id": "26",
+      "item_category_id": "7",
+      "is_vehicle_weapon": "0",
+      "name": {
+        "de": "NC1 Gau\u00dfgewehr",
+        "en": "NC1 Gauss Rifle",
+        "es": "Rifle Gauss NC1",
+        "fr": "Fusil Gauss NC1",
+        "it": "Fucile Gauss NC1",
+        "tr": "NC1 Gauss T\u00fcfe\u011fi"
+      },
+      "description": {
+        "de": "Das Standard-Gau\u00dfgewehr NC1 war die erste erfolgreiche Einf\u00fchrung der Gau\u00dfgewehr-Technologie in kleinen Waffen. Nur f\u00fcr NK.",
+        "en": "The standard issue NC1 Gauss Rifle was the first successful implementation of coilgun technology in small arms. NC use only.",
+        "es": "El rifle NC1 Gauss est\u00e1ndar represent\u00f3 la primera implementaci\u00f3n de tecnolog\u00eda coilgun en armas peque\u00f1as. Solo para NC",
+        "fr": "Le fusil Gauss NC1 standard repr\u00e9sente la premi\u00e8re application r\u00e9ussie de la technologie de canon magn\u00e9tique aux armes de petit calibre. NC uniquement.",
+        "it": "Il fucile Gauss NC1 standard rappresenta la prima applicazione riuscita della tecnologia di accelerazione magnetica nelle armi di piccole dimensioni. Esclusivo NC.",
+        "tr": "Standart \u00fcretim NC1 Gauss T\u00fcfe\u011fi, bobinsilah\u0131 teknolojisininin hafif silahlara ilk ba\u015far\u0131l\u0131 uygulanmas\u0131d\u0131r. Yaln\u0131zca Yeni Birle\u015fim kullan\u0131m\u0131 i\u00e7in."
+      },
+      "faction_id": "2",
+      "max_stack_size": "1",
+      "image_set_id": "2745",
+      "image_id": "5310",
+      "image_path": "/files/ps2/images/static/5310.png",
+      "skill_set_id": "132",
+      "is_default_attachment": "0"
+    }
+  ],
+  "returned": 1
+}

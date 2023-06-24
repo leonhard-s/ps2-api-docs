@@ -1,0 +1,12 @@
+{
+  "facility_type_list": [
+    {
+      "facility_type_id": "8",
+      "description": "Interlink Facility",
+      "image_id": "9121",
+      "image_set_id": "3158",
+      "image_path": "/files/ps2/images/static/9121.png"
+    }
+  ],
+  "returned": 1
+}

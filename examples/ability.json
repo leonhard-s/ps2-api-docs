@@ -1,0 +1,14 @@
+{
+  "ability_list": [
+    {
+      "ability_id": "7719",
+      "ability_type_id": "10",
+      "resource_type_id": "38",
+      "resource_first_cost": "0.32",
+      "resource_cost_per_msec": "0.32",
+      "radius_max": "7",
+      "flag_toggle": "1"
+    }
+  ],
+  "returned": 1
+}

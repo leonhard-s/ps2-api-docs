@@ -1,0 +1,9 @@
+allOf:
+  - $ref: "characters_weapon_stat_core.yaml"
+  - properties:
+      character_id:
+        description: The ID of the character.
+        type: string
+        x-cast-to: int64
+        x-reference-to: character.character_id
+    type: object

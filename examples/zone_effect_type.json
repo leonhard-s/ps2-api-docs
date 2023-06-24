@@ -1,0 +1,15 @@
+{
+  "zone_effect_type_list": [
+    {
+      "zone_effect_type_id": "58",
+      "description": "Modify the given character flag",
+      "param1": "Operation (see tooltip)",
+      "param2": "ModifyValue",
+      "param3": "Persist",
+      "param4": "OneShot",
+      "param5": "Always Create ",
+      "string1": "CharacterFlagKey"
+    }
+  ],
+  "returned": 1
+}

@@ -1,0 +1,14 @@
+examples:
+  resource_type:
+    value:
+      $ref: ../../../examples/resource_type.json
+schema:
+  properties:
+    resource_type_list:
+      items:
+        $ref: ../../../schemas/resource_type.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

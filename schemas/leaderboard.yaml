@@ -1,0 +1,15 @@
+properties:
+  character_id:
+    description: The ID of the character.
+    type: string
+    x-cast-to: int64
+    x-reference-to: character.character_id
+  rank:
+    description: The rank of the character for the given statistic.
+    type: string
+    x-cast-to: int32
+  value:
+    description: The all-time value of the given statistic.
+    type: string
+    x-cast-to: int32
+type: object

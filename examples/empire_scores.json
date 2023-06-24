@@ -1,0 +1,21 @@
+{
+  "empire_scores_list": [
+    {
+      "tracker_name": "WDS01",
+      "tracker_description": "WDS01",
+      "start_date": "2013-09-16 07:00:00.0",
+      "start_time": "1379314800",
+      "end_date": "2013-10-28 07:00:00.0",
+      "end_time": "1382943600",
+      "name": {
+        "de": "World Domination Series 1 - Vorsaison",
+        "en": "World Domination Series Pre-season",
+        "es": "Pretemporada de World Domination Series",
+        "fr": "Les s\u00e9ries Domination du Monde Pr\u00e9-saison",
+        "it": "Precampionato Serie Dominio Universale",
+        "tr": "World Domination Series Pre-season"
+      }
+    }
+  ],
+  "returned": 1
+}

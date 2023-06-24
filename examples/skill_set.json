@@ -1,0 +1,29 @@
+{
+  "skill_set_list": [
+    {
+      "skill_set_id": "43",
+      "skill_points": "875",
+      "required_item_id": "2510",
+      "name": {
+        "de": "PRIM\u00c4RWAFFE: M40 Fury-F",
+        "en": "PRIMARY WEAPON:  M40 Fury-F",
+        "es": "ARMA PRIMARIA: M40 Fury-F",
+        "fr": "ARME PRINCIPALE: Furie-F M40",
+        "it": "ARMA PRIMARIA: M40 Fury-F",
+        "tr": "PRIMARY WEAPON:  M40 Fury-F"
+      },
+      "description": {
+        "de": "Der Fury feuert 40mm-Granaten, die effektiv gegen die Infanterie  und leichte Panzerungen sind. Er kann ebenso leichten Schaden an schwer gepanzerten Ziele verursachen. F\u00fcr alle Fraktionen.",
+        "en": "The Fury launches 40mm grenades that are effective against infantry and light armor.  It is also capable of light damage against heavy armor.  All factions can use this weapon.",
+        "es": "El Fury lanza granadas de 40 mm eficaces contra infanter\u00eda y blindaje ligero. Adem\u00e1s, son capaces de da\u00f1ar ligeramente blindajes pesados. Todas las facciones pueden usar esta arma.",
+        "fr": "Le Furie lance des grenades de 40mm qui sont efficaces contre l'infanterie et les blindages l\u00e9gers. Il est \u00e9galement capable d'infliger des d\u00e9g\u00e2ts l\u00e9gers aux blindages lourds. Toutes les factions peuvent l'utiliser.",
+        "it": "Il Fury lancia granate di 40 mm efficaci contro la fanteria e le corazzature leggere. Pu\u00f2 anche infliggere danni leggeri ai corazzati pesanti. Quest'arma pu\u00f2 essere usata da tutte le fazioni.",
+        "tr": "The Fury launches 40mm grenades that are effective against infantry and light armor.  It is also capable of light damage against heavy armor.  All factions can use this weapon."
+      },
+      "image_set_id": "2029",
+      "image_id": "3724",
+      "image_path": "/files/ps2/images/static/3724.png"
+    }
+  ],
+  "returned": 1
+}

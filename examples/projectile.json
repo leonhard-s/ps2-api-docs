@@ -1,0 +1,23 @@
+{
+  "projectile_list": [
+    {
+      "projectile_id": "33004",
+      "projectile_flight_type_id": "1",
+      "speed": "50",
+      "speed_max": "100",
+      "turn_rate": "1.5",
+      "lifespan": "5",
+      "drag": "0",
+      "gravity": "1",
+      "lockon_acceleration": "6.67",
+      "lockon_lifespan": "5",
+      "detonate_on_contact": "1",
+      "sticky": "0",
+      "sticks_to_players": "0",
+      "lockon_lose_angle": "145",
+      "lockon_seek_in_flight": "0",
+      "projectile_radius": "0.03"
+    }
+  ],
+  "returned": 1
+}

@@ -1,0 +1,19 @@
+properties:
+  image_id:
+    description: The `ps2/image` of the rank for the given faction.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  image_path:
+    description: The path to the image of the rank for the given faction.
+    type: string
+    x-reference-to: image.path
+  image_set_id:
+    description: The `ps2/image_set` of the rank for the given faction.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+  title:
+    $ref: "localized_string.yaml"
+    description: The title of the rank for the given faction.
+type: object

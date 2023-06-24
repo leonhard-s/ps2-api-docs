@@ -1,0 +1,6 @@
+description: Unique identifier of a profile.
+in: query
+name: profile_id
+schema:
+  type: string
+x-cast-to: int32

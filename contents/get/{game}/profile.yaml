@@ -1,0 +1,14 @@
+examples:
+  trLightAssault:
+    value:
+      $ref: ../../../examples/profile.json
+schema:
+  properties:
+    profile_list:
+      items:
+        $ref: ../../../schemas/profile.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

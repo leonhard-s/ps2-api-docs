@@ -1,0 +1,45 @@
+{
+  "map_hex_list": [
+    {
+      "zone_id": "2",
+      "map_region_id": "2448",
+      "x": "17",
+      "y": "-12",
+      "hex_type": "0",
+      "type_name": "Unrestricted access"
+    },
+    {
+      "zone_id": "2",
+      "map_region_id": "2448",
+      "x": "17",
+      "y": "-11",
+      "hex_type": "0",
+      "type_name": "Unrestricted access"
+    },
+    {
+      "zone_id": "2",
+      "map_region_id": "2448",
+      "x": "18",
+      "y": "-13",
+      "hex_type": "0",
+      "type_name": "Unrestricted access"
+    },
+    {
+      "zone_id": "2",
+      "map_region_id": "2448",
+      "x": "18",
+      "y": "-12",
+      "hex_type": "0",
+      "type_name": "Unrestricted access"
+    },
+    {
+      "zone_id": "2",
+      "map_region_id": "2448",
+      "x": "18",
+      "y": "-11",
+      "hex_type": "0",
+      "type_name": "Unrestricted access"
+    }
+  ],
+  "returned": 5
+}

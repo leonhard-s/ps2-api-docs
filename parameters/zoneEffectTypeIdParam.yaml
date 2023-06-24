@@ -1,0 +1,6 @@
+description: Unique ID of a zone  type.
+in: query
+name: zone_effect_type_id
+schema:
+  type: string
+x-cast-to: int32

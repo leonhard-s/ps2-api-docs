@@ -1,0 +1,6 @@
+description: Alias for `character_id`.
+in: query
+name: id
+schema:
+  type: string
+x-cast-to: int64

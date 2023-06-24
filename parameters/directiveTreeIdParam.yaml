@@ -1,0 +1,6 @@
+description: Unique ID of a directive tree.
+in: query
+name: directive_tree_id
+schema:
+  type: string
+x-cast-to: int32

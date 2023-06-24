@@ -1,0 +1,16 @@
+{
+  "item_category_list": [
+    {
+      "item_category_id": "7",
+      "name": {
+        "de": "Sturmgewehr",
+        "en": "Assault Rifle",
+        "es": "Rifle de asalto",
+        "fr": "Fusil d'assaut",
+        "it": "Fucile d'assalto",
+        "tr": "Taarruz T\u00fcfe\u011fi"
+      }
+    }
+  ],
+  "returned": 1
+}

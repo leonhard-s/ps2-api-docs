@@ -1,0 +1,21 @@
+{
+  "faction_list": [
+    {
+      "faction_id": "3",
+      "name": {
+        "de": "Terranische Republik",
+        "en": "Terran Republic",
+        "es": "Rep\u00fablica Terran",
+        "fr": "R\u00e9publique Terrane",
+        "it": "Repubblica Terrestre",
+        "tr": "Terran Cumhuriyeti"
+      },
+      "image_set_id": "20",
+      "image_id": "18",
+      "image_path": "/files/ps2/images/static/18.png",
+      "code_tag": "TR",
+      "user_selectable": "1"
+    }
+  ],
+  "returned": 1
+}

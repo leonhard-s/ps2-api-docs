@@ -1,0 +1,12 @@
+description: Time period for a leadboard.
+in: query
+name: period
+required: true
+schema:
+  enum:
+  - Forever
+  - Monthly
+  - Weekly
+  - Daily
+  - OneLife
+  type: string

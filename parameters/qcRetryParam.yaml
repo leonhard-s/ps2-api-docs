@@ -1,0 +1,19 @@
+description: By default, the API will retry any queries once before failing. By setting
+  this value to `false`, you can fail earlier, which can be useful if you have your
+  own retry mechanisms or logging configuration.
+examples:
+  noRetry:
+    summary: Retry disabled
+    value: 'false'
+  notSet:
+    summary: Unset
+    value: ''
+in: query
+name: c:retry
+schema:
+  enum:
+  - 'true'
+  - 'false'
+  - '0'
+  - '1'
+  type: string

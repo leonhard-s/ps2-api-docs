@@ -1,0 +1,6 @@
+description: Unique identifier of a projectile.
+in: query
+name: projectile_id
+schema:
+  type: string
+x-cast-to: int32

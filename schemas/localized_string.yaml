@@ -1,0 +1,20 @@
+properties:
+  de:
+    description: German locale
+    type: string
+  en:
+    description: English locale
+    type: string
+  es:
+    description: Spanish locale
+    type: string
+  fr:
+    description: French locale
+    type: string
+  it:
+    description: Italian locale
+    type: string
+  tr:
+    description: Turkish locale, unfinished and not available for most fields
+    type: string
+type: object

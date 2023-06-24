@@ -1,0 +1,76 @@
+properties:
+  last_save:
+    description: Last time the stat was saved.
+    type: string
+  last_save_date:
+    description: Human-readable version of `last_save`.
+    type: string
+  profile_id:
+    description: Class for which stats are being returne.
+    type: string
+    x-cast-to: int32
+    x-reference-to: profile_2.profile_id
+  stat_name:
+    description: Name of the stat being returned.
+    type: string
+  value_daily_nc:
+    description: Value of the stat for the last 24 hours (NC).
+    type: string
+    x-cast-to: int32
+  value_daily_tr:
+    description: Value of the stat for the last 24 hours (TR).
+    type: string
+    x-cast-to: int32
+  value_daily_vs:
+    description: Value of the stat for the last 24 hours (VS).
+    type: string
+    x-cast-to: int32
+  value_forever_nc:
+    description: All-time value of the stat (NC).
+    type: string
+    x-cast-to: int32
+  value_forever_tr:
+    description: All-time value of the stat (TR).
+    type: string
+    x-cast-to: int32
+  value_forever_vs:
+    description: All-time value of the stat (VS).
+    type: string
+    x-cast-to: int32
+  value_monthly_nc:
+    description: Value of the stat for the last 30 days (NC).
+    type: string
+    x-cast-to: int32
+  value_monthly_tr:
+    description: Value of the stat for the last 30 days (TR).
+    type: string
+    x-cast-to: int32
+  value_monthly_vs:
+    description: Value of the stat for the last 30 days (VS).
+    type: string
+    x-cast-to: int32
+  value_one_life_max_nc:
+    description: Highest value of the stat in a single life (NC).
+    type: string
+    x-cast-to: int32
+  value_one_life_max_tr:
+    description: Highest value of the stat in a single life (TR).
+    type: string
+    x-cast-to: int32
+  value_one_life_max_vs:
+    description: Highest value of the stat in a single life (VS).
+    type: string
+    x-cast-to: int32
+  value_weekly_nc:
+    description: Value of the stat for the last 7 days (NC).
+    type: string
+    x-cast-to: int32
+  value_weekly_tr:
+    description: Value of the stat for the last 7 days (TR).
+    type: string
+    x-cast-to: int32
+  value_weekly_vs:
+    description: Value of the stat for the last 7 days (VS).
+    type: string
+    x-cast-to: int32
+type: object

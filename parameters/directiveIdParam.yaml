@@ -1,0 +1,6 @@
+description: Unique ID of a directive.
+in: query
+name: directive_id
+schema:
+  type: string
+x-cast-to: int32

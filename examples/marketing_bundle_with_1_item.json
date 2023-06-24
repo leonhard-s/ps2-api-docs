@@ -1,0 +1,12 @@
+{
+  "marketing_bundle_with_1_item_list": [
+    {
+      "marketing_bundle_id": "465",
+      "item_id": "17001",
+      "item_quantity": "1",
+      "station_cash_price": "100",
+      "release_time": "1334041200"
+    }
+  ],
+  "returned": 1
+}

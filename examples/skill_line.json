@@ -1,0 +1,30 @@
+{
+  "skill_line_list": [
+    {
+      "skill_line_id": "88",
+      "skill_points": "0",
+      "skill_category_id": "44",
+      "skill_category_index": "0",
+      "name": {
+        "de": "Maximale Munitionskapazit\u00e4t",
+        "en": "Maximum Ammo Capacity",
+        "es": "Capacidad de munici\u00f3n m\u00e1xima",
+        "fr": "Capacit\u00e9 maximale en munitions",
+        "it": "Capacit\u00e0 di munizioni massima",
+        "tr": "Maksimum Cephane Kapasitesi"
+      },
+      "description": {
+        "de": "Erh\u00f6ht die maximale Munitionskapazit\u00e4t der Waffe.",
+        "en": "Increases the maximum ammo capacity of the weapon.",
+        "es": "Aumenta la capacidad de munici\u00f3n m\u00e1xima del arma.",
+        "fr": "Augmente la capacit\u00e9 maximale en munitions de l'arme.",
+        "it": "Aumenta la capacit\u00e0 massima di munizioni dell'arma.",
+        "tr": "Silah\u0131n azami cephane kapasitesini artt\u0131r\u0131r."
+      },
+      "image_set_id": "2049",
+      "image_id": "3744",
+      "image_path": "/files/ps2/images/static/3744.png"
+    }
+  ],
+  "returned": 1
+}

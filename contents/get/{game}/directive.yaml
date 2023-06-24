@@ -1,0 +1,14 @@
+examples:
+  higby:
+    value:
+      $ref: ../../../examples/directive.json
+schema:
+  properties:
+    directive_list:
+      items:
+        $ref: ../../../schemas/directive.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

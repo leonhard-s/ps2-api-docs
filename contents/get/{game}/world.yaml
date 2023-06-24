@@ -1,0 +1,14 @@
+examples:
+  connery:
+    value:
+      $ref: ../../../examples/world.json
+schema:
+  properties:
+    returned:
+      minimum: 0
+      type: integer
+    world_list:
+      items:
+        $ref: ../../../schemas/world.yaml
+      type: array
+  type: object

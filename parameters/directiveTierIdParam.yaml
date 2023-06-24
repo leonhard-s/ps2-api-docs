@@ -1,0 +1,6 @@
+description: Unique ID of a directive tier.
+in: query
+name: directive_tier_id
+schema:
+  type: string
+x-cast-to: int32

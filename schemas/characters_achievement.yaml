@@ -1,0 +1,37 @@
+properties:
+  achievement_id:
+    description: Unique ID of the achievement being returned.
+    type: string
+    x-cast-to: int32
+    x-reference-to: achievement.achievement_id
+  character_id:
+    description: Character for which the achievement list is being returned.
+    type: string
+    x-cast-to: int64
+    x-reference-to: character.character_id
+  earned_count:
+    description: Number of times the achievement has been earned. Only exceeds 1 for
+      ribbons.
+    type: string
+    x-cast-to: int32
+  finish:
+    description: UTC timestamp of when this achievement was completed. Remains at
+      zero for repeatable achievements.
+    type: string
+  finish_date:
+    description: Human-readable version of `finish`.
+    type: string
+  last_save:
+    description: UTC timestamp of when the underlying table was updated.
+    type: string
+  last_save_date:
+    description: Human-readable version of `last_save`.
+    type: string
+  start:
+    description: UTC timestamp of when progression towards this achievement started.
+      For repeatable achievements, this marks the last time the achievement was gained.
+    type: string
+  start_date:
+    description: Human-readable version of `start`.
+    type: string
+type: object

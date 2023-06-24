@@ -1,0 +1,15 @@
+{
+  "count": 5,
+  "faction_list": [
+    {
+      "code_tag": [
+        "NC",
+        "None",
+        "NSO",
+        "TR",
+        "VS"
+      ]
+    }
+  ],
+  "returned": 1
+}

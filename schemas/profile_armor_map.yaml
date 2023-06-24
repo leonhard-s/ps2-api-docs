@@ -1,0 +1,16 @@
+properties:
+  armor_info_id:
+    description: The armor info side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: armor_info.armor_info_id
+  profile_id:
+    description: The profile side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: profile_2.profile_id
+  rank:
+    description: Unknown. Always 1 as of 2023-06-09.
+    type: string
+    x-cast-to: int32
+type: object

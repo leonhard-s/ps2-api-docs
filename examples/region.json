@@ -1,0 +1,18 @@
+{
+  "region_list": [
+    {
+      "region_id": "2102",
+      "zone_id": "2",
+      "initial_faction_id": "1",
+      "name": {
+        "de": "Mao",
+        "en": "Mao",
+        "es": "Mao",
+        "fr": "Mao",
+        "it": "Mao",
+        "tr": "Mao"
+      }
+    }
+  ],
+  "returned": 1
+}

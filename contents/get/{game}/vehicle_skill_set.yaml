@@ -1,0 +1,14 @@
+examples:
+  vehicle_skill_set:
+    value:
+      $ref: ../../../examples/vehicle_skill_set.json
+schema:
+  properties:
+    returned:
+      minimum: 0
+      type: integer
+    vehicle_skill_set_list:
+      items:
+        $ref: ../../../schemas/vehicle_skill_set.yaml
+      type: array
+  type: object

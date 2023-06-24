@@ -1,0 +1,3 @@
+anyOf:
+  - $ref: "characters_event.yaml"
+  - $ref: "world_event.yaml"

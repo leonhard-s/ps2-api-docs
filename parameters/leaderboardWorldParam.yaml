@@ -1,0 +1,8 @@
+description: Server for which to fetch leaderboard data. Note that this may return
+  results for defunct servers, such as Lithcorp (ID 11) despite those characters since
+  having been transfered to Cobalt (ID 13).
+in: query
+name: world
+schema:
+  type: string
+x-cast-to: int32

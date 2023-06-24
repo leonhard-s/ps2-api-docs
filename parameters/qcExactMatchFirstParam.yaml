@@ -1,0 +1,12 @@
+description: When performing fuzzy string queries, such as `^` (startswith) or `*`
+  (contains), promote any match exactly matching the full input string to the top
+  of the search list. Useful for user-facing name lookups.
+in: query
+name: c:exactMatchFirst
+schema:
+  enum:
+  - 'true'
+  - 'false'
+  - '0'
+  - '1'
+  type: string

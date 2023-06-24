@@ -1,0 +1,89 @@
+{
+  "vehicle_attachment_list": [
+    {
+      "item_id": "6100",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    },
+    {
+      "item_id": "6103",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    },
+    {
+      "item_id": "6106",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    },
+    {
+      "item_id": "6109",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    },
+    {
+      "item_id": "6112",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    },
+    {
+      "item_id": "6115",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    },
+    {
+      "item_id": "6118",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    },
+    {
+      "item_id": "6125",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    },
+    {
+      "item_id": "6126",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    },
+    {
+      "item_id": "802898",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    },
+    {
+      "item_id": "6006397",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    },
+    {
+      "item_id": "6011884",
+      "vehicle_id": "12",
+      "faction_id": "1",
+      "description": "Harasser VS",
+      "slot_id": "1"
+    }
+  ],
+  "returned": 12
+}

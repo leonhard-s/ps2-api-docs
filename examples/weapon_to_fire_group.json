@@ -1,0 +1,15 @@
+{
+  "weapon_to_fire_group_list": [
+    {
+      "weapon_id": "7124",
+      "fire_group_id": "7124",
+      "fire_group_index": "0"
+    },
+    {
+      "weapon_id": "7124",
+      "fire_group_id": "17124",
+      "fire_group_index": "1"
+    }
+  ],
+  "returned": 2
+}

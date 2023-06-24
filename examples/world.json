@@ -1,0 +1,17 @@
+{
+  "world_list": [
+    {
+      "world_id": "13",
+      "state": "online",
+      "name": {
+        "en": "Cobalt",
+        "de": "Cobalt",
+        "es": "Cobalt",
+        "fr": "Cobalt",
+        "it": "Cobalt",
+        "tr": "Cobalt"
+      }
+    }
+  ],
+  "returned": 1
+}

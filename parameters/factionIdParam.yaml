@@ -1,0 +1,6 @@
+description: Unique identifier of a faction.
+in: query
+name: faction_id
+schema:
+  type: string
+x-cast-to: int32

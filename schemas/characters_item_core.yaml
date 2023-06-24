@@ -1,0 +1,7 @@
+properties:
+  item_id:
+    description: Item side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: item.item_id
+type: object

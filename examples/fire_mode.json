@@ -1,0 +1,44 @@
+{
+  "fire_mode_list": [
+    {
+      "fire_mode_id": "2000",
+      "item_id": "2009",
+      "type": "primary",
+      "description": {
+        "de": "Automatik",
+        "en": "Auto",
+        "es": "Autom\u00e1tico",
+        "fr": "Automatique",
+        "it": "Automatico",
+        "tr": "Otomatik"
+      },
+      "player_state_group_id": "653",
+      "cof_recoil": "0.1",
+      "reload_time_ms": "2000",
+      "reload_chamber_time_ms": "450",
+      "pellets_per_shot": "1",
+      "pellet_spread": "0",
+      "default_zoom": "1",
+      "muzzle_velocity": "640",
+      "speed": "550",
+      "max_speed": "0",
+      "damage_radius": "0",
+      "projectile_description": "NS: Assault Rifle 01",
+      "damage_type": "DamageFalloff",
+      "damage": "NULL",
+      "damage_min": "125",
+      "damage_max": "143",
+      "damage_min_range": "65",
+      "damage_max_range": "10",
+      "damage_target_type": "2",
+      "damage_resist_type": "2",
+      "indirect_damage_max": "NULL",
+      "indirect_damage_max_range": "NULL",
+      "indirect_damage_min": "NULL",
+      "indirect_damage_min_range": "NULL",
+      "indirect_damage_target_type": "NULL",
+      "indirect_damage_resist_type": "NULL"
+    }
+  ],
+  "returned": 1
+}

@@ -1,0 +1,30 @@
+properties:
+  count:
+    description: The number of entries in this colleciton. The values `?` and `dynamic`
+      both signify an uncountable collection. Note that even though no count is displayed
+      here, it may still be accessible via the `count/{game}/{collection}` endpoint.
+    oneOf:
+    - type: integer
+    - enum:
+      - dynamic
+      - '?'
+      type: string
+  hidden:
+    description: Whether this table is hidden from the API. Always false-y. Note that
+      this may either be an actual `false` value, or the string `"false"`.
+    oneOf:
+    - type: boolean
+    - enum:
+      - 'false'
+      type: string
+  name:
+    description: Unique name of the collection.
+    type: string
+  resolve_list:
+    description: A list of resolvable names for the collection. These can be passed
+      to the `c:resolve` query parameter to insert additional fields into the returned
+      payload.
+    items:
+      type: string
+    type: array
+type: object

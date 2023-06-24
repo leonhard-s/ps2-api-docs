@@ -1,0 +1,14 @@
+examples:
+  luperza:
+    value:
+      $ref: ../../../examples/outfit_member.json
+schema:
+  properties:
+    outfit_member_list:
+      items:
+        $ref: ../../../schemas/outfit_member.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

@@ -1,0 +1,6 @@
+description: Unique identifier of a fire mode.
+in: query
+name: fire_mode_id
+schema:
+  type: string
+x-cast-to: int32

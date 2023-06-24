@@ -1,0 +1,6 @@
+description: Unique identifier of a zone.
+in: query
+name: zone_id
+schema:
+  type: string
+x-cast-to: int32

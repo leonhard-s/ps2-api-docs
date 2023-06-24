@@ -1,0 +1,10 @@
+properties:
+  item_category_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+    x-reference-to: item_category.item_category_id
+  name:
+    $ref: "localized_string.yaml"
+    description: Display name of the item category.
+type: object
