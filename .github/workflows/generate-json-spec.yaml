@@ -1,0 +1,27 @@
+# Temporary workflow to reassemble the monolithic JSON spec required by the
+# current ReadTheDocs documentation build.
+
+name: Generate JSON spec
+
+on: push
+
+jobs:
+  build-json-monolith:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Generate JSON spec
+        run: |
+          python -m pip install -r ./tools/requirements.txt
+          python ./tools/generate_json_spec.py --output generated/openapi.json
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+          git add --force --intent-to-add generated/openapi.json
+          git commit -m "Generate JSON spec for ReadTheDocs"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
