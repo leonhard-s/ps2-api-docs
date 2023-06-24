@@ -2,44 +2,39 @@
 
 Unofficial OpenAPI specification and documentation provider for the PlanetSide 2 API.
 
-> ## Update Notice
->
-> This project is currently being updated for OpenAPI 3.1, including improved documentation of query commands, parameters, and response variants.
->
-> The previous version can be found on the [`develop`](https://github.com/leonhard-s/ps2-api-docs/tree/develop) branch.
-
 ***
 
 This repository maintains a full list of all collections in the [PlanetSide 2 API](https://census.daybreakgames.com/). Currently, only the REST endpoint is documented. A WebSocket API reference may be added in a later version.
 
+## API Preview
+
+An HTML version of this specification is automatically built using [ReDoc](https://github.com/Redocly/redoc) and hosted [at this location](https://ps2-api-docs.readthedocs.io/en/latest/openapi.html).
+
 ## Usage
 
-This repository defines the API endpoints according to the [OpenAPI 3.1](https://swagger.io/specification/) speficiation, which manifests itself as a JSON document defining available server endpoints, paths/routes, schemata and example payloads.
+This repository defines the API endpoints according to the [OpenAPI 3.1](https://swagger.io/specification/) speficiation, which manifests itself as a YAML or JSON document defining available server endpoints, paths/routes, schemata and example payloads.
 
-An HTML version of this specification is automatically built using [ReDoc](https://github.com/Redocly/redoc) and hosted [here](https://ps2-api-docs.readthedocs.io/en/latest/openapi.html).
-<!-- 
-Alternatively, you can build the latest version of the specification by cloning this repository and running the `tools/build_spec.py` script. This option is recommended for CI/CD setups as it will always use the latest version of the specification. -->
+If your use case does not support multi-file OpenAPI documents or you are restricted to a single file, you can use the [single-file JSON version](https://raw.githubusercontent.com/leonhard-s/ps2-api-docs/main/generated/openapi.json). This is also the file used to generate the HTML preview linked above.
 
-<!-- ## Details
-
-### A note regarding types
-
-According to the OpenAPI standard, a quoted integer (e.g. `"12"`) should be typed as a `string`.
-However, due to the PS2 API quoting nearly every value it returns, following this convention would make the type hints meaningless.
-
-Code consuming API payloads should always expect strings in addition to the documented type. If you are using the `c:includeNull` query command, you may also need a special case to parse the string `"NULL"` as your coding environment's NULL type.
+> **Note:** Please be aware that the generated spec is not yet stable and may change in the future (see [#9](https://github.com/leonhard-s/ps2-api-docs/issues/9) for details).
 
 ### Extensions
 
+> **Note:** Vendor extensions are not yet finalized and may change in the near future. See [#7](https://github.com/leonhard-s/ps2-api-docs/issues/7) for details.
+
 The OpenAPI standard allows the insertion of custom fields into the standard. These fields are prefixed with `x-` and listed below:
+
+- **`x-cast-to`**
+
+  The Census API returns most values as strings. This field defines the type to which the value should be cast. Note that casting to boolean requires special handling of the strings `"0"` and `"NULL"`, which may be interpreted as truthy values in some languages such as Python.
 
 - **`x-reference-to`**
 
-  For ID-type properties, this field defines the qualified names of collections that can be joined to this field as an array of strings.
+  For ID fields, this field defines the qualified names of a collection that can be joined to this field as an array of strings.
 
   For example, the property `outfit.leader_character_id` has the value `character.character_id` in its `x-reference-to` list.
 
-  This field may be used to dynamically create or validate joins to related data. -->
+  This field may be used to dynamically create or validate joins to related data.
 
 ## Contributing
 
