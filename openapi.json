@@ -4291,26 +4291,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "$ref": "#/components/schemas/reward"
-                    },
-                    {
-                      "type": "object",
-                      "properties": {
-                        "reward_list": {
-                          "type": "array",
-                          "items": {
-                            "$ref": "#/components/schemas/reward"
-                          }
-                        },
-                        "returned": {
-                          "type": "integer",
-                          "minimum": 0
-                        }
+                  "type": "object",
+                  "properties": {
+                    "reward_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/reward"
                       }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
                     }
-                  ]
+                  }
                 },
                 "examples": {
                   "reward": {
@@ -4347,26 +4340,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "$ref": "#/components/schemas/reward_group_to_reward"
-                    },
-                    {
-                      "type": "object",
-                      "properties": {
-                        "reward_group_to_reward_list": {
-                          "type": "array",
-                          "items": {
-                            "$ref": "#/components/schemas/reward_group_to_reward"
-                          }
-                        },
-                        "returned": {
-                          "type": "integer",
-                          "minimum": 0
-                        }
+                  "type": "object",
+                  "properties": {
+                    "reward_group_to_reward_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/reward_group_to_reward"
                       }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
                     }
-                  ]
+                  }
                 },
                 "examples": {
                   "reward_group_to_reward": {
@@ -4403,26 +4389,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "$ref": "#/components/schemas/reward_set_to_reward_group"
-                    },
-                    {
-                      "type": "object",
-                      "properties": {
-                        "reward_set_to_reward_group_list": {
-                          "type": "array",
-                          "items": {
-                            "$ref": "#/components/schemas/reward_set_to_reward_group"
-                          }
-                        },
-                        "returned": {
-                          "type": "integer",
-                          "minimum": 0
-                        }
+                  "type": "object",
+                  "properties": {
+                    "reward_set_to_reward_group_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/reward_set_to_reward_group"
                       }
+                    },
+                    "returned": {
+                      "type": "integer",
+                      "minimum": 0
                     }
-                  ]
+                  }
                 },
                 "examples": {
                   "reward_set_to_reward_group": {
@@ -5100,7 +5079,7 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "weapon_list": {
+                    "weapon_datasheet_list": {
                       "type": "array",
                       "items": {
                         "$ref": "#/components/schemas/weapon_datasheet"
@@ -5328,7 +5307,7 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "world_list": {
+                    "world_stat_history_list": {
                       "type": "array",
                       "items": {
                         "$ref": "#/components/schemas/world_stat_history"
