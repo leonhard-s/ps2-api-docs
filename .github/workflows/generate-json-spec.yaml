@@ -22,12 +22,12 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
       - name: Check for changes
+        continue-on-error: true
         id: git-check
         run: |
           git diff --quiet --exit-code
       - name: Apply changes
         if: steps.git-check.outputs.exit_code != 0
-        continue-on-error: true
         run: |
           git add --force ./generated/openapi.json
           git commit -m "Update monolithic JSON spec" --allow-empty
