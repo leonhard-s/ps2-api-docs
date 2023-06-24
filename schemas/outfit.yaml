@@ -1,6 +1,7 @@
 properties:
   alias:
-    description: The outfit's alias (aka. tag), or an empty string if the outfit has
+    description:
+      The outfit's alias (aka. tag), or an empty string if the outfit has
       no alias.
     type: string
   alias_lower:
@@ -28,7 +29,7 @@ properties:
   time_created:
     description: Time the outfit was created.
     type: string
-  time_creeated_date:
+  time_created_date:
     description: Human-readable version of `time_created`.
     type: string
 type: object

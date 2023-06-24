@@ -4,6 +4,9 @@ examples:
       $ref: ../../../examples/weapon_to_attachment.json
 schema:
   properties:
+    returned:
+      minimum: 0
+      type: integer
     weapon_to_attachment_list:
       items:
         $ref: ../../../schemas/weapon_to_attachment.yaml

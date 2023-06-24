@@ -10,6 +10,10 @@ examples:
       $ref: ../../../examples/collection_mapFacilities.json
 schema:
   properties:
+    count:
+      minimum: 0
+      type: integer
+      summary: Only included if `c:distinct` is used.
     returned:
       minimum: 0
       type: integer
@@ -19,9 +23,8 @@ schema:
           type: integer
       summary: Only included if `c:timing` is enabled.
       type: object
-    "{collection}_list":
-      items:
-        additionalProperties: true
-        type: object
+  patternProperties:
+    "^(\\w+_list)$":
+      items: {}
       type: array
   type: object

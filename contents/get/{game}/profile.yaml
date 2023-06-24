@@ -8,4 +8,7 @@ schema:
       items:
         $ref: ../../../schemas/profile.yaml
       type: array
+    returned:
+      minimum: 0
+      type: integer
   type: object

@@ -10,6 +10,11 @@ properties:
   description:
     $ref: "localized_string.yaml"
     description: Localized description of the profile
+  faction_id:
+    description: The `ps2/faction` of the profile.
+    type: string
+    x-cast-to: int32
+    x-reference-to: faction.faction_id
   image_id:
     description: The `ps2/image` of the profile.
     type: string
@@ -45,6 +50,10 @@ properties:
     x-cast-to: int32
   sprint_speed_modifier:
     description: The modifier applied to the movement speed when sprinting.
+    type: string
+    x-cast-to: float
+  strafe_speed_modifier:
+    description: The modifier applied to the movement speed when strafing.
     type: string
     x-cast-to: float
 type: object

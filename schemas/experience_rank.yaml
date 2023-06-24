@@ -2,6 +2,8 @@ properties:
   nc:
     $ref: "experience_rank_faction.yaml"
     description: Subkey for the New Conglomerate.
+  nc_image_path:
+    description: Path to the facion-specific icon for this experience rank.
   rank:
     description:
       The ordinal rank of the experience type. Note that this is the same
@@ -11,9 +13,13 @@ properties:
   tr:
     $ref: "experience_rank_faction.yaml"
     description: Subkey for the Terran Republic.
+  tr_image_path:
+    description: Path to the facion-specific icon for this experience rank.
   vs:
     $ref: "experience_rank_faction.yaml"
     description: Subkey for the Vanu Sovereignty.
+  vs_image_path:
+    description: Path to the facion-specific icon for this experience rank.
   xp_max:
     description: Unused.
     type: string

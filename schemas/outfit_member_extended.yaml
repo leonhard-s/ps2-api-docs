@@ -49,7 +49,7 @@ properties:
   time_created:
     description: Time the outfit was created.
     type: string
-  time_creeated_date:
+  time_created_date:
     description: Human-readable version of `time_created`.
     type: string
 type: object

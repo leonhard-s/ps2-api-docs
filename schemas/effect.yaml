@@ -1,4 +1,9 @@
 properties:
+  ability_id:
+    description: Unique identifier of the ability associated with this effect.
+    type: string
+    x-cast-to: int32
+    x-reference-to: ability.ability_id
   ability_type_id:
     description: Unique identifier of the ability type associated with this effect.
     type: string

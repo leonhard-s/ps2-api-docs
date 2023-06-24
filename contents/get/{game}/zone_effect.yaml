@@ -4,6 +4,9 @@ examples:
       $ref: ../../../examples/zone_effect.json
 schema:
   properties:
+    returned:
+      minimum: 0
+      type: integer
     zone_effect_list:
       items:
         $ref: ../../../schemas/zone_effect.yaml

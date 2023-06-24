@@ -9,6 +9,9 @@ schema:
       type: integer
     key:
       type: string
+    limit:
+      minimum: 0
+      type: integer
     leaderboard_list:
       items:
         $ref: ../../../schemas/leaderboard.yaml

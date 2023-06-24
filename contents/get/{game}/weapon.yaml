@@ -10,6 +10,9 @@ examples:
       $ref: ../../../examples/weapon_regular.json
 schema:
   properties:
+    returned:
+      minimum: 0
+      type: integer
     weapon_list:
       items:
         $ref: ../../../schemas/weapon.yaml

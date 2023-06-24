@@ -1,4 +1,4 @@
-oneOf:
+allOf:
   - $ref: "characters_stat_core.yaml"
   - properties:
       character_id:

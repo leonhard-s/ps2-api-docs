@@ -4,6 +4,9 @@ examples:
       $ref: ../../../examples/world_stat_history.json
 schema:
   properties:
+    returned:
+      minimum: 0
+      type: integer
     world_stat_history_list:
       items:
         $ref: ../../../schemas/world_stat_history.yaml

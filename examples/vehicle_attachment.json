@@ -5,144 +5,84 @@
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "M12 Kobalt-H"
-        }
-      }
+      "slot_id": "1"
     },
     {
       "item_id": "6103",
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "M20 Basilisk-H"
-        }
-      }
+      "slot_id": "1"
     },
     {
       "item_id": "6106",
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "G30 Walker"
-        }
-      }
+      "slot_id": "1"
     },
     {
       "item_id": "6109",
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "G40-F Ranger"
-        }
-      }
+      "slot_id": "1"
     },
     {
       "item_id": "6112",
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "M60-G Bulldog-H"
-        }
-      }
+      "slot_id": "1"
     },
     {
       "item_id": "6115",
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "M40 Fury-H"
-        }
-      }
+      "slot_id": "1"
     },
     {
       "item_id": "6118",
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "E540 Halberd-H"
-        }
-      }
+      "slot_id": "1"
     },
     {
       "item_id": "6125",
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "Proton II PPA-H"
-        }
-      }
+      "slot_id": "1"
     },
     {
       "item_id": "6126",
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "Saron HRB-H"
-        }
-      }
+      "slot_id": "1"
     },
     {
       "item_id": "802898",
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "Aphelion VEX-4H"
-        }
-      }
+      "slot_id": "1"
     },
     {
       "item_id": "6006397",
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "Halberd-H SE"
-        }
-      }
+      "slot_id": "1"
     },
     {
       "item_id": "6011884",
       "vehicle_id": "12",
       "faction_id": "1",
       "description": "Harasser VS",
-      "slot_id": "1",
-      "item_id_join_item": {
-        "name": {
-          "en": "V42 Pariah-H"
-        }
-      }
+      "slot_id": "1"
     }
   ],
   "returned": 12

@@ -1,15 +1,17 @@
 {
-  "datatype_list": {
-    "name": "outfit_member",
-    "hidden": false,
-    "count": "?",
-    "resolve_list": [
-      "character",
-      "character_name",
-      "characters_stat_history",
-      "online_status",
-      "outfit"
-    ]
-  },
+  "datatype_list": [
+    {
+      "name": "outfit_member",
+      "hidden": false,
+      "count": "?",
+      "resolve_list": [
+        "character",
+        "character_name",
+        "characters_stat_history",
+        "online_status",
+        "outfit"
+      ]
+    }
+  ],
   "returned": 1
 }

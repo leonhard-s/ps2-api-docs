@@ -47,8 +47,8 @@ properties:
     description: Unreliable! Please use `ps2/fire_mode_2.fire_refire_ms` instead.
     type: string
     x-cast-to: int32
-  fire_rate_ms_max:
-    description: Unreliable! Please use `ps2/fire_mode_2.fire_refire_ms` instead.
+  fire_rate_mx_max:
+    description: Unreliable! Please use `ps2/fire_mode_2.fire_refire_ms` instead. Note that this is not a typo in the spec, the field is named `mx`.
     type: string
     x-cast-to: int32
   fire_rate_ms_min:

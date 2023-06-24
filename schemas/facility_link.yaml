@@ -7,7 +7,7 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: map_region.facility_id
-  facility_link_b:
+  facility_id_b:
     description: The ID of the second facility in the link.
     type: string
     x-cast-to: int32

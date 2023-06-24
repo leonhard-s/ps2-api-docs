@@ -1,4 +1,7 @@
 properties:
+  code_name:
+    description: Internal name of the loadout.
+    type: string
   faction_id:
     description: The `ps2/faction` of the loadout.
     type: string

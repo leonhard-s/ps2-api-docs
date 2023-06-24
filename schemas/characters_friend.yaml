@@ -25,5 +25,5 @@ properties:
     type: array
   name:
     description: Defunct. Always returns `null`.
-    type: string
+    type: 'null'
 type: object

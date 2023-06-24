@@ -75,7 +75,7 @@ properties:
       being grouped or not.'
     type: string
     x-cast-to: int32
-  world_id:
+  weapon_id:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32

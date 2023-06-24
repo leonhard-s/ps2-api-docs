@@ -16,4 +16,7 @@ properties:
     description: Damage reduction in percent. Negative values increase damage taken.
     type: string
     x-cast-to: float
+  description:
+    description: Description of the armor info entry.
+    type: string
 type: object

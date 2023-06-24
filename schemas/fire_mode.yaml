@@ -45,6 +45,9 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: target_type.target_type_id
+  damage_type:
+    description: Description of the type of damage effect.
+    type: string
   default_zoom:
     description: Default zoom level for this fire mode.
     type: string

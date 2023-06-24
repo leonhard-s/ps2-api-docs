@@ -4,6 +4,9 @@ examples:
       $ref: ../../../examples/vehicle_attachment.json
 schema:
   properties:
+    returned:
+      minimum: 0
+      type: integer
     vehicle_attachment_list:
       items:
         $ref: ../../../schemas/vehicle_attachment.yaml
