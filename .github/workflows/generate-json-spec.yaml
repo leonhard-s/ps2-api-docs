@@ -16,7 +16,7 @@ jobs:
           python -m pip install -r ./tools/requirements.txt
       - name: Generate JSON spec
         run: |
-          python ./tools/generate_json_spec.py ./openapi.json ./generated/openapi.json
+          python ./tools/generate_json_spec.py ./openapi.yaml ./generated/openapi.json
       - name: Commit changes
         run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
