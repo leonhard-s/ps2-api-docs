@@ -1,0 +1,20 @@
+properties:
+  currency_id:
+    description: Unique ID of the currency.
+    type: string
+    x-cast-to: int32
+  icon_id:
+    description: Icon ID of the resource. This is actually an `image_set_id`.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+  inventory_cap:
+    description:
+      The maximum amount of this currency that can be held in a character's
+      inventory.
+    type: string
+    x-cast-to: int32
+  name:
+    $ref: "localized_string.yaml"
+    description: The name of the currency.
+type: object

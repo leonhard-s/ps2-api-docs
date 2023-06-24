@@ -1,0 +1,23 @@
+properties:
+  end_date:
+    description: Human-readable version of `end_time`.
+    type: string
+  end_time:
+    description: UTC timestamp of when the event ended.
+    type: string
+  name:
+    $ref: "localized_string.yaml"
+    description: Display name of the event.
+  start_date:
+    description: Human-readable version of `start_time`.
+    type: string
+  start_time:
+    description: UTC timestamp of when the event started.
+    type: string
+  tracker_description:
+    description: Description of the tracker.
+    type: string
+  tracker_name:
+    description: Unique name of the tracker.
+    type: string
+type: object

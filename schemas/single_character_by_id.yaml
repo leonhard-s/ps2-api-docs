@@ -1,0 +1,52 @@
+allOf:
+  - $ref: "character.yaml"
+  - properties:
+      currency:
+        $ref: "characters_currency_core.yaml"
+      items:
+        items:
+          $ref: "characters_item.yaml"
+        type: array
+      stats:
+        properties:
+          stat:
+            items:
+              $ref: "characters_stat_core.yaml"
+            type: array
+          stat_by_faction:
+            items:
+              $ref: "characters_stat_by_faction_core.yaml"
+            type: array
+          stat_history:
+            properties:
+              battle_rank:
+                $ref: "characters_stat_history_core.yaml"
+              certs:
+                $ref: "characters_stat_history_core.yaml"
+              deaths:
+                $ref: "characters_stat_history_core.yaml"
+              facility_capture:
+                $ref: "characters_stat_history_core.yaml"
+              facility_defend:
+                $ref: "characters_stat_history_core.yaml"
+              kills:
+                $ref: "characters_stat_history_core.yaml"
+              medals:
+                $ref: "characters_stat_history_core.yaml"
+              ribbons:
+                $ref: "characters_stat_history_core.yaml"
+              score:
+                $ref: "characters_stat_history_core.yaml"
+              time:
+                $ref: "characters_stat_history_core.yaml"
+            type: object
+          weapon_stat:
+            items:
+              $ref: "characters_weapon_stat_core.yaml"
+            type: array
+          weapon_stat_by_faction:
+            items:
+              $ref: "characters_weapon_stat_by_faction_core.yaml"
+            type: array
+        type: object
+    type: object

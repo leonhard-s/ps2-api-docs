@@ -1,0 +1,29 @@
+properties:
+  character_id:
+    description: Character for which the friends list is being returned.
+    type: string
+    x-cast-to: int64
+    x-reference-to: character.character_id
+  friend_list:
+    items:
+      properties:
+        character_id:
+          description: Character ID of the friend.
+          type: string
+          x-cast-to: int64
+          x-reference-to: character.character_id
+        last_login_time:
+          description: Last time the friend logged in.
+          type: string
+        online:
+          description: Whether the friend is currently online. Offline players will
+            return 0, otherwise the value will be the `world_id` of the `ps2/world`
+            they are online on.
+          type: string
+          x-cast-to: int32
+      type: object
+    type: array
+  name:
+    description: Defunct. Always returns `null`.
+    type: string
+type: object

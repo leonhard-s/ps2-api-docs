@@ -1,0 +1,82 @@
+properties:
+  equip_ms:
+    description: The time in milliseconds it takes to equip the weapon.
+    type: string
+    x-cast-to: int32
+  from_iron_sights_ms:
+    description: Transition duration when exiting aim-down-sights in milliseconds.
+    type: string
+    x-cast-to: int32
+  heat_bleed_off_rate:
+    description: Rate at which heat is dissipated when not firing. Note that this
+      value is represented as an integer on the API despite being a float internally.
+    type: string
+    x-cast-to: int32
+  heat_capacity:
+    description: Total capacity for heat-based weapons. This is comparable to the
+      magazine size of regular weapons.
+    type: string
+    x-cast-to: int32
+  heat_overheat_penalty_ms:
+    description: The time in milliseconds it takes for the weapon to start cooling
+      down after overheating.
+    type: string
+    x-cast-to: int32
+  melee_detect_height:
+    description: On melee weapons, designates the height of the quick knife attack
+      hitbox.
+    type: string
+    x-cast-to: int32
+  melee_detect_width:
+    description: On melee weapons, designates the width of the quick knife attack
+      hitbox.
+    type: string
+    x-cast-to: int32
+  move_modifier:
+    description: The modifier applied to the movement speed when the weapon is equipped.
+    type: string
+    x-cast-to: float
+  requires_ammo:
+    description: Whether equipping this weapon requires ammunition to be available.
+      Used for grenades or the medic's shield regen device to prevent selection when
+      out of ammo.
+    type: string
+    x-cast-to: boolean
+  sprint_recovery_ms:
+    description: Time after sprinting during which the cone-of-fire will retain its
+      sprinting value before starting to recover.
+    type: string
+    x-cast-to: int32
+  to_iron_sights_ms:
+    description: Transition duration when entering aim-down-sights in milliseconds.
+    type: string
+    x-cast-to: int32
+  turn_modifier:
+    description: The modifier applied to the turn speed when the weapon is equipped.
+    type: string
+    x-cast-to: float
+  unequip_ms:
+    description: The time in milliseconds it takes to unequip the weapon.
+    type: string
+    x-cast-to: int32
+  use_cooldown_ms:
+    description: Time in milliseconds between uses of this weapon.
+    type: string
+    x-cast-to: int32
+  weapon_group_id:
+    description: 'ID of the weapon''s group. Weapons in the same group are treated
+      as a single weapon despite having distinct items. Examples include upgradable
+      pseudo-weapons such as the medic or engineer tool, or the Infiltrator''s Recon
+      dart gun.
+
+
+      Note that not all weapons have weapon groups, and that most weapon groups have
+      only one weapon in them. The presence of this field has no bearing on the weapon
+      being grouped or not.'
+    type: string
+    x-cast-to: int32
+  world_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+type: object

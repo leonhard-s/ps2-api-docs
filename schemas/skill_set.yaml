@@ -1,0 +1,39 @@
+properties:
+  description:
+    $ref: "localized_string.yaml"
+    description: Description of the skill set.
+  image_id:
+    description: Image associated with this skill set.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  image_path:
+    description: Path to the image associated with this skill set.
+    type: string
+    x-cast-to: string
+  image_set_id:
+    description: Image set associated with this skill set.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+  name:
+    $ref: "localized_string.yaml"
+    description: Display name of the skill set.
+  required_item_id:
+    description:
+      The item associated with this skill set. Contained skill lines are
+      only available once this item has been unlocked.
+    type: string
+    x-cast-to: int32
+    x-reference-to: item.item_id
+  skill_points:
+    description:
+      Unlock cost of the skill set. For weapon skill sets, this is equal
+      to the certification cost of the weapon item.
+    type: string
+    x-cast-to: int32
+  skill_set_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+type: object

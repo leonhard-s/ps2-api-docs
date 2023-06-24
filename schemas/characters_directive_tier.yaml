@@ -1,0 +1,24 @@
+properties:
+  character_id:
+    description: Character for which the directive tier list is being returned.
+    type: string
+    x-cast-to: int64
+    x-reference-to: character.character_id
+  completion_time:
+    description: UTC timestamp of when the directive tier was completed. Zero if not
+      completed.
+    type: string
+  completion_time_date:
+    description: Human-readable version of `completion_time`.
+    type: string
+  directive_tier_id:
+    description: ID of the directive tier.
+    type: string
+    x-cast-to: int32
+    x-reference-to: directive_tier.directive_tier_id
+  directive_tree_id:
+    description: ID of the directive tree containing the directive.
+    type: string
+    x-cast-to: int32
+    x-reference-to: directive_tree.directive_tree_id
+type: object

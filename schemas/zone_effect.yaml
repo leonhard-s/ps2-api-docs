@@ -1,0 +1,102 @@
+properties:
+  ability_id:
+    description: Unique ID of the associated ability.
+    type: string
+    x-cast-to: int32
+    x-reference-to: ability.ability_id
+  param1:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param10:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param11:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param12:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param13:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param14:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param2:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param3:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param4:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param5:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param6:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param7:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param8:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param9:
+    description: Generic numeric parameter. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  string1:
+    description: Generic string field. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+  string2:
+    description: Generic string field. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+  string3:
+    description: Generic string field. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+  string4:
+    description: Generic string field. See the corresponding `ps2/zone_effect_type`
+      for details.
+    type: string
+  zone_effect_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  zone_effect_type_id:
+    description: Unique ID of the zone effect type.
+    type: string
+    x-cast-to: int32
+    x-reference-to: zone_effect_type.zone_effect_type_id
+type: object

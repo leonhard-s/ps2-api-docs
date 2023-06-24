@@ -1,0 +1,149 @@
+properties:
+  cof_recoil:
+    description:
+      Baseline cone-of-fire bloom per shot. See the corresponding `ps2/player_state_group`
+      for more information.
+    type: string
+    x-cast-to: float
+  damage:
+    description: Flat damage amount for weapons without damage fall-off, such as knives.
+    type: string
+    x-cast-to: int32
+  damage_max:
+    description: Maximum direct damage for weapons with damage fall-off.
+    type: string
+    x-cast-to: int32
+  damage_max_range:
+    description: Range up to which the maximum direct projectile damage is applied.
+    type: string
+    x-cast-to: int
+  damage_min:
+    description: Minimum direct damage for weapons with damage fall-off.
+    type: string
+    x-cast-to: int32
+  damage_min_range:
+    description:
+      Range at which the minimum direct projectile damage is reached and
+      no further damage fall-off is applied.
+    type: string
+    x-cast-to: int
+  damage_radius:
+    description: ""
+    type: string
+    x-cast-to: float
+  damage_resist_type:
+    description:
+      Damage resist type used for direct hits. See `ps2/resist_type` for
+      more information.
+    type: string
+    x-cast-to: int32
+    x-reference-to: resist_type.resist_type_id
+  damage_target_type:
+    description:
+      Target types that can be damaged by this weapon's direct hits. See
+      `ps2/target_type` for more information.
+    type: string
+    x-cast-to: int32
+    x-reference-to: target_type.target_type_id
+  default_zoom:
+    description: Default zoom level for this fire mode.
+    type: string
+    x-cast-to: float
+  description:
+    $ref: "localized_string.yaml"
+    description: Range description for this fire mode.
+  fire_mode_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+    x-reference-to: fire_mode.fire_mode_id
+  indirect_damage_max:
+    description: Maximum indirect damage for weapons with damage fall-off.
+    type: string
+    x-cast-to: int32
+  indirect_damage_max_range:
+    description: Range at which the maximum indirect projectile damage is applied.
+    type: string
+    x-cast-to: int32
+  indirect_damage_min:
+    description: Minimum indirect damage for weapons with damage fall-off.
+    type: string
+    x-cast-to: int32
+  indirect_damage_min_range:
+    description:
+      ^Range at which the minimum indirect projectile damage is reached
+      and no further damage fall-off is applied.
+    type: string
+    x-cast-to: int32
+  indirect_damage_resist_type:
+    description:
+      Damage resist type used for indirect hits. See `ps2/resist_type`
+      for more information.
+    type: string
+    x-cast-to: int32
+  indirect_damage_target_type:
+    description:
+      Target types that can be damaged by this weapon's indirect hits.
+      See `ps2/target_type` for more information.
+    type: string
+    x-cast-to: int32
+  item_id:
+    description:
+      The `ps2/item` to which this fire mode belongs. Note that this field
+      is unreliable and may point to arbitrary item IDs in addition to the corresponding
+      weapon item.
+    type: string
+    x-cast-to: int32
+    x-reference-to: item.item_id
+  max_speed:
+    description:
+      On self-propelled projectiles, the upper speed cap of the projectile.
+      Used to increase projectile speed over time for lock-on launchers.
+    type: string
+    x-cast-to: float
+  muzzle_velocity:
+    description: Muzzle velocity of ballistic projectile in meters per second.
+    type: string
+    x-cast-to: int32
+  pellet_spread:
+    description: Spread between pellets in degrees.
+    type: string
+    x-cast-to: float
+  pellets_per_shot:
+    description:
+      Number of pellets fired per shot. Used for shotguns, as well as some
+      outliers like the NSX Tengu or VEC Horizon.
+    type: string
+    x-cast-to: int32
+  player_state_group_id:
+    description:
+      Player state group associated with this fire mode. Contains state-dependent
+      characteristics such as cone-of-fire.
+    type: string
+    x-cast-to: int32
+    x-reference-to: player_state_group.player_state_group_id
+  projectile_description:
+    description: Internal description of the projectile used.
+    type: string
+  reload_chamber_time_ms:
+    description:
+      Rechamber time after a reload. To calculate the long reload of a
+      weapon, add this value to `reload_time_ms`.
+    type: string
+    x-cast-to: int32
+  reload_time_ms:
+    description: Short reload duration in milliseconds.
+    type: string
+    x-cast-to: int32
+  speed:
+    description:
+      On self-propelled projectiles, the initial speed of the projectile
+      in meters per second.
+    type: string
+    x-cast-to: int32
+  type:
+    description:
+      Type description for the fire mode. Useful when needing to distinguish
+      between multiple fire modes on a given weapon.
+    type: string
+type: object

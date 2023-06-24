@@ -1,0 +1,30 @@
+properties:
+  cert_price:
+    description: The price of the marketing bundle in Certification Points.
+    type: string
+    x-cast-to: int32
+  description:
+    $ref: "localized_string.yaml"
+    description: Description of the marketing bundle.
+  image_id:
+    description: The `ps2/image` of the marketing bundle's display icon.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  marketing_bundle_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+    x-reference-to: marketing_bundle.marketing_bundle_id
+  name:
+    $ref: "localized_string.yaml"
+    description: Display name of the marketing bundle.
+  release_time:
+    description: The time the marketing bundle was released as a UTC timestamp.
+    type: string
+    x-cast-to: int32
+  station_cash_price:
+    description: The price of the marketing bundle in Station Cash.
+    type: string
+    x-cast-to: int32
+type: object

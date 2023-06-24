@@ -1,0 +1,16 @@
+properties:
+  faction_id:
+    description: The `ps2/faction` of the loadout.
+    type: string
+    x-cast-to: int32
+    x-reference-to: faction.faction_id
+  loadout_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  profile_id:
+    description: The `ps2/profile_2` matching this loadout.
+    type: string
+    x-cast-to: int32
+    x-reference-to: profile_2.profile_id
+type: object

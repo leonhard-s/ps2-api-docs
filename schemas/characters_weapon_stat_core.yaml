@@ -1,0 +1,26 @@
+properties:
+  item_id:
+    description: The ID of the item.
+    type: string
+    x-cast-to: int32
+    x-reference-to: item.item_id
+  last_save:
+    description: Last time the stat was saved.
+    type: string
+  last_save_date:
+    description: Human-readable version of `last_save`.
+    type: string
+  stat_name:
+    description: The name of the stat being recorded.
+    type: string
+    x-reference-to: characters_stat.stat_name
+  value:
+    description: The all-time value of the given stat.
+    type: string
+    x-cast-to: int32
+  vehicle_id:
+    description: The ID of the vehicle.
+    type: string
+    x-cast-to: int32
+    x-reference-to: vehicle.vehicle_id
+type: object

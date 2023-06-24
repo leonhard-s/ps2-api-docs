@@ -1,0 +1,12 @@
+allOf:
+  - $ref: "characters_stat_core.yaml"
+  - properties:
+      character_id:
+        description: Character for which the stats are being returned.
+        type: string
+        x-cast-to: int64
+        x-reference-to: character.character_id
+      stat_name:
+        description: Name of the stat being returned.
+        type: string
+    type: object

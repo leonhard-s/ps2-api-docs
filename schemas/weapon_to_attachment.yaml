@@ -1,0 +1,15 @@
+properties:
+  attachment_id:
+    description: Internal ID of this mapping. Does not map to any other field in the
+      API.
+    type: string
+    x-cast-to: int32
+  item_id:
+    description: Unique ID of the attachment item.
+    type: string
+    x-cast-to: int32
+  weapon_group_id:
+    description: ID of the weapon group to which this item can be attached.
+    type: string
+    x-cast-to: int32
+type: object

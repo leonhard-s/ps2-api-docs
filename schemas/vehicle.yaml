@@ -1,0 +1,43 @@
+properties:
+  cost:
+    description: Defunct field. Does not reflect the actual resource cost of the vehicle.
+    type: string
+    x-cast-to: int32
+  cost_resource_id:
+    description: ID of the currency used to purchase the vehicle.
+    type: string
+    x-cast-to: int32
+  description:
+    $ref: "localized_string.yaml"
+    description: Description of the vehicle.
+  image_id:
+    description: ID of the default image for the vehicle icon.
+    type: string
+    x-cast-to: int32
+  image_path:
+    description: Path to the default image for the vehicle icon.
+    type: string
+    x-cast-to: string
+  image_set_id:
+    description: ID of the image set for the vehicle icon.
+    type: string
+    x-cast-to: int32
+  name:
+    $ref: "localized_string.yaml"
+    description: Display name of the vehicle.
+  type_id:
+    description:
+      ID of the vehicle type. Note that vehicle types are not related to
+      damage types; Liberators still qualify as "Light Aircraft".
+    type: string
+    x-cast-to: int32
+  type_name:
+    description:
+      Internal name of the vehicle type. Note that vehicle types are not
+      related to damage types; Liberators still qualify as "Light Aircraft".
+    type: string
+  vehicle_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+type: object

@@ -1,0 +1,36 @@
+properties:
+  last_save:
+    description: Last time the stat was saved.
+    type: string
+  last_save_date:
+    description: Human-readable version of `last_save`.
+    type: string
+  profile_id:
+    description: Class for which stats are being returne.
+    type: string
+    x-cast-to: int32
+    x-reference-to: profile_2.profile_id
+  stat_name:
+    description: Name of the stat being returned.
+    type: string
+  value_daily:
+    description: Value of the stat for the last 24 hours.
+    type: string
+    x-cast-to: int32
+  value_forever:
+    description: All-time value of the stat.
+    type: string
+    x-cast-to: int32
+  value_monthly:
+    description: Value of the stat for the last 30 days.
+    type: string
+    x-cast-to: int32
+  value_one_life_max:
+    description: Highest value of the stat in a single life.
+    type: string
+    x-cast-to: int32
+  value_weekly:
+    description: Value of the stat for the last 7 days.
+    type: string
+    x-cast-to: int32
+type: object

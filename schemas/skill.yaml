@@ -1,0 +1,48 @@
+properties:
+  description:
+    $ref: "localized_string.yaml"
+    description: Description of the skill.
+  grant_item_id:
+    description:
+      Item granted by this skill. The skill must be unlocked for the item
+      to be available in the player's loadouts.
+    type: string
+    x-cast-to: int32
+    x-reference-to: item.item_id
+  image_id:
+    description: Image associated with this skill.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  image_path:
+    description: Path to the image associated with this skill.
+    type: string
+    x-cast-to: string
+  image_set_id:
+    description: Image set associated with this skill.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+  name:
+    $ref: "localized_string.yaml"
+    description: Display name of the skill.
+  skill_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  skill_line_id:
+    description: Skill line containing this skill.
+    type: string
+    x-cast-to: int32
+    x-reference-to: skill_line.skill_line_id
+  skill_line_index:
+    description: Position of this skill for upgradable skill lines such as Ammo Capacity.
+    type: string
+    x-cast-to: int32
+  skill_points:
+    description:
+      Number of skill points (Certs or A.S.P. tokens) required to unlock
+      this skill.
+    type: string
+    x-cast-to: int32
+type: object

@@ -1,0 +1,21 @@
+properties:
+  nc:
+    $ref: "experience_rank_faction.yaml"
+    description: Subkey for the New Conglomerate.
+  rank:
+    description:
+      The ordinal rank of the experience type. Note that this is the same
+      for each prestige level (0 through 3).
+    type: string
+    x-cast-to: int32
+  tr:
+    $ref: "experience_rank_faction.yaml"
+    description: Subkey for the Terran Republic.
+  vs:
+    $ref: "experience_rank_faction.yaml"
+    description: Subkey for the Vanu Sovereignty.
+  xp_max:
+    description: Unused.
+    type: string
+    x-cast-to: int32
+type: object

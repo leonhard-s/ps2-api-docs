@@ -1,0 +1,63 @@
+properties:
+  ability_type_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  description:
+    description: Description of the ability type.
+    type: string
+  param1:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param10:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param11:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param12:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param13:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param14:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param2:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param3:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param4:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param5:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param6:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param7:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param8:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  param9:
+    description: Documentation for this numeric parameter on abilities of this type.
+    type: string
+  string1:
+    description: Documentation for this string parameter on abilities of this type.
+    type: string
+  string2:
+    description: Documentation for this string parameter on abilities of this type.
+    type: string
+  string3:
+    description: Documentation for this string parameter on abilities of this type.
+    type: string
+  string4:
+    description: Documentation for this string parameter on abilities of this type.
+    type: string
+type: object

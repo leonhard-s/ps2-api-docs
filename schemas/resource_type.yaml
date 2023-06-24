@@ -1,0 +1,10 @@
+properties:
+  description:
+    description: Description of the resource type.
+    type: string
+    x-cast-to: string
+  resource_type_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+type: object

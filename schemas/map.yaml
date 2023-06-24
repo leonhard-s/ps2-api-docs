@@ -1,0 +1,33 @@
+properties:
+  Regions:
+    properties:
+      IsList:
+        description: Irrelevant field, always true.
+        type: string
+        x-cast-to: boolean
+      Row:
+        description: List of map row entries.
+        items:
+          properties:
+            RowData:
+              properties:
+                FactionId:
+                  description: Faction that owns the region.
+                  type: string
+                  x-cast-to: int32
+                  x-reference-to: faction.faction_id
+                RegionId:
+                  description: Region for which ownership data is returned.
+                  type: string
+                  x-cast-to: int32
+                  x-reference-to: map_region.map_region_id
+              type: object
+          type: object
+        type: array
+    type: object
+  ZoneId:
+    description: Zone for which map data is returned.
+    type: string
+    x-cast-to: int32
+    x-reference-to: zone.zone_id
+type: object

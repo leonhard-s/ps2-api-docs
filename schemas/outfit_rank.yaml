@@ -1,0 +1,17 @@
+properties:
+  description:
+    description: Custom description of the rank.
+    type: string
+  name:
+    description: Custom name of the rank.
+    type: string
+  ordinal:
+    description: Ordinal of the rank. Lower values are higher ranks.
+    type: string
+    x-cast-to: int32
+  outfit_id:
+    description: The `ps2/outfit` the rank belongs to.
+    type: string
+    x-cast-to: int64
+    x-reference-to: outfit.outfit_id
+type: object
