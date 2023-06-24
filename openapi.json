@@ -131,8 +131,12 @@
                 "$ref": "contents/get/{game}.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_collections"
       }
     },
     "/count/{game}/{collection}": {
@@ -158,8 +162,12 @@
                 "$ref": "contents/count/{game}/{collection}.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "count_generic"
       }
     },
     "/get/{game}/{collection}": {
@@ -236,8 +244,12 @@
                 "$ref": "contents/get/{game}/{collection}.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_generic"
       }
     },
     "/get/{game}/ability": {
@@ -266,8 +278,12 @@
                 "$ref": "contents/get/{game}/ability.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_ability"
       }
     },
     "/get/{game}/ability_type": {
@@ -293,8 +309,12 @@
                 "$ref": "contents/get/{game}/ability_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_ability_type"
       }
     },
     "/get/{game}/achievement": {
@@ -323,8 +343,12 @@
                 "$ref": "contents/get/{game}/achievement.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_achievement"
       }
     },
     "/get/{game}/character": {
@@ -359,8 +383,12 @@
                 "$ref": "contents/get/{game}/character.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_character"
       }
     },
     "/get/{game}/currency": {
@@ -386,8 +414,12 @@
                 "$ref": "contents/get/{game}/currency.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_currency"
       }
     },
     "/get/{game}/armor_facing": {
@@ -413,8 +445,12 @@
                 "$ref": "contents/get/{game}/armor_facing.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_armor_facing"
       }
     },
     "/get/{game}/armor_info": {
@@ -443,8 +479,12 @@
                 "$ref": "contents/get/{game}/armor_info.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_armor_info"
       }
     },
     "/get/{game}/character_name": {
@@ -476,8 +516,12 @@
                 "$ref": "contents/get/{game}/character_name.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_character_name"
       }
     },
     "/get/{game}/characters_achievement": {
@@ -506,8 +550,12 @@
                 "$ref": "contents/get/{game}/characters_achievement.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_achievement"
       }
     },
     "/get/{game}/characters_currency": {
@@ -536,8 +584,12 @@
                 "$ref": "contents/get/{game}/characters_currency.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_currency"
       }
     },
     "/get/{game}/characters_directive": {
@@ -569,8 +621,12 @@
                 "$ref": "contents/get/{game}/characters_directive.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_directive"
       }
     },
     "/get/{game}/characters_directive_objective": {
@@ -602,8 +658,12 @@
                 "$ref": "contents/get/{game}/characters_directive_objective.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_directive_objective"
       }
     },
     "/get/{game}/characters_directive_tier": {
@@ -635,8 +695,12 @@
                 "$ref": "contents/get/{game}/characters_directive_tier.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_directive_tier"
       }
     },
     "/get/{game}/characters_directive_tree": {
@@ -665,8 +729,12 @@
                 "$ref": "contents/get/{game}/characters_directive_tree.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_directive_tree"
       }
     },
     "/get/{game}/characters_event": {
@@ -704,8 +772,12 @@
                 "$ref": "contents/get/{game}/characters_event.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_event"
       }
     },
     "/get/{game}/characters_event_grouped": {
@@ -734,8 +806,12 @@
                 "$ref": "contents/get/{game}/characters_event_grouped.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_event_grouped"
       }
     },
     "/get/{game}/characters_friend": {
@@ -761,8 +837,12 @@
                 "$ref": "contents/get/{game}/characters_friend.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_friend"
       }
     },
     "/get/{game}/characters_item": {
@@ -791,8 +871,12 @@
                 "$ref": "contents/get/{game}/characters_item.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_item"
       }
     },
     "/get/{game}/characters_leaderboard": {
@@ -824,8 +908,12 @@
                 "$ref": "contents/get/{game}/characters_leaderboard.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_leaderboard"
       }
     },
     "/get/{game}/characters_online_status": {
@@ -851,8 +939,12 @@
                 "$ref": "contents/get/{game}/characters_online_status.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_online_status"
       }
     },
     "/get/{game}/characters_skill": {
@@ -881,8 +973,12 @@
                 "$ref": "contents/get/{game}/characters_skill.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_skill"
       }
     },
     "/get/{game}/characters_stat": {
@@ -914,8 +1010,12 @@
                 "$ref": "contents/get/{game}/characters_stat.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_stat"
       }
     },
     "/get/{game}/characters_stat_by_faction": {
@@ -947,8 +1047,12 @@
                 "$ref": "contents/get/{game}/characters_stat_by_faction.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_stat_by_faction"
       }
     },
     "/get/{game}/characters_stat_history": {
@@ -980,8 +1084,12 @@
                 "$ref": "contents/get/{game}/characters_stat_history.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_stat_history"
       }
     },
     "/get/{game}/characters_weapon_stat": {
@@ -1016,8 +1124,12 @@
                 "$ref": "contents/get/{game}/characters_weapon_stat.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_weapon_stat"
       }
     },
     "/get/{game}/characters_weapon_stat_by_faction": {
@@ -1052,8 +1164,12 @@
                 "$ref": "contents/get/{game}/characters_weapon_stat_by_faction.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_weapon_stat_by_faction"
       }
     },
     "/get/{game}/characters_world": {
@@ -1079,8 +1195,12 @@
                 "$ref": "contents/get/{game}/characters_world.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_characters_world"
       }
     },
     "/get/{game}/directive": {
@@ -1115,8 +1235,12 @@
                 "$ref": "contents/get/{game}/directive.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_directive"
       }
     },
     "/get/{game}/directive_tier": {
@@ -1148,8 +1272,12 @@
                 "$ref": "contents/get/{game}/directive_tier.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_directive_tier"
       }
     },
     "/get/{game}/directive_tree": {
@@ -1178,8 +1306,12 @@
                 "$ref": "contents/get/{game}/directive_tree.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_directive_tree"
       }
     },
     "/get/{game}/directive_tree_category": {
@@ -1205,8 +1337,12 @@
                 "$ref": "contents/get/{game}/directive_tree_category.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_directive_tree_category"
       }
     },
     "/get/{game}/empire_scores": {
@@ -1229,8 +1365,12 @@
                 "$ref": "contents/get/{game}/empire_scores.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_empire_scores"
       }
     },
     "/get/{game}/effect": {
@@ -1262,8 +1402,12 @@
                 "$ref": "contents/get/{game}/effect.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_effect"
       }
     },
     "/get/{game}/effect_type": {
@@ -1289,8 +1433,12 @@
                 "$ref": "contents/get/{game}/effect_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_effect_type"
       }
     },
     "/get/{game}/event": {
@@ -1322,8 +1470,12 @@
                 "$ref": "contents/get/{game}/event.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_event"
       }
     },
     "/get/{game}/experience": {
@@ -1349,8 +1501,12 @@
                 "$ref": "contents/get/{game}/experience.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_experience"
       }
     },
     "/get/{game}/experience_rank": {
@@ -1373,8 +1529,12 @@
                 "$ref": "contents/get/{game}/experience_rank.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_experience_rank"
       }
     },
     "/get/{game}/facility_link": {
@@ -1403,8 +1563,12 @@
                 "$ref": "contents/get/{game}/facility_link.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_facility_link"
       }
     },
     "/get/{game}/facility_type": {
@@ -1430,8 +1594,12 @@
                 "$ref": "contents/get/{game}/facility_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_facility_type"
       }
     },
     "/get/{game}/faction": {
@@ -1457,8 +1625,12 @@
                 "$ref": "contents/get/{game}/faction.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_faction"
       }
     },
     "/get/{game}/fire_group": {
@@ -1484,8 +1656,12 @@
                 "$ref": "contents/get/{game}/fire_group.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_fire_group"
       }
     },
     "/get/{game}/fire_mode": {
@@ -1514,8 +1690,12 @@
                 "$ref": "contents/get/{game}/fire_mode.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_fire_mode"
       }
     },
     "/get/{game}/fire_mode_2": {
@@ -1541,8 +1721,12 @@
                 "$ref": "contents/get/{game}/fire_mode_2.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_fire_mode_2"
       }
     },
     "/get/{game}/fire_mode_to_projectile": {
@@ -1571,8 +1755,12 @@
                 "$ref": "contents/get/{game}/fire_mode_to_projectile.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_fire_mode_to_projectile"
       }
     },
     "/get/{game}/fire_mode_type": {
@@ -1598,8 +1786,12 @@
                 "$ref": "contents/get/{game}/fire_mode_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_fire_mode_type"
       }
     },
     "/get/{game}/image": {
@@ -1625,8 +1817,12 @@
                 "$ref": "contents/get/{game}/image.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_image"
       }
     },
     "/get/{game}/image_set": {
@@ -1655,8 +1851,12 @@
                 "$ref": "contents/get/{game}/image_set.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_image_set"
       }
     },
     "/get/{game}/image_set_default": {
@@ -1685,8 +1885,12 @@
                 "$ref": "contents/get/{game}/image_set_default.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_image_set_default"
       }
     },
     "/get/{game}/item": {
@@ -1712,8 +1916,12 @@
                 "$ref": "contents/get/{game}/item.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_item"
       }
     },
     "/get/{game}/item_attachment": {
@@ -1739,8 +1947,12 @@
                 "$ref": "contents/get/{game}/item_attachment.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_item_attachment"
       }
     },
     "/get/{game}/item_category": {
@@ -1766,8 +1978,12 @@
                 "$ref": "contents/get/{game}/item_category.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_item_category"
       }
     },
     "/get/{game}/item_profile": {
@@ -1796,8 +2012,12 @@
                 "$ref": "contents/get/{game}/item_profile.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_item_profile"
       }
     },
     "/get/{game}/item_to_weapon": {
@@ -1826,8 +2046,12 @@
                 "$ref": "contents/get/{game}/item_to_weapon.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_item_to_weapon"
       }
     },
     "/get/{game}/item_type": {
@@ -1853,8 +2077,12 @@
                 "$ref": "contents/get/{game}/item_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_item_type"
       }
     },
     "/get/{game}/leaderboard": {
@@ -1886,8 +2114,12 @@
                 "$ref": "contents/get/{game}/leaderboard.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_leaderboard"
       }
     },
     "/get/{game}/loadout": {
@@ -1913,8 +2145,12 @@
                 "$ref": "contents/get/{game}/loadout.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_loadout"
       }
     },
     "/get/{game}/map": {
@@ -1949,8 +2185,12 @@
                 "$ref": "contents/get/{game}/map.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_map"
       }
     },
     "/get/{game}/map_hex": {
@@ -1976,8 +2216,12 @@
                 "$ref": "contents/get/{game}/map_hex.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_map_hex"
       }
     },
     "/get/{game}/map_region": {
@@ -2003,8 +2247,12 @@
                 "$ref": "contents/get/{game}/map_region.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_map_region"
       }
     },
     "/get/{game}/marketing_bundle": {
@@ -2030,8 +2278,12 @@
                 "$ref": "contents/get/{game}/marketing_bundle.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_marketing_bundle"
       }
     },
     "/get/{game}/marketing_bundle_item": {
@@ -2060,8 +2312,12 @@
                 "$ref": "contents/get/{game}/marketing_bundle_item.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_marketing_bundle_item"
       }
     },
     "/get/{game}/marketing_bundle_with_1_item": {
@@ -2090,8 +2346,12 @@
                 "$ref": "contents/get/{game}/marketing_bundle_with_1_item.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_marketing_bundle_with_1_item"
       }
     },
     "/get/{game}/metagame_event": {
@@ -2117,8 +2377,12 @@
                 "$ref": "contents/get/{game}/metagame_event.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_metagame_event"
       }
     },
     "/get/{game}/metagame_event_state": {
@@ -2144,8 +2408,12 @@
                 "$ref": "contents/get/{game}/metagame_event_state.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_metagame_event_state"
       }
     },
     "/get/{game}/objective": {
@@ -2177,8 +2445,12 @@
                 "$ref": "contents/get/{game}/objective.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_objective"
       }
     },
     "/get/{game}/objective_set_to_objective": {
@@ -2207,8 +2479,12 @@
                 "$ref": "contents/get/{game}/objective_set_to_objective.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_objective_set_to_objective"
       }
     },
     "/get/{game}/objective_type": {
@@ -2234,8 +2510,12 @@
                 "$ref": "contents/get/{game}/objective_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_objective_type"
       }
     },
     "/get/{game}/outfit": {
@@ -2261,8 +2541,12 @@
                 "$ref": "contents/get/{game}/outfit.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_outfit"
       }
     },
     "/get/{game}/outfit_member": {
@@ -2291,8 +2575,12 @@
                 "$ref": "contents/get/{game}/outfit_member.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_outfit_member"
       }
     },
     "/get/{game}/outfit_member_extended": {
@@ -2321,8 +2609,12 @@
                 "$ref": "contents/get/{game}/outfit_member_extended.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_outfit_member_extended"
       }
     },
     "/get/{game}/outfit_rank": {
@@ -2348,8 +2640,12 @@
                 "$ref": "contents/get/{game}/outfit_rank.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_outfit_rank"
       }
     },
     "/get/{game}/profile": {
@@ -2378,8 +2674,12 @@
                 "$ref": "contents/get/{game}/profile.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_profile"
       }
     },
     "/get/{game}/profile_2": {
@@ -2405,8 +2705,12 @@
                 "$ref": "contents/get/{game}/profile_2.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_profile_2"
       }
     },
     "/get/{game}/profile_armor_map": {
@@ -2435,8 +2739,12 @@
                 "$ref": "contents/get/{game}/profile_armor_map.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_profile_armor_map"
       }
     },
     "/get/{game}/profile_resist_map": {
@@ -2465,8 +2773,12 @@
                 "$ref": "contents/get/{game}/profile_resist_map.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_profile_resist_map"
       }
     },
     "/get/{game}/projectile": {
@@ -2492,8 +2804,12 @@
                 "$ref": "contents/get/{game}/projectile.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_projectile"
       }
     },
     "/get/{game}/projectile_flight_type": {
@@ -2519,8 +2835,12 @@
                 "$ref": "contents/get/{game}/projectile_flight_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_projectile_flight_type"
       }
     },
     "/get/{game}/region": {
@@ -2549,8 +2869,12 @@
                 "$ref": "contents/get/{game}/region.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_region"
       }
     },
     "/get/{game}/resist_info": {
@@ -2576,8 +2900,12 @@
                 "$ref": "contents/get/{game}/resist_info.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_resist_info"
       }
     },
     "/get/{game}/resist_type": {
@@ -2603,8 +2931,12 @@
                 "$ref": "contents/get/{game}/resist_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_resist_type"
       }
     },
     "/get/{game}/resource_type": {
@@ -2630,8 +2962,12 @@
                 "$ref": "contents/get/{game}/resource_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_resource_type"
       }
     },
     "/get/{game}/reward": {
@@ -2660,8 +2996,12 @@
                 "$ref": "contents/get/{game}/reward.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_reward"
       }
     },
     "/get/{game}/reward_group_to_reward": {
@@ -2690,8 +3030,12 @@
                 "$ref": "contents/get/{game}/reward_group_to_reward.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_reward_group_to_reward"
       }
     },
     "/get/{game}/reward_set_to_reward_group": {
@@ -2720,8 +3064,12 @@
                 "$ref": "contents/get/{game}/reward_set_to_reward_group.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_reward_set_to_reward_group"
       }
     },
     "/get/{game}/reward_type": {
@@ -2747,8 +3095,12 @@
                 "$ref": "contents/get/{game}/reward_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_reward_type"
       }
     },
     "/get/{game}/single_character_by_id": {
@@ -2774,8 +3126,12 @@
                 "$ref": "contents/get/{game}/single_character_by_id.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_single_character_by_id"
       }
     },
     "/get/{game}/skill": {
@@ -2804,8 +3160,12 @@
                 "$ref": "contents/get/{game}/skill.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_skill"
       }
     },
     "/get/{game}/skill_line": {
@@ -2834,8 +3194,12 @@
                 "$ref": "contents/get/{game}/skill_line.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_skill_line"
       }
     },
     "/get/{game}/skill_category": {
@@ -2864,8 +3228,12 @@
                 "$ref": "contents/get/{game}/skill_category.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_skill_category"
       }
     },
     "/get/{game}/skill_set": {
@@ -2891,8 +3259,12 @@
                 "$ref": "contents/get/{game}/skill_set.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_skill_set"
       }
     },
     "/get/{game}/target_type": {
@@ -2918,8 +3290,12 @@
                 "$ref": "contents/get/{game}/target_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_target_type"
       }
     },
     "/get/{game}/title": {
@@ -2945,8 +3321,12 @@
                 "$ref": "contents/get/{game}/title.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_title"
       }
     },
     "/get/{game}/vehicle": {
@@ -2972,8 +3352,12 @@
                 "$ref": "contents/get/{game}/vehicle.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_vehicle"
       }
     },
     "/get/{game}/vehicle_attachment": {
@@ -3005,8 +3389,12 @@
                 "$ref": "contents/get/{game}/vehicle_attachment.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_vehicle_attachment"
       }
     },
     "/get/{game}/vehicle_faction": {
@@ -3035,8 +3423,12 @@
                 "$ref": "contents/get/{game}/vehicle_faction.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_vehicle_faction"
       }
     },
     "/get/{game}/vehicle_skill_set": {
@@ -3065,8 +3457,12 @@
                 "$ref": "contents/get/{game}/vehicle_skill_set.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_vehicle_skill_set"
       }
     },
     "/get/{game}/weapon": {
@@ -3092,8 +3488,12 @@
                 "$ref": "contents/get/{game}/weapon.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_weapon"
       }
     },
     "/get/{game}/weapon_ammo_slot": {
@@ -3119,8 +3519,12 @@
                 "$ref": "contents/get/{game}/weapon_ammo_slot.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_weapon_ammo_slot"
       }
     },
     "/get/{game}/weapon_datasheet": {
@@ -3146,8 +3550,12 @@
                 "$ref": "contents/get/{game}/weapon_datasheet.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_weapon_datasheet"
       }
     },
     "/get/{game}/weapon_to_attachment": {
@@ -3173,8 +3581,12 @@
                 "$ref": "contents/get/{game}/weapon_to_attachment.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_weapon_to_attachment"
       }
     },
     "/get/{game}/weapon_to_fire_group": {
@@ -3203,8 +3615,12 @@
                 "$ref": "contents/get/{game}/weapon_to_fire_group.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_weapon_to_fire_group"
       }
     },
     "/get/{game}/world": {
@@ -3230,8 +3646,12 @@
                 "$ref": "contents/get/{game}/world.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_world"
       }
     },
     "/get/{game}/world_event": {
@@ -3269,8 +3689,12 @@
                 "$ref": "contents/get/{game}/world_event.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_world_event"
       }
     },
     "/get/{game}/world_stat_history": {
@@ -3296,8 +3720,12 @@
                 "$ref": "contents/get/{game}/world_stat_history.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_world_stat_history"
       }
     },
     "/get/{game}/zone": {
@@ -3323,8 +3751,12 @@
                 "$ref": "contents/get/{game}/zone.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_zone"
       }
     },
     "/get/{game}/zone_effect": {
@@ -3353,8 +3785,12 @@
                 "$ref": "contents/get/{game}/zone_effect.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_zone_effect"
       }
     },
     "/get/{game}/zone_effect_type": {
@@ -3380,8 +3816,12 @@
                 "$ref": "contents/get/{game}/zone_effect_type.yaml"
               }
             }
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
           }
-        }
+        },
+        "operationId": "get_zone_effect_type"
       }
     }
   },
