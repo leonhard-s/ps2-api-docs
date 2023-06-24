@@ -6456,7 +6456,7 @@
         "x-cast-to": "int32"
       },
       "skillLineIdParam": {
-        "name": "skill_id",
+        "name": "skill_line_id",
         "in": "query",
         "description": "Unique identifier of a skill line.",
         "schema": {
