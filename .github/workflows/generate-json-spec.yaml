@@ -25,6 +25,10 @@ jobs:
         id: git-check
         run: |
           git diff --quiet --exit-code
+      - name: Apply changes
+        if: steps.git-check.outputs.exit_code != 0
+        continue-on-error: true
+        run: |
           git add --force ./generated/openapi.json
           git commit -m "Update monolithic JSON spec" --allow-empty
       - name: Push changes
