@@ -1,0 +1,21 @@
+{
+  "outfit_member_extended_list": [
+    {
+      "character_id": "5428010618015197505",
+      "member_since": "1413001215",
+      "member_since_date": "2014-10-11 04:20:15.0",
+      "member_rank": "Leader",
+      "member_rank_ordinal": "1",
+      "outfit_id": "37525047953333155",
+      "name": "Friday Night Ops",
+      "name_lower": "friday night ops",
+      "alias": "FNO",
+      "alias_lower": "fno",
+      "time_created": "1413001215",
+      "time_created_date": "2014-10-11 04:20:15.0",
+      "leader_character_id": "5428010618015197505",
+      "member_count": "5"
+    }
+  ],
+  "returned": 1
+}

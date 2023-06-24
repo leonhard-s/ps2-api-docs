@@ -1,0 +1,26 @@
+{
+  "characters_friend_list": [
+    {
+      "character_id": "5428010618015189601",
+      "name": null,
+      "friend_list": [
+        {
+          "character_id": "5428010618014254785",
+          "last_login_time": "1679721693",
+          "online": "0"
+        },
+        {
+          "character_id": "5428010618014429969",
+          "last_login_time": "1658899596",
+          "online": "0"
+        },
+        {
+          "character_id": "5428010618015193969",
+          "last_login_time": "1679718619",
+          "online": "0"
+        }
+      ]
+    }
+  ],
+  "returned": 1
+}

@@ -1,0 +1,31 @@
+{
+  "achievement_list": [
+    {
+      "achievement_id": "2554",
+      "item_id": "0",
+      "objective_group_id": "2554",
+      "reward_id": "3019",
+      "repeatable": "1",
+      "name": {
+        "de": "Heilung l\u00e4uft",
+        "en": "Healing",
+        "es": "Curaci\u00f3n",
+        "fr": "Gu\u00e9rison en cours",
+        "it": "Guarigione",
+        "tr": "\u0130yile\u015ftiriliyor"
+      },
+      "description": {
+        "de": "Sanit\u00e4ter k\u00f6nnen schnell den Schaden heilen, der verb\u00fcndeten Truppen zugef\u00fcgt wurde und sie dadurch l\u00e4nger im Kampf behalten.",
+        "en": "Medics can quickly heal damage that has been done to allied troops keeping in the fight longer.",
+        "es": "Los m\u00e9dicos pueden curar a las tropas aliadas r\u00e1pidamente para mantenerlas m\u00e1s tiempo en combate.",
+        "fr": "Les M\u00e9decins peuvent gu\u00e9rir rapidement les d\u00e9g\u00e2ts inflig\u00e9s aux troupes alli\u00e9es et les garder plus longtemps au combat. ",
+        "it": "I medici possono velocemente guarire i danni inferti alle truppe alleate facendole restare pi\u00f9 a lungo nel combattimento.",
+        "tr": "S\u0131hh\u0131yeler m\u00fcttefik askerlerin daha uzun s\u00fcre sava\u015fmalar\u0131n\u0131 sa\u011flamak i\u00e7in h\u0131zl\u0131ca yaralar\u0131 sarabilirler."
+      },
+      "image_set_id": "7996",
+      "image_id": "8440",
+      "image_path": "/files/ps2/images/static/8440.png"
+    }
+  ],
+  "returned": 1
+}

@@ -1,0 +1,35 @@
+{
+  "profile_armor_map_list": [
+    {
+      "profile_id": "29",
+      "armor_info_id": "40",
+      "rank": "1"
+    },
+    {
+      "profile_id": "29",
+      "armor_info_id": "41",
+      "rank": "1"
+    },
+    {
+      "profile_id": "29",
+      "armor_info_id": "42",
+      "rank": "1"
+    },
+    {
+      "profile_id": "29",
+      "armor_info_id": "43",
+      "rank": "1"
+    },
+    {
+      "profile_id": "29",
+      "armor_info_id": "44",
+      "rank": "1"
+    },
+    {
+      "profile_id": "29",
+      "armor_info_id": "45",
+      "rank": "1"
+    }
+  ],
+  "returned": 6
+}

@@ -1,0 +1,21 @@
+{
+  "reward_group_to_reward_list": [
+    {
+      "reward_group_id": "10074",
+      "reward_id": "4771"
+    },
+    {
+      "reward_group_id": "10074",
+      "reward_id": "4772"
+    },
+    {
+      "reward_group_id": "10074",
+      "reward_id": "4773"
+    },
+    {
+      "reward_group_id": "10074",
+      "reward_id": "6699"
+    }
+  ],
+  "returned": 4
+}

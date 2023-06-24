@@ -1,0 +1,22 @@
+{
+  "facility_link_list": [
+    {
+      "zone_id": "2",
+      "facility_id_a": "7801",
+      "facility_id_b": "201"
+    },
+    {
+      "zone_id": "2",
+      "facility_id_a": "7801",
+      "facility_id_b": "209",
+      "description": "Indar - WG.Ocean to SO10.CraterFiringRange"
+    },
+    {
+      "zone_id": "2",
+      "facility_id_a": "7801",
+      "facility_id_b": "210",
+      "description": "Indar - WG.Ocean to SO11.AlkaliStorage"
+    }
+  ],
+  "returned": 3
+}

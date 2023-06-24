@@ -1,0 +1,39 @@
+{
+  "effect_list": [
+    {
+      "effect_id": "249",
+      "effect_type_id": "40",
+      "target_type_id": "3",
+      "resist_type_id": "6",
+      "is_drain": "0",
+      "duration_seconds": "0",
+      "param1": "75",
+      "param2": "1",
+      "param3": "25",
+      "param5": "3",
+      "param6": "0",
+      "param7": "0",
+      "param8": "0",
+      "param9": "0",
+      "param13": "75"
+    },
+    {
+      "effect_id": "7540",
+      "effect_type_id": "45",
+      "ability_id": "0",
+      "target_type_id": "2",
+      "resist_type_id": "2",
+      "is_drain": "0",
+      "duration_seconds": "0",
+      "param1": "155",
+      "param2": "10",
+      "param3": "105",
+      "param5": "65",
+      "param6": "0",
+      "param7": "0",
+      "param8": "0",
+      "param9": "0"
+    }
+  ],
+  "returned": 2
+}

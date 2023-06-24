@@ -1,0 +1,16 @@
+{
+  "objective_type_list": [
+    {
+      "objective_type_id": "12",
+      "description": "Total Kill Count",
+      "param1": "Kill Count",
+      "param2": "Npc",
+      "param3": "Npc Classification",
+      "param4": "Vehicle",
+      "param5": "Item",
+      "param6": "Item Classification",
+      "param8": "Friendly Fire"
+    }
+  ],
+  "returned": 1
+}

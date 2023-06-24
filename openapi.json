@@ -144,13 +144,19 @@
                 },
                 "examples": {
                   "character": {
-                    "$ref": "#/components/examples/datatype_character"
+                    "value": {
+                      "$ref": "examples/datatype_character.json"
+                    }
                   },
                   "outfitMember": {
-                    "$ref": "#/components/examples/datatype_outfitMember"
+                    "value": {
+                      "$ref": "examples/datatype_outfitMember.json"
+                    }
                   },
                   "characterOnlineStatus": {
-                    "$ref": "#/components/examples/datatype_characterOnlineStatus"
+                    "value": {
+                      "$ref": "examples/datatype_characterOnlineStatus.json"
+                    }
                   }
                 }
               }
@@ -189,10 +195,14 @@
                 },
                 "examples": {
                   "success": {
-                    "$ref": "#/components/examples/count_success"
+                    "value": {
+                      "$ref": "examples/count_success.json"
+                    }
                   },
                   "error": {
-                    "$ref": "#/components/examples/count_error"
+                    "value": {
+                      "$ref": "examples/count_error.json"
+                    }
                   }
                 }
               }
@@ -299,13 +309,19 @@
                 },
                 "examples": {
                   "characterInfo": {
-                    "$ref": "#/components/examples/collection_characterInfo"
+                    "value": {
+                      "$ref": "examples/collection_characterInfo.json"
+                    }
                   },
                   "factionTags": {
-                    "$ref": "#/components/examples/collection_factionTags"
+                    "value": {
+                      "$ref": "examples/collection_factionTags.json"
+                    }
                   },
                   "mapFacilities": {
-                    "$ref": "#/components/examples/collection_mapFacilities"
+                    "value": {
+                      "$ref": "examples/collection_mapFacilities.json"
+                    }
                   }
                 }
               }
@@ -354,7 +370,9 @@
                 },
                 "examples": {
                   "ability": {
-                    "$ref": "#/components/examples/ability"
+                    "value": {
+                      "$ref": "examples/ability.json"
+                    }
                   }
                 }
               }
@@ -400,7 +418,9 @@
                 },
                 "examples": {
                   "ability_type": {
-                    "$ref": "#/components/examples/ability_type"
+                    "value": {
+                      "$ref": "examples/ability_type.json"
+                    }
                   }
                 }
               }
@@ -449,10 +469,14 @@
                 },
                 "examples": {
                   "medals": {
-                    "$ref": "#/components/examples/achievement_medals"
+                    "value": {
+                      "$ref": "examples/achievement_medals.json"
+                    }
                   },
                   "ribbon": {
-                    "$ref": "#/components/examples/achievement_ribbon"
+                    "value": {
+                      "$ref": "examples/achievement_ribbon.json"
+                    }
                   }
                 }
               }
@@ -507,7 +531,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/character_higby"
+                    "value": {
+                      "$ref": "examples/character_higby.json"
+                    }
                   }
                 }
               }
@@ -553,7 +579,9 @@
                 },
                 "examples": {
                   "nanites": {
-                    "$ref": "#/components/examples/currency"
+                    "value": {
+                      "$ref": "examples/currency.json"
+                    }
                   }
                 }
               }
@@ -599,7 +627,9 @@
                 },
                 "examples": {
                   "armor_facing": {
-                    "$ref": "#/components/examples/armor_facing"
+                    "value": {
+                      "$ref": "examples/armor_facing.json"
+                    }
                   }
                 }
               }
@@ -648,7 +678,9 @@
                 },
                 "examples": {
                   "armor_info": {
-                    "$ref": "#/components/examples/armor_info"
+                    "value": {
+                      "$ref": "examples/armor_info.json"
+                    }
                   }
                 }
               }
@@ -700,7 +732,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/character_name_higby"
+                    "value": {
+                      "$ref": "examples/character_name_higby.json"
+                    }
                   }
                 }
               }
@@ -749,10 +783,14 @@
                 },
                 "examples": {
                   "medal": {
-                    "$ref": "#/components/examples/characters_achievement_medal"
+                    "value": {
+                      "$ref": "examples/characters_achievement_medal.json"
+                    }
                   },
                   "ribbon": {
-                    "$ref": "#/components/examples/characters_achievement_ribbon"
+                    "value": {
+                      "$ref": "examples/characters_achievement_ribbon.json"
+                    }
                   }
                 }
               }
@@ -801,7 +839,9 @@
                 },
                 "examples": {
                   "currency": {
-                    "$ref": "#/components/examples/characters_currency"
+                    "value": {
+                      "$ref": "examples/characters_currency.json"
+                    }
                   }
                 }
               }
@@ -853,7 +893,9 @@
                 },
                 "examples": {
                   "directive": {
-                    "$ref": "#/components/examples/characters_directive"
+                    "value": {
+                      "$ref": "examples/characters_directive.json"
+                    }
                   }
                 }
               }
@@ -905,7 +947,9 @@
                 },
                 "examples": {
                   "directive_objective": {
-                    "$ref": "#/components/examples/characters_directive_objective"
+                    "value": {
+                      "$ref": "examples/characters_directive_objective.json"
+                    }
                   }
                 }
               }
@@ -957,7 +1001,9 @@
                 },
                 "examples": {
                   "directive_tier": {
-                    "$ref": "#/components/examples/characters_directive_tier"
+                    "value": {
+                      "$ref": "examples/characters_directive_tier.json"
+                    }
                   }
                 }
               }
@@ -1006,7 +1052,9 @@
                 },
                 "examples": {
                   "directive_tree": {
-                    "$ref": "#/components/examples/characters_directive_tree"
+                    "value": {
+                      "$ref": "examples/characters_directive_tree.json"
+                    }
                   }
                 }
               }
@@ -1149,7 +1197,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/characters_friend"
+                    "value": {
+                      "$ref": "examples/characters_friend.json"
+                    }
                   }
                 }
               }
@@ -1198,7 +1248,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/characters_item"
+                    "value": {
+                      "$ref": "examples/characters_item.json"
+                    }
                   }
                 }
               }
@@ -1302,7 +1354,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/characters_online_status"
+                    "value": {
+                      "$ref": "examples/characters_online_status.json"
+                    }
                   }
                 }
               }
@@ -1351,7 +1405,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/characters_skill"
+                    "value": {
+                      "$ref": "examples/characters_skill.json"
+                    }
                   }
                 }
               }
@@ -1403,7 +1459,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/characters_stat"
+                    "value": {
+                      "$ref": "examples/characters_stat.json"
+                    }
                   }
                 }
               }
@@ -1455,7 +1513,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/characters_stat_by_faction"
+                    "value": {
+                      "$ref": "examples/characters_stat_by_faction.json"
+                    }
                   }
                 }
               }
@@ -1507,7 +1567,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/characters_stat_history"
+                    "value": {
+                      "$ref": "examples/characters_stat_history.json"
+                    }
                   }
                 }
               }
@@ -1562,10 +1624,14 @@
                 },
                 "examples": {
                   "weapon": {
-                    "$ref": "#/components/examples/characters_weapon_stat_infantry_weapon"
+                    "value": {
+                      "$ref": "examples/characters_weapon_stat_infantry_weapon.json"
+                    }
                   },
                   "vehicle": {
-                    "$ref": "#/components/examples/characters_weapon_stat_vehicle"
+                    "value": {
+                      "$ref": "examples/characters_weapon_stat_vehicle.json"
+                    }
                   }
                 }
               }
@@ -1620,10 +1686,14 @@
                 },
                 "examples": {
                   "weapon": {
-                    "$ref": "#/components/examples/characters_weapon_stat_by_faction_infantry_weapon"
+                    "value": {
+                      "$ref": "examples/characters_weapon_stat_by_faction_infantry_weapon.json"
+                    }
                   },
                   "vehicle": {
-                    "$ref": "#/components/examples/characters_weapon_stat_by_faction_vehicle"
+                    "value": {
+                      "$ref": "examples/characters_weapon_stat_by_faction_vehicle.json"
+                    }
                   }
                 }
               }
@@ -1669,7 +1739,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/characters_world"
+                    "value": {
+                      "$ref": "examples/characters_world.json"
+                    }
                   }
                 }
               }
@@ -1724,7 +1796,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/directive"
+                    "value": {
+                      "$ref": "examples/directive.json"
+                    }
                   }
                 }
               }
@@ -1776,7 +1850,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/directive_tier"
+                    "value": {
+                      "$ref": "examples/directive_tier.json"
+                    }
                   }
                 }
               }
@@ -1825,7 +1901,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/directive_tree"
+                    "value": {
+                      "$ref": "examples/directive_tree.json"
+                    }
                   }
                 }
               }
@@ -1871,7 +1949,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/directive_tree_category"
+                    "value": {
+                      "$ref": "examples/directive_tree_category.json"
+                    }
                   }
                 }
               }
@@ -1914,7 +1994,9 @@
                 },
                 "examples": {
                   "higby": {
-                    "$ref": "#/components/examples/empire_scores"
+                    "value": {
+                      "$ref": "examples/empire_scores.json"
+                    }
                   }
                 }
               }
@@ -1966,7 +2048,9 @@
                 },
                 "examples": {
                   "effect": {
-                    "$ref": "#/components/examples/effect"
+                    "value": {
+                      "$ref": "examples/effect.json"
+                    }
                   }
                 }
               }
@@ -2012,7 +2096,9 @@
                 },
                 "examples": {
                   "effect_type": {
-                    "$ref": "#/components/examples/effect_type"
+                    "value": {
+                      "$ref": "examples/effect_type.json"
+                    }
                   }
                 }
               }
@@ -2105,7 +2191,9 @@
                 },
                 "examples": {
                   "experience": {
-                    "$ref": "#/components/examples/experience"
+                    "value": {
+                      "$ref": "examples/experience.json"
+                    }
                   }
                 }
               }
@@ -2148,7 +2236,9 @@
                 },
                 "examples": {
                   "experience_rank": {
-                    "$ref": "#/components/examples/experience_rank"
+                    "value": {
+                      "$ref": "examples/experience_rank.json"
+                    }
                   }
                 }
               }
@@ -2197,7 +2287,9 @@
                 },
                 "examples": {
                   "facility_link": {
-                    "$ref": "#/components/examples/facility_link"
+                    "value": {
+                      "$ref": "examples/facility_link.json"
+                    }
                   }
                 }
               }
@@ -2243,7 +2335,9 @@
                 },
                 "examples": {
                   "facility_type": {
-                    "$ref": "#/components/examples/facility_type"
+                    "value": {
+                      "$ref": "examples/facility_type.json"
+                    }
                   }
                 }
               }
@@ -2289,7 +2383,9 @@
                 },
                 "examples": {
                   "tr": {
-                    "$ref": "#/components/examples/faction"
+                    "value": {
+                      "$ref": "examples/faction.json"
+                    }
                   }
                 }
               }
@@ -2335,13 +2431,19 @@
                 },
                 "examples": {
                   "chamber": {
-                    "$ref": "#/components/examples/fire_group_chamber"
+                    "value": {
+                      "$ref": "examples/fire_group_chamber.json"
+                    }
                   },
                   "regular": {
-                    "$ref": "#/components/examples/fire_group_regular"
+                    "value": {
+                      "$ref": "examples/fire_group_regular.json"
+                    }
                   },
                   "spool": {
-                    "$ref": "#/components/examples/fire_group_spool"
+                    "value": {
+                      "$ref": "examples/fire_group_spool.json"
+                    }
                   }
                 }
               }
@@ -2390,7 +2492,9 @@
                 },
                 "examples": {
                   "fire_mode": {
-                    "$ref": "#/components/examples/fire_mode"
+                    "value": {
+                      "$ref": "examples/fire_mode.json"
+                    }
                   }
                 }
               }
@@ -2436,19 +2540,29 @@
                 },
                 "examples": {
                   "NS-11A": {
-                    "$ref": "#/components/examples/fire_mode_2_ns11a"
+                    "value": {
+                      "$ref": "examples/fire_mode_2_ns11a.json"
+                    }
                   },
                   "Lasher X2": {
-                    "$ref": "#/components/examples/fire_mode_2_lasherx2"
+                    "value": {
+                      "$ref": "examples/fire_mode_2_lasherx2.json"
+                    }
                   },
                   "HAWK GD-68": {
-                    "$ref": "#/components/examples/fire_mode_2_hawkgd68"
+                    "value": {
+                      "$ref": "examples/fire_mode_2_hawkgd68.json"
+                    }
                   },
                   "Betelgeuse 54-A": {
-                    "$ref": "#/components/examples/fire_mode_2_betelgeuse54a"
+                    "value": {
+                      "$ref": "examples/fire_mode_2_betelgeuse54a.json"
+                    }
                   },
                   "G30 Vulcan": {
-                    "$ref": "#/components/examples/fire_mode_2_g30vulcan"
+                    "value": {
+                      "$ref": "examples/fire_mode_2_g30vulcan.json"
+                    }
                   }
                 }
               }
@@ -2497,7 +2611,9 @@
                 },
                 "examples": {
                   "fire_mode_to_projectile": {
-                    "$ref": "#/components/examples/fire_mode_to_projectile"
+                    "value": {
+                      "$ref": "examples/fire_mode_to_projectile.json"
+                    }
                   }
                 }
               }
@@ -2543,7 +2659,9 @@
                 },
                 "examples": {
                   "fire_mode_type": {
-                    "$ref": "#/components/examples/fire_mode_type"
+                    "value": {
+                      "$ref": "examples/fire_mode_type.json"
+                    }
                   }
                 }
               }
@@ -2589,7 +2707,9 @@
                 },
                 "examples": {
                   "image": {
-                    "$ref": "#/components/examples/image"
+                    "value": {
+                      "$ref": "examples/image.json"
+                    }
                   }
                 }
               }
@@ -2638,7 +2758,9 @@
                 },
                 "examples": {
                   "image_set": {
-                    "$ref": "#/components/examples/image_set"
+                    "value": {
+                      "$ref": "examples/image_set.json"
+                    }
                   }
                 }
               }
@@ -2687,7 +2809,9 @@
                 },
                 "examples": {
                   "image_set_default": {
-                    "$ref": "#/components/examples/image_set_default"
+                    "value": {
+                      "$ref": "examples/image_set_default.json"
+                    }
                   }
                 }
               }
@@ -2733,7 +2857,9 @@
                 },
                 "examples": {
                   "knife": {
-                    "$ref": "#/components/examples/item"
+                    "value": {
+                      "$ref": "examples/item.json"
+                    }
                   }
                 }
               }
@@ -2779,7 +2905,9 @@
                 },
                 "examples": {
                   "knife": {
-                    "$ref": "#/components/examples/item_attachment"
+                    "value": {
+                      "$ref": "examples/item_attachment.json"
+                    }
                   }
                 }
               }
@@ -2825,7 +2953,9 @@
                 },
                 "examples": {
                   "knife": {
-                    "$ref": "#/components/examples/item_category"
+                    "value": {
+                      "$ref": "examples/item_category.json"
+                    }
                   }
                 }
               }
@@ -2874,7 +3004,9 @@
                 },
                 "examples": {
                   "knife": {
-                    "$ref": "#/components/examples/item_profile"
+                    "value": {
+                      "$ref": "examples/item_profile.json"
+                    }
                   }
                 }
               }
@@ -2923,7 +3055,9 @@
                 },
                 "examples": {
                   "knife": {
-                    "$ref": "#/components/examples/item_to_weapon"
+                    "value": {
+                      "$ref": "examples/item_to_weapon.json"
+                    }
                   }
                 }
               }
@@ -2969,7 +3103,9 @@
                 },
                 "examples": {
                   "knife": {
-                    "$ref": "#/components/examples/item_type"
+                    "value": {
+                      "$ref": "examples/item_type.json"
+                    }
                   }
                 }
               }
@@ -3028,7 +3164,9 @@
                 },
                 "examples": {
                   "cobalt_all_time_kills": {
-                    "$ref": "#/components/examples/leaderboard"
+                    "value": {
+                      "$ref": "examples/leaderboard.json"
+                    }
                   }
                 }
               }
@@ -3074,7 +3212,9 @@
                 },
                 "examples": {
                   "ncInfiltrator": {
-                    "$ref": "#/components/examples/loadout"
+                    "value": {
+                      "$ref": "examples/loadout.json"
+                    }
                   }
                 }
               }
@@ -3129,7 +3269,9 @@
                 },
                 "examples": {
                   "indar": {
-                    "$ref": "#/components/examples/map"
+                    "value": {
+                      "$ref": "examples/map.json"
+                    }
                   }
                 }
               }
@@ -3175,7 +3317,9 @@
                 },
                 "examples": {
                   "indar": {
-                    "$ref": "#/components/examples/map_hex"
+                    "value": {
+                      "$ref": "examples/map_hex.json"
+                    }
                   }
                 }
               }
@@ -3221,7 +3365,9 @@
                 },
                 "examples": {
                   "indar": {
-                    "$ref": "#/components/examples/map_region"
+                    "value": {
+                      "$ref": "examples/map_region.json"
+                    }
                   }
                 }
               }
@@ -3267,7 +3413,9 @@
                 },
                 "examples": {
                   "ns15mBundle": {
-                    "$ref": "#/components/examples/marketing_bundle"
+                    "value": {
+                      "$ref": "examples/marketing_bundle.json"
+                    }
                   }
                 }
               }
@@ -3316,7 +3464,9 @@
                 },
                 "examples": {
                   "ns15mBundle": {
-                    "$ref": "#/components/examples/marketing_bundle_item"
+                    "value": {
+                      "$ref": "examples/marketing_bundle_item.json"
+                    }
                   }
                 }
               }
@@ -3365,7 +3515,9 @@
                 },
                 "examples": {
                   "ns15mBundle": {
-                    "$ref": "#/components/examples/marketing_bundle_with_1_item"
+                    "value": {
+                      "$ref": "examples/marketing_bundle_with_1_item.json"
+                    }
                   }
                 }
               }
@@ -3411,7 +3563,9 @@
                 },
                 "examples": {
                   "ns15mBundle": {
-                    "$ref": "#/components/examples/metagame_event"
+                    "value": {
+                      "$ref": "examples/metagame_event.json"
+                    }
                   }
                 }
               }
@@ -3457,7 +3611,9 @@
                 },
                 "examples": {
                   "ns15mBundle": {
-                    "$ref": "#/components/examples/metagame_event_state"
+                    "value": {
+                      "$ref": "examples/metagame_event_state.json"
+                    }
                   }
                 }
               }
@@ -3509,7 +3665,9 @@
                 },
                 "examples": {
                   "ns15mBundle": {
-                    "$ref": "#/components/examples/objective"
+                    "value": {
+                      "$ref": "examples/objective.json"
+                    }
                   }
                 }
               }
@@ -3558,7 +3716,9 @@
                 },
                 "examples": {
                   "ns15mBundle": {
-                    "$ref": "#/components/examples/objective_set_to_objective"
+                    "value": {
+                      "$ref": "examples/objective_set_to_objective.json"
+                    }
                   }
                 }
               }
@@ -3604,7 +3764,9 @@
                 },
                 "examples": {
                   "capturePoint": {
-                    "$ref": "#/components/examples/objective_type"
+                    "value": {
+                      "$ref": "examples/objective_type.json"
+                    }
                   }
                 }
               }
@@ -3650,7 +3812,9 @@
                 },
                 "examples": {
                   "fno": {
-                    "$ref": "#/components/examples/outfit"
+                    "value": {
+                      "$ref": "examples/outfit.json"
+                    }
                   }
                 }
               }
@@ -3699,7 +3863,9 @@
                 },
                 "examples": {
                   "luperza": {
-                    "$ref": "#/components/examples/outfit_member"
+                    "value": {
+                      "$ref": "examples/outfit_member.json"
+                    }
                   }
                 }
               }
@@ -3748,7 +3914,9 @@
                 },
                 "examples": {
                   "luperza": {
-                    "$ref": "#/components/examples/outfit_member_extended"
+                    "value": {
+                      "$ref": "examples/outfit_member_extended.json"
+                    }
                   }
                 }
               }
@@ -3794,7 +3962,9 @@
                 },
                 "examples": {
                   "fno": {
-                    "$ref": "#/components/examples/outfit_rank"
+                    "value": {
+                      "$ref": "examples/outfit_rank.json"
+                    }
                   }
                 }
               }
@@ -3839,7 +4009,9 @@
                 },
                 "examples": {
                   "trLightAssault": {
-                    "$ref": "#/components/examples/profile"
+                    "value": {
+                      "$ref": "examples/profile.json"
+                    }
                   }
                 }
               }
@@ -3881,7 +4053,9 @@
                 },
                 "examples": {
                   "sunderer": {
-                    "$ref": "#/components/examples/profile_2"
+                    "value": {
+                      "$ref": "examples/profile_2.json"
+                    }
                   }
                 }
               }
@@ -3930,7 +4104,9 @@
                 },
                 "examples": {
                   "magrider": {
-                    "$ref": "#/components/examples/profile_armor_map"
+                    "value": {
+                      "$ref": "examples/profile_armor_map.json"
+                    }
                   }
                 }
               }
@@ -3979,7 +4155,9 @@
                 },
                 "examples": {
                   "lightning": {
-                    "$ref": "#/components/examples/profile_resist_map"
+                    "value": {
+                      "$ref": "examples/profile_resist_map.json"
+                    }
                   }
                 }
               }
@@ -4025,7 +4203,9 @@
                 },
                 "examples": {
                   "projectile": {
-                    "$ref": "#/components/examples/projectile"
+                    "value": {
+                      "$ref": "examples/projectile.json"
+                    }
                   }
                 }
               }
@@ -4071,7 +4251,9 @@
                 },
                 "examples": {
                   "projectile_flight_type": {
-                    "$ref": "#/components/examples/projectile_flight_type"
+                    "value": {
+                      "$ref": "examples/projectile_flight_type.json"
+                    }
                   }
                 }
               }
@@ -4120,7 +4302,9 @@
                 },
                 "examples": {
                   "region": {
-                    "$ref": "#/components/examples/region"
+                    "value": {
+                      "$ref": "examples/region.json"
+                    }
                   }
                 }
               }
@@ -4166,7 +4350,9 @@
                 },
                 "examples": {
                   "resist_info": {
-                    "$ref": "#/components/examples/resist_info"
+                    "value": {
+                      "$ref": "examples/resist_info.json"
+                    }
                   }
                 }
               }
@@ -4212,7 +4398,9 @@
                 },
                 "examples": {
                   "resist_type": {
-                    "$ref": "#/components/examples/resist_type"
+                    "value": {
+                      "$ref": "examples/resist_type.json"
+                    }
                   }
                 }
               }
@@ -4258,7 +4446,9 @@
                 },
                 "examples": {
                   "resource_type": {
-                    "$ref": "#/components/examples/resource_type"
+                    "value": {
+                      "$ref": "examples/resource_type.json"
+                    }
                   }
                 }
               }
@@ -4307,7 +4497,9 @@
                 },
                 "examples": {
                   "reward": {
-                    "$ref": "#/components/examples/reward"
+                    "value": {
+                      "$ref": "examples/reward.json"
+                    }
                   }
                 }
               }
@@ -4356,7 +4548,9 @@
                 },
                 "examples": {
                   "reward_group_to_reward": {
-                    "$ref": "#/components/examples/reward_group_to_reward"
+                    "value": {
+                      "$ref": "examples/reward_group_to_reward.json"
+                    }
                   }
                 }
               }
@@ -4405,7 +4599,9 @@
                 },
                 "examples": {
                   "reward_set_to_reward_group": {
-                    "$ref": "#/components/examples/reward_set_to_reward_group"
+                    "value": {
+                      "$ref": "examples/reward_set_to_reward_group.json"
+                    }
                   }
                 }
               }
@@ -4451,7 +4647,9 @@
                 },
                 "examples": {
                   "reward_type": {
-                    "$ref": "#/components/examples/reward_type"
+                    "value": {
+                      "$ref": "examples/reward_type.json"
+                    }
                   }
                 }
               }
@@ -4541,7 +4739,9 @@
                 },
                 "examples": {
                   "skill": {
-                    "$ref": "#/components/examples/skill"
+                    "value": {
+                      "$ref": "examples/skill.json"
+                    }
                   }
                 }
               }
@@ -4590,7 +4790,9 @@
                 },
                 "examples": {
                   "skill_line": {
-                    "$ref": "#/components/examples/skill_line"
+                    "value": {
+                      "$ref": "examples/skill_line.json"
+                    }
                   }
                 }
               }
@@ -4639,7 +4841,9 @@
                 },
                 "examples": {
                   "skill_category": {
-                    "$ref": "#/components/examples/skill_category"
+                    "value": {
+                      "$ref": "examples/skill_category.json"
+                    }
                   }
                 }
               }
@@ -4685,7 +4889,9 @@
                 },
                 "examples": {
                   "skill_set": {
-                    "$ref": "#/components/examples/skill_set"
+                    "value": {
+                      "$ref": "examples/skill_set.json"
+                    }
                   }
                 }
               }
@@ -4731,7 +4937,9 @@
                 },
                 "examples": {
                   "target_type": {
-                    "$ref": "#/components/examples/target_type"
+                    "value": {
+                      "$ref": "examples/target_type.json"
+                    }
                   }
                 }
               }
@@ -4777,7 +4985,9 @@
                 },
                 "examples": {
                   "title": {
-                    "$ref": "#/components/examples/title"
+                    "value": {
+                      "$ref": "examples/title.json"
+                    }
                   }
                 }
               }
@@ -4819,7 +5029,9 @@
                 },
                 "examples": {
                   "harasser": {
-                    "$ref": "#/components/examples/vehicle"
+                    "value": {
+                      "$ref": "examples/vehicle.json"
+                    }
                   }
                 }
               }
@@ -4867,7 +5079,9 @@
                 },
                 "examples": {
                   "harasser": {
-                    "$ref": "#/components/examples/vehicle_attachment"
+                    "value": {
+                      "$ref": "examples/vehicle_attachment.json"
+                    }
                   }
                 }
               }
@@ -4912,7 +5126,9 @@
                 },
                 "examples": {
                   "harasser": {
-                    "$ref": "#/components/examples/vehicle_faction"
+                    "value": {
+                      "$ref": "examples/vehicle_faction.json"
+                    }
                   }
                 }
               }
@@ -4957,7 +5173,9 @@
                 },
                 "examples": {
                   "vehicle_skill_set": {
-                    "$ref": "#/components/examples/vehicle_skill_set"
+                    "value": {
+                      "$ref": "examples/vehicle_skill_set.json"
+                    }
                   }
                 }
               }
@@ -4999,13 +5217,19 @@
                 },
                 "examples": {
                   "regular": {
-                    "$ref": "#/components/examples/weapon_regular"
+                    "value": {
+                      "$ref": "examples/weapon_regular.json"
+                    }
                   },
                   "knife": {
-                    "$ref": "#/components/examples/weapon_knife"
+                    "value": {
+                      "$ref": "examples/weapon_knife.json"
+                    }
                   },
                   "heat": {
-                    "$ref": "#/components/examples/weapon_heat"
+                    "value": {
+                      "$ref": "examples/weapon_heat.json"
+                    }
                   }
                 }
               }
@@ -5047,7 +5271,9 @@
                 },
                 "examples": {
                   "weapon_ammo_slot": {
-                    "$ref": "#/components/examples/weapon_ammo_slot"
+                    "value": {
+                      "$ref": "examples/weapon_ammo_slot.json"
+                    }
                   }
                 }
               }
@@ -5089,7 +5315,9 @@
                 },
                 "examples": {
                   "weapon_datasheet": {
-                    "$ref": "#/components/examples/weapon_datasheet"
+                    "value": {
+                      "$ref": "examples/weapon_datasheet.json"
+                    }
                   }
                 }
               }
@@ -5131,7 +5359,9 @@
                 },
                 "examples": {
                   "weapon_to_attachment": {
-                    "$ref": "#/components/examples/weapon_to_attachment"
+                    "value": {
+                      "$ref": "examples/weapon_to_attachment.json"
+                    }
                   }
                 }
               }
@@ -5176,7 +5406,9 @@
                 },
                 "examples": {
                   "weapon_to_fire_group": {
-                    "$ref": "#/components/examples/weapon_to_fire_group"
+                    "value": {
+                      "$ref": "examples/weapon_to_fire_group.json"
+                    }
                   }
                 }
               }
@@ -5222,7 +5454,9 @@
                 },
                 "examples": {
                   "connery": {
-                    "$ref": "#/components/examples/world"
+                    "value": {
+                      "$ref": "examples/world.json"
+                    }
                   }
                 }
               }
@@ -5317,7 +5551,9 @@
                 },
                 "examples": {
                   "world_stat_history": {
-                    "$ref": "#/components/examples/world_stat_history"
+                    "value": {
+                      "$ref": "examples/world_stat_history.json"
+                    }
                   }
                 }
               }
@@ -5363,7 +5599,9 @@
                 },
                 "examples": {
                   "indar": {
-                    "$ref": "#/components/examples/zone"
+                    "value": {
+                      "$ref": "examples/zone.json"
+                    }
                   }
                 }
               }
@@ -5408,7 +5646,9 @@
                 },
                 "examples": {
                   "zone_effect": {
-                    "$ref": "#/components/examples/zone_effect"
+                    "value": {
+                      "$ref": "examples/zone_effect.json"
+                    }
                   }
                 }
               }
@@ -5450,7 +5690,9 @@
                 },
                 "examples": {
                   "zone_effect_type": {
-                    "$ref": "#/components/examples/zone_effect_type"
+                    "value": {
+                      "$ref": "examples/zone_effect_type.json"
+                    }
                   }
                 }
               }
@@ -6696,3683 +6938,6 @@
       }
     },
     "schemas": {},
-    "examples": {
-      "ability": {
-        "summary": "AoE Heal (Level 6).\nhttps://census.daybreakgames.com/get/ps2/ability?ability_id=7719",
-        "value": {
-          "ability_list": [
-            {
-              "ability_id": "7719",
-              "ability_type_id": "10",
-              "resource_type_id": "38",
-              "resource_first_cost": "0.32",
-              "resource_cost_per_msec": "0.32",
-              "radius_max": "7",
-              "flag_toggle": "1"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "ability_type": {
-        "summary": "All ability types.\nhttps://census.daybreakgames.com/get/ps2/ability_type?c:limit=50",
-        "value": {
-          "ability_type_list": [
-            {
-              "ability_type_id": "3"
-            },
-            {
-              "ability_type_id": "4"
-            },
-            {
-              "ability_type_id": "5",
-              "description": "Target not used"
-            },
-            {
-              "ability_type_id": "6"
-            },
-            {
-              "ability_type_id": "8"
-            },
-            {
-              "ability_type_id": "10",
-              "param1": "Check Target Requirement Periodically"
-            },
-            {
-              "ability_type_id": "12"
-            },
-            {
-              "ability_type_id": "13"
-            },
-            {
-              "ability_type_id": "16"
-            },
-            {
-              "ability_type_id": "17",
-              "param1": "Check Target Requirement Periodically"
-            },
-            {
-              "ability_type_id": "19"
-            },
-            {
-              "ability_type_id": "26",
-              "description": "Stays locked on first valid target found"
-            },
-            {
-              "ability_type_id": "30"
-            },
-            {
-              "ability_type_id": "34",
-              "description": "MountedVehicleMaintainOnGuid"
-            }
-          ],
-          "returned": 14
-        }
-      },
-      "achievement_medals": {
-        "summary": "Betelgeuse Weapon Medals.\nhttps://census.daybreakgames.com/get/ps2/achievement?item_id=1894&c:limit=10&repeatable=0",
-        "value": {
-          "achievement_list": [
-            {
-              "achievement_id": "12411",
-              "item_id": "1894",
-              "objective_group_id": "12411",
-              "reward_id": "100",
-              "repeatable": "0",
-              "name": {
-                "de": "Betelgeuse 54-A",
-                "en": "Betelgeuse 54-A",
-                "es": "Betelgeuse 54-A",
-                "fr": "B\u00e9telgeuse 54-A",
-                "it": "Betelgeuse 54-A"
-              },
-              "description": {
-                "de": "10 Feinde get\u00f6tet",
-                "en": "10 Enemies Killed",
-                "es": "10 enemigos muertos",
-                "fr": "10 ennemis tu\u00e9s",
-                "it": "10 nemici uccisi",
-                "tr": "10 D\u00fc\u015fman \u00d6ld\u00fcr\u00fcld\u00fc"
-              },
-              "image_set_id": "1564",
-              "image_id": "3072",
-              "image_path": "/files/ps2/images/static/3072.png"
-            },
-            {
-              "achievement_id": "12412",
-              "item_id": "1894",
-              "objective_group_id": "12412",
-              "reward_id": "101",
-              "repeatable": "0",
-              "name": {
-                "de": "Betelgeuse 54-A",
-                "en": "Betelgeuse 54-A",
-                "es": "Betelgeuse 54-A",
-                "fr": "B\u00e9telgeuse 54-A",
-                "it": "Betelgeuse 54-A"
-              },
-              "description": {
-                "de": "50 Feinde get\u00f6tet",
-                "en": "50 Enemies Killed",
-                "es": "50 enemigos muertos",
-                "fr": "50 ennemis tu\u00e9s",
-                "it": "50 nemici uccisi",
-                "tr": "50 D\u00fc\u015fman \u00d6ld\u00fcr\u00fcld\u00fc"
-              },
-              "image_set_id": "1565",
-              "image_id": "3079",
-              "image_path": "/files/ps2/images/static/3079.png"
-            },
-            {
-              "achievement_id": "12413",
-              "item_id": "1894",
-              "objective_group_id": "12413",
-              "reward_id": "102",
-              "repeatable": "0",
-              "name": {
-                "de": "Betelgeuse 54-A",
-                "en": "Betelgeuse 54-A",
-                "es": "Betelgeuse 54-A",
-                "fr": "B\u00e9telgeuse 54-A",
-                "it": "Betelgeuse 54-A"
-              },
-              "description": {
-                "de": "100 Feinde get\u00f6tet",
-                "en": "100 Enemies Killed",
-                "es": "100 enemigos muertos",
-                "fr": "100 ennemis tu\u00e9s",
-                "it": "100 nemici uccisi",
-                "tr": "100 D\u00fc\u015fman \u00d6ld\u00fcr\u00fcld\u00fc"
-              },
-              "image_set_id": "1566",
-              "image_id": "3075",
-              "image_path": "/files/ps2/images/static/3075.png"
-            },
-            {
-              "achievement_id": "12414",
-              "item_id": "1894",
-              "objective_group_id": "12414",
-              "reward_id": "615",
-              "repeatable": "0",
-              "name": {
-                "de": "Betelgeuse 54-A",
-                "en": "Betelgeuse 54-A",
-                "es": "Betelgeuse 54-A",
-                "fr": "B\u00e9telgeuse 54-A",
-                "it": "Betelgeuse 54-A"
-              },
-              "description": {
-                "de": "1000 Feinde get\u00f6tet",
-                "en": "1000 Enemies Killed",
-                "es": "1000 enemigos muertos",
-                "fr": "1 000 ennemis tu\u00e9s",
-                "it": "1000 nemici uccisi",
-                "tr": "1000 D\u00fc\u015fman \u00d6ld\u00fcr\u00fcld\u00fc"
-              },
-              "image_set_id": "1567",
-              "image_id": "3068",
-              "image_path": "/files/ps2/images/static/3068.png"
-            }
-          ],
-          "returned": 4
-        }
-      },
-      "achievement_ribbon": {
-        "summary": "Healing Ribbons.\nhttps://census.daybreakgames.com/get/ps2/achievement?achievement_id=2554",
-        "value": {
-          "achievement_list": [
-            {
-              "achievement_id": "2554",
-              "item_id": "0",
-              "objective_group_id": "2554",
-              "reward_id": "3019",
-              "repeatable": "1",
-              "name": {
-                "de": "Heilung l\u00e4uft",
-                "en": "Healing",
-                "es": "Curaci\u00f3n",
-                "fr": "Gu\u00e9rison en cours",
-                "it": "Guarigione",
-                "tr": "\u0130yile\u015ftiriliyor"
-              },
-              "description": {
-                "de": "Sanit\u00e4ter k\u00f6nnen schnell den Schaden heilen, der verb\u00fcndeten Truppen zugef\u00fcgt wurde und sie dadurch l\u00e4nger im Kampf behalten.",
-                "en": "Medics can quickly heal damage that has been done to allied troops keeping in the fight longer.",
-                "es": "Los m\u00e9dicos pueden curar a las tropas aliadas r\u00e1pidamente para mantenerlas m\u00e1s tiempo en combate.",
-                "fr": "Les M\u00e9decins peuvent gu\u00e9rir rapidement les d\u00e9g\u00e2ts inflig\u00e9s aux troupes alli\u00e9es et les garder plus longtemps au combat. ",
-                "it": "I medici possono velocemente guarire i danni inferti alle truppe alleate facendole restare pi\u00f9 a lungo nel combattimento.",
-                "tr": "S\u0131hh\u0131yeler m\u00fcttefik askerlerin daha uzun s\u00fcre sava\u015fmalar\u0131n\u0131 sa\u011flamak i\u00e7in h\u0131zl\u0131ca yaralar\u0131 sarabilirler."
-              },
-              "image_set_id": "7996",
-              "image_id": "8440",
-              "image_path": "/files/ps2/images/static/8440.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "armor_facing": {
-        "summary": "All armor facing directions.\nhttps://census.daybreakgames.com/get/ps2/armor_facing?c:limit=10",
-        "value": {
-          "armor_facing_list": [
-            {
-              "armor_facing_id": "0",
-              "description": "Front"
-            },
-            {
-              "armor_facing_id": "1",
-              "description": "Right"
-            },
-            {
-              "armor_facing_id": "2",
-              "description": "Top"
-            },
-            {
-              "armor_facing_id": "3",
-              "description": "Rear"
-            },
-            {
-              "armor_facing_id": "4",
-              "description": "Left"
-            },
-            {
-              "armor_facing_id": "5",
-              "description": "Bottom"
-            },
-            {
-              "armor_facing_id": "6",
-              "description": "All"
-            }
-          ],
-          "returned": 7
-        }
-      },
-      "armor_info": {
-        "summary": "Default Sunderer armor values, excluding Blockade Armor.\nhttps://census.daybreakgames.com/get/ps2/armor_info?&description=^Sunderer&armor_info_id=%3C50&c:limit=10",
-        "value": {
-          "armor_info_list": [
-            {
-              "armor_info_id": "20",
-              "armor_facing_id": "0",
-              "armor_percent": "0",
-              "description": "Sunderer - Front"
-            },
-            {
-              "armor_info_id": "21",
-              "armor_facing_id": "1",
-              "armor_percent": "0",
-              "description": "Sunderer - Right"
-            },
-            {
-              "armor_info_id": "22",
-              "armor_facing_id": "2",
-              "armor_percent": "0",
-              "description": "Sunderer - Top"
-            },
-            {
-              "armor_info_id": "23",
-              "armor_facing_id": "3",
-              "armor_percent": "0",
-              "description": "Sunderer - Rear"
-            },
-            {
-              "armor_info_id": "24",
-              "armor_facing_id": "4",
-              "armor_percent": "0",
-              "description": "Sunderer - Left"
-            },
-            {
-              "armor_info_id": "25",
-              "armor_facing_id": "5",
-              "armor_percent": "0",
-              "description": "Sunderer - Bottom"
-            }
-          ],
-          "returned": 6
-        }
-      },
-      "character_higby": {
-        "summary": "Higby",
-        "value": {
-          "character_list": [
-            {
-              "character_id": "5428010618015189601",
-              "name": {
-                "first": "Higby",
-                "first_lower": "higby"
-              },
-              "faction_id": "2",
-              "head_id": "1",
-              "title_id": "100",
-              "times": {
-                "creation": "1353427357",
-                "creation_date": "2012-11-20 16:02:37.0",
-                "last_save": "1669323771",
-                "last_save_date": "2022-11-24 21:02:51.0",
-                "last_login": "1669320455",
-                "last_login_date": "2022-11-24 20:07:35.0",
-                "login_count": "1738",
-                "minutes_played": "75517"
-              },
-              "certs": {
-                "earned_points": "214706",
-                "gifted_points": "78844",
-                "spent_points": "257491",
-                "available_points": "36059",
-                "percent_to_next": "0.1721388888362"
-              },
-              "battle_rank": {
-                "percent_to_next": "2",
-                "value": "101"
-              },
-              "profile_id": "4",
-              "daily_ribbon": {
-                "count": "0",
-                "time": "1669248000",
-                "date": "2022-11-24 00:00:00.0"
-              },
-              "prestige_level": "0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "character_name_higby": {
-        "summary": "Higby",
-        "value": {
-          "character_list": [
-            {
-              "character_id": "5428010618015189601",
-              "name": {
-                "first": "Higby",
-                "first_lower": "higby"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_achievement_medal": {
-        "summary": "SVA-88 Bronze Medal.\nhttps://census.daybreakgames.com/get/ps2/characters_achievement?character_id=5428010618015189601&achievement_id=113",
-        "value": {
-          "characters_achievement_list": [
-            {
-              "character_id": "5428010618015189601",
-              "achievement_id": "113",
-              "earned_count": "1",
-              "start": "1384645540",
-              "start_date": "2013-11-16 23:45:40.0",
-              "finish": "1404874213",
-              "finish_date": "2014-07-09 02:50:13.0",
-              "last_save": "1412784696",
-              "last_save_date": "2014-10-08 16:11:36.142294"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_achievement_ribbon": {
-        "summary": "Revive Ribbons.\nhttps://census.daybreakgames.com/get/ps2/characters_achievement?character_id=5428010618015189601&achievement_id=2552",
-        "value": {
-          "characters_achievement_list": [
-            {
-              "character_id": "5428010618015189601",
-              "achievement_id": "2552",
-              "earned_count": "468",
-              "start": "1432682221",
-              "start_date": "2015-05-26 23:17:01.0",
-              "finish": "0",
-              "finish_date": "1970-01-01 00:00:00.0",
-              "last_save": "1432659069",
-              "last_save_date": "2015-05-26 16:51:09.0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_currency": {
-        "summary": "Higby's currencies.\nhttps://census.daybreakgames.com/get/ps2/characters_currency?character_id=5428010618015189601",
-        "value": {
-          "characters_currency_list": [
-            {
-              "character_id": "5428010618015189601",
-              "currency_id": "4",
-              "currency_name": "nanites",
-              "quantity": "750",
-              "prestige_currency": "0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_directive": {
-        "summary": "Healing.\nhttps://census.daybreakgames.com/get/ps2/characters_directive?character_id=5428010618015189601&directive_id=141",
-        "value": {
-          "characters_directive_list": [
-            {
-              "character_id": "5428010618015189601",
-              "directive_tree_id": "28",
-              "directive_id": "141",
-              "completion_time": "1585080577",
-              "completion_time_date": "2020-03-24 20:09:37.0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_directive_objective": {
-        "summary": "Headshot kill progress.\nhttps://census.daybreakgames.com/get/ps2/characters_directive_objective?character_id=5428010618015189601&directive_id=1732",
-        "value": {
-          "characters_directive_objective_list": [
-            {
-              "character_id": "5428010618015189601",
-              "directive_id": "1732",
-              "objective_id": "13402",
-              "objective_group_id": "13402",
-              "status": "1",
-              "state_data": "42"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_directive_tier": {
-        "summary": "Carbines (Novice).\nhttps://census.daybreakgames.com/get/ps2/characters_directive_tier?character_id=5428010618015189601&directive_tree_id=4&directive_tier_id=1",
-        "value": {
-          "characters_directive_tier_list": [
-            {
-              "character_id": "5428010618015189601",
-              "directive_tree_id": "4",
-              "directive_tier_id": "1",
-              "completion_time": "1585080577",
-              "completion_time_date": "2020-03-24 20:09:37.0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_directive_tree": {
-        "summary": "Carbines.\nhttps://census.daybreakgames.com/get/ps2/characters_directive_tree?character_id=5428010618015189601&directive_tree_id=4",
-        "value": {
-          "characters_directive_tree_list": [
-            {
-              "character_id": "5428010618015189601",
-              "directive_tree_id": "4",
-              "current_directive_tier_id": "5",
-              "current_level": "0",
-              "completion_time": "1585080577",
-              "completion_time_date": "2020-03-24 20:09:37.0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_friend": {
-        "summary": "Higby",
-        "description": "Only the first 3 friends are shown for brevity.",
-        "value": {
-          "characters_friend_list": [
-            {
-              "character_id": "5428010618015189601",
-              "name": null,
-              "friend_list": [
-                {
-                  "character_id": "5428010618014254785",
-                  "last_login_time": "1679721693",
-                  "online": "0"
-                },
-                {
-                  "character_id": "5428010618014429969",
-                  "last_login_time": "1658899596",
-                  "online": "0"
-                },
-                {
-                  "character_id": "5428010618015193969",
-                  "last_login_time": "1679718619",
-                  "online": "0"
-                }
-              ]
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_item": {
-        "summary": "Higby's items. Note that the list has been truncated to 5 items as it always returns the full list.\nhttps://census.daybreakgames.com/get/ps2/characters_item?character_id=5428010618015189601",
-        "value": {
-          "characters_item_list": [
-            {
-              "character_id": "5428010618015189601",
-              "item_id": "1"
-            },
-            {
-              "character_id": "5428010618015189601",
-              "item_id": "7"
-            },
-            {
-              "character_id": "5428010618015189601",
-              "item_id": "13"
-            },
-            {
-              "character_id": "5428010618015189601",
-              "item_id": "19"
-            },
-            {
-              "character_id": "5428010618015189601",
-              "item_id": "23"
-            }
-          ],
-          "returned": 2522
-        }
-      },
-      "characters_leaderboard": {
-        "summary": "Higby's leaderboard entry for all-time kills.\nhttps://census.daybreakgames.com/get/ps2/characters_leaderboard?character_id=5428010618015189601&name=Kills&period=Forever",
-        "value": {
-          "limit": 1,
-          "characters_leaderboard_list": [
-            {
-              "character_id": "5428010618015189601",
-              "value": "68754",
-              "rank": "6583"
-            }
-          ],
-          "returned": 1,
-          "key": "Forever_Kills",
-          "count": 10000
-        }
-      },
-      "characters_online_status": {
-        "summary": "Higby",
-        "value": {
-          "characters_online_status_list": [
-            {
-              "character_id": "5428010618015189601",
-              "online_status": "0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_skill": {
-        "summary": "Nanite Auto Repair.\nhttps://census.daybreakgames.com/get/ps2/characters_skill?character_id=5428010618015189601&skill_id=113",
-        "value": {
-          "characters_skill_list": [
-            {
-              "character_id": "5428010618015189601",
-              "skill_id": "113",
-              "last_save": "1412784699",
-              "last_save_date": "2014-10-08 16:11:39.389"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_world": {
-        "summary": "Higby",
-        "value": {
-          "characters_world_list": [
-            {
-              "character_id": "5428010618015189601",
-              "world_id": "1"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_stat": {
-        "summary": "Character Statistics",
-        "description": "Shows the playtime for Combat Medic.\nhttps://census.daybreakgames.com/get/ps2/characters_stat?character_id=5428010618015189601&stat_name=play_time&profile_id=4",
-        "value": {
-          "characters_stat_list": [
-            {
-              "character_id": "5428010618015189601",
-              "stat_name": "play_time",
-              "profile_id": "4",
-              "value_forever": "4947689",
-              "value_monthly": "41461",
-              "value_weekly": "13599",
-              "value_daily": "197",
-              "value_one_life_max": "10459",
-              "last_save": "1684499211",
-              "last_save_date": "2023-05-19 12:26:50.711936"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_stat_by_faction": {
-        "summary": "Character Statistics by Faction",
-        "description": "Shows the kills of an NC character. Note that no NC kills are listed, which is doubtful.\nhttps://census.daybreakgames.com/get/ps2/characters_stat_by_faction?character_id=5428010618015189601&stat_name=kills",
-        "value": {
-          "characters_stat_by_faction_list": [
-            {
-              "character_id": "5428010618015189601",
-              "stat_name": "kills",
-              "profile_id": "1",
-              "value_forever_vs": "3026",
-              "value_forever_nc": "3356",
-              "value_forever_tr": "2551",
-              "value_monthly_vs": "3",
-              "value_monthly_nc": "0",
-              "value_monthly_tr": "8",
-              "value_weekly_vs": "1",
-              "value_weekly_nc": "0",
-              "value_weekly_tr": "3",
-              "value_daily_vs": "0",
-              "value_daily_nc": "0",
-              "value_daily_tr": "1",
-              "value_one_life_max_vs": "7",
-              "value_one_life_max_nc": "9",
-              "value_one_life_max_tr": "6",
-              "last_save": "1669295387",
-              "last_save_date": "2022-11-24 13:09:46.730053"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_stat_history": {
-        "summary": "Historical Statistics",
-        "description": "Historical kills of an NC character.\nhttps://census.daybreakgames.com/get/ps2/characters_stat_history?character_id=5428010618015189601&stat_name=kills",
-        "value": {
-          "characters_stat_history_list": [
-            {
-              "character_id": "5428010618015189601",
-              "stat_name": "kills",
-              "all_time": "68754",
-              "one_life_max": "185",
-              "day": {
-                "d01": "26",
-                "d02": "0",
-                "d03": "0",
-                "d04": "5",
-                "d05": "20",
-                "d06": "51",
-                "d07": "0",
-                "d08": "0",
-                "d09": "0",
-                "d10": "0",
-                "d11": "0",
-                "d12": "0",
-                "d13": "0",
-                "d14": "0",
-                "d15": "0",
-                "d16": "0",
-                "d17": "0",
-                "d18": "0",
-                "d19": "0",
-                "d20": "0",
-                "d21": "0",
-                "d22": "0",
-                "d23": "0",
-                "d24": "0",
-                "d25": "0",
-                "d26": "0",
-                "d27": "0",
-                "d28": "0",
-                "d29": "0",
-                "d30": "0",
-                "d31": "0"
-              },
-              "month": {
-                "m01": "102",
-                "m02": "0",
-                "m03": "0",
-                "m04": "0",
-                "m05": "0",
-                "m06": "0",
-                "m07": "0",
-                "m08": "0",
-                "m09": "0",
-                "m10": "0",
-                "m11": "0",
-                "m12": "0"
-              },
-              "week": {
-                "w01": "51",
-                "w02": "51",
-                "w03": "0",
-                "w04": "0",
-                "w05": "0",
-                "w06": "0",
-                "w07": "0",
-                "w08": "0",
-                "w09": "0",
-                "w10": "0",
-                "w11": "0",
-                "w12": "0",
-                "w13": "0"
-              },
-              "last_save": "1669295387",
-              "last_save_date": "2022-11-24 13:09:47.032"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_weapon_stat_infantry_weapon": {
-        "summary": "Infantry Weapon Statistics",
-        "description": "Hit count of the NC1 Gauss Rifle of an NC character.\nhttps://census.daybreakgames.com/get/ps2/characters_weapon_stat?character_id=5428010618015189601&stat_name=weapon_hit_count&item_id=4",
-        "value": {
-          "characters_weapon_stat_list": [
-            {
-              "character_id": "5428010618015189601",
-              "stat_name": "weapon_hit_count",
-              "item_id": "4",
-              "vehicle_id": "0",
-              "value": "11446",
-              "last_save": "1394703677",
-              "last_save_date": "2014-03-13 09:41:17.0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_weapon_stat_vehicle": {
-        "summary": "Vehicle Statistics",
-        "description": "Death count of the Flash of an NC character.\nhttps://census.daybreakgames.com/get/ps2/characters_weapon_stat?character_id=5428010618015189601&item_id=0&vehicle_id=!0&stat_name=weapon_deaths&vehicle_id=1",
-        "value": {
-          "characters_weapon_stat_list": [
-            {
-              "character_id": "5428010618015189601",
-              "stat_name": "weapon_deaths",
-              "item_id": "0",
-              "vehicle_id": "1",
-              "value": "16",
-              "last_save": "1448994374",
-              "last_save_date": "2015-12-01 18:26:14.0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_weapon_stat_by_faction_infantry_weapon": {
-        "summary": "Infantry Weapon Statistics",
-        "description": "Hit count of the NC1 Gauss Rifle of an NC character.\nhttps://census.daybreakgames.com/get/ps2/characters_weapon_stat_by_faction?character_id=5428010618015189601&stat_name=weapon_headshots&vehicle_id=0&item_id=4",
-        "value": {
-          "characters_weapon_stat_by_faction_list": [
-            {
-              "character_id": "5428010618015189601",
-              "stat_name": "weapon_headshots",
-              "item_id": "4",
-              "vehicle_id": "0",
-              "value_vs": "94",
-              "value_nc": "0",
-              "value_tr": "149",
-              "last_save": "1394669799",
-              "last_save_date": "2014-03-13 00:16:39.0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "characters_weapon_stat_by_faction_vehicle": {
-        "summary": "Vehicle Statistics",
-        "description": "Total vehicle kills for a Vanguard, any weapon.\nhttps://census.daybreakgames.com/get/ps2/characters_weapon_stat_by_faction?character_id=5428010618015189601&stat_name=weapon_vehicle_kills&vehicle_id=5&item_id=0",
-        "value": {
-          "characters_weapon_stat_by_faction_list": [
-            {
-              "character_id": "5428010618015189601",
-              "stat_name": "weapon_vehicle_kills",
-              "item_id": "0",
-              "vehicle_id": "5",
-              "value_vs": "5",
-              "value_nc": "0",
-              "value_tr": "5",
-              "last_save": "1571838169",
-              "last_save_date": "2019-10-23 13:42:49.0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "collection_characterInfo": {
-        "summary": "Character Info",
-        "description": "Shows basic character information while hiding unwanted fields.\nhttps://census.daybreakgames.com/get/ps2/character?c:show=name.first,faction_id,battle_rank.value,prestige_level",
-        "value": {
-          "character_list": [
-            {
-              "name": {
-                "first": "360Xvortex"
-              },
-              "faction_id": "3",
-              "battle_rank": {
-                "value": "1"
-              },
-              "prestige_level": "0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "collection_factionTags": {
-        "summary": "Faction tags",
-        "description": "Uses `c:distinct` to get all faction tags.\nhttps://census.daybreakgames.com/get/ps2/faction?c:distinct=code_tag",
-        "value": {
-          "count": 5,
-          "faction_list": [
-            {
-              "code_tag": [
-                "NC",
-                "None",
-                "NSO",
-                "TR",
-                "VS"
-              ]
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "collection_mapFacilities": {
-        "summary": "Map state with facility names",
-        "description": "Example using nested key access to insert data into the middle of a payload. Note that only one record is shown for brevity, the provided link returns the entire zone's region list.\nhttps://census.daybreakgames.com/get/ps2/map?world_id=1&zone_ids=2&c:join=map_region%5Einject_at:map_region%5Eon:Regions.Row.RowData.RegionId%5Eto:map_region_id",
-        "value": {
-          "map_list": [
-            {
-              "ZoneId": "2",
-              "Regions": {
-                "IsList": "1",
-                "Row": [
-                  {
-                    "RowData": {
-                      "RegionId": "2101",
-                      "FactionId": "3",
-                      "map_region": {
-                        "map_region_id": "2101",
-                        "zone_id": "2",
-                        "facility_id": "7500",
-                        "facility_name": "Hvar",
-                        "facility_type_id": "4",
-                        "facility_type": "Tech Plant",
-                        "location_x": "-656.0273",
-                        "location_y": "491.7669",
-                        "location_z": "-2444.069",
-                        "reward_amount": "1",
-                        "reward_currency_id": "1000"
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "count_success": {
-        "summary": "Success",
-        "value": {
-          "count": 14
-        }
-      },
-      "count_error": {
-        "summary": "Error",
-        "value": {
-          "count": -1
-        }
-      },
-      "currency": {
-        "summary": "Nanites.\nhttps://census.daybreakgames.com/get/ps2/currency?c:limit=10",
-        "value": {
-          "currency_list": [
-            {
-              "currency_id": "4",
-              "name": {
-                "de": "Naniten",
-                "en": "Nanites",
-                "es": "Nanites",
-                "fr": "Nanites",
-                "it": "Naniti"
-              },
-              "icon_id": "13606",
-              "inventory_cap": "750"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "datatype_character": {
-        "summary": "Character",
-        "value": {
-          "datatype_list": {
-            "name": "character",
-            "hidden": false,
-            "count": 15095335,
-            "resolve_list": [
-              "item",
-              "item_full",
-              "profile",
-              "faction",
-              "stat",
-              "stat_by_faction",
-              "weapon_stat",
-              "weapon_stat_by_faction",
-              "stat_history",
-              "online_status",
-              "friends",
-              "world",
-              "outfit",
-              "outfit_member",
-              "outfit_member_extended",
-              "currency"
-            ]
-          },
-          "returned": 1
-        }
-      },
-      "datatype_outfitMember": {
-        "summary": "Outfit Member",
-        "value": {
-          "datatype_list": {
-            "name": "outfit_member",
-            "hidden": false,
-            "count": "?",
-            "resolve_list": [
-              "character",
-              "character_name",
-              "characters_stat_history",
-              "online_status",
-              "outfit"
-            ]
-          },
-          "returned": 1
-        }
-      },
-      "datatype_characterOnlineStatus": {
-        "summary": "Character Online Status",
-        "value": {
-          "datatype_list": {
-            "count": "dynamic",
-            "hidden": "false",
-            "name": "characters_online_status",
-            "resolve_list": []
-          },
-          "returned": 1
-        }
-      },
-      "directive": {
-        "summary": "Saviour kills.\nhttps://census.daybreakgames.com/get/ps2/directive?directive_id=153",
-        "value": {
-          "directive_list": [
-            {
-              "directive_id": "153",
-              "directive_tree_id": "28",
-              "directive_tier_id": "1",
-              "objective_set_id": "4154",
-              "name": {
-                "de": "Rettungskills",
-                "en": "Savior Kills",
-                "es": "V\u00edctimas: salvadores",
-                "fr": "Victimes Sauveur",
-                "it": "Uccisioni come Salvatore"
-              },
-              "description": {
-                "de": "Rette Verb\u00fcndete vor dem Tod, indem du Feinde t\u00f6test, die dabei sind, sie zu t\u00f6ten.",
-                "en": "Save allies from death by killing enemies who are about to kill them.",
-                "es": "Salva de la muerte a tus aliados acabando con los enemigos que est\u00e9n a punto de matarlos.",
-                "fr": "Sauver des alli\u00e9s de la mort en tuant des ennemis sur le point de les tuer.",
-                "it": "Salva gli alleati dalla morte uccidendo i nemici che stanno per ucciderli."
-              },
-              "image_set_id": "13518",
-              "image_id": "77759",
-              "image_path": "/files/ps2/images/static/77759.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "directive_tier": {
-        "summary": "Light Assault Master Tier (VS).\nhttps://census.daybreakgames.com/get/ps2/directive_tier?directive_tier_id=4&directive_tree_id=24",
-        "value": {
-          "directive_tier_list": [
-            {
-              "directive_tree_id": "24",
-              "directive_tier_id": "4",
-              "reward_set_id": "4466",
-              "directive_points": "100",
-              "completion_count": "5",
-              "name": {
-                "de": "Meister",
-                "en": "Master",
-                "es": "Maestro",
-                "fr": "Ma\u00eetre",
-                "it": "Maestri"
-              },
-              "image_set_id": "13650",
-              "image_id": "78275",
-              "image_path": "/files/ps2/images/static/78275.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "directive_tree": {
-        "summary": "Light Machine Guns.\nhttps://census.daybreakgames.com/get/ps2/directive_tree?directive_tree_id=8",
-        "value": {
-          "directive_tree_list": [
-            {
-              "directive_tree_id": "8",
-              "directive_tree_category_id": "7",
-              "name": {
-                "de": "Leichte Maschinengewehre",
-                "en": "Light Machine Guns",
-                "es": "Ametralladoras ligeras",
-                "fr": "Mitrailleuses l\u00e9g\u00e8res",
-                "it": "Mitragliatrici leggere"
-              },
-              "image_set_id": "14193",
-              "image_id": "79616",
-              "image_path": "/files/ps2/images/static/79616.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "directive_tree_category": {
-        "summary": "Infantry.\nhttps://census.daybreakgames.com/get/ps2/directive_tree_category?directive_tree_category_id=3",
-        "value": {
-          "directive_tree_category_list": [
-            {
-              "directive_tree_category_id": "3",
-              "name": {
-                "de": "Infanterie",
-                "en": "Infantry",
-                "es": "Infanter\u00eda",
-                "fr": "Infanterie",
-                "it": "Fanteria",
-                "tr": "Piyade"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "effect": {
-        "summary": "Lasher X2 damage effects.\nhttps://census.daybreakgames.com/get/ps2/effect?effect_id=7540,249&c:limit=2",
-        "value": {
-          "effect_list": [
-            {
-              "effect_id": "249",
-              "effect_type_id": "40",
-              "target_type_id": "3",
-              "resist_type_id": "6",
-              "is_drain": "0",
-              "duration_seconds": "0",
-              "param1": "75",
-              "param2": "1",
-              "param3": "25",
-              "param5": "3",
-              "param6": "0",
-              "param7": "0",
-              "param8": "0",
-              "param9": "0",
-              "param13": "75"
-            },
-            {
-              "effect_id": "7540",
-              "effect_type_id": "45",
-              "ability_id": "0",
-              "target_type_id": "2",
-              "resist_type_id": "2",
-              "is_drain": "0",
-              "duration_seconds": "0",
-              "param1": "155",
-              "param2": "10",
-              "param3": "105",
-              "param5": "65",
-              "param6": "0",
-              "param7": "0",
-              "param8": "0",
-              "param9": "0"
-            }
-          ],
-          "returned": 2
-        }
-      },
-      "effect_type": {
-        "summary": "A selection of common effect types.\nhttps://census.daybreakgames.com/get/ps2/effect_type?effect_type_id=11,12,36,40&c:limit=4",
-        "value": {
-          "effect_type_list": [
-            {
-              "effect_type_id": "11",
-              "description": "Heal",
-              "param1": "HP per sec",
-              "param2": "Distance Max",
-              "param3": "0 Heal, 1 Repair"
-            },
-            {
-              "effect_type_id": "12",
-              "description": "Revive",
-              "param1": "Health Percent",
-              "param2": "Distance Max",
-              "param3": "Sec to revive"
-            },
-            {
-              "effect_type_id": "36",
-              "description": "Damage",
-              "param1": "Damage Amount"
-            },
-            {
-              "effect_type_id": "40",
-              "description": "Indirect Damage",
-              "param1": "Damage within inside radius",
-              "param2": "Inside Radius (min)",
-              "param3": "Minimum Damage (Damage at max radius)",
-              "param4": "There is no Param4",
-              "param5": "Outside Radius (max)",
-              "param6": "Direct Impact Damage",
-              "param7": "Fire off Ability ID",
-              "param8": "Arming Distance",
-              "param9": "Arming Scaling Distance",
-              "param10": "Ignore Impacted Object (1 = true)",
-              "param11": "Screen Effect ID",
-              "param12": "Armor Penetration",
-              "param13": "Same faction resist percentage"
-            }
-          ],
-          "returned": 4
-        }
-      },
-      "empire_scores": {
-        "summary": "World Domination Series Pre-season.\nhttps://census.daybreakgames.com/get/ps2/empire_scores?tracker_name=WDS01",
-        "value": {
-          "empire_scores_list": [
-            {
-              "tracker_name": "WDS01",
-              "tracker_description": "WDS01",
-              "start_date": "2013-09-16 07:00:00.0",
-              "start_time": "1379314800",
-              "end_date": "2013-10-28 07:00:00.0",
-              "end_time": "1382943600",
-              "name": {
-                "de": "World Domination Series 1 - Vorsaison",
-                "en": "World Domination Series Pre-season",
-                "es": "Pretemporada de World Domination Series",
-                "fr": "Les s\u00e9ries Domination du Monde Pr\u00e9-saison",
-                "it": "Precampionato Serie Dominio Universale",
-                "tr": "World Domination Series Pre-season"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "experience": {
-        "summary": "Heal Experience Tick.\nhttps://census.daybreakgames.com/get/ps2/experience?experience_id=4",
-        "value": {
-          "experience_list": [
-            {
-              "experience_id": "4",
-              "description": "Heal Player",
-              "xp": "10"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "experience_rank": {
-        "summary": "BR100, non-ASP.\nhttps://census.daybreakgames.com/get/ps2/experience_rank?rank=100&vs.title.en=!A.S.P.%20Operative",
-        "value": {
-          "experience_rank_list": [
-            {
-              "rank": "100",
-              "xp_max": "18868950",
-              "vs": {
-                "title": {
-                  "de": "Paragon",
-                  "en": "Paragon",
-                  "es": "Parag\u00f3n",
-                  "fr": "Parangon",
-                  "it": "Campione",
-                  "tr": "Paragon"
-                },
-                "image_set_id": "1927",
-                "image_id": "4363"
-              },
-              "vs_image_path": "/files/ps2/images/static/4363.png",
-              "nc": {
-                "title": {
-                  "de": "Vollstrecker",
-                  "en": "Executor",
-                  "es": "Ejecutor",
-                  "fr": "Ex\u00e9cuteur",
-                  "it": "Esecutore",
-                  "tr": "Uygulay\u0131c\u0131"
-                },
-                "image_set_id": "1727",
-                "image_id": "4364"
-              },
-              "nc_image_path": "/files/ps2/images/static/4364.png",
-              "tr": {
-                "title": {
-                  "de": "Feldmarschall",
-                  "en": "Field Marshal",
-                  "es": "Mariscal de campo",
-                  "fr": "Mar\u00e9chal",
-                  "it": "Generale dell'Esercito",
-                  "tr": "Mare\u015fal"
-                },
-                "image_set_id": "1827",
-                "image_id": "4362"
-              },
-              "tr_image_path": "/files/ps2/images/static/4362.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "facility_link": {
-        "summary": "Indar Northern Warpgate Links.\nhttps://census.daybreakgames.com/get/ps2/facility_link?facility_id_a=7801&c:limit=10",
-        "value": {
-          "facility_link_list": [
-            {
-              "zone_id": "2",
-              "facility_id_a": "7801",
-              "facility_id_b": "201"
-            },
-            {
-              "zone_id": "2",
-              "facility_id_a": "7801",
-              "facility_id_b": "209",
-              "description": "Indar - WG.Ocean to SO10.CraterFiringRange"
-            },
-            {
-              "zone_id": "2",
-              "facility_id_a": "7801",
-              "facility_id_b": "210",
-              "description": "Indar - WG.Ocean to SO11.AlkaliStorage"
-            }
-          ],
-          "returned": 3
-        }
-      },
-      "facility_type": {
-        "summary": "Interlinks.\nhttps://census.daybreakgames.com/get/ps2/facility_type?facility_type_id=8",
-        "value": {
-          "facility_type_list": [
-            {
-              "facility_type_id": "8",
-              "description": "Interlink Facility",
-              "image_id": "9121",
-              "image_set_id": "3158",
-              "image_path": "/files/ps2/images/static/9121.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "faction": {
-        "summary": "TR",
-        "value": {
-          "faction_list": [
-            {
-              "faction_id": "3",
-              "name": {
-                "de": "Terranische Republik",
-                "en": "Terran Republic",
-                "es": "Rep\u00fablica Terran",
-                "fr": "R\u00e9publique Terrane",
-                "it": "Repubblica Terrestre",
-                "tr": "Terran Cumhuriyeti"
-              },
-              "image_set_id": "20",
-              "image_id": "18",
-              "image_path": "/files/ps2/images/static/18.png",
-              "code_tag": "TR",
-              "user_selectable": "1"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "fire_group_chamber": {
-        "summary": "TRS-12 Uppercut. Note that it has per-chamber reload and can rechamber while aiming down sights.\nhttps://census.daybreakgames.com/get/ps2/fire_group?fire_group_id=39001",
-        "value": {
-          "fire_group_list": [
-            {
-              "fire_group_id": "39001",
-              "chamber_duration_ms": "600",
-              "can_chamber_ironsights": "1"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "fire_group_regular": {
-        "summary": "NC1 Gauss Rifle. Example of a standard infantry weapon fire group.\nhttps://census.daybreakgames.com/get/ps2/fire_group?fire_group_id=4",
-        "value": {
-          "fire_group_list": [
-            {
-              "fire_group_id": "4",
-              "transition_duration_ms": "500",
-              "can_chamber_ironsights": "0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "fire_group_spool": {
-        "summary": "G30 Vulcan. This weapon has a spool-up time, meaning that its rate-of-fire increases over time.\nhttps://census.daybreakgames.com/get/ps2/fire_group?fire_group_id=424",
-        "value": {
-          "fire_group_list": [
-            {
-              "fire_group_id": "424",
-              "spool_up_ms": "1000",
-              "spool_up_initial_refire_ms": "200",
-              "can_chamber_ironsights": "0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "fire_mode": {
-        "summary": "NS-11A.\nhttps://census.daybreakgames.com/get/ps2/fire_mode?c:includeNull=1&fire_mode_id=2000",
-        "value": {
-          "fire_mode_list": [
-            {
-              "fire_mode_id": "2000",
-              "item_id": "2009",
-              "type": "primary",
-              "description": {
-                "de": "Automatik",
-                "en": "Auto",
-                "es": "Autom\u00e1tico",
-                "fr": "Automatique",
-                "it": "Automatico",
-                "tr": "Otomatik"
-              },
-              "player_state_group_id": "653",
-              "cof_recoil": "0.1",
-              "reload_time_ms": "2000",
-              "reload_chamber_time_ms": "450",
-              "pellets_per_shot": "1",
-              "pellet_spread": "0",
-              "default_zoom": "1",
-              "muzzle_velocity": "640",
-              "speed": "550",
-              "max_speed": "0",
-              "damage_radius": "0",
-              "projectile_description": "NS: Assault Rifle 01",
-              "damage_type": "DamageFalloff",
-              "damage": "NULL",
-              "damage_min": "125",
-              "damage_max": "143",
-              "damage_min_range": "65",
-              "damage_max_range": "10",
-              "damage_target_type": "2",
-              "damage_resist_type": "2",
-              "indirect_damage_max": "NULL",
-              "indirect_damage_max_range": "NULL",
-              "indirect_damage_min": "NULL",
-              "indirect_damage_min_range": "NULL",
-              "indirect_damage_target_type": "NULL",
-              "indirect_damage_resist_type": "NULL"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "fire_mode_2_ns11a": {
-        "summary": "NS-11A (Automatic weapon).\nhttps://census.daybreakgames.com/get/ps2/fire_mode_2?fire_mode_id=2001",
-        "value": {
-          "fire_mode_2_list": [
-            {
-              "fire_mode_id": "2001",
-              "fire_mode_type_id": "0",
-              "automatic": "1",
-              "grief_immune": "0",
-              "iron_sights": "1",
-              "laser_guided": "0",
-              "move_modifier": "0.75",
-              "projectile_speed_override": "640",
-              "sprint_fire": "0",
-              "turn_modifier": "1",
-              "use_in_water": "1",
-              "zoom_default": "1.35",
-              "cof_override": "0",
-              "cof_pellet_spread": "0",
-              "cof_range": "100",
-              "cof_recoil": "0.05",
-              "cof_scalar": "1",
-              "cof_scalar_moving": "1",
-              "player_state_group_id": "654",
-              "damage_direct_effect_id": "70006",
-              "damage_head_multiplier": "1",
-              "damage_legs_multiplier": "-0.1",
-              "fire_ammo_per_shot": "1",
-              "fire_auto_fire_ms": "0",
-              "fire_burst_count": "1",
-              "fire_charge_up_ms": "0",
-              "fire_delay_ms": "0",
-              "fire_detect_range": "40",
-              "fire_refire_ms": "92",
-              "fire_pellets_per_shot": "1",
-              "lockon_maintain": "0",
-              "lockon_required": "0",
-              "recoil_angle_max": "-17",
-              "recoil_angle_min": "-20",
-              "recoil_first_shot_modifier": "3",
-              "recoil_horizontal_max": "0.2",
-              "recoil_horizontal_min": "0.2",
-              "recoil_horizontal_tolerance": "0.6",
-              "recoil_increase": "0.1",
-              "recoil_increase_crouched": "0.1",
-              "recoil_magnitude_max": "0.22",
-              "recoil_magnitude_min": "0.22",
-              "recoil_max_total_magnitude": "0",
-              "recoil_recovery_acceleration": "1000",
-              "recoil_recovery_delay_ms": "92",
-              "recoil_recovery_rate": "18",
-              "recoil_shots_at_min_magnitude": "0",
-              "reload_block_auto": "0",
-              "reload_continuous": "0",
-              "reload_ammo_fill_ms": "1838",
-              "reload_chamber_ms": "450",
-              "reload_time_ms": "2000",
-              "sway_can_steady": "0",
-              "armor_penetration": "0",
-              "max_damage": "143",
-              "max_damage_range": "10",
-              "min_damage": "125",
-              "min_damage_range": "65",
-              "shield_bypass_pct": "0",
-              "bullet_arc_kick_angle": "0.175",
-              "charge_minimum_ms": "0",
-              "description": {
-                "de": "Automatik",
-                "en": "Auto",
-                "es": "Autom\u00e1tico",
-                "fr": "Automatique",
-                "it": "Automatico",
-                "tr": "Otomatik"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "fire_mode_2_lasherx2": {
-        "summary": "Lasher X2 (Explosive weapon).\nhttps://census.daybreakgames.com/get/ps2/fire_mode_2?fire_mode_id=8069",
-        "value": {
-          "fire_mode_2_list": [
-            {
-              "fire_mode_id": "8069",
-              "fire_mode_type_id": "0",
-              "automatic": "1",
-              "grief_immune": "0",
-              "iron_sights": "1",
-              "laser_guided": "0",
-              "move_modifier": "0.5",
-              "sprint_fire": "0",
-              "turn_modifier": "1",
-              "use_in_water": "0",
-              "zoom_default": "1.35",
-              "cof_override": "0",
-              "cof_pellet_spread": "0",
-              "cof_range": "100",
-              "cof_recoil": "0",
-              "cof_scalar": "1",
-              "cof_scalar_moving": "1",
-              "player_state_group_id": "2332",
-              "damage_direct_effect_id": "7540",
-              "damage_head_multiplier": "1",
-              "damage_indirect_effect_id": "249",
-              "damage_legs_multiplier": "-0.1",
-              "fire_ammo_per_shot": "1",
-              "fire_auto_fire_ms": "0",
-              "fire_burst_count": "1",
-              "fire_charge_up_ms": "0",
-              "fire_detect_range": "40",
-              "fire_refire_ms": "180",
-              "fire_pellets_per_shot": "1",
-              "lockon_maintain": "0",
-              "lockon_required": "0",
-              "recoil_angle_max": "10",
-              "recoil_angle_min": "10",
-              "recoil_first_shot_modifier": "1.5",
-              "recoil_horizontal_max": "0.2",
-              "recoil_horizontal_max_increase": "0",
-              "recoil_horizontal_min": "0.1",
-              "recoil_horizontal_min_increase": "0",
-              "recoil_horizontal_tolerance": "0.75",
-              "recoil_increase": "0",
-              "recoil_increase_crouched": "0",
-              "recoil_magnitude_max": "0.4",
-              "recoil_magnitude_min": "0.4",
-              "recoil_max_total_magnitude": "0",
-              "recoil_recovery_acceleration": "1000",
-              "recoil_recovery_delay_ms": "0",
-              "recoil_recovery_rate": "15",
-              "recoil_shots_at_min_magnitude": "0",
-              "reload_block_auto": "0",
-              "reload_continuous": "0",
-              "reload_ammo_fill_ms": "4420",
-              "reload_chamber_ms": "1000",
-              "reload_time_ms": "4200",
-              "sway_can_steady": "0",
-              "armor_penetration": "0",
-              "max_damage": "155",
-              "max_damage_ind": "75",
-              "max_damage_ind_radius": "1",
-              "max_damage_range": "10",
-              "min_damage": "105",
-              "min_damage_ind": "25",
-              "min_damage_ind_radius": "3",
-              "min_damage_range": "65",
-              "shield_bypass_pct": "0",
-              "bullet_arc_kick_angle": "0",
-              "charge_minimum_ms": "0",
-              "description": {
-                "de": "Automatik",
-                "en": "Auto",
-                "es": "Autom\u00e1tico",
-                "fr": "Automatique",
-                "it": "Automatico",
-                "tr": "Otomatik"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "fire_mode_2_hawkgd68": {
-        "summary": "Hawk GD-68 (Lock-on launcher).\nhttps://census.daybreakgames.com/get/ps2/fire_mode_2?fire_mode_id=33004",
-        "value": {
-          "fire_mode_2_list": [
-            {
-              "fire_mode_id": "33004",
-              "fire_mode_type_id": "0",
-              "automatic": "0",
-              "grief_immune": "0",
-              "iron_sights": "0",
-              "laser_guided": "0",
-              "move_modifier": "1",
-              "sprint_fire": "0",
-              "turn_modifier": "1",
-              "use_in_water": "0",
-              "zoom_default": "1",
-              "cof_override": "0",
-              "cof_pellet_spread": "0",
-              "cof_range": "50",
-              "cof_recoil": "2",
-              "cof_scalar": "1",
-              "cof_scalar_moving": "1",
-              "player_state_group_id": "75564",
-              "damage_direct_effect_id": "1421",
-              "damage_head_multiplier": "0",
-              "damage_indirect_effect_id": "33004",
-              "damage_legs_multiplier": "-0.1",
-              "fire_ammo_per_shot": "1",
-              "fire_auto_fire_ms": "0",
-              "fire_burst_count": "1",
-              "fire_charge_up_ms": "0",
-              "fire_delay_ms": "0",
-              "fire_detect_range": "100",
-              "fire_refire_ms": "300",
-              "fire_pellets_per_shot": "1",
-              "lockon_maintain": "0",
-              "lockon_required": "0",
-              "recoil_first_shot_modifier": "1",
-              "recoil_increase": "0",
-              "recoil_increase_crouched": "0",
-              "reload_block_auto": "0",
-              "reload_continuous": "0",
-              "reload_ammo_fill_ms": "2744",
-              "reload_time_ms": "3430",
-              "sway_can_steady": "0",
-              "armor_penetration": "0",
-              "max_damage": "700",
-              "max_damage_ind": "300",
-              "max_damage_ind_radius": "0.5",
-              "min_damage_ind": "50",
-              "min_damage_ind_radius": "3",
-              "min_damage_range": "0",
-              "shield_bypass_pct": "0",
-              "bullet_arc_kick_angle": "1",
-              "charge_minimum_ms": "0",
-              "description": {
-                "de": "Aufschaltung",
-                "en": "Lock-on",
-                "es": "Blanco fijo",
-                "fr": "Verrouillage",
-                "it": "Lock-On",
-                "tr": "Kilitlenme"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "fire_mode_2_betelgeuse54a": {
-        "summary": "Betelgeuse 54-A (Heat mechanic).\nhttps://census.daybreakgames.com/get/ps2/fire_mode_2?fire_mode_id=740",
-        "value": {
-          "fire_mode_2_list": [
-            {
-              "fire_mode_id": "740",
-              "fire_mode_type_id": "0",
-              "automatic": "1",
-              "grief_immune": "0",
-              "iron_sights": "0",
-              "laser_guided": "0",
-              "move_modifier": "1",
-              "sprint_fire": "0",
-              "turn_modifier": "1",
-              "use_in_water": "0",
-              "zoom_default": "1",
-              "cof_range": "50",
-              "cof_scalar": "1",
-              "cof_scalar_moving": "1",
-              "player_state_group_id": "75499",
-              "damage_direct_effect_id": "90009",
-              "damage_head_multiplier": "1",
-              "damage_legs_multiplier": "-0.1",
-              "fire_ammo_per_shot": "1",
-              "fire_burst_count": "1",
-              "fire_detect_range": "100",
-              "fire_refire_ms": "111",
-              "lockon_maintain": "0",
-              "lockon_required": "0",
-              "recoil_first_shot_modifier": "1",
-              "recoil_recovery_acceleration": "1000",
-              "reload_block_auto": "0",
-              "reload_continuous": "0",
-              "reload_time_ms": "3500",
-              "sway_can_steady": "0",
-              "armor_penetration": "0",
-              "max_damage": "200",
-              "max_damage_range": "50",
-              "min_damage": "143",
-              "min_damage_range": "100",
-              "shield_bypass_pct": "0",
-              "charge_minimum_ms": "0",
-              "description": {
-                "de": "Automatik",
-                "en": "Auto",
-                "es": "Autom\u00e1tico",
-                "fr": "Automatique",
-                "it": "Automatico",
-                "tr": "Otomatik"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "fire_mode_2_g30vulcan": {
-        "summary": "G30 Vulcan (Spool-up mechanic).\nhttps://census.daybreakgames.com/get/ps2/fire_mode_2?fire_mode_id=424",
-        "value": {
-          "fire_mode_2_list": [
-            {
-              "fire_mode_id": "424",
-              "fire_mode_type_id": "0",
-              "automatic": "1",
-              "grief_immune": "0",
-              "iron_sights": "0",
-              "laser_guided": "0",
-              "move_modifier": "1",
-              "sprint_fire": "0",
-              "turn_modifier": "1",
-              "use_in_water": "0",
-              "zoom_default": "1",
-              "cof_range": "50",
-              "cof_recoil": "0.01",
-              "cof_scalar": "1",
-              "cof_scalar_moving": "1",
-              "player_state_group_id": "301",
-              "damage_direct_effect_id": "174",
-              "damage_legs_multiplier": "-0.1",
-              "fire_ammo_per_shot": "1",
-              "fire_burst_count": "1",
-              "fire_detect_range": "50",
-              "fire_refire_ms": "80",
-              "fire_pellets_per_shot": "1",
-              "lockon_maintain": "0",
-              "lockon_required": "0",
-              "recoil_first_shot_modifier": "1",
-              "reload_block_auto": "0",
-              "reload_continuous": "0",
-              "reload_time_ms": "2500",
-              "sway_can_steady": "0",
-              "armor_penetration": "0",
-              "max_damage": "143",
-              "max_damage_range": "15",
-              "min_damage": "100",
-              "min_damage_range": "60",
-              "shield_bypass_pct": "0",
-              "charge_minimum_ms": "0",
-              "description": {
-                "de": "Automatik",
-                "en": "Auto",
-                "es": "Autom\u00e1tico",
-                "fr": "Automatique",
-                "it": "Automatico",
-                "tr": "Otomatik"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "fire_mode_to_projectile": {
-        "summary": "NS-11A\nhttps://census.daybreakgames.com/get/ps2/fire_mode_to_projectile?fire_mode_id=2001",
-        "value": {
-          "fire_mode_to_projectile_list": [
-            {
-              "fire_mode_id": "2001",
-              "projectile_id": "8000"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "image": {
-        "summary": "A.M.P. Station map icon.\nhttps://census.daybreakgames.com/get/ps2/image?image_id=24",
-        "value": {
-          "image_list": [
-            {
-              "image_id": "24",
-              "description": "energy_facility.dds",
-              "path": "/files/ps2/images/static/24.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "image_set": {
-        "summary": "A.M.P. Station map icons (all sizes).\nhttps://census.daybreakgames.com/get/ps2/image_set?image_id=24&c:limit=10",
-        "value": {
-          "image_set_list": [
-            {
-              "image_set_id": "806486",
-              "image_id": "24",
-              "description": "energy_facility.dds",
-              "type_id": "4",
-              "type_description": "Very Small (16 pixel height)",
-              "image_path": "/files/ps2/images/static/24.png"
-            },
-            {
-              "image_set_id": "806486",
-              "image_id": "24",
-              "description": "energy_facility.dds",
-              "type_id": "5",
-              "type_description": "Small (32 pixel height)",
-              "image_path": "/files/ps2/images/static/24.png"
-            },
-            {
-              "image_set_id": "806486",
-              "image_id": "24",
-              "description": "energy_facility.dds",
-              "type_id": "6",
-              "type_description": "Medium (64 pixel height)",
-              "image_path": "/files/ps2/images/static/24.png"
-            }
-          ],
-          "returned": 3
-        }
-      },
-      "image_set_default": {
-        "summary": "Default image for A.M.P. Station map icons.\nhttps://census.daybreakgames.com/get/ps2/image_set_default?image_set_id=806486",
-        "value": {
-          "image_set_default_list": [
-            {
-              "image_set_id": "806486",
-              "image_id": "24",
-              "description": "energy_facility.dds",
-              "type_id": "6",
-              "type_description": "Medium (64 pixel height)",
-              "image_path": "/files/ps2/images/static/24.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "item": {
-        "summary": "NC1 Gauss Rifle",
-        "value": {
-          "item_list": [
-            {
-              "item_id": "4",
-              "item_type_id": "26",
-              "item_category_id": "7",
-              "is_vehicle_weapon": "0",
-              "name": {
-                "de": "NC1 Gau\u00dfgewehr",
-                "en": "NC1 Gauss Rifle",
-                "es": "Rifle Gauss NC1",
-                "fr": "Fusil Gauss NC1",
-                "it": "Fucile Gauss NC1",
-                "tr": "NC1 Gauss T\u00fcfe\u011fi"
-              },
-              "description": {
-                "de": "Das Standard-Gau\u00dfgewehr NC1 war die erste erfolgreiche Einf\u00fchrung der Gau\u00dfgewehr-Technologie in kleinen Waffen. Nur f\u00fcr NK.",
-                "en": "The standard issue NC1 Gauss Rifle was the first successful implementation of coilgun technology in small arms. NC use only.",
-                "es": "El rifle NC1 Gauss est\u00e1ndar represent\u00f3 la primera implementaci\u00f3n de tecnolog\u00eda coilgun en armas peque\u00f1as. Solo para NC",
-                "fr": "Le fusil Gauss NC1 standard repr\u00e9sente la premi\u00e8re application r\u00e9ussie de la technologie de canon magn\u00e9tique aux armes de petit calibre. NC uniquement.",
-                "it": "Il fucile Gauss NC1 standard rappresenta la prima applicazione riuscita della tecnologia di accelerazione magnetica nelle armi di piccole dimensioni. Esclusivo NC.",
-                "tr": "Standart \u00fcretim NC1 Gauss T\u00fcfe\u011fi, bobinsilah\u0131 teknolojisininin hafif silahlara ilk ba\u015far\u0131l\u0131 uygulanmas\u0131d\u0131r. Yaln\u0131zca Yeni Birle\u015fim kullan\u0131m\u0131 i\u00e7in."
-              },
-              "faction_id": "2",
-              "max_stack_size": "1",
-              "image_set_id": "2745",
-              "image_id": "5310",
-              "image_path": "/files/ps2/images/static/5310.png",
-              "skill_set_id": "132",
-              "is_default_attachment": "0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "fire_mode_type": {
-        "summary": "Full list of all fire mode types.\nhttps://census.daybreakgames.com/get/ps2/fire_mode_type?c:limit=20",
-        "value": {
-          "fire_mode_type_list": [
-            {
-              "fire_mode_type_id": "0",
-              "description": "Projectile"
-            },
-            {
-              "fire_mode_type_id": "3",
-              "description": "Melee"
-            },
-            {
-              "fire_mode_type_id": "8",
-              "description": "Trigger Item Ability"
-            },
-            {
-              "fire_mode_type_id": "12",
-              "description": "Thrown"
-            }
-          ],
-          "returned": 4
-        }
-      },
-      "item_attachment": {
-        "summary": "10 Attachments for the NC1 Gauss Rifle\nhttps://census.daybreakgames.com/get/ps2/item_attachment?item_id=4&c:limit=10",
-        "value": {
-          "item_attachment_list": [
-            {
-              "item_id": "4",
-              "attachment_item_id": "34"
-            },
-            {
-              "item_id": "4",
-              "attachment_item_id": "74"
-            },
-            {
-              "item_id": "4",
-              "attachment_item_id": "115"
-            },
-            {
-              "item_id": "4",
-              "attachment_item_id": "148"
-            },
-            {
-              "item_id": "4",
-              "attachment_item_id": "149"
-            },
-            {
-              "item_id": "4",
-              "attachment_item_id": "150"
-            },
-            {
-              "item_id": "4",
-              "attachment_item_id": "151"
-            },
-            {
-              "item_id": "4",
-              "attachment_item_id": "558"
-            },
-            {
-              "item_id": "4",
-              "attachment_item_id": "796"
-            },
-            {
-              "item_id": "4",
-              "attachment_item_id": "799"
-            }
-          ],
-          "returned": 10
-        }
-      },
-      "item_category": {
-        "summary": "Assault Rifles",
-        "value": {
-          "item_category_list": [
-            {
-              "item_category_id": "7",
-              "name": {
-                "de": "Sturmgewehr",
-                "en": "Assault Rifle",
-                "es": "Rifle de asalto",
-                "fr": "Fusil d'assaut",
-                "it": "Fucile d'assalto",
-                "tr": "Taarruz T\u00fcfe\u011fi"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "item_profile": {
-        "summary": "Classes that can use the default NC pistol.\nhttps://census.daybreakgames.com/get/ps2/item_profile?item_id=1&c:limit=10",
-        "value": {
-          "item_profile_list": [
-            {
-              "item_id": "1",
-              "profile_id": "2"
-            },
-            {
-              "item_id": "1",
-              "profile_id": "4"
-            },
-            {
-              "item_id": "1",
-              "profile_id": "5"
-            },
-            {
-              "item_id": "1",
-              "profile_id": "6"
-            },
-            {
-              "item_id": "1",
-              "profile_id": "7"
-            }
-          ],
-          "returned": 5
-        }
-      },
-      "item_to_weapon": {
-        "summary": "Connects the Beamer VS3 to its weapon object.\ncensus.daybreakgames.com/get/ps2/item_to_weapon?item_id=21",
-        "value": {
-          "item_to_weapon_list": [
-            {
-              "item_id": "21",
-              "weapon_id": "13"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "item_type": {
-        "summary": "A selection of common item types.\nhttps://census.daybreakgames.com/get/ps2/item_type?item_type_id=26,27,38,39,48",
-        "value": {
-          "item_type_list": [
-            {
-              "item_type_id": "26",
-              "name": "Weapon",
-              "code": "Weapon"
-            },
-            {
-              "item_type_id": "27",
-              "name": "Attachment",
-              "code": "Attachment"
-            },
-            {
-              "item_type_id": "38",
-              "name": "Vehicle Cosmetic",
-              "code": "VehicleCosmetic"
-            },
-            {
-              "item_type_id": "39",
-              "name": "Infantry Cosmetic",
-              "code": "InfantryCosmetic"
-            },
-            {
-              "item_type_id": "48",
-              "name": "Construction Module",
-              "code": "ConstructionModule"
-            }
-          ],
-          "returned": 5
-        }
-      },
-      "map": {
-        "summary": "Connery Indar State (truncated to 2 entries).\nhttps://census.daybreakgames.com/get/ps2/map?zone_ids=2&world_id=1",
-        "value": {
-          "map_list": [
-            {
-              "ZoneId": "2",
-              "Regions": {
-                "IsList": "1",
-                "Row": [
-                  {
-                    "RowData": {
-                      "RegionId": "2101",
-                      "FactionId": "1"
-                    }
-                  },
-                  {
-                    "RowData": {
-                      "RegionId": "2421",
-                      "FactionId": "1"
-                    }
-                  }
-                ]
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "map_hex": {
-        "summary": "Old Auraxium Mines.\nhttps://census.daybreakgames.com/get/ps2/map_hex?map_region_id=2448&c:limit=10",
-        "value": {
-          "map_hex_list": [
-            {
-              "zone_id": "2",
-              "map_region_id": "2448",
-              "x": "17",
-              "y": "-12",
-              "hex_type": "0",
-              "type_name": "Unrestricted access"
-            },
-            {
-              "zone_id": "2",
-              "map_region_id": "2448",
-              "x": "17",
-              "y": "-11",
-              "hex_type": "0",
-              "type_name": "Unrestricted access"
-            },
-            {
-              "zone_id": "2",
-              "map_region_id": "2448",
-              "x": "18",
-              "y": "-13",
-              "hex_type": "0",
-              "type_name": "Unrestricted access"
-            },
-            {
-              "zone_id": "2",
-              "map_region_id": "2448",
-              "x": "18",
-              "y": "-12",
-              "hex_type": "0",
-              "type_name": "Unrestricted access"
-            },
-            {
-              "zone_id": "2",
-              "map_region_id": "2448",
-              "x": "18",
-              "y": "-11",
-              "hex_type": "0",
-              "type_name": "Unrestricted access"
-            }
-          ],
-          "returned": 5
-        }
-      },
-      "map_region": {
-        "summary": "Mao Tech Plant.\nhttps://census.daybreakgames.com/get/ps2/map_region?facility_id=4401",
-        "value": {
-          "map_region_list": [
-            {
-              "map_region_id": "2102",
-              "zone_id": "2",
-              "facility_id": "4401",
-              "facility_name": "Mao",
-              "facility_type_id": "4",
-              "facility_type": "Tech Plant",
-              "location_x": "1810",
-              "location_y": "110",
-              "location_z": "1514",
-              "reward_amount": "1",
-              "reward_currency_id": "1000",
-              "capture_reward": {
-                "description": "Synthium - Uncommon",
-                "amount": "8"
-              },
-              "tick_reward": {
-                "description": "Synthium - Uncommon",
-                "amount": "8"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "marketing_bundle": {
-        "summary": "'PlanetSide Legacy Bundle (2022)'. Note the NULL value for the cert price as this is a DBC-only bundle.\nhttps://census.daybreakgames.com/get/ps2/marketing_bundle?marketing_bundle_id=812821&c:includeNull=1",
-        "value": {
-          "marketing_bundle_list": [
-            {
-              "marketing_bundle_id": "812821",
-              "name": {
-                "de": "PlanetSide-Legacy-Paket (2022)",
-                "en": "PlanetSide Legacy Bundle (2022)",
-                "es": "Lote de legado de Planetside (2022)",
-                "fr": "Ensemble \"H\u00e9ritage de PlanetSide\"(2022)",
-                "it": "Pacchetto Legacy PlanetSide (2022)",
-                "tr": "NULL"
-              },
-              "description": {
-                "de": "Feiere die Geschichte der PlanetSide-Serie! Dieses Paket beinhaltet kosmetische Gegenst\u00e4nde f\u00fcr alle Fraktionen und Waffen f\u00fcr VS, NK und TR. Der Heldenbooster wird nur dem Charakter gew\u00e4hrt, der das Paket kauft. \"Perfekte\" Implantate sind f\u00fcr das komplette Konto verf\u00fcgbar und k\u00f6nnen nicht zerlegt werden.",
-                "en": "Celebrate the legacy of the PlanetSide franchise! This bundle contains cosmetics for all factions, and weapons for VS, NC, and TR. Heroic Boost is granted only to the character that purchases the bundle. \"Perfect\" Implants are granted account-wide, and cannot be broken down.",
-                "es": "\"\u00a1Celebra el legado de la serie PlanetSide! El lote contiene decoraciones para todas las facciones y armas para SV, NC y RT. El potenciador \nheroico solo est\u00e1 disponible para el personaje que compre el lote. Los implantes \"\"perfectos\"\" se conceden a toda la cuenta y no pueden desmontarse.\"",
-                "fr": "F\u00eatez l'h\u00e9ritage de la franchise PlanetSide ! Cet ensemble contient des armes pour toutes les factions, et des \u00e9l\u00e9ments esth\u00e9tiques pour la RT, le NC et la SV. Le Boost h\u00e9ro\u00efque n'est fourni que pour le personnage qui ach\u00e8te le lot. Les implants de type \"Parfait\" sont disponibles pour l'ensemble du compte et ne peuvent \u00eatre d\u00e9compos\u00e9s.",
-                "it": "Celebra le origini del franchise di PlanetSide! Questo pacchetto contiene oggetti cosmetici per tutte le fazioni e armi per SV, NC e RT. Il potenziamento eroico pu\u00f2 essere usato solo dal personaggio che ha acquistato il pacchetto. Gli impianti \"Perfect\" sono per tutto l'account e non si possono smontare.",
-                "tr": "NULL"
-              },
-              "image_id": "807193",
-              "station_cash_price": "0",
-              "cert_price": "NULL",
-              "release_time": "1683702000"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "marketing_bundle_item": {
-        "summary": "Lists items contained in the 'PlanetSide Legacy Bundle (2022)'.\nhttps://census.daybreakgames.com/get/ps2/marketing_bundle_item?marketing_bundle_id=812821&c:limit=20",
-        "value": {
-          "marketing_bundle_item_list": [
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "75432",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013508",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013533",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013480",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013477",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013476",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013586",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013587",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013588",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013589",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013590",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013592",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013593",
-              "quantity": "1",
-              "release_time": "1683702000"
-            },
-            {
-              "marketing_bundle_id": "812821",
-              "item_id": "6013594",
-              "quantity": "1",
-              "release_time": "1683702000"
-            }
-          ],
-          "returned": 14
-        }
-      },
-      "marketing_bundle_with_1_item": {
-        "summary": "Comet VM2.\nhttps://census.daybreakgames.com/get/ps2/marketing_bundle_with_1_item?marketing_bundle_id=465",
-        "value": {
-          "marketing_bundle_with_1_item_list": [
-            {
-              "marketing_bundle_id": "465",
-              "item_id": "17001",
-              "item_quantity": "1",
-              "station_cash_price": "100",
-              "release_time": "1334041200"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "metagame_event": {
-        "summary": "Oshur Alert (started by VS).\nhttps://census.daybreakgames.com/get/ps2/metagame_event?metagame_event_id=224",
-        "value": {
-          "metagame_event_list": [
-            {
-              "metagame_event_id": "224",
-              "name": {
-                "de": "Oshur-Erleuchtung",
-                "en": "Oshur Enlightenment",
-                "es": "Iluminaci\u00f3n en Oshur",
-                "fr": "\u00c9veil spirituel d'Oshur",
-                "it": "Risveglio di Oshur"
-              },
-              "description": {
-                "de": "Kontrolliere das Gebiet, um Oshur zu sperren.",
-                "en": "Control territory to lock Oshur",
-                "es": "Controla territorio para bloquear Oshur",
-                "fr": "Contr\u00f4lez le territoire pour verrouiller Oshur",
-                "it": "Controlla il territorio per bloccare Oshur"
-              },
-              "type": "9",
-              "experience_bonus": "25"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "metagame_event_state": {
-        "summary": "All alert states.\nhttps://census.daybreakgames.com/get/ps2/metagame_event_state?c:limit=10",
-        "value": {
-          "metagame_event_state_list": [
-            {
-              "metagame_event_state_id": "135",
-              "name": "started"
-            },
-            {
-              "metagame_event_state_id": "136",
-              "name": "restarted"
-            },
-            {
-              "metagame_event_state_id": "137",
-              "name": "canceled"
-            },
-            {
-              "metagame_event_state_id": "138",
-              "name": "ended"
-            },
-            {
-              "metagame_event_state_id": "139",
-              "name": "xp bonus changed"
-            }
-          ],
-          "returned": 5
-        }
-      },
-      "leaderboard": {
-        "summary": "All-time kills on Cobalt.\nhttps://census.daybreakgames.com/get/ps2/leaderboard?name=Kills&period=Forever&world=13",
-        "value": {
-          "limit": 10,
-          "leaderboard_list": [
-            {
-              "character_id": "5428011263289812449",
-              "value": "1004944",
-              "rank": "0"
-            },
-            {
-              "character_id": "5428092148238898497",
-              "value": "933727",
-              "rank": "1"
-            },
-            {
-              "character_id": "5428143250883637345",
-              "value": "871442",
-              "rank": "2"
-            },
-            {
-              "character_id": "8252189355200955505",
-              "value": "726831",
-              "rank": "3"
-            },
-            {
-              "character_id": "8280485721807277905",
-              "value": "611044",
-              "rank": "4"
-            },
-            {
-              "character_id": "5428123302629266225",
-              "value": "587284",
-              "rank": "5"
-            },
-            {
-              "character_id": "5428359100729973969",
-              "value": "564648",
-              "rank": "6"
-            },
-            {
-              "character_id": "5428064957346113809",
-              "value": "554749",
-              "rank": "7"
-            },
-            {
-              "character_id": "5428551667113611937",
-              "value": "552295",
-              "rank": "8"
-            },
-            {
-              "character_id": "8261280742797131393",
-              "value": "548013",
-              "rank": "9"
-            }
-          ],
-          "returned": 10,
-          "key": "Forever_Kills",
-          "count": 10000
-        }
-      },
-      "loadout": {
-        "summary": "NC Infiltrator",
-        "value": {
-          "loadout_list": [
-            {
-              "loadout_id": "1",
-              "profile_id": "2",
-              "faction_id": "2",
-              "code_name": "NC Infiltrator"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "objective": {
-        "summary": "Combat Medic Kills.\nhttps://census.daybreakgames.com/get/ps2/objective?objective_id=11649",
-        "value": {
-          "objective_list": [
-            {
-              "objective_id": "11649",
-              "objective_type_id": "12",
-              "objective_group_id": "10137",
-              "param1": "15",
-              "param4": "-1",
-              "param5": "-1",
-              "param8": "-1"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "objective_set_to_objective": {
-        "summary": "Objective Group for the \"Combat Medic Kills\" directive.\nhttps://census.daybreakgames.com/get/ps2/objective_set_to_objective?objective_set_id=4113",
-        "value": {
-          "objective_set_to_objective_list": [
-            {
-              "objective_set_id": "4113",
-              "objective_group_id": "10137"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "objective_type": {
-        "summary": "Kill Count.\nhttps://census.daybreakgames.com/get/ps2/objective_type?objective_type_id=12",
-        "value": {
-          "objective_type_list": [
-            {
-              "objective_type_id": "12",
-              "description": "Total Kill Count",
-              "param1": "Kill Count",
-              "param2": "Npc",
-              "param3": "Npc Classification",
-              "param4": "Vehicle",
-              "param5": "Item",
-              "param6": "Item Classification",
-              "param8": "Friendly Fire"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "outfit": {
-        "summary": "Friday Night Ops",
-        "value": {
-          "outfit_list": [
-            {
-              "outfit_id": "37525047953333155",
-              "name": "Friday Night Ops",
-              "name_lower": "friday night ops",
-              "alias": "FNO",
-              "alias_lower": "fno",
-              "time_created": "1413001215",
-              "time_created_date": "2014-10-11 04:20:15.0",
-              "leader_character_id": "5428010618015197505",
-              "member_count": "5"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "outfit_member": {
-        "summary": "Luperza",
-        "value": {
-          "outfit_member_list": [
-            {
-              "outfit_id": "37525047953333155",
-              "character_id": "5428010618015197505",
-              "member_since": "1413001215",
-              "member_since_date": "2014-10-11 04:20:15.0",
-              "rank": "Leader",
-              "rank_ordinal": "1"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "outfit_member_extended": {
-        "summary": "Luperza",
-        "value": {
-          "outfit_member_extended_list": [
-            {
-              "character_id": "5428010618015197505",
-              "member_since": "1413001215",
-              "member_since_date": "2014-10-11 04:20:15.0",
-              "member_rank": "Leader",
-              "member_rank_ordinal": "1",
-              "outfit_id": "37525047953333155",
-              "name": "Friday Night Ops",
-              "name_lower": "friday night ops",
-              "alias": "FNO",
-              "alias_lower": "fno",
-              "time_created": "1413001215",
-              "time_created_date": "2014-10-11 04:20:15.0",
-              "leader_character_id": "5428010618015197505",
-              "member_count": "5"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "outfit_rank": {
-        "summary": "URGE Bastion Commander",
-        "value": {
-          "outfit_rank_list": [
-            {
-              "outfit_id": "37564049462661850",
-              "ordinal": "5",
-              "name": "BASTION COMMANDER",
-              "description": "Outfit Enlisted"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "profile": {
-        "summary": "TR Light Assault",
-        "value": {
-          "profile_list": [
-            {
-              "profile_id": "12",
-              "profile_type_id": "3",
-              "profile_type_description": "Light Assault",
-              "faction_id": "3",
-              "name": {
-                "de": "Leichte Angriffseinheit",
-                "en": "Light Assault",
-                "es": "Asalto ligero",
-                "fr": "Assaut l\u00e9ger",
-                "it": "Assalto Leggero",
-                "tr": "Hafif Taarruz"
-              },
-              "description": {
-                "de": "Leichte Angriffseinheit",
-                "en": "Light Assault",
-                "es": "Asalto ligero",
-                "fr": "Assaut l\u00e9ger",
-                "it": "Assalto Leggero",
-                "tr": "Hafif Taarruz"
-              },
-              "image_set_id": "8",
-              "image_id": "62",
-              "image_path": "/files/ps2/images/static/62.png",
-              "movement_speed": "4",
-              "backpedal_speed_modifier": "0.75",
-              "sprint_speed_modifier": "1.625",
-              "strafe_speed_modifier": "0.75"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "profile_2": {
-        "summary": "Sunderer",
-        "value": {
-          "profile_2_list": [
-            {
-              "profile_id": "33",
-              "description": "Sunderer"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "profile_armor_map": {
-        "summary": "Armor map for the Magrider.\nhttps://census.daybreakgames.com/get/ps2/profile_armor_map?profile_id=29&c:limit=6",
-        "value": {
-          "profile_armor_map_list": [
-            {
-              "profile_id": "29",
-              "armor_info_id": "40",
-              "rank": "1"
-            },
-            {
-              "profile_id": "29",
-              "armor_info_id": "41",
-              "rank": "1"
-            },
-            {
-              "profile_id": "29",
-              "armor_info_id": "42",
-              "rank": "1"
-            },
-            {
-              "profile_id": "29",
-              "armor_info_id": "43",
-              "rank": "1"
-            },
-            {
-              "profile_id": "29",
-              "armor_info_id": "44",
-              "rank": "1"
-            },
-            {
-              "profile_id": "29",
-              "armor_info_id": "45",
-              "rank": "1"
-            }
-          ],
-          "returned": 6
-        }
-      },
-      "profile_resist_map": {
-        "summary": "Resist map for the Lightning. Note that the example has been truncated for brevity.\nhttps://census.daybreakgames.com/get/ps2/profile_resist_map?profile_id=26&c:limit=50",
-        "value": {
-          "profile_resist_map_list": [
-            {
-              "profile_id": "26",
-              "resist_info_id": "31",
-              "rank": "1"
-            },
-            {
-              "profile_id": "26",
-              "resist_info_id": "32",
-              "rank": "1"
-            },
-            {
-              "profile_id": "26",
-              "resist_info_id": "33",
-              "rank": "1"
-            },
-            {
-              "profile_id": "26",
-              "resist_info_id": "34",
-              "rank": "1"
-            }
-          ],
-          "returned": 26
-        }
-      },
-      "projectile": {
-        "summary": "Hawk GD-68\nhttps://census.daybreakgames.com/get/ps2/projectile?projectile_id=33004",
-        "value": {
-          "projectile_list": [
-            {
-              "projectile_id": "33004",
-              "projectile_flight_type_id": "1",
-              "speed": "50",
-              "speed_max": "100",
-              "turn_rate": "1.5",
-              "lifespan": "5",
-              "drag": "0",
-              "gravity": "1",
-              "lockon_acceleration": "6.67",
-              "lockon_lifespan": "5",
-              "detonate_on_contact": "1",
-              "sticky": "0",
-              "sticks_to_players": "0",
-              "lockon_lose_angle": "145",
-              "lockon_seek_in_flight": "0",
-              "projectile_radius": "0.03"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "projectile_flight_type": {
-        "summary": "List all flight types.\nhttps://census.daybreakgames.com/get/ps2/projectile_flight_type?c:limit=10",
-        "value": {
-          "projectile_flight_type_list": [
-            {
-              "projectile_flight_type_id": "1",
-              "description": "Ballistic"
-            },
-            {
-              "projectile_flight_type_id": "3",
-              "description": "True Ballstic - Uses Real Gravity"
-            },
-            {
-              "projectile_flight_type_id": "9",
-              "description": "Dynamic"
-            },
-            {
-              "projectile_flight_type_id": "10",
-              "description": "Proximity Detonate"
-            }
-          ],
-          "returned": 4
-        }
-      },
-      "region": {
-        "summary": "Mao Tech Plant.\nhttps://census.daybreakgames.com/get/ps2/region?region_id=2102",
-        "value": {
-          "region_list": [
-            {
-              "region_id": "2102",
-              "zone_id": "2",
-              "initial_faction_id": "1",
-              "name": {
-                "de": "Mao",
-                "en": "Mao",
-                "es": "Mao",
-                "fr": "Mao",
-                "it": "Mao",
-                "tr": "Mao"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "resist_info": {
-        "summary": "MAX Melee resistance.\nhttps://census.daybreakgames.com/get/ps2/resist_info?resist_info_id=1",
-        "value": {
-          "resist_info_list": [
-            {
-              "resist_info_id": "1",
-              "resist_type_id": "1",
-              "resist_percent": "80",
-              "multiplier_when_headshot": "1",
-              "description": "MAX - Melee"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "resist_type": {
-        "summary": "List of all resist types.\nhttps://census.daybreakgames.com/get/ps2/resist_type?c:limit=100",
-        "value": {
-          "resist_type_list": [
-            {
-              "resist_type_id": "0",
-              "description": "None"
-            },
-            {
-              "resist_type_id": "1",
-              "description": "Melee"
-            },
-            {
-              "resist_type_id": "2",
-              "description": "Small Arms"
-            },
-            {
-              "resist_type_id": "4",
-              "description": "Heavy Machine Guns"
-            },
-            {
-              "resist_type_id": "5",
-              "description": "Heavy Anti-Armor"
-            },
-            {
-              "resist_type_id": "6",
-              "description": "Common Explosive"
-            },
-            {
-              "resist_type_id": "7",
-              "description": "Tank Shell"
-            },
-            {
-              "resist_type_id": "8",
-              "description": "Aircraft Machine Gun"
-            },
-            {
-              "resist_type_id": "12",
-              "description": "Flak Explosive Blast"
-            },
-            {
-              "resist_type_id": "20",
-              "description": "Sniper Rifles"
-            },
-            {
-              "resist_type_id": "22",
-              "description": "Anti-Aircraft Machine Gun"
-            },
-            {
-              "resist_type_id": "23",
-              "description": "Air to Ground Warhead"
-            },
-            {
-              "resist_type_id": "28",
-              "description": "AP Gatling"
-            },
-            {
-              "resist_type_id": "34",
-              "description": "Infantry Rocket Launchers"
-            },
-            {
-              "resist_type_id": "40",
-              "description": "Anti-Materiel Rifle"
-            },
-            {
-              "resist_type_id": "45",
-              "description": "A2A Missile"
-            },
-            {
-              "resist_type_id": "46",
-              "description": "Core Explosion / Glaive"
-            },
-            {
-              "resist_type_id": "47",
-              "description": "Orbital Strike"
-            },
-            {
-              "resist_type_id": "64",
-              "description": "Burning"
-            },
-            {
-              "resist_type_id": "68",
-              "description": "Infantry Lock-on"
-            },
-            {
-              "resist_type_id": "69",
-              "description": "Melee: Armor Piercing"
-            }
-          ],
-          "returned": 21
-        }
-      },
-      "resource_type": {
-        "summary": "All resource types.\nhttps://census.daybreakgames.com/get/ps2/resource_type?c:limit=50",
-        "value": {
-          "resource_type_list": [
-            {
-              "resource_type_id": "1",
-              "description": "Health"
-            },
-            {
-              "resource_type_id": "7",
-              "description": "Fuel"
-            },
-            {
-              "resource_type_id": "9",
-              "description": "Heavy Shield"
-            },
-            {
-              "resource_type_id": "35",
-              "description": "Cloaker Juice"
-            },
-            {
-              "resource_type_id": "38",
-              "description": "Medic Fuel"
-            },
-            {
-              "resource_type_id": "41",
-              "description": "NC MAX Aegis Shield 01"
-            },
-            {
-              "resource_type_id": "43",
-              "description": "NC MAX Aegis Shield 02"
-            },
-            {
-              "resource_type_id": "44",
-              "description": "NC MAX Aegis Shield 03"
-            },
-            {
-              "resource_type_id": "45",
-              "description": "NC MAX Aegis Shield 04"
-            },
-            {
-              "resource_type_id": "46",
-              "description": "NC MAX Aegis Shield 05"
-            },
-            {
-              "resource_type_id": "50",
-              "description": "VS: MAX: Ability: Zealot"
-            },
-            {
-              "resource_type_id": "58",
-              "description": "Cortium"
-            },
-            {
-              "resource_type_id": "75",
-              "description": "Ambusher Fuel"
-            },
-            {
-              "resource_type_id": "133",
-              "description": "NSO: MAX: Time Bomb"
-            },
-            {
-              "resource_type_id": "154",
-              "description": "Thrust"
-            },
-            {
-              "resource_type_id": "157",
-              "description": "Demeter Veil"
-            }
-          ],
-          "returned": 16
-        }
-      },
-      "reward": {
-        "summary": "VS Auraxium Light Assault armor.\nhttps://census.daybreakgames.com/get/ps2/reward?reward_id=4771",
-        "value": {
-          "reward_list": [
-            {
-              "reward_id": "4771",
-              "reward_type_id": "1",
-              "count_min": "1",
-              "count_max": "1",
-              "param1": "15746",
-              "param2": "0",
-              "param3": "0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "reward_group_to_reward": {
-        "summary": "VS Light Assault Mastery reward group to rewards.\nhttps://census.daybreakgames.com/get/ps2/reward_group_to_reward?reward_group_id=10074&c:limit=10",
-        "value": {
-          "reward_group_to_reward_list": [
-            {
-              "reward_group_id": "10074",
-              "reward_id": "4771"
-            },
-            {
-              "reward_group_id": "10074",
-              "reward_id": "4772"
-            },
-            {
-              "reward_group_id": "10074",
-              "reward_id": "4773"
-            },
-            {
-              "reward_group_id": "10074",
-              "reward_id": "6699"
-            }
-          ],
-          "returned": 4
-        }
-      },
-      "reward_set_to_reward_group": {
-        "summary": "VS Light Assault Mastery reward group.\nhttps://census.daybreakgames.com/get/ps2/reward_set_to_reward_group?reward_set_id=4466",
-        "value": {
-          "reward_set_to_reward_group_list": [
-            {
-              "reward_set_id": "4466",
-              "reward_group_id": "10074"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "reward_type": {
-        "summary": "All reward types.\nhttps://census.daybreakgames.com/get/ps2/reward_type?c:limit=10",
-        "value": {
-          "reward_type_list": [
-            {
-              "reward_type_id": "1",
-              "description": "Item",
-              "count_min": "# of items to give",
-              "param1": "Item ID",
-              "param2": "currency_type (-1 for coin)",
-              "param3": "Flag Goto Claim",
-              "param4": "Required Scalar Percent"
-            },
-            {
-              "reward_type_id": "2",
-              "description": "Currency",
-              "count_min": "rand # to add to P1",
-              "param1": "# of coin",
-              "param2": "currency_type (-1 for coin)",
-              "param3": "award type"
-            },
-            {
-              "reward_type_id": "3",
-              "description": "XP",
-              "param1": "# of exp",
-              "param2": "Profile (0 = current)",
-              "param3": "award type"
-            }
-          ],
-          "returned": 3
-        }
-      },
-      "skill": {
-        "summary": "Suppressor.\nhttps://census.daybreakgames.com/get/ps2/skill?skill_id=34",
-        "value": {
-          "skill_list": [
-            {
-              "skill_id": "34",
-              "skill_line_id": "13",
-              "skill_line_index": "0",
-              "skill_points": "100",
-              "grant_item_id": "182",
-              "name": {
-                "de": "Schalld\u00e4mpfer",
-                "en": "Suppressor",
-                "es": "Silenciador",
-                "fr": "Silencieux",
-                "it": "Soppressore",
-                "tr": "Susturucu"
-              },
-              "description": {
-                "de": "Verringert M\u00fcndungsfeuer und Lautst\u00e4rke.",
-                "en": "Decreases muzzle flash and audio range.",
-                "es": "Disminuye el alcance del fogonazo y el sonido al disparar.",
-                "fr": "Diminue l'\u00e9clair du tir et le bruit.",
-                "it": "Riduce la fiammata e la gittata sonora dell'arma.",
-                "tr": "Namlu alevi ve sesinin duyulma mesafesini azalt\u0131r."
-              },
-              "image_set_id": "443",
-              "image_id": "1300",
-              "image_path": "/files/ps2/images/static/1300.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "skill_line": {
-        "summary": "Maximum Ammo Capacity.\nhttps://census.daybreakgames.com/get/ps2/skill_line?skill_line_id=88",
-        "value": {
-          "skill_line_list": [
-            {
-              "skill_line_id": "88",
-              "skill_points": "0",
-              "skill_category_id": "44",
-              "skill_category_index": "0",
-              "name": {
-                "de": "Maximale Munitionskapazit\u00e4t",
-                "en": "Maximum Ammo Capacity",
-                "es": "Capacidad de munici\u00f3n m\u00e1xima",
-                "fr": "Capacit\u00e9 maximale en munitions",
-                "it": "Capacit\u00e0 di munizioni massima",
-                "tr": "Maksimum Cephane Kapasitesi"
-              },
-              "description": {
-                "de": "Erh\u00f6ht die maximale Munitionskapazit\u00e4t der Waffe.",
-                "en": "Increases the maximum ammo capacity of the weapon.",
-                "es": "Aumenta la capacidad de munici\u00f3n m\u00e1xima del arma.",
-                "fr": "Augmente la capacit\u00e9 maximale en munitions de l'arme.",
-                "it": "Aumenta la capacit\u00e0 massima di munizioni dell'arma.",
-                "tr": "Silah\u0131n azami cephane kapasitesini artt\u0131r\u0131r."
-              },
-              "image_set_id": "2049",
-              "image_id": "3744",
-              "image_path": "/files/ps2/images/static/3744.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "skill_category": {
-        "summary": "Passive Systems.\nhttps://census.daybreakgames.com/get/ps2/skill_category?skill_category_id=1",
-        "value": {
-          "skill_category_list": [
-            {
-              "skill_category_id": "1",
-              "skill_set_id": "10",
-              "skill_set_index": "0",
-              "skill_points": "0",
-              "name": {
-                "de": "Passive Systeme",
-                "en": "Passive Systems",
-                "es": "Sistemas pasivos",
-                "fr": "Syst\u00e8mes passifs",
-                "it": "Sistemi passivi",
-                "tr": "Pasif Sistemler"
-              },
-              "image_set_id": "1",
-              "image_id": "35",
-              "image_path": "/files/ps2/images/static/35.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "skill_set": {
-        "summary": "M40 Fury-F skill set.\nhttps://census.daybreakgames.com/get/ps2/skill_set?skill_set_id=43",
-        "value": {
-          "skill_set_list": [
-            {
-              "skill_set_id": "43",
-              "skill_points": "875",
-              "required_item_id": "2510",
-              "name": {
-                "de": "PRIM\u00c4RWAFFE: M40 Fury-F",
-                "en": "PRIMARY WEAPON:  M40 Fury-F",
-                "es": "ARMA PRIMARIA: M40 Fury-F",
-                "fr": "ARME PRINCIPALE: Furie-F M40",
-                "it": "ARMA PRIMARIA: M40 Fury-F",
-                "tr": "PRIMARY WEAPON:  M40 Fury-F"
-              },
-              "description": {
-                "de": "Der Fury feuert 40mm-Granaten, die effektiv gegen die Infanterie  und leichte Panzerungen sind. Er kann ebenso leichten Schaden an schwer gepanzerten Ziele verursachen. F\u00fcr alle Fraktionen.",
-                "en": "The Fury launches 40mm grenades that are effective against infantry and light armor.  It is also capable of light damage against heavy armor.  All factions can use this weapon.",
-                "es": "El Fury lanza granadas de 40 mm eficaces contra infanter\u00eda y blindaje ligero. Adem\u00e1s, son capaces de da\u00f1ar ligeramente blindajes pesados. Todas las facciones pueden usar esta arma.",
-                "fr": "Le Furie lance des grenades de 40mm qui sont efficaces contre l'infanterie et les blindages l\u00e9gers. Il est \u00e9galement capable d'infliger des d\u00e9g\u00e2ts l\u00e9gers aux blindages lourds. Toutes les factions peuvent l'utiliser.",
-                "it": "Il Fury lancia granate di 40 mm efficaci contro la fanteria e le corazzature leggere. Pu\u00f2 anche infliggere danni leggeri ai corazzati pesanti. Quest'arma pu\u00f2 essere usata da tutte le fazioni.",
-                "tr": "The Fury launches 40mm grenades that are effective against infantry and light armor.  It is also capable of light damage against heavy armor.  All factions can use this weapon."
-              },
-              "image_set_id": "2029",
-              "image_id": "3724",
-              "image_path": "/files/ps2/images/static/3724.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "target_type": {
-        "summary": "List of all target types.\nhttps://census.daybreakgames.com/get/ps2/target_type?c:limit=10",
-        "value": {
-          "target_type_list": [
-            {
-              "target_type_id": "1",
-              "description": "Self"
-            },
-            {
-              "target_type_id": "2",
-              "description": "Any"
-            },
-            {
-              "target_type_id": "3",
-              "description": "Enemy"
-            },
-            {
-              "target_type_id": "4",
-              "description": "Ally"
-            }
-          ],
-          "returned": 4
-        }
-      },
-      "title": {
-        "summary": "Dreadnaught (BR 120).\nhttps://census.daybreakgames.com/get/ps2/title?title_id=202",
-        "value": {
-          "title_list": [
-            {
-              "title_id": "202",
-              "name": {
-                "de": "Dreadnaught",
-                "en": "Dreadnaught",
-                "es": "Acorazado",
-                "fr": "Dreadnaught",
-                "it": "Dreadnaught"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "vehicle": {
-        "summary": "Liberator.\nhttps://census.daybreakgames.com/get/ps2/vehicle?vehicle_id=10",
-        "value": {
-          "vehicle_list": [
-            {
-              "vehicle_id": "10",
-              "name": {
-                "de": "Liberator",
-                "en": "Liberator",
-                "es": "Liberator",
-                "fr": "Lib\u00e9rateur",
-                "it": "Liberator",
-                "tr": "KURTARICI"
-              },
-              "description": {
-                "de": "Der Liberator ist ein Drei-Mann-Kampfflugzeug. Das Artelleriegesch\u00fctz ist extrem wirksam gegen Bodenziele und er verf\u00fcgt ebenso \u00fcber ein Heckgesch\u00fctz, um gegnerische J\u00e4ger abzuwehren.",
-                "en": "The Liberator is a three man gun ship.  The bombardier weapon is very powerful against ground targets and it has a tail gun to ward off enemy fighters.",
-                "es": "El Liberator es una nave de asalto de tres plazas. Su arma bombardera es muy potente contra objetivos terrestres y tiene un puesto de artillero de cola para defenderse de los cazas enemigos.",
-                "fr": "Le Lib\u00e9rateur est un appareil de combat servi par 3 hommes d'\u00e9quipage. Son bombardier est tr\u00e8s puissant contre les cibles au sol et il poss\u00e8de un canonnier arri\u00e8re pour repousser les combattants ennemis.",
-                "it": "Il Liberator \u00e8 una cannoniera volante con tre uomini di equipaggio. L'armamento di bordo \u00e8 molto potente contro i bersagli a terra e possiede anche un cannone sulla coda per tenere lontani i caccia nemici.",
-                "tr": "Kurtar\u0131c\u0131, \u00fc\u00e7 ki\u015filik bir sava\u015f helikopteridir. Bombard\u0131man silah\u0131 yer hedeflerine kar\u015f\u0131 \u00e7ok g\u00fc\u00e7l\u00fcd\u00fcr ve kuyruk silah\u0131 d\u00fc\u015fman sava\u015f\u00e7\u0131lar\u0131n\u0131 parampar\u00e7a eder."
-              },
-              "type_id": "1",
-              "type_name": "Light Aircraft",
-              "cost": "0",
-              "cost_resource_id": "4",
-              "image_set_id": "93",
-              "image_id": "3981",
-              "image_path": "/files/ps2/images/static/3981.png"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "vehicle_attachment": {
-        "summary": "Primary weapons for a VS Harasser.\nhttps://census.daybreakgames.com/get/ps2/vehicle_attachment?vehicle_id=12&faction_id=1&slot_id=1&c:limit=100",
-        "value": {
-          "vehicle_attachment_list": [
-            {
-              "item_id": "6100",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "M12 Kobalt-H"
-                }
-              }
-            },
-            {
-              "item_id": "6103",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "M20 Basilisk-H"
-                }
-              }
-            },
-            {
-              "item_id": "6106",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "G30 Walker"
-                }
-              }
-            },
-            {
-              "item_id": "6109",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "G40-F Ranger"
-                }
-              }
-            },
-            {
-              "item_id": "6112",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "M60-G Bulldog-H"
-                }
-              }
-            },
-            {
-              "item_id": "6115",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "M40 Fury-H"
-                }
-              }
-            },
-            {
-              "item_id": "6118",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "E540 Halberd-H"
-                }
-              }
-            },
-            {
-              "item_id": "6125",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "Proton II PPA-H"
-                }
-              }
-            },
-            {
-              "item_id": "6126",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "Saron HRB-H"
-                }
-              }
-            },
-            {
-              "item_id": "802898",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "Aphelion VEX-4H"
-                }
-              }
-            },
-            {
-              "item_id": "6006397",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "Halberd-H SE"
-                }
-              }
-            },
-            {
-              "item_id": "6011884",
-              "vehicle_id": "12",
-              "faction_id": "1",
-              "description": "Harasser VS",
-              "slot_id": "1",
-              "item_id_join_item": {
-                "name": {
-                  "en": "V42 Pariah-H"
-                }
-              }
-            }
-          ],
-          "returned": 12
-        }
-      },
-      "vehicle_faction": {
-        "summary": "Factions that can use the Harasser.\nhttps://census.daybreakgames.com/get/ps2/vehicle_faction?vehicle_id=12&c:limit=10",
-        "value": {
-          "vehicle_faction_list": [
-            {
-              "vehicle_id": "12",
-              "faction_id": "1"
-            },
-            {
-              "vehicle_id": "12",
-              "faction_id": "2"
-            },
-            {
-              "vehicle_id": "12",
-              "faction_id": "3"
-            },
-            {
-              "vehicle_id": "12",
-              "faction_id": "4"
-            }
-          ],
-          "returned": 4
-        }
-      },
-      "vehicle_skill_set": {
-        "summary": "L-30R Vektor (VS).\nhttps://census.daybreakgames.com/get/ps2/vehicle_skill_set?vehicle_id=10&skill_set_id=39&faction_id=1",
-        "value": {
-          "vehicle_skill_set_list": [
-            {
-              "vehicle_id": "10",
-              "skill_set_id": "39",
-              "faction_id": "1",
-              "display_index": "4"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "weapon_regular": {
-        "summary": "NC1 Gauss Rifle.\nhttps://census.daybreakgames.com/get/ps2/weapon?weapon_id=4",
-        "value": {
-          "weapon_list": [
-            {
-              "weapon_id": "4",
-              "weapon_group_id": "3",
-              "turn_modifier": "1.0",
-              "move_modifier": "1.0",
-              "sprint_recovery_ms": "300",
-              "equip_ms": "650",
-              "unequip_ms": "250",
-              "to_iron_sights_ms": "150",
-              "from_iron_sights_ms": "150"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "weapon_knife": {
-        "summary": "Auraxium Chainblade (Knife).\nhttps://census.daybreakgames.com/get/ps2/weapon?weapon_id=20",
-        "value": {
-          "weapon_list": [
-            {
-              "weapon_id": "20",
-              "turn_modifier": "1.0",
-              "move_modifier": "1.0",
-              "sprint_recovery_ms": "0",
-              "equip_ms": "250",
-              "unequip_ms": "250",
-              "to_iron_sights_ms": "150",
-              "from_iron_sights_ms": "150",
-              "melee_detect_width": "0.15",
-              "melee_detect_height": "0.1"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "weapon_heat": {
-        "summary": "Darkstar (Heat-based weapon).\nhttps://census.daybreakgames.com/get/ps2/weapon?weapon_id=111",
-        "value": {
-          "weapon_list": [
-            {
-              "weapon_id": "111",
-              "weapon_group_id": "1226",
-              "turn_modifier": "1.0",
-              "move_modifier": "1.0",
-              "sprint_recovery_ms": "300",
-              "equip_ms": "750",
-              "unequip_ms": "250",
-              "to_iron_sights_ms": "150",
-              "from_iron_sights_ms": "150",
-              "heat_capacity": "999",
-              "heat_bleed_off_rate": "364",
-              "heat_overheat_penalty_ms": "1750"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "weapon_ammo_slot": {
-        "summary": "Ammo Slots for the NC1 Gauss Rifle.\nhttps://census.daybreakgames.com/get/ps2/weapon_ammo_slot?weapon_id=4&c:limit=10",
-        "value": {
-          "weapon_ammo_slot_list": [
-            {
-              "weapon_id": "4",
-              "weapon_slot_index": "0",
-              "clip_size": "30",
-              "capacity": "180",
-              "refill_ammo_rate": "30"
-            },
-            {
-              "weapon_id": "4",
-              "weapon_slot_index": "1",
-              "clip_size": "1",
-              "capacity": "4",
-              "refill_ammo_rate": "1"
-            },
-            {
-              "weapon_id": "4",
-              "weapon_slot_index": "2",
-              "clip_size": "1",
-              "capacity": "2",
-              "refill_ammo_rate": "1",
-              "refill_ammo_delay_ms": "5000"
-            },
-            {
-              "weapon_id": "4",
-              "weapon_slot_index": "3",
-              "clip_size": "1",
-              "capacity": "2",
-              "refill_ammo_rate": "1",
-              "refill_ammo_delay_ms": "5000"
-            }
-          ],
-          "returned": 4
-        }
-      },
-      "weapon_datasheet": {
-        "summary": "Datasheet for the NS-11A. Note the incorrect damage values; none of which match the 143-to-125 damage model it has as of writing.\nhttps://census.daybreakgames.com/get/ps2/weapon_datasheet?item_id=70998",
-        "value": {
-          "weapon_datasheet_list": [
-            {
-              "item_id": "70998",
-              "damage": "143",
-              "damage_min": "75",
-              "damage_max": "225",
-              "fire_cone": "1.125",
-              "fire_cone_min": "0",
-              "fire_cone_max": "7",
-              "fire_rate_ms": "92",
-              "fire_rate_ms_min": "60",
-              "fire_rate_mx_max": "135",
-              "reload_ms": "2000",
-              "reload_ms_min": "1250",
-              "reload_ms_max": "3500",
-              "clip_size": "35",
-              "capacity": "210",
-              "range": {
-                "de": "Lang",
-                "en": "Long",
-                "es": "Largo",
-                "fr": "Long",
-                "it": "Lunga",
-                "tr": "Uzun"
-              },
-              "show_clip_size": "1",
-              "show_fire_modes": "1",
-              "show_range": "1"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "weapon_to_attachment": {
-        "summary": "NC1 Gauss Rifle attachments.\nhttps://census.daybreakgames.com/get/ps2/weapon_to_attachment?weapon_group_id=3&c:limit=5",
-        "value": {
-          "weapon_to_attachment_list": [
-            {
-              "weapon_group_id": "3",
-              "attachment_id": "300",
-              "item_id": "74"
-            },
-            {
-              "weapon_group_id": "3",
-              "attachment_id": "302",
-              "item_id": "76"
-            },
-            {
-              "weapon_group_id": "3",
-              "attachment_id": "303",
-              "item_id": "115"
-            },
-            {
-              "weapon_group_id": "3",
-              "attachment_id": "304",
-              "item_id": "148"
-            },
-            {
-              "weapon_group_id": "3",
-              "attachment_id": "305",
-              "item_id": "149"
-            }
-          ],
-          "returned": 5
-        }
-      },
-      "weapon_to_fire_group": {
-        "summary": "Cycler TRV fire groups.\nhttps://census.daybreakgames.com/get/ps2/weapon_to_fire_group?weapon_id=7124&c:limit=10",
-        "value": {
-          "weapon_to_fire_group_list": [
-            {
-              "weapon_id": "7124",
-              "fire_group_id": "7124",
-              "fire_group_index": "0"
-            },
-            {
-              "weapon_id": "7124",
-              "fire_group_id": "17124",
-              "fire_group_index": "1"
-            }
-          ],
-          "returned": 2
-        }
-      },
-      "world": {
-        "summary": "Cobalt",
-        "value": {
-          "world_list": [
-            {
-              "world_id": "13",
-              "state": "online",
-              "name": {
-                "en": "Cobalt",
-                "de": "Cobalt",
-                "es": "Cobalt",
-                "fr": "Cobalt",
-                "it": "Cobalt",
-                "tr": "Cobalt"
-              }
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "world_stat_history": {
-        "summary": "World Domination Series Pre-season (Connery NC).\nhttps://census.daybreakgames.com/get/ps2/world_stat_history?tracker_name=WDS01&world_id=1&faction=nc",
-        "value": {
-          "world_stat_history_list": [
-            {
-              "world_id": "1",
-              "stat_name": "EmpireScore.WDS01.NC",
-              "type": "EmpireScore",
-              "tracker_name": "WDS01",
-              "faction": "nc",
-              "all_time": "361919",
-              "day": {
-                "d01": "0",
-                "d02": "0",
-                "d03": "0",
-                "d04": "0",
-                "d05": "0",
-                "d06": "0",
-                "d07": "0",
-                "d08": "0",
-                "d09": "0",
-                "d10": "0",
-                "d11": "0",
-                "d12": "0",
-                "d13": "0",
-                "d14": "0",
-                "d15": "0",
-                "d16": "0",
-                "d17": "0",
-                "d18": "0",
-                "d19": "0",
-                "d20": "0",
-                "d21": "0",
-                "d22": "0",
-                "d23": "0",
-                "d24": "0",
-                "d25": "0",
-                "d26": "0",
-                "d27": "0",
-                "d28": "0",
-                "d29": "0",
-                "d30": "0",
-                "d31": "0"
-              },
-              "month": {
-                "m01": "0",
-                "m02": "0",
-                "m03": "0",
-                "m04": "0",
-                "m05": "309277",
-                "m06": "52642",
-                "m07": "0",
-                "m08": "0",
-                "m09": "0",
-                "m10": "0",
-                "m11": "0",
-                "m12": "0"
-              },
-              "week": {
-                "w01": "0",
-                "w02": "0",
-                "w03": "0",
-                "w04": "0",
-                "w05": "0",
-                "w06": "0",
-                "w07": "0",
-                "w08": "0",
-                "w09": "0",
-                "w10": "0",
-                "w11": "0",
-                "w12": "0",
-                "w13": "0"
-              },
-              "last_save": "1393574969",
-              "last_save_date": "2014-02-28 08:09:29.0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "zone": {
-        "summary": "Oshur",
-        "value": {
-          "zone_list": [
-            {
-              "zone_id": "344",
-              "code": "Oshur",
-              "hex_size": "100",
-              "name": {
-                "de": "Oshur",
-                "en": "Oshur",
-                "es": "Oshur",
-                "fr": "Oshur",
-                "it": "Oshur"
-              },
-              "description": {
-                "de": "Oshurs Strand-Archipel und das glitzernde blaue Wasser bieten die M\u00f6glichkeit f\u00fcr Eins\u00e4tze zu Land, Luft und Wasser.",
-                "en": "Oshur's sandy archipelago and sparkling blue waters provide opportunities for engagement by land, sea, and air.",
-                "es": "El arenoso archipi\u00e9lago de Oshur y sus resplandecientes aguas azules son el entorno ideal para luchar por tierra, mar y aire.",
-                "fr": "L'archipel sablonneux d'Oshur et ses eaux bleues cristallines offrent des possibilit\u00e9s de combats terrestres, maritimes et a\u00e9riens.",
-                "it": "L'arcipelago sabbioso e le vivaci acque blu di Oshur forniscono ottime opportunit\u00e0 d'ingaggio via mare, terra e aria."
-              },
-              "geometry_id": "367",
-              "dynamic": "0"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "zone_effect": {
-        "summary": "Suppressor.\nhttps://census.daybreakgames.com/get/ps2/zone_effect?zone_effect_id=750052",
-        "value": {
-          "zone_effect_list": [
-            {
-              "zone_effect_id": "750052",
-              "zone_effect_type_id": "58",
-              "ability_id": "80412",
-              "param1": "0",
-              "param2": "1",
-              "param3": "1",
-              "param4": "0",
-              "string1": "BlockSpotOnDamageTaken"
-            }
-          ],
-          "returned": 1
-        }
-      },
-      "zone_effect_type": {
-        "summary": "Modify character flag.\nhttps://census.daybreakgames.com/get/ps2/zone_effect_type?zone_effect_type_id=58",
-        "value": {
-          "zone_effect_type_list": [
-            {
-              "zone_effect_type_id": "58",
-              "description": "Modify the given character flag",
-              "param1": "Operation (see tooltip)",
-              "param2": "ModifyValue",
-              "param3": "Persist",
-              "param4": "OneShot",
-              "param5": "Always Create ",
-              "string1": "CharacterFlagKey"
-            }
-          ],
-          "returned": 1
-        }
-      }
-    }
+    "examples": {}
   }
 }

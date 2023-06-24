@@ -1,0 +1,14 @@
+{
+  "characters_weapon_stat_list": [
+    {
+      "character_id": "5428010618015189601",
+      "stat_name": "weapon_hit_count",
+      "item_id": "4",
+      "vehicle_id": "0",
+      "value": "11446",
+      "last_save": "1394703677",
+      "last_save_date": "2014-03-13 09:41:17.0"
+    }
+  ],
+  "returned": 1
+}

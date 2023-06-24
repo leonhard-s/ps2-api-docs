@@ -1,0 +1,9 @@
+{
+  "datatype_list": {
+    "count": "dynamic",
+    "hidden": "false",
+    "name": "characters_online_status",
+    "resolve_list": []
+  },
+  "returned": 1
+}

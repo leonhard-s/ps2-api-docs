@@ -1,0 +1,32 @@
+{
+  "map_list": [
+    {
+      "ZoneId": "2",
+      "Regions": {
+        "IsList": "1",
+        "Row": [
+          {
+            "RowData": {
+              "RegionId": "2101",
+              "FactionId": "3",
+              "map_region": {
+                "map_region_id": "2101",
+                "zone_id": "2",
+                "facility_id": "7500",
+                "facility_name": "Hvar",
+                "facility_type_id": "4",
+                "facility_type": "Tech Plant",
+                "location_x": "-656.0273",
+                "location_y": "491.7669",
+                "location_z": "-2444.069",
+                "reward_amount": "1",
+                "reward_currency_id": "1000"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "returned": 1
+}

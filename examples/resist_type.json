@@ -1,0 +1,89 @@
+{
+  "resist_type_list": [
+    {
+      "resist_type_id": "0",
+      "description": "None"
+    },
+    {
+      "resist_type_id": "1",
+      "description": "Melee"
+    },
+    {
+      "resist_type_id": "2",
+      "description": "Small Arms"
+    },
+    {
+      "resist_type_id": "4",
+      "description": "Heavy Machine Guns"
+    },
+    {
+      "resist_type_id": "5",
+      "description": "Heavy Anti-Armor"
+    },
+    {
+      "resist_type_id": "6",
+      "description": "Common Explosive"
+    },
+    {
+      "resist_type_id": "7",
+      "description": "Tank Shell"
+    },
+    {
+      "resist_type_id": "8",
+      "description": "Aircraft Machine Gun"
+    },
+    {
+      "resist_type_id": "12",
+      "description": "Flak Explosive Blast"
+    },
+    {
+      "resist_type_id": "20",
+      "description": "Sniper Rifles"
+    },
+    {
+      "resist_type_id": "22",
+      "description": "Anti-Aircraft Machine Gun"
+    },
+    {
+      "resist_type_id": "23",
+      "description": "Air to Ground Warhead"
+    },
+    {
+      "resist_type_id": "28",
+      "description": "AP Gatling"
+    },
+    {
+      "resist_type_id": "34",
+      "description": "Infantry Rocket Launchers"
+    },
+    {
+      "resist_type_id": "40",
+      "description": "Anti-Materiel Rifle"
+    },
+    {
+      "resist_type_id": "45",
+      "description": "A2A Missile"
+    },
+    {
+      "resist_type_id": "46",
+      "description": "Core Explosion / Glaive"
+    },
+    {
+      "resist_type_id": "47",
+      "description": "Orbital Strike"
+    },
+    {
+      "resist_type_id": "64",
+      "description": "Burning"
+    },
+    {
+      "resist_type_id": "68",
+      "description": "Infantry Lock-on"
+    },
+    {
+      "resist_type_id": "69",
+      "description": "Melee: Armor Piercing"
+    }
+  ],
+  "returned": 21
+}

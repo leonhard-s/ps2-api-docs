@@ -1,0 +1,25 @@
+{
+  "profile_resist_map_list": [
+    {
+      "profile_id": "26",
+      "resist_info_id": "31",
+      "rank": "1"
+    },
+    {
+      "profile_id": "26",
+      "resist_info_id": "32",
+      "rank": "1"
+    },
+    {
+      "profile_id": "26",
+      "resist_info_id": "33",
+      "rank": "1"
+    },
+    {
+      "profile_id": "26",
+      "resist_info_id": "34",
+      "rank": "1"
+    }
+  ],
+  "returned": 26
+}

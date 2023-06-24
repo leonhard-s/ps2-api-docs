@@ -1,0 +1,41 @@
+{
+  "armor_info_list": [
+    {
+      "armor_info_id": "20",
+      "armor_facing_id": "0",
+      "armor_percent": "0",
+      "description": "Sunderer - Front"
+    },
+    {
+      "armor_info_id": "21",
+      "armor_facing_id": "1",
+      "armor_percent": "0",
+      "description": "Sunderer - Right"
+    },
+    {
+      "armor_info_id": "22",
+      "armor_facing_id": "2",
+      "armor_percent": "0",
+      "description": "Sunderer - Top"
+    },
+    {
+      "armor_info_id": "23",
+      "armor_facing_id": "3",
+      "armor_percent": "0",
+      "description": "Sunderer - Rear"
+    },
+    {
+      "armor_info_id": "24",
+      "armor_facing_id": "4",
+      "armor_percent": "0",
+      "description": "Sunderer - Left"
+    },
+    {
+      "armor_info_id": "25",
+      "armor_facing_id": "5",
+      "armor_percent": "0",
+      "description": "Sunderer - Bottom"
+    }
+  ],
+  "returned": 6
+}

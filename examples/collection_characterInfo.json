@@ -1,0 +1,15 @@
+{
+  "character_list": [
+    {
+      "name": {
+        "first": "360Xvortex"
+      },
+      "faction_id": "3",
+      "battle_rank": {
+        "value": "1"
+      },
+      "prestige_level": "0"
+    }
+  ],
+  "returned": 1
+}

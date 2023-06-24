@@ -1,0 +1,21 @@
+{
+  "vehicle_faction_list": [
+    {
+      "vehicle_id": "12",
+      "faction_id": "1"
+    },
+    {
+      "vehicle_id": "12",
+      "faction_id": "2"
+    },
+    {
+      "vehicle_id": "12",
+      "faction_id": "3"
+    },
+    {
+      "vehicle_id": "12",
+      "faction_id": "4"
+    }
+  ],
+  "returned": 4
+}

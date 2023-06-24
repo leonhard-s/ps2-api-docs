@@ -1,0 +1,13 @@
+{
+  "image_set_default_list": [
+    {
+      "image_set_id": "806486",
+      "image_id": "24",
+      "description": "energy_facility.dds",
+      "type_id": "6",
+      "type_description": "Medium (64 pixel height)",
+      "image_path": "/files/ps2/images/static/24.png"
+    }
+  ],
+  "returned": 1
+}

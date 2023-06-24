@@ -1,0 +1,17 @@
+{
+  "characters_stat_list": [
+    {
+      "character_id": "5428010618015189601",
+      "stat_name": "play_time",
+      "profile_id": "4",
+      "value_forever": "4947689",
+      "value_monthly": "41461",
+      "value_weekly": "13599",
+      "value_daily": "197",
+      "value_one_life_max": "10459",
+      "last_save": "1684499211",
+      "last_save_date": "2023-05-19 12:26:50.711936"
+    }
+  ],
+  "returned": 1
+}

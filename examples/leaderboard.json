@@ -1,0 +1,58 @@
+{
+  "limit": 10,
+  "leaderboard_list": [
+    {
+      "character_id": "5428011263289812449",
+      "value": "1004944",
+      "rank": "0"
+    },
+    {
+      "character_id": "5428092148238898497",
+      "value": "933727",
+      "rank": "1"
+    },
+    {
+      "character_id": "5428143250883637345",
+      "value": "871442",
+      "rank": "2"
+    },
+    {
+      "character_id": "8252189355200955505",
+      "value": "726831",
+      "rank": "3"
+    },
+    {
+      "character_id": "8280485721807277905",
+      "value": "611044",
+      "rank": "4"
+    },
+    {
+      "character_id": "5428123302629266225",
+      "value": "587284",
+      "rank": "5"
+    },
+    {
+      "character_id": "5428359100729973969",
+      "value": "564648",
+      "rank": "6"
+    },
+    {
+      "character_id": "5428064957346113809",
+      "value": "554749",
+      "rank": "7"
+    },
+    {
+      "character_id": "5428551667113611937",
+      "value": "552295",
+      "rank": "8"
+    },
+    {
+      "character_id": "8261280742797131393",
+      "value": "548013",
+      "rank": "9"
+    }
+  ],
+  "returned": 10,
+  "key": "Forever_Kills",
+  "count": 10000
+}

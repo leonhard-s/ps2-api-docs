@@ -1,0 +1,48 @@
+{
+  "experience_rank_list": [
+    {
+      "rank": "100",
+      "xp_max": "18868950",
+      "vs": {
+        "title": {
+          "de": "Paragon",
+          "en": "Paragon",
+          "es": "Parag\u00f3n",
+          "fr": "Parangon",
+          "it": "Campione",
+          "tr": "Paragon"
+        },
+        "image_set_id": "1927",
+        "image_id": "4363"
+      },
+      "vs_image_path": "/files/ps2/images/static/4363.png",
+      "nc": {
+        "title": {
+          "de": "Vollstrecker",
+          "en": "Executor",
+          "es": "Ejecutor",
+          "fr": "Ex\u00e9cuteur",
+          "it": "Esecutore",
+          "tr": "Uygulay\u0131c\u0131"
+        },
+        "image_set_id": "1727",
+        "image_id": "4364"
+      },
+      "nc_image_path": "/files/ps2/images/static/4364.png",
+      "tr": {
+        "title": {
+          "de": "Feldmarschall",
+          "en": "Field Marshal",
+          "es": "Mariscal de campo",
+          "fr": "Mar\u00e9chal",
+          "it": "Generale dell'Esercito",
+          "tr": "Mare\u015fal"
+        },
+        "image_set_id": "1827",
+        "image_id": "4362"
+      },
+      "tr_image_path": "/files/ps2/images/static/4362.png"
+    }
+  ],
+  "returned": 1
+}

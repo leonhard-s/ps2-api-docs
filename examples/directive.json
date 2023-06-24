@@ -1,0 +1,28 @@
+{
+  "directive_list": [
+    {
+      "directive_id": "153",
+      "directive_tree_id": "28",
+      "directive_tier_id": "1",
+      "objective_set_id": "4154",
+      "name": {
+        "de": "Rettungskills",
+        "en": "Savior Kills",
+        "es": "V\u00edctimas: salvadores",
+        "fr": "Victimes Sauveur",
+        "it": "Uccisioni come Salvatore"
+      },
+      "description": {
+        "de": "Rette Verb\u00fcndete vor dem Tod, indem du Feinde t\u00f6test, die dabei sind, sie zu t\u00f6ten.",
+        "en": "Save allies from death by killing enemies who are about to kill them.",
+        "es": "Salva de la muerte a tus aliados acabando con los enemigos que est\u00e9n a punto de matarlos.",
+        "fr": "Sauver des alli\u00e9s de la mort en tuant des ennemis sur le point de les tuer.",
+        "it": "Salva gli alleati dalla morte uccidendo i nemici che stanno per ucciderli."
+      },
+      "image_set_id": "13518",
+      "image_id": "77759",
+      "image_path": "/files/ps2/images/static/77759.png"
+    }
+  ],
+  "returned": 1
+}

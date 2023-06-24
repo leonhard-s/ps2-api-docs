@@ -1,0 +1,28 @@
+{
+  "marketing_bundle_list": [
+    {
+      "marketing_bundle_id": "812821",
+      "name": {
+        "de": "PlanetSide-Legacy-Paket (2022)",
+        "en": "PlanetSide Legacy Bundle (2022)",
+        "es": "Lote de legado de Planetside (2022)",
+        "fr": "Ensemble \"H\u00e9ritage de PlanetSide\"(2022)",
+        "it": "Pacchetto Legacy PlanetSide (2022)",
+        "tr": "NULL"
+      },
+      "description": {
+        "de": "Feiere die Geschichte der PlanetSide-Serie! Dieses Paket beinhaltet kosmetische Gegenst\u00e4nde f\u00fcr alle Fraktionen und Waffen f\u00fcr VS, NK und TR. Der Heldenbooster wird nur dem Charakter gew\u00e4hrt, der das Paket kauft. \"Perfekte\" Implantate sind f\u00fcr das komplette Konto verf\u00fcgbar und k\u00f6nnen nicht zerlegt werden.",
+        "en": "Celebrate the legacy of the PlanetSide franchise! This bundle contains cosmetics for all factions, and weapons for VS, NC, and TR. Heroic Boost is granted only to the character that purchases the bundle. \"Perfect\" Implants are granted account-wide, and cannot be broken down.",
+        "es": "\"\u00a1Celebra el legado de la serie PlanetSide! El lote contiene decoraciones para todas las facciones y armas para SV, NC y RT. El potenciador \nheroico solo est\u00e1 disponible para el personaje que compre el lote. Los implantes \"\"perfectos\"\" se conceden a toda la cuenta y no pueden desmontarse.\"",
+        "fr": "F\u00eatez l'h\u00e9ritage de la franchise PlanetSide ! Cet ensemble contient des armes pour toutes les factions, et des \u00e9l\u00e9ments esth\u00e9tiques pour la RT, le NC et la SV. Le Boost h\u00e9ro\u00efque n'est fourni que pour le personnage qui ach\u00e8te le lot. Les implants de type \"Parfait\" sont disponibles pour l'ensemble du compte et ne peuvent \u00eatre d\u00e9compos\u00e9s.",
+        "it": "Celebra le origini del franchise di PlanetSide! Questo pacchetto contiene oggetti cosmetici per tutte le fazioni e armi per SV, NC e RT. Il potenziamento eroico pu\u00f2 essere usato solo dal personaggio che ha acquistato il pacchetto. Gli impianti \"Perfect\" sono per tutto l'account e non si possono smontare.",
+        "tr": "NULL"
+      },
+      "image_id": "807193",
+      "station_cash_price": "0",
+      "cert_price": "NULL",
+      "release_time": "1683702000"
+    }
+  ],
+  "returned": 1
+}

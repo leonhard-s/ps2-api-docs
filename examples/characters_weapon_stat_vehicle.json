@@ -1,0 +1,14 @@
+{
+  "characters_weapon_stat_list": [
+    {
+      "character_id": "5428010618015189601",
+      "stat_name": "weapon_deaths",
+      "item_id": "0",
+      "vehicle_id": "1",
+      "value": "16",
+      "last_save": "1448994374",
+      "last_save_date": "2015-12-01 18:26:14.0"
+    }
+  ],
+  "returned": 1
+}

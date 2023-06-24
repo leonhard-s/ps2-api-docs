@@ -1,0 +1,12 @@
+{
+  "characters_currency_list": [
+    {
+      "character_id": "5428010618015189601",
+      "currency_id": "4",
+      "currency_name": "nanites",
+      "quantity": "750",
+      "prestige_currency": "0"
+    }
+  ],
+  "returned": 1
+}

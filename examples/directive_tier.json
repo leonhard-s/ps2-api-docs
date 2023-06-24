@@ -1,0 +1,22 @@
+{
+  "directive_tier_list": [
+    {
+      "directive_tree_id": "24",
+      "directive_tier_id": "4",
+      "reward_set_id": "4466",
+      "directive_points": "100",
+      "completion_count": "5",
+      "name": {
+        "de": "Meister",
+        "en": "Master",
+        "es": "Maestro",
+        "fr": "Ma\u00eetre",
+        "it": "Maestri"
+      },
+      "image_set_id": "13650",
+      "image_id": "78275",
+      "image_path": "/files/ps2/images/static/78275.png"
+    }
+  ],
+  "returned": 1
+}

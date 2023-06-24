@@ -1,0 +1,10 @@
+{
+  "fire_group_list": [
+    {
+      "fire_group_id": "4",
+      "transition_duration_ms": "500",
+      "can_chamber_ironsights": "0"
+    }
+  ],
+  "returned": 1
+}

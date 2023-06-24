@@ -1,0 +1,27 @@
+{
+  "characters_stat_by_faction_list": [
+    {
+      "character_id": "5428010618015189601",
+      "stat_name": "kills",
+      "profile_id": "1",
+      "value_forever_vs": "3026",
+      "value_forever_nc": "3356",
+      "value_forever_tr": "2551",
+      "value_monthly_vs": "3",
+      "value_monthly_nc": "0",
+      "value_monthly_tr": "8",
+      "value_weekly_vs": "1",
+      "value_weekly_nc": "0",
+      "value_weekly_tr": "3",
+      "value_daily_vs": "0",
+      "value_daily_nc": "0",
+      "value_daily_tr": "1",
+      "value_one_life_max_vs": "7",
+      "value_one_life_max_nc": "9",
+      "value_one_life_max_tr": "6",
+      "last_save": "1669295387",
+      "last_save_date": "2022-11-24 13:09:46.730053"
+    }
+  ],
+  "returned": 1
+}

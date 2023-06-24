@@ -1,0 +1,11 @@
+{
+  "vehicle_skill_set_list": [
+    {
+      "vehicle_id": "10",
+      "skill_set_id": "39",
+      "faction_id": "1",
+      "display_index": "4"
+    }
+  ],
+  "returned": 1
+}

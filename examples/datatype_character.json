@@ -1,0 +1,26 @@
+{
+  "datatype_list": {
+    "name": "character",
+    "hidden": false,
+    "count": 15095335,
+    "resolve_list": [
+      "item",
+      "item_full",
+      "profile",
+      "faction",
+      "stat",
+      "stat_by_faction",
+      "weapon_stat",
+      "weapon_stat_by_faction",
+      "stat_history",
+      "online_status",
+      "friends",
+      "world",
+      "outfit",
+      "outfit_member",
+      "outfit_member_extended",
+      "currency"
+    ]
+  },
+  "returned": 1
+}
