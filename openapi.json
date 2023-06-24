@@ -5,6 +5,10 @@
     "summary": "Public API for PlanetSide 2 community developers",
     "description": "Unofficial API specification for [PlanetSide 2](https://www.planetside2.com/) as made available through the [Daybreak Game Company Census API](https://census.daybreakgames.com/).\n\nThese API specs are not affiliated with Daybreak Game Company, Rogue Planet Games, or the PlanetSide 2 developer team and come with absolutely no warranty.",
     "termsOfService": "https://census.daybreakgames.com#services-api-policy",
+    "license": {
+      "name": "Proprietary",
+      "url": "https://census.daybreakgames.com#services-api-policy"
+    },
     "contact": {
       "name": "Project Homepage",
       "url": "https://github.com/leonhard-s/ps2-api-docs"
@@ -26,11 +30,7 @@
       "description": "Production Daybreak Games endpoint, with service ID",
       "variables": {
         "serviceId": {
-          "enum": [
-            "s:example"
-          ],
-          "default": "s:example",
-          "description": "Unique string used to identify a given consumer on the API. The default value of `s:example` underlies the same rate limits as the endpoint without service ID information. A custom service ID can be requested via [this form](https://census.daybreakgames.com/#devSignup)."
+          "default": "s:example"
         }
       }
     },
