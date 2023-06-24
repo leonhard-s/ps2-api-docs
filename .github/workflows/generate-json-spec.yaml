@@ -11,17 +11,20 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Generate JSON spec
+      - name: Install Python dependencies
         run: |
           python -m pip install -r ./tools/requirements.txt
-          python ./tools/generate_json_spec.py --output generated/openapi.json
-      - name: Commit and push changes
+      - name: Generate JSON spec
+        run: |
+          python ./tools/generate_json_spec.py ./openapi.json ./generated/openapi.json
+      - name: Commit changes
         run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
-          git add --force --intent-to-add generated/openapi.json
+          git add --force ./generated/openapi.json
           git commit -m "Generate JSON spec for ReadTheDocs"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
