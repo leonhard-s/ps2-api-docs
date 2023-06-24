@@ -1,0 +1,14 @@
+examples:
+  tr:
+    value:
+      $ref: ../../../examples/faction.json
+schema:
+  properties:
+    faction_list:
+      items:
+        $ref: ../../../schemas/faction.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

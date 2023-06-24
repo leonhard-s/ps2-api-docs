@@ -1,0 +1,14 @@
+examples:
+  ability_type:
+    value:
+      $ref: ../../../examples/ability_type.json
+schema:
+  properties:
+    ability_type_list:
+      items:
+        $ref: ../../../schemas/ability_type.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

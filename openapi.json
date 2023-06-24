@@ -128,37 +128,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "datatype_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/datatype.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer"
-                    }
-                  }
-                },
-                "examples": {
-                  "character": {
-                    "value": {
-                      "$ref": "examples/datatype_character.json"
-                    }
-                  },
-                  "outfitMember": {
-                    "value": {
-                      "$ref": "examples/datatype_outfitMember.json"
-                    }
-                  },
-                  "characterOnlineStatus": {
-                    "value": {
-                      "$ref": "examples/datatype_characterOnlineStatus.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}.yaml"
               }
             }
           }
@@ -185,26 +155,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                },
-                "examples": {
-                  "success": {
-                    "value": {
-                      "$ref": "examples/count_success.json"
-                    }
-                  },
-                  "error": {
-                    "value": {
-                      "$ref": "examples/count_error.json"
-                    }
-                  }
-                }
+                "$ref": "contents/count/{game}/{collection}.yaml"
               }
             }
           }
@@ -282,48 +233,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "{collection}_list": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    },
-                    "timing": {
-                      "type": "object",
-                      "summary": "Only included if `c:timing` is enabled.",
-                      "properties": {
-                        "total-ms": {
-                          "type": "integer"
-                        }
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "characterInfo": {
-                    "value": {
-                      "$ref": "examples/collection_characterInfo.json"
-                    }
-                  },
-                  "factionTags": {
-                    "value": {
-                      "$ref": "examples/collection_factionTags.json"
-                    }
-                  },
-                  "mapFacilities": {
-                    "value": {
-                      "$ref": "examples/collection_mapFacilities.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/{collection}.yaml"
               }
             }
           }
@@ -353,28 +263,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "ability_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/ability.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "ability": {
-                    "value": {
-                      "$ref": "examples/ability.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/ability.yaml"
               }
             }
           }
@@ -401,28 +290,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "ability_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/ability_type.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "ability_type": {
-                    "value": {
-                      "$ref": "examples/ability_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/ability_type.yaml"
               }
             }
           }
@@ -452,33 +320,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "achievement_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/achievement.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "medals": {
-                    "value": {
-                      "$ref": "examples/achievement_medals.json"
-                    }
-                  },
-                  "ribbon": {
-                    "value": {
-                      "$ref": "examples/achievement_ribbon.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/achievement.yaml"
               }
             }
           }
@@ -514,28 +356,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "character_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/character.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/character_higby.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/character.yaml"
               }
             }
           }
@@ -562,28 +383,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "currency_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/currency.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "nanites": {
-                    "value": {
-                      "$ref": "examples/currency.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/currency.yaml"
               }
             }
           }
@@ -610,28 +410,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "armor_facing_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/armor_facing.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "armor_facing": {
-                    "value": {
-                      "$ref": "examples/armor_facing.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/armor_facing.yaml"
               }
             }
           }
@@ -661,28 +440,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "armor_info_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/armor_info.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "armor_info": {
-                    "value": {
-                      "$ref": "examples/armor_info.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/armor_info.yaml"
               }
             }
           }
@@ -715,28 +473,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "character_name_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/character_name.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/character_name_higby.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/character_name.yaml"
               }
             }
           }
@@ -766,33 +503,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_achievement_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_achievement.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "medal": {
-                    "value": {
-                      "$ref": "examples/characters_achievement_medal.json"
-                    }
-                  },
-                  "ribbon": {
-                    "value": {
-                      "$ref": "examples/characters_achievement_ribbon.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_achievement.yaml"
               }
             }
           }
@@ -822,28 +533,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_currency_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_currency.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "currency": {
-                    "value": {
-                      "$ref": "examples/characters_currency.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_currency.yaml"
               }
             }
           }
@@ -876,28 +566,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_directive_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_directive.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "directive": {
-                    "value": {
-                      "$ref": "examples/characters_directive.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_directive.yaml"
               }
             }
           }
@@ -930,28 +599,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_directive_objective_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_directive_objective.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "directive_objective": {
-                    "value": {
-                      "$ref": "examples/characters_directive_objective.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_directive_objective.yaml"
               }
             }
           }
@@ -984,28 +632,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_directive_tier_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_directive_tier.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "directive_tier": {
-                    "value": {
-                      "$ref": "examples/characters_directive_tier.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_directive_tier.yaml"
               }
             }
           }
@@ -1035,28 +662,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_directive_tree_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_directive_tree.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "directive_tree": {
-                    "value": {
-                      "$ref": "examples/characters_directive_tree.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_directive_tree.yaml"
               }
             }
           }
@@ -1095,21 +701,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_event_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_event.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_event.yaml"
               }
             }
           }
@@ -1139,21 +731,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_event_grouped_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_event_grouped.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_event_grouped.yaml"
               }
             }
           }
@@ -1180,28 +758,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_friend_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_friend.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/characters_friend.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_friend.yaml"
               }
             }
           }
@@ -1231,28 +788,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_item_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_item.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/characters_item.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_item.yaml"
               }
             }
           }
@@ -1285,32 +821,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "limit": {
-                      "type": "integer",
-                      "minimum": 0
-                    },
-                    "characters_leaderboard_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/leaderboard.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    },
-                    "key": {
-                      "type": "string"
-                    },
-                    "count": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_leaderboard.yaml"
               }
             }
           }
@@ -1337,28 +848,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_online_status_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_online_status.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/characters_online_status.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_online_status.yaml"
               }
             }
           }
@@ -1388,28 +878,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_skill_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_skill.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/characters_skill.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_skill.yaml"
               }
             }
           }
@@ -1442,28 +911,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_stat_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_stat.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/characters_stat.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_stat.yaml"
               }
             }
           }
@@ -1496,28 +944,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_stat_by_faction_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_stat_by_faction.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/characters_stat_by_faction.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_stat_by_faction.yaml"
               }
             }
           }
@@ -1550,28 +977,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_stat_history_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_stat_history.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/characters_stat_history.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_stat_history.yaml"
               }
             }
           }
@@ -1607,33 +1013,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_weapon_stat_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_weapon_stat.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "weapon": {
-                    "value": {
-                      "$ref": "examples/characters_weapon_stat_infantry_weapon.json"
-                    }
-                  },
-                  "vehicle": {
-                    "value": {
-                      "$ref": "examples/characters_weapon_stat_vehicle.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_weapon_stat.yaml"
               }
             }
           }
@@ -1669,33 +1049,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_weapon_stat_by_faction_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_weapon_stat_by_faction.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "weapon": {
-                    "value": {
-                      "$ref": "examples/characters_weapon_stat_by_faction_infantry_weapon.json"
-                    }
-                  },
-                  "vehicle": {
-                    "value": {
-                      "$ref": "examples/characters_weapon_stat_by_faction_vehicle.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_weapon_stat_by_faction.yaml"
               }
             }
           }
@@ -1722,28 +1076,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "characters_world_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/characters_world.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/characters_world.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/characters_world.yaml"
               }
             }
           }
@@ -1779,28 +1112,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "directive_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/directive.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/directive.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/directive.yaml"
               }
             }
           }
@@ -1833,28 +1145,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "directive_tier_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/directive_tier.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/directive_tier.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/directive_tier.yaml"
               }
             }
           }
@@ -1884,28 +1175,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "directive_tree_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/directive_tree.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/directive_tree.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/directive_tree.yaml"
               }
             }
           }
@@ -1932,28 +1202,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "directive_tree_category_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/directive_tree_category.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/directive_tree_category.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/directive_tree_category.yaml"
               }
             }
           }
@@ -1977,28 +1226,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "empire_scores_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/empire_scores.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "higby": {
-                    "value": {
-                      "$ref": "examples/empire_scores.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/empire_scores.yaml"
               }
             }
           }
@@ -2031,28 +1259,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "effect_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/effect.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "effect": {
-                    "value": {
-                      "$ref": "examples/effect.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/effect.yaml"
               }
             }
           }
@@ -2079,28 +1286,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "effect_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/effect_type.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "effect_type": {
-                    "value": {
-                      "$ref": "examples/effect_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/effect_type.yaml"
               }
             }
           }
@@ -2133,21 +1319,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "event_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/event.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/event.yaml"
               }
             }
           }
@@ -2174,28 +1346,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "experience_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/experience.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "experience": {
-                    "value": {
-                      "$ref": "examples/experience.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/experience.yaml"
               }
             }
           }
@@ -2219,28 +1370,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "experience_rank_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/experience_rank.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "experience_rank": {
-                    "value": {
-                      "$ref": "examples/experience_rank.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/experience_rank.yaml"
               }
             }
           }
@@ -2270,28 +1400,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "facility_link_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/facility_link.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "facility_link": {
-                    "value": {
-                      "$ref": "examples/facility_link.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/facility_link.yaml"
               }
             }
           }
@@ -2318,28 +1427,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "facility_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/facility_type.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "facility_type": {
-                    "value": {
-                      "$ref": "examples/facility_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/facility_type.yaml"
               }
             }
           }
@@ -2366,28 +1454,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "faction_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/faction.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "tr": {
-                    "value": {
-                      "$ref": "examples/faction.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/faction.yaml"
               }
             }
           }
@@ -2414,38 +1481,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "fire_group_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/fire_group.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "chamber": {
-                    "value": {
-                      "$ref": "examples/fire_group_chamber.json"
-                    }
-                  },
-                  "regular": {
-                    "value": {
-                      "$ref": "examples/fire_group_regular.json"
-                    }
-                  },
-                  "spool": {
-                    "value": {
-                      "$ref": "examples/fire_group_spool.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/fire_group.yaml"
               }
             }
           }
@@ -2475,28 +1511,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "fire_mode_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/fire_mode.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "fire_mode": {
-                    "value": {
-                      "$ref": "examples/fire_mode.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/fire_mode.yaml"
               }
             }
           }
@@ -2523,48 +1538,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "fire_mode_2_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/fire_mode_2.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "NS-11A": {
-                    "value": {
-                      "$ref": "examples/fire_mode_2_ns11a.json"
-                    }
-                  },
-                  "Lasher X2": {
-                    "value": {
-                      "$ref": "examples/fire_mode_2_lasherx2.json"
-                    }
-                  },
-                  "HAWK GD-68": {
-                    "value": {
-                      "$ref": "examples/fire_mode_2_hawkgd68.json"
-                    }
-                  },
-                  "Betelgeuse 54-A": {
-                    "value": {
-                      "$ref": "examples/fire_mode_2_betelgeuse54a.json"
-                    }
-                  },
-                  "G30 Vulcan": {
-                    "value": {
-                      "$ref": "examples/fire_mode_2_g30vulcan.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/fire_mode_2.yaml"
               }
             }
           }
@@ -2594,28 +1568,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "fire_mode_to_projectile_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/fire_mode_to_projectile.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "fire_mode_to_projectile": {
-                    "value": {
-                      "$ref": "examples/fire_mode_to_projectile.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/fire_mode_to_projectile.yaml"
               }
             }
           }
@@ -2642,28 +1595,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "fire_mode_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/fire_mode_type.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "fire_mode_type": {
-                    "value": {
-                      "$ref": "examples/fire_mode_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/fire_mode_type.yaml"
               }
             }
           }
@@ -2690,28 +1622,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "image_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/image.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "image": {
-                    "value": {
-                      "$ref": "examples/image.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/image.yaml"
               }
             }
           }
@@ -2741,28 +1652,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "image_set_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/image_set.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "image_set": {
-                    "value": {
-                      "$ref": "examples/image_set.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/image_set.yaml"
               }
             }
           }
@@ -2792,28 +1682,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "image_set_default_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/image_set_default.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "image_set_default": {
-                    "value": {
-                      "$ref": "examples/image_set_default.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/image_set_default.yaml"
               }
             }
           }
@@ -2840,28 +1709,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "item_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/item.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "knife": {
-                    "value": {
-                      "$ref": "examples/item.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/item.yaml"
               }
             }
           }
@@ -2888,28 +1736,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "item_attachment_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/item_attachment.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "knife": {
-                    "value": {
-                      "$ref": "examples/item_attachment.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/item_attachment.yaml"
               }
             }
           }
@@ -2936,28 +1763,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "item_category_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/item_category.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "knife": {
-                    "value": {
-                      "$ref": "examples/item_category.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/item_category.yaml"
               }
             }
           }
@@ -2987,28 +1793,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "item_profile_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/item_profile.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "knife": {
-                    "value": {
-                      "$ref": "examples/item_profile.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/item_profile.yaml"
               }
             }
           }
@@ -3038,28 +1823,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "item_to_weapon_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/item_to_weapon.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "knife": {
-                    "value": {
-                      "$ref": "examples/item_to_weapon.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/item_to_weapon.yaml"
               }
             }
           }
@@ -3086,28 +1850,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "item_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/item_type.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "knife": {
-                    "value": {
-                      "$ref": "examples/item_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/item_type.yaml"
               }
             }
           }
@@ -3140,35 +1883,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "leaderboard_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/leaderboard.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    },
-                    "key": {
-                      "type": "string"
-                    },
-                    "count": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "cobalt_all_time_kills": {
-                    "value": {
-                      "$ref": "examples/leaderboard.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/leaderboard.yaml"
               }
             }
           }
@@ -3195,28 +1910,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "loadout_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/loadout.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "ncInfiltrator": {
-                    "value": {
-                      "$ref": "examples/loadout.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/loadout.yaml"
               }
             }
           }
@@ -3252,28 +1946,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "map_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/map.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "indar": {
-                    "value": {
-                      "$ref": "examples/map.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/map.yaml"
               }
             }
           }
@@ -3300,28 +1973,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "map_hex_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/map_hex.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "indar": {
-                    "value": {
-                      "$ref": "examples/map_hex.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/map_hex.yaml"
               }
             }
           }
@@ -3348,28 +2000,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "map_region_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/map_region.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "indar": {
-                    "value": {
-                      "$ref": "examples/map_region.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/map_region.yaml"
               }
             }
           }
@@ -3396,28 +2027,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "marketing_bundle_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/marketing_bundle.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "ns15mBundle": {
-                    "value": {
-                      "$ref": "examples/marketing_bundle.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/marketing_bundle.yaml"
               }
             }
           }
@@ -3447,28 +2057,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "marketing_bundle_item_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/marketing_bundle_item.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "ns15mBundle": {
-                    "value": {
-                      "$ref": "examples/marketing_bundle_item.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/marketing_bundle_item.yaml"
               }
             }
           }
@@ -3498,28 +2087,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "marketing_bundle_with_1_item_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/marketing_bundle_with_1_item.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "ns15mBundle": {
-                    "value": {
-                      "$ref": "examples/marketing_bundle_with_1_item.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/marketing_bundle_with_1_item.yaml"
               }
             }
           }
@@ -3546,28 +2114,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "metagame_event_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/metagame_event.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "ns15mBundle": {
-                    "value": {
-                      "$ref": "examples/metagame_event.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/metagame_event.yaml"
               }
             }
           }
@@ -3594,28 +2141,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "metagame_event_state_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/metagame_event_state.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "ns15mBundle": {
-                    "value": {
-                      "$ref": "examples/metagame_event_state.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/metagame_event_state.yaml"
               }
             }
           }
@@ -3648,28 +2174,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "objective_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/objective.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "ns15mBundle": {
-                    "value": {
-                      "$ref": "examples/objective.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/objective.yaml"
               }
             }
           }
@@ -3699,28 +2204,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "objective_set_to_objective_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/objective_set_to_objective.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "ns15mBundle": {
-                    "value": {
-                      "$ref": "examples/objective_set_to_objective.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/objective_set_to_objective.yaml"
               }
             }
           }
@@ -3747,28 +2231,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "objective_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/objective_type.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "capturePoint": {
-                    "value": {
-                      "$ref": "examples/objective_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/objective_type.yaml"
               }
             }
           }
@@ -3795,28 +2258,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "outfit_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/outfit.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "fno": {
-                    "value": {
-                      "$ref": "examples/outfit.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/outfit.yaml"
               }
             }
           }
@@ -3846,28 +2288,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "outfit_member_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/outfit_member.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "luperza": {
-                    "value": {
-                      "$ref": "examples/outfit_member.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/outfit_member.yaml"
               }
             }
           }
@@ -3897,28 +2318,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "outfit_member_extended_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/outfit_member_extended.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "luperza": {
-                    "value": {
-                      "$ref": "examples/outfit_member_extended.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/outfit_member_extended.yaml"
               }
             }
           }
@@ -3945,28 +2345,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "outfit_rank_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/outfit_rank.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "fno": {
-                    "value": {
-                      "$ref": "examples/outfit_rank.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/outfit_rank.yaml"
               }
             }
           }
@@ -3996,24 +2375,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "profile_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/profile.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "trLightAssault": {
-                    "value": {
-                      "$ref": "examples/profile.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/profile.yaml"
               }
             }
           }
@@ -4040,24 +2402,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "profile_2_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/profile_2.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "sunderer": {
-                    "value": {
-                      "$ref": "examples/profile_2.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/profile_2.yaml"
               }
             }
           }
@@ -4087,28 +2432,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "profile_armor_map_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/profile_armor_map.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "magrider": {
-                    "value": {
-                      "$ref": "examples/profile_armor_map.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/profile_armor_map.yaml"
               }
             }
           }
@@ -4138,28 +2462,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "profile_resist_map_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/profile_resist_map.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "lightning": {
-                    "value": {
-                      "$ref": "examples/profile_resist_map.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/profile_resist_map.yaml"
               }
             }
           }
@@ -4186,28 +2489,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "projectile_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/projectile.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "projectile": {
-                    "value": {
-                      "$ref": "examples/projectile.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/projectile.yaml"
               }
             }
           }
@@ -4234,28 +2516,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "projectile_flight_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/projectile_flight_type.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "projectile_flight_type": {
-                    "value": {
-                      "$ref": "examples/projectile_flight_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/projectile_flight_type.yaml"
               }
             }
           }
@@ -4285,28 +2546,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "region_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/region.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "region": {
-                    "value": {
-                      "$ref": "examples/region.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/region.yaml"
               }
             }
           }
@@ -4333,28 +2573,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "resist_info_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/resist_info.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "resist_info": {
-                    "value": {
-                      "$ref": "examples/resist_info.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/resist_info.yaml"
               }
             }
           }
@@ -4381,28 +2600,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "resist_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/resist_type.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "resist_type": {
-                    "value": {
-                      "$ref": "examples/resist_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/resist_type.yaml"
               }
             }
           }
@@ -4429,28 +2627,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "resource_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/resource_type.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "resource_type": {
-                    "value": {
-                      "$ref": "examples/resource_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/resource_type.yaml"
               }
             }
           }
@@ -4480,28 +2657,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "reward_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/reward.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "reward": {
-                    "value": {
-                      "$ref": "examples/reward.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/reward.yaml"
               }
             }
           }
@@ -4531,28 +2687,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "reward_group_to_reward_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/reward_group_to_reward.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "reward_group_to_reward": {
-                    "value": {
-                      "$ref": "examples/reward_group_to_reward.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/reward_group_to_reward.yaml"
               }
             }
           }
@@ -4582,28 +2717,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "reward_set_to_reward_group_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/reward_set_to_reward_group.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "reward_set_to_reward_group": {
-                    "value": {
-                      "$ref": "examples/reward_set_to_reward_group.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/reward_set_to_reward_group.yaml"
               }
             }
           }
@@ -4630,28 +2744,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "reward_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/reward_type.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "reward_type": {
-                    "value": {
-                      "$ref": "examples/reward_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/reward_type.yaml"
               }
             }
           }
@@ -4678,21 +2771,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "single_character_by_id_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/single_character_by_id.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/single_character_by_id.yaml"
               }
             }
           }
@@ -4722,28 +2801,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "skill_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/skill.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "skill": {
-                    "value": {
-                      "$ref": "examples/skill.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/skill.yaml"
               }
             }
           }
@@ -4773,28 +2831,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "skill_line_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/skill_line.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "skill_line": {
-                    "value": {
-                      "$ref": "examples/skill_line.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/skill_line.yaml"
               }
             }
           }
@@ -4824,28 +2861,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "skill_category_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/skill_category.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "skill_category": {
-                    "value": {
-                      "$ref": "examples/skill_category.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/skill_category.yaml"
               }
             }
           }
@@ -4872,28 +2888,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "skill_set_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/skill_set.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "skill_set": {
-                    "value": {
-                      "$ref": "examples/skill_set.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/skill_set.yaml"
               }
             }
           }
@@ -4920,28 +2915,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "target_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/target_type.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "target_type": {
-                    "value": {
-                      "$ref": "examples/target_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/target_type.yaml"
               }
             }
           }
@@ -4968,28 +2942,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "title_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/title.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "title": {
-                    "value": {
-                      "$ref": "examples/title.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/title.yaml"
               }
             }
           }
@@ -5016,24 +2969,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "vehicle_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/vehicle.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "harasser": {
-                    "value": {
-                      "$ref": "examples/vehicle.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/vehicle.yaml"
               }
             }
           }
@@ -5066,24 +3002,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "vehicle_attachment_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/vehicle_attachment.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "harasser": {
-                    "value": {
-                      "$ref": "examples/vehicle_attachment.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/vehicle_attachment.yaml"
               }
             }
           }
@@ -5113,24 +3032,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "vehicle_faction_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/vehicle_faction.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "harasser": {
-                    "value": {
-                      "$ref": "examples/vehicle_faction.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/vehicle_faction.yaml"
               }
             }
           }
@@ -5160,24 +3062,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "vehicle_skill_set_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/vehicle_skill_set.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "vehicle_skill_set": {
-                    "value": {
-                      "$ref": "examples/vehicle_skill_set.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/vehicle_skill_set.yaml"
               }
             }
           }
@@ -5204,34 +3089,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "weapon_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/weapon.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "regular": {
-                    "value": {
-                      "$ref": "examples/weapon_regular.json"
-                    }
-                  },
-                  "knife": {
-                    "value": {
-                      "$ref": "examples/weapon_knife.json"
-                    }
-                  },
-                  "heat": {
-                    "value": {
-                      "$ref": "examples/weapon_heat.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/weapon.yaml"
               }
             }
           }
@@ -5258,24 +3116,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "weapon_ammo_slot_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/weapon_ammo_slot.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "weapon_ammo_slot": {
-                    "value": {
-                      "$ref": "examples/weapon_ammo_slot.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/weapon_ammo_slot.yaml"
               }
             }
           }
@@ -5302,24 +3143,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "weapon_datasheet_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/weapon_datasheet.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "weapon_datasheet": {
-                    "value": {
-                      "$ref": "examples/weapon_datasheet.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/weapon_datasheet.yaml"
               }
             }
           }
@@ -5346,24 +3170,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "weapon_to_attachment_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/weapon_to_attachment.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "weapon_to_attachment": {
-                    "value": {
-                      "$ref": "examples/weapon_to_attachment.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/weapon_to_attachment.yaml"
               }
             }
           }
@@ -5393,24 +3200,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "weapon_to_fire_group_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/weapon_to_fire_group.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "weapon_to_fire_group": {
-                    "value": {
-                      "$ref": "examples/weapon_to_fire_group.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/weapon_to_fire_group.yaml"
               }
             }
           }
@@ -5437,28 +3227,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "world_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/world.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "connery": {
-                    "value": {
-                      "$ref": "examples/world.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/world.yaml"
               }
             }
           }
@@ -5497,21 +3266,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "world_event_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/world_event.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/world_event.yaml"
               }
             }
           }
@@ -5538,24 +3293,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "world_stat_history_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/world_stat_history.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "world_stat_history": {
-                    "value": {
-                      "$ref": "examples/world_stat_history.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/world_stat_history.yaml"
               }
             }
           }
@@ -5582,28 +3320,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "zone_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/zone.yaml"
-                      }
-                    },
-                    "returned": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "examples": {
-                  "indar": {
-                    "value": {
-                      "$ref": "examples/zone.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/zone.yaml"
               }
             }
           }
@@ -5633,24 +3350,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "zone_effect_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/zone_effect.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "zone_effect": {
-                    "value": {
-                      "$ref": "examples/zone_effect.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/zone_effect.yaml"
               }
             }
           }
@@ -5677,24 +3377,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "zone_effect_type_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "schemas/zone_effect_type.yaml"
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "zone_effect_type": {
-                    "value": {
-                      "$ref": "examples/zone_effect_type.json"
-                    }
-                  }
-                }
+                "$ref": "contents/get/{game}/zone_effect_type.yaml"
               }
             }
           }

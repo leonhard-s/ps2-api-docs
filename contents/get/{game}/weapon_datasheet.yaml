@@ -1,0 +1,11 @@
+examples:
+  weapon_datasheet:
+    value:
+      $ref: ../../../examples/weapon_datasheet.json
+schema:
+  properties:
+    weapon_datasheet_list:
+      items:
+        $ref: ../../../schemas/weapon_datasheet.yaml
+      type: array
+  type: object

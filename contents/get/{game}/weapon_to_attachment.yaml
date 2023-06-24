@@ -1,0 +1,11 @@
+examples:
+  weapon_to_attachment:
+    value:
+      $ref: ../../../examples/weapon_to_attachment.json
+schema:
+  properties:
+    weapon_to_attachment_list:
+      items:
+        $ref: ../../../schemas/weapon_to_attachment.yaml
+      type: array
+  type: object

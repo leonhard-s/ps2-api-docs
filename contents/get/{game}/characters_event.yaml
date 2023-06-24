@@ -1,0 +1,10 @@
+schema:
+  properties:
+    characters_event_list:
+      items:
+        $ref: ../../../schemas/characters_event.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

@@ -1,0 +1,17 @@
+examples:
+  vehicle:
+    value:
+      $ref: ../../../examples/characters_weapon_stat_vehicle.json
+  weapon:
+    value:
+      $ref: ../../../examples/characters_weapon_stat_infantry_weapon.json
+schema:
+  properties:
+    characters_weapon_stat_list:
+      items:
+        $ref: ../../../schemas/characters_weapon_stat.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

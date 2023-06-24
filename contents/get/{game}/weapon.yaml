@@ -1,0 +1,17 @@
+examples:
+  heat:
+    value:
+      $ref: ../../../examples/weapon_heat.json
+  knife:
+    value:
+      $ref: ../../../examples/weapon_knife.json
+  regular:
+    value:
+      $ref: ../../../examples/weapon_regular.json
+schema:
+  properties:
+    weapon_list:
+      items:
+        $ref: ../../../schemas/weapon.yaml
+      type: array
+  type: object

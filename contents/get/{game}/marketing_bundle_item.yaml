@@ -1,0 +1,14 @@
+examples:
+  ns15mBundle:
+    value:
+      $ref: ../../../examples/marketing_bundle_item.json
+schema:
+  properties:
+    marketing_bundle_item_list:
+      items:
+        $ref: ../../../schemas/marketing_bundle_item.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

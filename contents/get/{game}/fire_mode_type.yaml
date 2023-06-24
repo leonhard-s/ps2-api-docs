@@ -1,0 +1,14 @@
+examples:
+  fire_mode_type:
+    value:
+      $ref: ../../../examples/fire_mode_type.json
+schema:
+  properties:
+    fire_mode_type_list:
+      items:
+        $ref: ../../../schemas/fire_mode_type.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

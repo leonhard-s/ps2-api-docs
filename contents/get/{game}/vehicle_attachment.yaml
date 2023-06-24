@@ -1,0 +1,11 @@
+examples:
+  harasser:
+    value:
+      $ref: ../../../examples/vehicle_attachment.json
+schema:
+  properties:
+    vehicle_attachment_list:
+      items:
+        $ref: ../../../schemas/vehicle_attachment.yaml
+      type: array
+  type: object

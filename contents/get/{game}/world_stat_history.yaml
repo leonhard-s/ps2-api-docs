@@ -1,0 +1,11 @@
+examples:
+  world_stat_history:
+    value:
+      $ref: ../../../examples/world_stat_history.json
+schema:
+  properties:
+    world_stat_history_list:
+      items:
+        $ref: ../../../schemas/world_stat_history.yaml
+      type: array
+  type: object

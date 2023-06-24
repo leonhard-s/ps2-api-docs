@@ -1,0 +1,27 @@
+examples:
+  characterInfo:
+    value:
+      $ref: ../../../examples/collection_characterInfo.json
+  factionTags:
+    value:
+      $ref: ../../../examples/collection_factionTags.json
+  mapFacilities:
+    value:
+      $ref: ../../../examples/collection_mapFacilities.json
+schema:
+  properties:
+    returned:
+      minimum: 0
+      type: integer
+    timing:
+      properties:
+        total-ms:
+          type: integer
+      summary: Only included if `c:timing` is enabled.
+      type: object
+    "{collection}_list":
+      items:
+        additionalProperties: true
+        type: object
+      type: array
+  type: object

@@ -1,0 +1,14 @@
+examples:
+  higby:
+    value:
+      $ref: ../../../examples/characters_stat_history.json
+schema:
+  properties:
+    characters_stat_history_list:
+      items:
+        $ref: ../../../schemas/characters_stat_history.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

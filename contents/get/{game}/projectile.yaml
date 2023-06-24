@@ -1,0 +1,14 @@
+examples:
+  projectile:
+    value:
+      $ref: ../../../examples/projectile.json
+schema:
+  properties:
+    projectile_list:
+      items:
+        $ref: ../../../schemas/projectile.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

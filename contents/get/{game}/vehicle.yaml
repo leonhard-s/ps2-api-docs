@@ -1,0 +1,11 @@
+examples:
+  harasser:
+    value:
+      $ref: ../../../examples/vehicle.json
+schema:
+  properties:
+    vehicle_list:
+      items:
+        $ref: ../../../schemas/vehicle.yaml
+      type: array
+  type: object

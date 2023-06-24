@@ -1,0 +1,14 @@
+examples:
+  target_type:
+    value:
+      $ref: ../../../examples/target_type.json
+schema:
+  properties:
+    returned:
+      minimum: 0
+      type: integer
+    target_type_list:
+      items:
+        $ref: ../../../schemas/target_type.yaml
+      type: array
+  type: object

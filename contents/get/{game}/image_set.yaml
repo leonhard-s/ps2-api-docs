@@ -1,0 +1,14 @@
+examples:
+  image_set:
+    value:
+      $ref: ../../../examples/image_set.json
+schema:
+  properties:
+    image_set_list:
+      items:
+        $ref: ../../../schemas/image_set.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

@@ -1,0 +1,14 @@
+examples:
+  effect:
+    value:
+      $ref: ../../../examples/effect.json
+schema:
+  properties:
+    effect_list:
+      items:
+        $ref: ../../../schemas/effect.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

@@ -1,0 +1,26 @@
+examples:
+  Betelgeuse 54-A:
+    value:
+      $ref: ../../../examples/fire_mode_2_betelgeuse54a.json
+  G30 Vulcan:
+    value:
+      $ref: ../../../examples/fire_mode_2_g30vulcan.json
+  HAWK GD-68:
+    value:
+      $ref: ../../../examples/fire_mode_2_hawkgd68.json
+  Lasher X2:
+    value:
+      $ref: ../../../examples/fire_mode_2_lasherx2.json
+  NS-11A:
+    value:
+      $ref: ../../../examples/fire_mode_2_ns11a.json
+schema:
+  properties:
+    fire_mode_2_list:
+      items:
+        $ref: ../../../schemas/fire_mode_2.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object

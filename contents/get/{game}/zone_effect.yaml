@@ -1,0 +1,11 @@
+examples:
+  zone_effect:
+    value:
+      $ref: ../../../examples/zone_effect.json
+schema:
+  properties:
+    zone_effect_list:
+      items:
+        $ref: ../../../schemas/zone_effect.yaml
+      type: array
+  type: object

@@ -1,0 +1,14 @@
+examples:
+  ncInfiltrator:
+    value:
+      $ref: ../../../examples/loadout.json
+schema:
+  properties:
+    loadout_list:
+      items:
+        $ref: ../../../schemas/loadout.yaml
+      type: array
+    returned:
+      minimum: 0
+      type: integer
+  type: object
