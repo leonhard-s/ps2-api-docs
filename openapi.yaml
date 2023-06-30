@@ -1,21 +1,82 @@
-externalDocs:
-  description: Official documentation for the documentation for the PlanetSide 2 API.
-  url: https://census.daybreakgames.com/
 info:
   contact:
-    name: Project Homepage
+    name: Project Repository
     url: https://github.com/leonhard-s/ps2-api-docs
-  description:
-    "Unofficial API specification for [PlanetSide 2](https://www.planetside2.com/)
-    as made available through the [Daybreak Game Company Census API](https://census.daybreakgames.com/).
+  description: >
+    ## Introduction
+
+    The Daybreak Game Company Census API provides access to game and character data for the MMOFPS
+    [PlanetSide 2](https://www.planetside2.com/home), allowing players to develop their own apps,
+    stat trackers, websites, and community integrations.
+
+    ### Disclaimer
+
+    This documentation is written and maintained by thirdparty developers from the PlanetSide 2
+    community and has no affiliation with Daybreak Game Company, Rogue Planet Games, or the
+    PlanetSide 2 developer team. If you encounter any errors or have other feedback, please do
+    consider [opening an issue](https://github.com/leonhard-s/ps2-api-docs/issues) or contributing
+    to the project directly.
+
+    ### Warranty
+
+    Note that all game data and files made available by Daybreak Game Company are provided "AS IS"
+    and come with absolutely no warranty. For legal details, please refer to the API's
+    [warranty disclaimer](https://census.daybreakgames.com/#warranty) and the Census API [terms of
+    service](https://census.daybreakgames.com#services-api-policy).
+
+    
+    Furthermore, the OpenAPI spec provided here is released without any warranty either, though its
+    source code is made available without restriction at the repository link listed in the contact
+    section of this API specification.
+  
+    ### Service IDs
+
+    The Census API uses service IDs to monitor and identify API consumers. These IDs are free and
+    can be requested via [this form](https://census.daybreakgames.com/#devSignup). The process is
+    automatic and you should receive your service ID confirmation email within a few minutes to
+    hours.
 
 
-    These API specs are not affiliated with Daybreak Game Company, Rogue Planet Games,
-    or the PlanetSide 2 developer team and come with absolutely no warranty."
+    Using the API without a service ID is possible and synonymous with using the default service ID of
+    `s:example`. However, this service ID is rate-limited to 10 requests per minute and IP address,
+    so it is highly recommended to apply for your own service IDs early on.
+
+    ## Further Reading
+
+    This documentation is intended to be a reference for the API endpoints, parameters, and JSON
+    schemas. For a more general introduction to the Census API, examples, and more detailed
+    information on the `c:join` system, please refer to one of the following resources:
+
+      - [Census API Documentation](https://census.daybreakgames.com/): Official documentation by
+        Daybreak Game Company
+
+      - [Census API Primer](https://github.com/leonhard-s/auraxium/wiki/Census-API-Primer): A
+        community-written version of the official documentation, with additional examples and 
+        details
+
+      - [PS2 Query GUI](https://eating-coleslaw.github.io/ps2-visual-query/): A GUI web page for
+        querying the Planetside 2 API
+
+      - [Zone ID Tutorial](https://github.com/cooltrain7/Planetside-2-API-Tracker/wiki/Tutorial:-Zone-IDs):
+        Introduction for working with dynamic zones, such as those spawned for Outfit Wars
+
+      - [Sanctuary.Census](https://github.com/PS2Sanctuary/Sanctuary.Census): A community endpoint
+        replicating and extending the Census ReST API
+
+    ### Event Streaming Service
+
+    The PlanetSide 2 API also provides a real-time event streaming service using the WebSocket
+    protocol. This service is not covered by this documentation yet, but you can find more
+    information at the following links:
+
+      - [PS2 Event Streaming](https://census.daybreakgames.com/#what-is-websocket): Official
+        documentation by Daybreak Game Company
+
+      - [Nanite Systems ESS](https://github.com/nanite-systems/stream): A replacement endpoint for
+        the ESS designed to provide more reliability
   license:
     name: Proprietary
     url: https://census.daybreakgames.com#services-api-policy
-  summary: Public API for PlanetSide 2 community developers
   termsOfService: https://census.daybreakgames.com#services-api-policy
   title: PlanetSide 2 API
   version: "0.4"
