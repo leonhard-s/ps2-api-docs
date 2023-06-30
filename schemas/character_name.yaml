@@ -13,4 +13,3 @@ properties:
         type: string
     type: object
 type: object
-x-tags: [Schema Reference]

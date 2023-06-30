@@ -7,4 +7,3 @@ properties:
     description: Internal name of the event state.
     type: string
 type: object
-x-tags: [Schema Reference]

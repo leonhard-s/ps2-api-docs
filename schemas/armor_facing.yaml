@@ -7,4 +7,3 @@ properties:
     description: Description of the armor facing direction.
     type: string
 type: object
-x-tags: [Schema Reference]

@@ -61,4 +61,3 @@ properties:
     description: Documentation for this string parameter on abilities of this type.
     type: string
 type: object
-x-tags: [Schema Reference]

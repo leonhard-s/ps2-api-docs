@@ -10,4 +10,3 @@ properties:
     x-cast-to: int32
     x-reference-to: item.item_id
 type: object
-x-tags: [Schema Reference]

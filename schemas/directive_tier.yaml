@@ -45,4 +45,3 @@ properties:
     x-cast-to: int32
     x-reference-to: reward_set.reward_set_id
 type: object
-x-tags: [Schema Reference]

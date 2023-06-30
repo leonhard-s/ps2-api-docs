@@ -7,4 +7,3 @@ allOf:
         x-cast-to: int64
         x-reference-to: character.character_id
     type: object
-x-tags: [Schema Reference]

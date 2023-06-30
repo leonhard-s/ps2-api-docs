@@ -2946,10 +2946,3 @@ tags:
       ReST interface for in-game events, such as kills, deaths, and battle
       rank gains.
     name: Event History
-  - description: >
-      Individual schema definitions for the PlanetSide 2 data types.
-
-
-      Note that this only covers the actual data types. The top-level `<collection>_list` and
-      `returned` keys are not included in theses schemas.
-    name: Schema Reference

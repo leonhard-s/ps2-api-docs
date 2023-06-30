@@ -10,4 +10,3 @@ properties:
     x-cast-to: int32
     x-reference-to: world.world_id
 type: object
-x-tags: [Schema Reference]

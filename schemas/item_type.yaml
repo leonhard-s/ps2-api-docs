@@ -11,4 +11,3 @@ properties:
     description: Display name of the item type.
     type: string
 type: object
-x-tags: [Schema Reference]

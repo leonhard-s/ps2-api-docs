@@ -18,4 +18,3 @@ properties:
     $ref: "localized_string.yaml"
     description: The name of the currency.
 type: object
-x-tags: [Schema Reference]

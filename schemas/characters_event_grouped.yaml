@@ -15,4 +15,3 @@ properties:
     - DEATH
     type: string
 type: object
-x-tags: [Schema Reference]

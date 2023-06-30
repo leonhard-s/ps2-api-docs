@@ -451,4 +451,3 @@ properties:
     type: string
     x-cast-to: float
 type: object
-x-tags: [Schema Reference]

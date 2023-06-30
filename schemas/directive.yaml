@@ -39,4 +39,3 @@ properties:
     x-cast-to: int32
     x-reference-to: objective_set.objective_set_id
 type: object
-x-tags: [Schema Reference]

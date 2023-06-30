@@ -7,4 +7,3 @@ properties:
     $ref: "localized_string.yaml"
     description: The name of the directive tree category.
 type: object
-x-tags: [Schema Reference]

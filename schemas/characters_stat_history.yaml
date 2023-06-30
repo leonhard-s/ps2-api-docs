@@ -10,4 +10,3 @@ allOf:
         description: Name of the stat being returned.
         type: string
     type: object
-x-tags: [Schema Reference]

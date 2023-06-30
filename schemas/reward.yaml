@@ -42,4 +42,3 @@ properties:
     x-cast-to: int32
     x-reference-to: reward_type.reward_type_id
 type: object
-x-tags: [Schema Reference]

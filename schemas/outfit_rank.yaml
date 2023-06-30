@@ -15,4 +15,3 @@ properties:
     x-cast-to: int64
     x-reference-to: outfit.outfit_id
 type: object
-x-tags: [Schema Reference]

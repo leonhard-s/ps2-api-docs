@@ -53,4 +53,3 @@ properties:
     description: Human-readable version of `time_created`.
     type: string
 type: object
-x-tags: [Schema Reference]

@@ -79,4 +79,3 @@ properties:
     x-cast-to: int32
     x-reference-to: skill_set.skill_set_id
 type: object
-x-tags: [Schema Reference]

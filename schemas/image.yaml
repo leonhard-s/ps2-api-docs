@@ -11,4 +11,3 @@ properties:
       endpoint to create a fully-qualified URL.
     type: string
 type: object
-x-tags: [Schema Reference]

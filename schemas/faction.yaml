@@ -27,4 +27,3 @@ properties:
     type: string
     x-cast-to: boolean
 type: object
-x-tags: [Schema Reference]

@@ -139,4 +139,3 @@ properties:
       details.
     type: string
 type: object
-x-tags: [Schema Reference]

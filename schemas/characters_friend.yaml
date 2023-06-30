@@ -27,4 +27,3 @@ properties:
     description: Defunct. Always returns `null`.
     type: 'null'
 type: object
-x-tags: [Schema Reference]

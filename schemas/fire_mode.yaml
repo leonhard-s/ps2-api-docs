@@ -150,4 +150,3 @@ properties:
       between multiple fire modes on a given weapon.
     type: string
 type: object
-x-tags: [Schema Reference]

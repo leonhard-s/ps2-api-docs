@@ -131,4 +131,3 @@ properties:
     x-cast-to: int32
     x-reference-to: title.title_id
 type: object
-x-tags: [Schema Reference]

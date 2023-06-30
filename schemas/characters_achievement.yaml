@@ -35,4 +35,3 @@ properties:
     description: Human-readable version of `start`.
     type: string
 type: object
-x-tags: [Schema Reference]
