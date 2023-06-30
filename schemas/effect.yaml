@@ -103,3 +103,4 @@ properties:
     x-cast-to: int32
     x-reference-to: target_type.target_type_id
 type: object
+x-tags: [Schema Reference]

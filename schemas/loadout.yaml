@@ -17,3 +17,4 @@ properties:
     x-cast-to: int32
     x-reference-to: profile_2.profile_id
 type: object
+x-tags: [Schema Reference]

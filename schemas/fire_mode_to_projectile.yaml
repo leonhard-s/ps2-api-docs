@@ -10,3 +10,4 @@ properties:
     x-cast-to: int32
     x-reference-to: projectile.projectile_id
 type: object
+x-tags: [Schema Reference]

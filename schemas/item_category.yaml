@@ -8,3 +8,4 @@ properties:
     $ref: "localized_string.yaml"
     description: Display name of the item category.
 type: object
+x-tags: [Schema Reference]

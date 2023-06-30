@@ -83,3 +83,4 @@ anyOf:
             type: string
             x-cast-to: int32
         type: object
+x-tags: [Schema Reference]

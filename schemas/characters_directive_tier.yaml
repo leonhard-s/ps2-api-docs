@@ -22,3 +22,4 @@ properties:
     x-cast-to: int32
     x-reference-to: directive_tree.directive_tree_id
 type: object
+x-tags: [Schema Reference]

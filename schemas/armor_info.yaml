@@ -20,3 +20,4 @@ properties:
     description: Description of the armor info entry.
     type: string
 type: object
+x-tags: [Schema Reference]

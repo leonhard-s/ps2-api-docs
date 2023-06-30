@@ -23,3 +23,4 @@ properties:
     x-cast-to: int32
     x-reference-to: resist_type.resist_type_id
 type: object
+x-tags: [Schema Reference]

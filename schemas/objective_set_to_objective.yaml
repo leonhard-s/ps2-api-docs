@@ -12,3 +12,4 @@ properties:
     x-joins-to:
     - directive.objective_set_id
 type: object
+x-tags: [Schema Reference]

@@ -100,3 +100,4 @@ properties:
     x-cast-to: int32
     x-reference-to: zone_effect_type.zone_effect_type_id
 type: object
+x-tags: [Schema Reference]

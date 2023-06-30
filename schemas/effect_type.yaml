@@ -46,3 +46,4 @@ properties:
     description: Documentation for this numeric parameter on effects of this type.
     type: string
 type: object
+x-tags: [Schema Reference]

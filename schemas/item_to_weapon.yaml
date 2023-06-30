@@ -10,3 +10,4 @@ properties:
     x-cast-to: int32
     x-reference-to: weapon.weapon_id
 type: object
+x-tags: [Schema Reference]

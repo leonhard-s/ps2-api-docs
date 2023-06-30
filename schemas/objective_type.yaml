@@ -34,3 +34,4 @@ properties:
     description: Documentation for this numeric parameter on objectives of this type.
     type: string
 type: object
+x-tags: [Schema Reference]

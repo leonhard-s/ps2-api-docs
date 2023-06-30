@@ -21,3 +21,4 @@ properties:
     description: Unique name of the tracker.
     type: string
 type: object
+x-tags: [Schema Reference]
