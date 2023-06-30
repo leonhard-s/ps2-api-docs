@@ -11,7 +11,7 @@
     },
     "termsOfService": "https://census.daybreakgames.com#services-api-policy",
     "title": "PlanetSide 2 API",
-    "version": "0.4",
+    "version": "0.5",
     "x-logo": {
       "altText": "PlanetSide 2 logo",
       "url": "https://census.daybreakgames.com/files/ps2/images/static/3913.png"
@@ -529,10 +529,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -750,10 +747,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -1082,10 +1076,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -1212,10 +1203,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -1374,10 +1362,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -1725,10 +1710,7 @@
                             "x-reference-to": "title.title_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -1892,10 +1874,7 @@
                             "type": "object"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -2078,10 +2057,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -2236,9 +2212,6 @@
                             },
                             "type": "object"
                           }
-                        ],
-                        "x-tags": [
-                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -2394,10 +2367,7 @@
                             "x-reference-to": "directive_tree.directive_tree_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -2561,10 +2531,7 @@
                             "x-cast-to": "boolean"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -2719,10 +2686,7 @@
                             "x-reference-to": "directive_tree.directive_tree_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -2874,10 +2838,7 @@
                             "x-reference-to": "directive_tree.directive_tree_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -3488,9 +3449,6 @@
                               }
                             ]
                           }
-                        ],
-                        "x-tags": [
-                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -3617,10 +3575,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -3778,10 +3733,7 @@
                             "type": "null"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -3935,9 +3887,6 @@
                             },
                             "type": "object"
                           }
-                        ],
-                        "x-tags": [
-                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -4067,10 +4016,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -4200,10 +4146,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -4342,10 +4285,7 @@
                             "x-reference-to": "skill.skill_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -4561,9 +4501,6 @@
                             },
                             "type": "object"
                           }
-                        ],
-                        "x-tags": [
-                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -4836,9 +4773,6 @@
                             },
                             "type": "object"
                           }
-                        ],
-                        "x-tags": [
-                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -5112,9 +5046,6 @@
                             },
                             "type": "object"
                           }
-                        ],
-                        "x-tags": [
-                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -5322,9 +5253,6 @@
                             },
                             "type": "object"
                           }
-                        ],
-                        "x-tags": [
-                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -5547,9 +5475,6 @@
                             },
                             "type": "object"
                           }
-                        ],
-                        "x-tags": [
-                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -5670,10 +5595,7 @@
                             "x-reference-to": "world.world_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -5820,10 +5742,7 @@
                             "type": "object"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -6061,10 +5980,7 @@
                             "x-reference-to": "objective_set.objective_set_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -6262,10 +6178,7 @@
                             "x-reference-to": "reward_set.reward_set_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -6464,10 +6377,7 @@
                             "type": "object"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -6602,10 +6512,7 @@
                             "type": "object"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -6857,10 +6764,7 @@
                             "x-reference-to": "target_type.target_type_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -7047,10 +6951,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -7200,10 +7101,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -7786,9 +7684,6 @@
                                   }
                                 ]
                               }
-                            ],
-                            "x-tags": [
-                              "Schema Reference"
                             ]
                           },
                           {
@@ -7961,14 +7856,8 @@
                                   }
                                 ]
                               }
-                            ],
-                            "x-tags": [
-                              "Schema Reference"
                             ]
                           }
-                        ],
-                        "x-tags": [
-                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -8078,10 +7967,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -8377,10 +8263,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -8518,10 +8401,7 @@
                             "x-reference-to": "zone.zone_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -8643,10 +8523,7 @@
                             "x-reference-to": "image_set.image_set_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -8811,10 +8688,7 @@
                             "x-cast-to": "boolean"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -8964,10 +8838,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -9281,10 +9152,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -10187,10 +10055,7 @@
                             "x-cast-to": "float"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -10305,10 +10170,7 @@
                             "x-reference-to": "projectile.projectile_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -10423,10 +10285,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -10534,10 +10393,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -10688,10 +10544,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -10827,10 +10680,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -11080,10 +10930,7 @@
                             "x-reference-to": "skill_set.skill_set_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -11225,10 +11072,7 @@
                             "x-reference-to": "item.item_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -11364,10 +11208,7 @@
                             "type": "object"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -11498,10 +11339,7 @@
                             "x-reference-to": "profile_2.profile_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -11616,10 +11454,7 @@
                             "x-reference-to": "weapon.weapon_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -11748,10 +11583,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -11952,10 +11784,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -12072,10 +11901,7 @@
                             "x-reference-to": "profile_2.profile_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -12236,10 +12062,7 @@
                             "x-reference-to": "zone.zone_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -12400,10 +12223,7 @@
                             "x-reference-to": "zone.zone_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -12597,10 +12417,7 @@
                             "x-reference-to": "zone.zone_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -12798,10 +12615,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -13006,10 +12820,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -13147,10 +12958,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -13332,10 +13140,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -13454,10 +13259,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -13635,10 +13437,7 @@
                             "x-cast-to": "float"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -13757,10 +13556,7 @@
                             ]
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -13906,10 +13702,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -14050,10 +13843,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -14204,10 +13994,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -14401,10 +14188,7 @@
                             "type": "string"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -14519,10 +14303,7 @@
                             "x-reference-to": "outfit.outfit_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -14769,10 +14550,7 @@
                             "x-cast-to": "float"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -14875,10 +14653,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -15024,10 +14799,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -15163,10 +14935,7 @@
                             "x-reference-to": "resist_info.resist_info_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -15375,10 +15144,7 @@
                             "x-cast-to": "float"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -15494,10 +15260,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -15655,10 +15418,7 @@
                             "x-reference-to": "zone.zone_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -15781,10 +15541,7 @@
                             "x-reference-to": "resist_type.resist_type_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -15967,10 +15724,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -16134,10 +15888,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     },
@@ -16295,10 +16046,7 @@
                             "x-reference-to": "reward_type.reward_type_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -16424,10 +16172,7 @@
                             "x-reference-to": "reward.reward_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -16540,10 +16285,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -16696,10 +16438,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -16946,10 +16685,7 @@
                                 "x-reference-to": "title.title_id"
                               }
                             },
-                            "type": "object",
-                            "x-tags": [
-                              "Schema Reference"
-                            ]
+                            "type": "object"
                           },
                           {
                             "properties": {
@@ -17003,9 +16739,6 @@
                                       },
                                       "type": "object"
                                     }
-                                  ],
-                                  "x-tags": [
-                                    "Schema Reference"
                                   ]
                                 },
                                 "type": "array"
@@ -19561,9 +19294,6 @@
                             },
                             "type": "object"
                           }
-                        ],
-                        "x-tags": [
-                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -19791,10 +19521,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -20006,10 +19733,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -20229,10 +19953,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -20437,10 +20158,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -20556,10 +20274,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -20693,10 +20408,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -20909,10 +20621,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -21131,10 +20840,7 @@
                             "x-reference-to": "vehicle.vehicle_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -21261,10 +20967,7 @@
                             "x-reference-to": "vehicle.vehicle_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -21392,10 +21095,7 @@
                             "x-reference-to": "vehicle.vehicle_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -21616,10 +21316,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -21769,10 +21466,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -22019,10 +21713,7 @@
                             "x-cast-to": "boolean"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -22152,10 +21843,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -22279,10 +21967,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -22455,10 +22140,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -22743,9 +22425,6 @@
                               }
                             ]
                           }
-                        ],
-                        "x-tags": [
-                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -23183,10 +22862,7 @@
                             "x-reference-to": "world.world_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -23379,10 +23055,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -23594,10 +23267,7 @@
                             "x-reference-to": "zone_effect_type.zone_effect_type_id"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -23778,10 +23448,7 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object",
-                        "x-tags": [
-                          "Schema Reference"
-                        ]
+                        "type": "object"
                       },
                       "type": "array"
                     }
@@ -24408,10 +24075,6 @@
     {
       "description": "ReST interface for in-game events, such as kills, deaths, and battle rank gains.\n",
       "name": "Event History"
-    },
-    {
-      "description": "Individual schema definitions for the PlanetSide 2 data types.\n\nNote that this only covers the actual data types. The top-level `<collection>_list` and `returned` keys are not included in theses schemas.\n",
-      "name": "Schema Reference"
     }
   ]
 }
