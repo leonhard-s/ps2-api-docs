@@ -1,29 +1,28 @@
 {
-  "externalDocs": {
-    "description": "Official documentation for the documentation for the PlanetSide 2 API.",
-    "url": "https://census.daybreakgames.com/"
-  },
   "info": {
     "contact": {
-      "name": "Project Homepage",
+      "name": "Project Repository",
       "url": "https://github.com/leonhard-s/ps2-api-docs"
     },
-    "description": "Unofficial API specification for [PlanetSide 2](https://www.planetside2.com/) as made available through the [Daybreak Game Company Census API](https://census.daybreakgames.com/).\n\nThese API specs are not affiliated with Daybreak Game Company, Rogue Planet Games, or the PlanetSide 2 developer team and come with absolutely no warranty.",
+    "description": "## Introduction\n\nThe Daybreak Game Company Census API provides access to game and character data for the MMOFPS\n[PlanetSide 2](https://www.planetside2.com/home), allowing players to develop their own apps,\nstat trackers, websites, and community integrations.\n\n### Disclaimer\n\nThis documentation is written and maintained by thirdparty developers from the PlanetSide 2\ncommunity and has no affiliation with Daybreak Game Company, Rogue Planet Games, or the\nPlanetSide 2 developer team. If you encounter any errors or have other feedback, please do\nconsider [opening an issue](https://github.com/leonhard-s/ps2-api-docs/issues) or contributing\nto the project directly.\n\n### Warranty\n\nNote that all game data and files made available by Daybreak Game Company are provided \"AS IS\"\nand come with absolutely no warranty. For legal details, please refer to the API's\n[warranty disclaimer](https://census.daybreakgames.com/#warranty) and the Census API [terms of\nservice](https://census.daybreakgames.com#services-api-policy).\n\nFurthermore, the OpenAPI spec provided here is released without any warranty either, though its\nsource code is made available without restriction at the repository link listed in the contact\nsection of this API specification.\n\n### Service IDs\n\nThe Census API uses service IDs to monitor and identify API consumers. These IDs are free and\ncan be requested via [this form](https://census.daybreakgames.com/#devSignup). The process is\nautomatic and you should receive your service ID confirmation email within a few minutes to\nhours.\n\nUsing the API without a service ID is possible and synonymous with using the default service ID of\n`s:example`. However, this service ID is rate-limited to 10 requests per minute and IP address,\nso it is highly recommended to apply for your own service IDs early on.\n\n### Further Reading\n\nThis documentation is intended to be a reference for the API endpoints, parameters, and JSON\nschemas. For a more general introduction to the Census API, examples, and more detailed\ninformation on the `c:join` system, please refer to one of the following resources:\n\n  - [Census API Documentation](https://census.daybreakgames.com/): Official documentation by\n    Daybreak Game Company\n  - [PlanetSide 2 API Tracker](https://github.com/cooltrain7/Planetside-2-API-Tracker): A\n    community-maintained issue tracker and developer resource\n  - [Census API Primer](https://github.com/leonhard-s/auraxium/wiki/Census-API-Primer): A\n    rewritten version of the official documentation with additional details and examples\n  - [PS2 Query GUI](https://eating-coleslaw.github.io/ps2-visual-query/): A GUI web page for\n    querying the Planetside 2 API\n  - [Zone ID Tutorial](https://github.com/cooltrain7/Planetside-2-API-Tracker/wiki/Tutorial:-Zone-IDs):\n    Introduction for working with dynamic zones, such as those spawned for Outfit Wars\n  - [Sanctuary.Census](https://github.com/PS2Sanctuary/Sanctuary.Census): A community endpoint\n    replicating and extending the Census ReST API\n\n### Event Streaming Service\n\nThe PlanetSide 2 API also provides a real-time event streaming service using the WebSocket\nprotocol. This service is not covered by this documentation yet, but you can find more\ninformation at the following links:\n\n  - [PS2 Event Streaming](https://census.daybreakgames.com/#what-is-websocket): Official\n    documentation by Daybreak Game Company\n  - [Nanite Systems ESS](https://github.com/nanite-systems/stream): A replacement endpoint for\n    the ESS designed to provide more reliability\n",
     "license": {
       "name": "Proprietary",
       "url": "https://census.daybreakgames.com#services-api-policy"
     },
-    "summary": "Public API for PlanetSide 2 community developers",
     "termsOfService": "https://census.daybreakgames.com#services-api-policy",
     "title": "PlanetSide 2 API",
-    "version": "0.4"
+    "version": "0.4",
+    "x-logo": {
+      "altText": "PlanetSide 2 logo",
+      "url": "https://census.daybreakgames.com/files/ps2/images/static/3913.png"
+    }
   },
   "jsonSchemaDialect": "https://spec.openapis.org/oas/3.1/dialect/base",
   "openapi": "3.1.0",
   "paths": {
     "/count/{game}/{collection}": {
       "get": {
-        "description": "Instead of returning the given results directly, this endpoint returns the number of results.\n\nThis is especially useful for large collections which cannot be fetched in full, such as `ps2/character`. This endpoint still supports filtering by parameters, as well as some query commands such as `c:has`.\n\nConsumers may also want to query the result count for a given query before fetching to decide whether to paginate the response.",
+        "description": "Lists the number of entries in the given collection.\nThis endpoint can be used to determine an appropriate pagination strategy based on the size of the result list, but it is especially useful for API introspection as it still supports query strings, including search modifiers and certain query commands.\nFor example, the `weapon` collection may be queried with `c:has=heat_capacity` to get the number of heat-based weapons. Similarly, comparing the `c:has=<field>` count of a collection with the total can be used to guess whether a field is optional or used.\nClient code should be ready to receive negative values for this endpoint, which is used as the error state for this endpoint, rather than the explicit error payloads sent for the `/get/` query verb.\n",
         "operationId": "count_generic",
         "parameters": [
           {
@@ -115,10 +114,10 @@
             "description": "OK"
           },
           "4XX": {
-            "description": "The Census API does not use HTTP status codes to indicate errors."
+            "description": "Returns `{\"count\": -1}` on error\n"
           }
         },
-        "summary": "Get the number of records in a collection",
+        "summary": "/count/{game}/{collection}",
         "tags": [
           "Game-Agnostic Endpoints"
         ]
@@ -126,7 +125,7 @@
     },
     "/get/{game}": {
       "get": {
-        "description": "Return a list of all collections available for the current game namespace.\n\nThe keys in the entries' `resolve_list` field can be passed to the `c:resolve` parameter when accessing the respective collection to insert additional data into the response payload.\n\nNote that while the examples only show a single record, this endpoint cannot be filtered and always returns all results.",
+        "description": "Top-level endpoint for retrieving all available collections for the current game namespace.\nIn addition to the name of the collection, this endpoint may also list the number of entries in the associated table via the `count` field. Note that the `hidden` field is of no practical use to API consumers as it is always `false`.\nThe keys in the `resolve_list` field are permittable values for the `c:resolve=<field>` query command. Note that resolve lists precede the `c:join=<...>` subquery system and has been largely superceded by it. For this reason, the resolved fields are not included in any example payload or other parts of this documentation.\nCurious fact: this is one of the few endpoints in the PlanetSide 2 API that returns native JSON types (`boolean`, `number`, etc.) in its response, without wrapping them in a string.\n",
         "operationId": "get_collections",
         "parameters": [
           {
@@ -293,7 +292,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Listing available collections",
+        "summary": "/get/{game}",
         "tags": [
           "Game-Agnostic Endpoints"
         ]
@@ -301,7 +300,7 @@
     },
     "/get/{game}/ability": {
       "get": {
-        "description": "An ability triggered by a character or vehicle.\n\nAbilities in the API are more generic than the in-game abilities and also cover other mechanics such as scopes and consumables.\n\nThe generic fields `paramX` and `stringX` are documented in the the corresponding `ps2/ability_type` entry.",
+        "description": "An ability triggered by a character or vehicle.\n\nAbilities in the API are more generic than the in-game abilities and also cover other mechanics such as scopes and consumables.\n\nThe generic fields `paramX` and `stringX` are documented in the the corresponding `ability_type` entry.\"\n",
         "operationId": "get_ability",
         "parameters": [
           {
@@ -530,7 +529,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -549,7 +551,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Ability",
+        "summary": "ability",
         "tags": [
           "Effects & Abilities"
         ]
@@ -557,7 +559,7 @@
     },
     "/get/{game}/ability_type": {
       "get": {
-        "description": "A type of ability.\n\nThe generic fields `paramX` and `stringX` are documented here. Note that most of these generic fields are currently not used.",
+        "description": "A type of ability.\n\nThe generic fields `paramX` and `stringX` are documented here. Note that most of these generic fields are currently not used.\n",
         "operationId": "get_ability_type",
         "parameters": [
           {
@@ -748,7 +750,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -767,7 +772,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Ability Type",
+        "summary": "ability_type",
         "tags": [
           "Effects & Abilities"
         ]
@@ -775,7 +780,7 @@
     },
     "/get/{game}/achievement": {
       "get": {
-        "description": "Endpoint for weapon medals and service ribbons.\n\nThere is no \"achievement type\" collection or field, but they can be grouped by the `repeatable` field, which is only true for service ribbons.",
+        "description": "Endpoint for weapon medals and service ribbons.\n\nThere is no \"achievement type\" collection or field, but they can be grouped by the `repeatable` field, which is only true for service ribbons.\n",
         "operationId": "get_achievement",
         "parameters": [
           {
@@ -1077,7 +1082,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -1096,7 +1104,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Achievements",
+        "summary": "achievement",
         "tags": [
           "Progression"
         ]
@@ -1104,7 +1112,7 @@
     },
     "/get/{game}/armor_facing": {
       "get": {
-        "description": "Enumerates the armor facing angles used for directional damage reduction on vehicles.",
+        "description": "Enumerates the armor facing angles used for directional damage reduction on vehicles.\n",
         "operationId": "get_armor_facing",
         "parameters": [
           {
@@ -1204,7 +1212,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -1223,7 +1234,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Armor Facing",
+        "summary": "armor_facing",
         "tags": [
           "Damage Calculation"
         ]
@@ -1363,7 +1374,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -1382,7 +1396,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Armor Info",
+        "summary": "armor_info",
         "tags": [
           "Damage Calculation"
         ]
@@ -1390,7 +1404,7 @@
     },
     "/get/{game}/character": {
       "get": {
-        "description": "Game-specific documentation for the `character` collection.\n\nThis collection is randomly distributed across 20 different databases, causing some unusual behaviour when filtering. For example, the `c:distinct` parameter will fetch the distinct values for each database and aggregate them in the response, resulting in duplicate entries. This and other special cases are documented with the corresponding query command parameters in the `General` section.\n\nIn addition to the commonly-used parameters provided, this endpoint may be queried by any of its fields, including sub-keys like `times.creation`.",
+        "description": "Game-specific documentation for the `character` collection.\n\nThis collection is randomly distributed across 20 different databases, causing some unusual behaviour when filtering. For example, the `c:distinct` parameter will fetch the distinct values for each database and aggregate them in the response, resulting in duplicate entries.\n\nIn addition to the commonly-used parameters provided, this endpoint may be queried by any of its fields, including sub-keys like `times.creation`.\n",
         "operationId": "get_character",
         "parameters": [
           {
@@ -1711,7 +1725,10 @@
                             "x-reference-to": "title.title_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -1730,7 +1747,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character",
+        "summary": "character",
         "tags": [
           "Character Information"
         ]
@@ -1875,7 +1892,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -1894,7 +1914,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Name",
+        "summary": "character_name",
         "tags": [
           "Character Information"
         ]
@@ -2058,7 +2078,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -2077,7 +2100,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Achievements",
+        "summary": "characters_achievement",
         "tags": [
           "Character Information"
         ]
@@ -2085,7 +2108,7 @@
     },
     "/get/{game}/characters_currency": {
       "get": {
-        "description": "Lists the currencies owned by a character.\n\nNote that this table has been inconsistent since the introduction of the A.S.P. system: in addition to the currency value (Nanites), an extra `prestige_currency` key has been added, rather than being its own currency.",
+        "description": "Lists the currencies owned by a character.\n\nNote that this table has been inconsistent since the introduction of the A.S.P. system: in addition to the currency value (Nanites), an extra `prestige_currency` key has been added, rather than being its own currency.\n",
         "operationId": "get_characters_currency",
         "parameters": [
           {
@@ -2213,6 +2236,9 @@
                             },
                             "type": "object"
                           }
+                        ],
+                        "x-tags": [
+                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -2232,7 +2258,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Currency",
+        "summary": "characters_currency",
         "tags": [
           "Character Information"
         ]
@@ -2240,7 +2266,7 @@
     },
     "/get/{game}/characters_directive": {
       "get": {
-        "description": "Directive completion information for a character.\n\nNote that this also lists entries for incomplete directives; use the `completion_time` field to determine whether a directive has been completed.",
+        "description": "Directive completion information for a character.\n\nNote that this also lists entries for incomplete directives; use the `completion_time` field to determine whether a directive has been completed.\n",
         "operationId": "get_characters_directive",
         "parameters": [
           {
@@ -2368,7 +2394,10 @@
                             "x-reference-to": "directive_tree.directive_tree_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -2387,7 +2416,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Directives",
+        "summary": "characters_directive",
         "tags": [
           "Character Information"
         ]
@@ -2395,7 +2424,7 @@
     },
     "/get/{game}/characters_directive_objective": {
       "get": {
-        "description": "Current progress of a character within a directive.\n\nThe current value of the directive progress can be found in the `state_data` field of this endpoint. The corresponding target value is found in the corresponding `objective`, usually in the `param1` field.",
+        "description": "Current progress of a character within a directive.\n\nThe current value of the directive progress can be found in the `state_data` field of this endpoint. The corresponding target value is found in the corresponding `objective`, usually in the `param1` field.\n",
         "operationId": "get_characters_directive_objective",
         "parameters": [
           {
@@ -2532,7 +2561,10 @@
                             "x-cast-to": "boolean"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -2551,7 +2583,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Directive Objectives",
+        "summary": "characters_directive_objective",
         "tags": [
           "Character Information"
         ]
@@ -2687,7 +2719,10 @@
                             "x-reference-to": "directive_tree.directive_tree_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -2706,7 +2741,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Directive Tier",
+        "summary": "characters_directive_tier",
         "tags": [
           "Character Information"
         ]
@@ -2839,7 +2874,10 @@
                             "x-reference-to": "directive_tree.directive_tree_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -2858,7 +2896,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Directive Tree",
+        "summary": "characters_directive_tree",
         "tags": [
           "Character Information"
         ]
@@ -2866,7 +2904,7 @@
     },
     "/get/{game}/characters_event": {
       "get": {
-        "description": "ReST endpoint for retrieving historical character event data.\n\nLike `event`, but allows querying by character. The `character_id` and `id` fields are interchangeable.",
+        "description": "ReST endpoint for retrieving historical character event data.\n\nLike `event`, but allows querying by character. The `character_id` and `id` fields are interchangeable.\n",
         "operationId": "get_characters_event",
         "parameters": [
           {
@@ -3450,6 +3488,9 @@
                               }
                             ]
                           }
+                        ],
+                        "x-tags": [
+                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -3469,7 +3510,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Event",
+        "summary": "characters_event",
         "tags": [
           "Event History"
         ]
@@ -3477,7 +3518,7 @@
     },
     "/get/{game}/characters_event_grouped": {
       "get": {
-        "description": "Return character vs. character statistics.\n\nAllows calculating player vs. player KDR.",
+        "description": "Return character vs. character statistics.\n\nAllows calculating player vs. player KDR.\n",
         "operationId": "get_characters_event_grouped",
         "parameters": [
           {
@@ -3576,7 +3617,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -3595,7 +3639,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Grouped Character Event",
+        "summary": "characters_event_grouped",
         "tags": [
           "Event History"
         ]
@@ -3734,7 +3778,10 @@
                             "type": "null"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -3753,7 +3800,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Friends List",
+        "summary": "characters_friend",
         "tags": [
           "Character Information"
         ]
@@ -3761,7 +3808,7 @@
     },
     "/get/{game}/characters_item": {
       "get": {
-        "description": "Query the items of a character. Note that this collection no longer lists account-wide item unlocks as this served as a fingerprint to identify players across multiple characters.",
+        "description": "Query the items of a character. Note that this collection no longer lists account-wide item unlocks as this served as a fingerprint to identify players across multiple characters.\n",
         "operationId": "get_characters_item",
         "parameters": [
           {
@@ -3888,6 +3935,9 @@
                             },
                             "type": "object"
                           }
+                        ],
+                        "x-tags": [
+                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -3907,7 +3957,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Items",
+        "summary": "characters_item",
         "tags": [
           "Character Information"
         ]
@@ -3915,7 +3965,7 @@
     },
     "/get/{game}/characters_leaderboard": {
       "get": {
-        "description": "Query the leaderboard for a character. Note that only the top 10'000 players for a given statistic are tracked in the leaderboard; many characters will not have an entry in this collection.\n\nThe `limit` key inserted into the response indicates the number of requested entries when passing multiple character IDs. Comparison with `returned` may be used to determine whether any characters were skipped due to not being in the leaderboard.",
+        "description": "Query the leaderboard for a character. Note that only the top 10'000 players for a given statistic are tracked in the leaderboard; many characters will not have an entry in this collection.\n\nThe `limit` key inserted into the response indicates the number of requested entries when passing multiple character IDs. Comparison with `returned` may be used to determine whether any characters were skipped due to not being in the leaderboard.\n",
         "operationId": "get_characters_leaderboard",
         "parameters": [
           {
@@ -4017,7 +4067,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -4047,7 +4100,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Leaderboard",
+        "summary": "characters_leaderboard",
         "tags": [
           "Leaderboards"
         ]
@@ -4147,7 +4200,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -4166,7 +4222,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Online Status",
+        "summary": "characters_online_status",
         "tags": [
           "Character Information"
         ]
@@ -4286,7 +4342,10 @@
                             "x-reference-to": "skill.skill_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -4305,7 +4364,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Skills",
+        "summary": "characters_skill",
         "tags": [
           "Character Information"
         ]
@@ -4313,7 +4372,7 @@
     },
     "/get/{game}/characters_stat": {
       "get": {
-        "description": "Basic statistics endpoint for character-wide and class-specific statistics.\n\n- `stat_name` lists the name of the stat\n- `profile` represents the class, with a value of 0 denoting a character-wide value",
+        "description": "Basic statistics endpoint for character-wide and class-specific\nstatistics.\n\n- `stat_name` lists the name of the stat\n- `profile` represents the class, with a value of 0 denoting a character-wide value\n",
         "operationId": "get_characters_stat",
         "parameters": [
           {
@@ -4502,6 +4561,9 @@
                             },
                             "type": "object"
                           }
+                        ],
+                        "x-tags": [
+                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -4521,7 +4583,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Statistics",
+        "summary": "characters_stat",
         "tags": [
           "Statistics"
         ]
@@ -4529,7 +4591,7 @@
     },
     "/get/{game}/characters_stat_by_faction": {
       "get": {
-        "description": "Faction-specific statistics endpoint. Useful for determining faction bias or kill spread.\n\n- `stat_name` lists the name of the stat\n- `profile` represents the class, with a value of 0 denoting a character-wide value\n\nAll `value_*` fields are provided per-faction. Note that the value for the own faction is often blanked: `value_nc` of the stat `kills` cannot be used to enumerate an NC character's team kills, for example.",
+        "description": "Faction-specific statistics endpoint. Useful for determining faction bias or kill spread.\n\n- `stat_name` lists the name of the stat\n- `profile` represents the class, with a value of 0 denoting a character-wide value\n\nAll `value_*` fields are provided per-faction. Note that the value for the own faction is\noften blanked: `value_nc` of the stat `kills` cannot be used to enumerate an NC character's\nteam kills, for example.\n",
         "operationId": "get_characters_stat_by_faction",
         "parameters": [
           {
@@ -4774,6 +4836,9 @@
                             },
                             "type": "object"
                           }
+                        ],
+                        "x-tags": [
+                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -4793,7 +4858,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Statistics by Faction",
+        "summary": "characters_stat_by_faction",
         "tags": [
           "Statistics"
         ]
@@ -4801,7 +4866,7 @@
     },
     "/get/{game}/characters_stat_history": {
       "get": {
-        "description": "Statistics endpoint for historical character stats. In addition to the `all_time` and `one_life_max` keys, values are also provided for the last 31 days (`day`), 12 months (`month`), or 13 weeks (`week`).\n\n- `stat_name` lists the name of the stat\n- `profile` represents the class, with a value of 0 denoting a character-wide value.",
+        "description": "Statistics endpoint for historical character stats. In addition to the `all_time` and\n`one_life_max` keys, values are also provided for the last 31 days (`day`), 12 months\n(`month`), or 13 weeks (`week`).\n\n- `stat_name` lists the name of the stat\n- `profile` represents the class, with a value of 0 denoting a character-wide value\n",
         "operationId": "get_characters_stat_history",
         "parameters": [
           {
@@ -5047,6 +5112,9 @@
                             },
                             "type": "object"
                           }
+                        ],
+                        "x-tags": [
+                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -5066,7 +5134,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Historical Statistics",
+        "summary": "characters_stat_history",
         "tags": [
           "Statistics"
         ]
@@ -5074,7 +5142,7 @@
     },
     "/get/{game}/characters_weapon_stat": {
       "get": {
-        "description": "Weapon statistics endpoint containing generic values such as playtime or score while wielding. The most common use is calculating the accuracy of a player with a given weapon by dividing `weapon_hit_count` by `weapon_fire_count`.\n\n- `stat_name` lists the name of the stat\n- `item_id` identifies the item for the weapon. Note that this value can be zero, in that case it serves as a catch-all for all weapons for the given `vehicle_id`.\n- `vehicle_id` the vehicle on which the weapon is available.",
+        "description": "Weapon statistics endpoint containing generic values such as playtime or score while\nwielding. The most common use is calculating the accuracy of a player with a given weapon\nby dividing `weapon_hit_count` by `weapon_fire_count`.\n\n- `stat_name` lists the name of the stat\n- `item_id` identifies the item for the weapon. Note that this value can be zero, in that\n  case it serves as a catch-all for all weapons for the given `vehicle_id`.\n- `vehicle_id` the vehicle on which the weapon is available.\n",
         "operationId": "get_characters_weapon_stat",
         "parameters": [
           {
@@ -5254,6 +5322,9 @@
                             },
                             "type": "object"
                           }
+                        ],
+                        "x-tags": [
+                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -5273,7 +5344,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Weapon Statistics",
+        "summary": "characters_weapon_stat",
         "tags": [
           "Statistics"
         ]
@@ -5281,7 +5352,7 @@
     },
     "/get/{game}/characters_weapon_stat_by_faction": {
       "get": {
-        "description": "Faction-specific weapon statistics endpoint containing combat-focussed stats such as kills, deaths, headshots and damage dealt/taken.\n\n- `stat_name` lists the name of the stat\n- `item_id` identifies the item for the weapon. Note that this value can be zero, in that case it serves as a catch-all for all weapons for the given `vehicle_id`.\n- `vehicle_id` the vehicle on which the weapon is available.",
+        "description": "Faction-specific weapon statistics endpoint containing combat-focussed stats such as kills,\ndeaths, headshots and damage dealt/taken.\n\n- `stat_name` lists the name of the stat\n- `item_id` identifies the item for the weapon. Note that this value can be zero, in that\n  case it serves as a catch-all for all weapons for the given `vehicle_id`.\n- `vehicle_id` the vehicle on which the weapon is available.\n",
         "operationId": "get_characters_weapon_stat_by_faction",
         "parameters": [
           {
@@ -5476,6 +5547,9 @@
                             },
                             "type": "object"
                           }
+                        ],
+                        "x-tags": [
+                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -5495,7 +5569,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Weapon Statistics By Faction",
+        "summary": "characters_weapon_stat_by_faction",
         "tags": [
           "Statistics"
         ]
@@ -5596,7 +5670,10 @@
                             "x-reference-to": "world.world_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -5615,7 +5692,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Character Server Lookup",
+        "summary": "characters_world",
         "tags": [
           "Character Information"
         ]
@@ -5623,7 +5700,7 @@
     },
     "/get/{game}/currency": {
       "get": {
-        "description": "Lists currencies available in the game.\n\nAs of 2023-06-13, the only currency available are Nanites. Outfit resources and other currencies such as Daybreak Cash, ISO-4, or A7 are not available on the API, while Cert Points and A.S.P. tokens are stored in the `character` collection.",
+        "description": "Lists currencies available in the game.\n\nAs of 2023-06-13, the only currency available are Nanites. Outfit resources and other currencies such as Daybreak Cash, ISO-4, or A7 are not available on the API, while Cert Points and A.S.P. tokens are stored in the `character` collection.\n",
         "operationId": "get_currency",
         "parameters": [
           {
@@ -5743,7 +5820,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -5762,7 +5842,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Currency",
+        "summary": "currency",
         "tags": [
           "Basics"
         ]
@@ -5770,7 +5850,7 @@
     },
     "/get/{game}/directive": {
       "get": {
-        "description": "An individual directive that may be completed by a player.\n\nThis collection lists an individual directive, such as \"100 Roadkills\".",
+        "description": "An individual directive that may be completed by a player.\n\nThis collection lists an individual directive, such as \"100 Roadkills\".\n",
         "operationId": "get_directive",
         "parameters": [
           {
@@ -5981,7 +6061,10 @@
                             "x-reference-to": "objective_set.objective_set_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -6000,7 +6083,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Directive",
+        "summary": "directive",
         "tags": [
           "Progression"
         ]
@@ -6008,7 +6091,7 @@
     },
     "/get/{game}/directive_tier": {
       "get": {
-        "description": "A completion tier within a directive tree.\n\nThis covers the individual stages of directive tiers, such as \"Combat Medic: Adept\".",
+        "description": "A completion tier within a directive tree.\n\nThis covers the individual stages of directive tiers, such as \"Combat Medic: Adept\".\n",
         "operationId": "get_directive_tier",
         "parameters": [
           {
@@ -6179,7 +6262,10 @@
                             "x-reference-to": "reward_set.reward_set_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -6198,7 +6284,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Directive Tier",
+        "summary": "directive_tier",
         "tags": [
           "Progression"
         ]
@@ -6206,7 +6292,7 @@
     },
     "/get/{game}/directive_tree": {
       "get": {
-        "description": "A tree of directives sorted into multiple tiers.\n\nThis collection represents the individual paths within a directive category, such as \"Light Assault\" or \"Combat Medic\".",
+        "description": "A tree of directives sorted into multiple tiers.\n\nThis collection represents the individual paths within a directive category, such as \"Light Assault\" or \"Combat Medic\".\n",
         "operationId": "get_directive_tree",
         "parameters": [
           {
@@ -6378,7 +6464,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -6397,7 +6486,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Directive Tree",
+        "summary": "directive_tree",
         "tags": [
           "Progression"
         ]
@@ -6405,7 +6494,7 @@
     },
     "/get/{game}/directive_tree_category": {
       "get": {
-        "description": "Top-level categorisation of directive trees.\n\nThis covers the main sections in the Directive menu, such as \"Infantry\", \"Vehicles\", or \"Events\".",
+        "description": "Top-level categorisation of directive trees.\n\nThis covers the main sections in the Directive menu, such as \"Infantry\", \"Vehicles\", or \"Events\".\n",
         "operationId": "get_directive_tree_category",
         "parameters": [
           {
@@ -6513,7 +6602,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -6532,7 +6624,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Directive Tree Category",
+        "summary": "directive_tree_category",
         "tags": [
           "Progression"
         ]
@@ -6540,7 +6632,7 @@
     },
     "/get/{game}/effect": {
       "get": {
-        "description": "A weapon-based effect acting on players or vehicles.\n\nWeapon-based effects include direct and indirect damage effects, tactical grenade impacts, as well as pseudo-weapons such as the Medic tool or Engineer repair tool. For world-based effects, weapon attachments and buffs, see the `ps2/zone_effect` collection instead.\n\nSee the `ps2/effect_type` collection for a list of available effect types.",
+        "description": "A weapon-based effect acting on players or vehicles.\n\nWeapon-based effects include direct and indirect damage effects, tactical grenade impacts, as well as pseudo-weapons such as the Medic tool or Engineer repair tool. For world-based effects, weapon attachments and buffs, see the `zone_effect` collection instead.\n\nSee the `effect_type` collection for a list of available effect types.\n",
         "operationId": "get_effect",
         "parameters": [
           {
@@ -6765,7 +6857,10 @@
                             "x-reference-to": "target_type.target_type_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -6784,7 +6879,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Effect",
+        "summary": "effect",
         "tags": [
           "Effects & Abilities"
         ]
@@ -6792,7 +6887,7 @@
     },
     "/get/{game}/effect_type": {
       "get": {
-        "description": "A type of effect.\n\nThe generic fields `paramX` and `stringX` are documented here. Note that not all fields are used by all effect types, or at all.",
+        "description": "A type of effect.\n\nThe generic fields `paramX` and `stringX` are documented here. Note that not all fields are used by all effect types, or at all.\n",
         "operationId": "get_effect_type",
         "parameters": [
           {
@@ -6952,7 +7047,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -6971,7 +7069,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Effect Type",
+        "summary": "effect_type",
         "tags": [
           "Effects & Abilities"
         ]
@@ -7102,7 +7200,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -7121,7 +7222,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "(Defunct) Empire Scores",
+        "summary": "empire_scores (Defunct)",
         "tags": [
           "Metagame & Alerts"
         ]
@@ -7129,7 +7230,7 @@
     },
     "/get/{game}/event": {
       "get": {
-        "description": "ReST endpoint for retrieving historical event data.\n\nThese largely mirror the corresponding events in the ESS:\n\n- `ItemAdded` -> `ITEM`\n- `Death` -> `KILL`/`DEATH`\n- `BattleRankUp` -> `BATTLE_RANK`\n- `PlayerFacilityCapture`/`PlayerFacilityDefend` -> `FACILITY_CHARACTER`\n- `AchievementEarned` -> `ACHIEVEMENT`\n- `FacilityControl` -> `FACILITYCONTROL`\n- `MetagameEvent` -> `METAGAME`",
+        "description": "ReST endpoint for retrieving historical event data.\n\nThese largely mirror the corresponding events in the ESS:\n\n- `ItemAdded` -> `ITEM`\n- `Death` -> `KILL`/`DEATH`\n- `BattleRankUp` -> `BATTLE_RANK`\n- `PlayerFacilityCapture`/`PlayerFacilityDefend` -> `FACILITY_CHARACTER`\n- `AchievementEarned` -> `ACHIEVEMENT`\n- `FacilityControl` -> `FACILITYCONTROL`\n- `MetagameEvent` -> `METAGAME`\"\n",
         "operationId": "get_event",
         "parameters": [
           {
@@ -7685,6 +7786,9 @@
                                   }
                                 ]
                               }
+                            ],
+                            "x-tags": [
+                              "Schema Reference"
                             ]
                           },
                           {
@@ -7857,8 +7961,14 @@
                                   }
                                 ]
                               }
+                            ],
+                            "x-tags": [
+                              "Schema Reference"
                             ]
                           }
+                        ],
+                        "x-tags": [
+                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -7878,7 +7988,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Event",
+        "summary": "event",
         "tags": [
           "Event History"
         ]
@@ -7968,7 +8078,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -7987,7 +8100,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Experience",
+        "summary": "experience",
         "tags": [
           "Basics"
         ]
@@ -7995,7 +8108,7 @@
     },
     "/get/{game}/experience_rank": {
       "get": {
-        "description": "Player rank gained through leveling up.\n\nNote that the `rank` field is not unique, as each rank is duplicated for each prestige (aka. A.S.P.) level. The prestige entries can only be distinguished by their icons.",
+        "description": "Player rank gained through leveling up.\n\nNote that the `rank` field is not unique, as each rank is duplicated for each prestige (aka. A.S.P.) level. The prestige entries can only be distinguished by their icons.\n",
         "operationId": "get_experience_rank",
         "parameters": [
           {
@@ -8264,7 +8377,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -8283,7 +8399,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Experience Rank",
+        "summary": "experience_rank",
         "tags": [
           "Progression"
         ]
@@ -8291,7 +8407,7 @@
     },
     "/get/{game}/facility_link": {
       "get": {
-        "description": "Resolves lattice links between facilities.\n\nThere is no reliable difference between `facility_id_a` and `facility_id_b`; the former tends to be closer to the respective warpgate, but this does not hold true for all links. It is recommended to treat the link direction as arbitrary.",
+        "description": "Resolves lattice links between facilities.\n\nThere is no reliable difference between `facility_id_a` and `facility_id_b`; the former tends to be closer to the respective warpgate, but this does not hold true for all links. It is recommended to treat the link direction as arbitrary.\n",
         "operationId": "get_facility_link",
         "parameters": [
           {
@@ -8402,7 +8518,10 @@
                             "x-reference-to": "zone.zone_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -8421,7 +8540,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Facility Link",
+        "summary": "facility_link",
         "tags": [
           "Map Data"
         ]
@@ -8524,7 +8643,10 @@
                             "x-reference-to": "image_set.image_set_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -8543,7 +8665,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Facility Type",
+        "summary": "facility_type",
         "tags": [
           "Map Data"
         ]
@@ -8551,7 +8673,7 @@
     },
     "/get/{game}/faction": {
       "get": {
-        "description": "Playable and NPC factions.",
+        "description": "Endpoint for playable and non-playable factions.\nIn addition to the main empires VS, NC, and TR, this also lists NS Operatives as the 4th faction. Note that a faction ID of zero does not denote an empty value. Instead, it represents a special \"None\" faction, which is used for common pool equipment, and also serves as a sentinel value for disabled facilities in the context of facility ownership.\nWhen working with the Event Streaming Service (ESS), you will encounter a `team_id` field in certain payloads. This is used to control friend-or-foe status for NSO players, or for the opposing factions in Outfit Wars.\nDuring regular gameplay (i.e. outside of Outfit Wars), it is generally safe to treat a team ID as a faction. However, care should be taken during Outfit Wars matches as the team IDs will map to the Alpha and Omega team instead.\n",
         "operationId": "get_faction",
         "parameters": [
           {
@@ -8689,7 +8811,10 @@
                             "x-cast-to": "boolean"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -8708,7 +8833,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Faction",
+        "summary": "faction",
         "tags": [
           "Basics"
         ]
@@ -8716,7 +8841,7 @@
     },
     "/get/{game}/fire_group": {
       "get": {
-        "description": "Fire groups in the API are synonymous with fire modes in-game, they represent the different operating modes some weapons can switch between.\n\nThis includes select-fire modes for infantry weapons, as well as knives switching between quick knife, wielded knive, and - in the case of power knives - the one-hit-kill mode.",
+        "description": "Fire groups in the API are synonymous with fire modes in-game, they represent the different operating modes some weapons can switch between.\n\nThis includes select-fire modes for infantry weapons, as well as knives switching between quick knife, wielded knive, and - in the case of power knives - the one-hit-kill mode.\n",
         "operationId": "get_fire_group",
         "parameters": [
           {
@@ -8839,7 +8964,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -8858,7 +8986,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Fire Group",
+        "summary": "fire_group",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -8866,7 +8994,7 @@
     },
     "/get/{game}/fire_mode": {
       "get": {
-        "description": "**Note:** This table has been largely superceded by `ps2/fire_mode_2`, which contains additional and more accurate information about firing mechanics.\n\nThis endpoint shows detailed information about a given fire mode for a weapon, including damage ranges, muzzle velocity, and reload time.\n\nFor details on the cone-of-fire mechanics, resolve the `player_state_group_id` field.",
+        "description": "**Note:** This table has been largely superceded by `fire_mode_2`, which contains additional and more accurate information about firing mechanics.\n\nThis endpoint shows detailed information about a given fire mode for a weapon, including damage ranges, muzzle velocity, and reload time.\n\nFor details on the cone-of-fire mechanics, resolve the `player_state_group_id` field.\n",
         "operationId": "get_fire_mode",
         "parameters": [
           {
@@ -9153,7 +9281,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -9172,7 +9303,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Fire Mode (Legacy)",
+        "summary": "fire_group (Legacy)",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -9180,7 +9311,7 @@
     },
     "/get/{game}/fire_mode_2": {
       "get": {
-        "description": "Main endpoint for baseline weapon characteristics and firing mechanics. This includes:\n\n- Damage effects and ranges\n- Recoil magnitude and pattern\n- Triggered abilities for pseudo-weapons such as the medical applicator\n- Ammunition consumption and pellet count\n- Heat-mechanics\n\nBe aware that lockon information is currently disconnected from the game data and has not been outdated. Refer to the PS2 Wiki for up-to-date information for the time being.",
+        "description": "Main endpoint for baseline weapon characteristics and firing mechanics. This includes:\n\n- Damage effects and ranges\n- Recoil magnitude and pattern\n- Triggered abilities for pseudo-weapons such as the medical applicator\n- Ammunition consumption and pellet count\n- Heat-mechanics\n\nBe aware that lockon information is currently disconnected from the game data and has not\nbeen outdated. Refer to the PS2 Wiki for up-to-date information for the time being.\n",
         "operationId": "get_fire_mode_2",
         "parameters": [
           {
@@ -10056,7 +10187,10 @@
                             "x-cast-to": "float"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -10075,7 +10209,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Fire Mode",
+        "summary": "fire_mode_2",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -10171,7 +10305,10 @@
                             "x-reference-to": "projectile.projectile_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -10190,7 +10327,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Fire Mode to Projectile",
+        "summary": "fire_mode_to_projectile",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -10198,7 +10335,7 @@
     },
     "/get/{game}/fire_mode_type": {
       "get": {
-        "description": "Enumeration of the types of fire modes.\n\nThis servers to differentiate between melee attacks, projectile weapons, throwables, and pseudo-weapon fire modes used to trigger activated items.",
+        "description": "Enumeration of the types of fire modes.\n\nThis servers to differentiate between melee attacks, projectile weapons, throwables, and pseudo-weapon fire modes used to trigger activated items.\n",
         "operationId": "get_fire_mode_type",
         "parameters": [
           {
@@ -10286,7 +10423,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -10305,7 +10445,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Fire Mode Type",
+        "summary": "fire_mode_type",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -10313,7 +10453,7 @@
     },
     "/get/{game}/image": {
       "get": {
-        "description": "Lists individual image assets available on the API.\n\nNote that historically, not all assets listed here are available on the image endpoint, and not all available assets are listed.",
+        "description": "Lists individual image assets available on the API.\n\nNote that historically, not all assets listed here are available on the image endpoint, and not all available assets are listed.\n",
         "operationId": "get_image",
         "parameters": [
           {
@@ -10394,7 +10534,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -10413,7 +10556,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Image",
+        "summary": "image",
         "tags": [
           "Image Assets"
         ]
@@ -10421,7 +10564,7 @@
     },
     "/get/{game}/image_set": {
       "get": {
-        "description": "Lists related image assets belonging to the same set.\n\nNote that this endpoint is a mapping; the `iamge_set_id` is not a unique key. The individual image types in a set are generally used to provide different sizes of the same image (e.g. icon previes or minimal icons).",
+        "description": "Lists related image assets belonging to the same set.\n\nNote that this endpoint is a mapping; the `image_set_id` is not a unique key. The individual image types in a set are generally used to provide different sizes of the same image (e.g. icon previes or minimal icons).\n",
         "operationId": "get_image_set",
         "parameters": [
           {
@@ -10545,7 +10688,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -10564,7 +10710,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Image Set",
+        "summary": "image_set",
         "tags": [
           "Image Assets"
         ]
@@ -10681,7 +10827,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -10700,7 +10849,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Image Set Default",
+        "summary": "image_set_default",
         "tags": [
           "Image Assets"
         ]
@@ -10708,7 +10857,7 @@
     },
     "/get/{game}/item": {
       "get": {
-        "description": "Items in PlanetSide 2 are used to represent weapons, tools, and consumables, but also cosmetic items and internal control objects for player renaming or outfit resource consumption. Use the `item_type` collection to narrow searches to specific types.",
+        "description": "Items in PlanetSide 2 are used to represent weapons, tools, and consumables, but also cosmetic items and internal control objects for player renaming or outfit resource consumption. Use the `item_type` collection to narrow searches to specific types.\n",
         "operationId": "get_item",
         "parameters": [
           {
@@ -10931,7 +11080,10 @@
                             "x-reference-to": "skill_set.skill_set_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -10950,7 +11102,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Items",
+        "summary": "item",
         "tags": [
           "Items & Bundles"
         ]
@@ -11073,7 +11225,10 @@
                             "x-reference-to": "item.item_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -11092,7 +11247,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Item Attachments",
+        "summary": "item_attachment",
         "tags": [
           "Items & Bundles"
         ]
@@ -11100,7 +11255,7 @@
     },
     "/get/{game}/item_category": {
       "get": {
-        "description": "Item categories are used to group items together for display in the loadout screen or depot.",
+        "description": "Item categories are used to group items together for display in the loadout screen or depot.\n",
         "operationId": "get_item_category",
         "parameters": [
           {
@@ -11209,7 +11364,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -11228,7 +11386,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Item Categories",
+        "summary": "item_category",
         "tags": [
           "Items & Bundles"
         ]
@@ -11340,7 +11498,10 @@
                             "x-reference-to": "profile_2.profile_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -11359,7 +11520,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Item-Class Mapping",
+        "summary": "item_profile",
         "tags": [
           "Items & Bundles"
         ]
@@ -11367,7 +11528,7 @@
     },
     "/get/{game}/item_to_weapon": {
       "get": {
-        "description": "Maps items (including name, availability) to its respective weapon object\n\nNot all items have a weapon objects, though some filtering can be done through the `item_type_id` field, with the ID 26 representing most weapon types.",
+        "description": "Maps items (including name, availability) to its respective weapon object.\n\nNot all items have a weapon objects, though some filtering can be done through the `item_type_id` field, with the ID 26 representing most weapon types.\n",
         "operationId": "get_item_to_weapon",
         "parameters": [
           {
@@ -11455,7 +11616,10 @@
                             "x-reference-to": "weapon.weapon_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -11474,7 +11638,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Item-Weapon Mapping",
+        "summary": "item_to_weapon",
         "tags": [
           "Items & Bundles"
         ]
@@ -11482,7 +11646,7 @@
     },
     "/get/{game}/item_type": {
       "get": {
-        "description": "Items in PlanetSide 2 represent many different things beyond weapons, such as implant packs, cosmetics, or name change tokens. They are also used as internal helpers when pulling outfit resources, spawning vehicles, or interacting with certain terminals.\n\nThis collection lists the different item types, though many of these are never encountered on the API.",
+        "description": "Items in PlanetSide 2 represent many different things beyond weapons, such as implant packs, cosmetics, or name change tokens. They are also used as internal helpers when pulling outfit resources, spawning vehicles, or interacting with certain terminals.\n\nThis collection lists the different item types, though many of these are never encountered on the API.\n",
         "operationId": "get_item_type",
         "parameters": [
           {
@@ -11584,7 +11748,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -11603,7 +11770,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Item Types",
+        "summary": "item_type",
         "tags": [
           "Items & Bundles"
         ]
@@ -11611,7 +11778,7 @@
     },
     "/get/{game}/leaderboard": {
       "get": {
-        "description": "Global leaderboard for a given server. This only includes the top 10'000 players for a given category and is not directly searchable. See `characters_leaderboard` to look up a character's ranking.\n\n`c:start` and `c:limit` are supported and allow for pagination. `c:join` and `c:tree` are also permitted. Any other query commands will be silently ignored.\n\nUnlike most other tables, this one defaults to a `c:limit` value of 10 and is always sorted in ascending order of leaderboard rank.",
+        "description": "Global leaderboard for a given server. This only includes the top 10'000 players for a given category and is not directly searchable. See `characters_leaderboard` to look up a character's ranking.\n\n`c:start` and `c:limit` are supported and allow for pagination. `c:join` and `c:tree` are also permitted. Any other query commands will be silently ignored.\n\nUnlike most other tables, this one defaults to a `c:limit` value of 10 and is always sorted in ascending order of leaderboard rank.\n",
         "operationId": "get_leaderboard",
         "parameters": [
           {
@@ -11785,7 +11952,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -11804,7 +11974,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Global Leaderboard",
+        "summary": "leaderboard",
         "tags": [
           "Leaderboards"
         ]
@@ -11812,7 +11982,7 @@
     },
     "/get/{game}/loadout": {
       "get": {
-        "description": "Enumeration of the six infantry classes for each playable faction.\n\nNote that this is different from the in-game loadouts, which are not available on the API.",
+        "description": "Enumeration of the six infantry classes for each playable faction.\n\nNote that this is different from the in-game loadouts, which are not available on the API.\n",
         "operationId": "get_loadout",
         "parameters": [
           {
@@ -11902,7 +12072,10 @@
                             "x-reference-to": "profile_2.profile_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -11921,7 +12094,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Loadout",
+        "summary": "loadout",
         "tags": [
           "Basics"
         ]
@@ -11929,7 +12102,7 @@
     },
     "/get/{game}/map": {
       "get": {
-        "description": "Map status endpoint.\n\nThis collection can only be queried with a single `world_id` and any number of `zone_ids` (note that the parameter is plural). Also note the non-standard payload format requiring different parsing rules.\n\nFor partially locked continents, the unavailable regions will report a `FactionId` of zero.",
+        "description": "Map status endpoint.\n\nThis collection can only be queried with a single `world_id` and any number of `zone_ids` (note that the parameter is plural). Also note the non-standard payload format requiring different parsing rules.\n\nFor partially locked continents, the unavailable regions will report a `FactionId` of zero.\n",
         "operationId": "get_map",
         "parameters": [
           {
@@ -12063,7 +12236,10 @@
                             "x-reference-to": "zone.zone_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -12082,7 +12258,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Map",
+        "summary": "map",
         "tags": [
           "Map Data"
         ]
@@ -12090,7 +12266,7 @@
     },
     "/get/{game}/map_hex": {
       "get": {
-        "description": "Endpoint for retrieving map hex coordinates.\n\nThis data can be used to reconstruct the in-game facility outlines from API data.\n\nThe X and Y coordinates listed in the entries to this collection are not Cartesian and do not match up with the `location_<n>` fields of `map_region`. Instead, they are describing locations in a non-orthogonal hexagonal grid, which must be converted by the user.\n\nThis website has a great write-up on hexagonal coordinate systems: <https://www.redblobgames.com/grids/hexagons/>\nThe coordinate system used by PlanetSide 2 matches the \"Axial coordinates\" described in the article, except that the first coordinate X faces east, and the second coordinate Y faces up and to the right at a 60\u00b0 angle.",
+        "description": "Endpoint for retrieving map hex coordinates.\nThis data can be used to reconstruct the in-game facility outlines from API data.\n\nThe X and Y coordinates listed in the entries to this collection are not Cartesian and do not match up with the `location_<n>` fields of `map_region`. Instead, they are describing locations in a non-orthogonal hexagonal grid, which must be converted by the user.\n\nThis website has a great write-up on hexagonal coordinate systems: <https://www.redblobgames.com/grids/hexagons/>.\nThe coordinate system used by PlanetSide 2 matches the \"Axial coordinates\" described in the article, except that the first coordinate X faces east, and the second coordinate Y faces up and to the right at a 60\u00b0 angle.\n",
         "operationId": "get_map_hex",
         "parameters": [
           {
@@ -12224,7 +12400,10 @@
                             "x-reference-to": "zone.zone_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -12243,7 +12422,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Map Hex",
+        "summary": "map_hex",
         "tags": [
           "Map Data"
         ]
@@ -12251,7 +12430,7 @@
     },
     "/get/{game}/map_region": {
       "get": {
-        "description": "A region on the in-game map.\n\nMap regions are largely identical to their corresponding regions, but use the internal `facility_name` instead of a localized string. A `map_region_id` and `region_id` are interchangeable.\n\nAdditionally, this collection allows connecting facilities to map region IDs.\n\nNote that the continuous outfit resource gain is listed in \"ticks\", not minutes. Ticks are 5 minutes as of writing, meaning that a Tech Plant will list a tick reward of 8 Synthium, corresponding to the 1.6 Synthium per minute advertised in-game.",
+        "description": "A region on the in-game map.\n\nMap regions are largely identical to their corresponding regions, but use the internal `facility_name` instead of a localized string. A `map_region_id` and `region_id` are interchangeable.\n\nAdditionally, this collection allows connecting facilities to map region IDs.\n\nNote that the continuous outfit resource gain is listed in \"ticks\", not minutes. Ticks are 5 minutes as of writing, meaning that a Tech Plant will list a tick reward of 8 Synthium, corresponding to the 1.6 Synthium per minute advertised in-game.\n",
         "operationId": "get_map_region",
         "parameters": [
           {
@@ -12418,7 +12597,10 @@
                             "x-reference-to": "zone.zone_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -12437,7 +12619,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Map Region",
+        "summary": "map_region",
         "tags": [
           "Map Data"
         ]
@@ -12445,7 +12627,7 @@
     },
     "/get/{game}/marketing_bundle": {
       "get": {
-        "description": "Bundles available for purchase in the in-game store (Depot). This collection represents actual bundles. For pseudo-bundles used to purchase individual weapon attachments or cosmetics, see the `marketing_bundle_with_1_item` collection instead.\n\nNote that there is no guaranteed way of determining whether a given bundle is currently available for purchase. This collection contains many entries for defunct items and bundles, such as the single-use camos from the early days of the game.\n\nThis collection is automatically maintained and generally accurate with regards to certification prices, the daybreak/station cash values are generally less reliable.",
+        "description": "Bundles available for purchase in the in-game store (Depot). This collection represents actual bundles. For pseudo-bundles used to purchase individual weapon attachments or cosmetics, see the `marketing_bundle_with_1_item` collection instead.\n\nNote that there is no guaranteed way of determining whether a given bundle is currently available for purchase. This collection contains many entries for defunct items and bundles, such as the single-use camos from the early days of the game.\n\nThis collection is automatically maintained and generally accurate with regards to certification prices, the daybreak/station cash values are generally less reliable.\n",
         "operationId": "get_marketing_bundle",
         "parameters": [
           {
@@ -12616,7 +12798,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -12635,7 +12820,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Bundles",
+        "summary": "marketing_bundle",
         "tags": [
           "Items & Bundles"
         ]
@@ -12821,7 +13006,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -12840,7 +13028,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Items Available in Bundles",
+        "summary": "marketing_bundle_item",
         "tags": [
           "Items & Bundles"
         ]
@@ -12848,7 +13036,7 @@
     },
     "/get/{game}/marketing_bundle_with_1_item": {
       "get": {
-        "description": "These are pseudo-bundles with exactly 1 item each, allowing players to buy individual weapons or cosmetics with Daybreak Cash (formerly Station Cash).\n\nNote that in the case of weapons, these bundles are genreally mirrored by 'regular' bundles in the `ps2/marketing_bundle` collection, with the same `marketing_bundle_id`.",
+        "description": "These are pseudo-bundles with exactly 1 item each, allowing players to buy individual weapons or cosmetics with Daybreak Cash (formerly Station Cash).\n\nNote that in the case of weapons, these bundles are genreally mirrored by 'regular' bundles in the `marketing_bundle` collection, with the same `marketing_bundle_id`.\n",
         "operationId": "get_marketing_bundle_with_1_item",
         "parameters": [
           {
@@ -12959,7 +13147,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -12978,7 +13169,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Individual Item Bundles",
+        "summary": "marketing_bundle_with_1_item",
         "tags": [
           "Items & Bundles"
         ]
@@ -12986,7 +13177,7 @@
     },
     "/get/{game}/metagame_event": {
       "get": {
-        "description": "In-game alerts and other alert-like events.\n\nNote that this endpoint lists alert types that are not currently enabled in-game, such as the 'Aerial Anomaly' and 'MAXimum Pressure' alert types.",
+        "description": "In-game alerts and other alert-like events.\n\nNote that this endpoint lists alert types that are not currently enabled in-game, such as the 'Aerial Anomaly' and 'MAXimum Pressure' alert types.\n",
         "operationId": "get_metagame_event",
         "parameters": [
           {
@@ -13141,7 +13332,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -13160,7 +13354,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Metagame Event",
+        "summary": "metagame_event",
         "tags": [
           "Metagame & Alerts"
         ]
@@ -13260,7 +13454,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -13279,7 +13476,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Metagame Event State",
+        "summary": "metagame_event_state",
         "tags": [
           "Metagame & Alerts"
         ]
@@ -13287,7 +13484,7 @@
     },
     "/get/{game}/objective": {
       "get": {
-        "description": "An objective tracking progress towards a directive, mission, or achievement.\n\nSee the `ps2/objective_type` collection for a list of available objective types.",
+        "description": "An objective tracking progress towards a directive, mission, or achievement.\n\nSee the `objective_type` collection for a list of available objective types.\n",
         "operationId": "get_objective",
         "parameters": [
           {
@@ -13438,7 +13635,10 @@
                             "x-cast-to": "float"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -13457,7 +13657,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Objective",
+        "summary": "objective",
         "tags": [
           "Progression"
         ]
@@ -13465,7 +13665,7 @@
     },
     "/get/{game}/objective_set_to_objective": {
       "get": {
-        "description": "Maps objective sets to objective groups.\n\nThis collection is peculiar as neither of the types it connects are available on the API. It is however essential for connecting the `ps2/directive` collection to `ps2/objective` and `ps2/objective_type`.\n\nNote that when joining to these queries, the `^on:` and `^to:` fields must be used to specify the relationship.",
+        "description": "Maps objective sets to objective groups.\n\nThis collection is peculiar as neither of the types it connects are available on the API. It is however essential for connecting the `directive` collection to `objective` and `objective_type`.\n\nNote that when joining to these queries, the `^on:` and `^to:` fields must be used to specify the relationship.\n",
         "operationId": "get_objective_set_to_objective",
         "parameters": [
           {
@@ -13557,7 +13757,10 @@
                             ]
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -13576,7 +13779,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Objective Set Map",
+        "summary": "objective_set_to_objective",
         "tags": [
           "Progression"
         ]
@@ -13584,7 +13787,7 @@
     },
     "/get/{game}/objective_type": {
       "get": {
-        "description": "A type of objective.\n\nThe generic `paramX` fields are documented here. Note that not all fields are used by all objective types, or at all.",
+        "description": "A type of objective.\n\nThe generic `paramX` fields are documented here. Note that not all fields are used by all objective types, or at all.\n",
         "operationId": "get_objective_type",
         "parameters": [
           {
@@ -13703,7 +13906,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -13722,7 +13928,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Objective Type",
+        "summary": "objective_type",
         "tags": [
           "Progression"
         ]
@@ -13844,7 +14050,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -13863,7 +14072,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Outfit",
+        "summary": "outfit",
         "tags": [
           "Player Outfits"
         ]
@@ -13871,7 +14080,7 @@
     },
     "/get/{game}/outfit_member": {
       "get": {
-        "description": "Outfit membership information for a givne character. Characters that are not members of any outfit will not have an entry in this collection.",
+        "description": "Outfit membership information for a givne character. Characters that are not members of any outfit will not have an entry in this collection.\n",
         "operationId": "get_outfit_member",
         "parameters": [
           {
@@ -13995,7 +14204,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -14014,7 +14226,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Outfit Member",
+        "summary": "outfit_member",
         "tags": [
           "Player Outfits"
         ]
@@ -14022,7 +14234,7 @@
     },
     "/get/{game}/outfit_member_extended": {
       "get": {
-        "description": "Another variant of the `ps2/outfit_member` collection, but with the contents of the corresponding `ps2/outfit` merged in. This is useful for bulk lookups of outfit information for heterogenous lists of characters without requiring the explicit use of `c:join` or `c:resolve`.",
+        "description": "Another variant of the `outfit_member` collection, but with the contents of the corresponding `outfit` merged in. This is useful for bulk lookups of outfit information for heterogenous lists of characters without requiring the explicit use of `c:join` or `c:resolve`.\n",
         "operationId": "get_outfit_member_extended",
         "parameters": [
           {
@@ -14189,7 +14401,10 @@
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -14208,7 +14423,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Outfit Member (Extended)",
+        "summary": "outfit_member_extended",
         "tags": [
           "Player Outfits"
         ]
@@ -14216,7 +14431,7 @@
     },
     "/get/{game}/outfit_rank": {
       "get": {
-        "description": "Outfits can define their own custom rank names and permissions, which are listed here. Outfits using the default rank names may not have an entry here.",
+        "description": "Outfits can define their own custom rank names and permissions, which are listed here. Outfits using the default rank names may not have an entry here.\n",
         "operationId": "get_outfit_rank",
         "parameters": [
           {
@@ -14304,7 +14519,10 @@
                             "x-reference-to": "outfit.outfit_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -14323,7 +14541,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Custom Outfit Rank",
+        "summary": "outfit_rank",
         "tags": [
           "Player Outfits"
         ]
@@ -14331,7 +14549,7 @@
     },
     "/get/{game}/profile": {
       "get": {
-        "description": "Original endpoint for infantry profiles. This covers the names and loadout IDs connected to a given profile, and additionally provides movement speed multiplier information for infantry classes. Note that the key fields are also provided by `ps2/profile_2`, which not only covers infantry but also vehicles, deployables, and other entities.",
+        "description": "Original endpoint for infantry profiles. This covers the names and loadout IDs connected to a given profile, and additionally provides movement speed multiplier information for infantry classes. Note that the key fields are also provided by `profile_2`, which not only covers infantry but also vehicles, deployables, and other entities.\n",
         "operationId": "get_profile",
         "parameters": [
           {
@@ -14551,7 +14769,10 @@
                             "x-cast-to": "float"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -14570,7 +14791,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Profile (Infantry)",
+        "summary": "profile (Infantry)",
         "tags": [
           "Basics"
         ]
@@ -14578,7 +14799,7 @@
     },
     "/get/{game}/profile_2": {
       "get": {
-        "description": "Extended profile endpoint containing all entity types, including NPCs, construction items, and deployables.",
+        "description": "Extended profile endpoint containing all entity types, including NPCs, construction items, and deployables.\n",
         "operationId": "get_profile_2",
         "parameters": [
           {
@@ -14654,7 +14875,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -14673,7 +14897,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Profile (All)",
+        "summary": "profile_2 (All)",
         "tags": [
           "Basics"
         ]
@@ -14681,7 +14905,7 @@
     },
     "/get/{game}/profile_armor_map": {
       "get": {
-        "description": "Maps profiles to the relevant `ps2/armor_info` entries.\n\nNote that many of the IDs used here are only available in `ps2/profile_2`. Additionally, armor values only concern vehicles, with infantry and deployable classes not having any entries here.",
+        "description": "Maps profiles to the relevant `armor_info` entries.\n\nNote that many of the IDs used here are only available in `profile_2`. Additionally, armor values only concern vehicles, with infantry and deployable classes not having any entries here.\n",
         "operationId": "get_profile_armor_map",
         "parameters": [
           {
@@ -14800,7 +15024,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -14819,7 +15046,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Profile Armor Map",
+        "summary": "profile_armor_map",
         "tags": [
           "Damage Calculation"
         ]
@@ -14827,7 +15054,7 @@
     },
     "/get/{game}/profile_resist_map": {
       "get": {
-        "description": "Maps profiles to the relevant `ps2/resist_info` entries. Note that many of the profile IDs used here are only available in the `ps2/profile_2` collection.",
+        "description": "Maps profiles to the relevant `resist_info` entries. Note that many of the profile IDs used here are only available in the `profile_2` collection.\n",
         "operationId": "get_profile_resist_map",
         "parameters": [
           {
@@ -14936,7 +15163,10 @@
                             "x-reference-to": "resist_info.resist_info_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -14955,7 +15185,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Profile Resist Map",
+        "summary": "profile_resist_map",
         "tags": [
           "Damage Calculation"
         ]
@@ -14963,7 +15193,7 @@
     },
     "/get/{game}/projectile": {
       "get": {
-        "description": "Projectiles specify the travel characteristics of a weapon on its way to the target, such as its speed, its bullet drop, or maximum flight time/distance.\n\nNote that multiple fire modes can use the same projectile. This usually includes the hipfire vs. aimed fire modes, but can also include different weapons altogether.",
+        "description": "Projectiles specify the travel characteristics of a weapon on its way to the target, such as its speed, its bullet drop, or maximum flight time/distance.\n\nNote that multiple fire modes can use the same projectile. This usually includes the hipfire vs. aimed fire modes, but can also include different weapons altogether.\n",
         "operationId": "get_projectile",
         "parameters": [
           {
@@ -15145,7 +15375,10 @@
                             "x-cast-to": "float"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -15164,7 +15397,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Projectiles",
+        "summary": "projectile",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -15172,7 +15405,7 @@
     },
     "/get/{game}/projectile_flight_type": {
       "get": {
-        "description": "Enumerates the flight types used to categorize projectiles by their travel characteristics.\n\nThis mostly controls whether the projectile is ballistic, Flak-based, or \"Dynamic\", used to represent thrown items such as grenades, explosives, and ammo packs.",
+        "description": "Enumerates the flight types used to categorize projectiles by their travel characteristics.\n\nThis mostly controls whether the projectile is ballistic, Flak-based, or \"Dynamic\", used to represent thrown items such as grenades, explosives, and ammo packs.\n",
         "operationId": "get_projectile_flight_type",
         "parameters": [
           {
@@ -15261,7 +15494,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -15280,7 +15516,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Projectile Flight Type",
+        "summary": "projectile_flight_type",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -15288,7 +15524,7 @@
     },
     "/get/{game}/region": {
       "get": {
-        "description": "Display name of the game regions.\n\nThis endpoint mostly contains the localized display name of the a map region. Regions and map regions are interchangeable and governed by the same IDs.",
+        "description": "Display name of the game regions.\n\nThis endpoint mostly contains the localized display name of the a map region. Regions and map regions are interchangeable and governed by the same IDs.\n",
         "operationId": "get_region",
         "parameters": [
           {
@@ -15419,7 +15655,10 @@
                             "x-reference-to": "zone.zone_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -15438,7 +15677,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Region",
+        "summary": "region",
         "tags": [
           "Map Data"
         ]
@@ -15542,7 +15781,10 @@
                             "x-reference-to": "resist_type.resist_type_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -15561,7 +15803,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Resist Info",
+        "summary": "resist_info",
         "tags": [
           "Damage Calculation"
         ]
@@ -15569,7 +15811,7 @@
     },
     "/get/{game}/resist_type": {
       "get": {
-        "description": "Enumeration of resistance types used to balance damage types against various targets.",
+        "description": "Enumeration of resistance types used to balance damage types against various targets.\n",
         "operationId": "get_resist_type",
         "parameters": [
           {
@@ -15725,7 +15967,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -15744,7 +15989,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Resist Types",
+        "summary": "resist_type",
         "tags": [
           "Damage Calculation"
         ]
@@ -15889,7 +16134,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     },
@@ -15908,7 +16156,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Resource Type",
+        "summary": "resource_type",
         "tags": [
           "Effects & Abilities"
         ]
@@ -15916,7 +16164,7 @@
     },
     "/get/{game}/reward": {
       "get": {
-        "description": "",
+        "description": "A reward granted for completing a directive, mission, or achievement.\n",
         "operationId": "get_reward",
         "parameters": [
           {
@@ -16047,7 +16295,10 @@
                             "x-reference-to": "reward_type.reward_type_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -16062,7 +16313,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Reward",
+        "summary": "reward",
         "tags": [
           "Progression"
         ]
@@ -16070,7 +16321,7 @@
     },
     "/get/{game}/reward_group_to_reward": {
       "get": {
-        "description": "Maps a reward group to one or more rewards.\n\nThis collection, together with `reward_set_to_reward_group`, allows connecting directive tiers to the rewards they grant upon completion.",
+        "description": "Maps a reward group to one or more rewards.\n\nThis collection, together with `reward_set_to_reward_group`, allows connecting directive tiers to the rewards they grant upon completion.\n",
         "operationId": "get_reward_group_to_reward",
         "parameters": [
           {
@@ -16173,7 +16424,10 @@
                             "x-reference-to": "reward.reward_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -16188,7 +16442,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Reward Map",
+        "summary": "reward_group_to_reward",
         "tags": [
           "Progression"
         ]
@@ -16196,7 +16450,7 @@
     },
     "/get/{game}/reward_set_to_reward_group": {
       "get": {
-        "description": "Maps a reward set to its reward group.\n\nThis collection, together with `reward_group_to_reward`, allows connecting directive tiers to the rewards they grant upon completion.",
+        "description": "Maps a reward set to its reward group.\n\nThis collection, together with `reward_group_to_reward`, allows connecting directive tiers to the rewards they grant upon completion.\n",
         "operationId": "get_reward_set_to_reward_group",
         "parameters": [
           {
@@ -16286,7 +16540,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -16301,7 +16558,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Reward Set Map",
+        "summary": "reward_set_to_reward_group",
         "tags": [
           "Progression"
         ]
@@ -16309,7 +16566,7 @@
     },
     "/get/{game}/reward_type": {
       "get": {
-        "description": "A type of reward.\n\nThe generic `paramX` fields are documented here. Note that not all fields are used by all reward types, or at all.",
+        "description": "A type of reward.\n\nThe generic `paramX` fields are documented here. Note that not all fields are used by all reward types, or at all.\n",
         "operationId": "get_reward_type",
         "parameters": [
           {
@@ -16439,7 +16696,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -16454,7 +16714,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Reward Type",
+        "summary": "reward_type",
         "tags": [
           "Progression"
         ]
@@ -16462,7 +16722,7 @@
     },
     "/get/{game}/single_character_by_id": {
       "get": {
-        "description": "Endpoint for retrieving bulk character stats.\n\nThis endpoint's payload is a superset of `character` and additionally includes data from related `characters_*` collections:\n- `characters_currency`\n- `characters_stat_history`\n- `characters_stat`\n- `characters_stat_by_faction`\n- `characters_weapon_stat`\n- `characters_weapon_stat_by_faction`\n- `characters_items`\n\nThis endpoint is generally faster than querying these collections individually, but it comes with significant bandwidth costs. Note that this endpoint does not support most query commands, and that `c:show` and `c:hide` cannot be used to reduce the amount of data returned.",
+        "description": "Endpoint for retrieving bulk character stats.\n\nThis endpoint's payload is a superset of `character` and additionally includes data from\nrelated `characters_*` collections:\n\n- `characters_currency`\n- `characters_stat_history`\n- `characters_stat`\n- `characters_stat_by_faction`\n- `characters_weapon_stat`\n- `characters_weapon_stat_by_faction`\n- `characters_items`\n\nThis endpoint is generally faster than querying these collections individually, but it\ncomes with significant bandwidth costs. Note that this endpoint does not support most query\ncommands, and that `c:show` and `c:hide` cannot be used to reduce the amount of data\nreturned.\n",
         "operationId": "get_single_character_by_id",
         "parameters": [
           {
@@ -16686,7 +16946,10 @@
                                 "x-reference-to": "title.title_id"
                               }
                             },
-                            "type": "object"
+                            "type": "object",
+                            "x-tags": [
+                              "Schema Reference"
+                            ]
                           },
                           {
                             "properties": {
@@ -16740,6 +17003,9 @@
                                       },
                                       "type": "object"
                                     }
+                                  ],
+                                  "x-tags": [
+                                    "Schema Reference"
                                   ]
                                 },
                                 "type": "array"
@@ -19295,6 +19561,9 @@
                             },
                             "type": "object"
                           }
+                        ],
+                        "x-tags": [
+                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -19310,7 +19579,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Single Character By ID",
+        "summary": "single_character_by_id",
         "tags": [
           "Character Information"
         ]
@@ -19522,7 +19791,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -19537,7 +19809,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Skill",
+        "summary": "skill",
         "tags": [
           "Certifications & A.S.P."
         ]
@@ -19545,7 +19817,7 @@
     },
     "/get/{game}/skill_category": {
       "get": {
-        "description": "Skill categories represent a grouping of skills.\n\nThey usually group skills by the loadout slots for which they provide items, such as \"Passive Systems\" or \"Ability Slot\". On weapons, they generally represent a given attachment slot.",
+        "description": "Skill categories represent a grouping of skills.\n\nThey usually group skills by the loadout slots for which they provide items, such as \"Passive Systems\" or \"Ability Slot\". On weapons, they generally represent a given attachment slot.\n",
         "operationId": "get_skill_category",
         "parameters": [
           {
@@ -19734,7 +20006,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -19749,7 +20024,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Skill Category",
+        "summary": "skill_category",
         "tags": [
           "Certifications & A.S.P."
         ]
@@ -19954,7 +20229,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -19969,7 +20247,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Skill Line",
+        "summary": "skill_line",
         "tags": [
           "Certifications & A.S.P."
         ]
@@ -19977,7 +20255,7 @@
     },
     "/get/{game}/skill_set": {
       "get": {
-        "description": "Skill sets represent the top-level grouping of skills.\n\nIn the old certification menu, this would group weapon-related skill lines into a sub-tree beneath the weapon itself.",
+        "description": "Skill sets represent the top-level grouping of skills.\n\nIn the old certification menu, this would group weapon-related skill lines into a sub-tree beneath the weapon itself.\n",
         "operationId": "get_skill_set",
         "parameters": [
           {
@@ -20159,7 +20437,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -20174,7 +20455,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Skill Set",
+        "summary": "skill_set",
         "tags": [
           "Certifications & A.S.P."
         ]
@@ -20182,7 +20463,7 @@
     },
     "/get/{game}/target_type": {
       "get": {
-        "description": "Enumerates the target types used to categorize the applicable targets of a weapon or effect.\n\nThis is effectively a constant mapping and can be cached aggressively.",
+        "description": "Enumerates the target types used to categorize the applicable targets of a weapon or effect.\n\nThis is effectively a constant mapping and can be cached aggressively.\n",
         "operationId": "get_target_type",
         "parameters": [
           {
@@ -20275,7 +20556,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -20290,7 +20574,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Target Types",
+        "summary": "target_type",
         "tags": [
           "Damage Calculation"
         ]
@@ -20298,7 +20582,7 @@
     },
     "/get/{game}/title": {
       "get": {
-        "description": "Selectable titles for a character.\n\nNote that title IDs of 0 signify no title being selected.",
+        "description": "Selectable titles for a character.\n\nNote that title IDs of 0 signify no title being selected.\n",
         "operationId": "get_title",
         "parameters": [
           {
@@ -20409,7 +20693,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -20424,7 +20711,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Title",
+        "summary": "title",
         "tags": [
           "Character Information"
         ]
@@ -20432,7 +20719,7 @@
     },
     "/get/{game}/vehicle": {
       "get": {
-        "description": "Basic vehicle information such as name, description, and type.\n\nNote that vehicle types are only used internally and are not directly tied to damage mechanics or resistances. Liberators and Galaxies are still considered \"Light Aircraft\" in this endpoint.",
+        "description": "Basic vehicle information such as name, description, and type.\n\nNote that vehicle types are only used internally and are not directly tied to damage mechanics or resistances. Liberators and Galaxies are still considered \"Light Aircraft\" in this endpoint.\n",
         "operationId": "get_vehicle",
         "parameters": [
           {
@@ -20622,7 +20909,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -20637,7 +20927,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Vehicle",
+        "summary": "vehicle",
         "tags": [
           "Vehicles"
         ]
@@ -20645,7 +20935,7 @@
     },
     "/get/{game}/vehicle_attachment": {
       "get": {
-        "description": "Maps items to the vehicles and factions that have access to them.\n\nThe `slot_id` field is used to identify where the item is attached to. The below list shows the types of items for each slot as of June 2023:\n\n```\nID   Description\n\n1    Primary Weapon\n2    Secondary Weapon\n3    Ability Slot\n4    Defensive Slot\n5    Chassis / Airframe\n6    Cockpit / Hood Ornament\n7    Camo\n8    Decal\n9    Exterior\n10   Weapon Slot / Catapult\n11   Weapon Slot / Catapult\n12   Afterburner / Nitrous\n13   (Unused)\n14   (Internal: Headlights)\n15   Horn\n16   Trim\n17   Lighting\n18   Hubcaps\n19   Other\n20   Tire Traits / Catapult\n21   Catapult\n22   Catapult\n```\n\nNote that this list is maintained manually and may be out of date. The slot associations are not available on the API.",
+        "description": "Maps items to the vehicles and factions that have access to them.\n\nThe `slot_id` field is used to identify where the item is attached to. The below list shows\nthe types of items for each slot as of June 2023:\n\n```\nID   Description\n\n1    Primary Weapon\n2    Secondary Weapon\n3    Ability Slot\n4    Defensive Slot\n5    Chassis / Airframe\n6    Cockpit / Hood Ornament\n7    Camo\n8    Decal\n9    Exterior\n10   Weapon Slot / Catapult\n11   Weapon Slot / Catapult\n12   Afterburner / Nitrous\n13   (Unused)\n14   (Internal: Headlights)\n15   Horn\n16   Trim\n17   Lighting\n18   Hubcaps\n19   Other\n20   Tire Traits / Catapult\n21   Catapult\n22   Catapult\n```\n\nNote that this list is maintained manually and may be out of date. The slot associations\nare not available on the API.\n",
         "operationId": "get_vehicle_attachment",
         "parameters": [
           {
@@ -20841,7 +21131,10 @@
                             "x-reference-to": "vehicle.vehicle_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -20856,7 +21149,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Vehicle Attachments",
+        "summary": "vehicle_attachment",
         "tags": [
           "Vehicles"
         ]
@@ -20968,7 +21261,10 @@
                             "x-reference-to": "vehicle.vehicle_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -20983,7 +21279,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Vehicle Faction Map",
+        "summary": "vehicle_faction",
         "tags": [
           "Vehicles"
         ]
@@ -20991,7 +21287,7 @@
     },
     "/get/{game}/vehicle_skill_set": {
       "get": {
-        "description": "Maps vehicles to the skill sets that they use.\n\nNote that this relationship is expressed for each faction separetly.",
+        "description": "Maps vehicles to the skill sets that they use.\n\nNote that this relationship is expressed for each faction separetly.\n",
         "operationId": "get_vehicle_skill_set",
         "parameters": [
           {
@@ -21096,7 +21392,10 @@
                             "x-reference-to": "vehicle.vehicle_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -21111,7 +21410,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Vehicle Skill Set Map",
+        "summary": "vehicle_skill_set",
         "tags": [
           "Vehicles"
         ]
@@ -21119,7 +21418,7 @@
     },
     "/get/{game}/weapon": {
       "get": {
-        "description": "Baseline weapon data, such as equip times, stock sights, and movement speed modifiers.",
+        "description": "Baseline weapon data, such as equip times, stock sights, and movement speed modifiers.\n",
         "operationId": "get_weapon",
         "parameters": [
           {
@@ -21317,7 +21616,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -21332,7 +21634,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Weapon",
+        "summary": "weapon",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -21340,7 +21642,7 @@
     },
     "/get/{game}/weapon_ammo_slot": {
       "get": {
-        "description": "Ammo slot data for a given weapon, including the clip size, reserve ammo capacity, and resupply behaviour.",
+        "description": "Ammo slot data for a given weapon, including the clip size, reserve ammo capacity, and resupply behaviour.\n",
         "operationId": "get_weapon_ammo_slot",
         "parameters": [
           {
@@ -21467,7 +21769,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -21482,7 +21787,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Ammo Slots",
+        "summary": "weapon_ammo_slot",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -21490,7 +21795,7 @@
     },
     "/get/{game}/weapon_datasheet": {
       "get": {
-        "description": "**Deprecated:** This table is not directly tied to the underlying fire mode and player state group data and may differ wildly from the true values!\n\nSuggested alternatives for the values provided by this collection are listed as part of the `weapon_datasheet` schema.",
+        "description": "**Deprecated:** This table is not directly tied to the underlying fire mode and player state group data and may differ wildly from the true values!\n\nSuggested alternatives for the values provided by this collection are listed as part of the `weapon_datasheet` schema.\n",
         "operationId": "get_weapon_datasheet",
         "parameters": [
           {
@@ -21714,7 +22019,10 @@
                             "x-cast-to": "boolean"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -21729,7 +22037,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Weapon Datasheet",
+        "summary": "weapon_datasheet (Deprecated)",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -21737,7 +22045,7 @@
     },
     "/get/{game}/weapon_to_attachment": {
       "get": {
-        "description": "Maps weapons to the attachments available to them. This table is largely synonymous with `ps2/item_attachment`, but contains additional entries that may not resolve to a valid item.\n\nFor this reason, it is recommended to base any attachment queries on the `ps2/item_attachment` endpoint instead.",
+        "description": "Maps weapons to the attachments available to them. This table is largely synonymous with `item_attachment`, but contains additional entries that may not resolve to a valid item.\n\nFor this reason, it is recommended to base any attachment queries on the `item_attachment` endpoint instead.\n",
         "operationId": "get_weapon_to_attachment",
         "parameters": [
           {
@@ -21844,7 +22152,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -21859,7 +22170,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Weapon Attachments",
+        "summary": "weapon_to_attachment",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -21867,7 +22178,7 @@
     },
     "/get/{game}/weapon_to_fire_group": {
       "get": {
-        "description": "Maps weapons to their set of fire groups. The `fire_group_index` field matches the in-game fire mode selection; hitting 'B' in-game is equivalent to incrementing the index by 1.",
+        "description": "Maps weapons to their set of fire groups. The `fire_group_index` field matches the in-game fire mode selection; hitting 'B' in-game is equivalent to incrementing the index by 1.\n",
         "operationId": "get_weapon_to_fire_group",
         "parameters": [
           {
@@ -21968,7 +22279,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -21983,7 +22297,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Weapon Fire Groups",
+        "summary": "weapon_to_fire_group",
         "tags": [
           "Weapons & Firing Mechanics"
         ]
@@ -22141,7 +22455,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -22156,7 +22473,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "World",
+        "summary": "world",
         "tags": [
           "Basics"
         ]
@@ -22164,7 +22481,7 @@
     },
     "/get/{game}/world_event": {
       "get": {
-        "description": "ReST endpoint for retrieving historical world events.\n\nThe `world_id` and `id` fields are interchangeable.",
+        "description": "ReST endpoint for retrieving historical world events.\n\nThe `world_id` and `id` fields are interchangeable.\n",
         "operationId": "get_world_event",
         "parameters": [
           {
@@ -22426,6 +22743,9 @@
                               }
                             ]
                           }
+                        ],
+                        "x-tags": [
+                          "Schema Reference"
                         ]
                       },
                       "type": "array"
@@ -22441,7 +22761,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "World Event",
+        "summary": "world_event",
         "tags": [
           "Event History"
         ]
@@ -22863,7 +23183,10 @@
                             "x-reference-to": "world.world_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -22878,7 +23201,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "(Defunct) World Stat History",
+        "summary": "world_stat_history (Defunct)",
         "tags": [
           "Metagame & Alerts"
         ]
@@ -23056,7 +23379,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -23071,7 +23397,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Zone",
+        "summary": "zone",
         "tags": [
           "Basics"
         ]
@@ -23079,7 +23405,7 @@
     },
     "/get/{game}/zone_effect": {
       "get": {
-        "description": "Passive effects such as weapon stat modifications from attachments or equipped skills.\n\nFor weapon damage effects, see `ps2/effect` instead. See the `ps2/zone_effect_type` collection for a list of available zone effect types.",
+        "description": "Passive effects such as weapon stat modifications from attachments or equipped skills.\n\nFor weapon damage effects, see `effect` instead. See the `zone_effect_type` collection for a list of available zone effect types.\n",
         "operationId": "get_zone_effect",
         "parameters": [
           {
@@ -23268,7 +23594,10 @@
                             "x-reference-to": "zone_effect_type.zone_effect_type_id"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -23283,7 +23612,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Zone Effects",
+        "summary": "zone_effect",
         "tags": [
           "Effects & Abilities"
         ]
@@ -23291,7 +23620,7 @@
     },
     "/get/{game}/zone_effect_type": {
       "get": {
-        "description": "A type of zone effect.\n\nThe generic fields `paramX` and `stringX` are documented here. Note that not all fields are used by all zone effect types, or at all.",
+        "description": "A type of zone effect.\n\nThe generic fields `paramX` and `stringX` are documented here. Note that not all fields are used by all zone effect types, or at all.\n",
         "operationId": "get_zone_effect_type",
         "parameters": [
           {
@@ -23449,7 +23778,10 @@
                             "x-cast-to": "int32"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-tags": [
+                          "Schema Reference"
+                        ]
                       },
                       "type": "array"
                     }
@@ -23464,7 +23796,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Zone Effect Types",
+        "summary": "zone_effect_type",
         "tags": [
           "Effects & Abilities"
         ]
@@ -23472,7 +23804,7 @@
     },
     "/get/{game}/{collection}": {
       "get": {
-        "description": "This endpoint documents generic parameters available on most collections. For details on collection-specific variables and response schemas, please see the respective collection's query entry.",
+        "description": "This endpoint documents generic parameters available on most collections.\n\nFor details on collection-specific variables and response schemas, please see the respective collection's query entry.\n",
         "operationId": "get_generic",
         "parameters": [
           {
@@ -23981,7 +24313,7 @@
             "description": "The Census API does not use HTTP status codes to indicate errors."
           }
         },
-        "summary": "Retrieve results from a collection",
+        "summary": "/get/{game}/{collection}",
         "tags": [
           "Game-Agnostic Endpoints"
         ]
@@ -23991,7 +24323,7 @@
   "security": [],
   "servers": [
     {
-      "description": "Casual-use Daybreak Games endpoint, throttled to 10 requests per minute and IP address",
+      "description": "Casual-use Daybreak Games endpoint, throttled to 10 requests per minute and IP address\n",
       "url": "https://census.daybreakgames.com"
     },
     {
@@ -24004,78 +24336,82 @@
       }
     },
     {
-      "description": "Unofficial Community endpoint for static data.\nVisit the project URL for details.",
+      "description": "Unofficial Community endpoint for static data.\nVisit the project URL for details.\n",
       "url": "https://census.lithafalcon.cc"
     }
   ],
   "tags": [
     {
-      "description": "Generic documentation of the Census API endpoints available for all games. The PlanetSide 2 endpoints are listed separtely to provide more detail, but they generally also support the full set of query parameters and commands list here. For a list of exceptions, see the [\"Special\" PS2 Collections](https://census.daybreakgames.com/#special-collections) section of the Census API documentation.",
+      "description": "This section covers basic Census API usage and parameters.\nThe parameters and response schemas documented here are applicable to all Daybreak Games titles supported by the Census API. All other sections cover specific groups of collections or endpoints that are unique to the PlanetSide 2 namespaces `ps2:v2`, `ps2ps4us:v2`, and `ps2ps4eu:v2`.\n### Query Commands\nThe query commands documented for the generic endpoints are generally universal and can be used with any of the game-specific collections listed in this documentation. However, they are not listed explicitly for brevity.\n### Parameters\nMost endpoints support filtering and sorting by any field in the response schema. As with query parameters, this is not modelled in the documentation to improve readability and focus on the most important parameters.\n### Exceptions and Limitations\nSome collections are special and have restrictions on the query commands and parameters that may be used with them. These are documented in the [\"Special\" PS2 Collections](https://census.daybreakgames.com/#special-collections) section of the Census API documentation.\n",
       "name": "Game-Agnostic Endpoints"
     },
     {
-      "description": "Collections related to PlanetSide 2 character information and lookups.",
+      "description": "This section covers player names, directives, and other character-specific collections.\n### Name Lookups\nNames in PlanetSide 2 are case-insensitive. When looking up a character by name, it is preferable to transform your search query to a lowercase string and compare it against the `character.name.first_lower` field. Case-insensitive queries against the `character.name` field are supported, but may be significantly slower.\n### Character Collection Quirks\nThe records of the `character` collection are distributed across multiple separate databases, each of which handles the same query individually before their results are combined. This means that extra care must be taken when using pagination to step through the data, or when expecting a specific ordering of results: each database will sort its results independently, leading to out-of-order results in the final response received by the client.\n\nWhen ordering is critical, consider using the `c:limitPerDB` query command to fetch the desired number of entries for each database individually and performing a final sort on the client side. This will ensure that the final ordering is consistent, but it will also lead to 20x as much data received, much of which may not be required.\n### Single Character By ID\nWhen retrieving a lot of character data, it may be preferable to use the `single_character_by_id` endpoint instead of individual joins and queries to the relevant endpoints. It is an aggregation of owned items and most player statistics, and is generally much faster to retrieve than the equivalent data from the individual endpoints.\n\nNote that this endpoint has no support for filtering or result field selection, resulting in payloads of several hundred kilobytes in size.\n",
       "name": "Character Information"
     },
     {
-      "description": "General information about factions, classes, continents, and servers in PlanetSide 2.",
+      "description": "Core collections related to the PlanetSide 2 game world.\n### Worlds\nA \"world\" in the PlanetSide 2 API refers to a game server. The `world` collection contains the IDs and names of the game servers.\n\nBasic server status (locked vs. online) is available as part of the `world` collection. There is a `global/game_server_status` endpoint that can be used to retrieve more detailed status of game servers:\n> **Warning:** This endpoint is not explicitly advertised in the Census API documentation and\n  is not covered by the Census API's terms of service. Use at your own risk.\n\nhttps://census.daybreakgames.com/get/global/game_server_status?game_code=ps2&c:limit=10\n### Static vs. Dynamic Zones\nThe `zone` collection contains the IDs of all persistent zones, such as the main continents and VR training instances.\n\nWhen monitoring player activity via the ESS API, you will encounter additional zone IDs that are not present in the `zone` collection. These are temporary or instanced zones that are created and destroyed dynamically, such as tutorial or Sanctuary, or the various Desolation or Nexus instances during Outfit Wars.\n\nFor details on interpreting dynamic zone IDs, refer to the [Zone ID Tutorial](https://github.com/cooltrain7/Planetside-2-API-Tracker/wiki/Tutorial:-Zone-IDs) on GitHub.\n",
       "name": "Basics"
     },
     {
-      "description": "Collections related to PlanetSide 2 outfits and outfit membership.",
+      "description": "Collections related to PlanetSide 2 outfits and outfit membership.\n### Outfit Lookup\nAs with the `character` collection, outfit names and tags are case-insensitive. When looking up an outfit by name or tag, it is preferable to transform your search query to a lowercase string and compare it against the `outfit.name_lower` or `outfit.alias_lower` fields. Case-insensitive queries against the `outfit.name` or `outfit.alias` fields are possible, but may be significantly slower.\n### Outfit Resources\nThe outfit resources introduced in the Escalation update are not available via the Census API.\nHowever, some information about outfit resource use can be obtained through the `GuildBankWithdrawal` context of the `ItemAdded` event. For additional information, please refer to the [Outfit Assets](https://github.com/cooltrain7/Planetside-2-API-Tracker/wiki/Stream:Outfit-Assets) section of the [PS2 API Tracker Wiki](https://github.com/cooltrain7/Planetside-2-API-Tracker/wiki).\n",
       "name": "Player Outfits"
     },
     {
-      "description": "Collections concerning character statistics for weapon, classes, or vehicles.",
+      "description": "Player statistics such as kills, deaths, and score.\n\nRefer to the `stat_name` parameter of the individual endpoints for a list of supported\nstatistics. Note that some `stat_name` values are only available in combination with certain\nprofiles.\n\n> **Note:** There is no accuracy statistic in any of these collections, it must be calculated\nfrom the `fire_count / hit_count` ratio. Likewise, headshot ratio must be calculated from\n`weapon_headshots / weapon_kills`. Also consider sanitizing the kills by not considering\nvehicles for the headshot ratio: `weapon_headshots / (weapon_kills - weapon_vehicle_kills)`.\n\n### Collection Overview\n\nThe following overview provides a brief description of the different endpoints and what kinds\nof statistics they contain:\n\n- `characters_stat`: Play time, total deaths, medals, and score\n- `characters_weapon_stat`: Damage given and taken, kills and deaths per faction\n- `character_stat_history`: Select statistics over time, essentially those found in the\n  in-game stat history tab\n- `characters_weapon_stat`: Per-weapon accuracy, score, and playtime\n- `characters_weapon_stat_by_faction`: Per-weapon kills, deaths, and headshots\n\n> **Note:** Consider using the `single_character_by_id` endpoint when working with individual\nplayers' statistics. It contains most of the statistics available in the individual endpoints\nand is generally much faster to retrieve.\n",
       "name": "Statistics"
     },
     {
-      "description": "Global or server-wide leaderboards for select statistics.",
+      "description": "Leaderboard entries for the top 10'000 players in each leaderboard category.\n\nThe `leaderboard` endpoint covers the top 10'000 players, while the `characters_leaderboard` endpoint allows retrieving the position of a specific character within a leaderboard.\n\nNote that the `characters_leaderboard` endpoint will not return a result if the character is not in the top 10'000 for the given leaderboard category. In this case, the endpoint will return an empty result set.\n",
       "name": "Leaderboards"
     },
     {
-      "description": "Collections related to item enumeration and availability, as well as the in-game depot.",
+      "description": "Collections related to item enumeration and availability, as well as the in-game depot.\n\nThis section covers the item side of weapons and attachments: their names, descriptions, icons, and type. Weapon information, attachment modifiers, and firing mechanics are covered separately.\n### Depot Bundles\nThe `marketing_bundle` and `marketing_bundle_with_1_item` collections contain information about all bundles that have been available in the depot, including ones that are currently unavailable, such as seasonal bundles.\n\nThere is no endpoint for retrieving current bundle availability, sales, or discounts.\n",
       "name": "Items & Bundles"
     },
     {
-      "description": "Weapon and firing mechanics data, including fire modes, projectiles, and ammo types.",
+      "description": "Weapon and firing mechanics data, including fire modes, projectiles, and ammo types.\n\n> **Note:** Be wary of the `weapon_datasheet` collection as it has a tendency to contain\n  outdated or incorrect information. It is therefore considered deprecated by this\n  documentation, and suggestions for alternatives for the information it provides are\n  provided as part of its schema documentation.\n\nThis documentation only provides an overview of the available data and basic information on\nhow to interpret it. If you are looking for a comprehensive write-up on weapon mechanics and\nhidden stats, please refer to the following resources instead:\n\n- [Weapon Mechanics | PlanetSide 2 Wiki](https://planetside.fandom.com/wiki/Weapon_Mechanics)\n- [PlanetSide 2 Weapon Mechanics | CMDRCyrious.com](http://cmdrcyrious.com/planetside2/weapons/weapon-mechanics/)\n",
       "name": "Weapons & Firing Mechanics"
     },
     {
-      "description": "Collections related to vehicles, attachments, and vehicle certifications.",
+      "description": "Collections related to vehicles, attachments, and vehicle certifications.\n",
       "name": "Vehicles"
     },
     {
-      "description": "Armor values and resistances.",
+      "description": "Armor values and resistances used for damage calculation.\n",
       "name": "Damage Calculation"
     },
     {
-      "description": "Collections related to abilities, effects, their types and consumed resources.",
+      "description": "Collections related to abilities, passive effects, and character resources.\n### Abilities\nAbilities are cast by players or deployable entities such as shield emitters. Many abilities consume resources while they are active, such as the Heavy Assault's overshield energy or the Infiltrators \"Cloaker Juice\".\n### Effects vs. Zone Effects\nThe `effect` collection primarily covers one-off effects tied to weapon fire modes, such as direct damage, splash damage, and EMP effects.\n\nThe `zone_effect` collection handles persistent effects, such as the passive (de)buffs applied by weapon attachments and implants.\n",
       "name": "Effects & Abilities"
     },
     {
-      "description": "Collections related to certification trees and A.S.P. skills.",
+      "description": "Collections related to certification trees and A.S.P. skills.\nNote that A.S.P. tokens are treated as a currency and have been injected into the response for the `characters_currency` collection, next to Nanites.\n",
       "name": "Certifications & A.S.P."
     },
     {
-      "description": "Collections related to in-game progression, such as directives, weapon medals, titles, and service ribbons.",
+      "description": "Collections related to in-game progression, such as directives, medals, and service ribbons.\n",
       "name": "Progression"
     },
     {
-      "description": "Collections related to map rendering, such as facility types, lattice links, and map hexes.",
+      "description": "Collections related to map rendering, such as facility types, lattice links, and map hexes.\n",
       "name": "Map Data"
     },
     {
-      "description": "Image sets, icons and other assets available through the static `/files/` path.",
+      "description": "Image sets, icons and other assets available through the static `/files/` path.\n",
       "name": "Image Assets"
     },
     {
-      "description": "Endpoints related to in-game alerts, outfit wars, and other large-scale events.",
+      "description": "Endpoints related to in-game alerts, outfit wars, and other large-scale events.\n",
       "name": "Metagame & Alerts"
     },
     {
-      "description": "ReST interface for in-game events, such as kills, deaths, and battle rank gains.",
+      "description": "ReST interface for in-game events, such as kills, deaths, and battle rank gains.\n",
       "name": "Event History"
+    },
+    {
+      "description": "Individual schema definitions for the PlanetSide 2 data types.\n\nNote that this only covers the actual data types. The top-level `<collection>_list` and `returned` keys are not included in theses schemas.\n",
+      "name": "Schema Reference"
     }
   ]
 }
