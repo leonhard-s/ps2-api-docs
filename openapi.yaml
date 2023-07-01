@@ -75,8 +75,8 @@ info:
   title: PlanetSide 2 API
   version: "0.5"
   x-logo:
-    altText: PlanetSide 2 logo
-    url: https://census.daybreakgames.com/files/ps2/images/static/3913.png
+    altText: Census API Docs Logo
+    url: https://raw.githubusercontent.com/leonhard-s/ps2-api-docs/master/docs/logo.png
 jsonSchemaDialect: https://spec.openapis.org/oas/3.1/dialect/base
 openapi: 3.1.0
 paths:
