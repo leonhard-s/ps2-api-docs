@@ -76,7 +76,7 @@ info:
   version: "0.5"
   x-logo:
     altText: Census API Docs Logo
-    url: https://raw.githubusercontent.com/leonhard-s/ps2-api-docs/master/docs/logo.png
+    url: https://raw.githubusercontent.com/leonhard-s/ps2-api-docs/main/docs/logo-redoc.png
 jsonSchemaDialect: https://spec.openapis.org/oas/3.1/dialect/base
 openapi: 3.1.0
 paths:
