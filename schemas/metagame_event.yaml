@@ -2,6 +2,10 @@ properties:
   description:
     $ref: "localized_string.yaml"
     description: Description of the alert.
+  duration_minutes:
+    description: Duration of the event in minutes.
+    type: string
+    x-cast-to: int32
   experience_bonus:
     description: The experience bonus applied during the alert in percent.
     type: string
