@@ -17,7 +17,8 @@
         "it": "Controlla il territorio per bloccare Oshur"
       },
       "type": "9",
-      "experience_bonus": "25"
+      "experience_bonus": "25",
+      "duration_minutes": "90"
     }
   ],
   "returned": 1

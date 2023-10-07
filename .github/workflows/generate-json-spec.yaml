@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Install Python dependencies
         run: |
+          python -m pip install --upgrade pip wheel
           python -m pip install -r ./tools/requirements.txt
       - name: Generate JSON spec
         run: |

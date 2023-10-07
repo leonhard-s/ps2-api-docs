@@ -12985,7 +12985,7 @@
     },
     "/get/{game}/metagame_event": {
       "get": {
-        "description": "In-game alerts and other alert-like events.\n\nNote that this endpoint lists alert types that are not currently enabled in-game, such as the 'Aerial Anomaly' and 'MAXimum Pressure' alert types.\n",
+        "description": "In-game alerts and other alert-like events.\n\nNote that this endpoint lists alert types that may not be currently enabled in-game, such as the 'Aerial Anomaly' and 'MAXimum Pressure' alert types.\n",
         "operationId": "get_metagame_event",
         "parameters": [
           {
@@ -13034,7 +13034,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "ns15mBundle": {
+                  "oshurMeltdownVS": {
                     "value": {
                       "metagame_event_list": [
                         {
@@ -13054,7 +13054,8 @@
                             "it": "Controlla il territorio per bloccare Oshur"
                           },
                           "type": "9",
-                          "experience_bonus": "25"
+                          "experience_bonus": "25",
+                          "duration_minutes": "90"
                         }
                       ],
                       "returned": 1
@@ -13094,6 +13095,11 @@
                               }
                             },
                             "type": "object"
+                          },
+                          "duration_minutes": {
+                            "description": "Duration of the event in minutes.",
+                            "type": "string",
+                            "x-cast-to": "int32"
                           },
                           "experience_bonus": {
                             "description": "The experience bonus applied during the alert in percent.",

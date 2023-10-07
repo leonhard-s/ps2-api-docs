@@ -1,5 +1,5 @@
 examples:
-  ns15mBundle:
+  oshurMeltdownVS:
     value:
       $ref: ../../../examples/metagame_event.json
 schema:
