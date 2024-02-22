@@ -7965,6 +7965,11 @@
                             "description": "The amount of XP granted by this experience type.",
                             "type": "string",
                             "x-cast-to": "int32"
+                          },
+                          "experience_award_type_id": {
+                            "description": "Unique ID of th experience award type of this experience tick.",
+                            "type": "string",
+                            "x-cast-to": "int32"
                           }
                         },
                         "type": "object"
@@ -7987,6 +7992,117 @@
           }
         },
         "summary": "experience",
+        "tags": [
+          "Basics"
+        ]
+      }
+    },
+    "/get/{game}/experience_award_type": {
+      "get": {
+        "description": "Experience type, such as \"Kill Assist\".\n\nGroups experience ticks. For example, \"Kill Assist - Flash\" and \"Kill Player Assist\" are both part of the \"KillAssist\" award type.        \n",
+        "operationId": "get_experience_award_type",
+        "parameters": [
+          {
+            "description": "The API game to access.",
+            "examples": {
+              "ps2": {
+                "summary": "PS2 on PC (all servers)",
+                "value": "ps2"
+              },
+              "ps2ps4eu": {
+                "summary": "PS2 on PS4 (EU server)",
+                "value": "ps2ps4eu"
+              },
+              "ps2ps4us": {
+                "summary": "PS2 on PS4 (US server)",
+                "value": "ps2ps4us"
+              }
+            },
+            "in": "path",
+            "name": "game",
+            "required": true,
+            "schema": {
+              "enum": [
+                "ps2",
+                "ps2:v2",
+                "ps2ps4eu",
+                "ps2ps4eu:v2",
+                "ps2ps4us",
+                "ps2ps4us:v2"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Unique ID of the experience award type.",
+            "in": "query",
+            "name": "experience_award_type_id",
+            "schema": {
+              "type": "string"
+            },
+            "x-cast-to": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "experience": {
+                    "value": {
+                      "experience_award_type_list": [
+                        {
+                          "experience_award_type_id": "1",
+                          "name": "Kill"
+                        },
+                        {
+                          "experience_award_type_id": "2",
+                          "name": "KillAssist"
+                        },
+                        {
+                          "experience_award_type_id": "3",
+                          "name": "SpawnKilllAssist"
+                        }
+                      ],
+                      "returned": 3
+                    }
+                  }
+                },
+                "schema": {
+                  "properties": {
+                    "experience_list": {
+                      "items": {
+                        "properties": {
+                          "description": {
+                            "name": "Internal name/description of the experience type (e.g. \"Revive\", \"KillAssist\")",
+                            "type": "string"
+                          },
+                          "experience_award_type_id": {
+                            "description": "Unique ID of the collection",
+                            "type": "string",
+                            "x-cast-to": "int32"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "returned": {
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "4XX": {
+            "description": "The Census API does not use HTTP status codes to indicate errors."
+          }
+        },
+        "summary": "experience_award_type",
         "tags": [
           "Basics"
         ]

@@ -1,0 +1,9 @@
+properties:
+  description:
+    name: Internal name/description of the experience type (e.g. "Revive", "KillAssist")
+    type: string
+  experience_award_type_id:
+    description: Unique ID of the collection
+    type: string
+    x-cast-to: int32
+type: object

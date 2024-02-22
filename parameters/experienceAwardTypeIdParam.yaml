@@ -1,0 +1,6 @@
+description: Unique ID of the experience award type.
+in: query
+name: experience_award_type_id
+schema:
+  type: string
+x-cast-to: int32

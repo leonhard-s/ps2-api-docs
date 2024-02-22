@@ -987,6 +987,28 @@ paths:
       summary: experience
       tags:
         - Basics
+  /get/{game}/experience_award_type:
+    get:
+      description: >
+        Experience type, such as "Kill Assist".
+        
+      
+        Groups experience ticks. For example, "Kill Assist - Flash" and "Kill Player Assist" are both part of the "KillAssist" award type.        
+      operationId: get_experience_award_type
+      parameters:
+        - $ref: parameters/gameParam.yaml
+        - $ref: parameters/experienceAwardTypeIdParam.yaml
+      responses:
+        "200":
+          content:
+            application/json:
+              $ref: contents/get/{game}/experience_award_type.yaml
+          description: OK
+        4XX:
+          description: The Census API does not use HTTP status codes to indicate errors.
+      summary: experience_award_type
+      tags:
+        - Basics
   /get/{game}/experience_rank:
     get:
       description: >

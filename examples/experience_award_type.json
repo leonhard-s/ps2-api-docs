@@ -1,0 +1,17 @@
+{
+  "experience_award_type_list": [
+    {
+      "experience_award_type_id": "1",
+      "name": "Kill"
+    },
+    {
+      "experience_award_type_id": "2",
+      "name": "KillAssist"
+    },
+    {
+      "experience_award_type_id": "3",
+      "name": "SpawnKilllAssist"
+    }
+  ],
+  "returned": 3
+}
