@@ -1,5 +1,0 @@
-description: Only return results newer than the given UTC timestamp.
-in: query
-name: after
-schema:
-  type: string

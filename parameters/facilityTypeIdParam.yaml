@@ -1,6 +1,0 @@
-description: Unique ID of the facility type.
-in: query
-name: facility_type_id
-schema:
-  type: string
-x-cast-to: int32

@@ -1,6 +1,0 @@
-description: Unique ID of an achievement.
-in: query
-name: achievement_id
-schema:
-  type: string
-x-cast-to: int32

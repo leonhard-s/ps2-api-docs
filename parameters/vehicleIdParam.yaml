@@ -1,6 +1,0 @@
-description: Unique identifier of a vehicle.
-in: query
-name: vehicle_id
-schema:
-  type: string
-x-cast-to: int32

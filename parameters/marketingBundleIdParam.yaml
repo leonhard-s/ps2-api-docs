@@ -1,6 +1,0 @@
-description: Unique identifier of a marketing bundle.
-in: query
-name: marketing_bundle_id
-schema:
-  type: string
-x-cast-to: int32

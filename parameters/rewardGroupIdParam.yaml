@@ -1,6 +1,0 @@
-description: Unique identifier of a reward group.
-in: query
-name: reward_group_id
-schema:
-  type: string
-x-cast-to: int32

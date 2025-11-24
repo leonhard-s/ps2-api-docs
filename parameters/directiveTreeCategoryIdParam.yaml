@@ -1,6 +1,0 @@
-description: Unique ID of a directive tree category.
-in: query
-name: directive_tree_category_id
-schema:
-  type: string
-x-cast-to: int32

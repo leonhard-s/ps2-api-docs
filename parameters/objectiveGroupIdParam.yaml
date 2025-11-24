@@ -1,6 +1,0 @@
-description: Unique identifier of an objective group.
-in: query
-name: objective_group_id
-schema:
-  type: string
-x-cast-to: int32

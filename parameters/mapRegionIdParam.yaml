@@ -1,6 +1,0 @@
-description: Unique identifier of a map region.
-in: query
-name: map_region_id
-schema:
-  type: string
-x-cast-to: int32

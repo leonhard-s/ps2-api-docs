@@ -3,9 +3,6 @@ examples:
   five:
     summary: 5 Results
     value: 5
-  notSet:
-    summary: Unset
-    value: ''
 in: query
 name: c:limit
 schema:

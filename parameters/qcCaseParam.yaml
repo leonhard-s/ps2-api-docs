@@ -5,9 +5,6 @@ examples:
   disable:
     summary: Disabled
     value: 'false'
-  notSet:
-    summary: Unset
-    value: ''
 in: query
 name: c:case
 schema:

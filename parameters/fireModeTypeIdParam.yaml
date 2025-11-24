@@ -1,6 +1,0 @@
-description: Unique identifier of a fire mode type.
-in: query
-name: fire_mode_type_id
-schema:
-  type: string
-x-cast-to: int32

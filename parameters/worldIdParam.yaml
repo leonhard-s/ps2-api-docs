@@ -1,6 +1,0 @@
-description: Unique identifier of a world.
-in: query
-name: world_id
-schema:
-  type: string
-x-cast-to: int32

@@ -1,5 +1,0 @@
-description: Unique identifier of a resist type.
-in: query
-name: resist_type_id
-schema:
-  type: string
