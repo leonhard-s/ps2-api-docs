@@ -21,7 +21,7 @@ def main(input_: str, output: str) -> None:
 
 if __name__ == '__main__':
     _parser = argparse.ArgumentParser()
-    _parser.add_argument('--input', default='openapi.yaml',
+    _parser.add_argument('--input', default='census.yaml',
                          help='Path to the input YAML file')
     _parser.add_argument('--output', default='generated/openapi.json',
                          help='Path to the output JSON file')

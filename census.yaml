@@ -1,0 +1,486 @@
+openapi: "3.1.0"
+info:
+  contact:
+    name: Project Repository
+    url: https://github.com/leonhard-s/ps2-api-docs
+  description: |
+    ## Introduction
+
+    The Daybreak Game Company Census API provides access to game and character data for the MMOFPS
+    [PlanetSide 2](https://www.planetside2.com/home), allowing players to develop their own apps,
+    stat trackers, websites, and community integrations.
+
+    ### Disclaimer
+
+    This documentation is written and maintained by thirdparty developers from the PlanetSide 2
+    community and has no affiliation with Daybreak Game Company, Rogue Planet Games, or the
+    PlanetSide 2 developer team. If you encounter any errors or have other feedback, please do
+    consider [opening an issue](https://github.com/leonhard-s/ps2-api-docs/issues) or contributing
+    to the project directly.
+
+    ### Warranty
+
+    Note that all game data and files made available by Daybreak Game Company are provided "AS IS"
+    and come with absolutely no warranty. For legal details, please refer to the API's
+    [warranty disclaimer](https://census.daybreakgames.com/#warranty) and the Census API [terms of
+    service](https://census.daybreakgames.com#services-api-policy).
+
+    Furthermore, the OpenAPI spec provided here is released without any warranty either, though its
+    source code is made available without restriction at the repository link listed in the contact
+    section of this API specification.
+
+    ### Service IDs
+
+    The Census API uses service IDs to monitor and identify API consumers. These IDs are free and
+    can be requested via [this form](https://census.daybreakgames.com/#devSignup). The process is
+    automatic and you should receive your service ID confirmation email within a few minutes to
+    hours.
+
+    Using the API without a service ID is possible and synonymous with using the default service ID of
+    `s:example`. However, this service ID is rate-limited to 10 requests per minute and IP address,
+    so it is highly recommended to apply for your own service IDs early on.
+
+    ### Further Reading
+
+    This documentation is intended to be a reference for the API endpoints, parameters, and JSON
+    schemas. For a more general introduction to the Census API, examples, and more detailed
+    information on the `c:join` system, please refer to one of the following resources:
+
+      - [Census API Documentation](https://census.daybreakgames.com/): Official documentation by
+        Daybreak Game Company
+      - [PlanetSide 2 API Tracker](https://github.com/cooltrain7/Planetside-2-API-Tracker): A
+        community-maintained issue tracker and developer resource
+      - [Census API Primer](https://github.com/leonhard-s/auraxium/wiki/Census-API-Primer): A
+        rewritten version of the official documentation with additional details and examples
+      - [PS2 Query GUI](https://eating-coleslaw.github.io/ps2-visual-query/): A GUI web page for
+        querying the Planetside 2 API
+      - [Zone ID Tutorial](https://github.com/cooltrain7/Planetside-2-API-Tracker/wiki/Tutorial:-Zone-IDs):
+        Introduction for working with dynamic zones, such as those spawned for Outfit Wars
+      - [Sanctuary.Census](https://github.com/PS2Sanctuary/Sanctuary.Census): A community endpoint
+        replicating and extending the Census ReST API
+
+    ### Event Streaming Service
+
+    The PlanetSide 2 API also provides a real-time event streaming service using the WebSocket
+    protocol. This service is not covered by this documentation yet, but you can find more
+    information at the following links:
+
+      - [PS2 Event Streaming](https://census.daybreakgames.com/#what-is-websocket): Official
+        documentation by Daybreak Game Company
+      - [Nanite Systems ESS](https://github.com/nanite-systems/stream): A replacement endpoint for
+        the ESS designed to provide more reliability
+  license:
+    name: Proprietary
+    url: https://census.daybreakgames.com#services-api-policy
+  termsOfService: https://census.daybreakgames.com#services-api-policy
+  title: PlanetSide 2 API
+  version: "0.6"
+  x-logo:
+    altText: Census API Docs Logo
+    url: https://raw.githubusercontent.com/leonhard-s/ps2-api-docs/main/docs/logo-redoc.png
+servers:
+  - description: >
+      Casual-use Daybreak Games endpoint, throttled to 10 requests per minute and IP address
+    url: https://census.daybreakgames.com
+  - description: Production Daybreak Games endpoint, with service ID
+    url: https://census.daybreakgames.com/{serviceId}
+    variables:
+      serviceId:
+        default: s:example
+  - description: >
+      Unofficial Community endpoint for static data.
+
+      Visit the project URL for details.
+    url: https://census.lithafalcon.cc
+security: []
+paths:
+  /count/{game}/{collection}:
+    get:
+      description: >
+        Lists the number of entries in the given collection.
+
+        This endpoint can be used to determine an appropriate pagination strategy based on the size
+        of the result list, but it is especially useful for API introspection as it still supports
+        query strings, including search modifiers and certain query commands.
+
+        For example, the `weapon` collection may be queried with `c:has=heat_capacity` to get the
+        number of heat-based weapons. Similarly, comparing the `c:has=<field>` count of a
+        collection with the total can be used to guess whether a field is optional or used.
+
+        Client code should be ready to receive negative values for this endpoint, which is used as
+        the error state for this endpoint, rather than the explicit error payloads sent for the
+        `/get/` query verb.
+      operationId: count_generic
+      parameters:
+        - $ref: ./parameters/gameParam.yaml
+        - $ref: ./parameters/collectionParam.yaml
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                error:
+                  value:
+                    $ref: ./examples/count_error.json
+                success:
+                  value:
+                    $ref: ./examples/count_success.json
+              schema:
+                properties:
+                  count:
+                    type: integer
+                type: object
+          description: OK
+        4XX:
+          description: >
+            Returns `{"count": -1}` on error
+      summary: /count/{game}/{collection}
+      tags:
+        - Game-Agnostic Endpoints
+  /get/{game}:
+    get:
+      description: >
+        Top-level endpoint for retrieving all available collections for the current game namespace.
+
+        In addition to the name of the collection, this endpoint may also list the number of
+        entries in the associated table via the `count` field. Note that the `hidden` field is of
+        no practical use to API consumers as it is always `false`.
+
+        The keys in the `resolve_list` field are permittable values for the `c:resolve=<field>`
+        query command. Note that resolve lists precede the `c:join=<...>` subquery system and has
+        been largely superceded by it. For this reason, the resolved fields are not included in any
+        example payload or other parts of this documentation.
+
+        Curious fact: this is one of the few endpoints in the PlanetSide 2 API that returns native
+        JSON types (`boolean`, `number`, etc.) in its response, without wrapping them in a string.
+      operationId: get_collections
+      parameters:
+        - $ref: ./parameters/gameParam.yaml
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                character:
+                  value:
+                    $ref: ./examples/datatype_character.json
+                characterOnlineStatus:
+                  value:
+                    $ref: ./examples/datatype_characterOnlineStatus.json
+                outfitMember:
+                  value:
+                    $ref: ./examples/datatype_outfitMember.json
+              schema:
+                properties:
+                  datatype_list:
+                    items:
+                      $ref: ./components/schemas/datatype.yaml
+                    type: array
+                  returned:
+                    type: integer
+                type: object
+          description: OK
+        4XX:
+          description: The Census API does not use HTTP status codes to indicate errors.
+      summary: /get/{game}
+      tags:
+        - Game-Agnostic Endpoints
+  /get/{game}/{collection}:
+    get:
+      description: >
+        This endpoint documents generic parameters available on most collections.
+
+
+        For details on collection-specific variables and response schemas, please see the
+        respective collection's query entry.
+      operationId: get_generic
+      parameters:
+        - $ref: ./parameters/gameParam.yaml
+        - $ref: ./parameters/collectionParam.yaml
+        - $ref: ./parameters/qcShowParam.yaml
+        - $ref: ./parameters/qcHideParam.yaml
+        - $ref: ./parameters/qcSortParam.yaml
+        - $ref: ./parameters/qcHasParam.yaml
+        - $ref: ./parameters/qcResolveParam.yaml
+        - $ref: ./parameters/qcCaseParam.yaml
+        - $ref: ./parameters/qcLimitParam.yaml
+        - $ref: ./parameters/qcLimitPerDbParam.yaml
+        - $ref: ./parameters/qcStartParam.yaml
+        - $ref: ./parameters/qcIncludeNullParam.yaml
+        - $ref: ./parameters/qcLangParam.yaml
+        - $ref: ./parameters/qcJoinParam.yaml
+        - $ref: ./parameters/qcTreeParam.yaml
+        - $ref: ./parameters/qcTimingParam.yaml
+        - $ref: ./parameters/qcExactMatchFirstParam.yaml
+        - $ref: ./parameters/qcDistinctParam.yaml
+        - $ref: ./parameters/qcRetryParam.yaml
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                characterInfo:
+                  value:
+                    $ref: ./examples/collection_characterInfo.json
+                factionTags:
+                  value:
+                    $ref: ./examples/collection_factionTags.json
+                mapFacilities:
+                  value:
+                    $ref: ./examples/collection_mapFacilities.json
+              schema:
+                properties:
+                  count:
+                    minimum: 0
+                    type: integer
+                    summary: Only included if `c:distinct` is used.
+                  returned:
+                    minimum: 0
+                    type: integer
+                  timing:
+                    properties:
+                      total-ms:
+                        type: integer
+                    summary: Only included if `c:timing` is enabled.
+                    type: object
+                patternProperties:
+                  "^(\\w+_list)$":
+                    items: {}
+                    type: array
+                type: object
+          description: OK
+        4XX:
+          description: The Census API does not use HTTP status codes to indicate errors.
+      summary: /get/{game}/{collection}
+      tags:
+        - Game-Agnostic Endpoints
+components:
+  schemas:
+    localized_string:
+      $ref: "./components/schemas/localized_string.yaml"
+    ability_type:
+      $ref: "./components/schemas/ability_type.yaml"
+    ability:
+      $ref: "./components/schemas/ability.yaml"
+    achievement:
+      $ref: "./components/schemas/achievement.yaml"
+    armor_facing:
+      $ref: "./components/schemas/armor_facing.yaml"
+    armor_info:
+      $ref: "./components/schemas/armor_info.yaml"
+    character_name:
+      $ref: "./components/schemas/character_name.yaml"
+    character:
+      $ref: "./components/schemas/character.yaml"
+    characters_achievement:
+      $ref: "./components/schemas/characters_achievement.yaml"
+    characters_currency:
+      $ref: "./components/schemas/characters_currency.yaml"
+    characters_directive_objective:
+      $ref: "./components/schemas/characters_directive_objective.yaml"
+    characters_directive_tier:
+      $ref: "./components/schemas/characters_directive_tier.yaml"
+    characters_directive_tree:
+      $ref: "./components/schemas/characters_directive_tree.yaml"
+    characters_directive:
+      $ref: "./components/schemas/characters_directive.yaml"
+    characters_event_grouped:
+      $ref: "./components/schemas/characters_event_grouped.yaml"
+    characters_event:
+      $ref: "./components/schemas/characters_event.yaml"
+    characters_friend:
+      $ref: "./components/schemas/characters_friend.yaml"
+    characters_item:
+      $ref: "./components/schemas/characters_item.yaml"
+    characters_leaderboard:
+      $ref: "./components/schemas/characters_leaderboard.yaml"
+    characters_online_status:
+      $ref: "./components/schemas/characters_online_status.yaml"
+    characters_skill:
+      $ref: "./components/schemas/characters_skill.yaml"
+    characters_stat_by_faction:
+      $ref: "./components/schemas/characters_stat_by_faction.yaml"
+    characters_stat_history:
+      $ref: "./components/schemas/characters_stat_history.yaml"
+    characters_stat:
+      $ref: "./components/schemas/characters_stat.yaml"
+    characters_weapon_stat_by_faction:
+      $ref: "./components/schemas/characters_weapon_stat_by_faction.yaml"
+    characters_weapon_stat:
+      $ref: "./components/schemas/characters_weapon_stat.yaml"
+    characters_world:
+      $ref: "./components/schemas/characters_world.yaml"
+    currency:
+      $ref: "./components/schemas/currency.yaml"
+    directive_tier:
+      $ref: "./components/schemas/directive_tier.yaml"
+    directive_tree_category:
+      $ref: "./components/schemas/directive_tree_category.yaml"
+    directive_tree:
+      $ref: "./components/schemas/directive_tree.yaml"
+    directive:
+      $ref: "./components/schemas/directive.yaml"
+    effect_type:
+      $ref: "./components/schemas/effect_type.yaml"
+    effect:
+      $ref: "./components/schemas/effect.yaml"
+    empire_scores:
+      $ref: "./components/schemas/empire_scores.yaml"
+    event:
+      $ref: "./components/schemas/event.yaml"
+    experience_award_type:
+      $ref: "./components/schemas/experience_award_type.yaml"
+    experience_rank:
+      $ref: "./components/schemas/experience_rank.yaml"
+    experience:
+      $ref: "./components/schemas/experience.yaml"
+    facility_link:
+      $ref: "./components/schemas/facility_link.yaml"
+    facility_type:
+      $ref: "./components/schemas/facility_type.yaml"
+    faction:
+      $ref: "./components/schemas/faction.yaml"
+    fire_group_to_fire_mode:
+      $ref: "./components/schemas/fire_group_to_fire_mode.yaml"
+    fire_group:
+      $ref: "./components/schemas/fire_group.yaml"
+    fire_mode_2:
+      $ref: "./components/schemas/fire_mode_2.yaml"
+    fire_mode_to_projectile:
+      $ref: "./components/schemas/fire_mode_to_projectile.yaml"
+    fire_mode_type:
+      $ref: "./components/schemas/fire_mode_type.yaml"
+    fire_mode:
+      $ref: "./components/schemas/fire_mode.yaml"
+    fish:
+      $ref: "./components/schemas/fish.yaml"
+    image_set_default:
+      $ref: "./components/schemas/image_set_default.yaml"
+    image_set:
+      $ref: "./components/schemas/image_set.yaml"
+    image:
+      $ref: "./components/schemas/image.yaml"
+    item_attachment:
+      $ref: "./components/schemas/item_attachment.yaml"
+    item_category:
+      $ref: "./components/schemas/item_category.yaml"
+    item_profile:
+      $ref: "./components/schemas/item_profile.yaml"
+    item_to_weapon:
+      $ref: "./components/schemas/item_to_weapon.yaml"
+    item_type:
+      $ref: "./components/schemas/item_type.yaml"
+    item:
+      $ref: "./components/schemas/item.yaml"
+    leaderboard:
+      $ref: "./components/schemas/leaderboard.yaml"
+    loadout:
+      $ref: "./components/schemas/loadout.yaml"
+    map_hex:
+      $ref: "./components/schemas/map_hex.yaml"
+    map_region:
+      $ref: "./components/schemas/map_region.yaml"
+    map:
+      $ref: "./components/schemas/map.yaml"
+    marketing_bundle_item:
+      $ref: "./components/schemas/marketing_bundle_item.yaml"
+    marketing_bundle_with_1_item:
+      $ref: "./components/schemas/marketing_bundle_with_1_item.yaml"
+    marketing_bundle:
+      $ref: "./components/schemas/marketing_bundle.yaml"
+    metagame_event_state:
+      $ref: "./components/schemas/metagame_event_state.yaml"
+    metagame_event:
+      $ref: "./components/schemas/metagame_event.yaml"
+    objective_set_to_objective:
+      $ref: "./components/schemas/objective_set_to_objective.yaml"
+    objective_type:
+      $ref: "./components/schemas/objective_type.yaml"
+    objective:
+      $ref: "./components/schemas/objective.yaml"
+    outfit_member_extended:
+      $ref: "./components/schemas/outfit_member_extended.yaml"
+    outfit_member:
+      $ref: "./components/schemas/outfit_member.yaml"
+    outfit_rank:
+      $ref: "./components/schemas/outfit_rank.yaml"
+    outfit:
+      $ref: "./components/schemas/outfit.yaml"
+    player_state_group_2:
+      $ref: "./components/schemas/player_state_group_2.yaml"
+    player_state_group:
+      $ref: "./components/schemas/player_state_group.yaml"
+    player_state:
+      $ref: "./components/schemas/player_state.yaml"
+    profile_2:
+      $ref: "./components/schemas/profile_2.yaml"
+    profile_armor_map:
+      $ref: "./components/schemas/profile_armor_map.yaml"
+    profile_resist_map:
+      $ref: "./components/schemas/profile_resist_map.yaml"
+    profile:
+      $ref: "./components/schemas/profile.yaml"
+    projectile_flight_type:
+      $ref: "./components/schemas/projectile_flight_type.yaml"
+    projectile:
+      $ref: "./components/schemas/projectile.yaml"
+    region:
+      $ref: "./components/schemas/region.yaml"
+    resist_info:
+      $ref: "./components/schemas/resist_info.yaml"
+    resist_type:
+      $ref: "./components/schemas/resist_type.yaml"
+    resource_type:
+      $ref: "./components/schemas/resource_type.yaml"
+    reward_group_to_reward:
+      $ref: "./components/schemas/reward_group_to_reward.yaml"
+    reward_set_to_reward_group:
+      $ref: "./components/schemas/reward_set_to_reward_group.yaml"
+    reward_type:
+      $ref: "./components/schemas/reward_type.yaml"
+    reward:
+      $ref: "./components/schemas/reward.yaml"
+    single_character_by_id:
+      $ref: "./components/schemas/single_character_by_id.yaml"
+    skill_category:
+      $ref: "./components/schemas/skill_category.yaml"
+    skill_line:
+      $ref: "./components/schemas/skill_line.yaml"
+    skill_set:
+      $ref: "./components/schemas/skill_set.yaml"
+    skill:
+      $ref: "./components/schemas/skill.yaml"
+    target_type:
+      $ref: "./components/schemas/target_type.yaml"
+    title:
+      $ref: "./components/schemas/title.yaml"
+    vehicle_attachment:
+      $ref: "./components/schemas/vehicle_attachment.yaml"
+    vehicle_faction:
+      $ref: "./components/schemas/vehicle_faction.yaml"
+    vehicle_skill_set:
+      $ref: "./components/schemas/vehicle_skill_set.yaml"
+    vehicle:
+      $ref: "./components/schemas/vehicle.yaml"
+    weapon_ammo_slot:
+      $ref: "./components/schemas/weapon_ammo_slot.yaml"
+    weapon_datasheet:
+      $ref: "./components/schemas/weapon_datasheet.yaml"
+    weapon_to_attachment:
+      $ref: "./components/schemas/weapon_to_attachment.yaml"
+    weapon_to_fire_group:
+      $ref: "./components/schemas/weapon_to_fire_group.yaml"
+    weapon:
+      $ref: "./components/schemas/weapon.yaml"
+    world_event:
+      $ref: "./components/schemas/world_event.yaml"
+    world_stat_history:
+      $ref: "./components/schemas/world_stat_history.yaml"
+    world:
+      $ref: "./components/schemas/world.yaml"
+    zone_effect_type:
+      $ref: "./components/schemas/zone_effect_type.yaml"
+    zone_effect:
+      $ref: "./components/schemas/zone_effect.yaml"
+    zone:
+      $ref: "./components/schemas/zone.yaml"
