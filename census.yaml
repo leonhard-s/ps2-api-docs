@@ -74,7 +74,7 @@ info:
     url: https://census.daybreakgames.com#services-api-policy
   termsOfService: https://census.daybreakgames.com#services-api-policy
   title: PlanetSide 2 API
-  version: "0.6"
+  version: "0.7"
   x-logo:
     altText: Census API Docs Logo
     url: https://raw.githubusercontent.com/leonhard-s/ps2-api-docs/main/docs/logo-redoc.png
