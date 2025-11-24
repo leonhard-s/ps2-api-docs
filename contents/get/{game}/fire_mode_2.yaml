@@ -18,7 +18,7 @@ schema:
   properties:
     fire_mode_2_list:
       items:
-        $ref: ../../../schemas/fire_mode_2.yaml
+        $ref: ../../../components/schemas/fire_mode_2.yaml
       type: array
     returned:
       minimum: 0

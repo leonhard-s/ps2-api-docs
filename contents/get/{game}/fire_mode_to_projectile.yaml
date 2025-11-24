@@ -6,7 +6,7 @@ schema:
   properties:
     fire_mode_to_projectile_list:
       items:
-        $ref: ../../../schemas/fire_mode_to_projectile.yaml
+        $ref: ../../../components/schemas/fire_mode_to_projectile.yaml
       type: array
     returned:
       minimum: 0

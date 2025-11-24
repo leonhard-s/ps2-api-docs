@@ -9,6 +9,6 @@ schema:
       type: integer
     weapon_to_fire_group_list:
       items:
-        $ref: ../../../schemas/weapon_to_fire_group.yaml
+        $ref: ../../../components/schemas/weapon_to_fire_group.yaml
       type: array
   type: object

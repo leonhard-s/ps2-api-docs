@@ -2,7 +2,7 @@ schema:
   properties:
     event_list:
       items:
-        $ref: ../../../schemas/event.yaml
+        $ref: ../../../components/schemas/event.yaml
       type: array
     returned:
       minimum: 0

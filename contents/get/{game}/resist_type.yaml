@@ -6,7 +6,7 @@ schema:
   properties:
     resist_type_list:
       items:
-        $ref: ../../../schemas/resist_type.yaml
+        $ref: ../../../components/schemas/resist_type.yaml
       type: array
     returned:
       minimum: 0

@@ -6,7 +6,7 @@ schema:
   properties:
     image_list:
       items:
-        $ref: ../../../schemas/image.yaml
+        $ref: ../../../components/schemas/image.yaml
       type: array
     returned:
       minimum: 0

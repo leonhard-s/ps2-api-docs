@@ -6,7 +6,7 @@ schema:
   properties:
     metagame_event_list:
       items:
-        $ref: ../../../schemas/metagame_event.yaml
+        $ref: ../../../components/schemas/metagame_event.yaml
       type: array
     returned:
       minimum: 0

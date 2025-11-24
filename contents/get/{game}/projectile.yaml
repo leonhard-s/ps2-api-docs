@@ -6,7 +6,7 @@ schema:
   properties:
     projectile_list:
       items:
-        $ref: ../../../schemas/projectile.yaml
+        $ref: ../../../components/schemas/projectile.yaml
       type: array
     returned:
       minimum: 0

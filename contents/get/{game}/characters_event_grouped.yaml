@@ -2,7 +2,7 @@ schema:
   properties:
     characters_event_grouped_list:
       items:
-        $ref: ../../../schemas/characters_event_grouped.yaml
+        $ref: ../../../components/schemas/characters_event_grouped.yaml
       type: array
     returned:
       minimum: 0

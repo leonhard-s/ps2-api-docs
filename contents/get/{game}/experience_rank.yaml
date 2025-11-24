@@ -6,7 +6,7 @@ schema:
   properties:
     experience_rank_list:
       items:
-        $ref: ../../../schemas/experience_rank.yaml
+        $ref: ../../../components/schemas/experience_rank.yaml
       type: array
     returned:
       minimum: 0

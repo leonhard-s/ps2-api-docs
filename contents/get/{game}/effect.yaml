@@ -6,7 +6,7 @@ schema:
   properties:
     effect_list:
       items:
-        $ref: ../../../schemas/effect.yaml
+        $ref: ../../../components/schemas/effect.yaml
       type: array
     returned:
       minimum: 0

@@ -9,6 +9,6 @@ schema:
       type: integer
     vehicle_attachment_list:
       items:
-        $ref: ../../../schemas/vehicle_attachment.yaml
+        $ref: ../../../components/schemas/vehicle_attachment.yaml
       type: array
   type: object

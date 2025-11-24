@@ -6,7 +6,7 @@ schema:
   properties:
     armor_facing_list:
       items:
-        $ref: ../../../schemas/armor_facing.yaml
+        $ref: ../../../components/schemas/armor_facing.yaml
       type: array
     returned:
       minimum: 0

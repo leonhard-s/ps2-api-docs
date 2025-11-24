@@ -9,6 +9,6 @@ schema:
       type: integer
     world_stat_history_list:
       items:
-        $ref: ../../../schemas/world_stat_history.yaml
+        $ref: ../../../components/schemas/world_stat_history.yaml
       type: array
   type: object

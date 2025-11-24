@@ -6,7 +6,7 @@ schema:
   properties:
     outfit_list:
       items:
-        $ref: ../../../schemas/outfit.yaml
+        $ref: ../../../components/schemas/outfit.yaml
       type: array
     returned:
       minimum: 0

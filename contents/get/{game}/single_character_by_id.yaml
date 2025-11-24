@@ -5,6 +5,6 @@ schema:
       type: integer
     single_character_by_id_list:
       items:
-        $ref: ../../../schemas/single_character_by_id.yaml
+        $ref: ../../../components/schemas/single_character_by_id.yaml
       type: array
   type: object

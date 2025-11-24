@@ -6,7 +6,7 @@ schema:
   properties:
     ability_type_list:
       items:
-        $ref: ../../../schemas/ability_type.yaml
+        $ref: ../../../components/schemas/ability_type.yaml
       type: array
     returned:
       minimum: 0

@@ -6,7 +6,7 @@ schema:
   properties:
     directive_tree_category_list:
       items:
-        $ref: ../../../schemas/directive_tree_category.yaml
+        $ref: ../../../components/schemas/directive_tree_category.yaml
       type: array
     returned:
       minimum: 0

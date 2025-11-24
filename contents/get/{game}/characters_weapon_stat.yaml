@@ -9,7 +9,7 @@ schema:
   properties:
     characters_weapon_stat_list:
       items:
-        $ref: ../../../schemas/characters_weapon_stat.yaml
+        $ref: ../../../components/schemas/characters_weapon_stat.yaml
       type: array
     returned:
       minimum: 0

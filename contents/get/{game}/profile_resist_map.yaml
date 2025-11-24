@@ -6,7 +6,7 @@ schema:
   properties:
     profile_resist_map_list:
       items:
-        $ref: ../../../schemas/profile_resist_map.yaml
+        $ref: ../../../components/schemas/profile_resist_map.yaml
       type: array
     returned:
       minimum: 0

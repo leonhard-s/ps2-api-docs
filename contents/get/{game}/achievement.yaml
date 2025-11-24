@@ -9,7 +9,7 @@ schema:
   properties:
     achievement_list:
       items:
-        $ref: ../../../schemas/achievement.yaml
+        $ref: ../../../components/schemas/achievement.yaml
       type: array
     returned:
       minimum: 0

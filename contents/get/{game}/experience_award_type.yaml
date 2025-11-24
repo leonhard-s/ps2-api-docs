@@ -6,7 +6,7 @@ schema:
   properties:
     experience_list:
       items:
-        $ref: ../../../schemas/experience_award_type.yaml
+        $ref: ../../../components/schemas/experience_award_type.yaml
       type: array
     returned:
       minimum: 0

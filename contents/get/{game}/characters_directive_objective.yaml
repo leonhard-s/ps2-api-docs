@@ -6,7 +6,7 @@ schema:
   properties:
     characters_directive_objective_list:
       items:
-        $ref: ../../../schemas/characters_directive_objective.yaml
+        $ref: ../../../components/schemas/characters_directive_objective.yaml
       type: array
     returned:
       minimum: 0

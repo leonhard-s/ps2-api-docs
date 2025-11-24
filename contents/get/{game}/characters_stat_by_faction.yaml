@@ -6,7 +6,7 @@ schema:
   properties:
     characters_stat_by_faction_list:
       items:
-        $ref: ../../../schemas/characters_stat_by_faction.yaml
+        $ref: ../../../components/schemas/characters_stat_by_faction.yaml
       type: array
     returned:
       minimum: 0

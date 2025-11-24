@@ -6,7 +6,7 @@ schema:
   properties:
     characters_currency_list:
       items:
-        $ref: ../../../schemas/characters_currency.yaml
+        $ref: ../../../components/schemas/characters_currency.yaml
       type: array
     returned:
       minimum: 0

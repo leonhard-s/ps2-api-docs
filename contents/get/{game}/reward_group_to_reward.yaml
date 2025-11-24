@@ -9,6 +9,6 @@ schema:
       type: integer
     reward_group_to_reward_list:
       items:
-        $ref: ../../../schemas/reward_group_to_reward.yaml
+        $ref: ../../../components/schemas/reward_group_to_reward.yaml
       type: array
   type: object

@@ -6,7 +6,7 @@ schema:
   properties:
     directive_tier_list:
       items:
-        $ref: ../../../schemas/directive_tier.yaml
+        $ref: ../../../components/schemas/directive_tier.yaml
       type: array
     returned:
       minimum: 0

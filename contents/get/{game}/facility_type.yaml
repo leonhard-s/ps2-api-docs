@@ -6,7 +6,7 @@ schema:
   properties:
     facility_type_list:
       items:
-        $ref: ../../../schemas/facility_type.yaml
+        $ref: ../../../components/schemas/facility_type.yaml
       type: array
     returned:
       minimum: 0

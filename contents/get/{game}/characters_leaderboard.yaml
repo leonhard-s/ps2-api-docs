@@ -2,7 +2,7 @@ schema:
   properties:
     characters_leaderboard_list:
       items:
-        $ref: ../../../schemas/leaderboard.yaml
+        $ref: ../../../components/schemas/leaderboard.yaml
       type: array
     count:
       minimum: 0

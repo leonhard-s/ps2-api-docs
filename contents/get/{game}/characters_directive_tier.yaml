@@ -6,7 +6,7 @@ schema:
   properties:
     characters_directive_tier_list:
       items:
-        $ref: ../../../schemas/characters_directive_tier.yaml
+        $ref: ../../../components/schemas/characters_directive_tier.yaml
       type: array
     returned:
       minimum: 0

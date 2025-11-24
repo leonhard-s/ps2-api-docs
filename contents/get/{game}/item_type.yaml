@@ -6,7 +6,7 @@ schema:
   properties:
     item_type_list:
       items:
-        $ref: ../../../schemas/item_type.yaml
+        $ref: ../../../components/schemas/item_type.yaml
       type: array
     returned:
       minimum: 0

@@ -6,7 +6,7 @@ schema:
   properties:
     map_region_list:
       items:
-        $ref: ../../../schemas/map_region.yaml
+        $ref: ../../../components/schemas/map_region.yaml
       type: array
     returned:
       minimum: 0

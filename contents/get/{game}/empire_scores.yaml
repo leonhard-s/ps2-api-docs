@@ -6,7 +6,7 @@ schema:
   properties:
     empire_scores_list:
       items:
-        $ref: ../../../schemas/empire_scores.yaml
+        $ref: ../../../components/schemas/empire_scores.yaml
       type: array
     returned:
       minimum: 0

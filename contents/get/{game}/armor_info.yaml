@@ -6,7 +6,7 @@ schema:
   properties:
     armor_info_list:
       items:
-        $ref: ../../../schemas/armor_info.yaml
+        $ref: ../../../components/schemas/armor_info.yaml
       type: array
     returned:
       minimum: 0

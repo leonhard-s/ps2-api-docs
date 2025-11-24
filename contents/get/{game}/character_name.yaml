@@ -6,7 +6,7 @@ schema:
   properties:
     character_name_list:
       items:
-        $ref: ../../../schemas/character_name.yaml
+        $ref: ../../../components/schemas/character_name.yaml
       type: array
     returned:
       minimum: 0

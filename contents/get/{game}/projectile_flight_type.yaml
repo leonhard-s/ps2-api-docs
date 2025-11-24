@@ -6,7 +6,7 @@ schema:
   properties:
     projectile_flight_type_list:
       items:
-        $ref: ../../../schemas/projectile_flight_type.yaml
+        $ref: ../../../components/schemas/projectile_flight_type.yaml
       type: array
     returned:
       minimum: 0

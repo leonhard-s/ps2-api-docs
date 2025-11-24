@@ -9,6 +9,6 @@ schema:
       type: integer
     title_list:
       items:
-        $ref: ../../../schemas/title.yaml
+        $ref: ../../../components/schemas/title.yaml
       type: array
   type: object

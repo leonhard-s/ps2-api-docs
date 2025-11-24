@@ -6,7 +6,7 @@ schema:
   properties:
     characters_world_list:
       items:
-        $ref: ../../../schemas/characters_world.yaml
+        $ref: ../../../components/schemas/characters_world.yaml
       type: array
     returned:
       minimum: 0

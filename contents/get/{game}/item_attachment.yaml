@@ -6,7 +6,7 @@ schema:
   properties:
     item_attachment_list:
       items:
-        $ref: ../../../schemas/item_attachment.yaml
+        $ref: ../../../components/schemas/item_attachment.yaml
       type: array
     returned:
       minimum: 0

@@ -9,6 +9,6 @@ schema:
       type: integer
     skill_line_list:
       items:
-        $ref: ../../../schemas/skill_line.yaml
+        $ref: ../../../components/schemas/skill_line.yaml
       type: array
   type: object

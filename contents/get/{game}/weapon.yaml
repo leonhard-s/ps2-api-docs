@@ -15,6 +15,6 @@ schema:
       type: integer
     weapon_list:
       items:
-        $ref: ../../../schemas/weapon.yaml
+        $ref: ../../../components/schemas/weapon.yaml
       type: array
   type: object

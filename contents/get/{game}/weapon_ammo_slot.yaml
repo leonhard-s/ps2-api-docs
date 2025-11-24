@@ -9,6 +9,6 @@ schema:
       type: integer
     weapon_ammo_slot_list:
       items:
-        $ref: ../../../schemas/weapon_ammo_slot.yaml
+        $ref: ../../../components/schemas/weapon_ammo_slot.yaml
       type: array
   type: object

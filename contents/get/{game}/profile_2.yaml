@@ -6,7 +6,7 @@ schema:
   properties:
     profile_2_list:
       items:
-        $ref: ../../../schemas/profile_2.yaml
+        $ref: ../../../components/schemas/profile_2.yaml
       type: array
     returned:
       minimum: 0

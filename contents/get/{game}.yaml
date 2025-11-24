@@ -12,7 +12,7 @@ schema:
   properties:
     datatype_list:
       items:
-        $ref: ../../schemas/datatype.yaml
+        $ref: ../../components/schemas/datatype.yaml
       type: array
     returned:
       type: integer

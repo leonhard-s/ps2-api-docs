@@ -6,7 +6,7 @@ schema:
   properties:
     loadout_list:
       items:
-        $ref: ../../../schemas/loadout.yaml
+        $ref: ../../../components/schemas/loadout.yaml
       type: array
     returned:
       minimum: 0

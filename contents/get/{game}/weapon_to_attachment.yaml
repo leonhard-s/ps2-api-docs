@@ -9,6 +9,6 @@ schema:
       type: integer
     weapon_to_attachment_list:
       items:
-        $ref: ../../../schemas/weapon_to_attachment.yaml
+        $ref: ../../../components/schemas/weapon_to_attachment.yaml
       type: array
   type: object

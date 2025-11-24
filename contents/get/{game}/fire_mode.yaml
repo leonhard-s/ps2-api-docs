@@ -6,7 +6,7 @@ schema:
   properties:
     fire_mode_list:
       items:
-        $ref: ../../../schemas/fire_mode.yaml
+        $ref: ../../../components/schemas/fire_mode.yaml
       type: array
     returned:
       minimum: 0

@@ -6,7 +6,7 @@ schema:
   properties:
     item_to_weapon_list:
       items:
-        $ref: ../../../schemas/item_to_weapon.yaml
+        $ref: ../../../components/schemas/item_to_weapon.yaml
       type: array
     returned:
       minimum: 0

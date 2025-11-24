@@ -6,7 +6,7 @@ schema:
   properties:
     directive_list:
       items:
-        $ref: ../../../schemas/directive.yaml
+        $ref: ../../../components/schemas/directive.yaml
       type: array
     returned:
       minimum: 0

@@ -9,6 +9,6 @@ schema:
       type: integer
     weapon_datasheet_list:
       items:
-        $ref: ../../../schemas/weapon_datasheet.yaml
+        $ref: ../../../components/schemas/weapon_datasheet.yaml
       type: array
   type: object

@@ -9,6 +9,6 @@ schema:
       type: integer
     vehicle_faction_list:
       items:
-        $ref: ../../../schemas/vehicle_faction.yaml
+        $ref: ../../../components/schemas/vehicle_faction.yaml
       type: array
   type: object
