@@ -1,0 +1,13 @@
+properties:
+  player_state_group_id:
+    description: Player state group to which this entry applies. Not unique.
+    type: string
+    x-cast-to: int32
+  player_state:
+    description: Name of the player state for this entry.
+    type: string
+  min_cone_of_fire:
+    description: Minimum cone of fire for this player state in degrees.
+    type: string
+    x-cast-to: float
+type: object

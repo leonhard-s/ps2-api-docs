@@ -1,0 +1,17 @@
+properties:
+  fire_group_id:
+    description: Fire group side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: fire_group.fire_group_id
+  fire_mode_id:
+    description: Fire mode side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: fire_mode_2.fire_mode_id
+  fire_mode_index:
+    description: Index of the fire mode within the fire group.
+    type: string
+    x-cast-to: int32
+type: object
+    

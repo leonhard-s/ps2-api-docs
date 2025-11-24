@@ -1,0 +1,8 @@
+properties:
+  player_state_id:
+    description: Unique ID of the player state.
+    type: string
+    x-cast-to: int32
+  description:
+    description: Name of the player state.
+    type: string
