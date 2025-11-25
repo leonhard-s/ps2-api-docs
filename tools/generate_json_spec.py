@@ -1,24 +1,16 @@
 import argparse
 import json
 import pathlib
-import typing
-
 import prance  # type: ignore
-import yaml
 
 
-def main(input: pathlib.Path, output: pathlib.Path) -> None:
-    # Load the YAML-based OpenAPI spec
-    with open(input, 'r') as file_:
-        spec_dict = yaml.safe_load(file_)
-
-    # Resolve local file $ref references
-    resolver = prance.ResolvingParser(str(input))
-    spec_dict = resolver.specification
+def main(input_: pathlib.Path, output: pathlib.Path) -> None:
+    parser = prance.ResolvingParser(input_.as_posix())
+    spec = parser.specification  # type: ignore
 
     # Dump the spec to a JSON-based OpenAPI spec
-    with open(output, 'w') as file_:
-        json.dump(spec_dict, file_, indent=2)
+    with open(output, 'w', encoding='utf-8') as file:
+        json.dump(spec, file, indent=2)
 
 
 if __name__ == '__main__':
@@ -32,7 +24,7 @@ if __name__ == '__main__':
 
     if not _input.exists() and _input.is_file():
         raise FileNotFoundError(f'Input file {_input} does not exist')
-    
+
     # Check whether the given output path is a file based on the extension
     if _output.suffix != '.json':
         _output = _output / 'openapi.json'
