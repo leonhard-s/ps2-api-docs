@@ -9,7 +9,7 @@
 project = 'PS2 API Docs'
 copyright = '2021, Leonhard S.'
 author = 'Leonhard S.'
-version = '0.7'
+version = '0.8'
 
 
 # -- General configuration ---------------------------------------------------
