@@ -1,3 +1,7 @@
+type: object
+description: >
+  Enumerates the armor facing angles used for directional damage reduction on vehicles.
+x-tags: ["Damage Calculation"]
 properties:
   armor_facing_id:
     description: Unique ID of the collection.
@@ -6,4 +10,5 @@ properties:
   description:
     description: Description of the armor facing direction.
     type: string
-type: object
+examples:
+  - $ref: "../../examples/armor_facing.json"

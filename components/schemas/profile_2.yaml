@@ -1,3 +1,8 @@
+type: object
+description: >
+  Extended profile endpoint containing all entity types, including NPCs, construction items,
+  and deployables.
+x-tags: ["Fundamentals"]
 properties:
   description:
     description: Internal description of this profile. Not localized or user-facing.
@@ -7,4 +12,5 @@ properties:
       where the ID field is not `<collection>_id`.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/profile_2.json"

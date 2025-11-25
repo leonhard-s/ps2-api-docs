@@ -1,3 +1,22 @@
+description: |
+  Endpoint for retrieving bulk character stats.
+
+  This endpoint's payload is a superset of `character` and additionally includes data from
+  related `characters_*` collections:
+
+  - `characters_currency`
+  - `characters_stat_history`
+  - `characters_stat`
+  - `characters_stat_by_faction`
+  - `characters_weapon_stat`
+  - `characters_weapon_stat_by_faction`
+  - `characters_items`
+
+  This endpoint is generally faster than querying these collections individually, but it
+  comes with significant bandwidth costs. Note that this endpoint does not support most query
+  commands, and that `c:show` and `c:hide` cannot be used to reduce the amount of data
+  returned.
+x-tags: ["Character Information"]
 allOf:
   - $ref: "character.yaml"
   - properties:

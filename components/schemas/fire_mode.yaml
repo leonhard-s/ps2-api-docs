@@ -1,3 +1,15 @@
+type: object
+description: >
+  **Note:** This table has been largely superceded by `fire_mode_2`, which contains
+  additional and more accurate information about firing mechanics.
+
+
+  This endpoint shows detailed information about a given fire mode for a weapon, including
+  damage ranges, muzzle velocity, and reload time.
+
+
+  For details on the cone-of-fire mechanics, resolve the `player_state_group_id` field.
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   cof_recoil:
     description:
@@ -149,4 +161,5 @@ properties:
       Type description for the fire mode. Useful when needing to distinguish
       between multiple fire modes on a given weapon.
     type: string
-type: object
+examples:
+  - $ref: "../../examples/fire_mode.json"

@@ -1,3 +1,12 @@
+type: object
+description: >
+  Lists currencies available in the game.
+
+
+  As of 2023-06-13, the only currency available are Nanites. Outfit resources and other
+  currencies such as Daybreak Cash, ISO-4, or A7 are not available on the API, while Cert
+  Points and A.S.P. tokens are stored in the `character` collection.
+x-tags: ["Currency Information"]
 properties:
   currency_id:
     description: Unique ID of the currency.
@@ -17,4 +26,5 @@ properties:
   name:
     $ref: "localized_string.yaml"
     description: The name of the currency.
-type: object
+examples:
+  - $ref: "../../examples/currency.json"

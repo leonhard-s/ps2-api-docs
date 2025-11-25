@@ -1,3 +1,12 @@
+type: object
+description: >
+  Current progress of a character within a directive.
+
+
+  The current value of the directive progress can be found in the `state_data` field of this
+  endpoint. The corresponding target value is found in the corresponding `objective`, usually
+  in the `param1` field.
+x-tags: ["Character Information"]
 properties:
   character_id:
     description: Character for which the directive objective status is being returned.
@@ -29,4 +38,5 @@ properties:
     description: Unknown.
     type: string
     x-cast-to: boolean
-type: object
+examples:
+  - $ref: "../../examples/characters_directive_objective.json"

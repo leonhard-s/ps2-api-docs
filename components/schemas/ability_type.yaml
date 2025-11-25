@@ -1,3 +1,11 @@
+type: object
+description: >
+  A type of ability.
+
+
+  The generic fields `paramX` and `stringX` are documented here. Note that most
+  of these generic fields are currently not used.
+x-tags: ["Effects & Abilities"]
 properties:
   ability_type_id:
     description: Unique ID of the collection.
@@ -60,4 +68,5 @@ properties:
   string4:
     description: Documentation for this string parameter on abilities of this type.
     type: string
-type: object
+examples:
+  - $ref: "../../examples/ability_type.json"

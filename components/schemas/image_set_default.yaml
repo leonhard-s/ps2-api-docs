@@ -1,3 +1,7 @@
+type: object
+description: >
+  Lists the default image for a given image set.
+x-tags: ["Image Assets"]
 properties:
   description:
     description: Description of the image set.
@@ -26,4 +30,5 @@ properties:
       to scale.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/image_set_default.json"

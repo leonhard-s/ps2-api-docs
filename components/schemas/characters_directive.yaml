@@ -1,3 +1,11 @@
+type: object
+description: >
+  Directive completion information for a character.
+
+
+  Note that this also lists entries for incomplete directives; use the `completion_time`
+  field to determine whether a directive has been completed.
+x-tags: ["Character Information"]
 properties:
   character_id:
     description: Character for which the directive list is being returned.
@@ -20,4 +28,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: directive_tree.directive_tree_id
-type: object
+examples:
+  - $ref: "../../examples/characters_directive.json"

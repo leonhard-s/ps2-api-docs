@@ -1,3 +1,11 @@
+type: object
+description: >
+  Player rank gained through leveling up.
+
+
+  Note that the `rank` field is not unique, as each rank is duplicated for each prestige
+  (aka. A.S.P.) level. The prestige entries can only be distinguished by their icons.
+x-tags: ["Progression"]
 properties:
   nc:
     $ref: "experience_rank_faction.yaml"
@@ -24,4 +32,5 @@ properties:
     description: Unused.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/experience_rank.json"

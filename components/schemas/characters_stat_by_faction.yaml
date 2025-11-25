@@ -1,3 +1,13 @@
+description: |
+  Faction-specific statistics endpoint. Useful for determining faction bias or kill spread.
+
+  - `stat_name` lists the name of the stat
+  - `profile` represents the class, with a value of 0 denoting a character-wide value
+
+  All `value_*` fields are provided per-faction. Note that the value for the own faction is
+  often blanked: `value_nc` of the stat `kills` cannot be used to enumerate an NC character's
+  team kills, for example.
+x-tags: ["Statistics"]
 allOf:
   - $ref: "characters_stat_by_faction_core.yaml"
   - properties:

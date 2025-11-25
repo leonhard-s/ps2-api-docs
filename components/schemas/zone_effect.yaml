@@ -1,3 +1,11 @@
+type: object
+description: >
+  Passive effects such as weapon stat modifications from attachments or equipped skills.
+
+
+  For weapon damage effects, see `effect` instead. See the `zone_effect_type` collection for
+  a list of available zone effect types.
+x-tags: ["Effects & Abilities"]
 properties:
   ability_id:
     description: Unique ID of the associated ability.
@@ -99,4 +107,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: zone_effect_type.zone_effect_type_id
-type: object
+examples:
+  - $ref: "../../examples/zone_effect.json"

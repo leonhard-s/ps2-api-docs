@@ -1,3 +1,18 @@
+type: object
+description: >
+  Bundles available for purchase in the in-game store (Depot). This collection represents
+  actual bundles. For pseudo-bundles used to purchase individual weapon attachments or
+  cosmetics, see the `marketing_bundle_with_1_item` collection instead.
+
+
+  Note that there is no guaranteed way of determining whether a given bundle is currently
+  available for purchase. This collection contains many entries for defunct items and
+  bundles, such as the single-use camos from the early days of the game.
+
+
+  This collection is automatically maintained and generally accurate with regards to
+  certification prices, the daybreak/station cash values are generally less reliable.
+x-tags: ["Items & Bundles"]
 properties:
   cert_price:
     description: The price of the marketing bundle in Certification Points.
@@ -27,4 +42,5 @@ properties:
     description: The price of the marketing bundle in Station Cash.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/marketing_bundle.json"

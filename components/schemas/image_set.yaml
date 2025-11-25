@@ -1,3 +1,12 @@
+type: object
+description: >
+  Lists related image assets belonging to the same set.
+
+
+  Note that this endpoint is a mapping; the `image_set_id` is not a unique key. The
+  individual image types in a set are generally used to provide different sizes of the same
+  image (e.g. icon previes or minimal icons).
+x-tags: ["Image Assets"]
 properties:
   description:
     description: Description of the image set.
@@ -25,4 +34,5 @@ properties:
       to scale.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/image_set.json"

@@ -1,3 +1,11 @@
+type: object
+description: >
+  Maps a reward set to its reward group.
+
+
+  This collection, together with `reward_group_to_reward`, allows connecting directive tiers
+  to the rewards they grant upon completion.
+x-tags: ["Progression"]
 properties:
   reward_group_id:
     description: Reward group associated with this reward set.
@@ -7,4 +15,5 @@ properties:
     description: Reward set associated with this reward group.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/reward_set_to_reward_group.json"

@@ -1,3 +1,8 @@
+type: object
+description: >
+  Maps profiles to the relevant `resist_info` entries. Note that many of the profile IDs used
+  here are only available in the `profile_2` collection.
+x-tags: ["Damage Calculation"]
 properties:
   profile_id:
     description: The profile side of the relationship.
@@ -13,4 +18,6 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: resist_info.resist_info_id
-type: object
+examples:
+  - $ref: "../../examples/profile_resist_map.json"
+

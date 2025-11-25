@@ -1,3 +1,12 @@
+type: object
+description: >
+  Basic vehicle information such as name, description, and type.
+
+
+  Note that vehicle types are only used internally and are not directly tied to damage
+  mechanics or resistances. Liberators and Galaxies are still considered "Light Aircraft" in
+  this endpoint.
+x-tags: ["Vehicles"]
 properties:
   cost:
     description: Defunct field. Does not reflect the actual resource cost of the vehicle.
@@ -40,4 +49,5 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/vehicle.json"

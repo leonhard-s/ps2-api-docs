@@ -1,3 +1,11 @@
+type: object
+description: >
+  A type of effect.
+
+
+  The generic fields `paramX` and `stringX` are documented here. Note that not all fields are
+  used by all effect types, or at all.
+x-tags: ["Effects & Abilities"]
 properties:
   description:
     description: Description of the effect type.
@@ -45,4 +53,5 @@ properties:
   param9:
     description: Documentation for this numeric parameter on effects of this type.
     type: string
-type: object
+examples:
+  - $ref: "../../examples/effect_type.json"

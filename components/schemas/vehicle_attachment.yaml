@@ -1,3 +1,40 @@
+type: object
+description: |
+  Maps items to the vehicles and factions that have access to them.
+
+  The `slot_id` field is used to identify where the item is attached to. The below list shows
+  the types of items for each slot as of June 2023:
+
+  ```
+  ID   Description
+
+  1    Primary Weapon
+  2    Secondary Weapon
+  3    Ability Slot
+  4    Defensive Slot
+  5    Chassis / Airframe
+  6    Cockpit / Hood Ornament
+  7    Camo
+  8    Decal
+  9    Exterior
+  10   Weapon Slot / Catapult
+  11   Weapon Slot / Catapult
+  12   Afterburner / Nitrous
+  13   (Unused)
+  14   (Internal: Headlights)
+  15   Horn
+  16   Trim
+  17   Lighting
+  18   Hubcaps
+  19   Other
+  20   Tire Traits / Catapult
+  21   Catapult
+  22   Catapult
+  ```
+
+  Note that this list is maintained manually and may be out of date. The slot associations
+  are not available on the API.
+x-tags: ["Vehicles"]
 properties:
   description:
     description: Internal description of the vehicle/faction combination.
@@ -22,4 +59,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: vehicle.vehicle_id
-type: object
+examples:
+  - $ref: "../../examples/vehicle_attachment.json"

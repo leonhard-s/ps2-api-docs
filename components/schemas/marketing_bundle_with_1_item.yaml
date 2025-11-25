@@ -1,3 +1,12 @@
+type: object
+description: >
+  These are pseudo-bundles with exactly 1 item each, allowing players to buy individual
+  weapons or cosmetics with Daybreak Cash (formerly Station Cash).
+
+
+  Note that in the case of weapons, these bundles are genreally mirrored by 'regular' bundles
+  in the `marketing_bundle` collection, with the same `marketing_bundle_id`.
+x-tags: ["Items & Bundles"]
 properties:
   cert_price:
     description: The price of the marketing bundle in Certification Points.
@@ -26,4 +35,5 @@ properties:
       Cash).
     type: string
     x-cast-to: int32
-type: object
+examples: 
+  - $ref: "../../examples/marketing_bundle_with_1_item.json"

@@ -1,3 +1,7 @@
+type: object
+description: >
+  A player-run outfit (guild/clan) in the game.
+x-tags: ["Outfits"]
 properties:
   alias:
     description:
@@ -32,4 +36,5 @@ properties:
   time_created_date:
     description: Human-readable version of `time_created`.
     type: string
-type: object
+examples:
+  - $ref: "../../examples/outfit.json"

@@ -1,3 +1,20 @@
+type: object
+description: >
+  A region on the in-game map.
+
+
+  Map regions are largely identical to their corresponding regions, but use the internal
+  `facility_name` instead of a localized string. A `map_region_id` and `region_id` are
+  interchangeable.
+
+
+  Additionally, this collection allows connecting facilities to map region IDs.
+
+
+  Note that the continuous outfit resource gain is listed in "ticks", not minutes. Ticks are
+  5 minutes as of writing, meaning that a Tech Plant will list a tick reward of 8 Synthium,
+  corresponding to the 1.6 Synthium per minute advertised in-game.
+x-tags: ["Map & Regions"]
 properties:
   capture_reward:
     properties:
@@ -70,4 +87,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: zone.zone_id
-type: object
+examples:
+  - $ref: "../../examples/map_region.json"

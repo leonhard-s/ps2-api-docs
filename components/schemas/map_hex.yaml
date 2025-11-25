@@ -1,3 +1,22 @@
+type: object
+description: >
+  Endpoint for retrieving map hex coordinates.
+
+  This data can be used to reconstruct the in-game facility outlines from API data.
+
+
+  The X and Y coordinates listed in the entries to this collection are not Cartesian and do
+  not match up with the `location_<n>` fields of `map_region`. Instead, they are describing
+  locations in a non-orthogonal hexagonal grid, which must be converted by the user.
+
+
+  This website has a great write-up on hexagonal coordinate systems:
+  <https://www.redblobgames.com/grids/hexagons/>.
+
+  The coordinate system used by PlanetSide 2 matches the "Axial coordinates" described in the
+  article, except that the first coordinate X faces east, and the second coordinate Y faces
+  up and to the right at a 60° angle.
+x-tags: ["Map & Regions"]
 properties:
   hex_type:
     description: 'Type of the hex. 0: capturable by anyone, 1: not capturable, 2:
@@ -27,4 +46,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: zone.zone_id
-type: object
+examples:
+  - $ref: "../../examples/map_hex.json"

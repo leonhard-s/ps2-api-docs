@@ -1,3 +1,10 @@
+description: >
+  ReST endpoint for retrieving historical character event data.
+
+
+  Like `event`, but allows querying by character. The `character_id` and `id` fields are
+  interchangeable.
+x-tags: ["Event History"]
 oneOf:
   - allOf:
       - $ref: "event_base.yaml"

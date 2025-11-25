@@ -1,3 +1,11 @@
+type: object
+description: >
+  Display name of the game regions.
+
+
+  This endpoint mostly contains the localized display name of the a map region. Regions and
+  map regions are interchangeable and governed by the same IDs.
+x-tags: ["Map & Regions"]
 properties:
   initial_faction_id:
     description:
@@ -18,4 +26,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: zone.zone_id
-type: object
+examples:
+  - $ref: "../../examples/region.json"

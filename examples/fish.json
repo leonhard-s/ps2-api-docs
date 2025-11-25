@@ -1,0 +1,24 @@
+{
+  "fish_list": [
+    {
+      "fish_id": "1",
+      "name": {
+        "de": "Weichkopfmummel",
+        "en": "Softheaded Mumbler",
+        "es": "Mascullador de cabeza blanda",
+        "fr": "Marmouille à tête molle",
+        "it": "Mormorante testamolle",
+        "tr": "NULL"
+      },
+      "rarity": "1",
+      "size": "1",
+      "average_size": "30",
+      "size_deviation": "15",
+      "scan_point_amount": "200",
+      "cost": "100",
+      "image_set_id": "808133",
+      "image_id": "97689"
+    }
+  ],
+  "returned": 1
+}

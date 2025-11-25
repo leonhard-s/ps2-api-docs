@@ -1,3 +1,10 @@
+type: object
+description: >
+  An individual directive that may be completed by a player.
+
+
+  This collection lists an individual directive, such as "100 Roadkills".
+x-tags: ["Progression"]
 properties:
   description:
     $ref: "localized_string.yaml"
@@ -38,4 +45,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: objective_set.objective_set_id
-type: object
+examples:
+  - $ref: "../../examples/directive.json"

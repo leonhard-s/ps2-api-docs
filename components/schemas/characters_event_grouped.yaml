@@ -1,3 +1,10 @@
+type: object
+description: >
+  Return character vs. character statistics.
+
+
+  Allows calculating player vs. player KDR.
+x-tags: ["Event History"]
 properties:
   character_id:
     description: Other character for which the event list is being returned.
@@ -14,4 +21,3 @@ properties:
     - KILL
     - DEATH
     type: string
-type: object

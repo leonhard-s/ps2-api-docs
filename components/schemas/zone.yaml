@@ -1,3 +1,7 @@
+type: object
+description: >
+   World continent and dynamic zone information.
+x-tags: ["Fundamentals"]
 properties:
   code:
     description: Internal code of the zone. Used to connect map textures to the zone.
@@ -29,4 +33,5 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/zone.json"

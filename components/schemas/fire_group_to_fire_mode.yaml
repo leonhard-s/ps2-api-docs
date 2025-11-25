@@ -1,3 +1,4 @@
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   fire_group_id:
     description: Fire group side of the relationship.
@@ -14,4 +15,3 @@ properties:
     type: string
     x-cast-to: int32
 type: object
-    

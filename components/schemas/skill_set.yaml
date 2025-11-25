@@ -1,3 +1,11 @@
+type: object
+description: >
+  Skill sets represent the top-level grouping of skills.
+
+
+  In the old certification menu, this would group weapon-related skill lines into a sub-tree
+  beneath the weapon itself.
+x-tags: ["Certifications & A.S.P."]
 properties:
   description:
     $ref: "localized_string.yaml"
@@ -36,4 +44,5 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/skill_set.json"

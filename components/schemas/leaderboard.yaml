@@ -1,3 +1,17 @@
+type: object
+description: >
+  Global leaderboard for a given server. This only includes the top 10'000 players for a
+  given category and is not directly searchable. See `characters_leaderboard` to look up a
+  character's ranking.
+
+
+  `c:start` and `c:limit` are supported and allow for pagination. `c:join` and `c:tree` are
+  also permitted. Any other query commands will be silently ignored.
+
+
+  Unlike most other tables, this one defaults to a `c:limit` value of 10 and is always sorted
+  in ascending order of leaderboard rank.
+x-tags: ["Leaderboards"]
 properties:
   character_id:
     description: The ID of the character.
@@ -12,4 +26,5 @@ properties:
     description: The all-time value of the given statistic.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/leaderboard.json"

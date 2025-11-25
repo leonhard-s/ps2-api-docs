@@ -1,3 +1,7 @@
+type: object
+description: >
+  A reward granted for completing a directive, mission, or achievement.
+x-tags: ["Progression"]
 properties:
   count_max:
     description: Maximum number of items rewarded.
@@ -41,4 +45,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: reward_type.reward_type_id
-type: object
+examples:
+  - $ref: "../../examples/reward.json"

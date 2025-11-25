@@ -1,3 +1,4 @@
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   player_state_group_id:
     description: Player state group to which this entry applies. Not unique.

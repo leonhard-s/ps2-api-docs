@@ -1,3 +1,12 @@
+type: object
+description: >
+  **Deprecated:** This table is not directly tied to the underlying fire mode and player
+  state group data and may differ wildly from the true values!
+
+
+  Suggested alternatives for the values provided by this collection are listed as part of the
+  `weapon_datasheet` schema.
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   capacity:
     description: Unreliable! Please refer to the matching `ps2/weapon_ammo_slot` instead.
@@ -100,4 +109,5 @@ properties:
     description: Whether the range string should be displayed in the UI.
     type: string
     x-cast-to: boolean
-type: object
+examples:
+  - $ref: "../../examples/weapon_datasheet.json"

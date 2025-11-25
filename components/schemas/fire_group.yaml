@@ -1,3 +1,12 @@
+type: object
+description: >
+  Fire groups in the API are synonymous with fire modes in-game, they represent the different
+  operating modes some weapons can switch between.
+
+
+  This includes select-fire modes for infantry weapons, as well as knives switching between
+  quick knife, wielded knive, and - in the case of power knives - the one-hit-kill mode.
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   can_chamber_ironsights:
     description: Whether the weapon can be chambered while aiming down sights. Only
@@ -25,4 +34,7 @@ properties:
     description: Time to transition to this fire group on select-fire weapon.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/fire_group_chamber.json"
+  - $ref: "../../examples/fire_group_regular.json"
+  - $ref: "../../examples/fire_group_spool.json"

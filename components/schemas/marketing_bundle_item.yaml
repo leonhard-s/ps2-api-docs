@@ -1,3 +1,7 @@
+type: object
+description: >
+  Maps marketing bundles to the items they contain.
+x-tags: ["Items & Bundles"]
 properties:
   item_id:
     description: Item side of the relationship.
@@ -17,4 +21,5 @@ properties:
     description: The time the marketing bundle was released as a UTC timestamp.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/marketing_bundle_item.json"

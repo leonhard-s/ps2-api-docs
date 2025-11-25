@@ -1,3 +1,11 @@
+type: object
+description: >
+  Enumeration of the types of fire modes.
+
+
+  This servers to differentiate between melee attacks, projectile weapons, throwables, and
+  pseudo-weapon fire modes used to trigger activated items.
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   description:
     description: Description of the type of fire mode
@@ -6,4 +14,5 @@ properties:
     description: Unique ID of the fire mode type.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/fire_mode_type.json"

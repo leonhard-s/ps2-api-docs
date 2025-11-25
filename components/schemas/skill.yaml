@@ -1,3 +1,7 @@
+type: object
+description: >
+  Purchasable skills, such as certifications and A.S.P. skills.
+x-tags: ["Certifications & A.S.P."]
 properties:
   description:
     $ref: "localized_string.yaml"
@@ -45,4 +49,5 @@ properties:
       this skill.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/skill.json"

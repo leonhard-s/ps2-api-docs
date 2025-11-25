@@ -1,3 +1,7 @@
+type: object
+description: >
+  Query the online status of a character
+x-tags: ["Character Information"]
 properties:
   character_id:
     description: Character for which the online status is being returned.
@@ -10,4 +14,5 @@ properties:
       on.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/characters_online_status.json"

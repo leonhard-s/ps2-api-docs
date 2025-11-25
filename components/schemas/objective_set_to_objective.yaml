@@ -1,3 +1,16 @@
+type: object
+description: >
+  Maps objective sets to objective groups.
+
+
+  This collection is peculiar as neither of the types it connects are available on the API.
+  It is however essential for connecting the `directive` collection to `objective` and
+  `objective_type`.
+
+
+  Note that when joining to these queries, the `^on:` and `^to:` fields must be used to
+  specify the relationship.
+x-tags: ["Progression"]
 properties:
   objective_group_id:
     description: Objective group side of the relationship.
@@ -11,4 +24,5 @@ properties:
     x-cast-to: int32
     x-joins-to:
     - directive.objective_set_id
-type: object
+examples:
+  - $ref: "../../examples/objective_set_to_objective.json"

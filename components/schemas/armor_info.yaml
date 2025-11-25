@@ -1,3 +1,7 @@
+type: object
+description: >
+  description: A set of armor values for each armor facing angle on a vehicle.
+x-tags: ["Damage Calculation"]
 properties:
   armor_amount:
     description: Flat damage reduction applied to incoming damage. Only used in the
@@ -19,4 +23,5 @@ properties:
   description:
     description: Description of the armor info entry.
     type: string
-type: object
+examples:
+  - $ref: "../../examples/armor_info.json"

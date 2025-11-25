@@ -1,3 +1,7 @@
+type: object
+description: >
+  Enumeration of resistance types used to balance damage types against various targets.
+x-tags: ["Damage Calculation"]
 properties:
   description:
     description: Description of the resist type.
@@ -7,4 +11,5 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
-type: object
+examples: 
+  - $ref: "../../examples/resist_type.json"

@@ -1,3 +1,8 @@
+type: object
+description: >
+  Outfit membership information for a givne character. Characters that are not members of any
+  outfit will not have an entry in this collection.
+x-tags: ["Outfits"]
 properties:
   character_id:
     description: The `ps2/character` for this membership entry.
@@ -24,4 +29,5 @@ properties:
       ranks.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/outfit_member.json"

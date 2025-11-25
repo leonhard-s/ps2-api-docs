@@ -1,3 +1,8 @@
+type: object
+description: >
+  Item categories are used to group items together for display in the loadout screen or
+  depot.
+x-tags: ["Items & Bundles"]
 properties:
   item_category_id:
     description: Unique ID of the collection.
@@ -7,4 +12,5 @@ properties:
   name:
     $ref: "localized_string.yaml"
     description: Display name of the item category.
-type: object
+examples:
+  - $ref: "../../examples/item_category.json"

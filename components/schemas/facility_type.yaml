@@ -1,3 +1,7 @@
+type: object
+description: >
+  Lists all facility types across all zones and game modes.
+x-tags: ["Map & Regions"]
 properties:
   description:
     description: Description of the facility type.
@@ -19,4 +23,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: image_set.image_set_id
-type: object
+examples:
+  - $ref: "../../examples/facility_type.json"

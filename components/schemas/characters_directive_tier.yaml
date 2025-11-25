@@ -1,3 +1,7 @@
+type: object
+description: >
+  Directive tier completion information for a character.
+x-tags: ["Character Information"]
 properties:
   character_id:
     description: Character for which the directive tier list is being returned.
@@ -21,4 +25,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: directive_tree.directive_tree_id
-type: object
+examples:
+  - $ref: "../../examples/characters_directive_tier.json"

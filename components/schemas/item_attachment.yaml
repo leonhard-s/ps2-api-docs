@@ -1,3 +1,7 @@
+type: object
+description: >
+  Maps attachment items to the items they can be attached to.
+x-tags: ["Items & Bundles"]
 properties:
   attachment_item_id:
     description: Item that can be attached to the `item_id`.
@@ -9,4 +13,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: item.item_id
-type: object
+examples:
+  - $ref: "../../examples/item_attachment.json"

@@ -1,3 +1,10 @@
+type: object
+description: >
+  A completion tier within a directive tree.
+
+
+  This covers the individual stages of directive tiers, such as "Combat Medic: Adept".
+x-tags: ["Progression"]
 properties:
   completion_count:
     description:
@@ -44,4 +51,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: reward_set.reward_set_id
-type: object
+examples:
+  - $ref: "../../examples/directive_tier.json"

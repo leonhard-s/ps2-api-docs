@@ -1,3 +1,8 @@
+type: object
+description: >
+  Ammo slot data for a given weapon, including the clip size, reserve ammo capacity, and
+  resupply behaviour.
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   capacity:
     description: Reserve ammunition capacity of this ammo slot.
@@ -24,4 +29,5 @@ properties:
     description: Index of the slot in the weapon's ammo slot list.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/weapon_ammo_slot.json"

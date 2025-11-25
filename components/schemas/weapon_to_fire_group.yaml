@@ -1,3 +1,8 @@
+type: object
+description: >
+  Maps weapons to their set of fire groups. The `fire_group_index` field matches the in-game
+  fire mode selection; hitting 'B' in-game is equivalent to incrementing the index by 1.
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   fire_group_id:
     description: Unique ID of the fire group.
@@ -11,4 +16,5 @@ properties:
     description: Unique ID of the weapon.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/weapon_to_fire_group.json"

@@ -1,3 +1,15 @@
+type: object
+description: >
+  An ability triggered by a character or vehicle.
+
+
+  Abilities in the API are more generic than the in-game abilities and also cover other
+  mechanics such as scopes and consumables.
+
+
+  The generic fields `paramX` and `stringX` are documented in the the corresponding
+  `ability_type` entry."
+x-tags: ["Effects & Abilities"]
 properties:
   ability_id:
     description: Unique identifier of the ability.
@@ -138,4 +150,5 @@ properties:
     description: Generic string field. See the corresponding `ps2/ability_type` for
       details.
     type: string
-type: object
+examples:
+  - $ref: "../../examples/ability.json"

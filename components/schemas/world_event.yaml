@@ -1,3 +1,9 @@
+description: >
+  ReST endpoint for retrieving historical world events.
+
+
+  The `world_id` and `id` fields are interchangeable.
+x-tags: ["Event History"]
 anyOf:
   - allOf:
       - $ref: "event_base.yaml"

@@ -1,3 +1,11 @@
+type: object
+description: >
+  A type of reward.
+
+
+  The generic `paramX` fields are documented here. Note that not all fields are used by all
+  reward types, or at all.
+x-tags: ["Progression"]
 properties:
   count_max:
     description: Documentation for this parameter on rewards of this type.
@@ -29,4 +37,5 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
-type: object
+examples: 
+  - $ref: "../../examples/reward_type.json"

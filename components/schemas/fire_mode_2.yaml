@@ -1,3 +1,16 @@
+type: object
+description: |
+  Main endpoint for baseline weapon characteristics and firing mechanics. This includes:
+
+  - Damage effects and ranges
+  - Recoil magnitude and pattern
+  - Triggered abilities for pseudo-weapons such as the medical applicator
+  - Ammunition consumption and pellet count
+  - Heat-mechanics
+
+  Be aware that lockon information is currently disconnected from the game data and has not
+  been outdated. Refer to the PS2 Wiki for up-to-date information for the time being.
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   ability_block_delay_ms:
     description:
@@ -450,4 +463,9 @@ properties:
     description: Default zoom level for the fire mode.
     type: string
     x-cast-to: float
-type: object
+examples:
+  - $ref: "../../examples/fire_mode_2_betelgeuse54a.json"
+  - $ref: "../../examples/fire_mode_2_g30vulcan.json"
+  - $ref: "../../examples/fire_mode_2_hawkgd68.json"
+  - $ref: "../../examples/fire_mode_2_lasherx2.json"
+  - $ref: "../../examples/fire_mode_2_ns11a.json"

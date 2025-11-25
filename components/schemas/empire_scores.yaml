@@ -1,3 +1,7 @@
+type: object
+description: >
+  Defunct endpoint for the "World Domination Series" event scores.
+x-tags: ["Metagame & Alerts"]
 properties:
   end_date:
     description: Human-readable version of `end_time`.
@@ -20,4 +24,3 @@ properties:
   tracker_name:
     description: Unique name of the tracker.
     type: string
-type: object

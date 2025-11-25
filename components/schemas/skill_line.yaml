@@ -1,3 +1,7 @@
+type: object
+description: >
+  Skill lines represent upgrade paths for skills, such as Ammo Capacity.
+x-tags: ["Certifications & A.S.P."]
 properties:
   description:
     $ref: "localized_string.yaml"
@@ -36,4 +40,5 @@ properties:
     description: Unused.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/skill_line.json"

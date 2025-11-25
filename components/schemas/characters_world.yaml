@@ -1,3 +1,7 @@
+type: object
+description: >
+  Query the game server a character is on.
+x-tags: ["Character Information"]
 properties:
   character_id:
     description: Character for which the world is being returned.
@@ -9,4 +13,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: world.world_id
-type: object
+examples:
+  - $ref: "../../examples/characters_world.json"

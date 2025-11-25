@@ -1,3 +1,16 @@
+description: |
+  ReST endpoint for retrieving historical event data.
+
+  These largely mirror the corresponding events in the ESS:
+
+  - `ItemAdded` -> `ITEM`
+  - `Death` -> `KILL`/`DEATH`
+  - `BattleRankUp` -> `BATTLE_RANK`
+  - `PlayerFacilityCapture`/`PlayerFacilityDefend` -> `FACILITY_CHARACTER`
+  - `AchievementEarned` -> `ACHIEVEMENT`
+  - `FacilityControl` -> `FACILITYCONTROL`
+  - `MetagameEvent` -> `METAGAME`"
+x-tags: ["Event History"]
 anyOf:
   - $ref: "characters_event.yaml"
   - $ref: "world_event.yaml"

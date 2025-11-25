@@ -1,3 +1,7 @@
+type: object
+description: >
+  Lists resistances against certain types of damage.
+x-tags: ["Damage Calculation"]
 properties:
   description:
     description: Description of the resist info entry.
@@ -22,4 +26,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: resist_type.resist_type_id
-type: object
+examples:
+  - $ref: "../../examples/resist_info.json"

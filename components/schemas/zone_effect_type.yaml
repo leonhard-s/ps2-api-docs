@@ -1,3 +1,11 @@
+type: object
+description: >
+  A type of zone effect.
+
+
+  The generic fields `paramX` and `stringX` are documented here. Note that not all fields are
+  used by all zone effect types, or at all.
+x-tags: ["Effects & Abilities"]
 properties:
   description:
     description: Description of the zone effect type.
@@ -74,4 +82,5 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/zone_effect_type.json"

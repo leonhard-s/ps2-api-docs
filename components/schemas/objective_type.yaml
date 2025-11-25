@@ -1,3 +1,11 @@
+type: object
+description: >
+  A type of objective.
+
+
+  The generic `paramX` fields are documented here. Note that not all fields are used by all
+  objective types, or at all.
+x-tags: ["Progression"]
 properties:
   description:
     description: The description of the objective type.
@@ -33,4 +41,5 @@ properties:
   param9:
     description: Documentation for this numeric parameter on objectives of this type.
     type: string
-type: object
+examples:
+  - $ref: "../../examples/objective_type.json"

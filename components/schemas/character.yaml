@@ -1,3 +1,17 @@
+type: object
+description: >
+  Main `character` collection holding player data.
+
+
+  This collection is randomly distributed across 20 different databases, causing some unusual
+  behaviour when filtering. For example, the `c:distinct` parameter will fetch the distinct
+  values for each database and aggregate them in the response, resulting in duplicate
+  entries.
+
+
+  In addition to the commonly-used parameters provided, this endpoint may be queried by any
+  of its fields, including sub-keys like `times.creation`.
+x-tags: ["Character Information"]
 properties:
   battle_rank:
     description: Sub-object providing battle rank information.
@@ -130,4 +144,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: title.title_id
-type: object
+examples:
+  - $ref: "../../examples/character_higby.json"

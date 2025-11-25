@@ -1,3 +1,4 @@
+type: object
 properties:
   currency_id:
     description: Unique ID of the currency being returned.
@@ -15,4 +16,3 @@ properties:
     description: Amount of currency the character owns.
     type: string
     x-cast-to: int32
-type: object

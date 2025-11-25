@@ -1,3 +1,11 @@
+type: object
+description: >
+  A tree of directives sorted into multiple tiers.
+
+
+  This collection represents the individual paths within a directive category, such as
+  "Light Assault" or "Combat Medic".
+x-tags: ["Progression"]
 properties:
   description:
     $ref: "localized_string.yaml"
@@ -28,4 +36,5 @@ properties:
   name:
     $ref: "localized_string.yaml"
     description: The name of the directive tree.
-type: object
+examples:
+  - $ref: "../../examples/directive_tree.json"

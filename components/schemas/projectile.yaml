@@ -1,3 +1,12 @@
+type: object
+description: >
+  Projectiles specify the travel characteristics of a weapon on its way to the target, such
+  as its speed, its bullet drop, or maximum flight time/distance.
+
+
+  Note that multiple fire modes can use the same projectile. This usually includes the
+  hipfire vs. aimed fire modes, but can also include different weapons altogether.
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   acceleration:
     description: The acceleration of the projectile in metres per second per second.
@@ -100,4 +109,5 @@ properties:
       the ability of lock-on projectiles to track their target.
     type: string
     x-cast-to: float
-type: object
+examples:
+  - $ref: "../../examples/projectile.json"

@@ -1,3 +1,7 @@
+type: object
+description: >
+  A game server for a given region and game.
+x-tags: ["Fundamentals"]
 properties:
   description:
     $ref: "localized_string.yaml"
@@ -15,4 +19,5 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/world.json"

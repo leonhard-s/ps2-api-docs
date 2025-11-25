@@ -1,3 +1,7 @@
+type: object
+description: >
+  Baseline weapon data, such as equip times, stock sights, and movement speed modifiers.
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   equip_ms:
     description: The time in milliseconds it takes to equip the weapon.
@@ -79,4 +83,7 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
-type: object
+examples:
+  - $ref: "../../examples/weapon_heat.json"
+  - $ref: "../../examples/weapon_knife.json"
+  - $ref: "../../examples/weapon_regular.json"

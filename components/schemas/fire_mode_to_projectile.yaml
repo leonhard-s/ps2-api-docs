@@ -1,3 +1,7 @@
+type: object
+description: >
+  Maps fire modes to their projectiles.
+x-tags: ["Weapons & Firing Mechanics"]
 properties:
   fire_mode_id:
     description: Fire mode side of the relationship.
@@ -9,4 +13,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: projectile.projectile_id
-type: object
+examples:
+  - $ref: "../../examples/fire_mode_to_projectile.json"

@@ -1,3 +1,10 @@
+type: object
+description: >
+  An objective tracking progress towards a directive, mission, or achievement.
+
+
+  See the `objective_type` collection for a list of available objective types.
+x-tags: ["Progression"]
 properties:
   objective_group_id:
     description: Unknown. This field allows connecting objectives to directives via
@@ -58,4 +65,5 @@ properties:
       for details.
     type: string
     x-cast-to: float
-type: object
+examples:
+  - $ref: "../../examples/objective.json"

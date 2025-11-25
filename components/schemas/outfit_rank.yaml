@@ -1,3 +1,8 @@
+type: object
+description: >
+  Outfits can define their own custom rank names and permissions, which are listed here.
+  Outfits using the default rank names may not have an entry here.
+x-tags: ["Outfits"]
 properties:
   description:
     description: Custom description of the rank.
@@ -14,4 +19,5 @@ properties:
     type: string
     x-cast-to: int64
     x-reference-to: outfit.outfit_id
-type: object
+examples:
+  - $ref: "../../examples/outfit_rank.json"

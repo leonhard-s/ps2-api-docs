@@ -1,3 +1,7 @@
+type: object
+description: >
+  Defunct. Historical data for global events.
+x-tags: ["Metagame & Alerts"]
 properties:
   all_time:
     description: Total value of the stat for the given world, tracker and faction.
@@ -204,4 +208,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: world.world_id
-type: object
+examples:
+  - $ref: "../../examples/world_stat_history.json"

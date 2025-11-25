@@ -1,3 +1,12 @@
+description: |
+  Faction-specific weapon statistics endpoint containing combat-focussed stats such as kills,
+  deaths, headshots and damage dealt/taken.
+
+  - `stat_name` lists the name of the stat
+  - `item_id` identifies the item for the weapon. Note that this value can be zero, in that
+    case it serves as a catch-all for all weapons for the given `vehicle_id`.
+  - `vehicle_id` the vehicle on which the weapon is available.
+x-tags: ["Statistics"]
 allOf:
   - $ref: "characters_weapon_stat_by_faction_core.yaml"
   - properties:

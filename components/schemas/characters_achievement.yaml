@@ -1,3 +1,7 @@
+type: object
+description: >
+  List the achievement progress for a character.
+x-tags: ["Character Information"]
 properties:
   achievement_id:
     description: Unique ID of the achievement being returned.
@@ -34,4 +38,6 @@ properties:
   start_date:
     description: Human-readable version of `start`.
     type: string
-type: object
+examples:
+  - $ref: "../../examples/characters_achievement_medal.json"
+  - $ref: "../../examples/characters_achievement_ribbon.json"

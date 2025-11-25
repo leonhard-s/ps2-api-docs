@@ -1,3 +1,10 @@
+type: object
+description: >
+  Original endpoint for infantry profiles. This covers the names and loadout IDs connected to
+  a given profile, and additionally provides movement speed multiplier information for
+  infantry classes. Note that the key fields are also provided by `profile_2`, which not only
+  covers infantry but also vehicles, deployables, and other entities.
+x-tags: ["Fundamentals"]
 properties:
   backpedal_speed_modifier:
     description: The modifier applied to the movement speed when walking backwards.
@@ -56,4 +63,5 @@ properties:
     description: The modifier applied to the movement speed when strafing.
     type: string
     x-cast-to: float
-type: object
+examples:
+  - $ref: "../../examples/profile.json"

@@ -1,3 +1,8 @@
+type: object
+description: >
+  List the skills unlocked by a character.
+
+  This is used for both certifications and A.S.P. skills.
 properties:
   character_id:
     description: Character side of the relationship.
@@ -15,4 +20,5 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: skill.skill_id
-type: object
+examples:
+  - $ref: "../../examples/characters_skill.json"
