@@ -1,43 +1,30 @@
-# Temporary workflow to reassemble the monolithic JSON spec required by the
-# current ReadTheDocs documentation build.
-
 name: Generate JSON spec
 
 on: push
 
 jobs:
-  build-json-monolith:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: Install Python dependencies
         run: |
-          python -m pip install --upgrade pip wheel
           python -m pip install -r ./tools/requirements.txt
       - name: Generate JSON spec
         run: |
           python ./tools/generate_json_spec.py ./openapi.yaml ./generated/openapi.json
-      - name: Commit changes
+      - name: Configure Git
         run: |
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "GitHub Actions"
-      - name: Check for changes
-        id: git-check
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+      - name: Filter changes
         run: |
-          git diff --quiet --exit-code
-      - name: Apply changes
-        if: ${{ failure() && steps.git-check.conclusion == 'failure' }}
+          git add ./generated/openapi.json
+          git stash save --keep-index --include-untracked
+      - name: Commit and push relevant changes
+        continue-on-error: true
+        if: env.GITHUB_REF_TYPE != 'tag'
         run: |
-          git add --force ./generated/openapi.json
-          git commit -m "Update monolithic JSON spec" --allow-empty
-      - name: Push changes
-        if: ${{ failure() && steps.git-check.conclusion == 'failure' }}
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-      - name: Set conclusion
-        if: ${{ failure() && steps.git-check.conclusion == 'failure' }}
-        run: |
-          echo "::set-output name=conclusion::success"
+          git commit -m "Update monolithic JSON spec"
+          git push origin ${GITHUB_REF_NAME}
