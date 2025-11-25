@@ -1,6 +1,0 @@
-description: Unique identifier of a resource type.
-in: query
-name: resource_type_id
-schema:
-  type: string
-x-cast-to: int32

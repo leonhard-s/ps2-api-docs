@@ -1,0 +1,17 @@
+type: object
+description: >
+  Experience type, such as "Kill Assist".
+  
+
+  Groups experience ticks. For example, "Kill Assist - Flash" and "Kill Player Assist" are both part of the "KillAssist" award type.        
+x-tags: ["Fundamentals"]
+properties:
+  description:
+    description: Internal name/description of the experience type (e.g. "Revive", "KillAssist")
+    type: string
+  experience_award_type_id:
+    description: Unique ID of the collection
+    type: string
+    x-cast-to: int32
+examples:
+  - $ref: "../../examples/experience_award_type.json"

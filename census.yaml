@@ -1,0 +1,725 @@
+openapi: "3.1.0"
+info:
+  contact:
+    name: Project Repository
+    url: https://github.com/leonhard-s/ps2-api-docs
+  description: |
+    ## Introduction
+
+    The Daybreak Game Company Census API provides access to game and character data for the MMOFPS
+    [PlanetSide 2](https://www.planetside2.com/home), allowing players to develop their own apps,
+    stat trackers, websites, and community integrations.
+
+    ### Disclaimer
+
+    This documentation is written and maintained by thirdparty developers from the PlanetSide 2
+    community and has no affiliation with Daybreak Game Company, Rogue Planet Games, or the
+    PlanetSide 2 developer team. If you encounter any errors or have other feedback, please do
+    consider [opening an issue](https://github.com/leonhard-s/ps2-api-docs/issues) or contributing
+    to the project directly.
+
+    ### Warranty
+
+    Note that all game data and files made available by Daybreak Game Company are provided "AS IS"
+    and come with absolutely no warranty. For legal details, please refer to the API's
+    [warranty disclaimer](https://census.daybreakgames.com/#warranty) and the Census API [terms of
+    service](https://census.daybreakgames.com#services-api-policy).
+
+    Furthermore, the OpenAPI spec provided here is released without any warranty either, though its
+    source code is made available without restriction at the repository link listed in the contact
+    section of this API specification.
+
+    ### Service IDs
+
+    The Census API uses service IDs to monitor and identify API consumers. These IDs are free and
+    can be requested via [this form](https://census.daybreakgames.com/#devSignup). The process is
+    automatic and you should receive your service ID confirmation email within a few minutes to
+    hours.
+
+    Using the API without a service ID is possible and synonymous with using the default service ID of
+    `s:example`. However, this service ID is rate-limited to 10 requests per minute and IP address,
+    so it is highly recommended to apply for your own service IDs early on.
+
+    ### Further Reading
+
+    This documentation is intended to be a reference for the API endpoints, parameters, and JSON
+    schemas. For a more general introduction to the Census API, examples, and more detailed
+    information on the `c:join` system, please refer to one of the following resources:
+
+      - [Census API Documentation](https://census.daybreakgames.com/): Official documentation by
+        Daybreak Game Company
+      - [PlanetSide 2 API Tracker](https://github.com/cooltrain7/Planetside-2-API-Tracker): A
+        community-maintained issue tracker and developer resource
+      - [Census API Primer](https://github.com/leonhard-s/auraxium/wiki/Census-API-Primer): A
+        rewritten version of the official documentation with additional details and examples
+      - [PS2 Query GUI](https://eating-coleslaw.github.io/ps2-visual-query/): A GUI web page for
+        querying the Planetside 2 API
+      - [Zone ID Tutorial](https://github.com/cooltrain7/Planetside-2-API-Tracker/wiki/Tutorial:-Zone-IDs):
+        Introduction for working with dynamic zones, such as those spawned for Outfit Wars
+      - [Sanctuary.Census](https://github.com/PS2Sanctuary/Sanctuary.Census): A community endpoint
+        replicating and extending the Census ReST API
+
+    ### Event Streaming Service
+
+    The PlanetSide 2 API also provides a real-time event streaming service using the WebSocket
+    protocol. This service is not covered by this documentation yet, but you can find more
+    information at the following links:
+
+      - [PS2 Event Streaming](https://census.daybreakgames.com/#what-is-websocket): Official
+        documentation by Daybreak Game Company
+      - [Nanite Systems ESS](https://github.com/nanite-systems/stream): A replacement endpoint for
+        the ESS designed to provide more reliability
+  license:
+    name: Proprietary
+    url: https://census.daybreakgames.com#services-api-policy
+  termsOfService: https://census.daybreakgames.com#services-api-policy
+  title: PlanetSide 2 API
+  version: "0.8"
+  x-logo:
+    altText: Census API Docs Logo
+    url: https://raw.githubusercontent.com/leonhard-s/ps2-api-docs/main/docs/logo-redoc.png
+servers:
+  - description: >
+      Casual-use Daybreak Games endpoint, throttled to 10 requests per minute and IP address
+    url: https://census.daybreakgames.com
+  - description: Production Daybreak Games endpoint, with service ID
+    url: https://census.daybreakgames.com/{serviceId}
+    variables:
+      serviceId:
+        default: s:example
+  - description: >
+      Unofficial Community endpoint for static data.
+
+      Visit the project URL for details.
+    url: https://census.lithafalcon.cc
+security: []
+paths:
+  /count/{game}/{collection}:
+    get:
+      description: >
+        Lists the number of entries in the given collection.
+
+        This endpoint can be used to determine an appropriate pagination strategy based on the size
+        of the result list, but it is especially useful for API introspection as it still supports
+        query strings, including search modifiers and certain query commands.
+
+        For example, the `weapon` collection may be queried with `c:has=heat_capacity` to get the
+        number of heat-based weapons. Similarly, comparing the `c:has=<field>` count of a
+        collection with the total can be used to guess whether a field is optional or used.
+
+        Client code should be ready to receive negative values for this endpoint, which is used as
+        the error state for this endpoint, rather than the explicit error payloads sent for the
+        `/get/` query verb.
+      operationId: count_generic
+      parameters:
+        - $ref: ./parameters/gameParam.yaml
+        - $ref: ./parameters/collectionParam.yaml
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                error:
+                  value:
+                    $ref: ./examples/count_error.json
+                success:
+                  value:
+                    $ref: ./examples/count_success.json
+              schema:
+                properties:
+                  count:
+                    type: integer
+                type: object
+          description: OK
+        4XX:
+          description: >
+            Returns `{"count": -1}` on error
+      summary: /count/{game}/{collection}
+      tags:
+        - API Endpoints
+  /get/{game}:
+    get:
+      description: >
+        Top-level endpoint for retrieving all available collections for the current game namespace.
+
+        In addition to the name of the collection, this endpoint may also list the number of
+        entries in the associated table via the `count` field. Note that the `hidden` field is of
+        no practical use to API consumers as it is always `false`.
+
+        The keys in the `resolve_list` field are permittable values for the `c:resolve=<field>`
+        query command. Note that resolve lists precede the `c:join=<...>` subquery system and has
+        been largely superceded by it. For this reason, the resolved fields are not included in any
+        example payload or other parts of this documentation.
+
+        Curious fact: this is one of the few endpoints in the PlanetSide 2 API that returns native
+        JSON types (`boolean`, `number`, etc.) in its response, without wrapping them in a string.
+      operationId: get_collections
+      parameters:
+        - $ref: ./parameters/gameParam.yaml
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                character:
+                  value:
+                    $ref: ./examples/datatype_character.json
+                characterOnlineStatus:
+                  value:
+                    $ref: ./examples/datatype_characterOnlineStatus.json
+                outfitMember:
+                  value:
+                    $ref: ./examples/datatype_outfitMember.json
+              schema:
+                properties:
+                  datatype_list:
+                    items:
+                      $ref: ./components/schemas/datatype.yaml
+                    type: array
+                  returned:
+                    type: integer
+                type: object
+          description: OK
+        4XX:
+          description: The Census API does not use HTTP status codes to indicate errors.
+      summary: /get/{game}
+      tags:
+        - API Endpoints
+  /get/{game}/{collection}:
+    get:
+      description: >
+        This endpoint documents generic parameters available on most collections.
+
+
+        For details on collection-specific variables and response schemas, please see the
+        respective collection's query entry.
+      operationId: get_generic
+      parameters:
+        - $ref: ./parameters/gameParam.yaml
+        - $ref: ./parameters/collectionParam.yaml
+        - $ref: ./parameters/qcShowParam.yaml
+        - $ref: ./parameters/qcHideParam.yaml
+        - $ref: ./parameters/qcSortParam.yaml
+        - $ref: ./parameters/qcHasParam.yaml
+        - $ref: ./parameters/qcResolveParam.yaml
+        - $ref: ./parameters/qcCaseParam.yaml
+        - $ref: ./parameters/qcLimitParam.yaml
+        - $ref: ./parameters/qcLimitPerDbParam.yaml
+        - $ref: ./parameters/qcStartParam.yaml
+        - $ref: ./parameters/qcIncludeNullParam.yaml
+        - $ref: ./parameters/qcLangParam.yaml
+        - $ref: ./parameters/qcJoinParam.yaml
+        - $ref: ./parameters/qcTreeParam.yaml
+        - $ref: ./parameters/qcTimingParam.yaml
+        - $ref: ./parameters/qcExactMatchFirstParam.yaml
+        - $ref: ./parameters/qcDistinctParam.yaml
+        - $ref: ./parameters/qcRetryParam.yaml
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                characterInfo:
+                  value:
+                    $ref: ./examples/collection_characterInfo.json
+                factionTags:
+                  value:
+                    $ref: ./examples/collection_factionTags.json
+                mapFacilities:
+                  value:
+                    $ref: ./examples/collection_mapFacilities.json
+              schema:
+                properties:
+                  count:
+                    minimum: 0
+                    type: integer
+                    summary: Only included if `c:distinct` is used.
+                  returned:
+                    minimum: 0
+                    type: integer
+                  timing:
+                    properties:
+                      total-ms:
+                        type: integer
+                    summary: Only included if `c:timing` is enabled.
+                    type: object
+                patternProperties:
+                  "^(\\w+_list)$":
+                    items: {}
+                    type: array
+                type: object
+          description: OK
+        4XX:
+          description: The Census API does not use HTTP status codes to indicate errors.
+      summary: /get/{game}/{collection}
+      tags:
+        - API Endpoints
+components:
+  schemas:
+    localized_string:
+      $ref: "./components/schemas/localized_string.yaml"
+    ability:
+      $ref: "./components/schemas/ability.yaml"
+    ability_type:
+      $ref: "./components/schemas/ability_type.yaml"
+    achievement:
+      $ref: "./components/schemas/achievement.yaml"
+    armor_facing:
+      $ref: "./components/schemas/armor_facing.yaml"
+    armor_info:
+      $ref: "./components/schemas/armor_info.yaml"
+    character:
+      $ref: "./components/schemas/character.yaml"
+    character_name:
+      $ref: "./components/schemas/character_name.yaml"
+    characters_achievement:
+      $ref: "./components/schemas/characters_achievement.yaml"
+    characters_currency:
+      $ref: "./components/schemas/characters_currency.yaml"
+    characters_directive_objective:
+      $ref: "./components/schemas/characters_directive_objective.yaml"
+    characters_directive_tier:
+      $ref: "./components/schemas/characters_directive_tier.yaml"
+    characters_directive_tree:
+      $ref: "./components/schemas/characters_directive_tree.yaml"
+    characters_directive:
+      $ref: "./components/schemas/characters_directive.yaml"
+    characters_event:
+      $ref: "./components/schemas/characters_event.yaml"
+    characters_event_grouped:
+      $ref: "./components/schemas/characters_event_grouped.yaml"
+    characters_friend:
+      $ref: "./components/schemas/characters_friend.yaml"
+    characters_item:
+      $ref: "./components/schemas/characters_item.yaml"
+    characters_leaderboard:
+      $ref: "./components/schemas/characters_leaderboard.yaml"
+    characters_online_status:
+      $ref: "./components/schemas/characters_online_status.yaml"
+    characters_skill:
+      $ref: "./components/schemas/characters_skill.yaml"
+    characters_stat:
+      $ref: "./components/schemas/characters_stat.yaml"
+    characters_stat_by_faction:
+      $ref: "./components/schemas/characters_stat_by_faction.yaml"
+    characters_stat_history:
+      $ref: "./components/schemas/characters_stat_history.yaml"
+    characters_weapon_stat:
+      $ref: "./components/schemas/characters_weapon_stat.yaml"
+    characters_weapon_stat_by_faction:
+      $ref: "./components/schemas/characters_weapon_stat_by_faction.yaml"
+    characters_world:
+      $ref: "./components/schemas/characters_world.yaml"
+    currency:
+      $ref: "./components/schemas/currency.yaml"
+    directive:
+      $ref: "./components/schemas/directive.yaml"
+    directive_tier:
+      $ref: "./components/schemas/directive_tier.yaml"
+    directive_tree:
+      $ref: "./components/schemas/directive_tree.yaml"
+    directive_tree_category:
+      $ref: "./components/schemas/directive_tree_category.yaml"
+    effect:
+      $ref: "./components/schemas/effect.yaml"
+    effect_type:
+      $ref: "./components/schemas/effect_type.yaml"
+    empire_scores:
+      $ref: "./components/schemas/empire_scores.yaml"
+    event:
+      $ref: "./components/schemas/event.yaml"
+    experience:
+      $ref: "./components/schemas/experience.yaml"
+    experience_award_type:
+      $ref: "./components/schemas/experience_award_type.yaml"
+    experience_rank:
+      $ref: "./components/schemas/experience_rank.yaml"
+    facility_link:
+      $ref: "./components/schemas/facility_link.yaml"
+    facility_type:
+      $ref: "./components/schemas/facility_type.yaml"
+    faction:
+      $ref: "./components/schemas/faction.yaml"
+    fire_group_to_fire_mode:
+      $ref: "./components/schemas/fire_group_to_fire_mode.yaml"
+    fire_group:
+      $ref: "./components/schemas/fire_group.yaml"
+    fire_mode:
+      $ref: "./components/schemas/fire_mode.yaml"
+    fire_mode_2:
+      $ref: "./components/schemas/fire_mode_2.yaml"
+    fire_mode_to_projectile:
+      $ref: "./components/schemas/fire_mode_to_projectile.yaml"
+    fire_mode_type:
+      $ref: "./components/schemas/fire_mode_type.yaml"
+    fish:
+      $ref: "./components/schemas/fish.yaml"
+    image:
+      $ref: "./components/schemas/image.yaml"
+    image_set:
+      $ref: "./components/schemas/image_set.yaml"
+    image_set_default:
+      $ref: "./components/schemas/image_set_default.yaml"
+    item:
+      $ref: "./components/schemas/item.yaml"
+    item_attachment:
+      $ref: "./components/schemas/item_attachment.yaml"
+    item_category:
+      $ref: "./components/schemas/item_category.yaml"
+    item_profile:
+      $ref: "./components/schemas/item_profile.yaml"
+    item_to_weapon:
+      $ref: "./components/schemas/item_to_weapon.yaml"
+    item_type:
+      $ref: "./components/schemas/item_type.yaml"
+    leaderboard:
+      $ref: "./components/schemas/leaderboard.yaml"
+    loadout:
+      $ref: "./components/schemas/loadout.yaml"
+    map:
+      $ref: "./components/schemas/map.yaml"
+    map_hex:
+      $ref: "./components/schemas/map_hex.yaml"
+    map_region:
+      $ref: "./components/schemas/map_region.yaml"
+    marketing_bundle:
+      $ref: "./components/schemas/marketing_bundle.yaml"
+    marketing_bundle_item:
+      $ref: "./components/schemas/marketing_bundle_item.yaml"
+    marketing_bundle_with_1_item:
+      $ref: "./components/schemas/marketing_bundle_with_1_item.yaml"
+    metagame_event:
+      $ref: "./components/schemas/metagame_event.yaml"
+    metagame_event_state:
+      $ref: "./components/schemas/metagame_event_state.yaml"
+    objective:
+      $ref: "./components/schemas/objective.yaml"
+    objective_set_to_objective:
+      $ref: "./components/schemas/objective_set_to_objective.yaml"
+    objective_type:
+      $ref: "./components/schemas/objective_type.yaml"
+    outfit:
+      $ref: "./components/schemas/outfit.yaml"
+    outfit_member:
+      $ref: "./components/schemas/outfit_member.yaml"
+    outfit_member_extended:
+      $ref: "./components/schemas/outfit_member_extended.yaml"
+    outfit_rank:
+      $ref: "./components/schemas/outfit_rank.yaml"
+    player_state_group:
+      $ref: "./components/schemas/player_state_group.yaml"
+    player_state_group_2:
+      $ref: "./components/schemas/player_state_group_2.yaml"
+    player_state:
+      $ref: "./components/schemas/player_state.yaml"
+    profile:
+      $ref: "./components/schemas/profile.yaml"
+    profile_2:
+      $ref: "./components/schemas/profile_2.yaml"
+    profile_armor_map:
+      $ref: "./components/schemas/profile_armor_map.yaml"
+    profile_resist_map:
+      $ref: "./components/schemas/profile_resist_map.yaml"
+    projectile:
+      $ref: "./components/schemas/projectile.yaml"
+    projectile_flight_type:
+      $ref: "./components/schemas/projectile_flight_type.yaml"
+    region:
+      $ref: "./components/schemas/region.yaml"
+    resist_info:
+      $ref: "./components/schemas/resist_info.yaml"
+    resist_type:
+      $ref: "./components/schemas/resist_type.yaml"
+    resource_type:
+      $ref: "./components/schemas/resource_type.yaml"
+    reward:
+      $ref: "./components/schemas/reward.yaml"
+    reward_group_to_reward:
+      $ref: "./components/schemas/reward_group_to_reward.yaml"
+    reward_set_to_reward_group:
+      $ref: "./components/schemas/reward_set_to_reward_group.yaml"
+    reward_type:
+      $ref: "./components/schemas/reward_type.yaml"
+    single_character_by_id:
+      $ref: "./components/schemas/single_character_by_id.yaml"
+    skill:
+      $ref: "./components/schemas/skill.yaml"
+    skill_category:
+      $ref: "./components/schemas/skill_category.yaml"
+    skill_line:
+      $ref: "./components/schemas/skill_line.yaml"
+    skill_set:
+      $ref: "./components/schemas/skill_set.yaml"
+    target_type:
+      $ref: "./components/schemas/target_type.yaml"
+    title:
+      $ref: "./components/schemas/title.yaml"
+    vehicle:
+      $ref: "./components/schemas/vehicle.yaml"
+    vehicle_attachment:
+      $ref: "./components/schemas/vehicle_attachment.yaml"
+    vehicle_faction:
+      $ref: "./components/schemas/vehicle_faction.yaml"
+    vehicle_skill_set:
+      $ref: "./components/schemas/vehicle_skill_set.yaml"
+    weapon:
+      $ref: "./components/schemas/weapon.yaml"
+    weapon_ammo_slot:
+      $ref: "./components/schemas/weapon_ammo_slot.yaml"
+    weapon_datasheet:
+      $ref: "./components/schemas/weapon_datasheet.yaml"
+    weapon_to_attachment:
+      $ref: "./components/schemas/weapon_to_attachment.yaml"
+    weapon_to_fire_group:
+      $ref: "./components/schemas/weapon_to_fire_group.yaml"
+    world:
+      $ref: "./components/schemas/world.yaml"
+    world_event:
+      $ref: "./components/schemas/world_event.yaml"
+    world_stat_history:
+      $ref: "./components/schemas/world_stat_history.yaml"
+    zone:
+      $ref: "./components/schemas/zone.yaml"
+    zone_effect:
+      $ref: "./components/schemas/zone_effect.yaml"
+    zone_effect_type:
+      $ref: "./components/schemas/zone_effect_type.yaml"
+tags: 
+  - name: API Endpoints
+    description: >
+      This section covers basic Census API usage and parameters.
+
+      The parameters and response schemas documented here are applicable to all Daybreak Games
+      titles supported by the Census API. All other sections cover specific groups of collections
+      or endpoints that are unique to the PlanetSide 2 namespaces `ps2:v2`, `ps2ps4us:v2`, and
+      `ps2ps4eu:v2`.
+
+      ### Query Commands
+
+      The query commands documented for the generic endpoints are generally universal and can be
+      used with any of the game-specific collections listed in this documentation. However, they
+      are not listed explicitly for brevity.
+
+      ### Parameters
+
+      Most endpoints support filtering and sorting by any field in the response schema. As with
+      query parameters, this is not modelled in the documentation to improve readability and focus
+      on the most important parameters.
+
+      ### Exceptions and Limitations
+
+      Some collections are special and have restrictions on the query commands and parameters that
+      may be used with them. These are documented in the ["Special" PS2
+      Collections](https://census.daybreakgames.com/#special-collections) section of the Census API
+      documentation.
+  - name: Character Information
+    description: >
+      This section covers player names, directives, and other character-specific collections.
+
+      ### Name Lookups
+
+      Names in PlanetSide 2 are case-insensitive. When looking up a character by name, it is
+      preferable to transform your search query to a lowercase string and compare it against the
+      `character.name.first_lower` field. Case-insensitive queries against the `character.name`
+      field are supported, but may be significantly slower.
+
+      ### Character Collection Quirks
+
+      The records of the `character` collection are distributed across multiple separate databases,
+      each of which handles the same query individually before their results are combined. This
+      means that extra care must be taken when using pagination to step through the data, or when
+      expecting a specific ordering of results: each database will sort its results independently,
+      leading to out-of-order results in the final response received by the client.
+
+
+      When ordering is critical, consider using the `c:limitPerDB` query command to fetch the
+      desired number of entries for each database individually and performing a final sort on the
+      client side. This will ensure that the final ordering is consistent, but it will also lead
+      to 20x as much data received, much of which may not be required.
+
+      ### Single Character By ID
+
+      When retrieving a lot of character data, it may be preferable to use the
+      `single_character_by_id` endpoint instead of individual joins and queries to the relevant
+      endpoints. It is an aggregation of owned items and most player statistics, and is generally
+      much faster to retrieve than the equivalent data from the individual endpoints.
+
+
+      Note that this endpoint has no support for filtering or result field selection, resulting in
+      payloads of several hundred kilobytes in size.
+  - name: Fundamentals
+    description: >
+      Core collections related to the PlanetSide 2 game world.
+
+      ### Worlds
+
+      A "world" in the PlanetSide 2 API refers to a game server. The `world` collection contains
+      the IDs and names of the game servers.
+
+
+      Basic server status (locked vs. online) is available as part of the `world` collection. There
+      is a `global/game_server_status` endpoint that can be used to retrieve more detailed status
+      of game servers:
+
+      > **Warning:** This endpoint is not explicitly advertised in the Census API documentation and
+        is not covered by the Census API's terms of service. Use at your own risk.
+
+      https://census.daybreakgames.com/get/global/game_server_status?game_code=ps2&c:limit=10
+
+      ### Static vs. Dynamic Zones
+
+      The `zone` collection contains the IDs of all persistent zones, such as the main continents
+      and VR training instances.
+
+
+      When monitoring player activity via the ESS API, you will encounter additional zone IDs that
+      are not present in the `zone` collection. These are temporary or instanced zones that are
+      created and destroyed dynamically, such as tutorial or Sanctuary, or the various Desolation
+      or Nexus instances during Outfit Wars.
+
+
+      For details on interpreting dynamic zone IDs, refer to the [Zone ID
+      Tutorial](https://github.com/cooltrain7/Planetside-2-API-Tracker/wiki/Tutorial:-Zone-IDs) on
+      GitHub.
+  - name: Outfits
+    description: >
+      Collections related to PlanetSide 2 outfits and outfit membership.
+
+      ### Outfit Lookup
+
+      As with the `character` collection, outfit names and tags are case-insensitive. When looking
+      up an outfit by name or tag, it is preferable to transform your search query to a lowercase
+      string and compare it against the `outfit.name_lower` or `outfit.alias_lower` fields.
+      Case-insensitive queries against the `outfit.name` or `outfit.alias` fields are possible, but
+      may be significantly slower.
+
+      ### Outfit Resources
+
+      The outfit resources introduced in the Escalation update are not available via the Census
+      API.
+
+      However, some information about outfit resource use can be obtained through the
+      `GuildBankWithdrawal` context of the `ItemAdded` event. For additional information, please
+      refer to the [Outfit Assets](https://github.com/cooltrain7/Planetside-2-API-Tracker/wiki/Stream:Outfit-Assets)
+      section of the [PS2 API Tracker Wiki](https://github.com/cooltrain7/Planetside-2-API-Tracker/wiki).
+  - name: Statistics
+    description: >
+      Player statistics such as kills, deaths, and score.
+
+      Refer to the `stat_name` parameter of the individual endpoints for a list of supported
+      statistics. Note that some `stat_name` values are only available in combination with certain
+      profiles.
+
+      > **Note:** There is no accuracy statistic in any of these collections, it must be calculated
+      from the `fire_count / hit_count` ratio. Likewise, headshot ratio must be calculated from
+      `weapon_headshots / weapon_kills`. Also consider sanitizing the kills by not considering
+      vehicles for the headshot ratio: `weapon_headshots / (weapon_kills - weapon_vehicle_kills)`.
+
+      ### Collection Overview
+
+      The following overview provides a brief description of the different endpoints and what kinds
+      of statistics they contain:
+
+      - `characters_stat`: Play time, total deaths, medals, and score
+      - `characters_weapon_stat`: Damage given and taken, kills and deaths per faction
+      - `character_stat_history`: Select statistics over time, essentially those found in the
+        in-game stat history tab
+      - `characters_weapon_stat`: Per-weapon accuracy, score, and playtime
+      - `characters_weapon_stat_by_faction`: Per-weapon kills, deaths, and headshots
+
+      > **Note:** Consider using the `single_character_by_id` endpoint when working with individual
+      players' statistics. It contains most of the statistics available in the individual endpoints
+      and is generally much faster to retrieve.
+  - name: Leaderboards
+    description: >
+      Leaderboard entries for the top 10'000 players in each leaderboard category.
+
+
+      The `leaderboard` endpoint covers the top 10'000 players, while the `characters_leaderboard`
+      endpoint allows retrieving the position of a specific character within a leaderboard.
+
+
+      Note that the `characters_leaderboard` endpoint will not return a result if the character is
+      not in the top 10'000 for the given leaderboard category. In this case, the endpoint will
+      return an empty result set.
+  - name: Items & Bundles
+    description: >
+      Collections related to item enumeration and availability, as well as the in-game depot.
+
+
+      This section covers the item side of weapons and attachments: their names, descriptions,
+      icons, and type. Weapon information, attachment modifiers, and firing mechanics are covered
+      separately.
+
+      ### Depot Bundles
+
+      The `marketing_bundle` and `marketing_bundle_with_1_item` collections contain information
+      about all bundles that have been available in the depot, including ones that are currently
+      unavailable, such as seasonal bundles.
+
+
+      There is no endpoint for retrieving current bundle availability, sales, or discounts.
+  - name: Weapons & Firing Mechanics
+    description: >
+      Weapon and firing mechanics data, including fire modes, projectiles, and ammo types.
+
+      > **Note:** Be wary of the `weapon_datasheet` collection as it has a tendency to contain
+        outdated or incorrect information. It is therefore considered deprecated by this
+        documentation, and suggestions for alternatives for the information it provides are
+        provided as part of its schema documentation.
+
+      This documentation only provides an overview of the available data and basic information on
+      how to interpret it. If you are looking for a comprehensive write-up on weapon mechanics and
+      hidden stats, please refer to the following resources instead:
+
+      - [Weapon Mechanics | PlanetSide 2 Wiki](https://planetside.fandom.com/wiki/Weapon_Mechanics)
+      - [PlanetSide 2 Weapon Mechanics | CMDRCyrious.com](http://cmdrcyrious.com/planetside2/weapons/weapon-mechanics/)
+  - name: Vehicles
+    description: >
+      Collections related to vehicles, attachments, and vehicle certifications.
+  - name: Damage Calculation
+    description: >
+      Armor values and resistances used for damage calculation.
+  - name: Effects & Abilities
+    description: >
+      Collections related to abilities, passive effects, and character resources.
+
+      ### Abilities
+
+      Abilities are cast by players or deployable entities such as shield emitters. Many abilities
+      consume resources while they are active, such as the Heavy Assault's overshield energy or
+      the Infiltrators "Cloaker Juice".
+
+      ### Effects vs. Zone Effects
+
+      The `effect` collection primarily covers one-off effects tied to weapon fire modes, such as
+      direct damage, splash damage, and EMP effects.
+
+
+      The `zone_effect` collection handles persistent effects, such as the passive (de)buffs
+      applied by weapon attachments and implants.
+  - name: Skills, Certifications, and A.S.P.
+    description: >
+      Collections related to certification trees and A.S.P. skills.
+
+      Note that A.S.P. tokens are treated as a currency and have been injected into the response
+      for the `characters_currency` collection, next to Nanites.      
+  - name: Progression
+    description: >
+      Collections related to in-game progression, such as directives, medals, and service ribbons.
+  - name: Map & Regions
+    description: >
+      Collections related to map rendering, such as facility types, lattice
+      links, and map hexes.
+  - name: Image Assets
+    description: >
+      Image sets, icons and other assets available through the static `/files/`
+      path.  
+  - name: Metagame & Alerts
+    description: >
+      Endpoints related to in-game alerts, outfit wars, and other large-scale
+      events.
+  - name: Event History
+    description: >
+      ReST interface for in-game events, such as kills, deaths, and battle
+      rank gains.

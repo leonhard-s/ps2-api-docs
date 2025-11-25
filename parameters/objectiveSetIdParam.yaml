@@ -1,6 +1,0 @@
-description: Unique identifier of an objective set.
-in: query
-name: objective_set_id
-schema:
-  type: string
-x-cast-to: int32

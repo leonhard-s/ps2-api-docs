@@ -1,0 +1,118 @@
+type: object
+description: >
+  A weapon-based effect acting on players or vehicles.
+
+
+  Weapon-based effects include direct and indirect damage effects, tactical grenade impacts,
+  as well as pseudo-weapons such as the Medic tool or Engineer repair tool. For world-based
+  effects, weapon attachments and buffs, see the `zone_effect` collection instead.
+
+
+  See the `effect_type` collection for a list of available effect types.
+x-tags: ["Effects & Abilities"]
+properties:
+  ability_id:
+    description: Unique identifier of the ability associated with this effect.
+    type: string
+    x-cast-to: int32
+    x-reference-to: ability.ability_id
+  ability_type_id:
+    description: Unique identifier of the ability type associated with this effect.
+    type: string
+    x-cast-to: int32
+    x-reference-to: ability_type.ability_type_id
+  duration_seconds:
+    description: Duration over which the effect is applied, in seconds.
+    type: string
+    x-cast-to: int32
+  effect_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  effect_type_id:
+    description: Unique identifier of the effect's type.
+    type: string
+    x-cast-to: int32
+    x-reference-to: effect_type.effect_type_id
+  is_drain:
+    description: Unkown. Appears to control the resource drain of toggled abilities
+      (e.g. Heavy Overshield) while they are active, among other things.
+    type: string
+    x-cast-to: boolean
+  param1:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param10:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param11:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param12:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param13:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param2:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param3:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param4:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param5:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param6:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param7:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param8:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param9:
+    description: Generic numeric parameter. See the corresponding `ps2/effect_type`
+      for details.
+    type: string
+    x-cast-to: float
+  resist_type_id:
+    description: Resist type used to calculate damage resistance for this effect.
+    type: string
+    x-cast-to: int32
+    x-reference-to: resist_type.resist_type_id
+  target_type_id:
+    description: Target type used to select targets for this effect.
+    type: string
+    x-cast-to: int32
+    x-reference-to: target_type.target_type_id
+examples:
+  - $ref: "../../examples/effect.json"

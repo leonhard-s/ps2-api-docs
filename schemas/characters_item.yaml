@@ -1,9 +1,0 @@
-allOf:
-  - $ref: "characters_item_core.yaml"
-  - properties:
-      character_id:
-        description: Character side of the relationship.
-        type: string
-        x-cast-to: int64
-        x-reference-to: character.character_id
-    type: object

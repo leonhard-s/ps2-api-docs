@@ -1,0 +1,33 @@
+type: object
+description: >
+  Ammo slot data for a given weapon, including the clip size, reserve ammo capacity, and
+  resupply behaviour.
+x-tags: ["Weapons & Firing Mechanics"]
+properties:
+  capacity:
+    description: Reserve ammunition capacity of this ammo slot.
+    type: string
+    x-cast-to: int32
+  clip_size:
+    description: The number of bullets in a single clip of this ammo slot.
+    type: string
+    x-cast-to: int32
+  refill_ammo_delay_ms:
+    description: Extra cooldown between ammo resupply ticks. The base ammo resupply
+      tick rate is not available on the API.
+    type: string
+    x-cast-to: int32
+  refill_ammo_rate:
+    description: Number of bullets refilled per ammo resupply tick.
+    type: string
+    x-cast-to: int32
+  weapon_id:
+    description: ID of the weapon to which this ammo slot belongs.
+    type: string
+    x-cast-to: int32
+  weapon_slot_index:
+    description: Index of the slot in the weapon's ammo slot list.
+    type: string
+    x-cast-to: int32
+examples:
+  - $ref: "../../examples/weapon_ammo_slot.json"

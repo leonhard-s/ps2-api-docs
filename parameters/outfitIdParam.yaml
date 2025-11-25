@@ -1,6 +1,0 @@
-description: Unique identifier of an outfit.
-in: query
-name: outfit_id
-schema:
-  type: string
-x-cast-to: int64

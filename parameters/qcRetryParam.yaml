@@ -5,9 +5,6 @@ examples:
   noRetry:
     summary: Retry disabled
     value: 'false'
-  notSet:
-    summary: Unset
-    value: ''
 in: query
 name: c:retry
 schema:

@@ -1,0 +1,67 @@
+type: object
+description: >
+  Original endpoint for infantry profiles. This covers the names and loadout IDs connected to
+  a given profile, and additionally provides movement speed multiplier information for
+  infantry classes. Note that the key fields are also provided by `profile_2`, which not only
+  covers infantry but also vehicles, deployables, and other entities.
+x-tags: ["Fundamentals"]
+properties:
+  backpedal_speed_modifier:
+    description: The modifier applied to the movement speed when walking backwards.
+    type: string
+    x-cast-to: float
+  crouch_speed_modifier:
+    description: The modifier applied to the movement speed when crouching.
+    type: string
+    x-cast-to: float
+  description:
+    $ref: "localized_string.yaml"
+    description: Localized description of the profile
+  faction_id:
+    description: The `ps2/faction` of the profile.
+    type: string
+    x-cast-to: int32
+    x-reference-to: faction.faction_id
+  image_id:
+    description: The `ps2/image` of the profile.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  image_path:
+    description: Relative path to the default image of the profile.
+    type: string
+  image_set_id:
+    description: The `ps2/image_set` of the profile.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+  movement_speed:
+    description: The base movement speed of the profile.
+    type: string
+    x-cast-to: float
+  name:
+    $ref: "localized_string.yaml"
+    description: Localized name of the profile
+  profile_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  profile_type_description:
+    description: Internal description for the associated `profile_type_id`.
+    type: string
+  profile_type_id:
+    description:
+      The type of the profile. There is no public `profile_type` collection,
+      this is an internal ID.
+    type: string
+    x-cast-to: int32
+  sprint_speed_modifier:
+    description: The modifier applied to the movement speed when sprinting.
+    type: string
+    x-cast-to: float
+  strafe_speed_modifier:
+    description: The modifier applied to the movement speed when strafing.
+    type: string
+    x-cast-to: float
+examples:
+  - $ref: "../../examples/profile.json"

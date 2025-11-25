@@ -1,0 +1,17 @@
+type: object
+description: >
+  Maps vehicles to the factions that have access to them.
+x-tags: ["Vehicles"]
+properties:
+  faction_id:
+    description: ID of the faction that can use the vehicle.
+    type: string
+    x-cast-to: int32
+    x-reference-to: faction.faction_id
+  vehicle_id:
+    description: Unique ID of the vehicle.
+    type: string
+    x-cast-to: int32
+    x-reference-to: vehicle.vehicle_id
+examples:
+  - $ref: "../../examples/vehicle_faction.json"

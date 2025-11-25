@@ -1,0 +1,21 @@
+type: object
+description: >
+  Maps items (including name, availability) to its respective weapon object.
+
+
+  Not all items have a weapon objects, though some filtering can be done through the
+  `item_type_id` field, with the ID 26 representing most weapon types.
+x-tags: ["Items & Bundles"]
+properties:
+  item_id:
+    description: Item side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: item.item_id
+  weapon_id:
+    description: Weapon side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: weapon.weapon_id
+examples:
+  - $ref: "../../examples/item_to_weapon.json"

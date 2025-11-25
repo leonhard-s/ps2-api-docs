@@ -1,0 +1,55 @@
+type: object
+description: >
+  A completion tier within a directive tree.
+
+
+  This covers the individual stages of directive tiers, such as "Combat Medic: Adept".
+x-tags: ["Progression"]
+properties:
+  completion_count:
+    description:
+      The number of directives within this tier that must be completed
+      to complete it.
+    type: string
+    x-cast-to: int32
+  directive_points:
+    description:
+      The amount of directive points awarded for completing this directive
+      tier.
+    type: string
+    x-cast-to: int32
+  directive_tier_id:
+    description: Unique ID of the directive tier.
+    type: string
+    x-cast-to: int32
+  directive_tree_id:
+    description: Unique ID of the directive tree this tier belongs to.
+    type: string
+    x-cast-to: int32
+    x-reference-to: directive_tree.directive_tree_id
+  image_id:
+    description: Unique ID of the default image.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  image_path:
+    description: Path to the default image.
+    type: string
+    x-reference-to: image.image_path
+  image_set_id:
+    description: Unique ID of the image set for this directive tier.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+  name:
+    $ref: "localized_string.yaml"
+    description: The name of the directive tier.
+  reward_set_id:
+    description:
+      Unique ID of the reward set awarded for completing this directive
+      tier.
+    type: string
+    x-cast-to: int32
+    x-reference-to: reward_set.reward_set_id
+examples:
+  - $ref: "../../examples/directive_tier.json"

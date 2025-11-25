@@ -1,0 +1,24 @@
+type: object
+description: >
+  Items in PlanetSide 2 represent many different things beyond weapons, such as implant
+  packs, cosmetics, or name change tokens. They are also used as internal helpers when
+  pulling outfit resources, spawning vehicles, or interacting with certain terminals.
+
+
+  This collection lists the different item types, though many of these are never encountered
+  on the API.
+x-tags: ["Items & Bundles"]
+properties:
+  code:
+    description: Internal code of the item type.
+    type: string
+  item_type_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+    x-reference-to: item_type.item_type_id
+  name:
+    description: Display name of the item type.
+    type: string
+examples:
+  - $ref: "../../examples/item_type.json"

@@ -1,0 +1,30 @@
+type: object
+description: >
+  Resolves lattice links between facilities.
+
+
+  There is no reliable difference between `facility_id_a` and `facility_id_b`; the former
+  tends to be closer to the respective warpgate, but this does not hold true for all links.
+  It is recommended to treat the link direction as arbitrary.
+x-tags: ["Map & Regions"]
+properties:
+  description:
+    description: The description of the facility link.
+    type: string
+  facility_id_a:
+    description: The ID of the first facility in the link.
+    type: string
+    x-cast-to: int32
+    x-reference-to: map_region.facility_id
+  facility_id_b:
+    description: The ID of the second facility in the link.
+    type: string
+    x-cast-to: int32
+    x-reference-to: map_region.facility_id
+  zone_id:
+    description: The ID of the zone in which the facility link is located.
+    type: string
+    x-cast-to: int32
+    x-reference-to: zone.zone_id
+examples:
+  - $ref: "../../examples/facility_link.json"

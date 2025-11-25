@@ -1,9 +1,0 @@
-properties:
-  name:
-    $ref: "localized_string.yaml"
-    description: Display name of the title.
-  title_id:
-    description: Unique ID of the collection.
-    type: string
-    x-cast-to: int32
-type: object

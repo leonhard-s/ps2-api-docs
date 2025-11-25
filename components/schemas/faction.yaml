@@ -1,0 +1,47 @@
+type: object
+description: >
+  Endpoint for playable and non-playable factions.
+
+  In addition to the main empires VS, NC, and TR, this also lists NS Operatives as the 4th
+  faction. Note that a faction ID of zero does not denote an empty value. Instead, it
+  represents a special "None" faction, which is used for common pool equipment, and also
+  serves as a sentinel value for disabled facilities in the context of facility ownership.
+
+  When working with the Event Streaming Service (ESS), you will encounter a `team_id` field
+  in certain payloads. This is used to control friend-or-foe status for NSO players, or for
+  the opposing factions in Outfit Wars.
+
+  During regular gameplay (i.e. outside of Outfit Wars), it is generally safe to treat a team
+  ID as a faction. However, care should be taken during Outfit Wars matches as the team IDs
+  will map to the Alpha and Omega team instead.
+x-tags: ["Fundamentals"]
+properties:
+  code_tag:
+    description: The unique tag of the faction, or `None` for common-pool nanite systems.
+    type: string
+  faction_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  image_id:
+    description: The `ps2/image` of the faction.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  image_path:
+    description: Relative path to the default image of the faction.
+    type: string
+  image_set_id:
+    description: The `ps2/image_set` of the faction.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+  name:
+    $ref: "localized_string.yaml"
+    description: Canonical name of the faction
+  user_selectable:
+    description: Whether this faction is playable or reserved for NPCs.
+    type: string
+    x-cast-to: boolean
+examples:
+  - $ref: "../../examples/faction.json"

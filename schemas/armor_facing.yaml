@@ -1,9 +1,0 @@
-properties:
-  armor_facing_id:
-    description: Unique ID of the collection.
-    type: string
-    x-cast-to: int32
-  description:
-    description: Description of the armor facing direction.
-    type: string
-type: object

@@ -1,0 +1,17 @@
+type: object
+description: >
+  Selectable titles for a character.
+
+
+  Note that title IDs of 0 signify no title being selected.
+x-tags: ["Character Information"]
+properties:
+  name:
+    $ref: "localized_string.yaml"
+    description: Display name of the title.
+  title_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+examples:
+  - $ref: "../../examples/title.json"

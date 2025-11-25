@@ -1,0 +1,49 @@
+type: object
+description: >
+  An individual directive that may be completed by a player.
+
+
+  This collection lists an individual directive, such as "100 Roadkills".
+x-tags: ["Progression"]
+properties:
+  description:
+    $ref: "localized_string.yaml"
+    description: The description of the directive.
+  directive_id:
+    description: Unique ID of the directive.
+    type: string
+    x-cast-to: int32
+  directive_tier_id:
+    description: Unique ID of the directive tier.
+    type: string
+    x-cast-to: int32
+    x-reference-to: directive_tier.directive_tier_id
+  directive_tree_id:
+    description: Unique ID of the directive tree.
+    type: string
+    x-cast-to: int32
+    x-reference-to: directive_tree.directive_tree_id
+  image_id:
+    description: Unique ID of the defaultimage.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  image_path:
+    description: Path to the default image.
+    type: string
+    x-reference-to: image.image_path
+  image_set_id:
+    description: Unique ID of the image set for this directive.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+  name:
+    $ref: "localized_string.yaml"
+    description: The name of the directive.
+  objective_set_id:
+    description: Unique ID of the objective set.
+    type: string
+    x-cast-to: int32
+    x-reference-to: objective_set.objective_set_id
+examples:
+  - $ref: "../../examples/directive.json"

@@ -2,9 +2,6 @@ description: Adds the top-level field `timing` containing timing information to 
   result object. For queries using `c:resolve` or `c:join`, this also contains information
   about the subqueries.
 examples:
-  notSet:
-    summary: Unset
-    value: ''
   timing:
     summary: With timing info
     value: 'true'

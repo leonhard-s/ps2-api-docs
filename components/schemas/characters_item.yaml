@@ -1,0 +1,13 @@
+description: >
+  Query the items of a character. Note that this collection no longer lists account-wide item
+  unlocks as this served as a fingerprint to identify players across multiple characters.
+x-tags: ["Character Information"]
+allOf:
+  - $ref: "characters_item_core.yaml"
+  - properties:
+      character_id:
+        description: Character side of the relationship.
+        type: string
+        x-cast-to: int64
+        x-reference-to: character.character_id
+    type: object

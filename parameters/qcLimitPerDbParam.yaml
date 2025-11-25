@@ -6,9 +6,6 @@ examples:
   five:
     summary: 1 Result per DB
     value: 1
-  notSet:
-    summary: Unset
-    value: ''
 in: query
 name: c:limitPerDB
 schema:

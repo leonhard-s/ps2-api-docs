@@ -1,0 +1,23 @@
+type: object
+description: >
+  A game server for a given region and game.
+x-tags: ["Fundamentals"]
+properties:
+  description:
+    $ref: "localized_string.yaml"
+    description: Localized description set for some worlds. Unused for most.
+  name:
+    $ref: "localized_string.yaml"
+    description: Localized name of the world
+  state:
+    description: Current availability of the game server.
+    enum:
+      - online
+      - locked
+    type: string
+  world_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+examples:
+  - $ref: "../../examples/world.json"

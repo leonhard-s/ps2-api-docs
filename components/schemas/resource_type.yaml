@@ -1,0 +1,15 @@
+type: object
+description: >
+  Resources consumed by abilities such as the Heavy Overshield.
+x-tags: ["Abilities & Effects"]
+properties:
+  description:
+    description: Description of the resource type.
+    type: string
+    x-cast-to: string
+  resource_type_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+examples:
+  - $ref: "../../examples/resource_type.json"

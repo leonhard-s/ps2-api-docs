@@ -4,9 +4,6 @@ examples:
   five:
     summary: Enabled
     value: 'true'
-  notSet:
-    summary: Unset
-    value: ''
 in: query
 name: c:includeNull
 schema:

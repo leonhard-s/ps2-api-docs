@@ -1,0 +1,40 @@
+type: object
+description: >
+  A tree of directives sorted into multiple tiers.
+
+
+  This collection represents the individual paths within a directive category, such as
+  "Light Assault" or "Combat Medic".
+x-tags: ["Progression"]
+properties:
+  description:
+    $ref: "localized_string.yaml"
+    description: The description of the directive tree.
+  directive_tree_category_id:
+    description: Unique ID of the category of the directive tree.
+    type: string
+    x-cast-to: int32
+    x-reference-to: directive_tree_category.directive_tree_category_id
+  directive_tree_id:
+    description: Unique ID of the directive tree.
+    type: string
+    x-cast-to: int32
+  image_id:
+    description: Unique ID of the default image.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  image_path:
+    description: Path to the default image.
+    type: string
+    x-reference-to: image.image_path
+  image_set_id:
+    description: Unique ID of the image set for this directive tree.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+  name:
+    $ref: "localized_string.yaml"
+    description: The name of the directive tree.
+examples:
+  - $ref: "../../examples/directive_tree.json"

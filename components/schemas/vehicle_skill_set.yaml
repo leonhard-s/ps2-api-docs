@@ -1,0 +1,29 @@
+type: object
+description: >
+  Maps vehicles to the skill sets that they use.
+
+
+  Note that this relationship is expressed for each faction separetly.
+x-tags: ["Vehicles"]
+properties:
+  display_index:
+    description: Index used to sort the skill sets in the vehicle's UI.
+    type: string
+    x-cast-to: int32
+  faction_id:
+    description: ID of the faction that can use the skill set.
+    type: string
+    x-cast-to: int32
+    x-reference-to: faction.faction_id
+  skill_set_id:
+    description: Skill set side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: skill_set.skill_set_id
+  vehicle_id:
+    description: Vehicle side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: vehicle.vehicle_id
+examples:
+  - $ref: "../../examples/vehicle_skill_set.json"

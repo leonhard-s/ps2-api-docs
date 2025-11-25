@@ -1,0 +1,26 @@
+type: object
+description: >
+  Maps weapons to the attachments available to them. This table is largely synonymous with
+  `item_attachment`, but contains additional entries that may not resolve to a valid item.
+
+
+  For this reason, it is recommended to base any attachment queries on the
+  `item_attachment` endpoint instead.
+x-tags: ["Weapons & Firing Mechanics"]
+properties:
+  attachment_id:
+    description: Internal ID of this mapping. Does not map to any other field in the
+      API.
+    type: string
+    x-cast-to: int32
+  item_id:
+    description: Unique ID of the attachment item.
+    type: string
+    x-cast-to: int32
+  weapon_group_id:
+    description: ID of the weapon group to which this item can be attached.
+    type: string
+    x-cast-to: int32
+examples:
+  - $ref: "../../examples/weapon_to_attachment.json"
+

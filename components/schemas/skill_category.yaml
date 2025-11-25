@@ -1,0 +1,49 @@
+type: object
+description: >
+  Skill categories represent a grouping of skills.
+
+
+  They usually group skills by the loadout slots for which they provide items, such as
+  "Passive Systems" or "Ability Slot". On weapons, they generally represent a given
+  attachment slot.
+x-tags: ["Certifications & A.S.P."]
+properties:
+  description:
+    $ref: "localized_string.yaml"
+    description: Description of the skill category.
+  image_id:
+    description: Image associated with this skill category.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  image_path:
+    description: Path to the image associated with this skill category.
+    type: string
+    x-cast-to: string
+  image_set_id:
+    description: Image set associated with this skill category.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+  name:
+    $ref: "localized_string.yaml"
+    description: Display name of the skill category.
+  skill_category_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  skill_points:
+    description: Unused.
+    type: string
+    x-cast-to: int32
+  skill_set_id:
+    description: Skill set containing this skill category.
+    type: string
+    x-cast-to: int32
+    x-reference-to: skill_set.skill_set_id
+  skill_set_index:
+    description: Position of this skill category within its skill set.
+    type: string
+    x-cast-to: int32
+examples:
+  - $ref: "../../examples/skill_category.json"

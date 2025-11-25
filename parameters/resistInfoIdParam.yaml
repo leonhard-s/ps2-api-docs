@@ -1,6 +1,0 @@
-description: Unique identifier of a resist info entry.
-in: query
-name: resist_info_id
-schema:
-  type: string
-x-cast-to: int32

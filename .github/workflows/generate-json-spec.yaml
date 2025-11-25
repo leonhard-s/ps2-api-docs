@@ -13,7 +13,7 @@ jobs:
           python -m pip install -r ./tools/requirements.txt
       - name: Generate JSON spec
         run: |
-          python ./tools/generate_json_spec.py ./openapi.yaml ./generated/openapi.json
+          python ./tools/yaml_to_json.py
       - name: Configure Git
         run: |
           git config --local user.email "action@github.com"

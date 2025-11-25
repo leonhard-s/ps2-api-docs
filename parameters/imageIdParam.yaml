@@ -1,6 +1,0 @@
-description: Unique identifier of an image.
-in: query
-name: image_id
-schema:
-  type: string
-x-cast-to: int32

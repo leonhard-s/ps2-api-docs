@@ -1,6 +1,0 @@
-description: Unique identifier of a reward type.
-in: query
-name: reward_type_id
-schema:
-  type: string
-x-cast-to: int32

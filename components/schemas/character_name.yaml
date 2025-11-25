@@ -1,0 +1,21 @@
+type: object
+description: >
+  Optimized, low-bandwidth endpoint for character name resolution.
+x-tags: ["Character Information"]
+properties:
+  character_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int64
+  name:
+    description: >
+      Name of the character. Use the `first_lower` field for faster case-insensitive
+      searches without needing to set `c:case=false`.
+    properties:
+      first:
+        type: string
+      first_lower:
+        type: string
+    type: object
+examples:
+  - $ref: "../../examples/character_name_higby.json"

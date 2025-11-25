@@ -1,0 +1,220 @@
+description: >
+  ReST endpoint for retrieving historical character event data.
+
+
+  Like `event`, but allows querying by character. The `character_id` and `id` fields are
+  interchangeable.
+x-tags: ["Event History"]
+oneOf:
+  - allOf:
+      - $ref: "event_base.yaml"
+      - properties:
+          battle_rank:
+            description: The new battle rank of the character.
+            type: string
+            x-cast-to: int32
+          event_type:
+            description:
+              Type of event. This generally matches the event types used by
+              the ESS.
+            type: string
+            x-cast-to: int32
+        type: object
+  - allOf:
+      - $ref: "event_base.yaml"
+      - properties:
+          context:
+            description: Identifier string for the conext in which the item was granted.
+            type: string
+          event_type:
+            description:
+              Type of event. This generally matches the event types used by
+              the ESS.
+            type: string
+            x-cast-to: int32
+          item_count:
+            description: The number of items that were added.
+            type: string
+            x-cast-to: int32
+          item_id:
+            description: The ID of the item that was added.
+            type: string
+            x-cast-to: int32
+            x-reference-to: item.item_id
+        type: object
+  - allOf:
+      - $ref: "event_base.yaml"
+      - properties:
+          achievement_id:
+            description: The ID of the achievement that was granted.
+            type: string
+            x-cast-to: int32
+            x-reference-to: achievement.achievement_id
+          event_type:
+            description:
+              Type of event. This generally matches the event types used by
+              the ESS.
+            type: string
+            x-cast-to: int32
+        type: object
+  - allOf:
+      - $ref: "event_base.yaml"
+      - properties:
+          attacker_character_id:
+            description: The ID of the character that performed the kill.
+            type: string
+            x-cast-to: int64
+            x-reference-to: character.character_id
+          attacker_fire_mode_id:
+            description: The ID of the fire mode that was used to perform the kill.
+            type: string
+            x-cast-to: int32
+            x-reference-to: fire_mode_2.fire_mode_id
+          attacker_vehicle_id:
+            description:
+              The ID of the vehicle that the attacker was in when they performed
+              the kill.
+            type: string
+            x-cast-to: int32
+            x-reference-to: vehicle.vehicle_id
+          attacker_weapon_id:
+            description:
+              The ID of the item that was used to perform the kill. Note that
+              this is an item ID and not the weapon ID, despite the name.
+            type: string
+            x-cast-to: int32
+            x-reference-to: item.item_id
+          character_loadout_id:
+            description: The ID of the loadout that the dying player was playing as.
+            type: string
+            x-cast-to: int32
+            x-reference-to: loadout.loadout_id
+          is_critical:
+            description:
+              Whether or not the kill was a critical hit. Not currently used
+              by PlanetSide 2.
+            type: string
+            x-cast-to: bool
+          is_headshot:
+            description: Whether or not the kill was a headshot.
+            type: string
+            x-cast-to: bool
+        type: object
+  - allOf:
+      - $ref: "event_base.yaml"
+      - properties:
+          attacker_character_id:
+            description: The ID of the character that performed the kill.
+            type: string
+            x-cast-to: int64
+            x-reference-to: character.character_id
+          attacker_fire_mode_id:
+            description: The ID of the fire mode that was used to perform the kill.
+            type: string
+            x-cast-to: int32
+            x-reference-to: fire_mode_2.fire_mode_id
+          attacker_vehicle_id:
+            description:
+              The ID of the vehicle that the attacker was in when they performed
+              the kill.
+            type: string
+            x-cast-to: int32
+            x-reference-to: vehicle.vehicle_id
+          attacker_weapon_id:
+            description:
+              The ID of the item that was used to perform the kill. Note that
+              this is an item ID and not the weapon ID, despite the name.
+            type: string
+            x-cast-to: int32
+            x-reference-to: item.item_id
+          character_loadout_id:
+            description: The ID of the loadout that the dying player was playing as.
+            type: string
+            x-cast-to: int32
+            x-reference-to: loadout.loadout_id
+          is_critical:
+            description:
+              Whether or not the kill was a critical hit. Not currently used
+              by PlanetSide 2.
+            type: string
+            x-cast-to: bool
+          is_headshot:
+            description: Whether or not the kill was a headshot.
+            type: string
+            x-cast-to: bool
+        type: object
+  - allOf:
+      - $ref: "event_base.yaml"
+      - properties:
+          attacker_character_id:
+            description: Unique ID of the player that destroyed the vehicle.
+            type: string
+            x-cast-to: int64
+            x-reference-to: character.character_id
+          attacker_loadout_id:
+            description: The ID of the loadout that the attacker was playing as.
+            type: string
+            x-cast-to: int32
+            x-reference-to: loadout.loadout_id
+          attacker_player_guid:
+            description: Unknown. Generally identical to `attacker_character_id`.
+            type: string
+            x-cast-to: int64
+          attacker_vehicle_id:
+            description:
+              The ID of the vehicle that the attacker was in when they destroyed
+              the vehicle.
+            type: string
+            x-cast-to: int32
+            x-reference-to: vehicle.vehicle_id
+          attacker_weapon_id:
+            description:
+              The ID of the item that was used to destroy the vehicle. Note
+              that this is an item ID and not the weapon ID, despite the name.
+            type: string
+            x-cast-to: int32
+            x-reference-to: item.item_id
+          event_type:
+            description:
+              Type of event. This generally matches the event types used by
+              the ESS.
+            type: string
+            x-cast-to: int32
+          faction_id:
+            description: The ID of the faction that the vehicle belonged to.
+            type: string
+            x-cast-to: int32
+            x-reference-to: faction.faction_id
+          projectile_id:
+            description:
+              Unknown. The IDs provided in this field are not available on
+              the `projectile` endpoint.
+            type: string
+            x-cast-to: int32
+          vehicle_definition_id:
+            description: The ID of the vehicle that was destroyed.
+            type: string
+            x-cast-to: int32
+            x-reference-to: vehicle.vehicle_id
+        type: object
+  - allOf:
+      - $ref: "event_base.yaml"
+      - properties:
+          event_type:
+            description:
+              Type of event. This generally matches the event types used by
+              the ESS.
+            type: string
+          facility_id:
+            description: The ID of the facility that was captured.
+            type: string
+            x-cast-to: int32
+            x-reference-to: facility.facility_id
+          outfit_id:
+            description:
+              The ID of the outfit that captured the facility, or the facility
+              that owns the facility at the time of defence.
+            type: string
+            x-cast-to: int64
+            x-reference-to: outfit.outfit_id
+        type: object

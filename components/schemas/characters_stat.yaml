@@ -1,0 +1,16 @@
+description: |
+  Basic statistics endpoint for character-wide and class-specific
+  statistics.
+
+  - `stat_name` lists the name of the stat
+  - `profile` represents the class, with a value of 0 denoting a character-wide value
+x-tags: ["Statistics"]
+allOf:
+  - $ref: "characters_stat_core.yaml"
+  - properties:
+      character_id:
+        description: Character for which the stats are being returned.
+        type: string
+        x-cast-to: int64
+        x-reference-to: character.character_id
+    type: object

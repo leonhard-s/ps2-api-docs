@@ -1,0 +1,20 @@
+description: |
+  Statistics endpoint for historical character stats. In addition to the `all_time` and
+  `one_life_max` keys, values are also provided for the last 31 days (`day`), 12 months
+  (`month`), or 13 weeks (`week`).
+
+  - `stat_name` lists the name of the stat
+  - `profile` represents the class, with a value of 0 denoting a character-wide value
+x-tags: ["Statistics"]
+allOf:
+  - $ref: "characters_stat_core.yaml"
+  - properties:
+      character_id:
+        description: Character for which the stats are being returned.
+        type: string
+        x-cast-to: int64
+        x-reference-to: character.character_id
+      stat_name:
+        description: Name of the stat being returned.
+        type: string
+    type: object

@@ -1,0 +1,24 @@
+type: object
+description: >
+  List the skills unlocked by a character.
+
+  This is used for both certifications and A.S.P. skills.
+properties:
+  character_id:
+    description: Character side of the relationship.
+    type: string
+    x-cast-to: int64
+    x-reference-to: character.character_id
+  last_save:
+    description: UTC timestamp of when the underlying table was updated.
+    type: string
+  last_save_date:
+    description: Human-readable version of `last_save`.
+    type: string
+  skill_id:
+    description: Skill side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: skill.skill_id
+examples:
+  - $ref: "../../examples/characters_skill.json"

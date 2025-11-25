@@ -1,0 +1,19 @@
+type: object
+description: >
+  Enumerates the target types used to categorize the applicable targets of a weapon or
+  effect.
+
+
+  This is effectively a constant mapping and can be cached aggressively.
+x-tags: ["Damage Calculation"]
+properties:
+  description:
+    description: Description of the target type.
+    type: string
+    x-cast-to: string
+  target_type_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+examples:
+  - $ref: "../../examples/target_type.json"

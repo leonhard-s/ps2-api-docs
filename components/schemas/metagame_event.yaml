@@ -1,0 +1,33 @@
+type: object
+description: >
+  In-game alerts and other alert-like events.
+
+
+  Note that this endpoint lists alert types that may not be currently enabled in-game, such as
+  the 'Aerial Anomaly' and 'MAXimum Pressure' alert types.
+x-tags: ["Metagame & Alerts"]
+properties:
+  description:
+    $ref: "localized_string.yaml"
+    description: Description of the alert.
+  duration_minutes:
+    description: Duration of the event in minutes.
+    type: string
+    x-cast-to: int32
+  experience_bonus:
+    description: The experience bonus applied during the alert in percent.
+    type: string
+    x-cast-to: int32
+  metagame_event_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  name:
+    $ref: "localized_string.yaml"
+    description: Display name of the alert.
+  type:
+    description: The type of the alert.
+    type: string
+    x-cast-to: int32
+examples:
+  - $ref: "../../examples/metagame_event.json"

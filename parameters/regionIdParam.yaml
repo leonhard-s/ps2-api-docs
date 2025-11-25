@@ -1,6 +1,0 @@
-description: Unique identifier of a region.
-in: query
-name: region_id
-schema:
-  type: string
-x-cast-to: int32

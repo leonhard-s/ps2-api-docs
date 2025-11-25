@@ -1,6 +1,0 @@
-description: Unique identifier of a metagame event.
-in: query
-name: metagame_event_id
-schema:
-  type: string
-x-cast-to: int32

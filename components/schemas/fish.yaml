@@ -1,0 +1,46 @@
+type: object
+x-tags: ["Fundamentals"]
+properties:
+  fish_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  name:
+    $ref: "localized_string.yaml"
+    description: Display name of the fish.
+  rarity:
+    type: string
+    x-cast-to: int32
+    description: Rarity level of the fish (1 through 3).
+  size:
+    type: string
+    x-cast-to: int32
+    description: Size category of the fish (1 through 4).
+  average_size:
+    description: Average size of the fish.
+    type: string
+    x-cast-to: int32
+  size_deviation:
+    description: Standard deviation of the fish size in centimeters.
+    type: string
+    x-cast-to: int32
+  scan_point_amount:
+    description: Number of points awarded for scanning this fish.
+    type: string
+    x-cast-to: int32
+  cost:
+    description: Price of the fish.
+    type: string
+    x-cast-to: int32
+  image_id:
+    description: The `ps2/image` of the item's display icon.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image.image_id
+  image_set_id:
+    description: The `ps2/image_set` of the item's display icon.
+    type: string
+    x-cast-to: int32
+    x-reference-to: image_set.image_set_id
+examples:
+  - $ref: "../../examples/fish.json"

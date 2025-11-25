@@ -1,0 +1,22 @@
+type: object
+description: >
+  Lists the different types of experience ticks.
+x-tags: ["Fundamentals"]
+properties:
+  description:
+    description: Description of the experience type.
+    type: string
+  experience_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  xp:
+    description: The amount of XP granted by this experience type.
+    type: string
+    x-cast-to: int32
+  experience_award_type_id:
+    description: Unique ID of th experience award type of this experience tick.
+    type: string
+    x-cast-to: int32
+examples:
+  - $ref: "../../examples/experience.json"

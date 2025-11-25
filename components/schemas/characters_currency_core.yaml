@@ -1,0 +1,18 @@
+type: object
+properties:
+  currency_id:
+    description: Unique ID of the currency being returned.
+    type: string
+    x-cast-to: int32
+    x-reference-to: currency.currency_id
+  currency_name:
+    description: Internal name of the currency being returned.
+    type: string
+  prestige_currency:
+    description: Number of A.S.P. tokens available to the character.
+    type: string
+    x-cast-to: int32
+  quantity:
+    description: Amount of currency the character owns.
+    type: string
+    x-cast-to: int32

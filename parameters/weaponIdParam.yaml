@@ -1,6 +1,0 @@
-description: Unique identifier of a weapon.
-in: query
-name: weapon_id
-schema:
-  type: string
-x-cast-to: int32

@@ -1,6 +1,0 @@
-description: Unique ID of the experience type.
-in: query
-name: experience_id
-schema:
-  type: string
-x-cast-to: int32

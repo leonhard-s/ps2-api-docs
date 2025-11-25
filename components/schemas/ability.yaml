@@ -1,0 +1,154 @@
+type: object
+description: >
+  An ability triggered by a character or vehicle.
+
+
+  Abilities in the API are more generic than the in-game abilities and also cover other
+  mechanics such as scopes and consumables.
+
+
+  The generic fields `paramX` and `stringX` are documented in the the corresponding
+  `ability_type` entry."
+x-tags: ["Effects & Abilities"]
+properties:
+  ability_id:
+    description: Unique identifier of the ability.
+    type: string
+    x-cast-to: int32
+  ability_type_id:
+    description: Unique identifier of the ability's type.
+    type: string
+    x-cast-to: int32
+    x-reference-to: ps2/ability_type
+  distance_max:
+    description: Maximum cast range of the ability for targeted abilities, such as
+      the Nano-Repair Kit (aka. repair gun).
+    type: string
+    x-cast-to: float
+  expire_msec:
+    description: Duration of the ability in milliseconds.
+    type: string
+    x-cast-to: int32
+  first_use_delay_msec:
+    description: Initial delay before the ability can be used for the first time in
+      milliseconds.
+    type: string
+    x-cast-to: int32
+  flag_toggle:
+    description: Whether the ability is toggled.
+    type: string
+    x-cast-to: boolean
+  next_use_delay_msec:
+    description: Reuse cooldown for toggled abilities (mostly cloaks) in milliseconds
+    type: string
+    x-cast-to: int32
+  param1:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param10:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param11:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param12:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param13:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param14:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param2:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param3:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param4:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param5:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param6:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param7:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param8:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  param9:
+    description: Generic numeric parameter. See the corresponding `ps2/ability_type`
+      for details.
+    type: string
+    x-cast-to: float
+  radius_max:
+    description: Effect radius of the ability, such as the Nano Regen Device (aka.
+      AoE heal).
+    type: string
+    x-cast-to: float
+  resource_cost_per_msec:
+    description: Cost per millisecond for keeping the ability active.
+    type: string
+    x-cast-to: float
+  resource_first_cost:
+    description: Initial cost for activating the ability.
+    type: string
+    x-cast-to: float
+  resource_type_id:
+    description: Unique identifier of the resource type consumed by the ability.
+    type: string
+    x-cast-to: int32
+    x-reference-to: ps2/resource_type
+  reuse_delay_msec:
+    description: Ability cooldown in milliseconds.
+    type: string
+    x-cast-to: int32
+  string1:
+    description: Generic string field. See the corresponding `ps2/ability_type` for
+      details.
+    type: string
+  string2:
+    description: Generic string field. See the corresponding `ps2/ability_type` for
+      details.
+    type: string
+  string3:
+    description: Generic string field. See the corresponding `ps2/ability_type` for
+      details.
+    type: string
+  string4:
+    description: Generic string field. See the corresponding `ps2/ability_type` for
+      details.
+    type: string
+examples:
+  - $ref: "../../examples/ability.json"

@@ -1,0 +1,18 @@
+type: object
+description: >
+  Query the online status of a character
+x-tags: ["Character Information"]
+properties:
+  character_id:
+    description: Character for which the online status is being returned.
+    type: string
+    x-cast-to: int64
+    x-reference-to: character.character_id
+  online_status:
+    description: Whether the character is currently online. Offline players will return
+      0, otherwise the value will be the `world_id` of the `ps2/world` they are online
+      on.
+    type: string
+    x-cast-to: int32
+examples:
+  - $ref: "../../examples/characters_online_status.json"

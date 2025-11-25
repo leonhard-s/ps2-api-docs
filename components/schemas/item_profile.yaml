@@ -1,0 +1,17 @@
+type: object
+description: >
+  Maps items to profiles (classes/vehicles) that have access to them.
+x-tags: ["Items & Bundles"]
+properties:
+  item_id:
+    description: Item side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: item.item_id
+  profile_id:
+    description: Profile side of the relationship.
+    type: string
+    x-cast-to: int32
+    x-reference-to: profile_2.profile_id
+examples:
+  - $ref: "../../examples/item_profile.json"

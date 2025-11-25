@@ -1,6 +1,0 @@
-description: Unique ID of an ability type.
-in: query
-name: ability_type_id
-schema:
-  type: string
-x-cast-to: int32

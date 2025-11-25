@@ -1,0 +1,91 @@
+description: >
+  ReST endpoint for retrieving historical world events.
+
+
+  The `world_id` and `id` fields are interchangeable.
+x-tags: ["Event History"]
+anyOf:
+  - allOf:
+      - $ref: "event_base.yaml"
+      - properties:
+          duration_held:
+            description: Time in seconds since the facility was held by the previous owner.
+            type: string
+            x-cast-to: int32
+          event_type:
+            description:
+              Type of event. This generally matches the event types used by
+              the ESS.
+            type: string
+            x-cast-to: int32
+          facility_id:
+            description: The ID of the facility that was captured.
+            type: string
+            x-cast-to: int32
+            x-reference-to: map_region.facility_id
+          faction_new:
+            description: The faction that owns the facility after the capture.
+            type: string
+            x-cast-to: int32
+            x-reference-to: faction.faction_id
+          faction_old:
+            description: The faction that owned the facility before the capture.
+            type: string
+            x-cast-to: int32
+            x-reference-to: faction.faction_id
+          objective_id:
+            description: Unknown.
+            type: string
+            x-cast-to: int32
+            x-reference-to: objective.objective_id
+          outfit_id:
+            description: Unique ID of the outfit that captured the facility.
+            type: string
+            x-cast-to: int64
+            x-reference-to: outfit.outfit_id
+        type: object
+  - allOf:
+      - $ref: "event_base.yaml"
+      - properties:
+          event_type:
+            description:
+              Type of event. This generally matches the event types used by
+              the ESS.
+            type: string
+            x-cast-to: int32
+          experience_bonus:
+            description: Experience bonus for the winning faction.
+            type: string
+            x-cast-to: int32
+          faction_nc:
+            description: Current scope of the NC faction.
+            type: string
+            x-cast-to: float
+          faction_tr:
+            description: Current scope of the TR faction.
+            type: string
+            x-cast-to: float
+          faction_vs:
+            description: Current scope of the VS faction.
+            type: string
+            x-cast-to: float
+          instance_id:
+            description:
+              Unique ID of this particular instance of the metagame event.
+              Only unique per server restart, not globally.
+            type: string
+            x-cast-to: int32
+          metagame_event_id:
+            description: Unique ID of the metagame event.
+            type: string
+            x-cast-to: int32
+            x-reference-to: metagame_event.metagame_event_id
+          metagame_event_state:
+            description: Unique ID of the metagame event state.
+            type: string
+            x-cast-to: int32
+          metagame_event_state_name:
+            description: Name of the metagame event state.
+            type: string
+            x-cast-to: int32
+        type: object

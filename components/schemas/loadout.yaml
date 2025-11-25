@@ -1,0 +1,27 @@
+type: object
+description: >
+  Enumeration of the six infantry classes for each playable faction.
+
+
+  Note that this is different from the in-game loadouts, which are not available on the API.
+x-tags: ["Fundamentals"]
+properties:
+  code_name:
+    description: Internal name of the loadout.
+    type: string
+  faction_id:
+    description: The `ps2/faction` of the loadout.
+    type: string
+    x-cast-to: int32
+    x-reference-to: faction.faction_id
+  loadout_id:
+    description: Unique ID of the collection.
+    type: string
+    x-cast-to: int32
+  profile_id:
+    description: The `ps2/profile_2` matching this loadout.
+    type: string
+    x-cast-to: int32
+    x-reference-to: profile_2.profile_id
+examples:
+  - $ref: "../../examples/loadout.json"

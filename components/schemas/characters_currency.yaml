@@ -1,0 +1,18 @@
+type: object
+description: >
+  Lists the currencies owned by a character.
+
+
+  Note that this table has been inconsistent since the introduction of the A.S.P. system: in
+  addition to the currency value (Nanites), an extra `prestige_currency` key has been added,
+  rather than being its own currency.
+x-tags: ["Character Information"]
+allOf:
+  - $ref: "characters_currency_core.yaml"
+  - properties:
+      character_id:
+        description: Character for which the currency list is being returned.
+        type: string
+        x-cast-to: int64
+        x-reference-to: character.character_id
+    type: object

@@ -1,6 +1,0 @@
-description: Unique identifier of a skill line.
-in: query
-name: skill_line_id
-schema:
-  type: string
-x-cast-to: int32

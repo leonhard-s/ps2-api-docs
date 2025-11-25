@@ -1,6 +1,0 @@
-description: Unique identifier of a target type.
-in: query
-name: target_type_id
-schema:
-  type: string
-x-cast-to: int32

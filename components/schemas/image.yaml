@@ -1,0 +1,22 @@
+type: object
+description: >
+  Lists individual image assets available on the API.
+
+
+  Note that historically, not all assets listed here are available on the image endpoint, and
+  not all available assets are listed.
+x-tags: ["Image Assets"]
+properties:
+  description:
+    description: Description of the asset.
+    type: string
+  image_id:
+    description: Unique ID of the image.
+    type: string
+    x-cast-to: int32
+  path:
+    description: Relative to the image asset. Prefix the base URL to the Census API
+      endpoint to create a fully-qualified URL.
+    type: string
+examples:
+  - $ref: "../../examples/image.json"
