@@ -8,7 +8,7 @@ description: >
 
 
   The generic fields `paramX` and `stringX` are documented in the the corresponding
-  `ability_type` entry."
+  `ability_type` entry.
 x-tags: ["Effects & Abilities"]
 properties:
   ability_id:
