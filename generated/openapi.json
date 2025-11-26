@@ -1064,7 +1064,7 @@
       },
       "ability": {
         "type": "object",
-        "description": "An ability triggered by a character or vehicle.\n\nAbilities in the API are more generic than the in-game abilities and also cover other mechanics such as scopes and consumables.\n\nThe generic fields `paramX` and `stringX` are documented in the the corresponding `ability_type` entry.\"\n",
+        "description": "An ability triggered by a character or vehicle.\n\nAbilities in the API are more generic than the in-game abilities and also cover other mechanics such as scopes and consumables.\n\nThe generic fields `paramX` and `stringX` are documented in the the corresponding `ability_type` entry.\n",
         "x-tags": [
           "Effects & Abilities"
         ],
