@@ -10,11 +10,9 @@ properties:
   count_max:
     description: Documentation for this parameter on rewards of this type.
     type: string
-    x-cast-to: int32
   count_min:
     description: Documentation for this parameter on rewards of this type.
     type: string
-    x-cast-to: int32
   description:
     description: Description of the reward type.
     type: string
@@ -37,5 +35,8 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
+required:
+  - reward_type_id
+  - description
 examples: 
   - $ref: "../../examples/reward_type.json"

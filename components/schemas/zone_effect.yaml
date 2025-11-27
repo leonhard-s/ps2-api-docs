@@ -107,5 +107,9 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: zone_effect_type.zone_effect_type_id
+required:
+  - zone_effect_id
+  - zone_effect_type_id
+  - ability_id
 examples:
   - $ref: "../../examples/zone_effect.json"

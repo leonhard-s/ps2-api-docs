@@ -150,5 +150,8 @@ properties:
     description: Generic string field. See the corresponding `ps2/ability_type` for
       details.
     type: string
+required:
+  - ability_id
+  - ability_type_id
 examples:
   - $ref: "../../examples/ability.json"

@@ -23,5 +23,9 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: profile_2.profile_id
+required:
+  - loadout_id
+  - profile_id
+  - faction_id
 examples:
   - $ref: "../../examples/loadout.json"

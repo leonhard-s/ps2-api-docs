@@ -11,5 +11,8 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
+required:
+  - resist_type_id
+  - description
 examples: 
   - $ref: "../../examples/resist_type.json"

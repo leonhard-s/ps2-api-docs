@@ -59,5 +59,9 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: vehicle.vehicle_id
+required:
+  - vehicle_attachment_id
+  - vehicle_id
+  - faction_id
 examples:
   - $ref: "../../examples/vehicle_attachment.json"

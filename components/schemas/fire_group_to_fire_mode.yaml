@@ -15,3 +15,7 @@ properties:
     type: string
     x-cast-to: int32
 type: object
+required:
+  - fire_group_id
+  - fire_mode_id
+  - fire_mode_index

@@ -29,5 +29,8 @@ properties:
     description: Index of the slot in the weapon's ammo slot list.
     type: string
     x-cast-to: int32
+required:
+  - weapon_id
+  - weapon_slot_index
 examples:
   - $ref: "../../examples/weapon_ammo_slot.json"

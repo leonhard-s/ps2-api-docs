@@ -18,5 +18,7 @@ properties:
     description: Relative to the image asset. Prefix the base URL to the Census API
       endpoint to create a fully-qualified URL.
     type: string
+required:
+  - image_id
 examples:
   - $ref: "../../examples/image.json"

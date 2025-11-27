@@ -21,3 +21,6 @@ properties:
     - KILL
     - DEATH
     type: string
+required:
+  - character_id
+  - table_type

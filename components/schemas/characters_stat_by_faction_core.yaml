@@ -74,3 +74,6 @@ properties:
     type: string
     x-cast-to: int32
 type: object
+required:
+  - profile_id
+  - stat_name

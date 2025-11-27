@@ -53,5 +53,8 @@ properties:
   param9:
     description: Documentation for this numeric parameter on effects of this type.
     type: string
+required:
+  - effect_type_id
+  - description
 examples:
   - $ref: "../../examples/effect_type.json"

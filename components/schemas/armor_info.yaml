@@ -23,5 +23,8 @@ properties:
   description:
     description: Description of the armor info entry.
     type: string
+required:
+  - armor_info_id
+  - armor_facing_id
 examples:
   - $ref: "../../examples/armor_info.json"

@@ -30,5 +30,8 @@ properties:
       to scale.
     type: string
     x-cast-to: int32
+required:
+  - image_id
+  - image_set_id
 examples:
   - $ref: "../../examples/image_set_default.json"

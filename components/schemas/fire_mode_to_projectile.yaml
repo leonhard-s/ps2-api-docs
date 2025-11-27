@@ -13,5 +13,8 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: projectile.projectile_id
+required:
+  - fire_mode_id
+  - projectile_id
 examples:
   - $ref: "../../examples/fire_mode_to_projectile.json"

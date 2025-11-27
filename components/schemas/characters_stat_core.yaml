@@ -34,3 +34,5 @@ properties:
     type: string
     x-cast-to: int32
 type: object
+required:
+  - stat_name

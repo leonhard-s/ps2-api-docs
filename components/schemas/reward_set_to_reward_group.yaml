@@ -15,5 +15,8 @@ properties:
     description: Reward set associated with this reward group.
     type: string
     x-cast-to: int32
+required:
+  - reward_set_id
+  - reward_group_id
 examples:
   - $ref: "../../examples/reward_set_to_reward_group.json"

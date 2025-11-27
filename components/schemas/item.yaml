@@ -84,5 +84,7 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: skill_set.skill_set_id
+required:
+  - item_id
 examples:
   - $ref: "../../examples/item.json"

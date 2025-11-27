@@ -63,5 +63,9 @@ properties:
     description: The modifier applied to the movement speed when strafing.
     type: string
     x-cast-to: float
+required:
+  - profile_id
+  - profile_type_id
+  - faction_id
 examples:
   - $ref: "../../examples/profile.json"

@@ -42,5 +42,7 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: image_set.image_set_id
+required:
+  - fish_id
 examples:
   - $ref: "../../examples/fish.json"

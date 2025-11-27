@@ -69,3 +69,5 @@ allOf:
             type: array
         type: object
     type: object
+required:
+  - character_id

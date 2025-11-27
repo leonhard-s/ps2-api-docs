@@ -109,5 +109,8 @@ properties:
       the ability of lock-on projectiles to track their target.
     type: string
     x-cast-to: float
+required:
+  - projectile_id
+  - projectile_flight_type_id
 examples:
   - $ref: "../../examples/projectile.json"

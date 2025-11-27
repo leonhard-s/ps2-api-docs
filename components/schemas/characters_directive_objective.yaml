@@ -38,5 +38,10 @@ properties:
     description: Unknown.
     type: string
     x-cast-to: boolean
+required:
+  - character_id
+  - directive_id
+  - objective_id
+  - objective_group_id
 examples:
   - $ref: "../../examples/characters_directive_objective.json"

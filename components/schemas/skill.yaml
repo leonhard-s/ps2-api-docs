@@ -49,5 +49,9 @@ properties:
       this skill.
     type: string
     x-cast-to: int32
+required:
+  - skill_set
+  - skill_line_id
+  - skill_line_index
 examples:
   - $ref: "../../examples/skill.json"

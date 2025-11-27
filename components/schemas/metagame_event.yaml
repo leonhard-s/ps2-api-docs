@@ -29,5 +29,7 @@ properties:
     description: The type of the alert.
     type: string
     x-cast-to: int32
+required:
+  - metagame_event_id
 examples:
   - $ref: "../../examples/metagame_event.json"

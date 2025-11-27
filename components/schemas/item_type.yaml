@@ -20,5 +20,7 @@ properties:
   name:
     description: Display name of the item type.
     type: string
+required:
+  - item_type_id
 examples:
   - $ref: "../../examples/item_type.json"

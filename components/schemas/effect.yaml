@@ -114,5 +114,9 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: target_type.target_type_id
+required:
+  - effect_id
+  - effect_type_id
+  - resist_type_id
 examples:
   - $ref: "../../examples/effect.json"

@@ -167,3 +167,5 @@ properties:
         x-cast-to: int32
     type: object
 type: object
+required:
+  - stat_name

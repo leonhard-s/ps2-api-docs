@@ -14,3 +14,6 @@ allOf:
         x-cast-to: int64
         x-reference-to: character.character_id
     type: object
+required:
+  - character_id
+  - stat_name

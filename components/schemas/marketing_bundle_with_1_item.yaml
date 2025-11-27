@@ -35,5 +35,8 @@ properties:
       Cash).
     type: string
     x-cast-to: int32
+required:
+  - marketing_bundle_id
+  - item_id
 examples: 
   - $ref: "../../examples/marketing_bundle_with_1_item.json"

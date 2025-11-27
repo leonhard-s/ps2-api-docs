@@ -51,5 +51,8 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: reward_set.reward_set_id
+required:
+  - directive_tier_id
+  - directive_tree_id
 examples:
   - $ref: "../../examples/directive_tier.json"

@@ -32,3 +32,6 @@ properties:
     x-cast-to: int32
     x-reference-to: vehicle.vehicle_id
 type: object
+required:
+  - item_id
+  - stat_name

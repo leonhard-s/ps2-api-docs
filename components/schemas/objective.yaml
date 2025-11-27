@@ -65,5 +65,9 @@ properties:
       for details.
     type: string
     x-cast-to: float
+required:
+  - objective_id
+  - objective_type_id
+  - objective_group_id
 examples:
   - $ref: "../../examples/objective.json"

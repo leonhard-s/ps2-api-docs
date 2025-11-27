@@ -68,5 +68,7 @@ properties:
   string4:
     description: Documentation for this string parameter on abilities of this type.
     type: string
+required:
+  - ability_type_id
 examples:
   - $ref: "../../examples/ability_type.json"

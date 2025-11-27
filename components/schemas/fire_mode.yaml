@@ -161,5 +161,8 @@ properties:
       Type description for the fire mode. Useful when needing to distinguish
       between multiple fire modes on a given weapon.
     type: string
+required:
+  - fire_mode_id
+  - item_id
 examples:
   - $ref: "../../examples/fire_mode.json"

@@ -4,7 +4,8 @@ description: |
 
   - Damage effects and ranges
   - Recoil magnitude and pattern
-  - Triggered abilities for pseudo-weapons such as the medical applicator
+  - Triggered abilities for pseudo-weapons such as the medical
+    applicator
   - Ammunition consumption and pellet count
   - Heat-mechanics
 
@@ -253,11 +254,11 @@ properties:
       Inner radius of the indirect damage effect at which `max_damage_ind`
       is applied.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   max_damage_range:
     description: Distance at which `max_damage` is applied.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   min_damage:
     description:
       Minimum direct damage amount. For weapons with damage fall-off, this
@@ -274,11 +275,11 @@ properties:
       Outer edge of the indirect damage blast radius where `min_damage_ind`
       is applied.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   min_damage_range:
     description: Distance at which `min_damage` is applied.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   move_modifier:
     description: Movement speed modifier applied while the fire mode is active.
     type: string
@@ -463,6 +464,9 @@ properties:
     description: Default zoom level for the fire mode.
     type: string
     x-cast-to: float
+required:
+  - fire_mode_id
+  - player_state_group_id
 examples:
   - $ref: "../../examples/fire_mode_2_betelgeuse54a.json"
   - $ref: "../../examples/fire_mode_2_g30vulcan.json"

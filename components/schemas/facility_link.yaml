@@ -26,5 +26,9 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: zone.zone_id
+required:
+  - facility_id_a
+  - facility_id_b
+  - zone_id
 examples:
   - $ref: "../../examples/facility_link.json"

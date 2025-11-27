@@ -13,5 +13,7 @@ properties:
     description: Unique ID of the collection
     type: string
     x-cast-to: int32
+required:
+  - experience_award_type_id
 examples:
   - $ref: "../../examples/experience_award_type.json"

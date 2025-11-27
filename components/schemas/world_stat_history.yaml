@@ -208,5 +208,8 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: world.world_id
+required:
+  - stat_name
+  - world_id
 examples:
   - $ref: "../../examples/world_stat_history.json"

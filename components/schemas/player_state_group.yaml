@@ -12,3 +12,5 @@ properties:
     type: string
     x-cast-to: float
 type: object
+required:
+  - player_state_group_id

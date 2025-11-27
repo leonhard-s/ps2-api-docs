@@ -12,5 +12,8 @@ properties:
       where the ID field is not `<collection>_id`.
     type: string
     x-cast-to: int32
+required:
+  - profile_id
+  - description
 examples:
   - $ref: "../../examples/profile_2.json"

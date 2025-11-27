@@ -89,3 +89,7 @@ anyOf:
             type: string
             x-cast-to: int32
         type: object
+required:
+  - event_type
+  - zone_id
+  - world_id

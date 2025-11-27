@@ -87,5 +87,8 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: zone.zone_id
+required:
+  - map_region_id
+  - zone_id
 examples:
   - $ref: "../../examples/map_region.json"

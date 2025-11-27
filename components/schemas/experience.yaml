@@ -18,5 +18,7 @@ properties:
     description: Unique ID of th experience award type of this experience tick.
     type: string
     x-cast-to: int32
+required:
+  - experience_id
 examples:
   - $ref: "../../examples/experience.json"

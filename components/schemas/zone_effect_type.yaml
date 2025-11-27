@@ -82,5 +82,8 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
+required:
+  - zone_effect_type_id
+  - description
 examples:
   - $ref: "../../examples/zone_effect_type.json"

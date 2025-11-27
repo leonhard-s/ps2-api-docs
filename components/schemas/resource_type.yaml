@@ -11,5 +11,8 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
+required:
+  - resource_type_id
+  - description
 examples:
   - $ref: "../../examples/resource_type.json"
