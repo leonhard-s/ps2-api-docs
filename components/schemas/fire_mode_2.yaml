@@ -253,11 +253,11 @@ properties:
       Inner radius of the indirect damage effect at which `max_damage_ind`
       is applied.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   max_damage_range:
     description: Distance at which `max_damage` is applied.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   min_damage:
     description:
       Minimum direct damage amount. For weapons with damage fall-off, this
@@ -274,11 +274,11 @@ properties:
       Outer edge of the indirect damage blast radius where `min_damage_ind`
       is applied.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   min_damage_range:
     description: Distance at which `min_damage` is applied.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   move_modifier:
     description: Movement speed modifier applied while the fire mode is active.
     type: string

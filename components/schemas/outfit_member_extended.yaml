@@ -30,7 +30,6 @@ properties:
   member_rank:
     description: Custom rank of the character in the outfit.
     type: string
-    x-cast-to: int32
   member_rank_ordinal:
     description: Ordinal of the character's rank in the outfit. Lower values are higher
       ranks.

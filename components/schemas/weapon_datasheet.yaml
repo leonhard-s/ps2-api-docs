@@ -39,19 +39,19 @@ properties:
       Unreliable! Please refer to the player state group listed in `ps2/fire_mode_2.player_state_group_id`
       instead.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   fire_cone_max:
     description:
       Unreliable! Please refer to the `cof_` values in `ps2/fire_mode_2`
       instead.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   fire_cone_min:
     description:
       Unreliable! Please refer to the player state group listed in `ps2/fire_mode_2.player_state_group_id`
       instead.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   fire_rate_ms:
     description: Unreliable! Please use `ps2/fire_mode_2.fire_refire_ms` instead.
     type: string

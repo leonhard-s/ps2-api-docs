@@ -30,12 +30,12 @@ properties:
     description: On melee weapons, designates the height of the quick knife attack
       hitbox.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   melee_detect_width:
     description: On melee weapons, designates the width of the quick knife attack
       hitbox.
     type: string
-    x-cast-to: int32
+    x-cast-to: float
   move_modifier:
     description: The modifier applied to the movement speed when the weapon is equipped.
     type: string
