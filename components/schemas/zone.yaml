@@ -33,5 +33,7 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
+required:
+  - zone_id
 examples:
   - $ref: "../../examples/zone.json"

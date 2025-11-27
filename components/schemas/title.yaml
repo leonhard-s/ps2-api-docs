@@ -13,5 +13,7 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
+required:
+  - title_id
 examples:
   - $ref: "../../examples/title.json"

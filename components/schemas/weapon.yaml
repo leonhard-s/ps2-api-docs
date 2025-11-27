@@ -83,6 +83,8 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
+required:
+  - weapon_id
 examples:
   - $ref: "../../examples/weapon_heat.json"
   - $ref: "../../examples/weapon_knife.json"

@@ -34,6 +34,8 @@ properties:
     description: Time to transition to this fire group on select-fire weapon.
     type: string
     x-cast-to: int32
+required:
+  - fire_group_id
 examples:
   - $ref: "../../examples/fire_group_chamber.json"
   - $ref: "../../examples/fire_group_regular.json"

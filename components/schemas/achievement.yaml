@@ -48,6 +48,9 @@ properties:
     description: ID of the reward granted upon completion of this achievement.
     type: string
     x-cast-to: int32
+required:
+  - achievement_id
+  - item_id
 examples:
   - $ref: "../../examples/achievement_medals.json"
   - $ref: "../../examples/achievement_ribbon.json"

@@ -10,5 +10,8 @@ properties:
   name:
     description: Internal name of the event state.
     type: string
+required:
+  - metagame_event_state_id
+  - name
 examples:
   - $ref: "../../examples/metagame_event_state.json"

@@ -43,5 +43,8 @@ properties:
     description: Whether this faction is playable or reserved for NPCs.
     type: string
     x-cast-to: boolean
+required:
+  - faction_id
+  - code_tag
 examples:
   - $ref: "../../examples/faction.json"

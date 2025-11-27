@@ -40,5 +40,7 @@ properties:
     description: Unused.
     type: string
     x-cast-to: int32
+required:
+  - skill_line_id
 examples:
   - $ref: "../../examples/skill_line.json"

@@ -13,5 +13,8 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: world.world_id
+required:
+  - character_id
+  - world_id
 examples:
   - $ref: "../../examples/characters_world.json"

@@ -45,5 +45,9 @@ properties:
     description: Position of this skill category within its skill set.
     type: string
     x-cast-to: int32
+required:
+  - skill_category_id
+  - skill_set_id
+  - skill_set_index
 examples:
   - $ref: "../../examples/skill_category.json"

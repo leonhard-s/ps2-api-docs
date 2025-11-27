@@ -463,6 +463,9 @@ properties:
     description: Default zoom level for the fire mode.
     type: string
     x-cast-to: float
+required:
+  - fire_mode_id
+  - player_state_group_id
 examples:
   - $ref: "../../examples/fire_mode_2_betelgeuse54a.json"
   - $ref: "../../examples/fire_mode_2_g30vulcan.json"

@@ -18,6 +18,9 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: resist_info.resist_info_id
+required:
+  - profile_id
+  - resist_info_id
 examples:
   - $ref: "../../examples/profile_resist_map.json"
 

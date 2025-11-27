@@ -32,5 +32,10 @@ properties:
     description: Unused.
     type: string
     x-cast-to: int32
+required:
+  - rank
+  - nc
+  - vs
+  - tr
 examples:
   - $ref: "../../examples/experience_rank.json"

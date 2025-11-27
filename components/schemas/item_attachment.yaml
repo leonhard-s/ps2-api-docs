@@ -13,5 +13,8 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: item.item_id
+required:
+  - item_id
+  - attachment_item_id
 examples:
   - $ref: "../../examples/item_attachment.json"

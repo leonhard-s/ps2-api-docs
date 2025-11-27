@@ -28,5 +28,9 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: directive_tree.directive_tree_id
+required:
+  - character_id
+  - directive_id
+  - directive_tree_id
 examples:
   - $ref: "../../examples/characters_directive.json"

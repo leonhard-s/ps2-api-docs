@@ -30,5 +30,7 @@ properties:
   name:
     description: Defunct.
     type: string
+required:
+  - character_id
 examples:
   - $ref: "../../examples/characters_friend.json"

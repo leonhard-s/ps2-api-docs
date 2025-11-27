@@ -24,5 +24,8 @@ properties:
     x-cast-to: int32
     x-joins-to:
     - directive.objective_set_id
+required:
+  - objective_set_id
+  - objective_group_id
 examples:
   - $ref: "../../examples/objective_set_to_objective.json"

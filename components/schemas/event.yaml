@@ -14,3 +14,7 @@ x-tags: ["Event History"]
 anyOf:
   - $ref: "characters_event.yaml"
   - $ref: "world_event.yaml"
+required:
+  - event_type
+  - world_id
+  - zone_id

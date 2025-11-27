@@ -22,5 +22,8 @@ properties:
     description: Unknown. Always 1 as of 2023-06-09.
     type: string
     x-cast-to: int32
+required:
+  - profile_id
+  - armor_info_id
 examples:
   - $ref: "../../examples/profile_armor_map.json"

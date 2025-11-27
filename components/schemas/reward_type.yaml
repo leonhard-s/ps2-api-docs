@@ -37,5 +37,8 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
+required:
+  - reward_type_id
+  - description
 examples: 
   - $ref: "../../examples/reward_type.json"

@@ -21,6 +21,10 @@ properties:
     description: ID of the weapon group to which this item can be attached.
     type: string
     x-cast-to: int32
+required:
+  - item_id
+  - attachment_id
+  - weapon_group_id
 examples:
   - $ref: "../../examples/weapon_to_attachment.json"
 

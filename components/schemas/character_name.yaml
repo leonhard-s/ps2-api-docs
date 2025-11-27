@@ -17,5 +17,8 @@ properties:
       first_lower:
         type: string
     type: object
+required:
+  - character_id
+  - name
 examples:
   - $ref: "../../examples/character_name_higby.json"

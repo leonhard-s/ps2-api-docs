@@ -16,5 +16,8 @@ properties:
     type: string
     x-cast-to: int32
     x-reference-to: reward.reward_id
+required:
+  - reward_group_id
+  - reward_id
 examples:
   - $ref: "../../examples/reward_group_to_reward.json"

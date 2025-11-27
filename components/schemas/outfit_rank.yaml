@@ -19,5 +19,8 @@ properties:
     type: string
     x-cast-to: int64
     x-reference-to: outfit.outfit_id
+required:
+  - outfit_id
+  - ordinal
 examples:
   - $ref: "../../examples/outfit_rank.json"

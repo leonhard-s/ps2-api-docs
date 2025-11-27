@@ -15,5 +15,8 @@ properties:
     description: Unique ID of the collection.
     type: string
     x-cast-to: int32
+required:
+  - projectile_flight_type_id
+  - description
 examples:
   - $ref: "../../examples/projectile_flight_type.json"

@@ -16,5 +16,9 @@ properties:
     description: Unique ID of the weapon.
     type: string
     x-cast-to: int32
+required:
+  - weapon_id
+  - fire_group_id
+  - fire_group_index
 examples:
   - $ref: "../../examples/weapon_to_fire_group.json"

@@ -29,5 +29,8 @@ properties:
       ranks.
     type: string
     x-cast-to: int32
+required:
+  - character_id
+  - outfit_id
 examples:
   - $ref: "../../examples/outfit_member.json"

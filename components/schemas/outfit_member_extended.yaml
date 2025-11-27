@@ -59,5 +59,8 @@ properties:
   time_created_date:
     description: Human-readable version of `time_created`.
     type: string
+required:
+  - character_id
+  - outfit_id
 examples:
   - $ref: "../../examples/outfit_member_extended.json"

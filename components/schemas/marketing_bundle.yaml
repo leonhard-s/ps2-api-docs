@@ -42,5 +42,7 @@ properties:
     description: The price of the marketing bundle in Station Cash.
     type: string
     x-cast-to: int32
+required:
+  - marketing_bundle_id
 examples:
   - $ref: "../../examples/marketing_bundle.json"

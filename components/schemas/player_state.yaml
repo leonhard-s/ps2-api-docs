@@ -7,3 +7,6 @@ properties:
   description:
     description: Name of the player state.
     type: string
+required:
+  - player_state_id
+  - description

@@ -14,5 +14,7 @@ properties:
       on.
     type: string
     x-cast-to: int32
+required:
+  - character_id
 examples:
   - $ref: "../../examples/characters_online_status.json"

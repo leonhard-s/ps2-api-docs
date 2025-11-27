@@ -38,6 +38,9 @@ properties:
   start_date:
     description: Human-readable version of `start`.
     type: string
+required:
+  - character_id
+  - achievement_id
 examples:
   - $ref: "../../examples/characters_achievement_medal.json"
   - $ref: "../../examples/characters_achievement_ribbon.json"

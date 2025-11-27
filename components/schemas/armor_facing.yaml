@@ -10,5 +10,8 @@ properties:
   description:
     description: Description of the armor facing direction.
     type: string
+required:
+  - armor_facing_id
+  - description
 examples:
   - $ref: "../../examples/armor_facing.json"

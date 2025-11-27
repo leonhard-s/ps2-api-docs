@@ -41,5 +41,8 @@ properties:
   param9:
     description: Documentation for this numeric parameter on objectives of this type.
     type: string
+required:
+  - objective_type_id
+  - description
 examples:
   - $ref: "../../examples/objective_type.json"

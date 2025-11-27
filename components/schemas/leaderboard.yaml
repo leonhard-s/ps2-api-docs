@@ -26,5 +26,9 @@ properties:
     description: The all-time value of the given statistic.
     type: string
     x-cast-to: int32
+required:
+  - character_id
+  - rank
+  - value
 examples:
   - $ref: "../../examples/leaderboard.json"
