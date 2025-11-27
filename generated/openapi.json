@@ -403,6 +403,9 @@
                             "type": "array"
                           }
                         },
+                        "required": [
+                          "name"
+                        ],
                         "type": "object"
                       },
                       "type": "array"
@@ -1218,6 +1221,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "ability_id",
+          "ability_type_id"
+        ],
         "examples": [
           {
             "ability_list": [
@@ -1324,6 +1331,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "ability_type_id"
+        ],
         "examples": [
           {
             "ability_type_list": [
@@ -1484,6 +1494,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "achievement_id",
+          "item_id"
+        ],
         "examples": [
           {
             "achievement_list": [
@@ -1640,6 +1654,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "armor_facing_id",
+          "description"
+        ],
         "examples": [
           {
             "armor_facing_list": [
@@ -1708,6 +1726,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "armor_info_id",
+          "armor_facing_id"
+        ],
         "examples": [
           {
             "armor_info_list": [
@@ -1910,6 +1932,9 @@
             "x-reference-to": "title.title_id"
           }
         },
+        "required": [
+          "character_id"
+        ],
         "examples": [
           {
             "character_list": [
@@ -1981,6 +2006,10 @@
             "type": "object"
           }
         },
+        "required": [
+          "character_id",
+          "name"
+        ],
         "examples": [
           {
             "character_name_list": [
@@ -2045,6 +2074,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "character_id",
+          "achievement_id"
+        ],
         "examples": [
           {
             "characters_achievement_list": [
@@ -2123,6 +2156,10 @@
             },
             "type": "object"
           }
+        ],
+        "required": [
+          "character_id",
+          "currency_id"
         ]
       },
       "characters_directive_objective": {
@@ -2167,6 +2204,12 @@
             "x-cast-to": "boolean"
           }
         },
+        "required": [
+          "character_id",
+          "directive_id",
+          "objective_id",
+          "objective_group_id"
+        ],
         "examples": [
           {
             "characters_directive_objective_list": [
@@ -2217,6 +2260,11 @@
             "x-reference-to": "directive_tree.directive_tree_id"
           }
         },
+        "required": [
+          "character_id",
+          "directive_tier_id",
+          "directive_tree_id"
+        ],
         "examples": [
           {
             "characters_directive_tier_list": [
@@ -2271,6 +2319,10 @@
             "x-reference-to": "directive_tree.directive_tree_id"
           }
         },
+        "required": [
+          "character_id",
+          "directive_tree_id"
+        ],
         "examples": [
           {
             "characters_directive_tree_list": [
@@ -2321,6 +2373,11 @@
             "x-reference-to": "directive_tree.directive_tree_id"
           }
         },
+        "required": [
+          "character_id",
+          "directive_id",
+          "directive_tree_id"
+        ],
         "examples": [
           {
             "characters_directive_list": [
@@ -2346,16 +2403,13 @@
             "allOf": [
               {
                 "properties": {
-                  "character_id": {
-                    "description": "The ID of a character.",
-                    "type": "string",
-                    "x-cast-to": "int64",
-                    "x-reference-to": "character.character_id"
+                  "event_type": {
+                    "description": "Name of the event.",
+                    "type": "string"
                   },
                   "table_type": {
                     "description": "Internal name of the table.",
-                    "type": "string",
-                    "x-cast-to": "int32"
+                    "type": "string"
                   },
                   "timestamp": {
                     "description": "UTC timestamp of the event.",
@@ -2374,7 +2428,14 @@
                     "x-reference-to": "zone.zone_id"
                   }
                 },
-                "type": "object"
+                "type": "object",
+                "required": [
+                  "timestamp",
+                  "event_type",
+                  "table_type",
+                  "world_id",
+                  "zone_id"
+                ]
               },
               {
                 "properties": {
@@ -2397,16 +2458,13 @@
             "allOf": [
               {
                 "properties": {
-                  "character_id": {
-                    "description": "The ID of a character.",
-                    "type": "string",
-                    "x-cast-to": "int64",
-                    "x-reference-to": "character.character_id"
+                  "event_type": {
+                    "description": "Name of the event.",
+                    "type": "string"
                   },
                   "table_type": {
                     "description": "Internal name of the table.",
-                    "type": "string",
-                    "x-cast-to": "int32"
+                    "type": "string"
                   },
                   "timestamp": {
                     "description": "UTC timestamp of the event.",
@@ -2425,7 +2483,14 @@
                     "x-reference-to": "zone.zone_id"
                   }
                 },
-                "type": "object"
+                "type": "object",
+                "required": [
+                  "timestamp",
+                  "event_type",
+                  "table_type",
+                  "world_id",
+                  "zone_id"
+                ]
               },
               {
                 "properties": {
@@ -2458,16 +2523,13 @@
             "allOf": [
               {
                 "properties": {
-                  "character_id": {
-                    "description": "The ID of a character.",
-                    "type": "string",
-                    "x-cast-to": "int64",
-                    "x-reference-to": "character.character_id"
+                  "event_type": {
+                    "description": "Name of the event.",
+                    "type": "string"
                   },
                   "table_type": {
                     "description": "Internal name of the table.",
-                    "type": "string",
-                    "x-cast-to": "int32"
+                    "type": "string"
                   },
                   "timestamp": {
                     "description": "UTC timestamp of the event.",
@@ -2486,7 +2548,14 @@
                     "x-reference-to": "zone.zone_id"
                   }
                 },
-                "type": "object"
+                "type": "object",
+                "required": [
+                  "timestamp",
+                  "event_type",
+                  "table_type",
+                  "world_id",
+                  "zone_id"
+                ]
               },
               {
                 "properties": {
@@ -2510,16 +2579,13 @@
             "allOf": [
               {
                 "properties": {
-                  "character_id": {
-                    "description": "The ID of a character.",
-                    "type": "string",
-                    "x-cast-to": "int64",
-                    "x-reference-to": "character.character_id"
+                  "event_type": {
+                    "description": "Name of the event.",
+                    "type": "string"
                   },
                   "table_type": {
                     "description": "Internal name of the table.",
-                    "type": "string",
-                    "x-cast-to": "int32"
+                    "type": "string"
                   },
                   "timestamp": {
                     "description": "UTC timestamp of the event.",
@@ -2538,7 +2604,14 @@
                     "x-reference-to": "zone.zone_id"
                   }
                 },
-                "type": "object"
+                "type": "object",
+                "required": [
+                  "timestamp",
+                  "event_type",
+                  "table_type",
+                  "world_id",
+                  "zone_id"
+                ]
               },
               {
                 "properties": {
@@ -2591,16 +2664,13 @@
             "allOf": [
               {
                 "properties": {
-                  "character_id": {
-                    "description": "The ID of a character.",
-                    "type": "string",
-                    "x-cast-to": "int64",
-                    "x-reference-to": "character.character_id"
+                  "event_type": {
+                    "description": "Name of the event.",
+                    "type": "string"
                   },
                   "table_type": {
                     "description": "Internal name of the table.",
-                    "type": "string",
-                    "x-cast-to": "int32"
+                    "type": "string"
                   },
                   "timestamp": {
                     "description": "UTC timestamp of the event.",
@@ -2619,7 +2689,14 @@
                     "x-reference-to": "zone.zone_id"
                   }
                 },
-                "type": "object"
+                "type": "object",
+                "required": [
+                  "timestamp",
+                  "event_type",
+                  "table_type",
+                  "world_id",
+                  "zone_id"
+                ]
               },
               {
                 "properties": {
@@ -2672,16 +2749,13 @@
             "allOf": [
               {
                 "properties": {
-                  "character_id": {
-                    "description": "The ID of a character.",
-                    "type": "string",
-                    "x-cast-to": "int64",
-                    "x-reference-to": "character.character_id"
+                  "event_type": {
+                    "description": "Name of the event.",
+                    "type": "string"
                   },
                   "table_type": {
                     "description": "Internal name of the table.",
-                    "type": "string",
-                    "x-cast-to": "int32"
+                    "type": "string"
                   },
                   "timestamp": {
                     "description": "UTC timestamp of the event.",
@@ -2700,7 +2774,14 @@
                     "x-reference-to": "zone.zone_id"
                   }
                 },
-                "type": "object"
+                "type": "object",
+                "required": [
+                  "timestamp",
+                  "event_type",
+                  "table_type",
+                  "world_id",
+                  "zone_id"
+                ]
               },
               {
                 "properties": {
@@ -2764,16 +2845,13 @@
             "allOf": [
               {
                 "properties": {
-                  "character_id": {
-                    "description": "The ID of a character.",
-                    "type": "string",
-                    "x-cast-to": "int64",
-                    "x-reference-to": "character.character_id"
+                  "event_type": {
+                    "description": "Name of the event.",
+                    "type": "string"
                   },
                   "table_type": {
                     "description": "Internal name of the table.",
-                    "type": "string",
-                    "x-cast-to": "int32"
+                    "type": "string"
                   },
                   "timestamp": {
                     "description": "UTC timestamp of the event.",
@@ -2792,7 +2870,14 @@
                     "x-reference-to": "zone.zone_id"
                   }
                 },
-                "type": "object"
+                "type": "object",
+                "required": [
+                  "timestamp",
+                  "event_type",
+                  "table_type",
+                  "world_id",
+                  "zone_id"
+                ]
               },
               {
                 "properties": {
@@ -2817,6 +2902,12 @@
               }
             ]
           }
+        ],
+        "required": [
+          "character_id",
+          "event_type",
+          "world_id",
+          "zone_id"
         ]
       },
       "characters_event_grouped": {
@@ -2845,7 +2936,11 @@
             ],
             "type": "string"
           }
-        }
+        },
+        "required": [
+          "character_id",
+          "table_type"
+        ]
       },
       "characters_friend": {
         "type": "object",
@@ -2888,6 +2983,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "character_id"
+        ],
         "examples": [
           {
             "characters_friend_list": [
@@ -2932,7 +3030,10 @@
                 "x-reference-to": "item.item_id"
               }
             },
-            "type": "object"
+            "type": "object",
+            "required": [
+              "item_id"
+            ]
           },
           {
             "properties": {
@@ -2945,6 +3046,10 @@
             },
             "type": "object"
           }
+        ],
+        "required": [
+          "character_id",
+          "item_id"
         ]
       },
       "characters_leaderboard": {
@@ -2971,6 +3076,11 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "character_id",
+          "rank",
+          "value"
+        ],
         "examples": [
           {
             "limit": 1,
@@ -3006,6 +3116,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "character_id"
+        ],
         "examples": [
           {
             "characters_online_status_list": [
@@ -3043,6 +3156,10 @@
             "x-reference-to": "skill.skill_id"
           }
         },
+        "required": [
+          "character_id",
+          "skill_id"
+        ],
         "examples": [
           {
             "characters_skill_list": [
@@ -3109,7 +3226,10 @@
                 "x-cast-to": "int32"
               }
             },
-            "type": "object"
+            "type": "object",
+            "required": [
+              "stat_name"
+            ]
           },
           {
             "properties": {
@@ -3122,6 +3242,10 @@
             },
             "type": "object"
           }
+        ],
+        "required": [
+          "character_id",
+          "stat_name"
         ]
       },
       "characters_stat_by_faction": {
@@ -3226,7 +3350,11 @@
                 "x-cast-to": "int32"
               }
             },
-            "type": "object"
+            "type": "object",
+            "required": [
+              "profile_id",
+              "stat_name"
+            ]
           },
           {
             "properties": {
@@ -3239,6 +3367,11 @@
             },
             "type": "object"
           }
+        ],
+        "required": [
+          "character_id",
+          "profile_id",
+          "stat_name"
         ]
       },
       "characters_stat_history": {
@@ -3293,7 +3426,10 @@
                 "x-cast-to": "int32"
               }
             },
-            "type": "object"
+            "type": "object",
+            "required": [
+              "stat_name"
+            ]
           },
           {
             "properties": {
@@ -3310,6 +3446,10 @@
             },
             "type": "object"
           }
+        ],
+        "required": [
+          "character_id",
+          "stat_name"
         ]
       },
       "characters_weapon_stat": {
@@ -3351,7 +3491,11 @@
                 "x-reference-to": "vehicle.vehicle_id"
               }
             },
-            "type": "object"
+            "type": "object",
+            "required": [
+              "item_id",
+              "stat_name"
+            ]
           },
           {
             "properties": {
@@ -3364,6 +3508,11 @@
             },
             "type": "object"
           }
+        ],
+        "required": [
+          "character_id",
+          "item_id",
+          "stat_name"
         ]
       },
       "characters_weapon_stat_by_faction": {
@@ -3415,7 +3564,11 @@
                 "x-reference-to": "vehicle.vehicle_id"
               }
             },
-            "type": "object"
+            "type": "object",
+            "required": [
+              "item_id",
+              "stat_name"
+            ]
           },
           {
             "properties": {
@@ -3428,6 +3581,11 @@
             },
             "type": "object"
           }
+        ],
+        "required": [
+          "character_id",
+          "item_id",
+          "stat_name"
         ]
       },
       "characters_world": {
@@ -3450,6 +3608,10 @@
             "x-reference-to": "world.world_id"
           }
         },
+        "required": [
+          "character_id",
+          "world_id"
+        ],
         "examples": [
           {
             "characters_world_list": [
@@ -3515,6 +3677,9 @@
             "type": "object"
           }
         },
+        "required": [
+          "currency_id"
+        ],
         "examples": [
           {
             "currency_list": [
@@ -3641,6 +3806,12 @@
             "x-reference-to": "objective_set.objective_set_id"
           }
         },
+        "required": [
+          "directive_id",
+          "directive_tier_id",
+          "directive_tree_id",
+          "objective_set_id"
+        ],
         "examples": [
           {
             "directive_list": [
@@ -3753,6 +3924,10 @@
             "x-reference-to": "reward_set.reward_set_id"
           }
         },
+        "required": [
+          "directive_tier_id",
+          "directive_tree_id"
+        ],
         "examples": [
           {
             "directive_tier_list": [
@@ -3872,6 +4047,10 @@
             "type": "object"
           }
         },
+        "required": [
+          "directive_tree_id",
+          "directive_tree_category_id"
+        ],
         "examples": [
           {
             "directive_tree_list": [
@@ -3936,6 +4115,9 @@
             "type": "object"
           }
         },
+        "required": [
+          "directive_tree_category_id"
+        ],
         "examples": [
           {
             "directive_tree_category_list": [
@@ -4073,6 +4255,11 @@
             "x-reference-to": "target_type.target_type_id"
           }
         },
+        "required": [
+          "effect_id",
+          "effect_type_id",
+          "resist_type_id"
+        ],
         "examples": [
           {
             "effect_list": [
@@ -4184,6 +4371,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "effect_type_id",
+          "description"
+        ],
         "examples": [
           {
             "effect_type_list": [
@@ -4306,16 +4497,13 @@
                 "allOf": [
                   {
                     "properties": {
-                      "character_id": {
-                        "description": "The ID of a character.",
-                        "type": "string",
-                        "x-cast-to": "int64",
-                        "x-reference-to": "character.character_id"
+                      "event_type": {
+                        "description": "Name of the event.",
+                        "type": "string"
                       },
                       "table_type": {
                         "description": "Internal name of the table.",
-                        "type": "string",
-                        "x-cast-to": "int32"
+                        "type": "string"
                       },
                       "timestamp": {
                         "description": "UTC timestamp of the event.",
@@ -4334,7 +4522,14 @@
                         "x-reference-to": "zone.zone_id"
                       }
                     },
-                    "type": "object"
+                    "type": "object",
+                    "required": [
+                      "timestamp",
+                      "event_type",
+                      "table_type",
+                      "world_id",
+                      "zone_id"
+                    ]
                   },
                   {
                     "properties": {
@@ -4357,16 +4552,13 @@
                 "allOf": [
                   {
                     "properties": {
-                      "character_id": {
-                        "description": "The ID of a character.",
-                        "type": "string",
-                        "x-cast-to": "int64",
-                        "x-reference-to": "character.character_id"
+                      "event_type": {
+                        "description": "Name of the event.",
+                        "type": "string"
                       },
                       "table_type": {
                         "description": "Internal name of the table.",
-                        "type": "string",
-                        "x-cast-to": "int32"
+                        "type": "string"
                       },
                       "timestamp": {
                         "description": "UTC timestamp of the event.",
@@ -4385,7 +4577,14 @@
                         "x-reference-to": "zone.zone_id"
                       }
                     },
-                    "type": "object"
+                    "type": "object",
+                    "required": [
+                      "timestamp",
+                      "event_type",
+                      "table_type",
+                      "world_id",
+                      "zone_id"
+                    ]
                   },
                   {
                     "properties": {
@@ -4418,16 +4617,13 @@
                 "allOf": [
                   {
                     "properties": {
-                      "character_id": {
-                        "description": "The ID of a character.",
-                        "type": "string",
-                        "x-cast-to": "int64",
-                        "x-reference-to": "character.character_id"
+                      "event_type": {
+                        "description": "Name of the event.",
+                        "type": "string"
                       },
                       "table_type": {
                         "description": "Internal name of the table.",
-                        "type": "string",
-                        "x-cast-to": "int32"
+                        "type": "string"
                       },
                       "timestamp": {
                         "description": "UTC timestamp of the event.",
@@ -4446,7 +4642,14 @@
                         "x-reference-to": "zone.zone_id"
                       }
                     },
-                    "type": "object"
+                    "type": "object",
+                    "required": [
+                      "timestamp",
+                      "event_type",
+                      "table_type",
+                      "world_id",
+                      "zone_id"
+                    ]
                   },
                   {
                     "properties": {
@@ -4470,16 +4673,13 @@
                 "allOf": [
                   {
                     "properties": {
-                      "character_id": {
-                        "description": "The ID of a character.",
-                        "type": "string",
-                        "x-cast-to": "int64",
-                        "x-reference-to": "character.character_id"
+                      "event_type": {
+                        "description": "Name of the event.",
+                        "type": "string"
                       },
                       "table_type": {
                         "description": "Internal name of the table.",
-                        "type": "string",
-                        "x-cast-to": "int32"
+                        "type": "string"
                       },
                       "timestamp": {
                         "description": "UTC timestamp of the event.",
@@ -4498,7 +4698,14 @@
                         "x-reference-to": "zone.zone_id"
                       }
                     },
-                    "type": "object"
+                    "type": "object",
+                    "required": [
+                      "timestamp",
+                      "event_type",
+                      "table_type",
+                      "world_id",
+                      "zone_id"
+                    ]
                   },
                   {
                     "properties": {
@@ -4551,16 +4758,13 @@
                 "allOf": [
                   {
                     "properties": {
-                      "character_id": {
-                        "description": "The ID of a character.",
-                        "type": "string",
-                        "x-cast-to": "int64",
-                        "x-reference-to": "character.character_id"
+                      "event_type": {
+                        "description": "Name of the event.",
+                        "type": "string"
                       },
                       "table_type": {
                         "description": "Internal name of the table.",
-                        "type": "string",
-                        "x-cast-to": "int32"
+                        "type": "string"
                       },
                       "timestamp": {
                         "description": "UTC timestamp of the event.",
@@ -4579,7 +4783,14 @@
                         "x-reference-to": "zone.zone_id"
                       }
                     },
-                    "type": "object"
+                    "type": "object",
+                    "required": [
+                      "timestamp",
+                      "event_type",
+                      "table_type",
+                      "world_id",
+                      "zone_id"
+                    ]
                   },
                   {
                     "properties": {
@@ -4632,16 +4843,13 @@
                 "allOf": [
                   {
                     "properties": {
-                      "character_id": {
-                        "description": "The ID of a character.",
-                        "type": "string",
-                        "x-cast-to": "int64",
-                        "x-reference-to": "character.character_id"
+                      "event_type": {
+                        "description": "Name of the event.",
+                        "type": "string"
                       },
                       "table_type": {
                         "description": "Internal name of the table.",
-                        "type": "string",
-                        "x-cast-to": "int32"
+                        "type": "string"
                       },
                       "timestamp": {
                         "description": "UTC timestamp of the event.",
@@ -4660,7 +4868,14 @@
                         "x-reference-to": "zone.zone_id"
                       }
                     },
-                    "type": "object"
+                    "type": "object",
+                    "required": [
+                      "timestamp",
+                      "event_type",
+                      "table_type",
+                      "world_id",
+                      "zone_id"
+                    ]
                   },
                   {
                     "properties": {
@@ -4724,16 +4939,13 @@
                 "allOf": [
                   {
                     "properties": {
-                      "character_id": {
-                        "description": "The ID of a character.",
-                        "type": "string",
-                        "x-cast-to": "int64",
-                        "x-reference-to": "character.character_id"
+                      "event_type": {
+                        "description": "Name of the event.",
+                        "type": "string"
                       },
                       "table_type": {
                         "description": "Internal name of the table.",
-                        "type": "string",
-                        "x-cast-to": "int32"
+                        "type": "string"
                       },
                       "timestamp": {
                         "description": "UTC timestamp of the event.",
@@ -4752,7 +4964,14 @@
                         "x-reference-to": "zone.zone_id"
                       }
                     },
-                    "type": "object"
+                    "type": "object",
+                    "required": [
+                      "timestamp",
+                      "event_type",
+                      "table_type",
+                      "world_id",
+                      "zone_id"
+                    ]
                   },
                   {
                     "properties": {
@@ -4777,6 +4996,12 @@
                   }
                 ]
               }
+            ],
+            "required": [
+              "character_id",
+              "event_type",
+              "world_id",
+              "zone_id"
             ]
           },
           {
@@ -4789,16 +5014,13 @@
                 "allOf": [
                   {
                     "properties": {
-                      "character_id": {
-                        "description": "The ID of a character.",
-                        "type": "string",
-                        "x-cast-to": "int64",
-                        "x-reference-to": "character.character_id"
+                      "event_type": {
+                        "description": "Name of the event.",
+                        "type": "string"
                       },
                       "table_type": {
                         "description": "Internal name of the table.",
-                        "type": "string",
-                        "x-cast-to": "int32"
+                        "type": "string"
                       },
                       "timestamp": {
                         "description": "UTC timestamp of the event.",
@@ -4817,7 +5039,14 @@
                         "x-reference-to": "zone.zone_id"
                       }
                     },
-                    "type": "object"
+                    "type": "object",
+                    "required": [
+                      "timestamp",
+                      "event_type",
+                      "table_type",
+                      "world_id",
+                      "zone_id"
+                    ]
                   },
                   {
                     "properties": {
@@ -4870,16 +5099,13 @@
                 "allOf": [
                   {
                     "properties": {
-                      "character_id": {
-                        "description": "The ID of a character.",
-                        "type": "string",
-                        "x-cast-to": "int64",
-                        "x-reference-to": "character.character_id"
+                      "event_type": {
+                        "description": "Name of the event.",
+                        "type": "string"
                       },
                       "table_type": {
                         "description": "Internal name of the table.",
-                        "type": "string",
-                        "x-cast-to": "int32"
+                        "type": "string"
                       },
                       "timestamp": {
                         "description": "UTC timestamp of the event.",
@@ -4898,7 +5124,14 @@
                         "x-reference-to": "zone.zone_id"
                       }
                     },
-                    "type": "object"
+                    "type": "object",
+                    "required": [
+                      "timestamp",
+                      "event_type",
+                      "table_type",
+                      "world_id",
+                      "zone_id"
+                    ]
                   },
                   {
                     "properties": {
@@ -4953,8 +5186,18 @@
                   }
                 ]
               }
+            ],
+            "required": [
+              "event_type",
+              "zone_id",
+              "world_id"
             ]
           }
+        ],
+        "required": [
+          "event_type",
+          "world_id",
+          "zone_id"
         ]
       },
       "experience": {
@@ -4984,6 +5227,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "experience_id"
+        ],
         "examples": [
           {
             "experience_list": [
@@ -5014,6 +5260,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "experience_award_type_id"
+        ],
         "examples": [
           {
             "experience_award_type_list": [
@@ -5214,6 +5463,12 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "rank",
+          "nc",
+          "vs",
+          "tr"
+        ],
         "examples": [
           {
             "experience_rank_list": [
@@ -5295,6 +5550,11 @@
             "x-reference-to": "zone.zone_id"
           }
         },
+        "required": [
+          "facility_id_a",
+          "facility_id_b",
+          "zone_id"
+        ],
         "examples": [
           {
             "facility_link_list": [
@@ -5353,6 +5613,10 @@
             "x-reference-to": "image_set.image_set_id"
           }
         },
+        "required": [
+          "facility_type_id",
+          "description"
+        ],
         "examples": [
           {
             "facility_type_list": [
@@ -5435,6 +5699,10 @@
             "x-cast-to": "boolean"
           }
         },
+        "required": [
+          "faction_id",
+          "code_tag"
+        ],
         "examples": [
           {
             "faction_list": [
@@ -5482,7 +5750,12 @@
             "x-cast-to": "int32"
           }
         },
-        "type": "object"
+        "type": "object",
+        "required": [
+          "fire_group_id",
+          "fire_mode_id",
+          "fire_mode_index"
+        ]
       },
       "fire_group": {
         "type": "object",
@@ -5522,6 +5795,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "fire_group_id"
+        ],
         "examples": [
           {
             "fire_group_list": [
@@ -5740,6 +6016,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "fire_mode_id",
+          "item_id"
+        ],
         "examples": [
           {
             "fire_mode_list": [
@@ -5789,7 +6069,7 @@
       },
       "fire_mode_2": {
         "type": "object",
-        "description": "Main endpoint for baseline weapon characteristics and firing mechanics. This includes:\n\n- Damage effects and ranges\n- Recoil magnitude and pattern\n- Triggered abilities for pseudo-weapons such as the medical applicator\n- Ammunition consumption and pellet count\n- Heat-mechanics\n\nBe aware that lockon information is currently disconnected from the game data and has not\nbeen outdated. Refer to the PS2 Wiki for up-to-date information for the time being.\n",
+        "description": "Main endpoint for baseline weapon characteristics and firing mechanics. This includes:\n\n- Damage effects and ranges\n- Recoil magnitude and pattern\n- Triggered abilities for pseudo-weapons such as the medical\n  applicator\n- Ammunition consumption and pellet count\n- Heat-mechanics\n\nBe aware that lockon information is currently disconnected from the game data and has not\nbeen outdated. Refer to the PS2 Wiki for up-to-date information for the time being.\n",
         "x-tags": [
           "Weapons & Firing Mechanics"
         ],
@@ -6061,12 +6341,12 @@
           "max_damage_ind_radius": {
             "description": "Inner radius of the indirect damage effect at which `max_damage_ind` is applied.",
             "type": "string",
-            "x-cast-to": "int32"
+            "x-cast-to": "float"
           },
           "max_damage_range": {
             "description": "Distance at which `max_damage` is applied.",
             "type": "string",
-            "x-cast-to": "int32"
+            "x-cast-to": "float"
           },
           "min_damage": {
             "description": "Minimum direct damage amount. For weapons with damage fall-off, this is applied at `min_damage_range`. For weapons with a flat damage profile, only `max_damage` may be set, with this field being NULL.",
@@ -6081,12 +6361,12 @@
           "min_damage_ind_radius": {
             "description": "Outer edge of the indirect damage blast radius where `min_damage_ind` is applied.",
             "type": "string",
-            "x-cast-to": "int32"
+            "x-cast-to": "float"
           },
           "min_damage_range": {
             "description": "Distance at which `min_damage` is applied.",
             "type": "string",
-            "x-cast-to": "int32"
+            "x-cast-to": "float"
           },
           "move_modifier": {
             "description": "Movement speed modifier applied while the fire mode is active.",
@@ -6279,6 +6559,10 @@
             "x-cast-to": "float"
           }
         },
+        "required": [
+          "fire_mode_id",
+          "player_state_group_id"
+        ],
         "examples": [
           {
             "fire_mode_2_list": [
@@ -6628,6 +6912,10 @@
             "x-reference-to": "projectile.projectile_id"
           }
         },
+        "required": [
+          "fire_mode_id",
+          "projectile_id"
+        ],
         "examples": [
           {
             "fire_mode_to_projectile_list": [
@@ -6657,6 +6945,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "fire_mode_type_id",
+          "description"
+        ],
         "examples": [
           {
             "fire_mode_type_list": [
@@ -6764,6 +7056,9 @@
             "x-reference-to": "image_set.image_set_id"
           }
         },
+        "required": [
+          "fish_id"
+        ],
         "examples": [
           {
             "fish_list": [
@@ -6812,6 +7107,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "image_id"
+        ],
         "examples": [
           {
             "image_list": [
@@ -6861,6 +7159,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "image_id",
+          "image_set_id"
+        ],
         "examples": [
           {
             "image_set_list": [
@@ -6930,6 +7232,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "image_id",
+          "image_set_id"
+        ],
         "examples": [
           {
             "image_set_default_list": [
@@ -7085,6 +7391,9 @@
             "x-reference-to": "skill_set.skill_set_id"
           }
         },
+        "required": [
+          "item_id"
+        ],
         "examples": [
           {
             "item_list": [
@@ -7142,6 +7451,10 @@
             "x-reference-to": "item.item_id"
           }
         },
+        "required": [
+          "item_id",
+          "attachment_item_id"
+        ],
         "examples": [
           {
             "item_attachment_list": [
@@ -7233,6 +7546,9 @@
             "type": "object"
           }
         },
+        "required": [
+          "item_category_id"
+        ],
         "examples": [
           {
             "item_category_list": [
@@ -7272,6 +7588,10 @@
             "x-reference-to": "profile_2.profile_id"
           }
         },
+        "required": [
+          "item_id",
+          "profile_id"
+        ],
         "examples": [
           {
             "item_profile_list": [
@@ -7320,6 +7640,10 @@
             "x-reference-to": "weapon.weapon_id"
           }
         },
+        "required": [
+          "item_id",
+          "weapon_id"
+        ],
         "examples": [
           {
             "item_to_weapon_list": [
@@ -7354,6 +7678,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "item_type_id"
+        ],
         "examples": [
           {
             "item_type_list": [
@@ -7411,6 +7738,11 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "character_id",
+          "rank",
+          "value"
+        ],
         "examples": [
           {
             "limit": 10,
@@ -7501,6 +7833,11 @@
             "x-reference-to": "profile_2.profile_id"
           }
         },
+        "required": [
+          "loadout_id",
+          "profile_id",
+          "faction_id"
+        ],
         "examples": [
           {
             "loadout_list": [
@@ -7565,6 +7902,9 @@
             "x-reference-to": "zone.zone_id"
           }
         },
+        "required": [
+          "ZoneId"
+        ],
         "examples": [
           {
             "map_list": [
@@ -7632,6 +7972,10 @@
             "x-reference-to": "zone.zone_id"
           }
         },
+        "required": [
+          "map_hex_id",
+          "map_region_id"
+        ],
         "examples": [
           {
             "map_hex_list": [
@@ -7771,6 +8115,10 @@
             "x-reference-to": "zone.zone_id"
           }
         },
+        "required": [
+          "map_region_id",
+          "zone_id"
+        ],
         "examples": [
           {
             "map_region_list": [
@@ -7893,6 +8241,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "marketing_bundle_id"
+        ],
         "examples": [
           {
             "marketing_bundle_list": [
@@ -7954,6 +8305,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "marketing_bundle_id",
+          "item_id"
+        ],
         "examples": [
           {
             "marketing_bundle_item_list": [
@@ -8086,6 +8441,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "marketing_bundle_id",
+          "item_id"
+        ],
         "examples": [
           {
             "marketing_bundle_with_1_item_list": [
@@ -8187,6 +8546,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "metagame_event_id"
+        ],
         "examples": [
           {
             "metagame_event_list": [
@@ -8232,6 +8594,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "metagame_event_state_id",
+          "name"
+        ],
         "examples": [
           {
             "metagame_event_state_list": [
@@ -8329,6 +8695,11 @@
             "x-cast-to": "float"
           }
         },
+        "required": [
+          "objective_id",
+          "objective_type_id",
+          "objective_group_id"
+        ],
         "examples": [
           {
             "objective_list": [
@@ -8370,6 +8741,10 @@
             ]
           }
         },
+        "required": [
+          "objective_set_id",
+          "objective_group_id"
+        ],
         "examples": [
           {
             "objective_set_to_objective_list": [
@@ -8435,6 +8810,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "objective_type_id",
+          "description"
+        ],
         "examples": [
           {
             "objective_type_list": [
@@ -8502,6 +8881,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "outfit_id"
+        ],
         "examples": [
           {
             "outfit_list": [
@@ -8550,8 +8932,7 @@
           },
           "rank": {
             "description": "Custom rank of the character in the outfit.",
-            "type": "string",
-            "x-cast-to": "int32"
+            "type": "string"
           },
           "rank_ordinal": {
             "description": "Ordinal of the character's rank in the outfit. Lower values are higher ranks.",
@@ -8559,6 +8940,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "character_id",
+          "outfit_id"
+        ],
         "examples": [
           {
             "outfit_member_list": [
@@ -8609,8 +8994,7 @@
           },
           "member_rank": {
             "description": "Custom rank of the character in the outfit.",
-            "type": "string",
-            "x-cast-to": "int32"
+            "type": "string"
           },
           "member_rank_ordinal": {
             "description": "Ordinal of the character's rank in the outfit. Lower values are higher ranks.",
@@ -8648,6 +9032,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "character_id",
+          "outfit_id"
+        ],
         "examples": [
           {
             "outfit_member_extended_list": [
@@ -8699,6 +9087,10 @@
             "x-reference-to": "outfit.outfit_id"
           }
         },
+        "required": [
+          "outfit_id",
+          "ordinal"
+        ],
         "examples": [
           {
             "outfit_rank_list": [
@@ -8733,7 +9125,10 @@
             "x-cast-to": "float"
           }
         },
-        "type": "object"
+        "type": "object",
+        "required": [
+          "player_state_group_id"
+        ]
       },
       "player_state_group_2": {
         "x-tags": [
@@ -8796,7 +9191,11 @@
             "x-cast-to": "float"
           }
         },
-        "type": "object"
+        "type": "object",
+        "required": [
+          "player_state_group_id",
+          "player_state_id"
+        ]
       },
       "player_state": {
         "x-tags": [
@@ -8812,7 +9211,11 @@
             "description": "Name of the player state.",
             "type": "string"
           }
-        }
+        },
+        "required": [
+          "player_state_id",
+          "description"
+        ]
       },
       "profile": {
         "type": "object",
@@ -8941,6 +9344,11 @@
             "x-cast-to": "float"
           }
         },
+        "required": [
+          "profile_id",
+          "profile_type_id",
+          "faction_id"
+        ],
         "examples": [
           {
             "profile_list": [
@@ -8995,6 +9403,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "profile_id",
+          "description"
+        ],
         "examples": [
           {
             "profile_2_list": [
@@ -9032,6 +9444,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "profile_id",
+          "armor_info_id"
+        ],
         "examples": [
           {
             "profile_armor_map_list": [
@@ -9095,6 +9511,10 @@
             "x-reference-to": "resist_info.resist_info_id"
           }
         },
+        "required": [
+          "profile_id",
+          "resist_info_id"
+        ],
         "examples": [
           {
             "profile_resist_map_list": [
@@ -9232,6 +9652,10 @@
             "x-cast-to": "float"
           }
         },
+        "required": [
+          "projectile_id",
+          "projectile_flight_type_id"
+        ],
         "examples": [
           {
             "projectile_list": [
@@ -9276,6 +9700,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "projectile_flight_type_id",
+          "description"
+        ],
         "examples": [
           {
             "projectile_flight_type_list": [
@@ -9354,6 +9782,10 @@
             "x-reference-to": "zone.zone_id"
           }
         },
+        "required": [
+          "region_id",
+          "zone_id"
+        ],
         "examples": [
           {
             "region_list": [
@@ -9409,6 +9841,10 @@
             "x-reference-to": "resist_type.resist_type_id"
           }
         },
+        "required": [
+          "resist_info_id",
+          "resist_type_id"
+        ],
         "examples": [
           {
             "resist_info_list": [
@@ -9442,6 +9878,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "resist_type_id",
+          "description"
+        ],
         "examples": [
           {
             "resist_type_list": [
@@ -9552,6 +9992,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "resource_type_id",
+          "description"
+        ],
         "examples": [
           {
             "resource_type_list": [
@@ -9678,6 +10122,10 @@
             "x-reference-to": "reward_type.reward_type_id"
           }
         },
+        "required": [
+          "reward_id",
+          "reward_type_id"
+        ],
         "examples": [
           {
             "reward_list": [
@@ -9714,6 +10162,10 @@
             "x-reference-to": "reward.reward_id"
           }
         },
+        "required": [
+          "reward_group_id",
+          "reward_id"
+        ],
         "examples": [
           {
             "reward_group_to_reward_list": [
@@ -9756,6 +10208,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "reward_set_id",
+          "reward_group_id"
+        ],
         "examples": [
           {
             "reward_set_to_reward_group_list": [
@@ -9777,13 +10233,11 @@
         "properties": {
           "count_max": {
             "description": "Documentation for this parameter on rewards of this type.",
-            "type": "string",
-            "x-cast-to": "int32"
+            "type": "string"
           },
           "count_min": {
             "description": "Documentation for this parameter on rewards of this type.",
-            "type": "string",
-            "x-cast-to": "int32"
+            "type": "string"
           },
           "description": {
             "description": "Description of the reward type.",
@@ -9815,6 +10269,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "reward_type_id",
+          "description"
+        ],
         "examples": [
           {
             "reward_type_list": [
@@ -10011,6 +10469,9 @@
                 "x-reference-to": "title.title_id"
               }
             },
+            "required": [
+              "character_id"
+            ],
             "examples": [
               {
                 "character_list": [
@@ -10100,7 +10561,10 @@
                           "x-reference-to": "item.item_id"
                         }
                       },
-                      "type": "object"
+                      "type": "object",
+                      "required": [
+                        "item_id"
+                      ]
                     },
                     {
                       "properties": {
@@ -10113,6 +10577,10 @@
                       },
                       "type": "object"
                     }
+                  ],
+                  "required": [
+                    "character_id",
+                    "item_id"
                   ]
                 },
                 "type": "array"
@@ -10166,7 +10634,10 @@
                           "x-cast-to": "int32"
                         }
                       },
-                      "type": "object"
+                      "type": "object",
+                      "required": [
+                        "stat_name"
+                      ]
                     },
                     "type": "array"
                   },
@@ -10267,7 +10738,11 @@
                           "x-cast-to": "int32"
                         }
                       },
-                      "type": "object"
+                      "type": "object",
+                      "required": [
+                        "profile_id",
+                        "stat_name"
+                      ]
                     },
                     "type": "array"
                   },
@@ -10501,7 +10976,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "required": [
+                          "stat_name"
+                        ]
                       },
                       "certs": {
                         "properties": {
@@ -10731,7 +11209,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "required": [
+                          "stat_name"
+                        ]
                       },
                       "deaths": {
                         "properties": {
@@ -10961,7 +11442,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "required": [
+                          "stat_name"
+                        ]
                       },
                       "facility_capture": {
                         "properties": {
@@ -11191,7 +11675,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "required": [
+                          "stat_name"
+                        ]
                       },
                       "facility_defend": {
                         "properties": {
@@ -11421,7 +11908,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "required": [
+                          "stat_name"
+                        ]
                       },
                       "kills": {
                         "properties": {
@@ -11651,7 +12141,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "required": [
+                          "stat_name"
+                        ]
                       },
                       "medals": {
                         "properties": {
@@ -11881,7 +12374,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "required": [
+                          "stat_name"
+                        ]
                       },
                       "ribbons": {
                         "properties": {
@@ -12111,7 +12607,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "required": [
+                          "stat_name"
+                        ]
                       },
                       "score": {
                         "properties": {
@@ -12341,7 +12840,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "required": [
+                          "stat_name"
+                        ]
                       },
                       "time": {
                         "properties": {
@@ -12571,7 +13073,10 @@
                             "type": "object"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "required": [
+                          "stat_name"
+                        ]
                       }
                     },
                     "type": "object"
@@ -12610,7 +13115,11 @@
                           "x-reference-to": "vehicle.vehicle_id"
                         }
                       },
-                      "type": "object"
+                      "type": "object",
+                      "required": [
+                        "item_id",
+                        "stat_name"
+                      ]
                     },
                     "type": "array"
                   },
@@ -12658,7 +13167,11 @@
                           "x-reference-to": "vehicle.vehicle_id"
                         }
                       },
-                      "type": "object"
+                      "type": "object",
+                      "required": [
+                        "item_id",
+                        "stat_name"
+                      ]
                     },
                     "type": "array"
                   }
@@ -12668,6 +13181,9 @@
             },
             "type": "object"
           }
+        ],
+        "required": [
+          "character_id"
         ]
       },
       "skill": {
@@ -12780,6 +13296,11 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "skill_set",
+          "skill_line_id",
+          "skill_line_index"
+        ],
         "examples": [
           {
             "skill_list": [
@@ -12918,6 +13439,11 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "skill_category_id",
+          "skill_set_id",
+          "skill_set_index"
+        ],
         "examples": [
           {
             "skill_category_list": [
@@ -13047,6 +13573,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "skill_line_id"
+        ],
         "examples": [
           {
             "skill_line_list": [
@@ -13179,6 +13708,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "skill_set_id"
+        ],
         "examples": [
           {
             "skill_set_list": [
@@ -13229,6 +13761,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "target_type_id",
+          "description"
+        ],
         "examples": [
           {
             "target_type_list": [
@@ -13295,6 +13831,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "title_id"
+        ],
         "examples": [
           {
             "title_list": [
@@ -13418,6 +13957,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "vehicle_id"
+        ],
         "examples": [
           {
             "vehicle_list": [
@@ -13487,6 +14029,11 @@
             "x-reference-to": "vehicle.vehicle_id"
           }
         },
+        "required": [
+          "vehicle_attachment_id",
+          "vehicle_id",
+          "faction_id"
+        ],
         "examples": [
           {
             "vehicle_attachment_list": [
@@ -13599,6 +14146,10 @@
             "x-reference-to": "vehicle.vehicle_id"
           }
         },
+        "required": [
+          "faction_id",
+          "vehicle_id"
+        ],
         "examples": [
           {
             "vehicle_faction_list": [
@@ -13654,6 +14205,11 @@
             "x-reference-to": "vehicle.vehicle_id"
           }
         },
+        "required": [
+          "faction_id",
+          "skill_set_id",
+          "vehicle_id"
+        ],
         "examples": [
           {
             "vehicle_skill_set_list": [
@@ -13703,12 +14259,12 @@
           "melee_detect_height": {
             "description": "On melee weapons, designates the height of the quick knife attack hitbox.",
             "type": "string",
-            "x-cast-to": "int32"
+            "x-cast-to": "float"
           },
           "melee_detect_width": {
             "description": "On melee weapons, designates the width of the quick knife attack hitbox.",
             "type": "string",
-            "x-cast-to": "int32"
+            "x-cast-to": "float"
           },
           "move_modifier": {
             "description": "The modifier applied to the movement speed when the weapon is equipped.",
@@ -13756,6 +14312,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "weapon_id"
+        ],
         "examples": [
           {
             "weapon_list": [
@@ -13849,6 +14408,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "weapon_id",
+          "weapon_slot_index"
+        ],
         "examples": [
           {
             "weapon_ammo_slot_list": [
@@ -13927,17 +14490,17 @@
           "fire_cone": {
             "description": "Unreliable! Please refer to the player state group listed in `ps2/fire_mode_2.player_state_group_id` instead.",
             "type": "string",
-            "x-cast-to": "int32"
+            "x-cast-to": "float"
           },
           "fire_cone_max": {
             "description": "Unreliable! Please refer to the `cof_` values in `ps2/fire_mode_2` instead.",
             "type": "string",
-            "x-cast-to": "int32"
+            "x-cast-to": "float"
           },
           "fire_cone_min": {
             "description": "Unreliable! Please refer to the player state group listed in `ps2/fire_mode_2.player_state_group_id` instead.",
             "type": "string",
-            "x-cast-to": "int32"
+            "x-cast-to": "float"
           },
           "fire_rate_ms": {
             "description": "Unreliable! Please use `ps2/fire_mode_2.fire_refire_ms` instead.",
@@ -14024,6 +14587,9 @@
             "x-cast-to": "boolean"
           }
         },
+        "required": [
+          "item_id"
+        ],
         "examples": [
           {
             "weapon_datasheet_list": [
@@ -14083,6 +14649,11 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "item_id",
+          "attachment_id",
+          "weapon_group_id"
+        ],
         "examples": [
           {
             "weapon_to_attachment_list": [
@@ -14139,6 +14710,11 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "weapon_id",
+          "fire_group_id",
+          "fire_group_index"
+        ],
         "examples": [
           {
             "weapon_to_fire_group_list": [
@@ -14236,6 +14812,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "world_id"
+        ],
         "examples": [
           {
             "world_list": [
@@ -14266,16 +14845,13 @@
             "allOf": [
               {
                 "properties": {
-                  "character_id": {
-                    "description": "The ID of a character.",
-                    "type": "string",
-                    "x-cast-to": "int64",
-                    "x-reference-to": "character.character_id"
+                  "event_type": {
+                    "description": "Name of the event.",
+                    "type": "string"
                   },
                   "table_type": {
                     "description": "Internal name of the table.",
-                    "type": "string",
-                    "x-cast-to": "int32"
+                    "type": "string"
                   },
                   "timestamp": {
                     "description": "UTC timestamp of the event.",
@@ -14294,7 +14870,14 @@
                     "x-reference-to": "zone.zone_id"
                   }
                 },
-                "type": "object"
+                "type": "object",
+                "required": [
+                  "timestamp",
+                  "event_type",
+                  "table_type",
+                  "world_id",
+                  "zone_id"
+                ]
               },
               {
                 "properties": {
@@ -14347,16 +14930,13 @@
             "allOf": [
               {
                 "properties": {
-                  "character_id": {
-                    "description": "The ID of a character.",
-                    "type": "string",
-                    "x-cast-to": "int64",
-                    "x-reference-to": "character.character_id"
+                  "event_type": {
+                    "description": "Name of the event.",
+                    "type": "string"
                   },
                   "table_type": {
                     "description": "Internal name of the table.",
-                    "type": "string",
-                    "x-cast-to": "int32"
+                    "type": "string"
                   },
                   "timestamp": {
                     "description": "UTC timestamp of the event.",
@@ -14375,7 +14955,14 @@
                     "x-reference-to": "zone.zone_id"
                   }
                 },
-                "type": "object"
+                "type": "object",
+                "required": [
+                  "timestamp",
+                  "event_type",
+                  "table_type",
+                  "world_id",
+                  "zone_id"
+                ]
               },
               {
                 "properties": {
@@ -14430,6 +15017,11 @@
               }
             ]
           }
+        ],
+        "required": [
+          "event_type",
+          "zone_id",
+          "world_id"
         ]
       },
       "world_stat_history": {
@@ -14715,6 +15307,10 @@
             "x-reference-to": "world.world_id"
           }
         },
+        "required": [
+          "stat_name",
+          "world_id"
+        ],
         "examples": [
           {
             "world_stat_history_list": [
@@ -14885,6 +15481,9 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "zone_id"
+        ],
         "examples": [
           {
             "zone_list": [
@@ -15025,6 +15624,11 @@
             "x-reference-to": "zone_effect_type.zone_effect_type_id"
           }
         },
+        "required": [
+          "zone_effect_id",
+          "zone_effect_type_id",
+          "ability_id"
+        ],
         "examples": [
           {
             "zone_effect_list": [
@@ -15132,6 +15736,10 @@
             "x-cast-to": "int32"
           }
         },
+        "required": [
+          "zone_effect_type_id",
+          "description"
+        ],
         "examples": [
           {
             "zone_effect_type_list": [
