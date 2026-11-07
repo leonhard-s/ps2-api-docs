@@ -5245,7 +5245,7 @@
       },
       "experience_award_type": {
         "type": "object",
-        "description": "Experience type, such as \"Kill Assist\".\n\nGroups experience ticks. For example, \"Kill Assist - Flash\" and \"Kill Player Assist\" are both part of the \"KillAssist\" award type.        \n",
+        "description": "Experience type, such as \"Kill Assist\".\n\n\nGroups experience ticks. For example, \"Kill Assist - Flash\" and \"Kill Player Assist\" are both part of the \"KillAssist\" award type.        \n",
         "x-tags": [
           "Fundamentals"
         ],
@@ -5634,7 +5634,7 @@
       },
       "faction": {
         "type": "object",
-        "description": "Endpoint for playable and non-playable factions.\nIn addition to the main empires VS, NC, and TR, this also lists NS Operatives as the 4th faction. Note that a faction ID of zero does not denote an empty value. Instead, it represents a special \"None\" faction, which is used for common pool equipment, and also serves as a sentinel value for disabled facilities in the context of facility ownership.\nWhen working with the Event Streaming Service (ESS), you will encounter a `team_id` field in certain payloads. This is used to control friend-or-foe status for NSO players, or for the opposing factions in Outfit Wars.\nDuring regular gameplay (i.e. outside of Outfit Wars), it is generally safe to treat a team ID as a faction. However, care should be taken during Outfit Wars matches as the team IDs will map to the Alpha and Omega team instead.\n",
+        "description": "Endpoint for playable and non-playable factions.\n\nIn addition to the main empires VS, NC, and TR, this also lists NS Operatives as the 4th\nfaction. Note that a faction ID of zero does not denote an empty value. Instead, it\nrepresents a special \"None\" faction, which is used for common pool equipment, and also\nserves as a sentinel value for disabled facilities in the context of facility ownership.\n\nWhen working with the Event Streaming Service (ESS), you will encounter a `team_id` field\nin certain payloads. This is used to control friend-or-foe status for NSO players, or for\nthe opposing factions in Outfit Wars.\n\nDuring regular gameplay (i.e. outside of Outfit Wars), it is generally safe to treat a team\nID as a faction. However, care should be taken during Outfit Wars matches as the team IDs\nwill map to the Alpha and Omega team instead.\n",
         "x-tags": [
           "Fundamentals"
         ],
@@ -7806,7 +7806,7 @@
       },
       "loadout": {
         "type": "object",
-        "description": "Enumeration of the six infantry classes for each playable faction.\n\nNote that this is different from the in-game loadouts, which are not available on the API.\n",
+        "description": "Enumeration of the six infantry classes for each playable faction.\n\n\nNote that this is different from the in-game loadouts, which are not available on the API.\n",
         "x-tags": [
           "Fundamentals"
         ],
@@ -9219,7 +9219,7 @@
       },
       "profile": {
         "type": "object",
-        "description": "Original endpoint for infantry profiles. This covers the names and loadout IDs connected to a given profile, and additionally provides movement speed multiplier information for infantry classes. Note that the key fields are also provided by `profile_2`, which not only covers infantry but also vehicles, deployables, and other entities.\n",
+        "description": "Original endpoint for infantry profiles. This covers the names and loadout IDs connected to\na given profile, and additionally provides movement speed multiplier information for\ninfantry classes. Note that the key fields are also provided by `profile_2`, which not only\ncovers infantry but also vehicles, deployables, and other entities.\n",
         "x-tags": [
           "Fundamentals"
         ],
@@ -9388,7 +9388,7 @@
       },
       "profile_2": {
         "type": "object",
-        "description": "Extended profile endpoint containing all entity types, including NPCs, construction items, and deployables.\n",
+        "description": "Extended profile endpoint containing all entity types, including NPCs, construction items,\nand deployables.\n",
         "x-tags": [
           "Fundamentals"
         ],
