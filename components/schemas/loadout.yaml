@@ -1,5 +1,5 @@
 type: object
-description: >
+description: |
   Enumeration of the six infantry classes for each playable faction.
 
 

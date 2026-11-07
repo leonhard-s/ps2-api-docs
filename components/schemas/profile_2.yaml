@@ -1,5 +1,5 @@
 type: object
-description: >
+description: |
   Extended profile endpoint containing all entity types, including NPCs, construction items,
   and deployables.
 x-tags: ["Fundamentals"]

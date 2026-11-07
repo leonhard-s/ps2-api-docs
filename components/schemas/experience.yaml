@@ -1,5 +1,5 @@
 type: object
-description: >
+description: |
   Lists the different types of experience ticks.
 x-tags: ["Fundamentals"]
 properties:
