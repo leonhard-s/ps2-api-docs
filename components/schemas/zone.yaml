@@ -1,5 +1,5 @@
 type: object
-description: >
+description: |
    World continent and dynamic zone information.
 x-tags: ["Fundamentals"]
 properties:

@@ -1,5 +1,5 @@
 type: object
-description: >
+description: |
   Original endpoint for infantry profiles. This covers the names and loadout IDs connected to
   a given profile, and additionally provides movement speed multiplier information for
   infantry classes. Note that the key fields are also provided by `profile_2`, which not only

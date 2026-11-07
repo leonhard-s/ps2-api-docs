@@ -1,5 +1,5 @@
 type: object
-description: >
+description: |
   Endpoint for playable and non-playable factions.
 
   In addition to the main empires VS, NC, and TR, this also lists NS Operatives as the 4th

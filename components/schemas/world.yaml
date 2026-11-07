@@ -1,5 +1,5 @@
 type: object
-description: >
+description: |
   A game server for a given region and game.
 x-tags: ["Fundamentals"]
 properties:
